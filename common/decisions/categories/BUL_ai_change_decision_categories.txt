@@ -1,0 +1,19 @@
+BUL_different_categories = { #保加利亚强化
+    allowed = {
+        original_tag = BUL
+    }
+
+    visible = {
+        original_tag = BUL
+        has_country_flag = set_country_flag = attack_with_hun_flag
+        has_government = neutrality
+        HUN = {
+            has_country_flag = HUN_has_restored_flag
+        }
+        FRA = {
+            has_country_flag = cjg_open_the_third_empire
+        }
+    }
+    icon = GFX_decision_CHL_mapuche_liberate_inuit
+    priority = 200
+}

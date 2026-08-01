@@ -1,0 +1,107 @@
+buildings = {
+	#钢厂
+	steelworks = {
+		show_on_map = 6
+		base_cost = 3000
+		per_level_extra_cost = 120
+		icon_frame = 32
+		general_production = 1
+		value = 5
+		level_cap = {
+			shares_slots = yes
+			state_max = 40
+		}
+		infrastructure_construction_effect = yes
+		local_resources_steel = 20
+		show_modifier = yes
+		state_modifiers = {
+			local_factories = -0.01
+			STATE_PRODUCTION_SPEED_BUILDINGS_FACTOR = 0.01
+			local_building_slots_factor = -0.01
+		}
+	}
+	#铝厂
+	aluminum_smelter = {
+		show_on_map = 6
+		base_cost = 3000
+		per_level_extra_cost = 120
+		icon_frame = 33
+		value = 5
+		general_production = 1
+		level_cap = {
+			shares_slots = yes
+			state_max = 40
+		}
+		infrastructure_construction_effect = yes
+		local_resources_aluminium = 10
+		show_modifier = yes
+		state_modifiers = {
+			local_factories = -0.01
+			STATE_PRODUCTION_SPEED_BUILDINGS_FACTOR = 0.01
+			local_building_slots_factor = -0.01
+		}
+	}
+	#钨厂
+	tungsten_smelter = {
+		show_on_map = 6
+		base_cost = 3000
+		per_level_extra_cost = 120
+		icon_frame = 34
+		value = 5
+		general_production = 1
+		level_cap = {
+			shares_slots = yes
+			state_max = 40
+		}
+		infrastructure_construction_effect = yes
+		local_resources_tungsten = 10
+		show_modifier = yes
+		state_modifiers = {
+			local_factories = -0.01
+			STATE_PRODUCTION_SPEED_BUILDINGS_FACTOR = 0.01
+			local_building_slots_factor = -0.01
+		}
+	}
+	#铬厂
+	chromium_smelter = {
+		show_on_map = 6
+		base_cost = 3000
+		per_level_extra_cost = 120
+		icon_frame = 35
+		value = 5
+		general_production = 1
+		level_cap = {
+			shares_slots = yes
+			state_max = 40
+		}
+		infrastructure_construction_effect = yes
+		local_resources_chromium = 10
+		show_modifier = yes
+		state_modifiers = {
+			local_factories = -0.01
+			STATE_PRODUCTION_SPEED_BUILDINGS_FACTOR = 0.01
+			local_building_slots_factor = -0.01
+		}
+	}
+
+	coal_smelter = {
+		show_on_map = 6
+		base_cost = 3000
+		per_level_extra_cost = 120
+		icon_frame = 36
+		value = 5
+		general_production = 1
+		level_cap = {
+			shares_slots = yes
+			state_max = 40
+		}
+		infrastructure_construction_effect = yes
+		local_resources_coal = 25
+		show_modifier = yes
+		state_modifiers = {
+			local_factories = -0.01
+			STATE_PRODUCTION_SPEED_BUILDINGS_FACTOR = 0.01
+			local_building_slots_factor = -0.01
+		}
+	}
+}

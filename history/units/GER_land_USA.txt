@@ -1,0 +1,91 @@
+units = {
+    # 来自州 358
+    division = {
+        name = "两栖步兵师"
+        location = 3878
+        division_template = "两栖步兵师"
+        start_experience_factor = 1
+        start_equipment_factor = 1
+    }
+    division = {
+        name = "两栖步兵师"
+        location = 859
+        division_template = "两栖步兵师"
+        start_experience_factor = 1
+        start_equipment_factor = 1
+    }
+
+    # 来自州 359
+    division = {
+        name = "两栖步兵师"
+        location = 6882
+        division_template = "两栖步兵师"
+        start_experience_factor = 1
+        start_equipment_factor = 1
+    }
+
+    # 来自州 357
+    division = {
+        name = "两栖步兵师"
+        location = 9847
+        division_template = "两栖步兵师"
+        start_experience_factor = 1
+        start_equipment_factor = 1
+    }
+    division = {
+        name = "两栖步兵师"
+        location = 6909
+        division_template = "两栖步兵师"
+        start_experience_factor = 1
+        start_equipment_factor = 1
+    }
+    division = {
+        name = "两栖步兵师"
+        location = 9832
+        division_template = "两栖步兵师"
+        start_experience_factor = 1
+        start_equipment_factor = 1
+    }
+    division = {
+        name = "两栖步兵师"
+        location = 11830
+        division_template = "两栖步兵师"
+        start_experience_factor = 1
+        start_equipment_factor = 1
+    }
+    division = {
+        name = "两栖步兵师"
+        location = 3906
+        division_template = "两栖步兵师"
+        start_experience_factor = 1
+        start_equipment_factor = 1
+    }
+    division = {
+        name = "两栖步兵师"
+        location = 905
+        division_template = "两栖步兵师"
+        start_experience_factor = 1
+        start_equipment_factor = 1
+    }
+    division = {
+        name = "两栖步兵师"
+        location = 6732
+        division_template = "两栖步兵师"
+        start_experience_factor = 1
+        start_equipment_factor = 1
+    }
+    division = {
+        name = "两栖步兵师"
+        location = 3712
+        division_template = "两栖步兵师"
+        start_experience_factor = 1
+        start_equipment_factor = 1
+    }
+    division = {
+        name = "两栖步兵师"
+        location = 3732
+        division_template = "两栖步兵师"
+        start_experience_factor = 1
+        start_equipment_factor = 1
+    }
+}

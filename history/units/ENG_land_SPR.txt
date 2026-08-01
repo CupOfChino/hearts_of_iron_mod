@@ -1,0 +1,223 @@
+units = {
+    # 来自州 792
+    division = {
+        name = "精英海军陆战队"
+        location = 6756
+        division_template = "精英海军陆战队"
+        start_experience_factor = 1
+        start_equipment_factor = 1
+    }
+    division = {
+        name = "精英海军陆战队"
+        location = 740
+        division_template = "精英海军陆战队"
+        start_experience_factor = 1
+        start_equipment_factor = 1
+    }
+
+    # 来自州 790
+    division = {
+        name = "精英海军陆战队"
+        location = 11688
+        division_template = "精英海军陆战队"
+        start_experience_factor = 1
+        start_equipment_factor = 1
+    }
+    division = {
+        name = "精英海军陆战队"
+        location = 9703
+        division_template = "精英海军陆战队"
+        start_experience_factor = 1
+        start_equipment_factor = 1
+    }
+    division = {
+        name = "精英海军陆战队"
+        location = 6749
+        division_template = "精英海军陆战队"
+        start_experience_factor = 1
+        start_equipment_factor = 1
+    }
+    division = {
+        name = "精英海军陆战队"
+        location = 11707
+        division_template = "精英海军陆战队"
+        start_experience_factor = 1
+        start_equipment_factor = 1
+    }
+    division = {
+        name = "精英海军陆战队"
+        location = 13218
+        division_template = "精英海军陆战队"
+        start_experience_factor = 1
+        start_equipment_factor = 1
+    }
+    division = {
+        name = "精英海军陆战队"
+        location = 9719
+        division_template = "精英海军陆战队"
+        start_experience_factor = 1
+        start_equipment_factor = 1
+    }
+
+    # 来自州 171
+    division = {
+        name = "精英海军陆战队"
+        location = 6764
+        division_template = "精英海军陆战队"
+        start_experience_factor = 1
+        start_equipment_factor = 1
+    }
+    division = {
+        name = "精英海军陆战队"
+        location = 3761
+        division_template = "精英海军陆战队"
+        start_experience_factor = 1
+        start_equipment_factor = 1
+    }
+    division = {
+        name = "精英海军陆战队"
+        location = 758
+        division_template = "精英海军陆战队"
+        start_experience_factor = 1
+        start_equipment_factor = 1
+    }
+    division = {
+        name = "精英海军陆战队"
+        location = 11710
+        division_template = "精英海军陆战队"
+        start_experience_factor = 1
+        start_equipment_factor = 1
+    }
+    division = {
+        name = "精英海军陆战队"
+        location = 9689
+        division_template = "精英海军陆战队"
+        start_experience_factor = 1
+        start_equipment_factor = 1
+    }
+    division = {
+        name = "精英海军陆战队"
+        location = 6374
+        division_template = "精英海军陆战队"
+        start_experience_factor = 1
+        start_equipment_factor = 1
+    }
+
+    # 来自州 180
+    division = {
+        name = "精英海军陆战队"
+        location = 11673
+        division_template = "精英海军陆战队"
+        start_experience_factor = 1
+        start_equipment_factor = 1
+    }
+    division = {
+        name = "精英海军陆战队"
+        location = 9873
+        division_template = "精英海军陆战队"
+        start_experience_factor = 1
+        start_equipment_factor = 1
+    }
+    division = {
+        name = "精英海军陆战队"
+        location = 6924
+        division_template = "精英海军陆战队"
+        start_experience_factor = 1
+        start_equipment_factor = 1
+    }
+    division = {
+        name = "精英海军陆战队"
+        location = 799
+        division_template = "精英海军陆战队"
+        start_experience_factor = 1
+        start_equipment_factor = 1
+    }
+    division = {
+        name = "精英海军陆战队"
+        location = 3861
+        division_template = "精英海军陆战队"
+        start_experience_factor = 1
+        start_equipment_factor = 1
+    }
+    division = {
+        name = "精英海军陆战队"
+        location = 11805
+        division_template = "精英海军陆战队"
+        start_experience_factor = 1
+        start_equipment_factor = 1
+    }
+
+    # 来自州 179
+    division = {
+        name = "精英海军陆战队"
+        location = 970
+        division_template = "精英海军陆战队"
+        start_experience_factor = 1
+        start_equipment_factor = 1
+    }
+    division = {
+        name = "精英海军陆战队"
+        location = 980
+        division_template = "精英海军陆战队"
+        start_experience_factor = 1
+        start_equipment_factor = 1
+    }
+    division = {
+        name = "精英海军陆战队"
+        location = 3866
+        division_template = "精英海军陆战队"
+        start_experience_factor = 1
+        start_equipment_factor = 1
+    }
+    division = {
+        name = "精英海军陆战队"
+        location = 3790
+        division_template = "精英海军陆战队"
+        start_experience_factor = 1
+        start_equipment_factor = 1
+    }
+    division = {
+        name = "精英海军陆战队"
+        location = 6880
+        division_template = "精英海军陆战队"
+        start_experience_factor = 1
+        start_equipment_factor = 1
+    }
+
+    # 来自州 169
+    division = {
+        name = "精英海军陆战队"
+        location = 12070
+        division_template = "精英海军陆战队"
+        start_experience_factor = 1
+        start_equipment_factor = 1
+    }
+    division = {
+        name = "精英海军陆战队"
+        location = 9815
+        division_template = "精英海军陆战队"
+        start_experience_factor = 1
+        start_equipment_factor = 1
+    }
+    division = {
+        name = "精英海军陆战队"
+        location = 4080
+        division_template = "精英海军陆战队"
+        start_experience_factor = 1
+        start_equipment_factor = 1
+    }
+    division = {
+        name = "精英海军陆战队"
+        location = 1080
+        division_template = "精英海军陆战队"
+        start_experience_factor = 1
+        start_equipment_factor = 1
+    }
+    division = {
+        name = "精英海军陆战队"
+        location = 13228
+        division_template = "精英海军陆战队"
+        start_experience_factor = 1
+        start_equipment_factor = 1
+    }
+}

@@ -1,0 +1,50 @@
+ENG_ai_categories = {
+
+    allowed = {
+        original_tag = ENG
+    }
+
+    visible = {
+        is_ai = yes
+        is_subject = no
+        has_army_manpower = { size < 3000000 }
+        original_tag = ENG
+        FRA = {
+            has_country_flag = cjg_open_the_third_empire
+        }
+        ENG = {
+            has_capitulated = no
+        }
+    }
+    priority = 100
+}
+
+
+ENG_the_third_empire_categories = {
+    allowed = {
+        original_tag = ENG
+    }
+    visible = {
+        FRA = {
+            has_country_flag = cjg_open_the_third_empire
+        }
+    }
+    picture = GFX_decision_cat_naval_treaty
+    icon = GFX_decision_third_empire_2
+    priority = 100
+}
+
+ENG_the_third_empire_war_categories = {
+    allowed = {
+        
+    }
+    visible = {
+        FRA = {
+            has_country_flag = cjg_open_the_third_empire
+        }
+        has_war = yes
+    }
+    picture = GFX_decision_cat_picture_chi_infiltration
+    icon = GFX_decision_category_saf_anti_colonialist_crusade
+    priority = 100
+}

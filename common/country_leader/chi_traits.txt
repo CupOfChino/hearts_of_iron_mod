@@ -1,0 +1,35 @@
+leader_traits = {
+
+    CHI_Chairman = { #委员长
+        stability_factor = 0.25
+        political_power_factor = 0.15
+        army_core_defence_factor = 0.33
+        army_core_attack_factor = 0.1
+        production_speed_arms_factory_factor = 0.1
+        economy_cost_factor = -0.15
+    }
+
+    CHI_the_jiang_change = { #???
+        ai_desired_divisions_factor = 0.2
+        army_attack_factor = 0.2
+        army_defence_factor = 0.2
+        land_reinforce_rate = 0.1
+        combat_width_factor = -0.05
+        breakthrough_factor = 0.25
+        army_core_attack_factor = 0.1
+        army_core_defence_factor = 0.1
+        no_supply_grace = 24
+    }
+
+    CHI_The_advantage_is_in_my_doctrine_of_proponents = { #优势在我学说拥簇者
+        army_attack_factor = -0.15
+        army_defence_factor = -0.15
+        theorist_cost_factor = -0.1
+        supply_consumption_factor = -0.15
+        max_command_power = 100
+        land_reinforce_rate = -0.05
+        combat_width_factor = 0.05
+        military_leader_cost_factor = -0.15
+    }
+
+}

@@ -1,0 +1,17 @@
+Other_ai_categories = {
+    allowed = {
+        NOT = {
+            tag = GER
+            tag = FRA
+            tag = HUN
+            tag = USA
+            tag = ENG
+            tag = SOV
+        }
+        is_major = yes
+    }
+    visible = {
+        is_ai = yes
+    }
+    priority = 100
+}

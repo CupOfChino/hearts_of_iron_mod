@@ -1,0 +1,1023 @@
+add_namespace = change_france
+
+country_event = {
+    id = change_france.0
+    title = change_france.0.t
+	desc = change_france.0.d
+
+    is_triggered_only = yes
+
+    trigger = {
+        is_ai = no
+    }
+
+    #welcome!
+    option = {
+        name = change_france.0.a
+        ai_chance = {
+			factor = 100
+		}
+    }
+}
+
+#拿皇想和德皇一起玩
+country_event = {
+    id = change_france.1
+    title = change_france.1.t
+	desc = change_france.1.d
+
+    is_triggered_only = yes
+
+    #想直接加入
+    option = {
+        name = change_france.1.a
+        ai_chance = {
+			factor = 50
+		}
+        GER = {
+            country_event = { id = change_france.2 days = 1 }
+        }
+    }
+
+    #有诚意的加入
+    option = {
+        name = change_france.1.b
+        ai_chance = {
+			factor = 50
+		}
+        GER = {
+            country_event = { id = change_france.5 days = 1 }
+        }
+    }
+}
+
+#德皇抉择1（法国想直接加入）
+country_event = {
+    id = change_france.2
+    title = change_france.2.t
+	desc = change_france.2.d
+
+    is_triggered_only = yes
+
+    #欢迎加入
+    option = {
+        name = change_france.2.a
+        ai_chance = {
+			factor = 50
+		}
+        GER = {
+            add_to_faction = FRA
+        }
+    }
+
+    #要阿尔萨斯洛林
+    option = {
+        name = change_france.2.b
+        ai_chance = {
+			factor = 50
+		}
+        FRA = {
+            country_event = { id = change_france.3 days = 1 }
+        }
+    }
+
+    #大咩
+    option = {
+        name = change_france.2.c
+        ai_chance = {
+			factor = 0
+		}
+        FRA = {
+            country_event = { id = change_france.6 days = 1 }
+        }
+    }
+}
+
+#要阿尔萨斯洛林时拿皇回应
+country_event = {
+    id = change_france.3
+    title = change_france.3.t
+	desc = change_france.3.d
+
+    is_triggered_only = yes
+
+    #给你脸了
+    option = {
+        name = change_france.3.a
+        ai_chance = {
+			factor = 0
+		}
+        GER = {
+            country_event = { id = change_france.7 days = 1 }
+        }
+    }
+
+    #白给
+    option = {
+        name = change_france.3.b
+        ai_chance = {
+			factor = 35
+            modifier = {
+                factor = 0
+                is_in_faction_with = GER
+            }
+		}
+        GER = {
+            transfer_state = 28
+            add_state_core = 28
+            add_to_faction = FRA
+        }
+
+    }
+
+    #可以但要阿尔萨斯洛林的资源开采权
+    option = {
+        name = change_france.3.c
+        ai_chance = {
+			factor = 65
+            modifier = {
+                factor = 1000
+                is_in_faction_with = GER
+            }
+		}
+        GER = {
+            country_event = { id = change_france.4 days = 1 }
+        }
+    }
+}
+
+#德皇抉择2（可以但要阿尔萨斯洛林的资源开采权）
+country_event = {
+    id = change_france.4
+    title = change_france.4.t
+	desc = change_france.4.d
+
+    is_triggered_only = yes
+
+    #可以接受
+    option = {
+        name = change_france.4.a
+        ai_chance = {
+			factor = 1000
+		}
+        GER = {
+            transfer_state = 28
+            add_state_core = 28
+            give_resource_rights = {
+				receiver = FRA
+				state = 28
+			}
+            add_to_faction = FRA
+        }
+        
+    }
+
+    #给你脸了
+    option = {
+        name = change_france.4.b
+        ai_chance = {
+			factor = 0
+		}
+        FRA = {
+            country_event =  { id = change_france.6 days = 1 }
+        }
+    }
+}
+
+#白给时德皇回应
+country_event = {
+    id = change_france.5
+    title = change_france.5.t
+	desc = change_france.5.d
+
+    is_triggered_only = yes
+
+    #可以接受
+    option = {
+        name = change_france.5.a
+        ai_chance = {
+			factor = 100
+		}
+        GER = {
+            transfer_state = 28
+            add_state_core = 28
+            add_to_faction = FRA
+        }
+    }
+}
+
+#法国收到德皇拒绝事件
+country_event = {
+    id = change_france.6
+    title = change_france.6.t
+	desc = change_france.6.d
+
+    is_triggered_only = yes
+
+    option = {
+        name = change_france.6.a
+        ai_chance = {
+			factor = 100
+		}
+
+    }
+}
+
+#德皇收到法国拒绝事件
+country_event = {
+    id = change_france.7
+    title = change_france.7.t
+	desc = change_france.7.d
+
+    is_triggered_only = yes
+
+    option = {
+        name = change_france.7.a
+        ai_chance = {
+			factor = 100
+		}
+
+    }
+}
+
+#法国吞并西班牙事件
+country_event = {
+    id = change_france.8
+    title = change_france.8.t
+	desc = change_france.8.d
+
+    is_triggered_only = yes
+
+    #被吞并
+    option = {
+        name = change_france.8.a
+        ai_chance = {
+			factor = 1000
+		}
+        FRA = { 
+            annex_country = { 
+                target = SPR 
+                transfer_troops = yes 
+            }
+        }
+
+    }
+
+    #不同意
+    option = {
+        name = change_france.8.b
+        ai_chance = {
+			factor = 0
+		}
+        every_country = {
+			limit = {
+				OR = {
+					tag = SPR
+					original_tag = SPR
+				}
+			}
+			FRA = {
+				create_wargoal = {
+					target = PREV
+					type = annex_everything
+				}
+			}
+		}
+        FRA = {
+            country_event = { id = change_france.9 days = 1 }
+        }
+    }
+}
+
+#法国吞并西班牙事件遭到拒绝
+country_event = {
+    id = change_france.9
+    title = change_france.9.t
+	desc = change_france.9.d
+
+    is_triggered_only = yes
+
+    option = {
+        name = change_france.9.a
+        add_command_power = 20
+    }
+}
+
+#法国吞并葡萄牙事件
+country_event = {
+    id = change_france.10
+    title = change_france.10.t
+	desc = change_france.10.d
+
+    is_triggered_only = yes
+
+    #被吞并
+    option = {
+        name = change_france.10.a
+        ai_chance = {
+			factor = 1000
+		}
+        FRA = { 
+            annex_country = {
+                target = POR
+                transfer_troops = yes 
+            }
+        }
+
+    }
+
+    #不同意
+    option = {
+        name = change_france.10.b
+        ai_chance = {
+			factor = 0
+		}
+        every_country = {
+			limit = {
+				OR = {
+					tag = POR
+					original_tag = POR
+				}
+			}
+			FROM = {
+				create_wargoal = {
+					target = PREV
+					type = annex_everything
+				}
+			}
+		}
+        FRA = {
+            country_event = { id = change_france.9 days = 1 }
+        }
+    }
+}
+
+country_event = {
+    id = change_france.11
+    title = change_france.11.t
+	desc = change_france.11.d
+
+    is_triggered_only = yes
+
+    #军换民
+    option = {
+        name = change_france.11.a
+        ai_chance = {
+			factor = 50
+		}
+        country_event = { id = change_france.13 }
+    }
+
+    #民换军
+    option = {
+        name = change_france.11.b
+        ai_chance = {
+			factor = 50
+		}
+        country_event = { id = change_france.12 }
+    }
+}
+
+country_event = {
+    id = change_france.12
+    title = change_france.12.t
+	desc = change_france.12.d
+
+    is_triggered_only = yes
+
+    #换3个军
+    option = {
+        name = change_france.12.a
+        ai_chance = {
+			factor = 50
+		}
+        random_owned_controlled_state = {
+            limit = {
+                is_core_of = ROOT
+                industrial_complex > 3
+            }
+            remove_building = {
+				type = industrial_complex
+				level = 3
+			}
+            add_extra_state_shared_building_slots = 3
+            add_building_construction = {
+				type = arms_factory
+				level = 3
+				instant_build = yes
+			}
+        }
+    }
+
+    #换6个军
+    option = {
+        name = change_france.12.b
+        ai_chance = {
+			factor = 50
+		}
+        random_owned_controlled_state = {
+            limit = {
+                is_core_of = ROOT
+                industrial_complex > 2
+            }
+            remove_building = {
+				type = industrial_complex
+				level = 2
+			}
+            add_extra_state_shared_building_slots = 2
+            add_building_construction = {
+				type = arms_factory
+				level = 2
+				instant_build = yes
+			}
+        }
+        random_owned_controlled_state = {
+            limit = {
+                is_core_of = ROOT
+                industrial_complex > 2
+            }
+            remove_building = {
+				type = industrial_complex
+				level = 2
+			}
+            add_extra_state_shared_building_slots = 2
+            add_building_construction = {
+				type = arms_factory
+				level = 2
+				instant_build = yes
+			}
+        }
+        random_owned_controlled_state = {
+            limit = {
+                is_core_of = ROOT
+                industrial_complex > 2
+            }
+            remove_building = {
+				type = industrial_complex
+				level = 2
+			}
+            add_extra_state_shared_building_slots = 2
+            add_building_construction = {
+				type = arms_factory
+				level = 2
+				instant_build = yes
+			}
+        }
+    }
+
+    #反悔了
+    option = {
+        name = change_france.12.c
+        ai_chance = {
+			factor = 50
+		}
+        random_owned_controlled_state = {
+            limit = {
+                is_core_of = ROOT
+            }
+            add_extra_state_shared_building_slots = 2
+        }
+    }
+}
+
+country_event = {
+    id = change_france.13
+    title = change_france.13.t
+	desc = change_france.13.d
+
+    is_triggered_only = yes
+
+    #换3个民
+    option = {
+        name = change_france.13.a
+        ai_chance = {
+			factor = 50
+		}
+        random_owned_controlled_state = {
+            limit = {
+                is_core_of = ROOT
+                arms_factory > 3
+            }
+            remove_building = {
+				type = arms_factory
+				level = 3
+			}
+            add_extra_state_shared_building_slots = 3
+            add_building_construction = {
+				type = industrial_complex
+				level = 3
+				instant_build = yes
+			}
+        }
+    }
+
+    #换6个民
+    option = {
+        name = change_france.13.b
+        ai_chance = {
+			factor = 50
+		}
+        random_owned_controlled_state = {
+            limit = {
+                is_core_of = ROOT
+                arms_factory > 2
+            }
+            remove_building = {
+				type = arms_factory
+				level = 2
+			}
+            add_extra_state_shared_building_slots = 2
+            add_building_construction = {
+				type = industrial_complex
+				level = 2
+				instant_build = yes
+			}
+        }
+        random_owned_controlled_state = {
+            limit = {
+                is_core_of = ROOT
+                arms_factory > 2
+            }
+            remove_building = {
+				type = arms_factory
+				level = 2
+			}
+            add_extra_state_shared_building_slots = 2
+            add_building_construction = {
+				type = industrial_complex
+				level = 2
+				instant_build = yes
+			}
+        }
+        random_owned_controlled_state = {
+            limit = {
+                is_core_of = ROOT
+                arms_factory > 2
+            }
+            remove_building = {
+				type = arms_factory
+				level = 2
+			}
+            add_extra_state_shared_building_slots = 2
+            add_building_construction = {
+				type = industrial_complex
+				level = 2
+				instant_build = yes
+			}
+        }
+    }
+
+    #反悔了
+    option = {
+        name = change_france.13.c
+        ai_chance = {
+			factor = 50
+		}
+        random_owned_controlled_state = {
+            limit = {
+                is_core_of = ROOT
+            }
+            add_extra_state_shared_building_slots = 2
+        }
+    }
+}
+
+country_event = {
+    id = change_france.14
+    title = change_france.14.t
+	desc = change_france.14.d
+
+    is_triggered_only = yes
+
+    #投降喵
+    option = {
+        name = change_france.14.a
+        ai_chance = {
+			factor = 100
+		}
+        FRA = { set_autonomy = { target = PER autonomy_state = autonomy_puppet } }
+        FRA = { set_autonomy = { target = IRQ autonomy_state = autonomy_puppet } }
+        FRA = { set_autonomy = { target = SAU autonomy_state = autonomy_puppet } }
+        every_state = {
+            limit = {
+                is_core_of = PER
+                oil > 1
+            }
+            give_resource_rights = {
+				receiver = FRA
+				state = PREV
+			}
+        }
+        every_state = {
+            limit = {
+                is_core_of = IRQ
+                oil > 1
+            }
+            give_resource_rights = {
+				receiver = FRA
+				state = PREV
+			}
+        }
+        every_state = {
+            limit = {
+                is_core_of = SAU
+                oil > 1
+            }
+            give_resource_rights = {
+				receiver = FRA
+				state = PREV
+			}
+        }
+        news_event = { id = change_news.27 days = 1 }
+    }
+}
+
+country_event = { #强行宣战
+    id = change_france.15
+    title = change_france.15.t
+	desc = change_france.15.d
+
+    is_triggered_only = yes
+
+    option = {
+        name = change_france.15.a
+        ai_chance = {
+			factor = 100
+		}
+        add_timed_idea = {
+            idea = HUN_unprepared
+		    days = 60
+        }
+        hidden_effect = {
+            country_event = { id = change_france.16 days = 60 }
+        }
+    }
+}
+
+country_event = {
+    id = change_france.16
+    title = change_france.16.t
+	desc = change_france.16.d
+
+    is_triggered_only = yes
+
+    option = {
+        name = change_france.16.a
+        ai_chance = {
+			factor = 100
+		}
+        if = {
+            limit = {
+                has_idea = GER_unprepare_war
+            }
+            remove_ideas = GER_unprepare_war
+            add_ideas = GER_prepare_war_1
+        }
+        if = {
+            limit = {
+                has_idea = GER_prepare_war_1
+            }
+            remove_ideas = GER_prepare_war_1
+            add_ideas = GER_prepare_war_2
+        }
+        if = {
+            limit = {
+                has_idea = GER_prepare_war_2
+            }
+            remove_ideas = GER_prepare_war_2
+            add_ideas = GER_prepare_war_3
+        }
+    }
+}
+
+country_event = { #秘密会议（将要宣战）（同盟方）
+    id = change_france.17
+    title = change_france.17.t
+	desc = change_france.17.d
+    picture = GFX_report_event_carol_party
+
+    is_triggered_only = yes
+
+    option = {
+        name = change_france.17.a
+        ai_chance = {
+			factor = 100
+		}
+        add_war_support = 0.1
+        add_political_power = 100
+    }
+}
+
+country_event = { #工厂加大建设
+    id = change_france.18
+    title = change_france.18.t
+	desc = change_france.18.d
+    picture = GFX_report_event_DEN_sabotage
+
+    is_triggered_only = yes
+
+    option = {
+        name = change_france.18.a
+        ai_chance = {
+			factor = 100
+		}
+        add_war_support = 0.1
+        add_tech_bonus = {
+			name = GER_industrial_expansion
+			ahead_reduction = 2
+			uses = 1
+			category = industry
+		}
+        random_controlled_state = {
+            limit = {
+                is_core_of = PREV
+            }
+            add_extra_state_shared_building_slots = 3
+		    add_building_construction = {
+			    type = arms_factory
+			    level = 3
+			    instant_build = yes
+		    }
+        }
+        random_controlled_state = {
+            limit = {
+                is_core_of = PREV
+            }
+            add_extra_state_shared_building_slots = 3
+		    add_building_construction = {
+			    type = arms_factory
+			    level = 3
+			    instant_build = yes
+		    }
+        }
+        random_controlled_state = {
+            limit = {
+                is_core_of = PREV
+            }
+            add_extra_state_shared_building_slots = 3
+		    add_building_construction = {
+			    type = arms_factory
+			    level = 3
+			    instant_build = yes
+		    }
+        }
+    }
+}
+
+country_event = { #联合演习
+    id = change_france.19
+    title = change_france.19.t
+	desc = change_france.19.d
+    picture = GFX_report_event_DEN_fascist_troops
+
+    is_triggered_only = yes
+
+    option = {
+        name = change_france.19.a
+        ai_chance = {
+			factor = 100
+		}
+        add_war_support = 0.1
+        add_political_power = 100
+        army_experience = 75
+        navy_experience = 75
+        air_experience = 75
+        add_tech_bonus = {
+			ahead_reduction = 2
+			uses = 1
+			category = artillery
+        }
+        add_tech_bonus = {
+			ahead_reduction = 2
+			uses = 1
+			category = cat_armored_cars
+        }
+        add_tech_bonus = {
+			ahead_reduction = 2
+			uses = 1
+			category = light_air
+        }
+    }
+}
+
+
+country_event = { #动员演讲
+    id = change_france.20
+    title = change_france.20.t
+	desc = change_france.20.d
+    picture = GFX_report_event_american_hunger_march
+
+    is_triggered_only = yes
+
+    option = {
+        name = change_france.20.a
+        ai_chance = {
+			factor = 100
+		}
+        add_war_support = 0.1
+        add_stability = 0.2
+        add_political_power = 100
+        add_command_power = 50
+        army_experience = 50
+    }
+}
+
+country_event = { #同盟国空军入侵协约国领空
+    id = change_france.21
+    title = change_france.21.t
+	desc = change_france.21.d
+    picture = GFX_report_event_GER_bombers
+
+    is_triggered_only = yes
+
+    option = {
+        name = change_france.21.a
+        ai_chance = {
+			factor = 100
+		}
+        add_war_support = 0.05
+        if = {
+            limit = {
+                is_major = yes
+            }
+            add_named_threat = { threat = 5 name = change_france.21.t }
+        }
+    }
+}
+
+country_event = { #同盟国海军大规模出港
+    id = change_france.22
+    title = change_france.22.t
+	desc = change_france.22.d
+    picture = GFX_report_event_usa_heavy_cruiser
+
+    is_triggered_only = yes
+
+    option = {
+        name = change_france.22.a
+        ai_chance = {
+			factor = 100
+		}
+        add_war_support = 0.05
+        if = {
+            limit = {
+                is_major = yes
+            }
+            add_named_threat = { threat = 5 name = change_france.23.t }
+        }
+    }
+}
+
+country_event = { #同盟国军队于边境集结
+    id = change_france.23
+    title = change_france.23.t
+	desc = change_france.23.d
+    picture = GFX_report_event_saf_soldiers_2
+
+    is_triggered_only = yes
+
+    option = {
+        name = change_france.23.a
+        ai_chance = {
+			factor = 100
+		}
+        add_war_support = 0.05
+        if = {
+            limit = {
+                is_major = yes
+            }
+            add_named_threat = { threat = 5 name = change_france.23.t }
+        }
+    }
+}
+
+country_event = { #法国军队边境摩擦
+    id = change_france.24
+    title = change_france.24.t
+	desc = change_france.24.d
+    picture = GFX_report_event_bul_ff_troops_yugoslavia
+
+    is_triggered_only = yes
+
+    option = {
+        name = change_france.24.a
+        ai_chance = {
+			factor = 100
+		}
+        add_war_support = 0.05
+        if = {
+            limit = {
+                tag = FRA
+            }
+            add_named_threat = { threat = 5 name = change_france.24.t }
+        }
+    }
+}
+
+country_event = { #开片！！！
+    id = change_france.25
+    title = change_france.25.t
+	desc = change_france.25.d
+    picture = GFX_report_event_COG_force_publique_capturing_area
+
+    is_triggered_only = yes
+
+    option = {
+        name = change_france.25.a
+        ai_chance = {
+			factor = 100
+		}
+        set_global_flag = the_world_war_tow_flag
+        if = {
+			limit = {
+				not = { has_war_with = ENG }
+			}
+			declare_war_on = {
+				type = annex_everything
+				target = ENG
+			}
+            declare_war_on = {
+				type = annex_everything
+				target = USA
+			}
+            declare_war_on = {
+				type = annex_everything
+				target = SOV
+			}
+		}
+        hidden_effect = {
+            every_country = {
+                limit = {
+                    is_in_faction_with = GER
+                }
+                country_event = { id = change_france.26 hours = 6 }
+            }
+            every_country = {
+                limit = {
+                    is_in_faction_with = ENG
+                }
+                country_event = { id = change_france.27 hours = 6 }
+            }
+            news_event = { id = change_news.6 days = 3 }
+        }
+    }
+}
+
+country_event = { #法国军队跨越边境！！！（同盟国）
+    id = change_france.26
+    title = change_france.26.t
+	desc = change_france.26.d
+    picture = GFX_report_event_hungarian_soldiers
+
+    is_triggered_only = yes
+
+    option = {
+        name = change_france.26.a
+        ai_chance = {
+			factor = 100
+		}
+        add_war_support = 0.2
+        if = {
+            limit = {
+                tag = GER
+            }
+            declare_war_on = {
+				type = annex_everything
+				target = ENG
+			}
+            declare_war_on = {
+				type = annex_everything
+				target = SOV
+			}
+            declare_war_on = {
+				type = annex_everything
+				target = USA
+			}
+        }
+        add_timed_idea = {
+			idea = mod_the_buff_8
+			days = 180
+		}
+    }
+}
+
+country_event = { #法国军队跨越边境！！！（协约国）
+    id = change_france.27
+    title = change_france.27.t
+	desc = change_france.27.d
+    picture = GFX_report_event_hungarian_soldiers
+
+    is_triggered_only = yes
+
+    option = {
+        name = change_france.27.a
+        ai_chance = {
+			factor = 100
+		}
+        add_war_support = 0.2
+        add_timed_idea = {
+			idea = HUN_unprepared
+			days = 60
+		}
+    }
+}

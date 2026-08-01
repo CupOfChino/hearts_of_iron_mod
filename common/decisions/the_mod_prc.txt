@@ -1,0 +1,4489 @@
+PRC_ai_categories = {
+
+    PRC_ai_base_equipment_add_1936 = {  #火星步兵师
+        allowed = {
+			original_tag = PRC
+		}
+		available = {
+			date < 1938.1.1
+		}
+
+		visible = {
+			
+		}
+
+		fire_only_once = no
+
+		cost = 0
+		days_remove = 60
+
+		modifier = {
+			
+		}
+
+		ai_will_do = {
+			factor = 1000
+		}
+		
+		remove_effect = {
+			add_manpower = 5000
+
+            army_experience = 20
+			navy_experience = 20
+			air_experience = 20
+
+            add_equipment_to_stockpile = {
+				type = infantry_equipment
+				amount = 5000
+			}
+			add_equipment_to_stockpile = { 
+				type = train_equipment 
+				amount = 50
+			}
+			add_equipment_to_stockpile = {
+				type = artillery_equipment
+				amount = 1000
+			}
+			add_equipment_to_stockpile = {
+				type = anti_tank_equipment
+				amount = 1000
+			}
+            add_equipment_to_stockpile = {
+				type = support_equipment
+				amount = 1500
+			}
+			add_equipment_to_stockpile = { 
+				type = anti_air_equipment 
+				amount = 500
+			}
+
+				random_owned_controlled_state = {
+					limit = { ROOT = { has_full_control_of_state = PREV } }
+					prioritize = { 64 }
+					create_unit = {
+						division = "name = \"步兵师I\" division_template = \"步兵师I\" start_experience_factor = 0.5" 
+						owner = PRC
+						count = 6
+					}
+				}
+
+
+		}
+    }
+
+    PRC_ai_base_template_add_1= {  #火星步兵师模板
+
+		allowed = {
+			original_tag = PRC
+		}
+		available = {
+			date < 1938.1.1
+		}
+
+		visible = {
+
+		}
+
+		fire_only_once = yes
+
+		cost = 0
+		days_remove = 30
+
+		modifier = {
+			
+		}
+
+		ai_will_do = {
+			factor = 1000
+		}
+		
+		remove_effect = {
+			add_manpower = 5000
+
+            army_experience = 20
+			navy_experience = 20
+			air_experience = 20
+
+            add_equipment_to_stockpile = {
+				type = infantry_equipment
+				amount = 5000
+			}
+			add_equipment_to_stockpile = { 
+				type = train_equipment 
+				amount = 50
+			}
+			add_equipment_to_stockpile = {
+				type = artillery_equipment
+				amount = 500
+			}
+			add_equipment_to_stockpile = {
+				type = anti_tank_equipment
+				amount = 1000
+			}
+            add_equipment_to_stockpile = {
+				type = support_equipment
+				amount = 1500
+			}
+			add_equipment_to_stockpile = { 
+				type = anti_air_equipment 
+				amount = 500
+			}
+
+            division_template = {
+					name = "步兵师I"
+					regiments = {
+						infantry = { x = 0 y = 0 }
+						infantry = { x = 0 y = 1 }
+						infantry = { x = 0 y = 2 }
+						infantry = { x = 1 y = 0 }
+						infantry = { x = 1 y = 1 }
+						infantry = { x = 1 y = 2 }
+						infantry = { x = 2 y = 0 }
+						infantry = { x = 2 y = 1 }
+						infantry = { x = 2 y = 2 }
+						artillery_brigade = { x = 3 y = 0 }
+						artillery_brigade = { x = 3 y = 1 }
+                        artillery_brigade = { x = 3 y = 2 }
+                        artillery_brigade = { x = 3 y = 3 }
+					}
+					support = {
+						engineer = { x = 0 y = 0 }
+						recon = { x = 0 y = 1 }
+                        artillery =  { x = 0 y = 4 }
+					}
+					regimental_support = {
+					field_guns = { x = 0 y = 0 }
+					field_guns = { x = 1 y = 0 }
+					medium_tank_destroyer_support = { x = 2 y = 0 }
+					medium_tank_destroyer_support = { x = 3 y = 0 }
+					medium_sp_anti_air_support = { x = 4 y = 0 }
+				}
+				}
+
+		}
+    }
+
+    PRC_ai_tank_equipment_add_1936 =  {  #火星装甲师
+        allowed = {
+			original_tag = PRC
+		}
+		available = {
+			date < 1938.1.1
+		}
+
+		visible = {
+		}
+
+		fire_only_once = no
+
+		cost = 0
+		days_remove = 90
+
+		modifier = {
+			
+		}
+
+		ai_will_do = {
+			factor = 1000
+		}
+
+        remove_effect = {
+            add_manpower = 5000
+            army_experience = 15
+			if = {
+				limit = {
+					NOT = {
+						has_tech = medium_tank_chassis_1
+					}
+				}
+				set_technology = medium_tank_chassis_1
+			}
+			if = {
+				limit = {
+					NOT = {
+						has_tech = artillery2
+					}
+				}
+				set_technology = artillery2
+			}
+            if = {
+				limit = {
+					has_tech = advanced_medium_tank_chassis
+				}
+				add_equipment_to_stockpile = { 
+					type = medium_tank_chassis_3 
+					amount = 250
+				}
+			}
+			else_if = {
+				limit = {
+					has_tech = improved_medium_tank_chassis
+				}
+				add_equipment_to_stockpile = { 
+					type = medium_tank_chassis_2 
+					amount = 250
+				}
+			}
+			else = {
+				add_equipment_to_stockpile = { 
+					type = medium_tank_chassis_1 
+					amount = 250
+				}
+			}
+
+            if = {
+				limit = {
+					has_tech = advanced_medium_tank_chassis
+				}
+				add_equipment_to_stockpile = { 
+					type = light_tank_chassis_3 
+					amount = 500
+				}
+			}
+			else_if = {
+				limit = {
+					has_tech = improved_medium_tank_chassis
+				}
+				add_equipment_to_stockpile = { 
+					type = light_tank_chassis_2 
+					amount = 500
+				}
+			}
+			else = {
+				add_equipment_to_stockpile = { 
+					type = light_tank_chassis_1 
+					amount = 500
+				}
+			}
+				random_owned_controlled_state = {
+					limit = { ROOT = { has_full_control_of_state = PREV } }
+					prioritize = { 64 }
+					create_unit = {
+						division = "name = \"中国装甲师I\" division_template = \"中国装甲师I\" start_experience_factor = 0.5" 
+						owner = PRC
+						count = 4
+					}
+                    
+				}
+
+        }
+    }
+
+	PRC_ai_tank_base_template_add_1 =  {  #火星装甲师模板
+        allowed = {
+			original_tag = PRC
+		}
+		available = {
+			date < 1938.1.1
+		}
+
+		visible = {
+			
+		}
+
+		fire_only_once = yes
+
+		cost = 0
+		days_remove = 30
+
+		modifier = {
+			
+		}
+
+		ai_will_do = {
+			factor = 1000
+		}
+
+        remove_effect = {
+            add_manpower = 5000
+            army_experience = 15
+			if = {
+				limit = {
+					NOT = {
+						has_tech = medium_tank_chassis_1
+					}
+				}
+				set_technology = medium_tank_chassis_1
+			}
+			if = {
+				limit = {
+					NOT = {
+						has_tech = artillery2
+					}
+				}
+				set_technology = artillery2
+			}
+            if = {
+				limit = {
+					has_tech = advanced_medium_tank_chassis
+				}
+				add_equipment_to_stockpile = { 
+					type = medium_tank_chassis_3 
+					amount = 250
+				}
+			}
+			else_if = {
+				limit = {
+					has_tech = improved_medium_tank_chassis
+				}
+				add_equipment_to_stockpile = { 
+					type = medium_tank_chassis_2 
+					amount = 250
+				}
+			}
+			else = {
+				add_equipment_to_stockpile = { 
+					type = medium_tank_chassis_1 
+					amount = 250
+				}
+			}
+
+            if = {
+				limit = {
+					has_tech = advanced_medium_tank_chassis
+				}
+				add_equipment_to_stockpile = { 
+					type = light_tank_chassis_3 
+					amount = 500
+				}
+			}
+			else_if = {
+				limit = {
+					has_tech = improved_medium_tank_chassis
+				}
+				add_equipment_to_stockpile = { 
+					type = light_tank_chassis_2 
+					amount = 500
+				}
+			}
+			else = {
+				add_equipment_to_stockpile = { 
+					type = light_tank_chassis_1 
+					amount = 500
+				}
+			}
+            division_template = {
+					name = "中国装甲师I"
+					regiments = {
+						infantry = { x = 0 y = 0 }
+						infantry = { x = 0 y = 1 }
+						infantry = { x = 0 y = 2 }
+						infantry = { x = 1 y = 0 }
+						infantry = { x = 1 y = 1 }
+						infantry = { x = 1 y = 2 }
+						infantry = { x = 2 y = 0 }
+						infantry = { x = 2 y = 1 }
+						infantry = { x = 2 y = 2 }
+						artillery_brigade = { x = 3 y = 0 }
+						artillery_brigade = { x = 3 y = 1 }
+                        anti_air_brigade = { x = 3 y = 2 }
+                        anti_tank_brigade = { x = 3 y = 3 }
+                        medium_armor = { x = 4 y = 0 }
+                        medium_armor = { x = 4 y = 1 }
+					}
+					regimental_support = {
+					field_guns = { x = 0 y = 0 }
+					field_guns = { x = 1 y = 0 }
+					medium_tank_destroyer_support = { x = 2 y = 0 }
+					medium_tank_destroyer_support = { x = 3 y = 0 }
+					medium_sp_anti_air_support = { x = 4 y = 0 }
+				}
+					support = {
+						engineer = { x = 0 y = 0 }
+						recon = { x = 0 y = 1 }
+                        artillery =  { x = 0 y = 4 }
+					}
+				}
+
+        }
+    }
+
+    PRC_ai_base_equipment_add_1937 =  {  #步兵师1937
+        allowed = {
+			original_tag = PRC
+		}
+		available = {
+			date > 1937.1.1
+            AND = {
+                date < 1938.1.1
+            }
+		}
+
+		visible = {
+			
+		}
+
+		fire_only_once = no
+
+		cost = 0
+		days_remove = 75
+
+		modifier = {
+			
+		}
+
+		ai_will_do = {
+			factor = 1000
+		}
+
+        remove_effect = {
+            add_manpower = 5000
+
+            army_experience = 20
+			navy_experience = 20
+			air_experience = 20
+
+            add_equipment_to_stockpile = {
+				type = infantry_equipment
+				amount = 8000
+			}
+			add_equipment_to_stockpile = { 
+				type = train_equipment 
+				amount = 50
+			}
+			add_equipment_to_stockpile = {
+				type = artillery_equipment
+				amount = 600
+			}
+			add_equipment_to_stockpile = {
+				type = anti_tank_equipment
+				amount = 1000
+			}
+            add_equipment_to_stockpile = {
+				type = support_equipment
+				amount = 1500
+			}
+			add_equipment_to_stockpile = { 
+				type = anti_air_equipment 
+				amount = 500
+			}
+
+				random_owned_controlled_state = {
+					limit = { ROOT = { has_full_control_of_state = PREV } }
+					prioritize = { 64 }
+					create_unit = {
+						division = "name = \"中国步兵师II\" division_template = \"中国步兵师II\" start_experience_factor = 0.5" 
+						owner = PRC
+						count = 4
+					}
+				}
+        }
+
+    }
+
+	PRC_ai_base_template_add_2 =  {  #步兵师1937模板
+        allowed = {
+			original_tag = PRC
+		}
+		available = {
+			date > 1937.1.1
+            AND = {
+                date < 1938.1.1
+            }
+		}
+
+		visible = {
+			
+		}
+
+		fire_only_once = yes
+
+		cost = 0
+		days_remove = 30
+
+		modifier = {
+			
+		}
+
+		ai_will_do = {
+			factor = 1000
+		}
+
+        remove_effect = {
+            add_manpower = 5000
+
+            army_experience = 20
+			navy_experience = 20
+			air_experience = 20
+
+            add_equipment_to_stockpile = {
+				type = infantry_equipment
+				amount = 8000
+			}
+			add_equipment_to_stockpile = { 
+				type = train_equipment 
+				amount = 50
+			}
+			add_equipment_to_stockpile = {
+				type = artillery_equipment
+				amount = 600
+			}
+			add_equipment_to_stockpile = {
+				type = anti_tank_equipment
+				amount = 500
+			}
+            add_equipment_to_stockpile = {
+				type = support_equipment
+				amount = 1500
+			}
+			add_equipment_to_stockpile = { 
+				type = anti_air_equipment 
+				amount = 500
+			}
+
+            division_template = {
+					name = "中国步兵师II"
+					regiments = {
+						infantry = { x = 0 y = 0 }
+						infantry = { x = 0 y = 1 }
+						infantry = { x = 0 y = 2 }
+                        infantry = { x = 0 y = 3 }
+						infantry = { x = 1 y = 0 }
+						infantry = { x = 1 y = 1 }
+						infantry = { x = 1 y = 2 }
+                        infantry = { x = 1 y = 3 }
+						infantry = { x = 2 y = 0 }
+						infantry = { x = 2 y = 1 }
+						infantry = { x = 2 y = 2 }
+                        infantry = { x = 2 y = 3 }
+						artillery_brigade = { x = 3 y = 0 }
+						artillery_brigade = { x = 3 y = 1 }
+                        artillery_brigade = { x = 3 y = 2 }
+                        anti_air_brigade = { x = 4 y = 0 }
+                        anti_tank_brigade = { x = 4 y = 1 }
+					}
+					support = {
+						engineer = { x = 0 y = 0 }
+						recon = { x = 0 y = 1 }
+                        field_hospital =  { x = 0 y = 2 }
+                        logistics_company = { x = 0 y = 3 }
+                        artillery =  { x = 0 y = 4 }
+					}
+				}
+        }
+
+    }
+
+    PRC_ai_tank_equipment_add_1937 =  {  #装甲师1937
+        allowed = {
+			original_tag = PRC
+		}
+		available = {
+			date > 1937.1.1
+            AND = {
+                date < 1938.6.1
+            }
+		}
+
+		visible = {
+			
+		}
+
+		fire_only_once = no
+
+		cost = 0
+		days_remove = 75
+
+		modifier = {
+			
+		}
+
+		ai_will_do = {
+			factor = 1000
+		}
+
+        remove_effect = {
+            add_manpower = 5000
+
+            army_experience = 20
+			navy_experience = 20
+			air_experience = 20
+
+            add_equipment_to_stockpile = {
+				type = infantry_equipment
+				amount = 8000
+			}
+			add_equipment_to_stockpile = { 
+				type = motorized_equipment
+				amount = 800
+			}
+			add_equipment_to_stockpile = {
+				type = artillery_equipment
+				amount = 600
+			}
+            add_equipment_to_stockpile = {
+				type = support_equipment
+				amount = 1500
+			}
+
+            if = {
+				limit = {
+					has_tech = advanced_medium_tank_chassis
+				}
+				add_equipment_to_stockpile = { 
+					type = medium_tank_chassis_3 
+					amount = 250
+				}
+			}
+			else_if = {
+				limit = {
+					has_tech = improved_medium_tank_chassis
+				}
+				add_equipment_to_stockpile = { 
+					type = medium_tank_chassis_2 
+					amount = 250
+				}
+			}
+			else = {
+				add_equipment_to_stockpile = { 
+					type = medium_tank_chassis_1 
+					amount = 250
+				}
+			}
+
+            if = {
+				limit = {
+					has_tech = advanced_medium_tank_chassis
+				}
+				add_equipment_to_stockpile = { 
+					type = light_tank_chassis_3 
+					amount = 500
+				}
+			}
+			else_if = {
+				limit = {
+					has_tech = improved_medium_tank_chassis
+				}
+				add_equipment_to_stockpile = { 
+					type = light_tank_chassis_2 
+					amount = 500
+				}
+			}
+			else = {
+				add_equipment_to_stockpile = { 
+					type = light_tank_chassis_1 
+					amount = 500
+				}
+			}
+				random_owned_controlled_state = {
+					limit = { ROOT = { has_full_control_of_state = PREV } }
+					prioritize = { 64 }
+					create_unit = {
+						division = "name = \"中国装甲师II\" division_template = \"中国装甲师II\" start_experience_factor = 0.5" 
+						owner = PRC
+						count = 2
+					}
+				}
+
+        }
+    }
+
+
+	PRC_ai_tank_base_template_add_2 =  {  #装甲师1937模板
+        allowed = {
+			original_tag = PRC
+		}
+		available = {
+			date > 1937.1.1
+            AND = {
+                date < 1938.1.1
+            }
+		}
+
+		visible = {
+			
+		}
+
+		fire_only_once = yes
+
+		cost = 0
+		days_remove = 30
+
+		modifier = {
+			
+		}
+
+		ai_will_do = {
+			factor = 1000
+		}
+
+        remove_effect = {
+            add_manpower = 5000
+
+            army_experience = 20
+			navy_experience = 20
+			air_experience = 20
+
+            add_equipment_to_stockpile = {
+				type = infantry_equipment
+				amount = 8000
+			}
+			add_equipment_to_stockpile = { 
+				type = motorized_equipment
+				amount = 800
+			}
+			add_equipment_to_stockpile = {
+				type = artillery_equipment
+				amount = 600
+			}
+            add_equipment_to_stockpile = {
+				type = support_equipment
+				amount = 1500
+			}
+
+            if = {
+				limit = {
+					has_tech = advanced_medium_tank_chassis
+				}
+				add_equipment_to_stockpile = { 
+					type = medium_tank_chassis_3 
+					amount = 250
+				}
+			}
+			else_if = {
+				limit = {
+					has_tech = improved_medium_tank_chassis
+				}
+				add_equipment_to_stockpile = { 
+					type = medium_tank_chassis_2 
+					amount = 250
+				}
+			}
+			else = {
+				add_equipment_to_stockpile = { 
+					type = medium_tank_chassis_1 
+					amount = 250
+				}
+			}
+
+            if = {
+				limit = {
+					has_tech = advanced_medium_tank_chassis
+				}
+				add_equipment_to_stockpile = { 
+					type = light_tank_chassis_3 
+					amount = 500
+				}
+			}
+			else_if = {
+				limit = {
+					has_tech = improved_medium_tank_chassis
+				}
+				add_equipment_to_stockpile = { 
+					type = light_tank_chassis_2 
+					amount = 500
+				}
+			}
+			else = {
+				add_equipment_to_stockpile = { 
+					type = light_tank_chassis_1 
+					amount = 500
+				}
+			}
+
+            division_template = {
+					name = "中国装甲师II"
+					regiments = {
+						motorized = { x = 0 y = 0 }
+						motorized = { x = 0 y = 1 }
+						motorized = { x = 0 y = 2 }
+                        motorized = { x = 0 y = 3 }
+						motorized = { x = 1 y = 0 }
+						motorized = { x = 1 y = 1 }
+						motorized = { x = 1 y = 2 }
+                        motorized = { x = 1 y = 3 }
+						motorized = { x = 2 y = 0 }
+						motorized = { x = 2 y = 1 }
+						motorized = { x = 2 y = 2 }
+						medium_armor = { x = 3 y = 0 }
+						medium_armor = { x = 3 y = 1 }
+                        medium_armor = { x = 3 y = 2 }
+                        medium_armor = { x = 3 y = 3 }
+                        mot_anti_air_brigade = { x = 4 y = 0 }
+                        mot_anti_tank_brigade = { x = 4 y = 1 }
+                        mot_artillery_brigade = { x = 4 y = 2 }
+					}
+					support = {
+						engineer = { x = 0 y = 0 }
+						recon = { x = 0 y = 1 }
+                        field_hospital =  { x = 0 y = 2 }
+                        logistics_company = { x = 0 y = 3 }
+                        artillery =  { x = 0 y = 4 }
+					}
+				}
+
+
+        }
+    }
+
+    PRC_ai_base_equipment_add_1938 =  {  #步兵师1938
+        allowed = {
+			original_tag = PRC
+		}
+		available = {
+			date > 1938.1.1
+            AND = {
+                date < 1939.1.1
+            }
+		}
+
+		visible = {
+			
+		}
+
+		fire_only_once = no
+
+		cost = 0
+		days_remove = 90
+
+		modifier = {
+			
+		}
+
+		ai_will_do = {
+			factor = 1000
+		}
+
+        remove_effect = {
+            add_manpower = 10000
+
+            army_experience = 25
+			navy_experience = 25
+			air_experience = 25
+
+            add_equipment_to_stockpile = {
+				type = infantry_equipment
+				amount = 10000
+			}
+			add_equipment_to_stockpile = { 
+				type = train_equipment 
+				amount = 50
+			}
+			add_equipment_to_stockpile = {
+				type = artillery_equipment
+				amount = 1000
+			}
+			add_equipment_to_stockpile = {
+				type = anti_tank_equipment
+				amount = 500
+			}
+            add_equipment_to_stockpile = {
+				type = support_equipment
+				amount = 2000
+			}
+			add_equipment_to_stockpile = { 
+				type = anti_air_equipment 
+				amount = 500
+			}
+				random_owned_controlled_state = {
+					limit = { ROOT = { has_full_control_of_state = PREV } }
+					prioritize = { 64 }
+					create_unit = {
+						division = "name = \"中国步兵师III\" division_template = \"中国步兵师III\" start_experience_factor = 0.5" 
+						owner = PRC
+						count = 6
+					}
+				}
+
+        }
+    }
+
+	PRC_ai_base_template_add_3 =  {  #步兵师1938模板
+        allowed = {
+			original_tag = PRC
+		}
+		available = {
+			date > 1938.1.1
+            AND = {
+                date < 1939.1.1
+            }
+		}
+
+		visible = {
+			
+		}
+
+		fire_only_once = yes
+
+		cost = 0
+		days_remove = 30
+
+		modifier = {
+			
+		}
+
+		ai_will_do = {
+			factor = 1000
+		}
+
+        remove_effect = {
+            add_manpower = 10000
+
+            army_experience = 25
+			navy_experience = 25
+			air_experience = 25
+
+            add_equipment_to_stockpile = {
+				type = infantry_equipment
+				amount = 10000
+			}
+			add_equipment_to_stockpile = { 
+				type = train_equipment 
+				amount = 50
+			}
+			add_equipment_to_stockpile = {
+				type = artillery_equipment
+				amount = 1000
+			}
+			add_equipment_to_stockpile = {
+				type = anti_tank_equipment
+				amount = 500
+			}
+            add_equipment_to_stockpile = {
+				type = support_equipment
+				amount = 2000
+			}
+			add_equipment_to_stockpile = { 
+				type = anti_air_equipment 
+				amount = 500
+			}
+
+            division_template = {
+					name = "中国步兵师III"
+					regiments = {
+						infantry = { x = 0 y = 0 }
+						infantry = { x = 0 y = 1 }
+						infantry = { x = 0 y = 2 }
+                        infantry = { x = 0 y = 3 }
+                        infantry = { x = 0 y = 4 }
+						infantry = { x = 1 y = 0 }
+						infantry = { x = 1 y = 1 }
+						infantry = { x = 1 y = 2 }
+                        infantry = { x = 1 y = 3 }
+                        infantry = { x = 1 y = 4 }
+						infantry = { x = 2 y = 0 }
+						infantry = { x = 2 y = 1 }
+						artillery_brigade = { x = 3 y = 0 }
+						artillery_brigade = { x = 3 y = 1 }
+                        artillery_brigade = { x = 3 y = 2 }
+                        anti_air_brigade = { x = 4 y = 0 }
+                        anti_tank_brigade = { x = 4 y = 1 }
+					}
+					support = {
+						engineer = { x = 0 y = 0 }
+						recon = { x = 0 y = 1 }
+                        field_hospital =  { x = 0 y = 2 }
+                        logistics_company = { x = 0 y = 3 }
+                        artillery =  { x = 0 y = 4 }
+					}
+				}
+
+        }
+    }
+
+    PRC_ai_tank_equipment_add_1938 =  {  #装甲师1938
+        allowed = {
+			original_tag = PRC
+		}
+		available = {
+			date > 1938.6.1
+            AND = {
+                date < 1941.1.1
+            }
+		}
+
+		visible = {
+			
+		}
+
+		fire_only_once = no
+
+		cost = 0
+		days_remove = 90
+
+		modifier = {
+			
+		}
+
+		ai_will_do = {
+			factor = 1000
+		}
+
+        remove_effect = {
+            add_manpower = 10000
+
+            army_experience = 30
+			navy_experience = 30
+			air_experience = 30
+
+            add_equipment_to_stockpile = {
+				type = infantry_equipment
+				amount = 10000
+			}
+			add_equipment_to_stockpile = { 
+				type = motorized_equipment
+				amount = 1200
+			}
+			add_equipment_to_stockpile = {
+				type = artillery_equipment
+				amount = 600
+			}
+            add_equipment_to_stockpile = {
+				type = support_equipment
+				amount = 2000
+			}
+
+            if = {
+				limit = {
+					has_tech = advanced_medium_tank_chassis
+				}
+				add_equipment_to_stockpile = { 
+					type = medium_tank_chassis_3 
+					amount = 800
+				}
+			}
+			else_if = {
+				limit = {
+					has_tech = improved_medium_tank_chassis
+				}
+				add_equipment_to_stockpile = { 
+					type = medium_tank_chassis_2 
+					amount = 800
+				}
+			}
+			else = {
+				add_equipment_to_stockpile = { 
+					type = medium_tank_chassis_1 
+					amount = 800
+				}
+			}
+
+            if = {
+				limit = {
+					has_tech = advanced_medium_tank_chassis
+				}
+				add_equipment_to_stockpile = { 
+					type = light_tank_chassis_3 
+					amount = 800
+				}
+			}
+			else_if = {
+				limit = {
+					has_tech = improved_medium_tank_chassis
+				}
+				add_equipment_to_stockpile = { 
+					type = light_tank_chassis_2 
+					amount = 800
+				}
+			}
+			else = {
+				add_equipment_to_stockpile = { 
+					type = light_tank_chassis_1 
+					amount = 800
+				}
+			}
+				random_owned_controlled_state = {
+					limit = { ROOT = { has_full_control_of_state = PREV } }
+					prioritize = { 64 }
+					create_unit = {
+						division = "name = \"中国装甲师III\" division_template = \"中国装甲师III\" start_experience_factor = 0.5" 
+						owner = PRC
+						count = 3
+					}
+				}
+            }
+
+        }
+
+
+		PRC_ai_tank_base_template_add_3 =  {  #装甲师1938模板
+        allowed = {
+			original_tag = PRC
+		}
+		available = {
+			date > 1938.6.1
+            AND = {
+                date < 1940.1.1
+            }
+		}
+
+		visible = {
+			
+		}
+
+		fire_only_once = yes
+
+		cost = 0
+		days_remove = 30
+
+		modifier = {
+			
+		}
+
+		ai_will_do = {
+			factor = 1000
+		}
+
+        remove_effect = {
+            add_manpower = 10000
+
+            army_experience = 30
+			navy_experience = 30
+			air_experience = 30
+
+            add_equipment_to_stockpile = {
+				type = infantry_equipment
+				amount = 10000
+			}
+			add_equipment_to_stockpile = { 
+				type = motorized_equipment
+				amount = 1200
+			}
+			add_equipment_to_stockpile = {
+				type = artillery_equipment
+				amount = 600
+			}
+            add_equipment_to_stockpile = {
+				type = support_equipment
+				amount = 2000
+			}
+
+            if = {
+				limit = {
+					has_tech = advanced_medium_tank_chassis
+				}
+				add_equipment_to_stockpile = { 
+					type = medium_tank_chassis_3 
+					amount = 800
+				}
+			}
+			else_if = {
+				limit = {
+					has_tech = improved_medium_tank_chassis
+				}
+				add_equipment_to_stockpile = { 
+					type = medium_tank_chassis_2 
+					amount = 800
+				}
+			}
+			else = {
+				add_equipment_to_stockpile = { 
+					type = medium_tank_chassis_1 
+					amount = 800
+				}
+			}
+
+            if = {
+				limit = {
+					has_tech = advanced_medium_tank_chassis
+				}
+				add_equipment_to_stockpile = { 
+					type = light_tank_chassis_3 
+					amount = 800
+				}
+			}
+			else_if = {
+				limit = {
+					has_tech = improved_medium_tank_chassis
+				}
+				add_equipment_to_stockpile = { 
+					type = light_tank_chassis_2 
+					amount = 800
+				}
+			}
+			else = {
+				add_equipment_to_stockpile = { 
+					type = light_tank_chassis_1 
+					amount = 800
+				}
+			}
+
+            division_template = {
+					name = "中国装甲师III"
+					regiments = {
+						motorized = { x = 0 y = 0 }
+						motorized = { x = 0 y = 1 }
+						motorized = { x = 0 y = 2 }
+                        motorized = { x = 0 y = 3 }
+                        motorized = { x = 1 y = 0 }
+						motorized = { x = 1 y = 1 }
+						motorized = { x = 1 y = 2 }
+                        motorized = { x = 1 y = 3 }
+						medium_armor = { x = 2 y = 0 }
+						medium_armor = { x = 2 y = 1 }
+                        medium_armor = { x = 2 y = 2 }
+                        medium_armor = { x = 3 y = 0 }
+						medium_armor = { x = 3 y = 1 }
+                        medium_armor = { x = 3 y = 2 }
+                        mot_anti_air_brigade = { x = 4 y = 0 }
+                        mot_anti_tank_brigade = { x = 4 y = 1 }
+                        mot_artillery_brigade = { x = 4 y = 2 }
+                        mot_artillery_brigade = { x = 4 y = 3 }
+					}
+					support = {
+						engineer = { x = 0 y = 0 }
+						recon = { x = 0 y = 1 }
+                        field_hospital =  { x = 0 y = 2 }
+                        logistics_company = { x = 0 y = 3 }
+                        artillery =  { x = 0 y = 4 }
+					}
+				}
+
+            }
+
+        }
+
+        PRC_ai_base_equipment_add_1939 =  {  #步兵师1939
+        allowed = {
+			original_tag = PRC
+		}
+		available = {
+			date > 1940.1.1
+		}
+
+		visible = {
+			
+		}
+
+		fire_only_once = no
+
+		cost = 0
+		days_remove = 90
+
+		modifier = {
+			
+		}
+
+		ai_will_do = {
+			factor = 1000
+		}
+
+        remove_effect = {
+            add_manpower = 20000
+
+            army_experience = 30
+			navy_experience = 30
+			air_experience = 30
+
+            add_equipment_to_stockpile = {
+				type = infantry_equipment
+				amount = 20000
+			}
+			add_equipment_to_stockpile = { 
+				type = train_equipment 
+				amount = 100
+			}
+			add_equipment_to_stockpile = {
+				type = artillery_equipment
+				amount = 3000
+			}
+			add_equipment_to_stockpile = {
+				type = anti_tank_equipment
+				amount = 1000
+			}
+            add_equipment_to_stockpile = {
+				type = support_equipment
+				amount = 5000
+			}
+			add_equipment_to_stockpile = { 
+				type = anti_air_equipment 
+				amount = 1000
+			}
+
+				random_owned_controlled_state = {
+					limit = { ROOT = { has_full_control_of_state = PREV } }
+					prioritize = { 64 }
+					create_unit = {
+						division = "name = \"中国步兵师IV\" division_template = \"中国步兵师IV\" start_experience_factor = 0.5" 
+						owner = PRC
+						count = 6
+					}
+				}
+
+        }
+    }
+
+	PRC_ai_base_template_add_4 =  {  #步兵师1939模板
+        allowed = {
+			original_tag = PRC
+		}
+		available = {
+			date > 1940.1.1
+		}
+
+		visible = {
+			
+		}
+
+		fire_only_once = yes
+
+		cost = 0
+		days_remove = 30
+
+		modifier = {
+			
+		}
+
+		ai_will_do = {
+			factor = 1000
+		}
+
+        remove_effect = {
+            add_manpower = 20000
+
+            army_experience = 30
+			navy_experience = 30
+			air_experience = 30
+
+            add_equipment_to_stockpile = {
+				type = infantry_equipment
+				amount = 20000
+			}
+			add_equipment_to_stockpile = { 
+				type = train_equipment 
+				amount = 100
+			}
+			add_equipment_to_stockpile = {
+				type = artillery_equipment
+				amount = 3000
+			}
+			add_equipment_to_stockpile = {
+				type = anti_tank_equipment
+				amount = 1000
+			}
+            add_equipment_to_stockpile = {
+				type = support_equipment
+				amount = 5000
+			}
+			add_equipment_to_stockpile = { 
+				type = anti_air_equipment 
+				amount = 1000
+			}
+
+            division_template = {
+					name = "中国步兵师IV"
+					regiments = {
+						infantry = { x = 0 y = 0 }
+						infantry = { x = 0 y = 1 }
+						infantry = { x = 0 y = 2 }
+                        infantry = { x = 0 y = 3 }
+                        infantry = { x = 0 y = 4 }
+						infantry = { x = 1 y = 0 }
+						infantry = { x = 1 y = 1 }
+						infantry = { x = 1 y = 2 }
+                        infantry = { x = 1 y = 3 }
+                        infantry = { x = 1 y = 4 }
+						infantry = { x = 2 y = 0 }
+                        infantry = { x = 2 y = 1 }
+						artillery_brigade = { x = 3 y = 0 }
+						artillery_brigade = { x = 3 y = 1 }
+                        anti_air_brigade = { x = 3 y = 2 }
+                        anti_tank_brigade = { x = 3 y = 3 }
+                        medium_armor = { x = 4 y = 0 }
+                        medium_armor = { x = 4 y = 1 }
+					}
+					support = {
+						engineer = { x = 0 y = 0 }
+						recon = { x = 0 y = 1 }
+                        field_hospital =  { x = 0 y = 2 }
+                        logistics_company = { x = 0 y = 3 }
+                        artillery =  { x = 0 y = 4 }
+					}
+				}
+
+
+        }
+    }
+
+	PRC_ai_base_equipment_add_1940 =  {  #步兵师1940
+        allowed = {
+			original_tag = PRC
+		}
+		available = {
+			date > 1940.1.1
+		}
+
+		visible = {
+			
+		}
+
+		fire_only_once = no
+
+		cost = 0
+		days_remove = 90
+
+		modifier = {
+			
+		}
+
+		ai_will_do = {
+			factor = 1000
+		}
+
+        remove_effect = {
+            add_manpower = 20000
+
+            army_experience = 30
+			navy_experience = 30
+			air_experience = 30
+
+            add_equipment_to_stockpile = {
+				type = infantry_equipment
+				amount = 20000
+			}
+			add_equipment_to_stockpile = { 
+				type = train_equipment 
+				amount = 100
+			}
+			add_equipment_to_stockpile = {
+				type = artillery_equipment
+				amount = 3000
+			}
+			add_equipment_to_stockpile = {
+				type = anti_tank_equipment
+				amount = 1000
+			}
+            add_equipment_to_stockpile = {
+				type = support_equipment
+				amount = 5000
+			}
+			add_equipment_to_stockpile = { 
+				type = anti_air_equipment 
+				amount = 1000
+			}
+
+				random_owned_controlled_state = {
+					limit = { ROOT = { has_full_control_of_state = PREV } }
+					prioritize = { 64 }
+					create_unit = {
+						division = "name = \"中国山地步兵师IV\" division_template = \"中国山地步兵师IV\" start_experience_factor = 0.5" 
+						owner = PRC
+						count = 8
+					}
+				}
+
+        }
+    }
+
+	PRC_ai_base_template_add_5 =  {  #步兵师1940模板
+        allowed = {
+			original_tag = PRC
+		}
+		available = {
+			date > 1940.1.1
+		}
+
+		visible = {
+			
+		}
+
+		fire_only_once = yes
+
+		cost = 0
+		days_remove = 30
+
+		modifier = {
+			
+		}
+
+		ai_will_do = {
+			factor = 1000
+		}
+
+        remove_effect = {
+            add_manpower = 20000
+
+            army_experience = 30
+			navy_experience = 30
+			air_experience = 30
+
+            add_equipment_to_stockpile = {
+				type = infantry_equipment
+				amount = 20000
+			}
+			add_equipment_to_stockpile = { 
+				type = train_equipment 
+				amount = 100
+			}
+			add_equipment_to_stockpile = {
+				type = artillery_equipment
+				amount = 3000
+			}
+			add_equipment_to_stockpile = {
+				type = anti_tank_equipment
+				amount = 1000
+			}
+            add_equipment_to_stockpile = {
+				type = support_equipment
+				amount = 5000
+			}
+			add_equipment_to_stockpile = { 
+				type = anti_air_equipment 
+				amount = 1000
+			}
+
+            division_template = {
+					name = "中国山地步兵师"
+					regiments = {
+						mountaineers = { x = 0 y = 0 }
+						mountaineers = { x = 0 y = 1 }
+						mountaineers = { x = 0 y = 2 }
+                        mountaineers = { x = 0 y = 3 }
+						mountaineers = { x = 1 y = 0 }
+						mountaineers = { x = 1 y = 1 }
+						mountaineers = { x = 1 y = 2 }
+                        mountaineers = { x = 1 y = 3 }
+						artillery_brigade = { x = 2 y = 0 }
+                        anti_air_brigade = { x = 2 y = 1 }
+                        anti_tank_brigade = { x = 2 y = 2 }
+                        medium_armor = { x = 3 y = 0 }
+                        medium_armor = { x = 3 y = 1 }
+					}
+					support = {
+						engineer = { x = 0 y = 0 }
+						recon = { x = 0 y = 1 }
+                        field_hospital =  { x = 0 y = 2 }
+                        logistics_company = { x = 0 y = 3 }
+                        artillery =  { x = 0 y = 4 }
+					}
+				}
+
+        }
+    }
+
+    PRC_ai_tank_equipment_add_1938 =  {  #装甲师1939
+        allowed = {
+			original_tag = PRC
+		}
+		available = {
+			date > 1941.1.1
+		}
+
+		visible = {
+
+		}
+
+		fire_only_once = no
+
+		cost = 0
+		days_remove = 90
+
+		modifier = {
+			
+		}
+
+		ai_will_do = {
+			factor = 1000
+		}
+
+        remove_effect = {
+            add_manpower = 20000
+
+            army_experience = 30
+			navy_experience = 30
+			air_experience = 30
+
+            add_equipment_to_stockpile = {
+				type = infantry_equipment
+				amount = 20000
+			}
+			add_equipment_to_stockpile = { 
+				type = motorized_equipment
+				amount = 2000
+			}
+			add_equipment_to_stockpile = {
+				type = artillery_equipment
+				amount = 800
+			}
+            add_equipment_to_stockpile = {
+				type = support_equipment
+				amount = 3000
+			}
+
+            if = {
+				limit = {
+					has_tech = advanced_medium_tank_chassis
+				}
+				add_equipment_to_stockpile = { 
+					type = medium_tank_chassis_3 
+					amount = 2000
+				}
+			}
+			else_if = {
+				limit = {
+					has_tech = improved_medium_tank_chassis
+				}
+				add_equipment_to_stockpile = { 
+					type = medium_tank_chassis_2 
+					amount = 2000
+				}
+			}
+			else = {
+				add_equipment_to_stockpile = { 
+					type = medium_tank_chassis_1 
+					amount = 2000
+				}
+			}
+
+            if = {
+				limit = {
+					has_tech = advanced_medium_tank_chassis
+				}
+				add_equipment_to_stockpile = { 
+					type = light_tank_chassis_3 
+					amount = 2000
+				}
+			}
+			else_if = {
+				limit = {
+					has_tech = improved_medium_tank_chassis
+				}
+				add_equipment_to_stockpile = { 
+					type = light_tank_chassis_2 
+					amount = 2000
+				}
+			}
+			else = {
+				add_equipment_to_stockpile = { 
+					type = light_tank_chassis_1 
+					amount = 2000
+				}
+			}
+				random_owned_controlled_state = {
+					limit = { ROOT = { has_full_control_of_state = PREV } }
+					prioritize = { 64 }
+					create_unit = {
+						division = "name = \"中国装甲师IV\" division_template = \"中国装甲师IV\" start_experience_factor = 0.5" 
+						owner = PRC
+						count = 6
+					}
+				}
+            }
+
+        }
+
+		PRC_ai_tank_base_template_add_4 =  {  #装甲师1939模板
+        allowed = {
+			original_tag = PRC
+		}
+		available = {
+			date > 1941.1.1
+		}
+
+		visible = {
+			
+		}
+
+		fire_only_once = yes
+
+		cost = 0
+		days_remove = 30
+
+		modifier = {
+			
+		}
+
+		ai_will_do = {
+			factor = 1000
+		}
+
+        remove_effect = {
+            add_manpower = 20000
+
+            army_experience = 30
+			navy_experience = 30
+			air_experience = 30
+
+            add_equipment_to_stockpile = {
+				type = infantry_equipment
+				amount = 20000
+			}
+			add_equipment_to_stockpile = { 
+				type = motorized_equipment
+				amount = 2000
+			}
+			add_equipment_to_stockpile = {
+				type = artillery_equipment
+				amount = 800
+			}
+            add_equipment_to_stockpile = {
+				type = support_equipment
+				amount = 3000
+			}
+
+            if = {
+				limit = {
+					has_tech = advanced_medium_tank_chassis
+				}
+				add_equipment_to_stockpile = { 
+					type = medium_tank_chassis_3 
+					amount = 2000
+				}
+			}
+			else_if = {
+				limit = {
+					has_tech = improved_medium_tank_chassis
+				}
+				add_equipment_to_stockpile = { 
+					type = medium_tank_chassis_2 
+					amount = 2000
+				}
+			}
+			else = {
+				add_equipment_to_stockpile = { 
+					type = medium_tank_chassis_1 
+					amount = 2000
+				}
+			}
+
+            if = {
+				limit = {
+					has_tech = advanced_medium_tank_chassis
+				}
+				add_equipment_to_stockpile = { 
+					type = light_tank_chassis_3 
+					amount = 2000
+				}
+			}
+			else_if = {
+				limit = {
+					has_tech = improved_medium_tank_chassis
+				}
+				add_equipment_to_stockpile = { 
+					type = light_tank_chassis_2 
+					amount = 2000
+				}
+			}
+			else = {
+				add_equipment_to_stockpile = { 
+					type = light_tank_chassis_1 
+					amount = 2000
+				}
+			}
+
+            division_template = {
+					name = "中国装甲师IV"
+					regiments = {
+						motorized = { x = 0 y = 0 }
+						motorized = { x = 0 y = 1 }
+						motorized = { x = 0 y = 2 }
+                        motorized = { x = 0 y = 3 }
+                        motorized = { x = 0 y = 4 }
+                        motorized = { x = 1 y = 0 }
+						motorized = { x = 1 y = 1 }
+						motorized = { x = 1 y = 2 }
+						medium_armor = { x = 2 y = 0 }
+						medium_armor = { x = 2 y = 1 }
+                        medium_armor = { x = 2 y = 2 }
+                        medium_armor = { x = 2 y = 3 }
+                        medium_armor = { x = 2 y = 4 }
+                        medium_armor = { x = 3 y = 0 }
+						medium_armor = { x = 3 y = 1 }
+                        medium_armor = { x = 3 y = 2 }
+                        medium_armor = { x = 3 y = 3 }
+                        mot_anti_air_brigade = { x = 4 y = 0 }
+                        mot_anti_tank_brigade = { x = 4 y = 1 }
+					}
+					support = {
+						engineer = { x = 0 y = 0 }
+						recon = { x = 0 y = 1 }
+                        field_hospital =  { x = 0 y = 2 }
+                        logistics_company = { x = 0 y = 3 }
+                        artillery =  { x = 0 y = 4 }
+					}
+				}
+			}
+
+
+        }
+
+        PRC_ai_tank_equipment_add_1939 =  {  #机械化装甲师
+        allowed = {
+			original_tag = PRC
+		}
+		available = {
+			date > 1942.1.1
+		}
+
+		visible = {
+			
+		}
+
+		fire_only_once = no
+
+		cost = 0
+		days_remove = 90
+
+		modifier = {
+			
+		}
+
+		ai_will_do = {
+			factor = 1000
+		}
+
+        remove_effect = {
+            add_manpower = 20000
+
+            army_experience = 30
+			navy_experience = 30
+			air_experience = 30
+
+            add_equipment_to_stockpile = {
+				type = infantry_equipment
+				amount = 20000
+			}
+			add_equipment_to_stockpile = { 
+				type = mechanised_infantry
+				amount = 2000
+			}
+			add_equipment_to_stockpile = {
+				type = artillery_equipment
+				amount = 800
+			}
+            add_equipment_to_stockpile = {
+				type = support_equipment
+				amount = 3000
+			}
+			if = {
+				limit = {
+					NOT = {
+						has_tech = motorized_equipment
+					}
+				}
+				set_technology = motorized_equipment_1
+			}
+
+            if = {
+				limit = {
+					has_tech = advanced_medium_tank_chassis
+				}
+				add_equipment_to_stockpile = { 
+					type = medium_tank_chassis_3 
+					amount = 2000
+				}
+			}
+			else_if = {
+				limit = {
+					has_tech = improved_medium_tank_chassis
+				}
+				add_equipment_to_stockpile = { 
+					type = medium_tank_chassis_2 
+					amount = 2000
+				}
+			}
+			else = {
+				add_equipment_to_stockpile = { 
+					type = medium_tank_chassis_1 
+					amount = 2000
+				}
+			}
+
+            if = {
+				limit = {
+					has_tech = advanced_medium_tank_chassis
+				}
+				add_equipment_to_stockpile = { 
+					type = light_tank_chassis_3 
+					amount = 2000
+				}
+			}
+			else_if = {
+				limit = {
+					has_tech = improved_medium_tank_chassis
+				}
+				add_equipment_to_stockpile = { 
+					type = light_tank_chassis_2 
+					amount = 2000
+				}
+			}
+			else = {
+				add_equipment_to_stockpile = { 
+					type = light_tank_chassis_1 
+					amount = 2000
+				}
+			}
+				random_owned_controlled_state = {
+					limit = { ROOT = { has_full_control_of_state = PREV } }
+					prioritize = { 64 }
+					create_unit = {
+						division = "name = \"中国机械化师I\" division_template = \"中国机械化师I\" start_experience_factor = 0.5" 
+						owner = PRC
+						count = 8
+					}
+				}
+            }
+
+        }
+
+		PRC_ai_tank_base_template_add_5 =  {  #机械化装甲师模板
+        allowed = {
+			original_tag = PRC
+		}
+		available = {
+			date > 1942.1.1
+		}
+
+		visible = {
+			
+		}
+
+		fire_only_once = yes
+
+		cost = 0
+		days_remove = 30
+
+		modifier = {
+			
+		}
+
+		ai_will_do = {
+			factor = 1000
+		}
+
+        remove_effect = {
+            add_manpower = 20000
+
+            army_experience = 30
+			navy_experience = 30
+			air_experience = 30
+
+            add_equipment_to_stockpile = {
+				type = infantry_equipment
+				amount = 20000
+			}
+			add_equipment_to_stockpile = { 
+				type = mechanised_infantry
+				amount = 20000
+			}
+			add_equipment_to_stockpile = {
+				type = artillery_equipment
+				amount = 800
+			}
+            add_equipment_to_stockpile = {
+				type = support_equipment
+				amount = 3000
+			}
+			if = {
+				limit = {
+					NOT = {
+						has_tech = motorized_equipment
+					}
+				}
+				set_technology = motorized_equipment_1
+			}
+
+            if = {
+				limit = {
+					has_tech = advanced_medium_tank_chassis
+				}
+				add_equipment_to_stockpile = { 
+					type = medium_tank_chassis_3 
+					amount = 2000
+				}
+			}
+			else_if = {
+				limit = {
+					has_tech = improved_medium_tank_chassis
+				}
+				add_equipment_to_stockpile = { 
+					type = medium_tank_chassis_2 
+					amount = 2000
+				}
+			}
+			else = {
+				add_equipment_to_stockpile = { 
+					type = medium_tank_chassis_1 
+					amount = 2000
+				}
+			}
+
+            if = {
+				limit = {
+					has_tech = advanced_medium_tank_chassis
+				}
+				add_equipment_to_stockpile = { 
+					type = light_tank_chassis_3 
+					amount = 2000
+				}
+			}
+			else_if = {
+				limit = {
+					has_tech = improved_medium_tank_chassis
+				}
+				add_equipment_to_stockpile = { 
+					type = light_tank_chassis_2 
+					amount = 2000
+				}
+			}
+			else = {
+				add_equipment_to_stockpile = { 
+					type = light_tank_chassis_1 
+					amount = 2000
+				}
+			}
+
+            division_template = {
+					name = "中国机械化师I"
+					regiments = {
+						mechanized = { x = 0 y = 0 }
+						mechanized = { x = 0 y = 1 }
+						mechanized = { x = 0 y = 2 }
+                        mechanized = { x = 0 y = 3 }
+                        mechanized = { x = 0 y = 4 }
+                        mechanized = { x = 1 y = 0 }
+						mechanized = { x = 1 y = 1 }
+						mechanized = { x = 1 y = 2 }
+                        mechanized = { x = 1 y = 3 }
+						medium_armor = { x = 2 y = 0 }
+						medium_armor = { x = 2 y = 1 }
+                        medium_armor = { x = 2 y = 2 }
+                        medium_armor = { x = 2 y = 3 }
+                        medium_armor = { x = 2 y = 4 }
+                        medium_armor = { x = 3 y = 0 }
+						medium_armor = { x = 3 y = 1 }
+                        medium_armor = { x = 3 y = 2 }
+                        medium_armor = { x = 3 y = 3 }
+					}
+					support = {
+						engineer = { x = 0 y = 0 }
+						recon = { x = 0 y = 1 }
+                        field_hospital =  { x = 0 y = 2 }
+                        logistics_company = { x = 0 y = 3 }
+                        artillery =  { x = 0 y = 4 }
+					}
+				}
+            }
+
+        }
+
+
+	PRC_ai_tank_equipment_add_end_1 =  {  #要寄了给的装甲师
+        allowed = {
+			original_tag = PRC
+		}
+		available = {
+			surrender_progress > 0.5
+			AND = {
+				date > 1941.1.1
+			}
+		}
+
+		visible = {
+			
+		}
+
+		fire_only_once = no
+
+		cost = 0
+		days_remove = 10
+		days_re_enable = 240
+
+		modifier = {
+			
+		}
+
+		ai_will_do = {
+			factor = 1000
+		}
+
+        remove_effect = {
+			set_technology = motorized_equipment
+            add_manpower = 2000000
+
+            army_experience = 100
+			navy_experience = 100
+			air_experience = 100
+
+			if = {
+				limit = {
+					NOT = { 
+						has_tech = mechanized_equipment_2
+					}
+				}
+				set_technology = mechanized_equipment_2
+			}
+
+            if = {
+				limit = {
+					has_tech = advanced_medium_tank_chassis
+				}
+				add_equipment_to_stockpile = { 
+					type = medium_tank_chassis_3 
+					amount = 50000
+				}
+			}
+			else_if = {
+				limit = {
+					has_tech = improved_medium_tank_chassis
+				}
+				add_equipment_to_stockpile = { 
+					type = medium_tank_chassis_2 
+					amount = 50000
+				}
+			}
+			else = {
+				add_equipment_to_stockpile = { 
+					type = medium_tank_chassis_1 
+					amount = 50000
+				}
+			}
+
+            if = {
+				limit = {
+					has_tech = advanced_medium_tank_chassis
+				}
+				add_equipment_to_stockpile = { 
+					type = light_tank_chassis_3 
+					amount = 20000
+				}
+			}
+			else_if = {
+				limit = {
+					has_tech = improved_medium_tank_chassis
+				}
+				add_equipment_to_stockpile = { 
+					type = light_tank_chassis_2 
+					amount = 20000
+				}
+			}
+			else = {
+				add_equipment_to_stockpile = { 
+					type = light_tank_chassis_1 
+					amount = 20000
+				}
+			}
+
+			add_equipment_to_stockpile = {
+				type = infantry_equipment
+				amount = 200000
+			}
+			add_equipment_to_stockpile = { 
+				type = mechanised_infantry
+				amount = 50000
+			}
+			add_equipment_to_stockpile = {
+				type = artillery_equipment
+				amount = 8000
+			}
+            add_equipment_to_stockpile = {
+				type = support_equipment
+				amount = 30000
+			}
+
+            division_template = {
+					name = "人民卫队"
+					regiments = {
+						mechanized = { x = 0 y = 0 }
+						mechanized = { x = 0 y = 1 }
+						mechanized = { x = 0 y = 2 }
+                        mechanized = { x = 0 y = 3 }
+                        mechanized = { x = 0 y = 4 }
+                        mechanized = { x = 1 y = 0 }
+						mechanized = { x = 1 y = 1 }
+						mechanized = { x = 1 y = 2 }
+                        mechanized = { x = 1 y = 3 }
+						medium_armor = { x = 2 y = 0 }
+						medium_armor = { x = 2 y = 1 }
+                        medium_armor = { x = 2 y = 2 }
+                        medium_armor = { x = 2 y = 3 }
+                        medium_armor = { x = 2 y = 4 }
+                        medium_armor = { x = 3 y = 0 }
+						medium_armor = { x = 3 y = 1 }
+                        medium_armor = { x = 3 y = 2 }
+                        medium_armor = { x = 3 y = 3 }
+					}
+					support = {
+						engineer = { x = 0 y = 0 }
+						recon = { x = 0 y = 1 }
+                        field_hospital =  { x = 0 y = 2 }
+                        logistics_company = { x = 0 y = 3 }
+                        artillery =  { x = 0 y = 4 }
+					}
+				}
+				random_owned_controlled_state = {
+					limit = { ROOT = { has_full_control_of_state = PREV } }
+					prioritize = { 64 }
+					create_unit = {
+						division = "name = \"人民卫队\" division_template = \"人民卫队\" start_experience_factor = 1" 
+						owner = PRC
+						count = 48
+					}
+				}
+            }
+
+        }
+
+}
+
+PRC_focus_categories = { 
+
+    PRC_focus_categories_1 = { #根据地建设
+        allowed = {
+            original_tag = PRC
+            has_country_flag = the_eastern_prc_flag
+        }
+        visible = {
+            has_country_flag = the_eastern_prc_flag
+        }
+        available = {
+            has_country_flag = the_eastern_prc_flag
+        }
+
+        fire_only_once = yes
+
+		cost = 0
+		days_remove = 35
+
+		modifier = {
+			political_power_gain = -0.25
+		}
+
+        remove_effect = {
+            random_owned_state = {
+				limit = { 
+					is_core_of = ROOT 
+					infrastructure > 0
+				}
+                add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = industrial_complex
+					level = 2
+					instant_build = yes
+				}
+                add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = arms_factory
+					level = 2
+					instant_build = yes
+				}
+                add_building_construction = {
+					type = infrastructure
+					level = 2
+					instant_build = yes
+				}
+			}
+            hidden_effect = {
+                set_country_flag = begin_focus_categories_flag_1
+            }
+        }
+        ai_will_do = {
+            factor = 1000
+        }
+    }
+
+    PRC_focus_categories_2 = { #土地改革
+        allowed = {
+            original_tag = PRC
+            has_country_flag = the_eastern_prc_flag
+        }
+        visible = {
+            has_country_flag = the_eastern_prc_flag
+            has_country_flag = begin_focus_categories_flag_1
+        }
+        available = {
+            has_country_flag = the_eastern_prc_flag
+        }
+
+        fire_only_once = yes
+
+		cost = 10
+		days_remove = 35
+
+		modifier = {
+			political_power_gain = -0.25
+		}
+
+        remove_effect = {
+            random_owned_state = {
+				limit = { 
+					is_core_of = ROOT 
+					infrastructure > 0
+				}
+                add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = industrial_complex
+					level = 2
+					instant_build = yes
+				}
+                add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = arms_factory
+					level = 2
+					instant_build = yes
+				}
+			}
+            add_ideas = PRC_land_reform
+            hidden_effect = {
+                set_country_flag = begin_focus_categories_flag_2
+            }
+        }
+
+        ai_will_do = {
+            factor = 1000
+        }
+    }
+
+    PRC_focus_categories_3 = { #发展手工业
+        allowed = {
+            original_tag = PRC
+            has_country_flag = the_eastern_prc_flag
+        }
+        visible = {
+            has_country_flag = the_eastern_prc_flag
+            has_country_flag = begin_focus_categories_flag_2
+        }
+        available = {
+            has_country_flag = the_eastern_prc_flag
+        }
+
+        fire_only_once = yes
+
+		cost = 10
+		days_remove = 35
+
+		modifier = {
+			political_power_gain = -0.25
+		}
+
+        remove_effect = {
+            random_owned_state = {
+				limit = { 
+					is_core_of = ROOT 
+					infrastructure > 0
+				}
+                add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = industrial_complex
+					level = 2
+					instant_build = yes
+				}
+                add_offsite_building = { type = industrial_complex level = 2 }
+			}
+            add_ideas = PRC_Valuing_the_handicraft_industry
+            hidden_effect = {
+                set_country_flag = begin_focus_categories_flag_3
+            }
+        }
+        ai_will_do = {
+            factor = 1000
+        }
+    }
+
+    PRC_focus_categories_4 = { #扩大根据地生产
+        allowed = {
+            original_tag = PRC
+            has_country_flag = the_eastern_prc_flag
+        }
+        visible = {
+            has_country_flag = the_eastern_prc_flag
+            has_country_flag = begin_focus_categories_flag_3
+        }
+        available = {
+            has_country_flag = the_eastern_prc_flag
+        }
+
+        fire_only_once = yes
+
+		cost = 10
+		days_remove = 35
+
+		modifier = {
+			political_power_gain = -0.25
+		}
+
+        remove_effect = {
+            add_ideas = PRC_Expand_production_in_base_areas
+            hidden_effect = {
+                set_country_flag = begin_focus_categories_flag_4
+            }
+        }
+        ai_will_do = {
+            factor = 1000
+        }
+    }
+
+    PRC_focus_categories_5 = { #建设地下工厂
+        allowed = {
+            original_tag = PRC
+            has_country_flag = the_eastern_prc_flag
+        }
+        visible = {
+            has_country_flag = the_eastern_prc_flag
+            has_country_flag = begin_focus_categories_flag_4
+        }
+        available = {
+            has_country_flag = the_eastern_prc_flag
+        }
+
+        fire_only_once = yes
+
+		cost = 10
+		days_remove = 35
+
+		modifier = {
+			political_power_gain = -0.25
+		}
+
+        remove_effect = {
+            add_offsite_building = { type = arms_factory level = 6 }
+            add_ideas = PRC_Construction_of_an_underground_factory
+            hidden_effect = {
+                set_country_flag = begin_focus_categories_flag_5
+            }
+        }
+        ai_will_do = {
+            factor = 1000
+        }
+    }
+
+    PRC_focus_categories_6 = { #扫盲运动
+        allowed = {
+            original_tag = PRC
+            has_country_flag = the_eastern_prc_flag
+        }
+        visible = {
+            has_country_flag = the_eastern_prc_flag
+            has_country_flag = begin_focus_categories_flag_5
+        }
+        available = {
+            has_country_flag = the_eastern_prc_flag
+        }
+
+        fire_only_once = yes
+
+		cost = 10
+		days_remove = 35
+
+		modifier = {
+			political_power_gain = -0.25
+		}
+
+        remove_effect = {
+            stability_factor = 0.1
+            add_research_slot = 1
+            add_ideas = PRC_Literacy_campaign
+            hidden_effect = {
+                set_country_flag = begin_focus_categories_flag_6
+            }
+        }
+        ai_will_do = {
+            factor = 1000
+        }
+    }
+
+    PRC_focus_categories_7 = { #整顿风气
+        allowed = {
+            original_tag = PRC
+            has_country_flag = the_eastern_prc_flag
+        }
+        visible = {
+            has_country_flag = the_eastern_prc_flag
+            has_country_flag = begin_focus_categories_flag_1
+        }
+        available = {
+            has_country_flag = the_eastern_prc_flag
+        }
+
+        fire_only_once = yes
+
+		cost = 10
+		days_remove = 35
+
+		modifier = {
+			political_power_gain = -0.25
+		}
+
+        remove_effect = {
+            stability_factor = 0.1
+            political_power = 100
+            remove_ideas = PRC_power_struggles
+            add_ideas = PRC_Rectification_movement
+            hidden_effect = {
+                set_country_flag = begin_focus_categories_flag_2
+            }
+        }
+        ai_will_do = {
+            factor = 1000
+        }
+    }
+
+    PRC_focus_categories_8 = { #确定毛的领导地位
+        allowed = {
+            original_tag = PRC
+            has_country_flag = the_eastern_prc_flag
+        }
+        visible = {
+            has_country_flag = the_eastern_prc_flag
+            has_country_flag = begin_focus_categories_flag_2
+        }
+        available = {
+            has_country_flag = the_eastern_prc_flag
+        }
+
+        fire_only_once = yes
+
+		cost = 10
+		days_remove = 35
+
+		modifier = {
+			political_power_gain = -0.25
+		}
+
+        remove_effect = {
+            country_event = { id = change_prc.1 days = 1 }
+            hidden_effect = {
+                set_country_flag = begin_focus_categories_flag_3
+            }
+        }
+        ai_will_do = {
+            factor = 1000
+        }
+    }
+
+    PRC_focus_categories_9 = { #与共产国际联系
+        allowed = {
+            original_tag = PRC
+            has_country_flag = the_eastern_prc_flag
+        }
+        visible = {
+            has_country_flag = the_eastern_prc_flag
+            has_country_flag = begin_focus_categories_flag_3
+        }
+        available = {
+            has_country_flag = the_eastern_prc_flag
+        }
+
+        fire_only_once = yes
+
+		cost = 10
+		days_remove = 35
+
+		modifier = {
+			political_power_gain = -0.25
+		}
+
+        remove_effect = {
+            SOV = {
+                country_event = { id = change_prc.2 days = 1 }
+            }
+            hidden_effect = {
+                set_country_flag = begin_focus_categories_flag_4
+            }
+        }
+        ai_will_do = {
+            factor = 1000
+        }
+    }
+
+    PRC_focus_categories_10 = { #联系海外华侨
+        allowed = {
+            original_tag = PRC
+            has_country_flag = the_eastern_prc_flag
+        }
+        visible = {
+            has_country_flag = the_eastern_prc_flag
+            has_country_flag = begin_focus_categories_flag_4
+        }
+        available = {
+            has_country_flag = the_eastern_prc_flag
+        }
+
+        fire_only_once = yes
+
+		cost = 10
+		days_remove = 35
+
+		modifier = {
+			political_power_gain = -0.25
+		}
+
+        remove_effect = {
+            country_event = { id = change_prc.4 days = 1 }
+            hidden_effect = {
+                set_country_flag = begin_focus_categories_flag_5
+            }
+        }
+        ai_will_do = {
+            factor = 1000
+        }
+    }
+
+    PRC_focus_categories_11 = { #中央政治局
+        allowed = {
+            original_tag = PRC
+            has_country_flag = the_eastern_prc_flag
+        }
+        visible = {
+            has_country_flag = the_eastern_prc_flag
+            has_country_flag = begin_focus_categories_flag_5
+        }
+        available = {
+            has_country_flag = the_eastern_prc_flag
+        }
+
+        fire_only_once = yes
+
+		cost = 10
+		days_remove = 35
+
+		modifier = {
+			political_power_gain = -0.25
+		}
+
+        remove_effect = {
+            political_power = 200
+            add_ideas = PRC_Politburo
+            hidden_effect = {
+                set_country_flag = begin_focus_categories_flag_6
+            }
+        }
+        ai_will_do = {
+            factor = 1000
+        }
+    }
+
+    PRC_focus_categories_12 = { #快速工业化
+        allowed = {
+            original_tag = PRC
+            has_country_flag = the_eastern_prc_flag
+        }
+        visible = {
+            has_country_flag = the_eastern_prc_flag
+            AND = {
+                has_country_flag = begin_focus_categories_flag_6
+                NOT = {
+                    country_exists = CHI
+                }
+            }
+        }
+        available = {
+            has_country_flag = the_eastern_prc_flag
+        }
+
+        fire_only_once = yes
+
+		cost = 10
+		days_remove = 70
+
+		modifier = {
+			political_power_gain = -0.25
+		}
+
+        remove_effect = {
+            if = {
+				limit = { has_idea = PRC_the_long_march_1 }
+				remove_ideas = PRC_the_long_march_1
+			}
+			else = {
+				remove_ideas = PRC_the_long_march_2 
+			}
+            every_owned_state = {
+				limit = { 
+					is_core_of = ROOT 
+					infrastructure < 3
+				}
+                add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = industrial_complex
+					level = 2
+					instant_build = yes
+				}
+                add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}
+                add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+			}
+            country_event = { id = PRC_Rapid_industrialization }
+            hidden_effect = {
+                set_country_flag = begin_focus_categories_flag_7
+            }
+        }
+        ai_will_do = {
+            factor = 1000
+        }
+    }
+
+    PRC_focus_categories_13 = { #农业合作社
+        allowed = {
+            original_tag = PRC
+            has_country_flag = the_eastern_prc_flag
+        }
+        visible = {
+            has_country_flag = the_eastern_prc_flag
+            AND = {
+                has_country_flag = begin_focus_categories_flag_7
+                NOT = {
+                    country_exists = CHI
+                }
+            }
+        }
+        available = {
+            has_country_flag = the_eastern_prc_flag
+        }
+
+        fire_only_once = yes
+
+		cost = 10
+		days_remove = 35
+
+		modifier = {
+			political_power_gain = -0.25
+		}
+
+        remove_effect = {
+            add_ideas = PRC_Agricultural_cooperatives
+            hidden_effect = {
+                set_country_flag = begin_focus_categories_flag_8
+            }
+        }
+        ai_will_do = {
+            factor = 1000
+        }
+    }
+
+    PRC_focus_categories_14 = { #发展海洋贸易
+        allowed = {
+            original_tag = PRC
+            has_country_flag = the_eastern_prc_flag
+        }
+        visible = {
+            has_country_flag = the_eastern_prc_flag
+            AND = {
+                has_country_flag = begin_focus_categories_flag_8
+                NOT = {
+                    country_exists = CHI
+                }
+            }
+        }
+        available = {
+            has_country_flag = the_eastern_prc_flag
+        }
+
+        fire_only_once = yes
+
+		cost = 10
+		days_remove = 35
+
+		modifier = {
+			political_power_gain = -0.25
+		}
+
+        remove_effect = {
+            add_ideas = PRC_Development_of_maritime_trade
+            hidden_effect = {
+                set_country_flag = begin_focus_categories_flag_9
+            }
+        }
+        ai_will_do = {
+            factor = 1000
+        }
+    }
+
+    PRC_focus_categories_15 = { #组建中国科学院
+        allowed = {
+            original_tag = PRC
+            has_country_flag = the_eastern_prc_flag
+        }
+        visible = {
+            has_country_flag = the_eastern_prc_flag
+            AND = {
+                has_country_flag = begin_focus_categories_flag_9
+                NOT = {
+                    country_exists = CHI
+                }
+                amount_research_slots > 5
+            }
+        }
+        available = {
+            has_country_flag = the_eastern_prc_flag
+        }
+
+        fire_only_once = yes
+
+		cost = 10
+		days_remove = 35
+
+		modifier = {
+			political_power_gain = -0.25
+		}
+
+        remove_effect = {
+            add_ideas = PRC_cas
+            hidden_effect = {
+                set_country_flag = begin_focus_categories_flag_10
+            }
+        }
+        ai_will_do = {
+            factor = 1000
+        }
+    }
+
+    PRC_focus_categories_16 = { #资源勘探
+        allowed = {
+            original_tag = PRC
+            has_country_flag = the_eastern_prc_flag
+        }
+        visible = {
+            has_country_flag = the_eastern_prc_flag
+            AND = {
+                has_country_flag = begin_focus_categories_flag_10
+                NOT = {
+                    country_exists = CHI
+                }
+            }
+        }
+        available = {
+            has_country_flag = the_eastern_prc_flag
+        }
+
+        fire_only_once = yes
+
+		cost = 10
+		days_remove = 35
+
+		modifier = {
+			political_power_gain = -0.25
+		}
+
+        remove_effect = {
+            add_ideas = PRC_Resource_exploration
+            random_owned_controlled_state = {
+                add_resource = {
+					type = steel
+					amount = 12
+				}
+                add_resource = {
+					type = aluminium
+					amount = 4
+				}
+                add_resource = {
+					type = chromium
+					amount = 4
+				}
+                add_resource = {
+					type = tungsten
+					amount = 4
+				}
+                add_resource = {
+					type = oil
+					amount = 4
+				}
+			}
+            random_owned_controlled_state = {
+                add_resource = {
+					type = steel
+					amount = 18
+				}
+                add_resource = {
+					type = aluminium
+					amount = 4
+				}
+                add_resource = {
+					type = chromium
+					amount = 4
+				}
+                add_resource = {
+					type = tungsten
+					amount = 4
+				}
+                add_resource = {
+					type = oil
+					amount = 8
+				}
+			}
+            random_owned_controlled_state = {
+                add_resource = {
+					type = steel
+					amount = 16
+				}
+                add_resource = {
+					type = oil
+					amount = 6
+				}
+			}
+            random_owned_controlled_state = {
+                add_resource = {
+					type = aluminium
+					amount = 6
+				}
+                add_resource = {
+					type = chromium
+					amount = 4
+				}
+			}
+            random_owned_controlled_state = {
+                add_resource = {
+					type = aluminium
+					amount = 6
+				}
+                add_resource = {
+					type = oil
+					amount = 4
+				}
+			}
+            random_owned_controlled_state = {
+                add_resource = {
+					type = steel
+					amount = 16
+				}
+                add_resource = {
+					type = chromium
+					amount = 4
+				}
+			}
+            hidden_effect = {
+                set_country_flag = begin_focus_categories_flag_11
+            }
+        }
+        ai_will_do = {
+            factor = 1000
+        }
+    }
+
+    PRC_focus_categories_17 = { #继续资源勘探
+        allowed = {
+            original_tag = PRC
+            has_country_flag = the_eastern_prc_flag
+        }
+        visible = {
+            has_country_flag = the_eastern_prc_flag
+            AND = {
+                has_country_flag = begin_focus_categories_flag_11
+                NOT = {
+                    country_exists = CHI
+                }
+            }
+        }
+        available = {
+            has_country_flag = the_eastern_prc_flag
+        }
+
+        fire_only_once = no
+
+		cost = 100
+		days_remove = 70
+
+		modifier = {
+			political_power_gain = -0.25
+		}
+
+        remove_effect = {
+            random_owned_controlled_state = {
+                add_resource = {
+					type = steel
+					amount = 8
+				}
+                add_resource = {
+					type = aluminium
+					amount = 4
+				}
+                add_resource = {
+					type = chromium
+					amount = 4
+				}
+			}
+            random_owned_controlled_state = {
+                add_resource = {
+					type = steel
+					amount = 14
+				}
+                add_resource = {
+					type = oil
+					amount = 2
+				}
+			}
+			if = {
+				limit = {
+					country_exists = SUC
+				}
+				every_owned_state = {
+                	limit = {
+						is_core_of = PRC
+					}
+					add_resource = {
+						type = steel
+						amount = 2
+					}
+                	add_resource = {
+						type = aluminium
+						amount = 2
+					}
+                	add_resource = {
+						type = chromium
+						amount = 2
+					}
+					add_resource = {
+						type = oil
+						amount = 2
+					}
+					add_resource = {
+						type = tungsten
+						amount = 2
+					}
+				}
+				add_tech_bonus = {
+					ahead_reduction = 1.5
+					uses = 1
+					name = mech_army_bonus
+					category = armor 
+				}
+				add_tech_bonus = {
+					name = motorized_bonus
+					ahead_reduction = 1.5 #超前卡
+					uses = 1
+					category = motorized_equipment
+				}
+				add_tech_bonus = {
+					name = industrial_bonus
+					ahead_reduction = 1.5
+					uses = 1
+					category = industry
+				}
+				add_tech_bonus = {
+					ahead = 1.5
+					uses = 1
+					category = light_air
+				}
+			}
+        }
+        ai_will_do = {
+            factor = 40
+        }
+    }
+
+    PRC_focus_categories_18 = { #继续工业化
+        allowed = {
+            original_tag = PRC
+            has_country_flag = the_eastern_prc_flag
+        }
+        visible = {
+            has_country_flag = the_eastern_prc_flag
+            AND = {
+                has_country_flag = begin_focus_categories_flag_11
+                NOT = {
+                    country_exists = CHI
+                }
+            }
+        }
+        available = {
+            has_country_flag = the_eastern_prc_flag
+        }
+
+        fire_only_once = no
+
+		cost = 100
+		days_remove = 70
+
+		modifier = {
+			political_power_gain = -0.25
+		}
+
+        remove_effect = {
+            random_owned_state = {
+				limit = { 
+					is_core_of = ROOT 
+				}
+                add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = industrial_complex
+					level = 2
+					instant_build = yes
+				}
+                add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = arms_factory
+					level = 2
+					instant_build = yes
+				}
+			}
+			if = {
+				limit = {
+					country_exists = SUC
+				}
+				random_owned_state = {
+					limit = { 
+						is_core_of = ROOT 
+					}
+                	add_extra_state_shared_building_slots = 2
+					add_building_construction = {
+						type = industrial_complex
+						level = 2
+						instant_build = yes
+					}
+            	    add_extra_state_shared_building_slots = 2
+					add_building_construction = {
+						type = arms_factory
+						level = 2
+						instant_build = yes
+					}
+					add_building_construction = {
+						type = infrastructure
+						level = 1
+						instant_build = yes
+					}
+				}
+				add_tech_bonus = {
+					name = USA_support_rock_island
+					uses = 1
+					ahead_reduction = 1.5
+					#category = artillery
+					category = support_tech
+				}
+				add_tech_bonus = {
+					name = USA_support_rock_island
+					uses = 1
+					ahead_reduction = 1.5
+					category = artillery
+				}
+			}
+        }
+        ai_will_do = {
+            factor = 40
+        }
+    }
+
+}
+
+PRC_army_categories = {
+    PRC_army_categories_1 = { #红军会师
+        allowed = {
+            original_tag = PRC
+            has_country_flag = the_eastern_prc_flag
+        }
+        visible = {
+            has_country_flag = the_eastern_prc_flag
+        }
+        available = {
+            has_country_flag = the_eastern_prc_flag
+        }
+
+        fire_only_once = yes
+
+		cost = 10
+		days_remove = 70
+
+		modifier = {
+			political_power_gain = -0.25
+		}
+
+        remove_effect = {
+
+            division_template = {
+					name = "红军"
+					regiments = {
+						infantry = { x = 0 y = 0 }
+						infantry = { x = 0 y = 1 }
+						infantry = { x = 0 y = 2 }
+						infantry = { x = 1 y = 0 }
+						infantry = { x = 1 y = 1 }
+						infantry = { x = 1 y = 2 }
+					}
+					support = {
+                        artillery =  { x = 0 y = 0 }
+					}
+				}
+            
+            random_owned_controlled_state = {
+				limit = { ROOT = { has_full_control_of_state = PREV } }
+				prioritize = { 64 }
+				create_unit = {
+					division = "name = \"红军\" division_template = \"红军\" start_experience_factor = 1" 
+					owner = PRC
+					count = 6
+				}
+			}
+            hidden_effect = {
+                set_country_flag = prc_army_categories_flag_1
+            }
+
+        }
+        ai_will_do = {
+            factor = 1000
+        }
+    }
+
+    PRC_army_categories_2 = { #红军整编
+        allowed = {
+            original_tag = PRC
+            has_country_flag = the_eastern_prc_flag
+        }
+        visible = {
+            has_country_flag = the_eastern_prc_flag
+            has_country_flag = prc_army_categories_flag_1
+        }
+        available = {
+            has_country_flag = the_eastern_prc_flag
+        }
+
+        fire_only_once = yes
+
+		cost = 10
+		days_remove = 70
+
+		modifier = {
+			political_power_gain = -0.25
+		}
+
+        remove_effect = {
+            remove_ideas = PRC_red_army_weakened
+            hidden_effect = {
+                set_country_flag = prc_army_categories_flag_2
+            }
+
+        }
+        ai_will_do = {
+            factor = 1000
+        }
+    }
+
+    PRC_army_categories_3 = { #兼并弱邻
+        allowed = {
+            original_tag = PRC
+            has_country_flag = the_eastern_prc_flag
+        }
+        visible = {
+            has_country_flag = the_eastern_prc_flag
+            has_country_flag = prc_army_categories_flag_2
+        }
+        available = {
+            has_country_flag = the_eastern_prc_flag
+        }
+
+        fire_only_once = yes
+
+		cost = 10
+		days_remove = 35
+
+		modifier = {
+			political_power_gain = -0.25
+		}
+
+        remove_effect = {
+            add_ideas = PRC_Annexation_of_weak_neighbors
+            PRC = {
+                create_wargoal = {
+					type = take_state_focus
+					target = XSM
+				}
+                create_wargoal = {
+					type = take_state_focus
+					target = SHX
+				}
+            }
+            hidden_effect = {
+                set_country_flag = prc_army_categories_flag_3
+            }
+
+        }
+        ai_will_do = {
+            factor = 1000
+        }
+    }
+
+    PRC_army_categories_4 = { #解放全中国
+        allowed = {
+            original_tag = PRC
+            has_country_flag = the_eastern_prc_flag
+        }
+        visible = {
+            has_country_flag = the_eastern_prc_flag
+            has_country_flag = prc_army_categories_flag_2
+        }
+        available = {
+            has_country_flag = the_eastern_prc_flag
+            AND = {
+                date > 1936.12.1
+				NOT = {
+					country_exists = XSM
+					country_exists = SHX
+				}
+            }
+        }
+
+        fire_only_once = yes
+
+		cost = 10
+		days_remove = 30
+
+		modifier = {
+			political_power_gain = -0.25
+		}
+
+        remove_effect = {
+            add_ideas = PRC_Pla
+            PRC = {
+                create_wargoal = {
+					type = take_state_focus
+					target = YUN
+				}
+                create_wargoal = {
+					type = take_state_focus
+					target = SIK
+				}
+                create_wargoal = {
+					type = take_state_focus
+					target = GXC
+				}
+                create_wargoal = {
+					type = take_state_focus
+					target = TIB
+				}
+                create_wargoal = {
+					type = take_state_focus
+					target = CHI
+				}
+                create_wargoal = {
+					type = take_state_focus
+					target = MAN
+				}
+                create_wargoal = {
+					type = take_state_focus
+					target = MEN
+				}
+            }
+
+            division_template = {
+					name = "人民解放军"
+					regiments = {
+						infantry = { x = 0 y = 0 }
+						infantry = { x = 0 y = 1 }
+						infantry = { x = 0 y = 2 }
+						infantry = { x = 1 y = 0 }
+						infantry = { x = 1 y = 1 }
+						infantry = { x = 1 y = 2 }
+                        infantry = { x = 2 y = 0 }
+						infantry = { x = 2 y = 1 }
+						infantry = { x = 2 y = 2 }
+                        artillery_brigade = { x = 3 y = 0 }
+						artillery_brigade = { x = 3 y = 1 }
+					}
+					support = {
+                        artillery =  { x = 0 y = 0 }
+                        engineer = { x = 0 y = 1 }
+					}
+				}
+            
+            random_owned_controlled_state = {
+				limit = { ROOT = { has_full_control_of_state = PREV } }
+				prioritize = { 64 }
+				create_unit = {
+					division = "name = \"人民解放军\" division_template = \"人民解放军\" start_experience_factor = 1" 
+					owner = PRC
+					count = 24
+				}
+			}
+
+            hidden_effect = {
+                set_country_flag = prc_army_categories_flag_3
+            }
+
+        }
+        ai_will_do = {
+            factor = 1000
+        }
+    }
+
+	PRC_army_categories_00 = { #人民解放阵线
+        allowed = {
+            original_tag = PRC
+            has_country_flag = the_eastern_prc_flag
+        }
+        visible = {
+            has_country_flag = the_eastern_prc_flag
+        }
+        available = {
+            has_country_flag = the_eastern_prc_flag
+        }
+
+        fire_only_once = yes
+
+		cost = 0
+		days_remove = 35
+
+		modifier = {
+			
+		}
+
+        remove_effect = {
+            PRC = {
+				create_faction = Popular_Liberation_Front_faction
+			}
+			
+        }
+        ai_will_do = {
+            factor = 1000
+        }
+    }
+
+	PRC_army_categories_01 = { #民族解放阵线
+        allowed = {
+            original_tag = PRC
+            has_country_flag = the_eastern_prc_flag
+        }
+        visible = {
+            has_country_flag = the_eastern_prc_flag
+			AND = {
+				date > 1938.10.1
+				MEX = {
+					has_country_flag = the_LatinAmerica_flag
+					has_government = communism
+				}
+			}
+        }
+        available = {
+            has_country_flag = the_eastern_prc_flag
+        }
+
+        fire_only_once = yes
+
+		cost = 0
+		days_remove = 35
+
+		modifier = {
+			
+		}
+
+        remove_effect = {
+            PRC = {
+				create_faction = National_Liberation_Front_faction
+				add_to_faction = MEX
+			}
+			news_event = { id = change_news.16 days = 1 }
+			every_country = {
+				limit = {
+					is_in_faction_with = PRC
+				}
+				add_to_tech_sharing_group = National_Liberation_Front_group
+			}
+			hidden_effect = {
+				MEX = {
+					add_ai_strategy = {
+						type = alliance
+						id = PRC
+						value = 1000
+					}
+					add_ai_strategy = {
+						type = protect
+						id = PRC
+						value = 1000
+					}
+					add_ai_strategy = {
+						type = send_volunteers_desire
+						id = PRC
+						value = 1000
+					}
+					add_ai_strategy = {
+						type = support
+						id = PRC
+						value = 1000
+					}
+				}
+				PRC = {
+					add_ai_strategy = {
+						type = alliance
+						id = MEX
+						value = 1000
+					}
+					add_ai_strategy = {
+						type = protect
+						id = MEX
+						value = 1000
+					}
+					add_ai_strategy = {
+						type = send_volunteers_desire
+						id = MEX
+						value = 1000
+					}
+					add_ai_strategy = {
+						type = support
+						id = MEX
+						value = 1000
+					}
+				}
+			}
+			
+        }
+        ai_will_do = {
+            factor = 1000
+        }
+    }
+
+	PRC_army_categories_02 = { #立本放弃大陆
+        allowed = {
+            original_tag = PRC
+            has_country_flag = the_eastern_prc_flag
+        }
+        visible = {
+            has_country_flag = the_eastern_prc_flag
+        }
+        available = {
+            has_country_flag = the_eastern_prc_flag
+			OR = {
+				AND = {
+					has_war_with = JAP
+					MAN = {
+						is_in_faction_with = JAP
+						has_war_with = PRC
+						has_capitulated = yes
+					}
+					MEN = {
+						is_in_faction_with = JAP
+						has_war_with = PRC
+						has_capitulated = yes
+					}
+				}
+				AND = {
+					has_war_with = JAP
+					NOT = {
+						country_exists = MAN
+						country_exists = MEN
+					}
+				}
+			}
+        }
+
+        fire_only_once = yes
+
+		cost = 0
+		days_remove = 35
+
+		modifier = {
+			
+		}
+
+        remove_effect = {
+			JAP = {
+				white_peace = PRC
+			}
+            if = {
+				limit = {
+					country_exists = MAN
+					country_exists = MEN
+				}
+				PRC = { 
+					transfer_state = 524
+					transfer_state = 609
+					transfer_state = 745
+            		annex_country = {
+                		target = MAN
+            		}
+					annex_country = {
+                		target = MEN
+            		}
+					every_state = {
+						limit = {
+							has_state_flag = the_will_get_prc_flag
+							NOT = {
+								CONTROLLER = {
+									tag = PRC
+								}
+							}
+						}
+						PRC = { transfer_state = PREV }
+					}
+        		}
+			}
+			if = {
+				limit = {
+					NOT = {
+						country_exists = MAN
+						country_exists = MEN
+					}
+				}
+				PRC = {
+					transfer_state = 524
+					transfer_state = 609
+					transfer_state = 745
+					every_state = {
+						limit = {
+							has_state_flag = the_will_get_prc_flag
+							NOT = {
+								CONTROLLER = {
+									tag = PRC
+								}
+							}
+						}
+						PRC = { transfer_state = PREV }
+					}
+				}
+			}
+			KOR = {
+					transfer_state = 527
+					transfer_state = 525
+				}
+			
+				
+				PRC = {
+					set_autonomy = { target = KOR autonomy_state = autonomy_puppet }
+				}
+			news_event = { id = change_news.17 days = 2  }
+
+			hidden_effect = {
+				JAP = {
+					set_country_flag = JAP_The_defeat_of_the_continent_flag
+				}
+			}
+
+			
+        }
+        ai_will_do = {
+            factor = 1000
+        }
+    }
+
+	PRC_army_categories_03 = { #国民政府宣布投降
+        allowed = {
+            original_tag = PRC
+            has_country_flag = the_eastern_prc_flag
+        }
+        visible = {
+            has_country_flag = the_eastern_prc_flag
+			AND = {
+				has_country_flag = prc_army_categories_flag_3
+			}
+        }
+        available = {
+            has_country_flag = the_eastern_prc_flag
+			AND = {
+				has_war_with = CHI
+				CHI = {
+					surrender_progress = 0.2
+				}
+			}
+        }
+
+        fire_only_once = yes
+
+		cost = 0
+		days_remove = 10
+
+		modifier = {
+			
+		}
+
+        remove_effect = {
+			PRC = {
+				country_event = { id = change_prc.6 days = 1 }
+			}
+			news_event = { id = change_news.18 days = 3 }
+        }
+        ai_will_do = {
+            factor = 1000
+        }
+    }
+
+	PRC_army_categories_04 = { #为东南亚的人民带来解放
+        allowed = {
+            original_tag = PRC
+            has_country_flag = the_eastern_prc_flag
+        }
+        visible = {
+            has_country_flag = the_eastern_prc_flag
+			AND = {
+				has_country_flag = prc_army_categories_flag_3
+			}
+        }
+        available = {
+			date > 1940.10.1
+            AND = {
+				has_country_flag = the_eastern_prc_flag
+				has_global_flag = the_world_war_tow_flag
+				GER = {
+					has_war_with = ENG
+				}
+				ENG = {
+					has_war_with = GER
+				}
+			}
+        }
+
+        fire_only_once = yes
+
+		cost = 0
+		days_remove = 120
+
+		modifier = {
+			
+		}
+
+        remove_effect = {
+			create_wargoal = {
+				target = RAJ
+				type = puppet_wargoal_focus
+				expire = 0
+			}
+			create_wargoal = {
+				target = INS
+				type = puppet_wargoal_focus
+				expire = 0
+			}
+			create_wargoal = {
+				target = PHI
+				type = puppet_wargoal_focus
+				expire = 0
+			}
+        }
+        ai_will_do = {
+            factor = 100
+        }
+    }
+
+	PRC_army_categories_05 = { #对日本的战略
+        allowed = {
+            original_tag = PRC
+            has_country_flag = the_eastern_prc_flag
+        }
+        visible = {
+            OR = {
+				AND = {
+					has_country_flag = the_eastern_prc_flag
+					AND = {
+						JAP = {
+							has_country_flag = JAP_The_defeat_of_the_continent_flag
+						}
+					}
+				}
+				AND = { #防立本不走黑线
+					has_country_flag = the_eastern_prc_flag
+					OR = {
+						country_exists = MAN
+						country_exists = MEN
+					}
+					JAP = {
+						NOT = {
+							has_government = communism
+						}
+						OR = {
+							has_government = neutrality
+							has_government = democratic
+						}
+					}
+				}
+			}
+        }
+        available = {
+			has_country_flag = the_eastern_prc_flag
+			AND = {
+				PRC = {
+					has_army_manpower = { size > 724999 }
+				}
+				JAP = {
+					has_country_flag = JAP_The_defeat_of_the_continent_flag
+				}
+			}
+        }
+
+        fire_only_once = yes
+
+		cost = 0
+		days_remove = 120
+
+		modifier = {
+			
+		}
+
+        remove_effect = {
+			PRC = {
+				country_event = { id = change_prc.7 hours = 12 }
+			}
+        }
+        ai_will_do = {
+            factor = 1000
+        }
+    }
+
+}
+
+PRC_help_jap_com_categories = {
+
+	PRC_help_jap_com_categories_1 = { #内战
+		allowed = {
+            original_tag = PRC
+            has_country_flag = the_eastern_prc_flag
+        }
+        visible = {
+            JAP = {
+				has_idea = PRC_commusic
+			}
+        }
+        available = {
+			AND = {
+				JAP = {
+					communism > 0.5
+				}
+				NOT = {
+					is_in_faction_with = JAP
+				}
+			}
+        }
+
+        fire_only_once = yes
+
+		cost = 0
+		days_remove = 30
+
+		modifier = {
+			
+		}
+
+        remove_effect = {
+			hidden_effect = {
+				JAP = {
+					country_event = { id = change_prc.12 }
+				}
+			}
+        }
+        ai_will_do = {
+            factor = 1000
+        }
+    }
+
+	PRC_help_jap_com_categories_2 = { #扩大日本国内宣传
+		allowed = {
+            original_tag = PRC
+            has_country_flag = the_eastern_prc_flag
+        }
+        visible = {
+            JAP = {
+				has_idea = PRC_commusic
+			}
+        }
+        available = {
+			JAP = {
+				NOT = {
+					has_government = communism
+				}
+			}
+        }
+
+        fire_only_once = no
+
+		cost = 50
+		days_remove = 30
+
+		modifier = {
+			JAP = {
+				communism_drift = 0.05
+			}
+		}
+
+        remove_effect = {
+			JAP = {
+				add_popularity = {
+					ideology = communism
+					popularity = 0.05
+				}
+			}
+			hidden_effect = {
+				JAP = {
+					country_event = { id = change_prc.11 }
+				}
+			}
+        }
+        ai_will_do = {
+            factor = 1000
+        }
+    }
+
+	PRC_help_jap_com_categories_3 = { #组织日本工人罢工
+		allowed = {
+            original_tag = PRC
+            has_country_flag = the_eastern_prc_flag
+        }
+        visible = {
+            JAP = {
+				has_idea = PRC_commusic
+			}
+        }
+        available = {
+			AND = {
+				JAP = {
+					NOT = {
+						has_government = communism
+					}
+				}
+				JAP = {
+					communism > 0.2
+				}
+			}
+        }
+
+        fire_only_once = no
+
+		cost = 50
+		days_remove = 30
+
+		modifier = {
+			JAP = {
+				industrial_capacity_factory = -0.1
+			}
+		}
+		complete_effect = {
+			JAP = {
+				add_popularity = {
+					ideology = communism
+					popularity = 0.075
+				}
+			}
+		}
+
+        remove_effect = {
+			JAP = {
+				add_popularity = {
+					ideology = communism
+					popularity = 0.1
+				}
+			}
+			hidden_effect = {
+				JAP = {
+					country_event = { id = change_prc.11 }
+				}
+			}
+        }
+        ai_will_do = {
+            factor = 1000
+        }
+    }
+
+	PRC_help_jap_com_categories_4 = { #建立秘密据点
+		allowed = {
+            original_tag = PRC
+            has_country_flag = the_eastern_prc_flag
+        }
+        visible = {
+            JAP = {
+				has_idea = PRC_commusic
+			}
+        }
+        available = {
+			AND = {
+				JAP = {
+					NOT = {
+						has_government = communism
+					}
+				}
+			}
+        }
+
+        fire_only_once = yes
+
+		cost = 50
+		days_remove = 30
+
+		modifier = {
+
+		}
+		complete_effect = {
+			
+		}
+
+        remove_effect = {
+			JAP = {
+				add_popularity = {
+					ideology = communism
+					popularity = 0.05
+				}
+			}
+			hidden_effect = {
+				JAP = {
+					country_event = { id = change_prc.11 }
+				}
+			}
+        }
+        ai_will_do = {
+            factor = 1000
+        }
+    }
+
+	PRC_help_jap_com_categories_5 = { #庇护流亡者
+		allowed = {
+            original_tag = PRC
+            has_country_flag = the_eastern_prc_flag
+        }
+        visible = {
+            JAP = {
+				has_idea = PRC_commusic
+			}
+        }
+        available = {
+			AND = {
+				JAP = {
+					NOT = {
+						has_government = communism
+					}
+				}
+			}
+        }
+
+        fire_only_once = yes
+
+		cost = 50
+		days_remove = 30
+
+		modifier = {
+
+		}
+		complete_effect = {
+			
+		}
+
+        remove_effect = {
+			JAP = {
+				add_popularity = {
+					ideology = communism
+					popularity = 0.1
+				}
+			}
+			hidden_effect = {
+				JAP = {
+					country_event = { id = change_prc.11 }
+				}
+			}
+        }
+        ai_will_do = {
+            factor = 1000
+        }
+    }
+
+	PRC_help_jap_com_categories_6 = { #组织召开共产党大会
+		allowed = {
+            original_tag = PRC
+            has_country_flag = the_eastern_prc_flag
+        }
+        visible = {
+            JAP = {
+				has_idea = PRC_commusic
+			}
+        }
+        available = {
+			AND = {
+				JAP = {
+					NOT = {
+						has_government = communism
+					}
+				}
+				JAP = {
+					communism > 0.2
+				}
+			}
+        }
+
+        fire_only_once = yes
+
+		cost = 50
+		days_remove = 30
+
+		modifier = {
+
+		}
+		complete_effect = {
+			
+		}
+
+        remove_effect = {
+			JAP = {
+				add_popularity = {
+					ideology = communism
+					popularity = 0.15
+				}
+			}
+			hidden_effect = {
+				JAP = {
+					country_event = { id = change_prc.11 }
+				}
+			}
+        }
+        ai_will_do = {
+            factor = 1000
+        }
+    }
+
+	PRC_help_jap_com_categories_7 = { #为起义提供支援
+		allowed = {
+            original_tag = PRC
+            has_country_flag = the_eastern_prc_flag
+        }
+        visible = {
+            JAP = {
+				has_idea = PRC_commusic
+			}
+        }
+        available = {
+			AND = {
+				JAP = {
+					NOT = {
+						has_government = communism
+					}
+				}
+				JAP = {
+					communism > 0.4
+				}
+			}
+        }
+
+        fire_only_once = yes
+
+		cost = 50
+		days_remove = 30
+
+		modifier = {
+
+		}
+		complete_effect = {
+			JAP = {
+				set_country_flag = prc_help_civilization_flag
+			}
+		}
+
+        remove_effect = {
+			JAP = {
+				add_popularity = {
+					ideology = communism
+					popularity = 0.1
+				}
+			}
+			hidden_effect = {
+				JAP = {
+					country_event = { id = change_prc.11 }
+				}
+			}
+        }
+        ai_will_do = {
+            factor = 1000
+        }
+    }
+
+	
+
+}
+
+
+PRC_attack_jap_categories = { #抗日民族统一阵线
+
+	PRC_attack_jap_categories_1 = { #招募义军
+		allowed = {
+            
+        }
+        visible = {
+            
+        }
+        available = {
+			
+        }
+
+        fire_only_once = no
+
+		cost = 10
+		days_remove = 240
+
+		targeted_modifier = {
+			tag = JAP
+			attack_bonus_against = 0.03
+			defense_bonus_against = 0.03
+			breakthrough_bonus_against = 0.03
+		}
+		complete_effect = {
+			division_template = {
+				name = "抗日救国军"
+				regiments = {
+					infantry = { x = 0 y = 0 }
+					infantry = { x = 0 y = 1 }
+					infantry = { x = 0 y = 2 }
+				}
+			}
+
+			random_owned_controlled_state = {
+				limit = { ROOT = { has_full_control_of_state = PREV } }
+				create_unit = {
+					division = "name = \"抗日救国军\" division_template = \"抗日救国军\" start_experience_factor = 0 start_equipment_factor = 0.2" 
+					owner = ROOT
+					count = 2
+				}
+			}
+		}
+
+        remove_effect = {
+			
+        }
+        ai_will_do = {
+            factor = 1000
+        }
+
+
+
+
+	}
+
+	PRC_attack_jap_categories_2 = { #抗战宣传
+		allowed = {
+            
+        }
+        visible = {
+            
+        }
+        available = {
+			
+        }
+
+        fire_only_once = no
+
+		cost = 25
+		days_remove = 60
+
+		targeted_modifier = {
+			tag = JAP
+			attack_bonus_against = 0.03
+			defense_bonus_against = 0.03
+			breakthrough_bonus_against = 0.03
+		}
+
+		modifier = {
+			surrender_limit = 0.05
+		}
+		complete_effect = {
+			
+		}
+
+        remove_effect = {
+			
+        }
+        ai_will_do = {
+            factor = 1000
+        }
+
+	}
+
+	PRC_attack_jap_categories_3 = { #战斗到最后一滴血
+		allowed = {
+            
+        }
+        visible = {
+            
+        }
+        available = {
+			surrender_progress > 0.5
+        }
+
+        fire_only_once = no
+
+		cost = 20
+		days_remove = 70
+
+		targeted_modifier = {
+			tag = JAP
+			attack_bonus_against = 0.05
+			defense_bonus_against = 0.05
+			breakthrough_bonus_against = 0.03
+		}
+
+		modifier = {
+			EXPERIENCE_LOSS_FACTOR = 0.2
+			army_core_attack_factor = 0.1
+			army_core_defence_factor = 0.1
+			war_support_weekly = 0.005
+		}
+		complete_effect = {
+			
+		}
+
+        remove_effect = {
+			
+        }
+        ai_will_do = {
+            factor = 1000
+        }
+
+	}
+
+	PRC_attack_jap_categories_4 = { #请求国际援助
+		allowed = {
+            
+        }
+        visible = {
+            
+        }
+        available = {
+			
+        }
+
+        fire_only_once = no
+
+		cost = 100
+		days_remove = 60
+
+		modifier = {
+			
+		}
+		complete_effect = {
+			
+		}
+
+        remove_effect = {
+			add_equipment_to_stockpile = {
+				type = infantry_equipment
+				amount = 2000
+			}
+			add_equipment_to_stockpile = {
+				type = artillery_equipment
+				amount = 50
+			}
+			add_equipment_to_stockpile = {
+				type = support_equipment
+				amount = 50
+			}
+        }
+        ai_will_do = {
+            factor = 1000
+        }
+
+	}
+
+	PRC_attack_jap_categories_5 = { #联络海外华侨
+		allowed = {
+            
+        }
+        visible = {
+            
+        }
+        available = {
+			
+        }
+
+        fire_only_once = no
+
+		cost = 50
+		days_remove = 100
+
+		modifier = {
+			
+		}
+		complete_effect = {
+			
+		}
+
+        remove_effect = {
+			add_equipment_to_stockpile = {
+				type = infantry_equipment
+				amount = 2000
+			}
+			add_equipment_to_stockpile = {
+				type = artillery_equipment
+				amount = 50
+			}
+			add_equipment_to_stockpile = {
+				type = support_equipment
+				amount = 50
+			}
+        }
+        ai_will_do = {
+            factor = 1000
+        }
+
+	}
+
+	PRC_attack_jap_categories_6 = { #训练军队
+		allowed = {
+            
+        }
+        visible = {
+            
+        }
+        available = {
+			
+        }
+
+        fire_only_once = no
+
+		cost = 0
+		days_remove = 365
+
+		modifier = {
+			army_core_defence_factor = 0.02
+			army_core_attack_factor = 0.02
+		}
+		complete_effect = {
+			add_manpower = -10000
+		}
+
+        remove_effect = {
+			division_template = {
+				name = "NewArmy"
+				regiments = {
+					infantry = { x = 0 y = 0 }
+					infantry = { x = 0 y = 1 }
+					infantry = { x = 0 y = 2 }
+					infantry = { x = 1 y = 0 }
+					infantry = { x = 1 y = 1 }
+					infantry = { x = 1 y = 2 }
+					infantry = { x = 2 y = 0 }
+					infantry = { x = 2 y = 1 }
+					infantry = { x = 2 y = 2 }
+				}
+			}
+
+			random_owned_controlled_state = {
+				limit = { ROOT = { has_full_control_of_state = PREV } }
+				create_unit = {
+					division = "name = \"NewArmy\" division_template = \"NewArmy\" start_experience_factor = 0.5 start_equipment_factor = 1" 
+					owner = ROOT
+					count = 6
+				}
+			}
+        }
+        ai_will_do = {
+            factor = 1000
+        }
+
+	}
+
+	PRC_attack_jap_categories_7 = { #殊死防御
+		allowed = {
+            
+        }
+        visible = {
+            
+        }
+        available = {
+			surrender_progress > 0.2
+        }
+
+        fire_only_once = no
+
+		cost = 20
+		days_remove = 70
+
+		targeted_modifier = {
+			tag = JAP
+			attack_bonus_against = 0.05
+			defense_bonus_against = 0.05
+			breakthrough_bonus_against = 0.03
+		}
+
+		modifier = {
+			army_core_defence_factor = 0.1
+			war_support_weekly = 0.005
+		}
+		complete_effect = {
+			
+		}
+
+        remove_effect = {
+			
+        }
+        ai_will_do = {
+            factor = 1000
+        }
+
+	}
+
+
+
+}

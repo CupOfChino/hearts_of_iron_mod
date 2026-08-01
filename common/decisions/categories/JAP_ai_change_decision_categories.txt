@@ -1,0 +1,59 @@
+JAP_ai_categories = {
+
+    allowed = {
+        original_tag = JAP
+    }
+
+    visible = {
+        is_ai = yes
+        is_subject = no
+        has_army_manpower = { size < 4000000 }
+        OR = {
+            JAP = {
+                has_country_flag = the_eastern_jap_flag
+            }
+            CHI = {
+                has_country_flag = GER_third_empire_categories_19_flag
+                is_in_faction_with = GER
+            }
+        }
+        has_capitulated = no
+    }
+    priority = 100
+}
+
+JAP_focus_categories = {
+    allowed = {
+        original_tag = JAP
+    }
+    visible = {
+        original_tag = JAP
+	is_subject = no
+        has_country_flag = the_eastern_jap_flag
+    }
+    priority = 120
+}
+
+JAP_other_fight_categories = { #召唤游击队
+    allowed = {
+        AND = {
+            has_war_with = JAP
+            is_ai = no
+            JAP = {
+                has_country_flag = the_eastern_jap_flag
+                has_country_flag = the_jap_decision_flag_7
+            }
+        }
+    }
+    visible = {
+        AND = {
+            has_war_with = JAP
+            is_ai = no
+            JAP = {
+                has_country_flag = the_eastern_jap_flag
+                has_country_flag = the_jap_decision_flag_7
+            }
+        }
+    }
+    priority = 120
+}

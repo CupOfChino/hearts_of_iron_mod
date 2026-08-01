@@ -1,0 +1,1201 @@
+on_actions = {
+    on_startup = {
+        effect = {
+            every_state = {
+                limit = {
+					is_core_of = TIB
+				}
+				add_core_of = PRC
+				add_core_of = CHI
+            }
+            GER = {
+                add_ai_strategy = { 
+                    type = send_volunteers_desire	
+                    id = CHI
+                    value = 2000
+                }	
+                add_ai_strategy = { 
+                    type = send_volunteers_desire	
+                    id = PRC
+                    value = 400
+                }	
+                add_ai_strategy = { 
+                    type = send_volunteers_desire	
+                    id = ITA
+                    value = 150
+                }	
+                add_ai_strategy = { 
+                    type = send_volunteers_desire	
+                    id = FRA
+                    value = 150
+                }	
+                add_ai_strategy = { 
+                    type = send_volunteers_desire	
+                    id = SOV
+                    value = 150
+                }	
+            }
+            SOV = {
+                add_ai_strategy = { 
+                    type = send_volunteers_desire	
+                    id = CHI
+                    value = 500
+                }	
+                add_ai_strategy = { 
+                    type = send_volunteers_desire	
+                    id = PRC
+                    value = 500
+                }	
+                add_ai_strategy = { 
+                    type = send_volunteers_desire	
+                    id = ETH
+                    value = 500
+                }	
+                add_ai_strategy = { 
+                    type = send_volunteers_desire	
+                    id = FRA
+                    value = 500
+                }	
+                add_ai_strategy = { 
+                    type = send_volunteers_desire	
+                    id = ENG
+                    value = 500
+                }	
+                add_ai_strategy = { 
+                    type = send_volunteers_desire	
+                    id = GER
+                    value = 500
+                }	
+            }
+            FRA = {
+                add_ai_strategy = { 
+                    type = send_volunteers_desire	
+                    id = CHI
+                    value = 250
+                }	
+                add_ai_strategy = { 
+                    type = send_volunteers_desire	
+                    id = PRC
+                    value = 250
+                }	
+                add_ai_strategy = { 
+                    type = send_volunteers_desire	
+                    id = SOV
+                    value = 100
+                }	
+                add_ai_strategy = { 
+                    type = send_volunteers_desire	
+                    id = GER
+                    value = 100
+                }	
+            }
+
+            every_country = {
+                limit = {
+                    is_ai = no
+                }
+                country_event = { id = change_germany.28 }
+            }
+            PRC = {
+                add_ideas = extensive_conscription
+            }
+            build_railway = {
+				level = 1
+				start_province = 12356
+				target_province = 8049
+			}
+            build_railway = {
+				level = 2
+				start_province = 12356
+				target_province = 4174
+			}
+            build_railway = {
+				level = 1
+				start_province = 12732
+				target_province = 12356
+			}
+            build_railway = {
+				level = 1
+				start_province = 12732
+				target_province = 8049
+			}
+            build_railway = {
+				level = 1
+				start_province = 12732
+				target_province = 4709
+			}
+            build_railway = {
+				level = 1
+				start_province = 12732
+				target_province = 8018
+			}
+            build_railway = {
+				level = 1
+				start_province = 8018
+				target_province = 5033
+			}
+            build_railway = {
+				level = 1
+				start_province = 4973
+				target_province = 5033
+			}
+            build_railway = {
+				level = 1
+				start_province = 8018
+				target_province = 4973
+			}
+            build_railway = {
+				level = 1
+				start_province = 2015
+				target_province = 1970
+			}
+            build_railway = {
+				level = 1
+				start_province = 1970
+				target_province = 8112
+			}
+            build_railway = {
+				level = 1
+				start_province = 8112
+				target_province = 4973
+			}
+            build_railway = {
+				level = 1
+				start_province = 2015
+				target_province = 4709
+			}
+            build_railway = {
+				level = 1
+				start_province = 8018
+				target_province = 4709
+			}
+            build_railway = {
+				level = 1
+				start_province = 7199
+				target_province = 9970
+			}
+            build_railway = {
+				level = 1
+				start_province = 7097
+				target_province = 10404
+			}
+            build_railway = {
+				level = 1
+				start_province = 7137
+				target_province = 10404
+			}
+            build_railway = {
+				level = 1
+				start_province = 7301
+				target_province = 6999
+			}
+            build_railway = {
+				level = 1
+				start_province = 1319
+				target_province = 6999
+			}
+            build_railway = {
+				level = 1
+				start_province = 7101
+				target_province = 6999
+			}
+            build_railway = {
+				level = 1
+				start_province = 8018
+				target_province = 6999
+			}
+            build_railway = {
+				level = 1
+				start_province = 1628
+				target_province = 11913
+			}
+            
+
+            if = {
+                limit = {
+                    has_game_rule = {
+                        rule = The_third_empire_family
+                        option = the_third_empire_flag
+                    }
+                }
+                #有傻子flag和按钮弄反了结果只能全部反着来了（乐）
+                FRA = {
+                    set_country_flag = cjg_open_the_third_empire #三皇同盟
+                }
+                set_gobal_flag = open_the_third_empire_flag
+                every_country = {
+                    limit = {
+                        is_ai = no
+                    }
+                    country_event = { id = change_germany.0 }
+                }
+            }
+            else_if = {
+                limit = {
+                    has_game_rule = {
+                        rule = The_third_empire_family
+                        open = the_old_firend_flag
+                    }
+                }
+                FRA = {
+                    set_country_flag = cjg_open_the_old_firend #旧同盟国
+                }
+                every_country = {
+                    limit = {
+                        is_ai = no
+                    }
+                    country_event = { id = change_germany.0 }
+                }
+            }
+
+            if = {
+                limit = {
+                    has_game_rule = {
+                        rule = The_eastern_game_rule
+                        option = the_eastern_prc
+                    }
+                }
+                PRC = {
+                    set_country_flag = the_eastern_prc_flag #中共
+                }
+            }
+            else_if = {
+                limit = {
+                    has_game_rule = {
+                        rule = The_eastern_game_rule
+                        option = the_eastern_chi
+                    }
+                }
+                CHI = {
+                    set_country_flag = the_eastern_chi_flag #民国
+                }
+            }
+            else_if = {
+                limit = {
+                    has_game_rule = {
+                        rule = The_eastern_game_rule
+                        option = the_eastern_man
+                    }
+                }
+                MAN = {
+                    set_country_flag = the_eastern_man_flag #带清
+                }
+            }
+            else_if = {
+                limit = {
+                    has_game_rule = {
+                        rule = The_eastern_game_rule
+                        option = the_eastern_jap
+                    }
+                }
+                JAP = {
+                    set_country_flag = the_eastern_jap_flag #立本
+                }
+            }
+            else_if = {
+                limit = {
+                    has_game_rule = {
+                        rule = The_eastern_game_rule
+                        option = the_eastern_random
+                    }
+                }
+                JAP = {
+                    set_country_flag = the_eastern_jap_flag
+                }
+                PRC = {
+                    set_country_flag = the_eastern_prc_flag #中共
+                }
+                CHI = {
+                    set_country_flag = the_eastern_chi_flag #民国
+                }
+                MAN = {
+                    set_country_flag = the_eastern_man_flag #带清
+                }
+            }
+
+            if = {
+                limit = {
+                    has_game_rule = {
+                        rule = The_LatinAmerica_game_rule
+                        option = the_LatinAmerica
+                    }
+                }
+                MEX = {
+                    set_country_flag = the_LatinAmerica_flag #拉丁同盟
+                }
+            }
+
+            if = {
+                limit = {
+                    has_game_rule = {
+                        rule = The_SOV_game_rule
+                        option = the_SOV_Great_Patriotic_War_open
+                    }
+                }
+                SOV = {
+                    set_country_flag =  the_SOV_Great_Patriotic_War_open_flag
+                }
+                every_country = {
+                    limit = {
+                        is_ai = no
+                    }
+                    country_event = { id = change_sov.12 }
+                }
+            }
+
+            if = {
+                limit = {
+                    has_game_rule = {
+                        rule = The_USA_game_rule
+                        option = the_USA_factory_more_open
+                    }
+                }
+                USA = {
+                    add_offsite_building = { type = industrial_complex level = 100 }
+                    add_offsite_building = { type = arms_factory level = 20 }
+                    add_offsite_building = { type = dockyard level = 40 }
+
+                    
+                    country_event = { id = change_usa.12 }
+                }
+                every_state = {
+                    limit = {
+                        is_core_of = USA
+                    }
+                    add_extra_state_shared_building_slots = 2
+                    add_building_construction = {
+                        type = industrial_complex
+                        level = 1
+                        instant_build = yes
+                    }
+                }
+            }
+            if = {
+                limit = {
+                    has_game_rule = {
+                        rule = The_eastern_now_rule
+                        option = the_eastern_now_1
+                    }
+                }
+                every_state = {
+                    limit = {
+                        is_core_of = PRC
+                    }
+                    add_extra_state_shared_building_slots = 2
+                    add_building_construction = {
+                        type = infrastructure
+                        level = 1
+                        instant_build = yes
+                    }
+                }
+                SHX = {
+                    every_unit_leader = {
+                        set_nationality = PRC
+                    }
+                }
+
+                NXM = {
+                    every_unit_leader = {
+                        set_nationality = PRC
+                    }
+                }
+
+                GSM = {
+                    every_unit_leader = {
+                        set_nationality = PRC
+                    }
+                }
+
+                XSM = {
+                    every_unit_leader = {
+                        set_nationality = PRC
+                    }
+                }
+
+                SIK = {
+                    every_unit_leader = {
+                        set_nationality = PRC
+                    }
+                }
+
+                KHM = {
+                    every_unit_leader = {
+                        set_nationality = PRC
+                    }
+                }
+
+                TIB = {
+                    every_unit_leader = {
+                        set_nationality = PRC
+                    }
+                }
+
+                SIC = {
+                    every_unit_leader = {
+                        set_nationality = PRC
+                    }
+                }
+
+                XIC = {
+                    every_unit_leader = {
+                        set_nationality = PRC
+                    }
+                }
+
+                YUN = {
+                    every_unit_leader = {
+                        set_nationality = PRC
+                    }
+                }
+
+                GXC = {
+                    every_unit_leader = {
+                        set_nationality = PRC
+                    }
+                }
+
+                GDC = {
+                    every_unit_leader = {
+                        set_nationality = PRC
+                    }
+                }
+
+                HBC = {
+                    every_unit_leader = {
+                        set_nationality = PRC
+                    }
+                }
+
+                SND = {
+                    every_unit_leader = {
+                        set_nationality = PRC
+                    }
+                }
+
+                CHI = {
+                    every_unit_leader = {
+                        set_nationality = PRC
+                    }
+                }
+
+                PRC = {
+                    annex_country = {
+                        target = SHX
+                        transfer_troops = yes
+                    }
+
+                    annex_country = {
+                        target = NXM
+                        transfer_troops = yes
+                    }
+
+                    annex_country = {
+                        target = GSM
+                        transfer_troops = yes
+                    }
+
+                    annex_country = {
+                        target = XSM
+                        transfer_troops = yes
+                    }
+
+                    annex_country = {
+                        target = SIK
+                        transfer_troops = yes
+                    }
+
+                    annex_country = {
+                        target = KHM
+                        transfer_troops = yes
+                    }
+
+                    annex_country = {
+                        target = TIB
+                        transfer_troops = yes
+                    }
+
+                    annex_country = {
+                        target = SIC
+                        transfer_troops = yes
+                    }
+
+                    annex_country = {
+                        target = XIC
+                        transfer_troops = yes
+                    }
+
+                    annex_country = {
+                        target = YUN
+                        transfer_troops = yes
+                    }
+
+                    annex_country = {
+                        target = GXC
+                        transfer_troops = yes
+                    }
+
+                    annex_country = {
+                        target = GDC
+                        transfer_troops = yes
+                    }
+
+                    annex_country = {
+                        target = HBC
+                        transfer_troops = yes
+                    }
+
+                    annex_country = {
+                        target = SND
+                        transfer_troops = yes
+                    }
+
+                    annex_country = {
+                        target = CHI
+                        transfer_troops = yes
+                    }
+                }
+
+
+
+
+            } else_if = {
+                limit = {
+                    has_game_rule = {
+                        rule = The_eastern_now_rule
+                        option = the_eastern_now_2
+                    }
+                }
+                every_state = {
+                    limit = {
+                        is_core_of = PRC
+                    }
+                    add_extra_state_shared_building_slots = 2
+                    add_building_construction = {
+                        type = infrastructure
+                        level = 1
+                        instant_build = yes
+                    }
+                }
+
+                SHX = {
+                    every_unit_leader = {
+                        set_nationality = CHI
+                    }
+                }
+
+                NXM = {
+                    every_unit_leader = {
+                        set_nationality = CHI
+                    }
+                }
+
+                GSM = {
+                    every_unit_leader = {
+                        set_nationality = CHI
+                    }
+                }
+
+                XSM = {
+                    every_unit_leader = {
+                        set_nationality = CHI
+                    }
+                }
+
+                SIK = {
+                    every_unit_leader = {
+                        set_nationality = CHI
+                    }
+                }
+
+                KHM = {
+                    every_unit_leader = {
+                        set_nationality = CHI
+                    }
+                }
+
+                TIB = {
+                    every_unit_leader = {
+                        set_nationality = CHI
+                    }
+                }
+
+                SIC = {
+                    every_unit_leader = {
+                        set_nationality = CHI
+                    }
+                }
+
+                XIC = {
+                    every_unit_leader = {
+                        set_nationality = CHI
+                    }
+                }
+
+                YUN = {
+                    every_unit_leader = {
+                        set_nationality = CHI
+                    }
+                }
+
+                GXC = {
+                    every_unit_leader = {
+                        set_nationality = CHI
+                    }
+                }
+
+                GDC = {
+                    every_unit_leader = {
+                        set_nationality = CHI
+                    }
+                }
+
+                HBC = {
+                    every_unit_leader = {
+                        set_nationality = CHI
+                    }
+                }
+
+                SND = {
+                    every_unit_leader = {
+                        set_nationality = CHI
+                    }
+                }
+
+                PRC = {
+                    every_unit_leader = {
+                        set_nationality = CHI
+                    }
+                }
+
+                CHI = {
+                    annex_country = {
+                        target = SHX
+                        transfer_troops = yes
+                    }
+
+                    annex_country = {
+                        target = NXM
+                        transfer_troops = yes
+                    }
+
+                    annex_country = {
+                        target = GSM
+                        transfer_troops = yes
+                    }
+
+                    annex_country = {
+                        target = XSM
+                        transfer_troops = yes
+                    }
+
+                    annex_country = {
+                        target = SIK
+                        transfer_troops = yes
+                    }
+
+                    annex_country = {
+                        target = KHM
+                        transfer_troops = yes
+                    }
+
+                    annex_country = {
+                        target = TIB
+                        transfer_troops = yes
+                    }
+
+                    annex_country = {
+                        target = SIC
+                        transfer_troops = yes
+                    }
+
+                    annex_country = {
+                        target = XIC
+                        transfer_troops = yes
+                    }
+
+                    annex_country = {
+                        target = YUN
+                        transfer_troops = yes
+                    }
+
+                    annex_country = {
+                        target = GXC
+                        transfer_troops = yes
+                    }
+
+                    annex_country = {
+                        target = GDC
+                        transfer_troops = yes
+                    }
+
+                    annex_country = {
+                        target = HBC
+                        transfer_troops = yes
+                    }
+
+                    annex_country = {
+                        target = SND
+                        transfer_troops = yes
+                    }
+
+                    annex_country = {
+                        target = PRC
+                        transfer_troops = yes
+                    }
+                }
+
+
+
+
+            } 
+
+            if = {
+                limit = {
+                    has_game_rule = {
+                        rule = The_navy_game_rule
+                        option = The_navy_game_rule_open
+                    }
+                }
+                set_gobal_flag = The_navy_game_rule_open_flag
+            }
+
+            if = {
+                limit = {
+                    has_game_rule = {
+                        rule = The_lamei_game_rule
+                        option = The_lamei_game_rule_open
+                    }
+                }
+                BOL = {
+                    annex_country = {
+                        target = PRU
+                        transfer_troops = yes
+                    }
+                    annex_country = {
+                        target = ECU
+                        transfer_troops = yes
+                    }
+                    
+                }
+                every_state = {
+                    limit = {
+                        is_core_of = ECU
+                    }
+                    add_core_of = BOL
+                }
+                ARG = {
+                    annex_country = {
+                        target = CHL
+                        transfer_troops = yes
+                    }
+                }
+                every_state = {
+                    limit = {
+                        is_core_of = CHL
+                    }
+                    add_core_of = ARG
+                }
+                BRA = {
+                    annex_country = {
+                        target = PAR
+                        transfer_troops = yes
+                    }
+                }
+                every_state = {
+                    limit = {
+                        is_core_of = PAR
+                    }
+                    add_core_of = BRA
+                }
+                BRA = {
+                    annex_country = {
+                        target = URG
+                        transfer_troops = yes
+                    }
+                }
+                every_state = {
+                    limit = {
+                        is_core_of = URG
+                    }
+                    add_core_of = BRA
+                }
+                NIC = {
+                    annex_country = {
+                        target = GUA
+                        transfer_troops = yes
+                    }
+                    annex_country = {
+                        target = ELS
+                        transfer_troops = yes
+                    }
+                    annex_country = {
+                        target = HON
+                        transfer_troops = yes
+                    }
+                    annex_country = {
+                        target = COS
+                        transfer_troops = yes
+                    }
+                }
+                CUB = {
+                    annex_country = {
+                        target = HAI
+                        transfer_troops = yes
+                    }
+                    annex_country = {
+                        target = DOM
+                        transfer_troops = yes
+                    }
+                }
+                every_state = {
+                    limit = {
+                        is_core_of = HAI
+                    }
+                    add_core_of = CUB
+                }
+                every_state = {
+                    limit = {
+                        is_core_of = DOM
+                    }
+                    add_core_of = CUB
+                }
+            }
+
+
+            
+            FRA = {
+                add_dynamic_modifier = {
+                    modifier = mod_with_the_fra_army
+                }
+                add_dynamic_modifier = {
+                    modifier = mod_with_fra_air
+                }
+                add_dynamic_modifier = {
+                    modifier = mod_with_fra_navy
+                }
+            }
+
+            
+
+            ENG = {
+                add_dynamic_modifier = {
+                    modifier = mod_with_eng_army
+                }
+                add_dynamic_modifier = {
+                    modifier = mod_with_eng_air
+                }
+                add_dynamic_modifier = {
+                    modifier = mod_with_eng_navy
+                }
+            }
+
+            USA = {
+                add_dynamic_modifier = {
+                    modifier = mod_with_usa_army
+                }
+                add_dynamic_modifier = {
+                    modifier = mod_with_usa_air
+                }
+                add_dynamic_modifier = {
+                    modifier = mod_with_usa_navy
+                }
+            }
+
+
+        }
+    }
+
+
+    on_weekly = {
+        effect = {
+
+
+            if = {
+                limit = {
+                    has_game_rule = {
+                        rule = The_air_game_rule
+                        option = The_air_game_rule_open
+                    }
+                }
+                every_country = {
+                    limit = {
+                        NOT = {
+                            has_idea = mod_make_air_low
+                        }
+                    }
+                    add_ideas = mod_make_air_low
+                }
+            }
+
+            if = {
+                limit = {
+                    has_game_rule = {
+                        rule = The_navy_game_rule
+                        option = The_navy_game_rule_open
+                    }
+                }
+                every_country = {
+                    limit = {
+                        is_ai = yes
+                        NOT = {
+                            has_idea = the_super_ai_ideas
+                        }
+                    }
+                    add_ideas = the_super_ai_ideas
+                }
+
+            }
+
+
+
+            if = {
+                limit = {
+                    has_game_rule = {
+                        rule = The_army_game_rule
+                        option = The_army_game_rule_open
+                    }
+                }
+                every_country = {
+                    limit = {
+                        NOT = {
+                            has_idea = army_num_0
+                            has_idea = army_num_1
+                            has_idea = army_num_2
+                            has_idea = army_num_3
+                            has_idea = army_num_4
+                            has_idea = army_num_5
+                            has_idea = army_num_6
+                        }
+                    }
+                    add_ideas = army_num_0
+                }
+            }
+
+            if = {
+                limit = {
+                    has_game_rule = {
+                        rule = The_army_game_rule
+                        option = The_army_game_rule_open
+                    }
+                }
+
+                every_country = { 
+                    limit = {
+                        OR = {
+                            has_idea = army_num_0
+                            has_idea = army_num_1
+                            has_idea = army_num_2
+                            has_idea = army_num_3
+                            has_idea = army_num_4
+                            has_idea = army_num_5
+                            has_idea = army_num_6
+                        }
+                    }
+                    if = {
+                        limit = {
+                                has_army_manpower = { size < 1000000 }
+                                NOT = {
+                                    has_idea = army_num_0
+                                }
+                            }
+                            add_ideas = army_num_0
+                            remove_ideas = army_num_1
+                            remove_ideas = army_num_2
+                            remove_ideas = army_num_3
+                            remove_ideas = army_num_4
+                            remove_ideas = army_num_5
+                            remove_ideas = army_num_6
+                        }
+                        else_if = {
+                            limit = {
+                                has_army_manpower = { size > 1000000 }
+                                has_army_manpower = { size < 2000000 }
+                                NOT = {
+                                    has_idea = army_num_1
+                                }
+                            }
+                            add_ideas = army_num_1
+                            remove_ideas = army_num_0
+                            remove_ideas = army_num_2
+                            remove_ideas = army_num_3
+                            remove_ideas = army_num_4
+                            remove_ideas = army_num_5
+                            remove_ideas = army_num_6
+                        }
+                        else_if = {
+                            limit = {
+                                has_army_manpower = { size > 2000000 }
+                                has_army_manpower = { size < 3000000 }
+                                NOT = {
+                                    has_idea = army_num_2
+                                }
+                            }
+                            add_ideas = army_num_2
+                        }
+                        else_if = {
+                            limit = {
+                                has_army_manpower = { size > 3000000 }
+                                has_army_manpower = { size < 5000000 }
+                                NOT = {
+                                    has_idea = army_num_3
+                                }
+                            }
+                            add_ideas = army_num_3
+                            remove_ideas = army_num_1
+                            remove_ideas = army_num_2
+                            remove_ideas = army_num_0
+                            remove_ideas = army_num_4
+                            remove_ideas = army_num_5
+                            remove_ideas = army_num_6
+                        }
+                        else_if = {
+                            limit = {
+                                has_army_manpower = { size > 5000000 }
+                                has_army_manpower = { size < 7500000 }
+                                NOT = {
+                                    has_idea = army_num_4
+                                }
+                            }
+                            add_ideas = army_num_4
+                            remove_ideas = army_num_1
+                            remove_ideas = army_num_2
+                            remove_ideas = army_num_3
+                            remove_ideas = army_num_0
+                            remove_ideas = army_num_5
+                            remove_ideas = army_num_6
+                        }
+                        else_if = {
+                            limit = {
+                                has_army_manpower = { size > 75000000 }
+                                has_army_manpower = { size < 100000000 }
+                                NOT = {
+                                    has_idea = army_num_5
+                                }
+                            }
+                            add_ideas = army_num_5
+                            remove_ideas = army_num_1
+                            remove_ideas = army_num_2
+                            remove_ideas = army_num_3
+                            remove_ideas = army_num_4
+                            remove_ideas = army_num_0
+                            remove_ideas = army_num_6
+                        }
+                        else_if = {
+                            limit = {
+                                has_army_manpower = { size > 10000000 }
+                                NOT = {
+                                    has_idea = army_num_6
+                                }
+                            }
+                            add_ideas = army_num_6
+                            remove_ideas = army_num_1
+                            remove_ideas = army_num_2
+                            remove_ideas = army_num_3
+                            remove_ideas = army_num_4
+                            remove_ideas = army_num_5
+                            remove_ideas = army_num_0
+                        }
+                    } 
+                    
+                }
+            }
+            
+        }
+    }
+
+
+    on_daily = {
+        effect = {
+            if = {
+                limit = {
+                    SOV = {
+                        is_subject = no
+                        has_country_flag = the_SOV_Great_Patriotic_War_open_flag
+                        has_government = communism
+                        has_defensive_war = yes
+                        any_enemy_country = { is_major = yes }
+                        any_enemy_country = {
+                            SOV_is_major_not_original_sov = yes
+                        }
+                        NOT = {
+							has_idea = SOV_Great_Patriotic_War_level_1
+							has_idea = SOV_Great_Patriotic_War_level_2
+							has_idea = SOV_Great_Patriotic_War_level_3
+							has_idea = SOV_Great_Patriotic_War_level_4
+							has_idea = SOV_Great_Patriotic_War_level_5
+						}
+                    }
+
+                }
+                SOV = {
+                    country_event = { id = change_sov.13 }
+                    add_ideas = SOV_Great_Patriotic_War_level_1
+                    add_ideas = SOV_Great_Patriotic_War_production_level_1
+                }
+            }
+
+            if = {
+                limit = {
+                    SOV = {
+                        is_subject = no
+                        has_country_flag = the_SOV_Great_Patriotic_War_open_flag
+                        has_government = communism
+                        has_defensive_war = yes
+                        any_enemy_country = { is_major = yes }
+                        any_enemy_country = {
+                            SOV_is_major_not_original_sov = yes
+                        }
+                        NOT = {
+							has_idea = SOV_Great_Patriotic_War_level_1
+							has_idea = SOV_Great_Patriotic_War_level_2
+							has_idea = SOV_Great_Patriotic_War_level_3
+							has_idea = SOV_Great_Patriotic_War_level_4
+							has_idea = SOV_Great_Patriotic_War_level_5
+						}
+                    }
+
+                }
+                SOV = {
+                    country_event = { id = change_sov.13 }
+                    add_ideas = SOV_Great_Patriotic_War_level_1
+                    add_ideas = SOV_Great_Patriotic_War_production_level_1
+                }
+            }
+        }
+    }
+
+    on_yearly = {
+        effect = {
+            if = {
+                limit = {
+                    has_global_flag = The_navy_game_rule_open_flag
+                }
+                every_country = {
+                    limit = {
+                        is_ai = yes
+                        is_major = yes
+                        is_puppet = no
+                        num_of_naval_factories > 0
+                    }
+                    add_offsite_building = { type = dockyard level = 15 }
+                    random_state = {
+                        limit = {
+                            is_core_of = PREV
+                            is_fully_controlled_by = PREV
+                        }
+                        add_resource = {
+                            type = steel
+                            amount = 16
+                        }
+                        add_resource = {
+                            type = chromium
+                            amount = 8
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    
+}

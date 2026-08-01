@@ -1,0 +1,97 @@
+SOV_ai_categories = {
+
+    allowed = {
+        original_tag = SOV
+    }
+
+    visible = {
+        is_ai = yes
+        is_subject = no
+        has_army_manpower = { size < 3000000 }
+        original_tag = SOV
+        FRA = {
+            has_country_flag = cjg_open_the_third_empire
+        }
+        SOV = {
+            has_capitulated = no
+        }
+    }
+    priority = 100
+}
+
+SOV_invite_categories = { #有日共时，选了三国同盟路线可以拉东亚进来
+
+    allowed = {
+        original_tag = SOV
+    }
+
+    visible = {
+	is_subject = no
+        original_tag = SOV
+        has_country_flag = join_eng_factions
+    }
+
+}
+
+SOV_the_third_empire_categories = {
+    allowed = {
+        original_tag = SOV
+    }
+    visible = {
+	    is_subject = no
+    
+    }
+    picture = GFX_decision_cat_naval_treaty
+    icon = GFX_decision_third_empire_2
+    priority = 120
+}
+
+
+
+SOV_Great_Patriotic_War_categories = { #伟大卫国战争
+    allowed = {
+        original_tag = SOV
+    }
+    visible = {
+        SOV = {
+            AND = {
+                is_subject = no
+                has_country_flag = the_SOV_Great_Patriotic_War_open_flag
+                has_government = communism
+                has_defensive_war = yes
+                any_enemy_country = { is_major = yes }
+                NOT = {
+                    has_idea = SOV_Great_Patriotic_War_SOV_lose_war
+                }
+            }
+        }
+    }
+    picture = GFX_decision_cat_picture_form_siberian_republic
+    icon = sov_great_patriotic_war
+    priority = 300
+}
+
+Attack_SOV_categories = { #进攻苏联
+    allowed = {
+
+    }
+    visible = {
+        SOV = {
+            AND = {
+                is_subject = no
+                has_country_flag = the_SOV_Great_Patriotic_War_open_flag
+                has_government = communism
+                has_defensive_war = yes
+                any_enemy_country = { is_major = yes }
+                NOT = {
+                    has_idea = SOV_Great_Patriotic_War_SOV_lose_war
+                }
+            }
+        }
+        has_war_with = SOV
+        is_major = yes
+    }
+    picture = GFX_decision_cat_picture_form_siberian_republic
+    icon = sov_great_patriotic_war
+    priority = 300
+}

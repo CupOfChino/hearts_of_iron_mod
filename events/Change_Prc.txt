@@ -1,0 +1,763 @@
+add_namespace = change_prc
+
+country_event = { #毛的领导地位
+    id = change_prc.1
+	title = change_prc.1.t
+	desc = change_prc.1.d
+
+    is_triggered_only = yes
+
+	picture = GFX_report_event_NOR_quisling_speech
+
+    option = {
+		name = change_prc.1.a
+		ai_chance = {
+			factor = 100
+		}
+        every_army_leader = {
+            limit = {
+                name = PRC_mao_zedong
+            }
+            add_field_marshal_trait = field_marshal
+			add_planning = 1
+            set_attack_skill=7
+		}
+
+		add_country_leader_trait = PRC_The_founder_of_the_Workers_and_Peasants_Red_Army
+		add_country_leader_trait = PRC_Master_of_infantry_guerrilla_warfare
+	}
+}
+
+
+country_event = { #prc寻求援助
+    id = change_prc.2
+	title = change_prc.2.t
+	desc = change_prc.2.d
+
+    is_triggered_only = yes
+
+	picture = GFX_report_event_FIN_svinhufvud_speech
+
+    option = {
+		name = change_prc.2.a
+		ai_chance = {
+			factor = 100
+		}
+        PRC = {
+			country_event = { id = change_prc.3 days = 1 }
+		}
+	}
+}
+
+country_event = { #苏联援助
+    id = change_prc.3
+	title = change_prc.3.t
+	desc = change_prc.3.d
+
+    is_triggered_only = yes
+
+	picture = GFX_report_event_generic_truck
+
+    option = {
+		name = change_prc.3.a
+		ai_chance = {
+			factor = 100
+		}
+		if = {
+				limit = { has_idea = PRC_the_long_march_1 }
+				remove_ideas = PRC_the_long_march_1
+			}
+			else = {
+				remove_ideas = PRC_the_long_march_2 
+			}
+		add_offsite_building = { type = arms_factory level = 4 }
+        add_offsite_building = { type = industrial_complex level = 4 }
+		add_ideas = PRC_Comintern_aid
+		add_equipment_to_stockpile = {
+			type = infantry_equipment
+			amount = 10000
+			producer = SOV
+		}
+		add_equipment_to_stockpile = {
+			type = artillery_equipment
+			amount = 1000
+			producer = SOV
+		}
+		add_equipment_to_stockpile = {
+			type = support_equipment
+			amount = 2000
+			producer = SOV
+		}
+		add_equipment_to_stockpile = {
+			type = motorized_equipment
+			amount = 200
+			producer = SOV
+		}
+		add_equipment_to_stockpile = {
+			type = train_equipment
+			amount = 30
+			producer = SOV
+		}
+		add_equipment_to_stockpile = {
+			type = anti_air_equipment
+			amount = 500
+			producer = SOV
+		}
+		add_equipment_to_stockpile = {
+			type = anti_tank_equipment
+			amount = 500
+			producer = SOV
+		}
+		SOV = {
+			add_ai_strategy = {
+				type = protect
+				id = PRC
+				value = 1000
+			}
+			add_ai_strategy = {
+				type = send_volunteers_desire
+				id = PRC
+				value = 1000
+			}
+			add_ai_strategy = {
+				type = support
+				id = PRC
+				value = 500
+			}
+		}
+		PRC = {
+			add_ai_strategy = {
+				type = send_volunteers_desire
+				id = PRC
+				value = 1000
+			}
+			add_ai_strategy = {
+				type = support
+				id = PRC
+				value = 500
+			}
+			add_ai_strategy = {
+				type = protect
+				id = PRC
+				value = 1000
+			}
+		}
+	}
+}
+
+
+country_event = { #华侨援助
+    id = change_prc.4
+	title = change_prc.4.t
+	desc = change_prc.4.d
+
+    is_triggered_only = yes
+
+	picture = GFX_report_event_generic_truck
+
+    option = {
+		name = change_prc.4.a
+		ai_chance = {
+			factor = 100
+		}
+        add_offsite_building = { type = industrial_complex level = 4 }
+		add_manpower = 5000
+		add_equipment_to_stockpile = {
+			type = infantry_equipment
+			amount = 5000
+		}
+		add_ideas = PRC_Overseas_Chinese_donations
+	}
+}
+
+country_event = { #工业化的问题
+    id = change_prc.5
+	title = change_prc.5.t
+	desc = change_prc.5.d
+
+    is_triggered_only = yes
+
+	picture = GFX_report_event_NOR_Nasjonal_samling_rally
+
+    option = {
+		name = change_prc.5.a
+		ai_chance = {
+			factor = 100
+		}
+        
+		add_timed_idea = {
+			idea = PRC_Rapid_industrialization
+			days = 365
+		}
+
+	}
+}
+
+country_event = { #国民政府宣布投降
+    id = change_prc.6
+	title = change_prc.6.t
+	desc = change_prc.6.d
+
+    is_triggered_only = yes
+
+	picture = GFX_report_event_SOV_mongolia_fortify_border
+
+    option = { #获得将领
+		name = change_prc.6.a
+		ai_chance = {
+			factor = 100
+		}
+		CHI = {
+			every_unit_leader = {
+				set_nationality = PRC
+			}
+		}
+		PRC = { 
+            annex_country = {
+                target = CHI
+                transfer_troops = yes 
+            }
+        }
+	}
+
+	option = { #no
+		name = change_prc.6.b
+		ai_chance = {
+			factor = 0
+		}
+		PRC = { 
+            annex_country = {
+                target = CHI
+            }
+        }
+	}
+}
+
+country_event = { #对日本的战略
+    id = change_prc.7
+	title = change_prc.7.t
+	desc = change_prc.7.d
+
+    is_triggered_only = yes
+
+	picture = GFX_report_event_lithuanian_ultimatum
+
+    option = { #要求臣服
+		name = change_prc.7.a
+		ai_chance = {
+			factor = 50
+			modifier = {
+				JAP = {
+					has_army_manpower = { size < 524999  }
+				}
+				factor = 100
+			}
+		}
+		JAP = {
+			country_event = { id = change_prc.8 days = 1 }
+		}
+	}
+
+	option = { #秘密扶持日共的同志
+		name = change_prc.7.b
+		ai_chance = {
+			factor = 50
+			modifier = {
+				JAP = {
+					has_army_manpower = { size > 999999  }
+				}
+				factor = 100
+			}
+		}
+		PRC = {
+			set_country_flag = Support_the_Japanese_Communist_Party_flag
+		}
+		JAP = {
+			country_event = { id = change_prc.10 hours = 12 }
+		}
+	}
+}
+
+country_event = { #对日本的战略(中共要求臣服)
+    id = change_prc.8
+	title = change_prc.8.t
+	desc = change_prc.8.d
+
+    is_triggered_only = yes
+
+    option = { #不干
+		name = change_prc.8.a
+		ai_chance = {
+			factor = 50
+			modifier = {
+				JAP = {
+					NOT = { has_country_flag = the_eastern_jap_flag }
+				}
+				factor = 0
+			}
+		}
+		PRC = {
+			country_event = { id = change_prc.9 days = 1 }
+		}
+	}
+
+	option = { #投降喵
+		name = change_prc.8.b
+		ai_chance = {
+			factor = 50
+			modifier = {
+				JAP = {
+					has_army_manpower = { size < 624999  }
+				}
+				factor = 100
+			}
+			modifier = {
+				JAP = {
+					has_country_flag = the_eastern_jap_flag
+				}
+				factor = 0
+			}
+		}
+		PRC = {
+			country_event = { id = change_prc.13 days = 1 }
+		}
+	}
+}
+
+country_event = { #对日本的战略(中共要求臣服立本不同意)
+    id = change_prc.9
+	title = change_prc.9.t
+	desc = change_prc.9.d
+
+    is_triggered_only = yes
+
+    option = { #给你脸了
+		name = change_prc.9.a
+		ai_chance = {
+			factor = 50
+			modifier = {
+				JAP = {
+					NOT = { has_country_flag = the_eastern_jap_flag }
+				}
+				factor = 0
+			}
+		}
+		PRC = {
+			set_technology = marine_tech_1
+			division_template = {
+				name = "先头精英部队"
+				regiments = {
+					marine = { x = 0 y = 0 }
+					marine = { x = 0 y = 1 }
+					marine = { x = 0 y = 2 }
+                    marine = { x = 0 y = 3 }
+					marine = { x = 1 y = 0 }
+					marine = { x = 1 y = 1 }
+					marine = { x = 1 y = 2 }
+					marine = { x = 1 y = 3 }
+					artillery_brigade = { x = 3 y = 0 }
+					artillery_brigade = { x = 3 y = 1 }
+                    artillery_brigade = { x = 3 y = 2 }
+					anti_tank_brigade = { x = 3 y = 3 }
+					anti_air_brigade = { x = 3 y = 4 }
+                   	medium_armor = { x = 4 y = 0 }
+					medium_armor = { x = 4 y = 1 }
+					medium_armor = { x = 4 y = 2 }
+					medium_armor = { x = 4 y = 3 }
+				}
+				support = {
+					engineer = { x = 0 y = 0 }
+					recon = { x = 0 y = 1 }
+                   	field_hospital =  { x = 0 y = 2 }
+                    logistics_company = { x = 0 y = 3 }
+                    artillery =  { x = 0 y = 4 }
+				}
+			}
+		}
+		PRC = {
+				transfer_state = 528
+			}
+		random_state = {
+			limit = {
+				is_core_of = JAP
+				CONTROLLER = {
+					tag = PRC
+				}
+			}
+			prioritize = { 528 }
+			create_unit = {
+				division = "name = \"先头精英部队\" division_template = \"先头精英部队\" start_experience_factor = 1" 
+				owner = PRC
+				count = 4
+			}
+			create_unit = {
+				division = "name = \"先头精英部队\" division_template = \"先头精英部队\" start_experience_factor = 1" 
+				owner = PRC
+				count = 4
+			}
+			create_unit = {
+				division = "name = \"先头精英部队\" division_template = \"先头精英部队\" start_experience_factor = 1" 
+				owner = PRC
+				count = 4
+			}
+		}
+		JAP = {
+			add_timed_idea = {
+				idea = HUN_unprepared
+				days = 180
+			}
+		}
+		PRC = {
+			declare_war_on = {
+				type = annex_everything
+				target = JAP
+			}
+			add_ideas = CHI_The_last_battle_against_the_Japanese_invaders
+		}
+		news_event = { id = change_news.22 }
+	}
+
+	option = { #给日共支持
+		name = change_prc.9.b
+		ai_chance = {
+			factor = 50
+			modifier = {
+				JAP = {
+					NOT = { has_country_flag = the_eastern_jap_flag }
+				}
+				factor = 100
+			}
+			modifier = {
+				JAP = {
+					has_army_manpower = { size < 624999 }
+				}
+				factor = 0
+			}
+		}
+		PRC = {
+			set_country_flag = Support_the_Japanese_Communist_Party_flag
+		}
+		JAP = {
+			country_event = { id = change_prc.10 days = 1 }
+		}
+	}
+}
+
+
+country_event = { #对日本的战略(给日共支持)
+    id = change_prc.10
+	title = change_prc.10.t
+	desc = change_prc.10.d
+
+    is_triggered_only = yes
+
+    option = { #mgj拦不住呀
+		name = change_prc_10.a
+		ai_chance = {
+			factor = 99
+			modifier = {
+				JAP = {
+					NOT = { has_country_flag = the_eastern_jap_flag }
+				}
+				factor = 100
+			}
+		}
+		JAP = {
+			add_popularity = {
+				ideology = communism
+				popularity = 0.1
+			}
+			set_country_flag = communism_has_coming_flag
+			add_ideas = PRC_commusic
+		}
+	}
+
+	option = { #重拳出击！
+		name = change_prc.10.b
+		ai_chance = {
+			factor = 1
+			modifier = {
+				JAP = {
+					has_country_flag = the_eastern_jap_flag
+				}
+				factor = 100
+			}
+		}
+		JAP = {
+			add_popularity = {
+				ideology = communism
+				popularity = 0
+			}
+		}
+		PRC = { #md也重拳出击
+			set_technology = marine_tech_1
+			division_template = {
+				name = "先头精英部队"
+				regiments = {
+					marine = { x = 0 y = 0 }
+					marine = { x = 0 y = 1 }
+					marine = { x = 0 y = 2 }
+                    marine = { x = 0 y = 3 }
+					marine = { x = 1 y = 0 }
+					marine = { x = 1 y = 1 }
+					marine = { x = 1 y = 2 }
+					marine = { x = 1 y = 3 }
+					artillery_brigade = { x = 3 y = 0 }
+					artillery_brigade = { x = 3 y = 1 }
+                    artillery_brigade = { x = 3 y = 2 }
+					anti_tank_brigade = { x = 3 y = 3 }
+					anti_air_brigade = { x = 3 y = 4 }
+                   	medium_armor = { x = 4 y = 0 }
+					medium_armor = { x = 4 y = 1 }
+					medium_armor = { x = 4 y = 2 }
+					medium_armor = { x = 4 y = 3 }
+				}
+				support = {
+					engineer = { x = 0 y = 0 }
+					recon = { x = 0 y = 1 }
+                   	field_hospital =  { x = 0 y = 2 }
+                    logistics_company = { x = 0 y = 3 }
+                    artillery =  { x = 0 y = 4 }
+				}
+			}
+		}
+		PRC = {
+				transfer_state = 528
+			}
+		random_state = {
+			limit = {
+				is_core_of = JAP
+				CONTROLLER = {
+					tag = PRC
+				}
+			}
+			prioritize = { 528 }
+			create_unit = {
+				division = "name = \"先头精英部队\" division_template = \"先头精英部队\" start_experience_factor = 1" 
+				owner = PRC
+				count = 4
+			}
+			create_unit = {
+				division = "name = \"先头精英部队\" division_template = \"先头精英部队\" start_experience_factor = 1" 
+				owner = PRC
+				count = 4
+			}
+			create_unit = {
+				division = "name = \"先头精英部队\" division_template = \"先头精英部队\" start_experience_factor = 1" 
+				owner = PRC
+				count = 4
+			}
+		}
+		JAP = {
+			add_timed_idea = {
+				idea = HUN_unprepared
+				days = 180
+			}
+		}
+		PRC = {
+			declare_war_on = {
+				type = annex_everything
+				target = JAP
+			}
+			add_ideas = CHI_The_last_battle_against_the_Japanese_invaders
+		}
+		news_event = { id = change_news.22 }
+	}
+}
+
+
+country_event = { #给日共支持之类事件触发效果(效果是添头，主要是提示)
+    id = change_prc.11
+	title = change_prc.11.t
+	desc = change_prc.11.d
+
+    is_triggered_only = yes
+
+	picture = GFX_
+
+    option = { 
+		name = change_prc_11.a
+		ai_chance = {
+			factor = 100
+		}
+		JAP = {
+			add_popularity = {
+				ideology = communism
+				popularity = 0.015
+			}
+		}
+		immediate = {
+			limit = {
+				tag = JAP
+			}
+			add_popularity = {
+				ideology = communism
+				popularity = 0.01
+			}
+			add_popularity = {
+				ideology = communism
+				popularity = 0.015
+			}
+			add_popularity = {
+				ideology = communism
+				popularity = 0.002
+			}
+		}	
+	}
+}
+
+country_event = { #内战！
+    id = change_prc.12
+	title = change_prc.12.t
+	desc = change_prc.12.d
+
+    is_triggered_only = yes
+
+	picture = GFX_report_event_japanese_soldiers_02
+
+    option = { 
+		name = change_prc_12.a
+		ai_chance = {
+			factor = 100
+		}
+		JAP = {
+			if = {
+				limit = {
+					has_government = fascism
+				}
+				start_civil_war = {
+					ruling_party = communism
+					ideology = fascism
+					size = 0.65
+				}
+			}
+			else_if = {
+				limit = {
+					has_government = democratic
+				}
+				start_civil_war = {
+					ruling_party = communism
+					ideology = democratic
+					size = 0.65
+				}
+			}
+			else_if = {
+				limit = {
+					has_government = neutrality
+				}
+				start_civil_war = {
+					ruling_party = communism
+					ideology = neutrality
+					size = 0.65
+				}
+			}
+		}
+		PRC = {
+			add_to_faction = JAP
+			add_ai_strategy = {
+				type = alliance
+				id = JAP
+				value = 1000
+			}
+			add_ai_strategy = {
+				type = protect
+				id = JAP
+				value = 1000
+			}
+			add_ai_strategy = {
+				type = send_volunteers_desire
+				id = JAP
+				value = 1000
+			}
+			add_ai_strategy = {
+				type = support
+				id = JAP
+				value = 1000
+			}
+		}
+		JAP = {
+			if = {
+				limit = {
+					has_country_flag = prc_help_civilization_flag
+				}
+				add_equipment_to_stockpile = {
+					type = infantry_equipment
+					amount = 10000
+					producer = PRC
+				}
+				add_equipment_to_stockpile = {
+					type = artillery_equipment
+					amount = 1000
+					producer = PRC
+				}
+				add_equipment_to_stockpile = {
+					type = support_equipment
+					amount = 2000
+					producer = PRC
+				}
+				add_equipment_to_stockpile = {
+					type = motorized_equipment
+					amount = 200
+					producer = PRC
+				}
+				add_equipment_to_stockpile = {
+					type = train_equipment
+					amount = 30
+					producer = PRC
+				}
+				add_equipment_to_stockpile = {
+					type = anti_air_equipment
+					amount = 500
+					producer = PRC
+				}
+				add_equipment_to_stockpile = {
+					type = anti_tank_equipment
+					amount = 500
+					producer = PRC
+				}
+			}
+			add_ai_strategy = {
+				type = alliance
+				id = PRC
+				value = 1000
+			}
+			add_ai_strategy = {
+				type = protect
+				id = PRC
+				value = 1000
+			}
+			add_ai_strategy = {
+				type = send_volunteers_desire
+				id = PRC
+				value = 1000
+			}
+			add_ai_strategy = {
+				type = support
+				id = PRC
+				value = 1000
+			}
+		}
+	}
+}
+
+
+country_event = { #立本宣誓效忠
+    id = change_prc.13
+	title = change_prc.13.t
+	desc = change_prc.13.d
+
+    is_triggered_only = yes
+
+	picture = GFX_report_event_japan_europe_pact
+
+    option = { 
+		name = change_prc_13.a
+		ai_chance = {
+			factor = 100
+		}
+		PRC = {
+			set_autonomy = { target = JAP autonomy_state = autonomy_puppet }
+		}
+		news_event = { id = change_news.23 days = 1 }
+	}
+}

@@ -1,0 +1,662 @@
+ideas = {
+    country = {
+
+        PRC_land_reform = { #土地改革
+            picture = ARG_no_gods_no_masters
+			allowed = {
+				original_tag = PRC
+				always = yes
+			}
+			
+			modifier = {
+				political_power_cost = 0.1
+				production_speed_buildings_factor = 0.1
+                stability_factor = 0.2
+                stability_weekly = 0.005
+				consumer_goods_factor = 0.1
+                resistance_target = -0.1
+                global_building_slots_factor = 0.05
+                communism_drift = 0.05
+			}
+        }
+
+        PRC_Valuing_the_handicraft_industry = { #重视手工业
+            picture = FIN_finnish_federation_of_trade_unions
+			allowed = {
+				original_tag = PRC
+				always = yes
+			}
+			
+			modifier = {
+				production_speed_buildings_factor = 0.1
+                consumer_goods_factor = -0.1
+                global_building_slots_factor = 0.1
+                production_factory_max_efficiency_factor = 0.05
+                production_factory_efficiency_gain_factor = 0.05
+			}
+        }
+
+        PRC_Expand_production_in_base_areas = { #扩大根据地生产
+            picture = eng_spirit_of_the_industrial_revolution
+			allowed = {
+				original_tag = PRC
+				always = yes
+			}
+			
+			modifier = {
+                production_factory_max_efficiency_factor = 0.1
+                production_factory_efficiency_gain_factor = 0.05
+                production_factory_efficiency_keep_factor = 0.15
+                industrial_capacity_factory = 0.2
+                production_lack_of_resource_penalty_factor = -0.25
+			}
+        }
+
+        PRC_Construction_of_an_underground_factory = { #建设地下工厂
+            picture = ast_volunteer_defence_corps
+			allowed = {
+				original_tag = PRC
+				always = yes
+			}
+			
+			modifier = {
+                production_speed_arms_factory_factor = 0.1
+                industrial_capacity_factory = 0.2
+                production_lack_of_resource_penalty_factor = -0.25
+			}
+
+            equipment_bonus = {
+					infantry_equipment = {
+                        build_cost_ic = -0.15 instant = yes
+                    }
+                    artillery_equipment = {
+                        build_cost_ic = -0.1 instant = yes
+                    }
+                    support_equipment = {
+                        build_cost_ic = -0.1 instant = yes
+                    }
+				}
+        }
+
+        PRC_Literacy_campaign = { #扫盲运动
+            picture = jap_duplicate_research
+			allowed = {
+				original_tag = PRC
+				always = yes
+			}
+			
+			modifier = {
+                stability_factor = 0.2
+                research_speed_factor = 0.1
+                weekly_manpower = 500
+                resistance_growth = -0.1
+                conscription = 0.01
+			}
+        }
+
+        PRC_Rectification_movement = { #整风运动
+            picture = citizen_militia_2
+			allowed = {
+				original_tag = PRC
+				always = yes
+			}
+			
+			modifier = {
+                stability_factor = 0.1
+                political_power_gain = 0.2
+                political_advisor_cost_factor = -0.15
+                communism_drift = 0.05
+                trade_laws_cost_factor = -0.15
+		        mobilization_laws_cost_factor = -0.15
+		        economy_cost_factor = -0.15
+			}
+        }
+
+        PRC_Comintern_aid = { #共产国际援助
+            picture = can_wartime_prices_and_trade_board
+			allowed = {
+				original_tag = PRC
+				always = yes
+			}
+
+            cancel = {
+                has_war_with = SOV
+            }
+			
+			modifier = {
+                consumer_goods_factor = -0.1
+                industrial_capacity_factory = 0.10
+                research_speed_factor = 0.05
+                production_speed_buildings_factor = 0.05
+			}
+        }
+
+        PRC_Overseas_Chinese_donations = { #华侨捐献
+            picture = generic_foreign_capital
+			allowed = {
+				original_tag = PRC
+				always = yes
+			}
+			
+			modifier = {
+                consumer_goods_factor = -0.05
+                industrial_capacity_factory = 0.05
+                weekly_manpower = 500
+                production_factory_max_efficiency_factor = 0.05
+			}
+        }
+
+        PRC_Politburo = { #中央政治局
+            picture = generic_shield_against_communism
+			allowed = {
+				original_tag = PRC
+				always = yes
+			}
+			
+			modifier = {
+                political_power_factor = 0.15
+                civilian_intel_to_others = -50
+                trade_laws_cost_factor = -0.15
+                economy_cost_factor = -0.15
+                party_popularity_stability_factor = 0.10
+			}
+        }
+
+        PRC_Rapid_industrialization = { #快速工业化
+            picture = generic_railroads
+			allowed = {
+				original_tag = PRC
+				always = yes
+			}
+			
+			modifier = {
+                consumer_goods_factor = 0.25
+                stability_weekly = -0.005
+                production_speed_buildings_factor = -0.1
+                weekly_manpower = -500
+                industrial_capacity_factory = -0.15
+                local_resources_factor = -0.1
+                communism_drift = -0.1
+			}
+        }
+
+        PRC_Agricultural_cooperatives = { #农业合作社
+            picture = generic_agrarian_reform
+			allowed = {
+				original_tag = PRC
+				always = yes
+			}
+			
+			modifier = {
+                stability_factor = 0.2
+                global_building_slots_factor = 0.1
+                compliance_gain_factor = 0.1
+                production_speed_industrial_complex_factor = 0.1
+                production_speed_infrastructure_factor = 0.1
+                communism_drift = 0.1
+			}
+        }
+
+        PRC_Development_of_maritime_trade = { #海洋贸易
+            picture = generic_flexible_foreign_policy2
+			allowed = {
+				original_tag = PRC
+				always = yes
+			}
+			
+			modifier = {
+                consumer_goods_factor = -0.05
+                industrial_capacity_dockyard = 0.2
+			}
+            equipment_bonus = {
+					transport = {
+                        build_cost_ic = -0.15 instant = yes
+                    }
+				}
+
+        }
+
+        PRC_cas = { #中国科学院
+            picture = can_defence_of_canada_regulations_communism
+			allowed = {
+				original_tag = PRC
+				always = yes
+			}
+			
+			modifier = {
+                research_speed_factor = 0.3
+                industrial_capacity_factory = 0.1
+			}
+        }
+
+        PRC_Annexation_of_weak_neighbors = { #兼并弱邻
+            picture = ARG_subdue_dissension
+			allowed = {
+				original_tag = PRC
+				always = yes
+			}
+			
+			modifier = {
+                army_core_attack_factor = 0.2
+                army_core_defence_factor = 0.2
+                army_speed_factor = 0.1
+			}
+        }
+
+        PRC_Pla = { #中国人民解放军
+            picture = FRA_national_mobilization_focus
+			allowed = {
+				original_tag = PRC
+				always = yes
+			}
+			
+			modifier = {
+                war_support_weekly = 0.01
+                army_attack_factor = 0.1
+                army_defence_factor = 0.1
+                experience_loss_factor = -0.25
+                org_loss_when_moving = -0.2
+                breakthrough_factor = 0.15
+                army_strength_factor = 0.125 #hp
+                cas_damage_reduction = 0.25
+                no_supply_grace = 24
+                pocket_penalty = -0.2
+                land_night_attack = 0.125
+                max_planning = 0.1
+                planning_speed = 0.1
+                minimum_training_level = -0.1
+                equipment_capture_factor = 0.25
+                terrain_penalty_reduction = 0.125
+                cat_mass_assault_cost_factor = -0.1
+                army_sub_unit_infantry_speed_factor = 0.5
+                supply_consumption_factor = -0.1
+                army_org_factor = 0.125
+                land_reinforce_rate = 0.1
+                surrender_limit = 0.1
+                enemy_army_bonus_air_superiority_factor = -0.075
+                combat_width_factor = -0.1
+                out_of_supply_factor = -0.1
+			}
+        }
+
+        PRC_commusic = { #共产主义活动频发
+            picture = home_of_the_revolution
+			allowed = {
+				always = yes
+			}
+            cancel = {
+                communism < 0.05
+            }
+			
+			modifier = {
+                communism_drift = 0.2
+                war_support_factor = -0.1
+                stability_factor = -0.1
+			}
+        }
+
+        CHI_be_family_with_prc = { #国共合作
+            picture = chi_chinese_unity
+			allowed = {
+				original_tag = CHI
+				always = yes
+			}
+
+            cancel = {
+                has_war_with = PRC
+            }
+			
+			modifier = {
+                combat_width_factor = 0.1
+                war_support_weekly = 0.01
+                army_attack_factor = 0.1
+                army_defence_factor = 0.1
+                experience_loss_factor = -0.2
+                org_loss_when_moving = -0.2
+                breakthrough_factor = 0.15
+                army_strength_factor = 0.125 #hp
+                cas_damage_reduction = 0.25
+                no_supply_grace = 24
+                pocket_penalty = -0.2
+                land_night_attack = 0.125
+                max_planning = 0.1
+                planning_speed = 0.1
+                minimum_training_level = -0.1
+                equipment_capture_factor = 0.25
+                terrain_penalty_reduction = 0.125
+                cat_mass_assault_cost_factor = -0.1
+                army_sub_unit_infantry_speed_factor = 0.5
+                supply_consumption_factor = -0.1
+                army_org_factor = 0.125
+                land_reinforce_rate = 0.1
+                surrender_limit = 0.1
+                enemy_army_bonus_air_superiority_factor = -0.075
+                combat_width_factor = -0.1
+			}
+        }
+
+        CHI_and_PRC_fight_with_jap = { #抗日
+            picture = chi_chinese_unity
+			allowed = {
+				always = yes
+			}
+
+			modifier = {
+                army_attack_factor = 0.1
+                army_defence_factor = 0.1
+                surrender_limit = 0.2
+			}
+        }
+
+        CHI_mao = { #步兵战术大师
+            picture = CHI_mao_zedong
+			allowed = {
+				original_tag = CHI
+				always = yes
+			}
+
+            cancel = {
+                has_war_with = PRC
+            }
+			
+			modifier = {
+                army_infantry_attack_factor = 0.2
+                army_infantry_defence_factor = 0.2
+                army_infantry_breakthrough_factor = 0.25
+                no_supply_grace = 36
+                supply_consumption_factor = -0.15
+                army_infantry_speed_factor = 0.2
+                army_strength_factor = 0.1
+                land_reinforce_rate = 0.05
+                land_night_attack = 0.20
+                pocket_penalty = -0.2
+                equipment_capture_factor = 0.25
+                combat_width_factor = -0.1
+                out_of_supply_factor = -0.1
+			}
+            equipment_bonus = {
+                infantry_equipment = {
+                    build_cost_ic = -0.1 instant_build = yes
+                }
+            }
+        }
+
+        CHI_Protector_Army = { #护国军
+            picture = generic_victors_of_ww1
+			allowed = {
+				original_tag = CHI
+				always = yes
+			}
+			
+			modifier = {
+                army_attack_factor = 0.1
+                army_defence_factor = 0.1
+                army_infantry_breakthrough_factor = 0.2
+                supply_consumption_factor = -0.1
+                army_strength_factor = 0.1
+                land_reinforce_rate = 0.05
+                army_core_attack_factor = 0.2
+                army_core_defence_factor = 0.2
+                pocket_penalty = -0.2
+                breakthrough_factor = 0.15
+                production_lack_of_resource_penalty_factor = -0.25
+			}
+        }
+
+        CHI_improve_industry = { #发展工业
+            picture = ARG_economic_reactivation
+			allowed = {
+				original_tag = CHI
+				always = yes
+			}
+			
+			modifier = {
+                consumer_goods_factor = -0.2
+				production_speed_arms_factory_factor = 0.2
+				production_speed_dockyard_factor = 0.15
+				production_speed_industrial_complex_factor = 0.15
+				production_speed_naval_base_factor = 0.2
+				production_speed_coastal_bunker_factor = 0.15
+				production_speed_bunker_factor = 0.15
+				production_speed_anti_air_building_factor = 0.15
+				production_speed_radar_station_factor = 0.15
+				production_speed_fuel_silo_factor = 0.15
+				production_speed_synthetic_refinery_factor = 0.15
+			}
+        }
+
+        CHI_improve_produce = { #改善生产
+            picture = ARG_rapid_militarization
+			allowed = {
+				original_tag = CHI
+				always = yes
+			}
+			
+			modifier = {
+                industrial_capacity_factory = 0.25
+                production_factory_max_efficiency_factor = 0.1
+                production_speed_synthetic_refinery_factor = 0.15
+                production_factory_efficiency_keep_factor = 0.15
+			}
+        }
+
+        CHI_Three_People's_Principles = { #三民主义
+            picture = chi_warlord_integration5
+			allowed = {
+				original_tag = CHI
+				always = yes
+			}
+			
+			modifier = {
+                stability_factor = 0.2
+                stability_weekly = 0.01
+                war_support_factor = 0.1
+                war_support_weekly = 0.005
+                political_power_factor = 0.25
+                economy_cost_factor = -0.25
+                trade_laws_cost_factor = -0.25
+                compliance_gain_factor = 0.1
+                political_advisor_cost_factor = -0.25
+                surrender_limit = 0.2
+                min_export_factor = -0.25
+                trade_opinion_factor = 0.2
+                conscription_factor = 0.03
+                mobilization_laws_cost_factor = -0.25
+
+			}
+        }
+
+        CHI_The_last_battle_against_the_Japanese_invaders = { #对日寇的最后一战
+            picture = generic_japanese_conflict
+			allowed = {
+				original_tag = CHI
+				always = yes
+			}
+
+            targeted_modifier = {
+				tag = JAP
+				attack_bonus_against = 0.25
+				defense_bonus_against = 0.25
+				break_bonus_against = 0.25
+			}
+			
+			modifier = {
+                war_support_weekly = 0.005
+                training_time_factor = -0.1
+                army_core_attack_factor = 0.05
+                army_core_defence_factor = 0.05
+			}
+        }
+
+        CHI_Mass_uprisings = { #大规模起义！
+            picture = chi_forced_conscription
+			allowed = {
+				always = yes
+			}
+
+            cancel = {
+                AND = {
+                    NOT = {
+                        has_war_with = PRC
+                    }
+                    NOT = {
+                        has_war_with = CHI
+                    }
+                }
+            }
+
+            targeted_modifier = {
+				tag = CHI
+				attack_bonus_against = -0.1
+				defense_bonus_against = -0.1
+			}
+
+            targeted_modifier = {
+				tag = PRC
+				attack_bonus_against = -0.1
+				defense_bonus_against = -0.1
+			}
+			
+			modifier = {
+                war_support_weekly = -0.005
+                surrender_limit = -0.2
+                stability_factor = -0.2
+                army_org_factor = -0.1
+                army_speed_factor = -0.15
+                industrial_capacity_factory = -0.25
+                out_of_supply_factor = 0.125
+                org_loss_when_moving = 0.125
+                local_resources_factor = -0.15
+			}
+        }
+
+        JAP_Work_with_the_chaebols = { #与财阀合作
+            picture = jap_zaibatsu_ally
+			allowed = {
+				original_tag = JAP
+				always = yes
+			}
+			
+			modifier = {
+                industrial_capacity_factory = 0.15
+                stability_factor = -0.2
+                local_resources_factor = 0.1
+                conscription_factor = -0.01
+                consumer_goods_factor = -0.1
+                mobilization_speed = -0.25
+                production_speed_buildings_factor = 0.125
+			}
+        }
+
+        JAP_Forced_entry = { #强制进厂
+            picture = generic_army_war_college
+			allowed = {
+				original_tag = JAP
+				always = yes
+			}
+			
+			modifier = {
+                industrial_capacity_factory = 0.2
+                stability_factor = -0.2
+                weekly_manpower = -500
+                industrial_capacity_dockyard = 0.2
+			}
+        }
+
+        JAP_The_spirit_of_bushido = { #武士道精神
+            picture = jap_militarism_shogun
+			allowed = {
+				original_tag = JAP
+				always = yes
+			}
+			
+			modifier = {
+                war_support_factor = 0.2
+                war_support_weekly = 0.01
+                army_attack_factor = 0.25
+                army_defence_factor = -0.5
+                breakthrough_factor = 0.1
+                org_loss_when_moving = 0.15
+                no_supply_grace = 24
+                land_reinforce_rate = 0.05
+                army_core_attack_factor = 0.1
+                army_core_defence_factor = -0.2
+                minimum_training_level = -0.1
+                stability_offensive_war_factor = 0.2
+                surrender_limit = 0.1
+                stability_war_factor = -0.2
+                production_lack_of_resource_penalty_factor = -0.25
+                experience_loss_factor = 0.25
+			}
+        }
+
+        JAP_navy = { #海军
+            picture = generic_navy_carrier_bonus
+			allowed = {
+				original_tag = JAP
+				always = yes
+			}
+			
+			modifier = {
+                naval_torpedo_screen_penetration_factor = 0.2
+				industrial_capacity_dockyard = 0.1
+				navy_leader_start_attack_level = 1
+				navy_leader_start_maneuvering_level = 1
+				navy_leader_start_level = 1
+				navy_leader_start_defense_level = 2
+				navy_leader_cost_factor = -0.3
+				experience_gain_navy_factor = 0.05
+				naval_doctrine_cost_factor = -0.1
+				navy_speed_factor = 0.1
+				naval_detection = 0.1
+				naval_morale_factor = 0.1
+                training_time_navy_factor = -0.1
+                stat_carrier_sortie_efficiency = 0.2
+                naval_night_attack = 0.15
+                night_spotting_chance_modifier = 0.15
+			}
+
+            equipment_bonus = {
+					ship_hull_submarine = {
+						build_cost_ic = -0.10 instant = yes
+					}
+					ship_hull_light = {
+						build_cost_ic = -0.10 instant = yes
+					}
+					ship_hull_cruiser = {
+						build_cost_ic = -0.10 instant = yes
+					}
+					ship_hull_heavy = {
+						build_cost_ic = -0.10 instant = yes
+					}
+					ship_hull_carrier = {
+						build_cost_ic = -0.10 instant = yes
+					}
+				}
+        }
+
+        MEX_KPA = { #人民军
+            picture = FRA_national_mobilization_focus
+			allowed = {
+				original_tag = MEX
+				always = yes
+			}
+			
+			modifier = {
+                army_attack_factor = 0.1
+                army_defence_factor = 0.1
+                army_infantry_breakthrough_factor = 0.2
+                supply_consumption_factor = -0.1
+                army_strength_factor = 0.1
+                land_reinforce_rate = 0.05
+                army_core_attack_factor = 0.2
+                army_core_defence_factor = 0.2
+                pocket_penalty = -0.2
+                breakthrough_factor = 0.15
+                production_lack_of_resource_penalty_factor = -0.25
+			}
+        }
+
+
+    }
+}

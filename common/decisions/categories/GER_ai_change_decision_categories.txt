@@ -1,0 +1,187 @@
+GER_ai_categories = {
+
+    allowed = {
+        original_tag = GER
+    }
+
+    visible = {
+        is_ai = yes
+        is_subject = no
+        has_army_manpower = { size < 5000000 }
+        original_tag = GER
+        FRA = {
+            has_country_flag = cjg_open_the_third_empire
+        }
+        GER = {
+            has_capitulated = no
+        }
+    }
+    priority = 100
+}
+
+GER_third_empire_categories = {
+    allowed = {
+    }
+    visible = {
+        is_in_faction_with = GER
+        GER = {
+            has_country_flag = third_empire_has_become_flag
+        }
+    }
+    icon = GFX_decision_category_intervention_overseas
+    picture = GFX_decision_third_empire_1
+    priority = 120
+}
+
+GER_third_empire_war_categories = {
+    allowed = {
+        
+    }
+    visible = {
+        is_in_faction_with = GER
+        AND = {
+            has_war = yes
+            FRA = {
+                has_country_flag = cjg_open_the_third_empire
+            }
+        }
+    }
+    picture = GFX_decision_cat_picture_becoming_grossosterreich
+    icon = GFX_decision_category_saf_anti_colonialist_crusade
+    priority = 130
+}
+
+GER_third_empire_prepare_war_categories = {
+    allowed = {
+
+    }
+    visible = {
+        FRA = {
+            has_country_flag = cjg_open_the_third_empire
+        }
+        AND = {
+            GER = {
+                has_country_flag = third_empire_has_become_flag
+            }
+            OR = {
+                is_in_faction_with = GER
+                is_in_faction_with = ENG
+            }
+            OR = {
+                has_idea = GER_unprepare_war
+                has_idea = GER_prepare_war_1
+                has_idea = GER_prepare_war_2
+                has_idea = GER_prepare_war_3
+                has_idea = GER_prepare_war_4
+            }
+        }
+    }
+    icon = GFX_decision_category_intervention_overseas
+    picture = GFX_decision_cat_naval_blockade
+    priority = 220
+}
+
+GER_with_friend_categories = { #与盟友一起
+    allowed = {
+
+    }
+    visible = {
+        OR = {
+            is_in_faction_with = GER
+            is_in_faction_with = ENG
+        }
+        GER = {
+            has_country_flag = third_empire_has_become_flag
+        }
+        ENG = {
+            has_country_flag = the_triple_entente_flag
+        }
+    }
+    icon = GFX_decision_category_generic
+    picture = GFX_decision_cat_picture_ITA_reggianes_exports
+    priority = 80
+}
+
+GER_new_third_empire_prepare_war_categories = {
+    allowed = {
+
+    }
+    visible = {
+        FRA = {
+            has_country_flag = cjg_open_the_third_empire
+        }
+        AND = {
+            NOT = {
+                has_idea = GER_unprepare_war
+                has_idea = GER_prepare_war_1
+                has_idea = GER_prepare_war_2
+                has_idea = GER_prepare_war_3
+                has_idea = GER_prepare_war_4
+            }
+            GER = {
+                has_country_flag = third_empire_has_become_flag
+            }
+            ENG = {
+                has_country_flag = the_triple_entente_flag
+            }
+            has_country_flag = try_new_third_empire_prepare_war_flag
+            OR = {
+                is_in_faction_with = GER
+                is_in_faction_with = ENG
+            }
+        }
+    }
+    icon = GFX_decision_category_intervention_overseas
+    picture = GFX_decision_cat_naval_blockade
+    priority = 220
+}
+
+
+
+GER_new_third_empire_has_war_categories = {
+    allowed = {
+
+    }
+    visible = {
+        FRA = {
+            has_country_flag = cjg_open_the_third_empire
+        }
+        AND = {
+            ENG = {
+                has_war_with = GER
+            }
+            GER = {
+                has_war_with = ENG
+            }
+            USA = {
+                is_in_faction_with = ENG
+            }
+            SOV = {
+                is_in_faction_with = ENG
+            }
+            FRA = {
+                has_war_with = ENG
+                is_in_faction_with = GER
+            }
+            HUN = {
+                is_in_faction_with = GER
+            }
+        }
+    }
+    icon = GFX_decision_cat_picture_becoming_grossosterreich
+    picture = GFX_decision_cat_naval_blockade
+    priority = 300
+}
+
+
+GER_the_new_technologies_categories = {
+    allowed = {
+
+    }
+    visible = {
+        
+    }
+    icon = GFX_decision_category_generic
+    priority = 300
+}
+

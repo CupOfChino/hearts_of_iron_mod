@@ -1,0 +1,39 @@
+MEX_ai_categories = {
+
+    allowed = {
+        original_tag = MEX
+    }
+
+    visible = {
+        is_ai = yes
+        is_subject = no
+        has_army_manpower = { size < 3000000 }
+        AND = {
+            original_tag = MEX
+            has_government = communism
+            MEX = {
+                has_country_flag = the_LatinAmerica_flag
+            }
+        }
+        MEX = {
+            has_capitulated = no
+        }
+    }
+    priority = 100
+}
+
+MEX_focus_categories = {
+    allowed = {
+        original_tag = MEX
+    }
+    visible = {
+        AND = {
+            has_government = communism
+            original_tag = MEX
+            MEX = {
+                has_country_flag = the_LatinAmerica_flag
+            }
+        }
+    }
+    priority = 120
+}

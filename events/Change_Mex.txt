@@ -1,0 +1,63 @@
+add_namespace = change_mex
+
+country_event = { #更新日志
+    id = change_mex.0
+	title = change_mex.0.t
+	desc = change_mex.0.d
+
+    is_triggered_only = yes
+
+    option = {
+		name = change_mex.0.a
+        #country_event = { id = change_mex.00 }
+	}
+}
+
+country_event = { #要尝试新搓的动员决议吗(新动员决议本来准备写动态的，但是一想到是所有人公用，想不到不出bug的方法。。。暂时使用planB任务系统)
+    id = change_mex.00
+	title = change_mex.00.t
+	desc = change_mex.00.d
+
+    is_triggered_only = yes
+
+    option = { #试试！
+		name = change_mex.00.a
+        set_country_flag = try_new_third_empire_prepare_war_flag
+	}
+
+    option = { #就用旧版的
+        name = change_mex.00.b
+    }
+}
+
+country_event = { #加入并被吞并
+    id = change_mex.1
+	title = change_mex.1.t
+	desc = change_mex.1.d
+
+    is_triggered_only = yes
+
+    option = {
+		name = change_mex.1.a
+		ai_chance = {
+			modifier = {
+				factor = 100
+			}
+		}
+        every_unit_leader = {
+			set_nationality = MEX
+		}
+        every_state = {
+            limit = {
+                is_core_of = ROOT
+            }
+            add_core_of = MEX
+        }
+		MEX = { 
+            annex_country = {
+                target = ROOT
+                transfer_troops = yes 
+            }
+        }
+	}
+}

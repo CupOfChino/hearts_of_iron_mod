@@ -1,0 +1,170 @@
+BUL_different_categories = {
+    BUL_different_categories_1 =  {  #暴兵
+        allowed = {
+			original_tag = BUL
+		}
+		available = {
+			
+		}
+
+		visible = {
+			has_government = neutrality
+		}
+
+		fire_only_once = no
+
+		cost = 25
+		days_remove = 90
+
+		modifier = {
+			
+		}
+
+		ai_will_do = {
+			factor = 1000
+		}
+
+        remove_effect = {
+            add_manpower = 10000
+
+            army_experience = 25
+			navy_experience = 25
+			air_experience = 25
+
+            add_equipment_to_stockpile = {
+				type = infantry_equipment
+				amount = 10000
+			}
+			add_equipment_to_stockpile = { 
+				type = train_equipment 
+				amount = 50
+			}
+			add_equipment_to_stockpile = {
+				type = artillery_equipment
+				amount = 1000
+			}
+			add_equipment_to_stockpile = {
+				type = anti_tank_equipment
+				amount = 500
+			}
+            add_equipment_to_stockpile = {
+				type = support_equipment
+				amount = 2000
+			}
+			add_equipment_to_stockpile = { 
+				type = anti_air_equipment 
+				amount = 500
+			}
+				random_owned_controlled_state = {
+					limit = { ROOT = { has_full_control_of_state = PREV } }
+					prioritize = { capital = ROOT }
+					create_unit = {
+						division = "name = \"保加利亚步兵师\" division_template = \"保加利亚步兵师\" start_experience_factor = 0.5" 
+						owner = HUN
+						count = 4
+					}
+				}
+
+        }
+    }
+
+	BUL_different_categories_01 =  {  #暴兵模板
+        allowed = {
+			original_tag = HUN
+		}
+		available = {
+			date > 1938.1.1
+            AND = {
+                date < 1941.1.1
+            }
+		}
+
+		visible = {
+			has_government = neutrality
+		}
+
+		fire_only_once = yes
+
+		cost = 0
+		days_remove = 30
+
+		modifier = {
+			
+		}
+
+		ai_will_do = {
+			factor = 1000
+		}
+
+        remove_effect = {
+            add_manpower = 10000
+
+            army_experience = 25
+			navy_experience = 25
+			air_experience = 25
+
+            add_equipment_to_stockpile = {
+				type = infantry_equipment
+				amount = 10000
+			}
+			add_equipment_to_stockpile = { 
+				type = train_equipment 
+				amount = 50
+			}
+			add_equipment_to_stockpile = {
+				type = artillery_equipment
+				amount = 1000
+			}
+			add_equipment_to_stockpile = {
+				type = anti_tank_equipment
+				amount = 500
+			}
+            add_equipment_to_stockpile = {
+				type = support_equipment
+				amount = 2000
+			}
+			add_equipment_to_stockpile = { 
+				type = anti_air_equipment 
+				amount = 500
+			}
+
+            division_template = {
+					name = "保加利亚步兵师"
+					regiments = {
+						infantry = { x = 0 y = 0 }
+						infantry = { x = 0 y = 1 }
+						infantry = { x = 0 y = 2 }
+                        infantry = { x = 0 y = 3 }
+                        infantry = { x = 0 y = 4 }
+						infantry = { x = 1 y = 0 }
+						infantry = { x = 1 y = 1 }
+						infantry = { x = 1 y = 2 }
+                        infantry = { x = 1 y = 3 }
+                        infantry = { x = 1 y = 4 }
+						infantry = { x = 2 y = 0 }
+						infantry = { x = 2 y = 1 }
+						artillery_brigade = { x = 3 y = 0 }
+						artillery_brigade = { x = 3 y = 1 }
+                        artillery_brigade = { x = 3 y = 2 }
+                        anti_air_brigade = { x = 4 y = 0 }
+                        anti_tank_brigade = { x = 4 y = 1 }
+					}
+					regimental_support = {
+						field_guns = { x = 0 y = 0 }
+						field_guns = { x = 1 y = 0 }
+						medium_tank_destroyer_support = { x = 2 y = 0 }
+						medium_tank_destroyer_support = { x = 3 y = 0 }
+						medium_sp_anti_air_support = { x = 4 y = 0 }
+					}
+					support = {
+						engineer = { x = 0 y = 0 }
+						recon = { x = 0 y = 1 }
+                        field_hospital =  { x = 0 y = 2 }
+                        logistics_company = { x = 0 y = 3 }
+                        artillery =  { x = 0 y = 4 }
+					}
+				}
+        }
+    }
+
+}

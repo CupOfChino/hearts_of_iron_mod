@@ -1,0 +1,3814 @@
+ENG_the_third_empire_categories = {
+
+    ENG_the_third_empire_categories_1 = { #三国协约
+
+        allowed = {
+			original_tag = ENG
+		}
+
+        visible = {
+            FRA = {
+				has_country_flag = cjg_open_the_third_empire
+			}
+        }
+
+        available = {
+           GER = {
+                has_country_flag = third_empire_has_become_flag
+            }
+            FRA = {
+                has_country_flag = cjg_open_the_third_empire
+            }
+        }
+
+		icon = generic_speech
+
+        fire_only_once = yes
+
+		cost = 0
+		days_remove = 30
+
+        complete_effect = {
+            
+        }
+
+		remove_effect = {
+			ENG = {
+                set_country_flag = ENG_the_third_empire_flag
+                country_event = { id = change_eng.2 }
+            }
+            SOV = {
+                country_event = { id = change_eng.3 }
+            }
+            USA = {
+                country_event = { id = change_eng.3 }
+            }
+
+		}
+		
+		ai_will_do = {
+			factor = 1000
+		}
+
+    }
+
+	ENG_the_third_empire_categories_recall_1 = { #重申三国协约
+
+        allowed = {
+			original_tag = ENG
+		}
+
+        visible = {
+            OR = {
+				ENG = {
+					has_country_flag = civilization_has_complete_flag
+				}
+				USA = {
+					has_country_flag = civilization_has_complete_flag
+				}
+				SOV = {
+					has_country_flag = civilization_has_complete_flag
+				}
+			}
+        }
+
+        available = {
+			OR = {
+				ENG = {
+					has_country_flag = civilization_has_complete_flag
+				}
+				USA = {
+					has_country_flag = civilization_has_complete_flag
+				}
+				SOV = {
+					has_country_flag = civilization_has_complete_flag
+				}
+			}
+        }
+
+		icon = generic_speech
+
+        fire_only_once = yes
+
+		cost = 0
+		days_remove = 10
+
+        complete_effect = {
+            
+        }
+
+		remove_effect = {
+			set_country_flag = the_triple_entente_flag
+			if = {
+                limit = {
+                    ENG = {
+                        has_war_with = USA
+                    }
+                }
+                white_peace = USA
+            }
+
+            if = {
+                limit = {
+                    USA = {
+                        has_war_with = SOV
+                    }
+                }
+                USA = {
+                    white_peace = SOV
+                }
+            }
+
+            if = {
+                limit = {
+                    ENG = {
+                        has_war_with = SOV
+                    }
+                }
+                white_peace = SOV
+            }
+			ENG = {
+            	create_faction = ENG_the_third_empire_faction
+            	add_to_faction = USA
+            	add_to_faction = SOV
+        	}
+			USA = {
+				add_ideas = mod_the_buff_1
+				add_ideas = mod_the_buff_2
+				add_ideas = mod_the_buff_3
+				add_ideas = mod_the_buff_4
+				add_ideas = mod_the_buff_5
+				add_ideas = mod_the_buff_6
+			}
+			SOV = {
+				add_ideas = mod_the_buff_1
+				add_ideas = mod_the_buff_2
+				add_ideas = mod_the_buff_3
+				add_ideas = mod_the_buff_4
+				add_ideas = mod_the_buff_5
+				add_ideas = mod_the_buff_6
+			}
+			news_event = { id = change_news.15 days = 1 }
+
+		}
+		
+		ai_will_do = {
+			factor = 1000
+		}
+
+    }
+
+    ENG_the_third_empire_categories_2 = { #大英帝国
+        allowed = {
+			original_tag = ENG
+		}
+
+        visible = {
+            FRA = {
+				has_country_flag = cjg_open_the_third_empire
+			}
+        }
+
+        available = {
+			date > 1938.1.1
+            ENG = {
+                has_country_flag = ENG_the_third_empire_flag
+            }
+        }
+
+		icon = hol_exchange_intelligence_data
+
+        fire_only_once = yes
+
+		cost = 0
+		days_remove = 30
+
+        complete_effect = {
+           
+        }
+
+		remove_effect = {
+			if = {
+				limit = {
+					RAJ = {
+						NOT = { is_subject_of = ENG }
+					}
+				}
+				set_cosmetic_tag = ENG_imperial_federation_unified
+				news_event = { id = mtg_news.8 days = 1 }
+			}
+			if = {
+				limit = {
+					RAJ = {
+						is_subject_of = ENG
+					}
+				}
+				set_cosmetic_tag = ENG_imperial_federation_india_unified
+				news_event = { id = mtg_news.9 days = 1 }
+			}
+			CAN = {
+				every_unit_leader = {
+					set_nationality = ENG
+				}
+			}
+			annex_country = {
+			    target = CAN
+			    transfer_troops = yes
+			}
+			every_state = {
+				limit = {
+					is_core_of = CAN
+				}
+				add_core_of = ENG
+			}
+			SAF = {
+				every_unit_leader = {
+					set_nationality = ENG
+				}
+			}
+			annex_country = {
+			    target = SAF
+			    transfer_troops = yes
+			}
+			if = {
+				limit = {
+					SAF = { has_completed_focus = SAF_police_windhoek }
+				}
+				every_state = {
+					limit = {
+						is_core_of = SAF
+						NOT = { state = 275 }
+					}
+					add_core_of = ENG
+				}
+			}
+			if = {
+				limit = {
+					RAJ = { has_country_flag = ENG_accepted_federation }
+				}
+				RAJ = {
+					every_unit_leader = {
+						set_nationality = ENG
+					}
+				}
+				annex_country = {
+				    target = RAJ
+				    transfer_troops = yes
+				}
+				if = {
+					limit = {
+						ROOT = { has_country_leader_with_trait = viceroy_emeritus }
+					}
+					custom_effect_tooltip = viceroy_emeritus_downside_tt
+					every_state = {
+						limit = { 
+							OR = {
+								is_owned_by = ROOT
+								is_owned_by = RAJ #For the tooltip
+							}
+							is_core_of = RAJ 
+							NOT = { is_core_of = ROOT }
+						}
+						add_resistance = 10
+					}
+				}
+			}
+			AST = {
+				every_unit_leader = {
+					set_nationality = ENG
+				}
+			}
+			annex_country = {
+			    target = AST
+			    transfer_troops = yes
+			}
+			every_state = {
+				limit = {
+					is_core_of = AST
+				}
+				add_core_of = ENG
+			}
+			NZL = {
+				every_unit_leader = {
+					set_nationality = ENG
+				}
+			}
+			annex_country = {
+			    target = NZL
+			    transfer_troops = yes
+			}
+			every_state = {
+				limit = {
+					is_core_of = NZL
+				}
+				add_core_of = ENG
+			}
+			MAL = {
+				every_unit_leader = {
+					set_nationality = ENG
+				}
+			}
+			annex_country = {
+			    target = MAL
+			    transfer_troops = yes
+			}
+			add_ideas = ENG_super_buff
+		}
+
+		ai_will_do = {
+			factor = 1000
+		}
+
+    }
+
+
+	ENG_the_third_empire_categories_3 = { #对德作战
+
+        allowed = {
+			original_tag = ENG
+		}
+
+        visible = {
+            FRA = {
+                has_country_flag = cjg_open_the_third_empire
+            }
+			NOT = {
+				country_exists = ZOM
+			}
+			NOT = {
+				country_exists = SUC
+			}
+        }
+
+        available = {
+            date > 1941.10.1
+			AND = {
+				country_exists = GER
+				NOT = {
+					is_in_faction_with = GER
+				}
+                GER = {
+                    has_country_flag = third_empire_has_become_flag
+                }
+                FRA = {
+                    has_country_flag = cjg_open_the_third_empire
+                }
+				ENG = {
+					NOT = {
+						has_war_with = GER
+					}
+				}
+			}
+        }
+
+		icon = ger_claim_yugo_4
+
+        fire_only_once = yes
+
+		cost = 0
+		days_remove = 70
+
+        complete_effect = {
+            
+        }
+
+		remove_effect = {
+			set_global_flag = the_world_war_tow_flag
+			ENG = {
+				add_timed_idea = {
+					idea = mod_the_buff_8
+					days = 365
+				}
+			}
+			USA = {
+				add_timed_idea = {
+					idea = mod_the_buff_8
+					days = 365
+				}
+			}
+			SOV = {
+				add_timed_idea = {
+					idea = mod_the_buff_8
+					days = 365
+				}
+			}
+			if = {
+				limit = {
+					not = { has_war_with = GER }
+				}
+				declare_war_on = {
+					type = annex_everything
+					target = GER
+				}
+				news_event = { id = change_news.6 days = 1 }
+			}
+
+		}
+		
+		ai_will_do = {
+			factor = 1000
+		}
+
+    }
+
+	ENG_the_third_empire_categories_4 = { #确保挪威
+
+        allowed = {
+			original_tag = ENG
+		}
+
+        visible = {
+			AND = {
+				has_country_flag = north_europen_plan
+				country_exists = NOR
+			}
+        }
+
+        available = {
+			AND = {
+            	has_country_flag = north_europen_plan
+				NOR = {
+					NOT = {
+						has_country_flag = will_join_ger_flag
+					}
+				}
+			}
+        }
+
+		icon = generic_colonial_administration
+
+        fire_only_once = yes
+
+		cost = 100
+		days_remove = 60
+
+        complete_effect = {
+			NOR = {
+				set_country_flag = will_join_eng_flag
+			}
+		}
+		remove_effect = {
+			ENG = {
+				add_to_faction = NOR
+			}
+			hidden_effect = {
+				if = {
+					limit = {
+						NOR = {
+							is_ai = yes
+						}
+					}
+					NOR = {
+						set_country_flag = eng_will_control_nor_flag
+						add_ai_strategy = {
+							type = alliance
+							id = ENG
+							value = 1000
+						}
+						add_ai_strategy = {
+							type = befriend
+							id = ENG
+							value = 1000
+						}
+					}
+				}
+			}
+			hidden_effect = {
+				news_event = { id = change_news.10 days = 2 }
+				ENG = {
+					set_autonomy = { target = NOR autonomy_state = autonomy_puppet }
+				}
+			}
+
+		}
+		
+		ai_will_do = {
+			factor = 100
+		}
+
+    }
+
+
+	ENG_the_third_empire_categories_5 = { #确保瑞典
+
+        allowed = {
+			original_tag = ENG
+		}
+
+        visible = {
+			AND = {
+				has_country_flag = north_europen_plan
+				country_exists = SWE
+				SWE = {
+					NOT = {
+						has_country_flag = will_join_ger_flag
+					}
+				}
+			}
+        }
+
+		icon = generic_nationalism
+
+        available = {
+			AND = {
+            	has_country_flag = north_europen_plan
+				SWE = {
+					NOT = {
+						has_country_flag = will_join_ger_flag
+					}
+				}
+			}
+        }
+
+        fire_only_once = yes
+
+		cost = 100
+		days_remove = 60
+
+        complete_effect = {
+			SWE = {
+				set_country_flag = will_join_eng_flag
+			}
+		}
+		remove_effect = {
+			ENG = {
+				add_to_faction = SWE
+			}
+			hidden_effect = {
+				if = {
+					limit = {
+						NOR = {
+							is_ai = yes
+						}
+					}
+					SWE = {
+						set_country_flag = eng_will_control_swe_flag
+						add_ai_strategy = {
+							type = alliance
+							id = ENG
+							value = 1000
+						}
+						add_ai_strategy = {
+							type = befriend
+							id = ENG
+							value = 1000
+						}
+					}
+				}
+				ENG = {
+					set_autonomy = { target = SWE autonomy_state = autonomy_puppet }
+				}
+			}
+
+			hidden_effect = {
+				news_event = { id = change_news.11 days = 2 }
+			}
+
+		}
+		
+		ai_will_do = {
+			factor = 100
+		}
+
+    }
+
+	ENG_the_third_empire_categories_6 = { #控制挪威
+
+        allowed = {
+			original_tag = ENG
+		}
+
+        visible = {
+			tag = ENG
+			AND = {
+				country_exists = NOR
+				ENG = {
+					has_country_flag = north_europen_plan
+				}
+				NOR = {
+					has_country_flag = eng_will_control_nor_flag
+					is_in_faction_with = ENG
+					is_ai = yes
+				}
+			}
+        }
+
+        available = {
+			tag = eng
+			AND = {
+				ENG = {
+					has_country_flag = north_europen_plan
+				}
+				NOR = {
+					has_country_flag = eng_will_control_nor_flag
+				}
+			}
+        }
+
+		icon = generic_political_discourse
+
+        fire_only_once = yes
+
+		cost = 100
+		days_remove = 60
+
+        complete_effect = {
+
+		}
+		remove_effect = {
+			ENG = {
+				set_autonomy = { target = NOR autonomy_state = autonomy_puppet }
+			}
+
+		}
+		
+		ai_will_do = {
+			factor = 1000
+		}
+
+    }
+
+	ENG_the_third_empire_categories_7 = { #控制瑞典
+
+        allowed = {
+			original_tag = ENG
+		}
+
+        visible = {
+			AND = {
+				country_exists = SWE
+				ENG = {
+					has_country_flag = north_europen_plan
+				}
+				SWE = {
+					has_country_flag = eng_will_control_swe_flag
+					is_in_faction_with = ENG
+					is_ai = yes
+				}
+			}
+        }
+
+        available = {
+			tag = eng
+			AND = {
+				ENG = {
+					has_country_flag = north_europen_plan
+				}
+				SWE = {
+					has_country_flag = eng_will_control_swe_flag
+				}
+			}
+        }
+
+		icon = generic_political_discourse
+
+        fire_only_once = yes
+
+		cost = 100
+		days_remove = 60
+
+        complete_effect = {
+
+		}
+		remove_effect = {
+			ENG = {
+				set_autonomy = { target = SWE autonomy_state = autonomy_puppet }
+			}
+			SWE = {
+				give_resource_rights = {
+					receiver = ENG
+					state = 918 #Västerbotten 
+				}
+			}
+
+		}
+		
+		ai_will_do = {
+			factor = 1000
+		}
+
+    }
+
+	ENG_third_empire_categories_8 = { #宣告北欧绝对控制
+		allowed = {
+			tag = ENG
+		}
+		available = {
+			has_country_flag = north_europen_plan
+			AND = {
+				SWE = {
+					is_in_faction_with = ENG
+				}
+				NOR = {
+					is_in_faction_with = ENG
+				}
+			}
+		}
+
+		visible = {
+			tag = ENG
+			AND = {
+				SWE = {
+					has_country_flag = eng_will_control_swe_flag
+				}
+				NOR = {
+					has_country_flag = eng_will_control_nor_flag
+				}
+			}
+		}
+
+		icon = generic_political_address
+
+		fire_only_once = yes
+
+		cost = 0
+		days_remove = 0
+
+		modifier = {
+			
+		}
+
+		ai_will_do = {
+			factor = 100
+		}
+		complete_effect = {
+			every_country = {
+				limit = {
+					is_in_faction_with = ENG
+					is_puppet = no
+				}
+				add_ideas = GER_north_europen
+			}
+			news_event = { id = change_news.13 days = 1 }
+			add_political_power = 100
+			add_war_support = 0.1
+		}
+
+	}
+
+	ENG_third_empire_categories_9 = { #拉拢土耳其
+		allowed = {
+			tag = ENG
+		}
+		available = {
+			has_country_flag = north_europen_plan
+			AND = {
+				country_exists = TUR
+				TUR = {
+					NOT = {
+						is_in_faction_with = GER
+						is_in_faction_with = ENG
+					}
+				}
+				NOT = {
+					has_war_with = GER
+					has_war_with = TUR
+				}
+			}
+		}
+
+		visible = {
+			tag = ENG
+			FRA = {
+				has_country_flag = has_control_midwest_oid_flag
+			}
+		}
+
+		fire_only_once = yes
+
+		cost = 50
+		days_remove = 60
+
+		modifier = {
+			
+		}
+
+		ai_will_do = {
+			factor = 1000
+		}
+		remove_effect = {
+			TUR = {
+				country_event = { id = change_eng.4 days = 1 }
+			}
+		}
+
+	}
+
+	ENG_third_empire_categories_10 = { #拉拢希腊
+		allowed = {
+			tag = ENG
+		}
+		available = {
+			has_country_flag = north_europen_plan
+			AND = {
+				country_exists = GRE
+				GRE = {
+					NOT = {
+						is_in_faction_with = GER
+						is_in_faction_with = ENG
+					}
+				}
+				NOT = {
+					has_war_with = GER
+					has_war_with = GRE
+				}
+			}
+		}
+
+		visible = {
+			tag = ENG
+			FRA = {
+				has_country_flag = has_control_midwest_oid_flag
+			}
+		}
+
+		fire_only_once = yes
+
+		cost = 50
+		days_remove = 60
+
+		modifier = {
+			
+		}
+
+		ai_will_do = {
+			factor = 1000
+		}
+		remove_effect = {
+			GRE = {
+				country_event = { id = change_eng.5 days = 1 }
+			}
+		}
+
+	}
+
+	ENG_third_empire_categories_11 = { #解决我国的资源问题
+		allowed = {
+			tag = ENG
+		}
+		available = {
+			tag = ENG
+			ENG = {
+				has_country_flag = ENG_the_third_empire_flag
+			}
+			num_of_civilian_factories_available_for_projects > 20
+		}
+
+		visible = {
+			tag = ENG
+			ENG = {
+				has_country_flag = ENG_the_third_empire_flag
+			}
+		}
+
+		icon = GFX_decision_generic_factory
+
+		fire_only_once = yes
+
+		cost = 50
+		days_remove = 120
+
+		modifier = {
+			civilian_factory_use = 20
+		}
+
+		ai_will_do = {
+			factor = 1000
+		}
+		remove_effect = {
+			random_owned_state = {
+				limit = {
+					is_on_continent = europe
+					is_core_of = ENG
+					NOT = { has_state_flag = ENG_development_of_resource_flag }
+				}
+				add_extra_state_shared_building_slots = 3
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+				add_resource = {
+					type = steel
+					amount = 16
+				}
+				add_resource = {
+					type = aluminium
+					amount = 8
+				}
+				add_resource = {
+					type = chromium
+					amount = 8
+				}
+				add_resource = {
+					type = tungsten
+					amount = 8
+				}
+				add_resource = {
+					type = oil
+					amount = 4
+				}
+				add_resource = {
+					type = rubber
+					amount = 2
+				}
+				add_resource = {
+					type = coal
+					amount = 4
+				}
+				set_state_flag = ENG_development_of_resource_flag
+			}
+
+			random_owned_state = {
+				limit = {
+					is_on_continent = europe
+					is_core_of = ENG
+					NOT = { has_state_flag = ENG_development_of_resource_flag }
+				}
+				add_extra_state_shared_building_slots = 3
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+				add_resource = {
+					type = steel
+					amount = 16
+				}
+				add_resource = {
+					type = aluminium
+					amount = 8
+				}
+				add_resource = {
+					type = chromium
+					amount = 8
+				}
+				add_resource = {
+					type = tungsten
+					amount = 8
+				}
+				add_resource = {
+					type = oil
+					amount = 4
+				}
+				add_resource = {
+					type = rubber
+					amount = 2
+				}
+				add_resource = {
+					type = coal
+					amount = 4
+				}
+				
+				set_state_flag = ENG_development_of_resource_flag
+			}
+
+			random_owned_state = {
+				limit = {
+					is_on_continent = europe
+					is_core_of = ENG
+					NOT = { has_state_flag = ENG_development_of_resource_flag }
+				}
+				add_extra_state_shared_building_slots = 3
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+				add_resource = {
+					type = steel
+					amount = 16
+				}
+				add_resource = {
+					type = aluminium
+					amount = 8
+				}
+				add_resource = {
+					type = chromium
+					amount = 8
+				}
+				add_resource = {
+					type = tungsten
+					amount = 8
+				}
+				add_resource = {
+					type = oil
+					amount = 4
+				}
+				add_resource = {
+					type = rubber
+					amount = 2
+				}
+				add_resource = {
+					type = coal
+					amount = 4
+				}
+				set_state_flag = ENG_development_of_resource_flag
+			}
+
+			random_owned_state = {
+				limit = {
+					is_on_continent = europe
+					is_core_of = ENG
+					NOT = { has_state_flag = ENG_development_of_resource_flag }
+				}
+				add_extra_state_shared_building_slots = 3
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+				add_resource = {
+					type = steel
+					amount = 16
+				}
+				add_resource = {
+					type = aluminium
+					amount = 8
+				}
+				add_resource = {
+					type = chromium
+					amount = 8
+				}
+				add_resource = {
+					type = tungsten
+					amount = 8
+				}
+				add_resource = {
+					type = oil
+					amount = 4
+				}
+				add_resource = {
+					type = rubber
+					amount = 2
+				}
+				add_resource = {
+					type = coal
+					amount = 4
+				}
+				
+				set_state_flag = ENG_development_of_resource_flag
+			}
+
+			random_owned_state = {
+				limit = {
+					is_on_continent = europe
+					is_core_of = ENG
+					NOT = { has_state_flag = ENG_development_of_resource_flag }
+				}
+				add_extra_state_shared_building_slots = 3
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+				add_resource = {
+					type = steel
+					amount = 16
+				}
+				add_resource = {
+					type = aluminium
+					amount = 8
+				}
+				add_resource = {
+					type = chromium
+					amount = 8
+				}
+				add_resource = {
+					type = tungsten
+					amount = 8
+				}
+				add_resource = {
+					type = oil
+					amount = 4
+				}
+				add_resource = {
+					type = rubber
+					amount = 2
+				}
+				add_resource = {
+					type = coal
+					amount = 4
+				}
+				set_state_flag = ENG_development_of_resource_flag
+			}
+
+			random_owned_state = {
+				limit = {
+					is_on_continent = europe
+					is_core_of = ENG
+					NOT = { has_state_flag = ENG_development_of_resource_flag }
+				}
+				add_extra_state_shared_building_slots = 3
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+				add_resource = {
+					type = steel
+					amount = 16
+				}
+				add_resource = {
+					type = aluminium
+					amount = 8
+				}
+				add_resource = {
+					type = chromium
+					amount = 8
+				}
+				add_resource = {
+					type = tungsten
+					amount = 8
+				}
+				add_resource = {
+					type = oil
+					amount = 4
+				}
+				add_resource = {
+					type = rubber
+					amount = 2
+				}
+				add_resource = {
+					type = coal
+					amount = 4
+				}
+				set_state_flag = ENG_development_of_resource_flag
+			}
+		}
+
+	}
+
+	ENG_third_empire_categories_12 = { #训练海军陆战队
+		allowed = {
+			tag = ENG
+		}
+		available = {
+			tag = ENG
+			ENG = {
+				has_country_flag = ENG_the_third_empire_flag
+			}
+			USA = {
+				is_in_faction_with = ENG
+			}
+		}
+
+		visible = {
+			tag = ENG
+			ENG = {
+				has_country_flag = ENG_the_third_empire_flag
+			}
+		}
+
+		#icon = GFX_decision_generic_factory
+
+		fire_only_once = yes
+
+		cost = 30
+
+		modifier = {
+			
+		}
+
+		ai_will_do = {
+			factor = 1000
+		}
+		complete_effect = {
+			add_timed_idea = { 
+				idea = ENG_train_ideas
+				days = 60
+			}
+			USA = { 
+				country_event = {
+					id = change_eng.12
+					days = 1
+				}
+			}
+		}
+
+		remove_effect = {
+			
+		}
+
+	}
+
+
+	ENG_third_empire_categories_13 = { #邀请其他国家加入联合条约
+		allowed = {
+			tag = ENG
+		}
+		available = {
+			tag = ENG
+			ENG = {
+				has_country_flag = ENG_the_third_empire_flag
+			}
+			every_other_country = {
+				limit = {
+					is_in_faction_with = ENG
+					is_puppet = no
+					NOT = {
+						OR = {
+							has_idea = mod_the_buff_1
+						}
+						OR = {
+							has_idea = mod_the_buff_2
+						}
+						OR = {
+							has_idea = mod_the_buff_3
+						}
+						OR = {
+							has_idea = mod_the_buff_4
+						}
+						OR = {
+							has_idea = mod_the_buff_5
+						}
+					}
+				}
+			}
+		}
+
+		visible = {
+			tag = ENG
+			ENG = {
+				has_country_flag = ENG_the_third_empire_flag
+			}
+		}
+
+		#icon = GFX_decision_generic_factory
+
+		fire_only_once = no
+
+		cost = 0
+
+		days_re_enable = 5
+
+		modifier = {
+			
+		}
+
+		ai_will_do = {
+			factor = 1000
+		}
+		complete_effect = {
+			every_other_country = {
+				limit = {
+					is_in_faction_with = ENG
+					is_puppet = no
+					NOT = {
+						OR = {
+							has_idea = mod_the_buff_1
+						}
+						OR = {
+							has_idea = mod_the_buff_2
+						}
+						OR = {
+							has_idea = mod_the_buff_3
+						}
+						OR = {
+							has_idea = mod_the_buff_4
+						}
+						OR = {
+							has_idea = mod_the_buff_5
+						}
+						OR = {
+							has_idea = mod_the_buff_6
+						}
+					}
+				}
+				add_ideas = mod_the_buff_1
+				add_ideas = mod_the_buff_2
+				add_ideas = mod_the_buff_3
+				add_ideas = mod_the_buff_4
+				add_ideas = mod_the_buff_5
+				add_ideas = mod_the_buff_6
+			}
+		}
+
+		remove_effect = {
+			
+		}
+
+	}
+
+	ENG_third_empire_categories_14 = { #收回缅甸
+		allowed = {
+			tag = ENG
+		}
+		available = {
+			tag = ENG
+			ENG = {
+				has_country_flag = ENG_the_third_empire_flag
+			}
+			BRM = {
+				is_in_faction = no
+			}
+			
+		}
+
+		visible = {
+			tag = ENG
+			ENG = {
+				has_country_flag = ENG_the_third_empire_flag
+			}
+		}
+
+		icon = generic_prepare_civil_war
+
+		fire_only_once = yes
+
+		cost = 50
+		days_remove = 35
+
+		modifier = {
+			
+		}
+
+		ai_will_do = {
+			factor = 1000
+		}
+		complete_effect = {
+			
+		}
+
+		remove_effect = {
+			declare_war_on = {
+				type = annex_everything
+				target = BRM
+			}
+			hidden_effect = {
+				BRM = {
+					add_ideas = cant_in_faction
+				}
+			}
+			if = {
+				limit = {
+					RAJ = {
+						is_in_faction_with = ENG
+					}
+				}
+				RAJ = {
+					declare_war_on = {
+						type = annex_everything
+						target = BRM
+					}
+				}
+			}
+		}
+
+	}
+
+	ENG_third_empire_categories_15 = { #施压暹罗
+		allowed = {
+			tag = ENG
+		}
+		available = {
+			tag = ENG
+			ENG = {
+				has_country_flag = ENG_the_third_empire_flag
+			}
+			SIA = {
+				is_in_faction = no
+				is_puppet = no
+				is_ai = yes
+			}
+			994 = {
+				is_controlled_by_ROOT_or_ally = yes
+			}
+			999 = {
+				is_controlled_by_ROOT_or_ally = yes
+			}
+			993 = {
+				is_controlled_by_ROOT_or_ally = yes
+			}
+			336 = {
+				is_controlled_by_ROOT_or_ally = yes
+			}
+			
+		}
+
+		visible = {
+			tag = ENG
+			ENG = {
+				has_country_flag = ENG_the_third_empire_flag
+			}
+		}
+
+		icon = generic_prepare_civil_war
+
+		fire_only_once = yes
+
+		cost = 50
+
+		days_remove = 35
+
+		modifier = {
+			
+		}
+
+		ai_will_do = {
+			factor = 1000
+		}
+		complete_effect = {
+			
+		}
+
+		remove_effect = {
+			ENG = {
+				set_autonomy = { target = SIA autonomy_state = autonomy_integrated_puppet }
+			}
+			news_event = { id = change_news.67 days = 1 }
+			add_named_threat = { threat = 5 name = change_news.67 }
+		}
+
+	}
+
+	ENG_ai_tank_equipment_add_end =  {  #要死了
+        allowed = {
+			original_tag = ENG
+		}
+		available = {
+			OR = {
+				127 = {
+					any_neighbor_state = {
+						controller = {
+							has_war_with = ROOT
+						}
+					}
+				}
+				127 = {
+					controller = {
+						has_war_with = ROOT
+					}
+				}
+
+			}
+		}
+
+		visible = {
+			is_ai = yes
+		}
+
+		fire_only_once = no
+
+		cost = 0
+		days_remove = 0
+		days_re_enable = 240
+
+		modifier = {
+			
+		}
+
+		ai_will_do = {
+			factor = 1000
+		}
+
+        remove_effect = {
+            add_manpower = 500
+            army_experience = 5
+            if = {
+				limit = {
+					has_tech = advanced_medium_tank_chassis
+				}
+				add_equipment_to_stockpile = { 
+					type = medium_tank_chassis_3 
+					amount = 5000
+				}
+				add_equipment_to_stockpile = { 
+					type = medium_tank_destroyer_chassis_3
+					amount = 5000
+				}
+			}
+			else_if = {
+				limit = {
+					has_tech = improved_medium_tank_chassis
+				}
+				add_equipment_to_stockpile = { 
+					type = medium_tank_chassis_2 
+					amount = 5000
+				}
+				add_equipment_to_stockpile = { 
+					type = medium_tank_destroyer_chassis_2
+					amount = 5000
+				}
+			}
+			else = {
+				add_equipment_to_stockpile = { 
+					type = medium_tank_chassis_1 
+					amount = 5000
+				}
+				add_equipment_to_stockpile = { 
+					type = medium_tank_destroyer_chassis_1
+					amount = 5000
+				}
+			}
+
+			add_equipment_to_stockpile = { 
+				type = medium_tank_flame_chassis_2
+				amount = 1000
+			}
+
+			add_equipment_to_stockpile = { 
+				type = mechanized_equipment
+				amount = 5000
+			}
+
+			add_equipment_to_stockpile = { 
+				type = armored_support_vehicle
+				amount = 3000
+			}
+
+            
+			capital_scope = {
+				create_unit = {
+					division = "name = \"大英帝国装甲师\" division_template = \"大英帝国装甲师\" start_experience_factor = 0.5" 
+					owner = ENG
+					count = 48
+				}
+				
+			}
+
+        }
+    }
+
+
+	Ai_ha_qi = {  #哈气了喵
+        allowed = {
+			OR = {
+				original_tag = ENG
+				original_tag = USA
+				original_tag = SOV
+				original_tag = JAP
+			}
+		}
+		available = {
+			date > 1940.1.1
+			has_war_with_major = yes
+			is_ai = yes
+			is_in_faction_with = ENG
+		}
+
+		visible = {
+			is_ai = yes
+		}
+
+		fire_only_once = no
+
+		cost = 0
+		days_remove = 1
+		days_re_enable = 730
+
+		modifier = {
+			
+		}
+
+		ai_will_do = {
+			factor = 1000
+		}
+
+        remove_effect = {
+            add_manpower = 500
+            army_experience = 1
+			add_manpower = 500
+            army_experience = 5
+			add_equipment_to_stockpile = {
+				type = infantry_equipment
+				amount = 1000
+			}
+			add_equipment_to_stockpile = {
+				type = support_equipment
+				amount = 500
+			}
+            if = {
+				limit = {
+					has_tech = advanced_medium_tank_chassis
+				}
+				add_equipment_to_stockpile = { 
+					type = medium_tank_chassis_3 
+					amount = 1000
+				}
+				add_equipment_to_stockpile = { 
+					type = medium_tank_destroyer_chassis_3
+					amount = 1000
+				}
+			}
+			else_if = {
+				limit = {
+					has_tech = improved_medium_tank_chassis
+				}
+				add_equipment_to_stockpile = { 
+					type = medium_tank_chassis_2 
+					amount = 100
+				}
+				add_equipment_to_stockpile = { 
+					type = medium_tank_destroyer_chassis_2
+					amount = 1000
+				}
+			}
+			else = {
+				add_equipment_to_stockpile = { 
+					type = medium_tank_chassis_1 
+					amount = 1000
+				}
+				add_equipment_to_stockpile = { 
+					type = medium_tank_destroyer_chassis_1
+					amount = 1000
+				}
+			}
+
+			add_equipment_to_stockpile = { 
+				type = medium_tank_flame_chassis_2
+				amount = 500
+			}
+
+			add_equipment_to_stockpile = { 
+				type = mechanized_equipment
+				amount = 1000
+			}
+
+			add_equipment_to_stockpile = { 
+				type = armored_support_vehicle
+				amount = 1000
+			}
+
+
+
+			division_template = {
+				name = "The_Armor_army_attack"
+				regiments = {
+					mechanized = { x = 0 y = 0 }
+					mechanized = { x = 0 y = 1 }
+					mechanized = { x = 0 y = 2 }
+					mechanized = { x = 0 y = 3 }
+					mechanized = { x = 0 y = 4 }
+					mechanized = { x = 1 y = 0 }
+					mechanized = { x = 1 y = 1 }
+					mechanized = { x = 1 y = 2 }
+					mechanized = { x = 1 y = 3 }
+					medium_armor = { x = 2 y = 0 }
+					medium_armor = { x = 2 y = 1 }
+					medium_armor = { x = 2 y = 2 }
+					medium_armor = { x = 2 y = 3 }
+					medium_armor = { x = 2 y = 4 }
+					medium_armor = { x = 3 y = 0 }
+					medium_armor = { x = 3 y = 1 }
+					medium_armor = { x = 3 y = 2 }
+					medium_armor = { x = 3 y = 3 }
+				}
+				support = {
+					engineer = { x = 0 y = 0 }
+					recon = { x = 0 y = 1 }
+					field_hospital =  { x = 0 y = 2 }
+					logistics_company = { x = 0 y = 3 }
+					artillery =  { x = 0 y = 4 }
+				}
+				regimental_support = {
+					field_guns = { x = 0 y = 0 }
+					field_guns = { x = 1 y = 0 }
+					medium_tank_destroyer_support = { x = 2 y = 0 }
+					medium_tank_destroyer_support = { x = 3 y = 0 }
+					medium_sp_anti_air_support = { x = 4 y = 0 }
+				}
+			}
+			random_owned_controlled_state = {
+				limit = { ROOT = { has_full_control_of_state = PREV } }
+				prioritize = { 64 }
+				create_unit = {
+					division = "name = \"The_Armor_army_attack\" division_template = \"The_Armor_army_attack\" start_experience_factor = 0.5" 
+					owner = ROOT
+					count = 48
+				}
+            }
+
+        }
+    }
+
+	ENG_civilization_peace = { #内战白和
+		allowed = {
+			
+		}
+
+		available = {
+			AND = {
+				date > 1938.10.1
+				has_civil_war = yes
+				OR = {
+					tag = ENG
+					tag = USA
+					tag = SOV
+				}
+			}
+			AND = {
+				FRA = {
+					has_country_flag = cjg_open_the_third_empire
+				}
+				ENG = {
+					has_country_flag = ENG_the_third_empire_flag
+				}
+			}
+		}
+
+		visible = {
+			AND = {
+				date > 1938.10.1
+				has_civil_war = yes
+				OR = {
+					tag = ENG
+					tag = USA
+					tag = SOV
+				}
+			}
+			AND = {
+				FRA = {
+					has_country_flag = cjg_open_the_third_empire
+				}
+				ENG = {
+					has_country_flag = ENG_the_third_empire_flag
+				}
+			}
+		}
+
+		fire_only_once = no
+
+		cost = 0
+		days_remove = 1
+
+		modifier = {
+			
+		}
+
+		remove_effect = {
+			country_event = { id = change_germany.13 days = 1  }
+		}
+		
+		ai_will_do = {
+			factor = 1000
+		}
+
+	}
+
+}
+
+ENG_the_third_empire_war_categories = {
+	ENG_the_third_empire_war_categories_1 = { #战时紧急生产
+
+		icon = ger_military_buildup
+
+        allowed = {
+			AND = {
+				is_in_faction_with = ENG
+				has_war = yes
+			}
+		}
+
+        visible = {
+            FRA = {
+                has_country_flag = cjg_open_the_third_empire
+            }
+			AND = {
+				is_in_faction_with = ENG
+				has_war = yes
+			}
+        }
+
+        available = {
+			AND = {
+                GER = {
+                    has_country_flag = third_empire_has_become_flag
+                }
+                FRA = {
+                    has_country_flag = cjg_open_the_third_empire
+                }
+			}
+			AND = {
+				is_in_faction_with = ENG
+				has_war = yes
+				NOT = {
+					has_idea = mod_the_buff_7
+				}
+			}
+        }
+
+        fire_only_once = no
+
+		cost = 200
+		days_remove = 30
+
+        complete_effect = {
+            
+        }
+
+		remove_effect = {
+			add_timed_idea = {
+					idea = mod_the_buff_7
+					days = 365
+				}
+		}
+		
+		ai_will_do = {
+			factor = 50
+		}
+
+    }
+
+
+	ENG_the_third_empire_war_categories_2 = { #对敌作战
+
+		icon = FIN_stop_motti_tactics
+
+        allowed = {
+			AND = {
+				is_in_faction_with = ENG
+				has_war = yes
+			}
+		}
+
+        visible = {
+            FRA = {
+                has_country_flag = cjg_open_the_third_empire
+            }
+			AND = {
+				is_in_faction_with = ENG
+				has_war = yes
+			}
+        }
+
+        available = {
+			AND = {
+                GER = {
+                    has_country_flag = third_empire_has_become_flag
+                }
+                FRA = {
+                    has_country_flag = cjg_open_the_third_empire
+                }
+			}
+			AND = {
+				is_in_faction_with = ENG
+				has_war = yes
+				NOT = {
+					has_idea = mod_the_buff_8
+				}
+			}
+        }
+
+        fire_only_once = no
+
+		cost = 200
+		days_remove = 30
+
+        complete_effect = {
+            
+        }
+
+		remove_effect = {
+			add_timed_idea = {
+					idea = mod_the_buff_8
+					days = 365
+				}
+		}
+		
+		ai_will_do = {
+			factor = 50
+		}
+
+    }
+
+	ENG_the_third_empire_war_categories_3 = { #最后防线
+
+		icon = generic_mountain_fortification
+
+        allowed = {
+			AND = {
+				is_in_faction_with = ENG
+				has_war = yes
+			}
+		}
+
+        visible = {
+            FRA = {
+                has_country_flag = cjg_open_the_third_empire
+            }
+			AND = {
+				is_in_faction_with = ENG
+				has_war = yes
+			}
+        }
+
+        available = {
+			AND = {
+                GER = {
+                    has_country_flag = third_empire_has_become_flag
+                }
+                FRA = {
+                    has_country_flag = cjg_open_the_third_empire
+                }
+			}
+			AND = {
+				is_in_faction_with = ENG
+				has_war = yes
+				surrender_progress > 0.5
+				NOT = {
+					has_idea = mod_the_buff_9
+				}
+			}
+        }
+
+        fire_only_once = no
+
+		cost = 200
+		days_remove = 30
+
+        complete_effect = {
+            
+        }
+
+		remove_effect = {
+			add_timed_idea = {
+					idea = mod_the_buff_9
+					days = 365
+				}
+		}
+		
+		ai_will_do = {
+			factor = 50
+		}
+
+    }
+
+	ENG_the_naval_fra = { #登录法国
+
+		icon = generic_merge_plant_aircraft
+
+        allowed = {
+			OR = {
+				tag = ENG
+				tag = USA
+			}
+		}
+
+        visible = {
+            FRA = {
+				has_country_flag = cjg_open_the_third_empire
+			}
+			AND = {
+				OR = {
+					tag = ENG
+					tag = USA
+				}
+				is_ai = yes
+			}
+        }
+
+        available = {
+			AND = {
+                GER = {
+                    has_country_flag = third_empire_has_become_flag
+                }
+                FRA = {
+                    has_country_flag = cjg_open_the_third_empire
+                }
+			}
+			AND = {
+				is_in_faction_with = ENG
+				has_war_with = GER
+				has_war_with = FRA
+				ENG = {
+					has_capitulated = no
+				}
+				has_capitulated = no
+				has_idea = ENG_the_better_navy_army_ideas
+				FRA = {
+					controls_state = 29
+					controls_state = 785
+					controls_state = 15
+					controls_state = 14
+					controls_state = 30
+					controls_state = 23
+					controls_state = 19
+				}
+			}
+        }
+
+        fire_only_once = no
+
+		cost = 5
+		days_remove = 60
+		days_re_enable = 400
+
+        complete_effect = {
+            every_enemy_country = {
+				limit = {
+					is_in_faction_with = GER
+				}
+				country_event = { id = change_eng.14 days = 49 }
+			}
+        }
+
+		remove_effect = {
+			add_equipment_to_stockpile = {
+				type = medium_tank_amphibious_chassis
+				amount = 1000
+			}
+
+			add_equipment_to_stockpile = {
+				type = medium_tank_destroyer_chassis
+				amount = 1000
+			}
+
+			division_template = {
+			name = "精英海军陆战队"
+			regiments = {
+				amphibious_mechanized = { x = 0 y = 0 }
+				amphibious_mechanized = { x = 0 y = 1 }
+				amphibious_mechanized = { x = 0 y = 2 }
+				amphibious_mechanized = { x = 0 y = 3 }
+				amphibious_mechanized = { x = 1 y = 0 }
+				amphibious_mechanized = { x = 1 y = 1 }
+				amphibious_mechanized = { x = 1 y = 2 }
+				amphibious_mechanized = { x = 1 y = 3 }
+				amphibious_medium_armor = { x = 2 y = 0 }
+				amphibious_medium_armor = { x = 2 y = 1 }
+				amphibious_medium_armor = { x = 2 y = 2 }
+				amphibious_medium_armor = { x = 2 y = 3 }
+				amphibious_medium_armor = { x = 3 y = 0 }
+				amphibious_medium_armor = { x = 3 y = 1 }
+				amphibious_medium_armor = { x = 3 y = 2 }
+				amphibious_medium_armor = { x = 3 y = 3 }
+				medium_tank_destroyer_brigade = { x = 4 y = 0 }
+				medium_tank_destroyer_brigade = { x = 4 y = 1 }
+			}
+			regimental_support = {
+				field_guns = { x = 0 y = 0 }
+				field_guns = { x = 1 y = 0 }
+				medium_tank_destroyer_support = { x = 2 y = 0 }
+				medium_tank_destroyer_support = { x = 3 y = 0 }
+				medium_sp_anti_air_support = { x = 4 y = 0 }
+			}
+			support = {
+				pioneer_support = { x = 0 y = 0 }
+				light_tank_recon = { x = 0 y = 1 }
+				field_hospital = { x = 0 y = 2 }
+				logistics_company = { x = 0 y = 3 }
+				medium_flame_tank = { x = 0 y = 4 }
+			}
+		}
+
+			load_oob = ENG_land_FRA
+			load_oob = ENG_land_FRA
+			#load_oob = ENG_land_FRA
+		}
+		
+		ai_will_do = {
+			factor = 2000
+		}
+
+    }
+
+	ENG_the_naval_spr = { #登录西班牙
+
+		icon = generic_merge_plant_aircraft
+
+        allowed = {
+			OR = {
+				tag = ENG
+				tag = USA
+			}
+		}
+
+        visible = {
+            FRA = {
+				has_country_flag = cjg_open_the_third_empire
+			}
+			AND = {
+				OR = {
+					tag = ENG
+					tag = USA
+				}
+				is_ai = yes
+			}
+        }
+
+        available = {
+			AND = {
+                GER = {
+                    has_country_flag = third_empire_has_become_flag
+                }
+                FRA = {
+                    has_country_flag = cjg_open_the_third_empire
+                }
+			}
+			AND = {
+				is_in_faction_with = ENG
+				has_war_with = GER
+				has_war_with = FRA
+				ENG = {
+					has_capitulated = no
+				}
+				has_capitulated = no
+				has_idea = ENG_the_better_navy_army_ideas
+				792 = {
+					controller = {
+						has_war_with = ROOT
+					}
+				}
+				790 = {
+					controller = {
+						has_war_with = ROOT
+					}
+				}
+				171 = {
+					controller = {
+						has_war_with = ROOT
+					}
+				}
+				180 = {
+					controller = {
+						has_war_with = ROOT
+					}
+				}
+				112 = {
+					controller = {
+						has_war_with = ROOT
+					}
+				}
+				179 = {
+					controller = {
+						has_war_with = ROOT
+					}
+				}
+				169 = {
+					controller = {
+						has_war_with = ROOT
+					}
+				}
+			}
+        }
+
+        fire_only_once = no
+
+		cost = 5
+		days_remove = 45
+		days_re_enable = 365
+
+        complete_effect = {
+            every_enemy_country = {
+				limit = {
+					is_in_faction_with = GER
+				}
+				country_event = { id = change_eng.14 days = 30 }
+			}
+        }
+
+		remove_effect = {
+			add_equipment_to_stockpile = {
+				type = medium_tank_amphibious_chassis
+				amount = 1000
+			}
+
+			add_equipment_to_stockpile = {
+				type = medium_tank_destroyer_chassis
+				amount = 1000
+			}
+
+			division_template = {
+			name = "精英海军陆战队"
+			regiments = {
+				amphibious_mechanized = { x = 0 y = 0 }
+				amphibious_mechanized = { x = 0 y = 1 }
+				amphibious_mechanized = { x = 0 y = 2 }
+				amphibious_mechanized = { x = 0 y = 3 }
+				amphibious_mechanized = { x = 1 y = 0 }
+				amphibious_mechanized = { x = 1 y = 1 }
+				amphibious_mechanized = { x = 1 y = 2 }
+				amphibious_mechanized = { x = 1 y = 3 }
+				amphibious_medium_armor = { x = 2 y = 0 }
+				amphibious_medium_armor = { x = 2 y = 1 }
+				amphibious_medium_armor = { x = 2 y = 2 }
+				amphibious_medium_armor = { x = 2 y = 3 }
+				amphibious_medium_armor = { x = 3 y = 0 }
+				amphibious_medium_armor = { x = 3 y = 1 }
+				amphibious_medium_armor = { x = 3 y = 2 }
+				amphibious_medium_armor = { x = 3 y = 3 }
+				medium_tank_destroyer_brigade = { x = 4 y = 0 }
+				medium_tank_destroyer_brigade = { x = 4 y = 1 }
+			}
+			regimental_support = {
+				field_guns = { x = 0 y = 0 }
+				field_guns = { x = 1 y = 0 }
+				medium_tank_destroyer_support = { x = 2 y = 0 }
+				medium_tank_destroyer_support = { x = 3 y = 0 }
+				medium_sp_anti_air_support = { x = 4 y = 0 }
+			}
+			support = {
+				pioneer_support = { x = 0 y = 0 }
+				light_tank_recon = { x = 0 y = 1 }
+				field_hospital = { x = 0 y = 2 }
+				logistics_company = { x = 0 y = 3 }
+				medium_flame_tank = { x = 0 y = 4 }
+			}
+		}
+			load_oob = ENG_land_SPR
+			load_oob = ENG_land_SPR
+		}
+		
+		ai_will_do = {
+			factor = 2000
+		}
+
+    }
+
+
+	ENG_the_naval_hol = { #登录低地
+
+		icon = generic_merge_plant_aircraft
+
+        allowed = {
+			OR = {
+				tag = ENG
+				tag = USA
+			}
+		}
+
+        visible = {
+            FRA = {
+				has_country_flag = cjg_open_the_third_empire
+			}
+			AND = {
+				OR = {
+					tag = ENG
+					tag = USA
+				}
+			}
+			is_ai = yes
+        }
+
+        available = {
+			AND = {
+                GER = {
+                    has_country_flag = third_empire_has_become_flag
+                }
+                FRA = {
+                    has_country_flag = cjg_open_the_third_empire
+                }
+			}
+			AND = {
+				is_in_faction_with = ENG
+				has_war_with = GER
+				has_war_with = FRA
+				ENG = {
+					has_capitulated = no
+				}
+				has_capitulated = no
+				has_idea = ENG_the_better_navy_army_ideas
+				36 = {
+					controller = {
+						has_war_with = ROOT
+					}
+				}
+				7 = {
+					controller = {
+						has_war_with = ROOT
+					}
+				}
+				35 = {
+					controller = {
+						has_war_with = ROOT
+					}
+				}
+				6 = {
+					controller = {
+						has_war_with = ROOT
+					}
+				}
+				
+			}
+        }
+
+        fire_only_once = no
+
+		cost = 5
+		days_remove = 35
+		days_re_enable = 365
+
+        complete_effect = {
+            every_enemy_country = {
+				limit = {
+					is_in_faction_with = GER
+				}
+				country_event = { id = change_eng.14 days = 21 }
+			}
+        }
+
+		remove_effect = {
+			add_equipment_to_stockpile = {
+				type = medium_tank_amphibious_chassis
+				amount = 1000
+			}
+
+			add_equipment_to_stockpile = {
+				type = medium_tank_destroyer_chassis
+				amount = 1000
+			}
+
+			division_template = {
+			name = "精英海军陆战队"
+			regiments = {
+				amphibious_mechanized = { x = 0 y = 0 }
+				amphibious_mechanized = { x = 0 y = 1 }
+				amphibious_mechanized = { x = 0 y = 2 }
+				amphibious_mechanized = { x = 0 y = 3 }
+				amphibious_mechanized = { x = 1 y = 0 }
+				amphibious_mechanized = { x = 1 y = 1 }
+				amphibious_mechanized = { x = 1 y = 2 }
+				amphibious_mechanized = { x = 1 y = 3 }
+				amphibious_medium_armor = { x = 2 y = 0 }
+				amphibious_medium_armor = { x = 2 y = 1 }
+				amphibious_medium_armor = { x = 2 y = 2 }
+				amphibious_medium_armor = { x = 2 y = 3 }
+				amphibious_medium_armor = { x = 3 y = 0 }
+				amphibious_medium_armor = { x = 3 y = 1 }
+				amphibious_medium_armor = { x = 3 y = 2 }
+				amphibious_medium_armor = { x = 3 y = 3 }
+				medium_tank_destroyer_brigade = { x = 4 y = 0 }
+				medium_tank_destroyer_brigade = { x = 4 y = 1 }
+			}
+			regimental_support = {
+				field_guns = { x = 0 y = 0 }
+				field_guns = { x = 1 y = 0 }
+				medium_tank_destroyer_support = { x = 2 y = 0 }
+				medium_tank_destroyer_support = { x = 3 y = 0 }
+				medium_sp_anti_air_support = { x = 4 y = 0 }
+			}
+			support = {
+				pioneer_support = { x = 0 y = 0 }
+				light_tank_recon = { x = 0 y = 1 }
+				field_hospital = { x = 0 y = 2 }
+				logistics_company = { x = 0 y = 3 }
+				medium_flame_tank = { x = 0 y = 4 }
+			}
+		}
+			load_oob = ENG_land_HOL
+			load_oob = ENG_land_HOL
+			#load_oob = ENG_land_HOL
+		}
+		
+		ai_will_do = {
+			factor = 2000
+		}
+
+    }
+
+
+	ENG_the_naval_ger = { #登录德国
+
+		icon = generic_merge_plant_aircraft
+
+        allowed = {
+			OR = {
+				tag = ENG
+				tag = USA
+			}
+		}
+
+        visible = {
+            FRA = {
+				has_country_flag = cjg_open_the_third_empire
+			}
+			AND = {
+				OR = {
+					tag = ENG
+					tag = USA
+				}
+				is_ai = yes
+			}
+        }
+
+        available = {
+			AND = {
+                GER = {
+                    has_country_flag = third_empire_has_become_flag
+                }
+                FRA = {
+                    has_country_flag = cjg_open_the_third_empire
+                }
+			}
+			AND = {
+				is_in_faction_with = ENG
+				has_war_with = GER
+				has_war_with = FRA
+				ENG = {
+					has_capitulated = no
+				}
+				has_capitulated = no
+				has_idea = ENG_the_better_navy_army_ideas
+				99 = {
+					controller = {
+						has_war_with = ROOT
+					}
+				}
+				912 = {
+					controller = {
+						has_war_with = ROOT
+					}
+				}
+				909 = {
+					controller = {
+						has_war_with = ROOT
+					}
+				}
+				58 = {
+					controller = {
+						has_war_with = ROOT
+					}
+				}
+				59 = {
+					controller = {
+						has_war_with = ROOT
+					}
+				}
+				56 = {
+					controller = {
+						has_war_with = ROOT
+					}
+				}
+				
+			}
+        }
+
+        fire_only_once = no
+
+		cost = 5
+		days_remove = 100
+		days_re_enable = 450
+
+        complete_effect = {
+            every_enemy_country = {
+				limit = {
+					is_in_faction_with = GER
+				}
+				country_event = { id = change_eng.14 days = 90 }
+			}
+        }
+
+		remove_effect = {
+			add_equipment_to_stockpile = {
+				type = medium_tank_amphibious_chassis
+				amount = 1000
+			}
+
+			add_equipment_to_stockpile = {
+				type = medium_tank_destroyer_chassis
+				amount = 1000
+			}
+
+			division_template = {
+			name = "精英海军陆战队"
+			regiments = {
+				amphibious_mechanized = { x = 0 y = 0 }
+				amphibious_mechanized = { x = 0 y = 1 }
+				amphibious_mechanized = { x = 0 y = 2 }
+				amphibious_mechanized = { x = 0 y = 3 }
+				amphibious_mechanized = { x = 1 y = 0 }
+				amphibious_mechanized = { x = 1 y = 1 }
+				amphibious_mechanized = { x = 1 y = 2 }
+				amphibious_mechanized = { x = 1 y = 3 }
+				amphibious_medium_armor = { x = 2 y = 0 }
+				amphibious_medium_armor = { x = 2 y = 1 }
+				amphibious_medium_armor = { x = 2 y = 2 }
+				amphibious_medium_armor = { x = 2 y = 3 }
+				amphibious_medium_armor = { x = 3 y = 0 }
+				amphibious_medium_armor = { x = 3 y = 1 }
+				amphibious_medium_armor = { x = 3 y = 2 }
+				amphibious_medium_armor = { x = 3 y = 3 }
+				medium_tank_destroyer_brigade = { x = 4 y = 0 }
+				medium_tank_destroyer_brigade = { x = 4 y = 1 }
+			}
+			regimental_support = {
+				field_guns = { x = 0 y = 0 }
+				field_guns = { x = 1 y = 0 }
+				medium_tank_destroyer_support = { x = 2 y = 0 }
+				medium_tank_destroyer_support = { x = 3 y = 0 }
+				medium_sp_anti_air_support = { x = 4 y = 0 }
+			}
+			support = {
+				pioneer_support = { x = 0 y = 0 }
+				light_tank_recon = { x = 0 y = 1 }
+				field_hospital = { x = 0 y = 2 }
+				logistics_company = { x = 0 y = 3 }
+				medium_flame_tank = { x = 0 y = 4 }
+			}
+		}
+			load_oob = ENG_land_GER
+			load_oob = ENG_land_GER
+			#load_oob = ENG_land_GER
+			#load_oob = ENG_land_GER
+		}
+		
+		ai_will_do = {
+			factor = 2000
+		}
+
+    }
+
+
+	ENG_the_naval_nor = { #登录挪威
+
+		icon = generic_merge_plant_aircraft
+
+        allowed = {
+			OR = {
+				tag = ENG
+				tag = USA
+			}
+		}
+
+        visible = {
+            FRA = {
+				has_country_flag = cjg_open_the_third_empire
+			}
+			AND = {
+				OR = {
+					tag = ENG
+					tag = USA
+				}
+			}
+        }
+
+        available = {
+			AND = {
+                GER = {
+                    has_country_flag = third_empire_has_become_flag
+                }
+                FRA = {
+                    has_country_flag = cjg_open_the_third_empire
+                }
+			}
+			AND = {
+				is_in_faction_with = ENG
+				has_war_with = GER
+				has_war_with = FRA
+				ENG = {
+					has_capitulated = no
+				}
+				has_capitulated = no
+				has_idea = ENG_the_better_navy_army_ideas
+				142 = {
+					controller = {
+						has_war_with = ROOT
+					}
+				}
+				
+				
+			}
+        }
+
+        fire_only_once = no
+
+		cost = 5
+		days_remove = 30
+		days_re_enable = 240
+
+        complete_effect = {
+            every_enemy_country = {
+				limit = {
+					is_in_faction_with = GER
+				}
+				country_event = { id = change_eng.14 days = 14 }
+			}
+        }
+
+		remove_effect = {
+			add_equipment_to_stockpile = {
+				type = medium_tank_amphibious_chassis
+				amount = 1000
+			}
+
+			add_equipment_to_stockpile = {
+				type = medium_tank_destroyer_chassis
+				amount = 1000
+			}
+
+			division_template = {
+			name = "精英海军陆战队"
+			regiments = {
+				amphibious_mechanized = { x = 0 y = 0 }
+				amphibious_mechanized = { x = 0 y = 1 }
+				amphibious_mechanized = { x = 0 y = 2 }
+				amphibious_mechanized = { x = 0 y = 3 }
+				amphibious_mechanized = { x = 1 y = 0 }
+				amphibious_mechanized = { x = 1 y = 1 }
+				amphibious_mechanized = { x = 1 y = 2 }
+				amphibious_mechanized = { x = 1 y = 3 }
+				amphibious_medium_armor = { x = 2 y = 0 }
+				amphibious_medium_armor = { x = 2 y = 1 }
+				amphibious_medium_armor = { x = 2 y = 2 }
+				amphibious_medium_armor = { x = 2 y = 3 }
+				amphibious_medium_armor = { x = 3 y = 0 }
+				amphibious_medium_armor = { x = 3 y = 1 }
+				amphibious_medium_armor = { x = 3 y = 2 }
+				amphibious_medium_armor = { x = 3 y = 3 }
+				medium_tank_destroyer_brigade = { x = 4 y = 0 }
+				medium_tank_destroyer_brigade = { x = 4 y = 1 }
+			}
+			regimental_support = {
+				field_guns = { x = 0 y = 0 }
+				field_guns = { x = 1 y = 0 }
+				medium_tank_destroyer_support = { x = 2 y = 0 }
+				medium_tank_destroyer_support = { x = 3 y = 0 }
+				medium_sp_anti_air_support = { x = 4 y = 0 }
+			}
+			support = {
+				pioneer_support = { x = 0 y = 0 }
+				light_tank_recon = { x = 0 y = 1 }
+				field_hospital = { x = 0 y = 2 }
+				logistics_company = { x = 0 y = 3 }
+				medium_flame_tank = { x = 0 y = 4 }
+			}
+		}
+			load_oob = ENG_land_NOR
+			load_oob = ENG_land_NOR
+			#load_oob = ENG_land_NOR
+		}
+		
+		ai_will_do = {
+			factor = 2000
+		}
+
+    }
+
+
+	ENG_attack_ger_plan = { #黑色战争计划
+
+		icon = generic_operation
+
+        allowed = {
+			
+		}
+
+        visible = {
+            FRA = {
+				has_country_flag = cjg_open_the_third_empire
+			}
+			is_in_faction_with = ENG
+        }
+
+        available = {
+			AND = {
+                GER = {
+                    has_country_flag = third_empire_has_become_flag
+                }
+                FRA = {
+                    has_country_flag = cjg_open_the_third_empire
+                }
+			}
+			AND = {
+				is_in_faction_with = ENG
+				has_war_with = GER
+				has_capitulated = no			
+			}
+        }
+
+        fire_only_once = no
+
+		custom_cost_trigger = {
+			command_power > 24
+			has_political_power > 24
+		}
+		custom_cost_text = decision_cost_CP_25_pp_25
+		days_remove = 90
+		days_re_enable = 5
+
+        complete_effect = {
+			hidden_effect = {
+				add_command_power = -25
+			}
+        }
+
+		targeted_modifier = {
+			tag = GER
+			attack_bonus_against = 0.1
+			defense_bonus_against = 0.1
+			breakthrough_bonus_against = 0.1
+		}
+
+		modifier = {
+			army_attack_factor = 0.05
+			army_defence_factor = 0.05
+			max_planning_factor = 0.1
+			army_armor_attack_factor = 0.1
+			army_armor_defence_factor = 0.1
+			mechanized_attack_factor = 0.1
+			mechanized_defence_factor = 0.1
+			motorized_attack_factor = 0.1
+			motorized_defence_factor = 0.1
+			land_reinforce_rate = 0.05
+		}
+
+		
+
+		remove_effect = {
+			
+		}
+		
+		ai_will_do = {
+			factor = 2000
+		}
+
+    }
+
+	ENG_attack_hun_plan = { #巴尔干战争计划
+
+		icon = generic_operation
+
+        allowed = {
+			
+		}
+
+        visible = {
+            FRA = {
+				has_country_flag = cjg_open_the_third_empire
+			}
+			is_in_faction_with = ENG
+        }
+
+        available = {
+			AND = {
+                GER = {
+                    has_country_flag = third_empire_has_become_flag
+                }
+                FRA = {
+                    has_country_flag = cjg_open_the_third_empire
+                }
+			}
+			AND = {
+				is_in_faction_with = ENG
+				has_war_with = HUN
+				has_capitulated = no			
+			}
+        }
+
+        fire_only_once = no
+
+		custom_cost_trigger = {
+			command_power > 24
+			has_political_power > 24
+		}
+		custom_cost_text = decision_cost_CP_25_pp_25
+		days_remove = 90
+		days_re_enable = 5
+
+        complete_effect = {
+			hidden_effect = {
+				add_command_power = -25
+			}
+        }
+
+		targeted_modifier = {
+			tag = HUN
+			attack_bonus_against = 0.1
+			defense_bonus_against = 0.1
+			breakthrough_bonus_against = 0.1
+		}
+
+		targeted_modifier = {
+			tag = BUL
+			attack_bonus_against = 0.1
+			defense_bonus_against = 0.1
+			breakthrough_bonus_against = 0.1
+		}
+
+		modifier = {
+			army_attack_factor = 0.05
+			army_defence_factor = 0.05
+			max_planning_factor = 0.1
+			air_attack_factor = 0.1
+			air_defence_factor = 0.1
+			air_agility_factor = 0.1
+			air_ground_attack = 0.1
+			air_superiority_bonus_in_combat = 0.1
+			land_night_attack = 0.1
+		}
+
+		remove_effect = {
+			
+		}
+		
+		ai_will_do = {
+			factor = 2000
+		}
+
+    }
+
+
+	ENG_attack_fra_plan = { #金色战争计划
+
+		icon = generic_operation
+
+        allowed = {
+			
+		}
+
+        visible = {
+            FRA = {
+				has_country_flag = cjg_open_the_third_empire
+			}
+			is_in_faction_with = ENG
+        }
+
+        available = {
+			AND = {
+                GER = {
+                    has_country_flag = third_empire_has_become_flag
+                }
+                FRA = {
+                    has_country_flag = cjg_open_the_third_empire
+                }
+			}
+			AND = {
+				is_in_faction_with = ENG
+				has_war_with = FRA
+				has_capitulated = no			
+			}
+        }
+
+        fire_only_once = no
+
+		custom_cost_trigger = {
+			command_power > 24
+			has_political_power > 24
+		}
+		custom_cost_text = decision_cost_CP_25_pp_25
+		days_remove = 90
+		days_re_enable = 5
+
+        complete_effect = {
+			hidden_effect = {
+				add_command_power = -25
+			}
+        }
+
+		targeted_modifier = {
+			tag = FRA
+			attack_bonus_against = 0.1
+			defense_bonus_against = 0.1
+			breakthrough_bonus_against = 0.1
+		}
+
+		modifier = {
+			army_attack_factor = 0.05
+			army_defence_factor = 0.05
+			max_planning_factor = 0.1
+			special_forces_attack_factor = 0.1
+			special_forces_defence_factor = 0.1
+			SPECIAL_FORCES_MIN = 10
+			SPECIAL_FORCES_NO_SUPPLY_GRACE = 36
+			army_sub_unit_category_special_forces_max_org_factor = 0.125
+			NAVAL_INVASION_PENALTY = -0.35
+			NAVAL_INVASION_DEFENSE = 0.125
+		}
+
+		remove_effect = {
+			
+		}
+		
+		ai_will_do = {
+			factor = 2000
+		}
+
+    }
+
+	ENG_attack_ITA_plan = { #绿色战争计划
+
+		icon = generic_operation
+
+        allowed = {
+			
+		}
+
+        visible = {
+            FRA = {
+				has_country_flag = cjg_open_the_third_empire
+			}
+			is_in_faction_with = ENG
+        }
+
+        available = {
+			AND = {
+                GER = {
+                    has_country_flag = third_empire_has_become_flag
+                }
+                FRA = {
+                    has_country_flag = cjg_open_the_third_empire
+                }
+			}
+			AND = {
+				is_in_faction_with = ENG
+				has_war_with = ITA
+				has_capitulated = no			
+			}
+        }
+
+        fire_only_once = no
+
+		custom_cost_trigger = {
+			command_power > 24
+			has_political_power > 24
+		}
+		custom_cost_text = decision_cost_CP_25_pp_25
+		days_remove = 90
+		days_re_enable = 5
+
+        complete_effect = {
+			hidden_effect = {
+				add_command_power = -25
+			}
+        }
+
+		targeted_modifier = {
+			tag = ITA
+			attack_bonus_against = 0.1
+			defense_bonus_against = 0.1
+			breakthrough_bonus_against = 0.1
+		}
+
+		modifier = {
+			army_attack_factor = 0.05
+			army_defence_factor = 0.05
+			max_planning_factor = 0.1
+			special_forces_attack_factor = 0.1
+			special_forces_defence_factor = 0.1
+			SPECIAL_FORCES_MIN = 10
+			SPECIAL_FORCES_NO_SUPPLY_GRACE = 36
+			army_sub_unit_category_special_forces_max_org_factor = 0.125
+			NAVAL_INVASION_PENALTY = -0.35
+			NAVAL_INVASION_DEFENSE = 0.125
+		}
+
+		remove_effect = {
+			
+		}
+		
+		ai_will_do = {
+			factor = 2000
+		}
+
+    }
+
+	ENG_attack_JAP_plan = { #落日战争计划
+
+		icon = generic_operation
+
+        allowed = {
+			
+		}
+
+        visible = {
+            FRA = {
+				has_country_flag = cjg_open_the_third_empire
+			}
+			is_in_faction_with = ENG
+        }
+
+        available = {
+			AND = {
+                GER = {
+                    has_country_flag = third_empire_has_become_flag
+                }
+                FRA = {
+                    has_country_flag = cjg_open_the_third_empire
+                }
+			}
+			AND = {
+				is_in_faction_with = ENG
+				has_war_with = JAP
+				has_capitulated = no			
+			}
+        }
+
+        fire_only_once = no
+
+		custom_cost_trigger = {
+			command_power > 24
+			has_political_power > 24
+		}
+		custom_cost_text = decision_cost_CP_25_pp_25
+		days_remove = 90
+		days_re_enable = 5
+
+        complete_effect = {
+			hidden_effect = {
+				add_command_power = -25
+			}
+        }
+
+		targeted_modifier = {
+			tag = JAP
+			attack_bonus_against = 0.1
+			defense_bonus_against = 0.1
+			breakthrough_bonus_against = 0.1
+		}
+
+		targeted_modifier = {
+			tag = MAN
+			attack_bonus_against = 0.1
+			defense_bonus_against = 0.1
+			breakthrough_bonus_against = 0.1
+		}
+
+		modifier = {
+			army_attack_factor = 0.05
+			army_defence_factor = 0.05
+			max_planning_factor = 0.1
+			NAVY_CAPITAL_SHIP_ATTACK_FACTOR = 0.1
+			NAVY_CAPITAL_SHIP_DEFENCE_FACTOR = 0.1
+			army_sub_unit_marines_attack_factor = 0.1
+			army_sub_unit_marines_defence_factor = 0.1
+			NAVAL_TORPEDO_COOLDOWN_FACTOR = -0.1
+			naval_torpedo_screen_penetration_factor = 0.1
+			naval_torpedo_hit_chance_factor = 0.1
+			naval_torpedo_cooldown_factor = -0.1
+		}
+
+		remove_effect = {
+			
+		}
+		
+		ai_will_do = {
+			factor = 2000
+		}
+
+    }
+
+	ENG_attack_prc_plan = { #东方战争计划
+
+		icon = generic_operation
+
+        allowed = {
+			
+		}
+
+        visible = {
+            FRA = {
+				has_country_flag = cjg_open_the_third_empire
+			}
+			is_in_faction_with = ENG
+        }
+
+        available = {
+			AND = {
+                GER = {
+                    has_country_flag = third_empire_has_become_flag
+                }
+                FRA = {
+                    has_country_flag = cjg_open_the_third_empire
+                }
+			}
+			AND = {
+				is_in_faction_with = ENG
+				OR = {
+					has_war_with = PRC
+					has_war_with = CHI
+				}
+				has_capitulated = no			
+			}
+        }
+
+        fire_only_once = no
+
+		custom_cost_trigger = {
+			command_power > 24
+			has_political_power > 24
+		}
+		custom_cost_text = decision_cost_CP_25_pp_25
+
+		days_remove = 90
+		days_re_enable = 5
+
+        complete_effect = {
+			hidden_effect = {
+				add_command_power = -25
+			}
+        }
+
+		targeted_modifier = {
+			tag = CHI
+			attack_bonus_against = 0.1
+			defense_bonus_against = 0.1
+			breakthrough_bonus_against = 0.1
+		}
+
+		targeted_modifier = {
+			tag = PRC
+			attack_bonus_against = 0.1
+			defense_bonus_against = 0.1
+			breakthrough_bonus_against = 0.1
+		}
+
+		modifier = {
+			army_attack_factor = 0.05
+			army_defence_factor = 0.05
+			max_planning_factor = 0.1
+			army_infantry_attack_factor = 0.1
+			army_infantry_defence_factor = 0.1
+			supply_consumption_factor = -0.1
+			no_supply_grace = 36
+			supply_factor = 0.1
+			supply_node_range = 0.1
+		}
+
+		remove_effect = {
+			
+		}
+		
+		ai_will_do = {
+			factor = 2000
+		}
+
+    }
+
+
+
+}
+
+
+
+
+
+
+ENG_ai_categories = {
+	ENG_ai_base_equipment_add_1936 = {  #火星步兵师
+
+		allowed = {
+			original_tag = ENG
+		}
+		available = {
+			date > 1937.1.3
+		}
+
+		visible = {
+
+		}
+
+		fire_only_once = no
+
+		cost = 0
+		days_remove = 60
+
+		modifier = {
+			
+		}
+
+		ai_will_do = {
+			factor = 1000
+		}
+		
+		remove_effect = {
+			add_manpower = 500
+
+            army_experience = 5
+			navy_experience = 5
+			air_experience = 5
+
+            add_equipment_to_stockpile = {
+				type = infantry_equipment
+				amount = 500
+			}
+			add_equipment_to_stockpile = { 
+				type = train_equipment 
+				amount = 5
+			}
+			add_equipment_to_stockpile = {
+				type = artillery_equipment
+				amount = 100
+			}
+			add_equipment_to_stockpile = {
+				type = anti_tank_equipment
+				amount = 100
+			}
+            add_equipment_to_stockpile = {
+				type = support_equipment
+				amount = 150
+			}
+			add_equipment_to_stockpile = { 
+				type = anti_air_equipment 
+				amount = 50
+			}
+
+			random_owned_controlled_state = {
+				limit = { ROOT = { has_full_control_of_state = PREV } }
+				prioritize = { 64 }
+				create_unit = {
+					division = "name = \"大英帝国步兵师I\" division_template = \"大英帝国步兵师I\" start_experience_factor = 0.5" 
+					owner = ENG
+					count = 1
+				}
+			}
+
+
+		}
+    }
+
+	ENG_ai_base_template_add_1= {  #火星步兵师模板
+
+		allowed = {
+			original_tag = ENG
+		}
+		available = {
+			date > 1937.1.1
+		}
+
+		visible = {
+
+		}
+
+		fire_only_once = yes
+
+		cost = 0
+		days_remove = 30
+
+		modifier = {
+			
+		}
+
+		ai_will_do = {
+			factor = 1000
+		}
+		
+		remove_effect = {
+			add_manpower = 500
+
+            army_experience = 5
+			navy_experience = 5
+			air_experience = 5
+
+            add_equipment_to_stockpile = {
+				type = infantry_equipment
+				amount = 500
+			}
+			add_equipment_to_stockpile = { 
+				type = train_equipment 
+				amount = 5
+			}
+			add_equipment_to_stockpile = {
+				type = artillery_equipment
+				amount = 50
+			}
+			add_equipment_to_stockpile = {
+				type = anti_tank_equipment
+				amount = 100
+			}
+            add_equipment_to_stockpile = {
+				type = support_equipment
+				amount = 150
+			}
+			add_equipment_to_stockpile = { 
+				type = anti_air_equipment 
+				amount = 50
+			}
+
+            division_template = {
+					name = "大英帝国步兵师I"
+					regiments = {
+						infantry = { x = 0 y = 0 }
+						infantry = { x = 0 y = 1 }
+						infantry = { x = 0 y = 2 }
+						infantry = { x = 0 y = 3 }
+						infantry = { x = 0 y = 4 }
+						infantry = { x = 1 y = 0 }
+						infantry = { x = 1 y = 1 }
+						infantry = { x = 1 y = 2 }
+						infantry = { x = 1 y = 3 }
+						infantry = { x = 1 y = 4 }
+						infantry = { x = 2 y = 0 }
+						artillery_brigade = { x = 3 y = 0 }
+						artillery_brigade = { x = 3 y = 1 }
+                        artillery_brigade = { x = 3 y = 2 }
+                        artillery_brigade = { x = 3 y = 3 }
+						anti_tank_brigade = { x = 3 y = 4 }
+						anti_air_brigade = { x = 4 y = 0 }
+					}
+					regimental_support = {
+						field_guns = { x = 0 y = 0 }
+						field_guns = { x = 1 y = 0 }
+						medium_tank_destroyer_support = { x = 2 y = 0 }
+						medium_tank_destroyer_support = { x = 3 y = 0 }
+						medium_sp_anti_air_support = { x = 4 y = 0 }
+					}
+					support = {
+						engineer = { x = 0 y = 0 }
+						recon = { x = 0 y = 1 }
+						artillery = { x = 0 y = 2 }
+						field_hospital = { x = 0 y = 3 }
+						logistics_company = { x = 0 y = 4 }
+					}
+				}
+
+		}
+    }
+
+    ENG_ai_tank_equipment_add_1936 =  {  #火星装甲师
+        allowed = {
+			original_tag = ENG
+		}
+		available = {
+			date > 1938.1.3
+		}
+
+		visible = {
+
+		}
+
+		fire_only_once = no
+
+		cost = 0
+		days_remove = 60
+
+		modifier = {
+			
+		}
+
+		ai_will_do = {
+			factor = 1000
+		}
+
+        remove_effect = {
+            add_manpower = 500
+            army_experience = 5
+            if = {
+				limit = {
+					has_tech = advanced_medium_tank_chassis
+				}
+				add_equipment_to_stockpile = { 
+					type = medium_tank_chassis_3 
+					amount = 500
+				}
+				add_equipment_to_stockpile = { 
+					type = medium_tank_destroyer_chassis_3
+					amount = 500
+				}
+			}
+			else_if = {
+				limit = {
+					has_tech = improved_medium_tank_chassis
+				}
+				add_equipment_to_stockpile = { 
+					type = medium_tank_chassis_2 
+					amount = 500
+				}
+				add_equipment_to_stockpile = { 
+					type = medium_tank_destroyer_chassis_2
+					amount = 500
+				}
+			}
+			else = {
+				add_equipment_to_stockpile = { 
+					type = medium_tank_chassis_1 
+					amount = 500
+				}
+				add_equipment_to_stockpile = { 
+					type = medium_tank_destroyer_chassis_1
+					amount = 500
+				}
+			}
+
+			add_equipment_to_stockpile = { 
+				type = medium_tank_flame_chassis_2
+				amount = 100
+			}
+
+			add_equipment_to_stockpile = { 
+				type = mechanized_equipment
+				amount = 500
+			}
+
+			add_equipment_to_stockpile = { 
+				type = armored_support_vehicle
+				amount = 300
+			}
+
+            
+			if = {
+				limit = {
+					date > 1938.1.1 
+					date < 1939.1.1
+				}
+				random_owned_controlled_state = {
+					limit = { ROOT = { has_full_control_of_state = PREV } }
+					prioritize = { 64 }
+					create_unit = {
+						division = "name = \"大英帝国装甲师\" division_template = \"大英帝国装甲师\" start_experience_factor = 0.5" 
+						owner = ENG
+						count = 4
+					}
+					
+				}
+			} else_if = {
+				limit = {
+					date > 1939.1.1
+					date < 1940.1.1
+				}
+				random_owned_controlled_state = {
+					limit = { ROOT = { has_full_control_of_state = PREV } }
+					prioritize = { 64 }
+					create_unit = {
+						division = "name = \"大英帝国装甲师\" division_template = \"大英帝国装甲师\" start_experience_factor = 0.5" 
+						owner = ENG
+						count = 6
+					}
+					
+				}
+			}  else_if = {
+				random_owned_controlled_state = {
+					limit = { ROOT = { has_full_control_of_state = PREV } }
+					prioritize = { 64 }
+					create_unit = {
+						division = "name = \"大英帝国装甲师\" division_template = \"大英帝国装甲师\" start_experience_factor = 0.5" 
+						owner = ENG
+						count = 8
+					}
+					
+				}
+			}
+
+        }
+    }
+
+
+	
+
+	ENG_ai_tank_base_template_add_1 =  {  #火星装甲师模板
+        allowed = {
+			original_tag = ENG
+		}
+		available = {
+			date > 1938.1.1
+		}
+
+		visible = {
+		}
+
+		fire_only_once = yes
+
+		cost = 0
+		days_remove = 30
+
+		modifier = {
+			
+		}
+
+		ai_will_do = {
+			factor = 1000
+		}
+
+        remove_effect = {
+            add_manpower = 500
+            army_experience = 5
+
+
+			set_technology = { basic_medium_tank_chassis = 1 }
+			set_technology = { improved_medium_tank_chassis = 1 }
+			set_technology = {improved_heavy_tank_chassis = 1}
+			set_technology = {improved_light_tank_chassis = 1 }
+			set_technology = {interwar_antitank = 1}
+			set_technology = {antitank1 = 1}
+			set_technology = {antitank2 = 1}
+			set_technology = {antitank3 = 1}
+			set_technology = {antitank4 = 1}
+			set_technology = {antitank5 = 1}
+			set_technology = {tech_maintenance_company2 = 1}
+			set_technology = {tech_field_hospital = 1}
+			set_technology = {tech_logistics_company = 1}
+			set_technology = {mechanised_infantry = 1}
+			set_technology = {amphibious_drive = 1}
+			set_technology = {sp_armored_engineer_tech = 1}
+			set_technology = {sp_land_military_engineering_vehicles = 1}
+			set_technology = {sp_land_flamethrower_tank = 1}
+            division_template = {
+				name = "大英帝国装甲师"
+				regiments = {
+					mechanized = { x = 0 y = 0 }
+					mechanized = { x = 0 y = 1 }
+					mechanized = { x = 0 y = 2 }
+					mechanized = { x = 0 y = 3 }
+					mechanized = { x = 1 y = 0 }
+					mechanized = { x = 1 y = 1 }
+					mechanized = { x = 1 y = 2 }
+					mechanized = { x = 1 y = 3 }
+					medium_armor = { x = 2 y = 0 }
+					medium_armor = { x = 2 y = 1 }
+					medium_armor = { x = 2 y = 2 }
+					medium_armor = { x = 2 y = 3 }
+					medium_armor = { x = 3 y = 0 }
+					medium_armor = { x = 3 y = 1 }
+					medium_armor = { x = 3 y = 2 }
+					medium_armor = { x = 3 y = 3 }
+					medium_tank_destroyer_brigade = { x = 4 y = 0 }
+					medium_tank_destroyer_brigade = { x = 4 y = 1 }
+				}
+				regimental_support = {
+					field_guns = { x = 0 y = 0 }
+					field_guns = { x = 1 y = 0 }
+					medium_tank_destroyer_support = { x = 2 y = 0 }
+					medium_tank_destroyer_support = { x = 3 y = 0 }
+					medium_sp_anti_air_support = { x = 4 y = 0 }
+				}
+				support = {
+					armored_engineer = { x = 0 y = 0 }
+					light_tank_recon = { x = 0 y = 1 }
+					field_hospital = { x = 0 y = 2 }
+					logistics_company = { x = 0 y = 3 }
+					medium_flame_tank = { x = 0 y = 4 }
+				}
+			}
+
+
+			create_equipment_variant = {
+				name = "mediumtank G+"
+				type = medium_tank_chassis_2
+				design_team = mio:ENG_vauxhall_organization
+				parent_version = 0
+				modules = {
+					main_armament_slot = tank_medium_cannon_2 
+					turret_type_slot = tank_medium_three_man_tank_turret 
+					suspension_type_slot = tank_torsion_bar_suspension
+					armor_type_slot = tank_riveted_armor
+					engine_type_slot = tank_gasoline_engine
+					special_type_slot_1 = tank_radio_2
+					special_type_slot_2 = secondary_turret_hmg
+					special_type_slot_3 = secondary_turret_small_cannon
+					special_type_slot_4 = easy_maintenance
+				}
+				upgrades = {
+					tank_nsb_engine_upgrade = 0
+					tank_nsb_armor_upgrade = 4
+				}
+			}
+
+			create_equipment_variant = {
+				name = "tk_destory IV"
+				type = medium_tank_destroyer_chassis_2
+				design_team = mio:ENG_vauxhall_organization
+				parent_version = 0
+				modules = {
+					main_armament_slot = tank_high_velocity_cannon_2
+					turret_type_slot = tank_medium_fixed_superstructure_turret #炮塔
+					suspension_type_slot = tank_bogie_suspension #悬挂
+					armor_type_slot = tank_riveted_armor #装甲
+					engine_type_slot = tank_gasoline_engine #引擎
+					special_type_slot_1 = easy_maintenance
+					special_type_slot_2 = secondary_turret_small_cannon
+					special_type_slot_3 = secondary_turret_small_cannon
+					special_type_slot_4 = stabilizer
+				}
+				upgrades = {
+					tank_nsb_engine_upgrade = 0
+					tank_nsb_armor_upgrade = 4
+				}
+			}
+
+			create_equipment_variant = {
+				name = "flame IV"
+				type = medium_tank_flame_chassis_2
+				design_team = mio:ENG_vauxhall_organization
+				parent_version = 0
+				modules = {
+					main_armament_slot = advanced_flamethrower
+					turret_type_slot = tank_medium_three_man_tank_turret 
+					suspension_type_slot = tank_bogie_suspension 
+					armor_type_slot = tank_riveted_armor 
+					engine_type_slot = tank_diesel_engine
+					special_type_slot_1 = tank_radio_1
+					special_type_slot_2 = easy_maintenance
+					special_type_slot_3 = extra_ammo_storage
+					special_type_slot_4 = dozer_blade
+				}
+				upgrades = {
+					tank_nsb_engine_upgrade = 0
+					tank_nsb_armor_upgrade = 0
+				}
+			}
+
+        }
+    }
+
+
+
+	ENG_ai_tank_equipment_add_1940 =  {  #火星装甲师
+        allowed = {
+			original_tag = ENG
+		}
+		available = {
+			date > 1939.1.3
+		}
+
+		visible = {
+
+		}
+
+		fire_only_once = no
+
+		cost = 0
+		days_remove = 60
+
+		modifier = {
+			
+		}
+
+		ai_will_do = {
+			factor = 1000
+		}
+
+        remove_effect = {
+            add_manpower = 500
+            army_experience = 5
+            if = {
+				limit = {
+					has_tech = advanced_medium_tank_chassis
+				}
+				add_equipment_to_stockpile = { 
+					type = medium_tank_chassis_3 
+					amount = 500
+				}
+				add_equipment_to_stockpile = { 
+					type = medium_tank_destroyer_chassis_3
+					amount = 500
+				}
+			}
+			else_if = {
+				limit = {
+					has_tech = improved_medium_tank_chassis
+				}
+				add_equipment_to_stockpile = { 
+					type = medium_tank_chassis_2 
+					amount = 500
+				}
+				add_equipment_to_stockpile = { 
+					type = medium_tank_destroyer_chassis_2
+					amount = 500
+				}
+			}
+			else = {
+				add_equipment_to_stockpile = { 
+					type = medium_tank_chassis_1 
+					amount = 500
+				}
+				add_equipment_to_stockpile = { 
+					type = medium_tank_destroyer_chassis_1
+					amount = 500
+				}
+			}
+
+			add_equipment_to_stockpile = { 
+				type = medium_tank_flame_chassis_2
+				amount = 100
+			}
+
+			add_equipment_to_stockpile = { 
+				type = mechanized_equipment
+				amount = 500
+			}
+
+			add_equipment_to_stockpile = { 
+				type = armored_support_vehicle
+				amount = 300
+			}
+
+            
+			if = {
+				limit = {
+					date > 1938.1.1 
+					date < 1939.1.1
+				}
+				random_owned_controlled_state = {
+					limit = { ROOT = { has_full_control_of_state = PREV } }
+					prioritize = { 64 }
+					create_unit = {
+						division = "name = \"大英帝国两栖装甲师\" division_template = \"大英帝国两栖装甲师\" start_experience_factor = 0.5" 
+						owner = ENG
+						count = 2
+					}
+					
+				}
+			} else_if = {
+				limit = {
+					date > 1939.1.1
+					date < 1940.1.1
+				}
+				random_owned_controlled_state = {
+					limit = { ROOT = { has_full_control_of_state = PREV } }
+					prioritize = { 64 }
+					create_unit = {
+						division = "name = \"大英帝国两栖装甲师\" division_template = \"大英帝国两栖装甲师\" start_experience_factor = 0.5" 
+						owner = ENG
+						count = 4
+					}
+					
+				}
+			}  else_if = {
+				random_owned_controlled_state = {
+					limit = { ROOT = { has_full_control_of_state = PREV } }
+					prioritize = { 64 }
+					create_unit = {
+						division = "name = \"大英帝国两栖装甲师\" division_template = \"大英帝国两栖装甲师\" start_experience_factor = 0.5" 
+						owner = ENG
+						count = 6
+					}
+					
+				}
+			}
+
+        }
+    }
+
+	ENG_ai_tank_base_template_add_2 =  {  #火星装甲师模板
+        allowed = {
+			original_tag = ENG
+		}
+		available = {
+			date > 1939.1.1
+		}
+
+		visible = {
+
+		}
+
+		fire_only_once = yes
+
+		cost = 0
+		days_remove = 30
+
+		modifier = {
+			
+		}
+
+		ai_will_do = {
+			factor = 1000
+		}
+
+        remove_effect = {
+            add_manpower = 500
+            army_experience = 5
+            division_template = {
+				name = "大英帝国两栖装甲师"
+				regiments = {
+					marine = { x = 0 y = 0 }
+					marine = { x = 0 y = 1 }
+					marine = { x = 0 y = 2 }
+					marine = { x = 0 y = 4 }
+					marine = { x = 1 y = 0 }
+					marine = { x = 1 y = 1 }
+					marine = { x = 1 y = 2 }
+					marine = { x = 1 y = 4 }
+					medium_tank_amphibious_chassis = { x = 2 y = 0 }
+					medium_tank_amphibious_chassis = { x = 2 y = 1 }
+					medium_tank_amphibious_chassis = { x = 2 y = 2 }
+					medium_tank_amphibious_chassis = { x = 2 y = 4 }
+					medium_tank_amphibious_chassis = { x = 3 y = 0 }
+					medium_tank_amphibious_chassis = { x = 3 y = 1 }
+					medium_tank_amphibious_chassis = { x = 3 y = 2 }
+					medium_tank_amphibious_chassis = { x = 3 y = 4 }
+					medium_tank_destroyer_brigade = { x = 4 y = 0 }
+					medium_tank_destroyer_brigade = { x = 4 y = 1 }
+				}
+				regimental_support = {
+					field_guns = { x = 0 y = 0 }
+					field_guns = { x = 1 y = 0 }
+					medium_tank_destroyer_support = { x = 2 y = 0 }
+					medium_tank_destroyer_support = { x = 3 y = 0 }
+					medium_sp_anti_air_support = { x = 4 y = 0 }
+				}
+				support = {
+					armored_engineer = { x = 0 y = 0 }
+					light_tank_recon = { x = 0 y = 1 }
+					field_hospital = { x = 0 y = 2 }
+					logistics_company = { x = 0 y = 3 }
+					medium_flame_tank = { x = 0 y = 4 }
+				}
+			}
+
+
+			create_equipment_variant = {
+				name = "mediumtankhailu G+"
+				type = medium_tank_amphibious_chassis_2
+				design_team = mio:ENG_vauxhall_organization
+				parent_version = 0
+				modules = {
+					main_armament_slot  = tank_medium_cannon_2
+					turret_type_slot = tank_medium_three_man_tank_turret 
+					suspension_type_slot = tank_torsion_bar_suspension
+					armor_type_slot = tank_riveted_armor
+					engine_type_slot = tank_diesel_engine
+					special_type_slot_1 = secondary_turret_small_cannon
+					special_type_slot_2 = secondary_turret_small_cannon
+					special_type_slot_3 = amphibious_drive
+					special_type_slot_4 = easy_maintenance
+				}
+				upgrades = {
+					tank_nsb_engine_upgrade = 0
+					tank_nsb_armor_upgrade = 4
+				}
+			}
+
+
+        }
+    }
+}

@@ -1,0 +1,765 @@
+add_namespace = change_usa
+
+country_event = {
+
+    id = change_usa.1
+	title = change_usa.1.t
+	desc = change_usa.1.d
+
+    is_triggered_only = yes
+    is_major = yes
+
+    picture = GFX_news_event_tank_factory
+
+    option = {
+		name = change_usa.1.a
+		ai_chance = {
+			factor = 40
+		}
+        add_war_support = 0.3
+        add_stability = 0.3
+        add_ideas = usa_has_awakening_buff
+        add_ideas = war_economy
+        every_owned_state = {
+            limit = {
+                is_core_of = USA
+            }
+            add_extra_state_shared_building_slots = 4
+            add_building_construction = {
+				type = arms_factory
+				level = 1
+				instant_build = yes
+			}
+            add_building_construction = {
+				type = industrial_complex
+				level = 1
+				instant_build = yes
+			}
+        }
+        
+	}
+
+}
+
+country_event = { #对墨西哥的处理方案
+
+    id = change_usa.2
+	title = change_usa.2.t
+	desc = change_usa.2.d
+
+    picture = GFX_news_event_generic_strike
+
+    is_triggered_only = yes
+    is_major = yes
+
+    option = { #要他当狗
+		name = change_usa.2.a
+		ai_chance = {
+			factor = 100
+            modifier = {
+                factor = 0
+                MEX = {
+                    has_army_manpower = { size > 999999 }
+                }
+            }
+		}
+
+        MEX = {
+            country_event = { id = change_usa.3 days = 1 }
+        }
+        
+        
+	}
+
+    option = { #给资源开采权
+		name = change_usa.2.b
+		ai_chance = {
+			factor = 5
+            modifier = {
+                factor = 100
+                MEX = {
+                    has_army_manpower = { size > 999999 }
+                }
+            }
+		}
+        MEX = {
+            country_event = { id = change_usa.8 days = 1 }
+        }
+        
+	}
+
+    option = { #直接揍他
+		name = change_usa.2.c
+		ai_chance = {
+			factor = 0
+		}
+        USA = {
+            create_wargoal = {
+				target = MEX
+				type = annex_everything
+				expire = 0
+			}
+        }
+        
+	}
+
+}
+
+country_event = { #(要求当狗)
+
+    id = change_usa.3
+	title = change_usa.3.t
+	desc = change_usa.3.d
+
+    picture = GFX_news_event_ITA_purged_fascists
+
+    is_triggered_only = yes
+    is_major = yes
+
+    option = { #怂了
+		name = change_usa.3.a
+		ai_chance = {
+			factor = 5
+            modifier = {
+                factor = 1000
+                MEX = {
+                    NOT = {
+                        has_government = communism
+                    }
+                }
+            }
+		}
+
+        USA = {
+			set_autonomy = { target = MEX autonomy_state = autonomy_integrated_puppet }
+            country_event = { id = change_usa.4 hours = 12 }
+		}
+        news_event = { id = change_news.41 days = 1 }
+        MEX = {
+            give_resource_rights = {
+				receiver = USA
+				state = 476
+			}
+            give_resource_rights = {
+				receiver = USA
+				state = 477
+			}
+            give_resource_rights = {
+				receiver = USA
+				state = 479
+			}
+            give_resource_rights = {
+				receiver = USA
+				state = 480
+			}
+        }
+	}
+
+    option = { #给资源开采权，别打我
+		name = change_usa.3.b
+		ai_chance = {
+			factor = 5
+            modifier = {
+                factor = 100
+                MEX = {
+                    has_army_manpower = { size > 399999 }
+                    has_army_manpower = { size < 999999 }
+                }
+            }
+		}
+        USA = {
+            country_event = { id = change_usa.5 days = 1 }
+        }
+        
+	}
+
+    option = { #有本事干我
+		name = change_usa.3.c
+		ai_chance = {
+			factor = 5
+            modifier = {
+                factor = 1000
+                MEX = {
+                    has_army_manpower = { size > 999999 }
+                }
+            }
+		}
+        USA = {
+            country_event = { id = change_usa.7 days = 1 }
+        }
+        news_event = { id = change_news.42 hours = 12 }
+        
+	}
+
+}
+
+country_event = { #(要求当狗--墨西哥主动认怂)
+
+    id = change_usa.4
+	title = change_usa.4.t
+	desc = change_usa.4.d
+
+    picture = GFX_news_event_hitler_handshake
+
+    is_triggered_only = yes
+    is_major = yes
+
+    option = { #很好
+		name = change_usa.4.a
+		ai_chance = {
+			factor = 100
+		}
+        add_war_support = 0.1
+        add_political_power = 100
+        hidden_effect = {
+            ENG = {
+                add_war_support = 0.1
+            }
+            SOV = {
+                add_war_support = 0.1
+            }
+        }
+        MEX = {
+            give_resource_rights = {
+				receiver = USA
+				state = 476
+			}
+            give_resource_rights = {
+				receiver = USA
+				state = 477
+			}
+            give_resource_rights = {
+				receiver = USA
+				state = 479
+			}
+            give_resource_rights = {
+				receiver = USA
+				state = 480
+			}
+        }
+	}
+
+}
+
+country_event = { #(要求当狗--墨西哥给资源开采权)
+
+    id = change_usa.5
+	title = change_usa.5.t
+	desc = change_usa.5.d
+
+    picture = GFX_news_event_generic_sign_treaty2
+
+    is_triggered_only = yes
+
+    option = { #可
+		name = change_usa.5.a
+		ai_chance = {
+			factor = 5
+            modifier = {
+                factor = 1000
+                MEX = {
+                    has_army_manpower = { size > 499999 }
+                }
+            }
+		}
+        add_war_support = 0.1
+        MEX = {
+            give_resource_rights = {
+				receiver = USA
+				state = 476
+			}
+            give_resource_rights = {
+				receiver = USA
+				state = 477
+			}
+            give_resource_rights = {
+				receiver = USA
+				state = 479
+			}
+            give_resource_rights = {
+				receiver = USA
+				state = 480
+			}
+        }
+	}
+
+    option = { #给你脸了
+		name = change_usa.5.b
+		ai_chance = {
+			factor = 5
+            modifier = {
+                factor = 1000
+                MEX = {
+                    has_army_manpower = { size < 499999 }
+                }
+            }
+		}
+        add_war_support = 0.1
+        MEX = {
+            country_event = { id = change_usa.6 days = 1 }
+        }
+	}
+
+}
+
+country_event = { #(要求当狗--墨西哥给资源开采权，美国不同意)
+
+    id = change_usa.6
+	title = change_usa.6.t
+	desc = change_usa.6.d
+
+    picture = GFX_news_event_romania_poland_visit
+
+    is_triggered_only = yes
+
+    option = { #别打我
+		name = change_usa.6.a
+		ai_chance = {
+			factor = 5
+            modifier = {
+                factor = 1000
+                MEX = {
+                    has_army_manpower = { size < 399999 }
+                }
+            }
+		}
+
+        USA = {
+			set_autonomy = { target = MEX autonomy_state = autonomy_puppet }
+            country_event = { id = change_usa.4 hours = 12 }
+		}
+        news_event = { id = change_news.41 days = 1 }
+        MEX = {
+            give_resource_rights = {
+				receiver = USA
+				state = 476
+			}
+            give_resource_rights = {
+				receiver = USA
+				state = 477
+			}
+            give_resource_rights = {
+				receiver = USA
+				state = 479
+			}
+            give_resource_rights = {
+				receiver = USA
+				state = 480
+			}
+        }
+	}
+
+    option = { #那来吧
+		name = change_usa.6.b
+		ai_chance = {
+			factor = 5
+            modifier = {
+                factor = 1000
+                MEX = {
+                    has_army_manpower = { size > 499999 }
+                }
+            }
+		}
+        add_war_support = 0.1
+        USA = {
+            country_event = { id = change_usa.7.a hours = 24 }
+        }
+        news_event = { id = change_news.42 hours = 12 }
+	}
+
+}
+
+country_event = { #墨西哥拒绝
+
+    id = change_usa.7
+	title = change_usa.7.t
+	desc = change_usa.7.d
+
+    picture = GFX_news_event_saf_civil_war
+
+    is_triggered_only = yes
+
+    option = { #
+		name = change_usa.7.a
+		ai_chance = {
+			factor = 100
+		}
+        USA = {
+            create_wargoal = {
+				target = MEX
+				type = annex_everything
+				expire = 0
+			}
+        }
+        
+	}
+
+}
+
+country_event = { #美国要求资源开采权
+
+    id = change_usa.8
+	title = change_usa.8.t
+	desc = change_usa.8.d
+
+    picture = GFX_news_event_generic_sign_treaty2
+
+    is_triggered_only = yes
+
+    option = { #给
+		name = change_usa.8.a
+		ai_chance = {
+			factor = 5
+            modifier = {
+                factor = 1000
+                MEX = {
+                    has_army_manpower = { size < 699999 }
+                }
+            }
+		}
+        USA = {
+            country_event = { id = change_usa.5 days = 1 }
+        }
+        VEN = {
+            give_resource_rights = {
+                receiver = USA
+                state = 489
+            }
+            give_resource_rights = {
+                receiver = USA
+                state = 488
+            }
+            give_resource_rights = {
+                receiver = USA
+                state = 307
+            }
+        }
+        
+	}
+
+    option = { #不给
+		name = change_usa.8.b
+		ai_chance = {
+			factor = 5
+            modifier = {
+                factor = 1000
+                MEX = {
+                    has_army_manpower = { size > 699999 }
+                }
+            }
+		}
+        USA = {
+            country_event = { id = change_usa.7.a hours = 24 }
+        }
+        news_event = { id = change_news.42 hours = 12 }
+	}
+
+}
+
+country_event = { #美国要求屈服
+
+    id = change_usa.9
+	title = change_usa.9.t
+	desc = change_usa.9.d
+
+    picture = GFX_news_event_generic_sign_treaty2
+
+    is_triggered_only = yes
+
+    option = { #怂了
+		name = change_usa.9.a
+		ai_chance = {
+			factor = 5
+            modifier = {
+                factor = 1000
+                VEN = {
+                    has_army_manpower = { size < 699999 }
+                }
+            }
+		}
+        USA = {
+			set_autonomy = { target = VEN autonomy_state = autonomy_puppet }
+            country_event = { id = change_usa.4 hours = 12 }
+		}
+        news_event = { id = change_news.43 days = 1 }
+        VEN = {
+            give_resource_rights = {
+                receiver = USA
+                state = 489
+            }
+            give_resource_rights = {
+                receiver = USA
+                state = 488
+            }
+            give_resource_rights = {
+                receiver = USA
+                state = 307
+            }
+        }
+        
+	}
+
+    option = { #有本事干我
+		name = change_usa.9.b
+		ai_chance = {
+			factor = 5
+            modifier = {
+                factor = 1000
+                VEN = {
+                    has_army_manpower = { size > 699999 }
+                }
+            }
+		}
+        USA = {
+            country_event = { id = change_usa.10 hours = 12 }
+        }
+        news_event = { id = change_news.45 hours = 12 }
+	}
+
+}
+
+country_event = { #委内瑞拉拒绝
+
+    id = change_usa.10
+	title = change_usa.10.t
+	desc = change_usa.10.d
+
+    picture = GFX_news_event_polish_army
+
+    is_triggered_only = yes
+
+    option = { #
+		name = change_usa.10.a
+		ai_chance = {
+			factor = 100
+		}
+        USA = {
+            create_wargoal = {
+				target = VEN
+				type = annex_everything
+				expire = 0
+			}
+        }
+	}
+
+}
+
+country_event = { #引入橡胶
+
+    id = change_usa.11
+	title = change_usa.11.t
+	desc = change_usa.11.d
+
+    is_triggered_only = yes
+
+    option = { #
+		name = change_usa.11.a
+		ai_chance = {
+			factor = 100
+		}
+        random_owned_state = {
+            limit = {
+                is_on_continent = europe
+                is_core_of = ENG
+            }
+            add_extra_state_shared_building_slots = 2
+            add_building_construction = {
+                type = industrial_complex
+                level = 2
+                instant_build = yes
+            }
+        }
+        random_owned_state = {
+            limit = {
+                is_on_continent = europe
+                is_core_of = ENG
+            }
+            add_extra_state_shared_building_slots = 2
+            add_building_construction = {
+                type = industrial_complex
+                level = 2
+                instant_build = yes
+            }
+        }
+	}
+
+}
+
+
+country_event = { #开局
+
+    id = change_usa.12
+	title = change_usa.12.t
+	desc = change_usa.12.d
+
+    is_triggered_only = yes
+
+    option = { #
+		name = change_usa.12.a
+		ai_chance = {
+			factor = 100
+		}
+        division_template = {
+            name = "国民警卫队"
+            regiments = {
+                infantry = { x = 0 y = 0 }
+                infantry = { x = 0 y = 1 }
+                infantry = { x = 0 y = 2 }
+                infantry = { x = 0 y = 3 }
+                infantry = { x = 1 y = 0 }
+                infantry = { x = 1 y = 1 }
+                infantry = { x = 1 y = 2 }
+                infantry = { x = 1 y = 3 }
+                infantry = { x = 2 y = 0 }
+                infantry = { x = 2 y = 1 }
+                artillery_brigade = { x = 3 y = 0 }
+                artillery_brigade = { x = 3 y = 1 }
+                artillery_brigade = { x = 3 y = 2 }
+                anti_air_brigade = { x = 3 y = 3 }
+            }
+            support = {
+                engineer = { x = 0 y = 0 }
+                artillery =  { x = 0 y = 1 }
+            }
+        }
+
+        random_owned_controlled_state = {
+            limit = { ROOT = { has_full_control_of_state = PREV } }
+            prioritize = { 64 }
+            create_unit = {
+                division = "name = \"国民警卫队\" division_template = \"国民警卫队\" start_experience_factor = 0.5 start_equipment_factor = 0.75" 
+                owner = USA
+                count = 4
+            }
+        }
+        random_owned_controlled_state = {
+            limit = { ROOT = { has_full_control_of_state = PREV } }
+            prioritize = { 64 }
+            create_unit = {
+                division = "name = \"国民警卫队\" division_template = \"国民警卫队\" start_experience_factor = 0.5 start_equipment_factor = 0.75" 
+                owner = USA
+                count = 4
+            }
+        }
+        random_owned_controlled_state = {
+            limit = { ROOT = { has_full_control_of_state = PREV } }
+            prioritize = { 64 }
+            create_unit = {
+                division = "name = \"国民警卫队\" division_template = \"国民警卫队\" start_experience_factor = 0.5 start_equipment_factor = 0.75" 
+                owner = USA
+                count = 4
+            }
+        }
+        random_owned_controlled_state = {
+            limit = { ROOT = { has_full_control_of_state = PREV } }
+            prioritize = { 64 }
+            create_unit = {
+                division = "name = \"国民警卫队\" division_template = \"国民警卫队\" start_experience_factor = 0.5 start_equipment_factor = 0.75" 
+                owner = USA
+                count = 4
+            }
+        }
+        random_owned_controlled_state = {
+            limit = { ROOT = { has_full_control_of_state = PREV } }
+            prioritize = { 64 }
+            create_unit = {
+                division = "name = \"国民警卫队\" division_template = \"国民警卫队\" start_experience_factor = 0.5 start_equipment_factor = 0.75" 
+                owner = USA
+                count = 4
+            }
+        }
+        random_owned_controlled_state = {
+            limit = { ROOT = { has_full_control_of_state = PREV } }
+            prioritize = { 64 }
+            create_unit = {
+                division = "name = \"国民警卫队\" division_template = \"国民警卫队\" start_experience_factor = 0.5 start_equipment_factor = 0.75" 
+                owner = USA
+                count = 4
+            }
+        }
+
+        if = {
+            limit = {
+                is_ai = yes
+            }
+            division_template = {
+                name = "FreedomArmy"
+                regiments = {
+                    infantry = { x = 0 y = 0 }
+                    infantry = { x = 0 y = 1 }
+                    infantry = { x = 0 y = 2 }
+                    infantry = { x = 0 y = 3 }
+                    infantry = { x = 0 y = 4 }
+                    infantry = { x = 1 y = 0 }
+                    infantry = { x = 1 y = 1 }
+                    infantry = { x = 1 y = 2 }
+                    infantry = { x = 1 y = 3 }
+                    infantry = { x = 1 y = 4 }
+                    infantry = { x = 2 y = 0 }
+                    artillery_brigade = { x = 3 y = 0 }
+                    artillery_brigade = { x = 3 y = 1 }
+                    artillery_brigade = { x = 3 y = 2 }
+                    artillery_brigade = { x = 3 y = 3 }
+                    anti_tank_brigade = { x = 3 y = 4 }
+                    anti_air_brigade = { x = 4 y = 0 }
+                }
+                support = {
+                    engineer = { x = 0 y = 0 }
+                    recon = { x = 0 y = 1 }
+                    artillery = { x = 0 y = 2 }
+                    field_hospital = { x = 0 y = 3 }
+                    logistics_company = { x = 0 y = 4 }
+                }
+            }
+            capital_scope = {
+                create_unit = {
+                    division = "name = \"国民警卫队\" division_template = \"国民警卫队\" start_experience_factor = 0.5 start_equipment_factor = 1" 
+                    owner = USA
+                    count = 24
+                }
+            }  
+            capital_scope = {
+                create_unit = {
+                    division = "name = \"FreedomArmy\" division_template = \"FreedomArmy\" start_experience_factor = 0.5 start_equipment_factor = 1" 
+                    owner = USA
+                    count = 24
+                }
+            }  
+        }
+	}
+
+}
+
+
+country_event = { #处置巴拿马
+
+    id = change_usa.13
+	title = change_usa.13.t
+	desc = change_usa.13.d
+
+    is_triggered_only = yes
+
+    option = { #
+		name = change_usa.13.a
+		ai_chance = {
+			factor = 100
+		}
+        USA = {
+            set_autonomy = { target = PAN autonomy_state = autonomy_integrated_puppet }
+        }
+        
+	}
+
+    option = { #
+		name = change_usa.13.b
+		ai_chance = {
+			factor = 100
+		}
+        annex_country = {
+            target = PAN
+            transfer_troops = yes
+        }
+        
+	}
+
+}

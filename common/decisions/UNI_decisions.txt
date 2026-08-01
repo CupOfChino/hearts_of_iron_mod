@@ -1,0 +1,197 @@
+ 
+economy_decisions = {
+	
+    supper_buff_decisions = {
+
+		icon = GFX_decision_generic_construction	
+        allowed = {
+
+		}
+        visible = {
+			is_debug = yes
+		}
+
+        available = {
+			is_debug = yes
+			NOT = { 
+            	has_idea = The_world_power
+		    }
+		}
+		
+		days_remove = 1
+		cost = 10
+
+		ai_will_do = {
+			base = 0
+		}
+
+		complete_effect = {
+            add_ideas = The_world_power
+		}
+	}
+	change_normal_to_power_buff_decisions = {
+
+		icon = GFX_decision_generic_construction	
+        allowed = {
+
+		}
+        visible = {
+			is_debug = yes
+		}
+
+        available = {
+			is_debug = yes
+			NOT = { 
+           	 	has_idea = CoffeeOrTea
+				has_idea = ChinoVeryCute
+		    }
+		}
+		
+		days_remove = 1
+		cost = 10
+
+		ai_will_do = {
+			base = 0
+		}
+
+		complete_effect = {
+			remove_ideas = normal_CoffeeOrTea
+			remove_ideas = normal_ChinoVeryCute
+            add_ideas = CoffeeOrTea
+			add_ideas = ChinoVeryCute
+		}
+	}
+	clean_and_change_the_power_buff1 = {
+
+		icon = GFX_decision_generic_construction	
+        allowed = {
+
+		}
+        visible = {
+			is_debug = yes
+		}
+
+        available = {
+			is_debug = yes
+            has_idea = The_world_power
+		}
+		
+		days_remove = 1
+		cost = 10
+
+		ai_will_do = {
+			base = 0
+		}
+
+		complete_effect = {
+            remove_ideas = The_world_power
+		}
+	}
+	clean_and_change_the_power_buff2 = {
+
+		icon = GFX_decision_generic_construction	
+        allowed = {
+
+		}
+        visible = {
+			is_debug = yes
+		}
+
+        available = {
+			is_debug = yes
+            has_idea = CoffeeOrTea
+			has_idea = ChinoVeryCute
+		}
+		
+		days_remove = 1
+		cost = 10
+
+		ai_will_do = {
+			base = 0
+		}
+
+		complete_effect = {
+            remove_ideas = CoffeeOrTea
+			remove_ideas = ChinoVeryCute
+			add_ideas = normal_CoffeeOrTea
+			add_ideas = normal_ChinoVeryCute
+		}
+	}
+
+
+	UNI_leader_trait = { #增加特质
+		icon = generic_operation
+
+		allowed = {
+			
+		}
+
+		available = {
+			is_debug = yes
+		}
+
+		visible = {
+			is_debug = yes
+		}
+
+		fire_only_once = yes
+
+		cost = 10
+		days_remove = 1
+
+		modifier = {
+			
+		}
+
+		ai_will_do = {
+			factor = 0
+		}
+		
+		complete_effect = {
+		}
+
+		remove_effect = {
+			country_event = {id = event_UNI_header.1}
+		}
+	}
+
+	UNI_chino_become_leader_recheck = { #用于召回chino小可爱
+		icon = generic_operation
+
+		allowed = {
+
+		}
+
+		available = {
+			is_debug = yes
+			
+		}
+
+		visible = {
+			is_debug = yes
+		}
+
+
+		cost = 0
+		days_remove = 1
+		days_re_enable = 3
+		modifier = {
+			
+		}
+
+		ai_will_do = {
+			factor = 0
+		}
+		
+		complete_effect = {
+
+		}
+
+		remove_effect = {
+			country_event = {id = event_UNI_header.2}
+			country_event = { id = event_succubus.1000 }
+		}
+	}
+
+
+} 

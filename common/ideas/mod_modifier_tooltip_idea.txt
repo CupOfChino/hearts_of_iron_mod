@@ -1,0 +1,1616 @@
+ideas = { #用于动态修正的显示idea
+    country = {
+		mod_with_fra_the_five_plan_tooltip = { 
+            allowed = {
+                original_tag = FRA
+            }
+
+            allowed_civil_war = {
+                always = yes
+            }
+                
+            removal_cost = -1
+
+            modifier = {
+
+            }
+        }
+
+        mod_with_fra_the_five_plan_tooltip_1 = { 
+            allowed = {
+                original_tag = FRA
+            }
+
+            allowed_civil_war = {
+                always = yes
+            }
+                
+            removal_cost = -1
+
+            modifier = {
+                consumer_goods_factor = -0.25
+                stability_factor = -0.05
+            }
+        }
+
+        mod_with_fra_the_five_plan_tooltip_2 = { 
+            allowed = {
+                original_tag = FRA
+            }
+
+            allowed_civil_war = {
+                always = yes
+            }
+                
+            removal_cost = -1
+
+            modifier = {
+                production_speed_infrastructure_factor = 0.1
+                production_speed_rail_way_factor = 0.1
+            }
+        }
+
+        mod_with_fra_the_five_plan_tooltip_3 = { 
+            allowed = {
+                original_tag = FRA
+            }
+
+            allowed_civil_war = {
+                always = yes
+            }
+                
+            removal_cost = -1
+
+            modifier = {
+                stability_factor = 0.05
+            }
+        }
+
+        mod_with_fra_the_five_plan_tooltip_4 = { 
+            allowed = {
+                original_tag = FRA
+            }
+
+            allowed_civil_war = {
+                always = yes
+            }
+                
+            removal_cost = -1
+
+            modifier = {
+                local_resources_factor = 0.05
+                production_lack_of_resource_penalty_factor = -0.05
+            }
+        }
+
+        mod_with_fra_the_five_plan_tooltip_5 = { 
+            allowed = {
+                original_tag = FRA
+            }
+
+            allowed_civil_war = {
+                always = yes
+            }
+                
+            removal_cost = -1
+
+            modifier = {
+                production_speed_industrial_complex_factor = 0.05
+            }
+        }
+
+        mod_with_fra_the_five_plan_tooltip_6 = { 
+            allowed = {
+                original_tag = FRA
+            }
+
+            allowed_civil_war = {
+                always = yes
+            }
+                
+            removal_cost = -1
+
+            modifier = {
+                production_speed_industrial_complex_factor = -0.05
+                production_speed_arms_factory_factor = 0.1
+            }
+        }
+
+        mod_with_fra_the_five_plan_tooltip_7 = { 
+            allowed = {
+                original_tag = FRA
+            }
+
+            allowed_civil_war = {
+                always = yes
+            }
+                
+            removal_cost = -1
+
+            modifier = {
+                industrial_capacity_factory = 0.05
+                industrial_capacity_dockyard = 0.05
+            }
+        }
+
+        mod_with_fra_the_five_plan_tooltip_8 = { 
+            allowed = {
+                original_tag = FRA
+            }
+
+            allowed_civil_war = {
+                always = yes
+            }
+                
+            removal_cost = -1
+
+            modifier = {
+                research_speed_factor = 0.05
+            }
+        }
+
+        mod_with_fra_the_five_plan_tooltip_9 = { 
+            allowed = {
+                original_tag = FRA
+            }
+
+            allowed_civil_war = {
+                always = yes
+            }
+                
+            removal_cost = -1
+
+            modifier = {
+                production_factory_start_efficiency_factor = 0.05
+                production_factory_max_efficiency_factor = 0.05
+                production_factory_efficiency_gain_factor = 0.1
+                industrial_capacity_dockyard = 0.05
+                industrial_capacity_factory = 0.05
+            }
+        }
+
+        mod_with_fra_the_five_plan_tooltip_10 = { 
+            allowed = {
+                original_tag = FRA
+            }
+
+            allowed_civil_war = {
+                always = yes
+            }
+                
+            removal_cost = -1
+
+            modifier = {
+                production_factory_max_efficiency_factor = 0.025
+                production_factory_efficiency_gain_factor = 0.05
+            }
+        }
+
+        mod_with_the_fra_army_tooltip = { 
+            allowed = {
+                original_tag = FRA
+            }
+
+            allowed_civil_war = {
+                always = yes
+            }
+                
+            removal_cost = -1
+
+            modifier = {
+                
+            }
+        }
+
+        mod_with_the_fra_army_tooltip_1 = { 
+            allowed = {
+                original_tag = FRA
+            }
+
+            allowed_civil_war = {
+                always = yes
+            }
+                
+            removal_cost = -1
+
+            modifier = {
+                army_artillery_attack_factor = 0.025
+            }
+        }
+
+        mod_with_the_fra_army_tooltip_2 = { 
+            allowed = {
+                original_tag = FRA
+            }
+
+            allowed_civil_war = {
+                always = yes
+            }
+                
+            removal_cost = -1
+
+            modifier = {
+                army_org_factor = 0.025
+                army_land_reinforce_rate = 0.01
+            }
+        }
+
+        mod_with_the_fra_army_tooltip_3 = { 
+            allowed = {
+                original_tag = FRA
+            }
+
+            allowed_civil_war = {
+                always = yes
+            }
+                
+            removal_cost = -1
+
+            modifier = {
+                production_speed_bunker_factor = 0.025
+                production_speed_coastal_bunker_factor = 0.025
+            }
+        }
+
+        mod_with_the_fra_army_tooltip_4 = { 
+            allowed = {
+                original_tag = FRA
+            }
+
+            allowed_civil_war = {
+                always = yes
+            }
+                
+            removal_cost = -1
+
+            modifier = {
+                conscription = 0.001
+                conscription_factor = 0.05
+            }
+        }
+
+        mod_with_the_fra_army_tooltip_5 = { 
+            allowed = {
+                original_tag = FRA
+            }
+
+            allowed_civil_war = {
+                always = yes
+            }
+                
+            removal_cost = -1
+
+            modifier = {
+                army_attack_factor = 0.02
+            }
+        }
+
+        mod_with_the_fra_army_tooltip_6 = { 
+            allowed = {
+                original_tag = FRA
+            }
+
+            allowed_civil_war = {
+                always = yes
+            }
+                
+            removal_cost = -1
+
+            modifier = {
+                army_core_defence_factor = 0.02
+                army_defence_factor = 0.02
+            }
+        }
+
+        mod_with_the_fra_army_tooltip_7 = { 
+            allowed = {
+                original_tag = FRA
+            }
+
+            allowed_civil_war = {
+                always = yes
+            }
+                
+            removal_cost = -1
+
+            modifier = {
+                army_core_attack_factor = 0.02
+                army_attack_factor = 0.02
+            }
+        }
+
+        mod_with_the_fra_army_tooltip_8 = { 
+            allowed = {
+                original_tag = FRA
+            }
+
+            allowed_civil_war = {
+                always = yes
+            }
+                
+            removal_cost = -1
+
+            modifier = {
+                org_loss_when_moving = -0.05
+                army_morale_factor = 0.05
+            }
+        }
+
+        mod_with_the_fra_army_tooltip_9 = { 
+            allowed = {
+                original_tag = FRA
+            }
+
+            allowed_civil_war = {
+                always = yes
+            }
+                
+            removal_cost = -1
+
+            modifier = {
+                mechanized_defence_factor = 0.05
+            }
+        }
+
+        mod_with_the_fra_army_tooltip_10 = { 
+            allowed = {
+                original_tag = FRA
+            }
+
+            allowed_civil_war = {
+                always = yes
+            }
+                
+            removal_cost = -1
+
+            modifier = {
+                air_agility_factor = 0.05
+            }
+        }
+
+        mod_with_the_fra_army_tooltip_11 = { 
+            allowed = {
+                original_tag = FRA
+            }
+
+            allowed_civil_war = {
+                always = yes
+            }
+                
+            removal_cost = -1
+
+            modifier = {
+                enemy_army_bonus_air_superiority_factor = -0.05
+                army_bonus_air_superiority_factor = 0.05
+            }
+        }
+
+        mod_with_the_fra_army_tooltip_12 = { 
+            allowed = {
+                original_tag = FRA
+            }
+
+            allowed_civil_war = {
+                always = yes
+            }
+                
+            removal_cost = -1
+
+            modifier = {
+                air_cas_efficiency = 0.075
+            }
+        }
+
+        mod_with_the_fra_army_tooltip_13 = { 
+            allowed = {
+                original_tag = FRA
+            }
+
+            allowed_civil_war = {
+                always = yes
+            }
+                
+            removal_cost = -1
+
+            modifier = {
+                army_attack_factor = 0.025
+                army_defence_factor = 0.025
+            }
+        }
+
+        mod_with_the_fra_army_tooltip_14 = { 
+            allowed = {
+                original_tag = FRA
+            }
+
+            allowed_civil_war = {
+                always = yes
+            }
+                
+            removal_cost = -1
+
+            modifier = {
+                army_org_factor = 0.05
+                army_strength_factor = 0.05
+                army_morale_factor = 0.025
+                enemy_army_bonus_air_superiority_factor = -0.025
+                land_reinforce_rate = 0.01
+            }
+        }
+
+        mod_with_the_fra_army_tooltip_15 = { 
+            allowed = {
+                original_tag = FRA
+            }
+
+            allowed_civil_war = {
+                always = yes
+            }
+                
+            removal_cost = -1
+
+            modifier = {
+                command_power_gain = 0.1
+                max_command_power = 25
+                planning_speed = 0.1
+                max_planning_factor = 0.02
+            }
+        }
+
+        mod_with_the_fra_army_tooltip_16 = { 
+            allowed = {
+                original_tag = FRA
+            }
+
+            allowed_civil_war = {
+                always = yes
+            }
+                
+            removal_cost = -1
+
+            modifier = {
+                army_attack_factor = 0.025
+                army_defence_factor = 0.025
+                army_core_attack_factor = 0.025
+                army_core_defence_factor = 0.025
+            }
+        }
+
+        mod_with_the_fra_army_tooltip_17 = { 
+            allowed = {
+                original_tag = FRA
+            }
+
+            allowed_civil_war = {
+                always = yes
+            }
+                
+            removal_cost = -1
+
+            modifier = {
+                army_attack_factor = 0.05
+                army_defence_factor = 0.05
+            }
+        }
+
+        mod_with_the_fra_army_tooltip_18 = { 
+            allowed = {
+                original_tag = FRA
+            }
+
+            allowed_civil_war = {
+                always = yes
+            }
+                
+            removal_cost = -1
+
+            modifier = {
+                mechanized_attack_factor = 0.025
+                mechanized_defence_factor = 0.05
+            }
+        }
+
+        mod_with_the_fra_army_tooltip_19 = { 
+            allowed = {
+                original_tag = FRA
+            }
+
+            allowed_civil_war = {
+                always = yes
+            }
+                
+            removal_cost = -1
+
+            modifier = {
+                army_artillery_attack_factor = 0.025
+                army_artillery_defence_factor = 0.05
+            }
+        }
+
+        mod_with_the_fra_army_tooltip_20 = { 
+            allowed = {
+                original_tag = FRA
+            }
+
+            allowed_civil_war = {
+                always = yes
+            }
+                
+            removal_cost = -1
+
+            modifier = {
+                army_infantry_defence_factor = 0.05
+            }
+        }
+
+        mod_with_the_fra_army_tooltip_21 = { 
+            allowed = {
+                original_tag = FRA
+            }
+
+            allowed_civil_war = {
+                always = yes
+            }
+                
+            removal_cost = -1
+
+            modifier = {
+                army_air_cas_efficiency = 0.1
+                army_bonus_air_superiority_factor = 0.1
+            }
+        }
+
+        mod_with_the_fra_army_tooltip_22 = { 
+            allowed = {
+                original_tag = FRA
+            }
+
+            allowed_civil_war = {
+                always = yes
+            }
+                
+            removal_cost = -1
+
+            modifier = {
+                experience_loss_factor = -0.05
+            }
+        }
+
+        mod_with_the_fra_army_tooltip_23 = { 
+            allowed = {
+                original_tag = FRA
+            }
+
+            allowed_civil_war = {
+                always = yes
+            }
+                
+            removal_cost = -1
+
+            modifier = {
+                army_infantry_defence_factor = 0.02
+            }
+        }
+
+        mod_with_the_fra_army_tooltip_24 = { 
+            allowed = {
+                original_tag = FRA
+            }
+
+            allowed_civil_war = {
+                always = yes
+            }
+                
+            removal_cost = -1
+
+            modifier = {
+                terrain_penalty_reduction = 0.05
+                training_time_army_factor = -0.05
+            }
+        }
+
+        mod_with_the_fra_army_tooltip_25 = { 
+            allowed = {
+                original_tag = FRA
+            }
+
+            allowed_civil_war = {
+                always = yes
+            }
+                
+            removal_cost = -1
+
+            modifier = {
+                army_strength_factor = 0.05
+                training_time_army_factor = -0.1
+            }
+        }
+
+        mod_with_the_fra_army_tooltip_26 = { 
+            allowed = {
+                original_tag = FRA
+            }
+
+            allowed_civil_war = {
+                always = yes
+            }
+                
+            removal_cost = -1
+
+            modifier = {
+                org_loss_when_moving = -0.1
+            }
+        }
+
+        mod_with_the_fra_army_tooltip_27 = { 
+            allowed = {
+                original_tag = FRA
+            }
+
+            allowed_civil_war = {
+                always = yes
+            }
+                
+            removal_cost = -1
+
+            modifier = {
+                army_artillery_attack_factor = 0.025
+                army_artillery_defence_factor = 0.05
+            }
+        }
+
+        mod_with_the_fra_navy_tooltip = { 
+            allowed = {
+                original_tag = FRA
+            }
+
+            allowed_civil_war = {
+                always = yes
+            }
+                
+            removal_cost = -1
+
+            modifier = {
+                
+            }
+        }
+        mod_with_the_fra_navy_tooltip_1 = { 
+            allowed = {
+                original_tag = FRA
+            }
+
+            allowed_civil_war = {
+                always = yes
+            }
+                
+            removal_cost = -1
+
+            modifier = {
+                NAVAL_DAMAGE_FACTOR = 0.05
+                NAVAL_DEFENSE_FACTOR = 0.05
+            }
+        }
+        mod_with_the_fra_navy_tooltip_2 = { 
+            allowed = {
+                original_tag = FRA
+            }
+
+            allowed_civil_war = {
+                always = yes
+            }
+                
+            removal_cost = -1
+
+            modifier = {
+                NAVY_MAX_RANGE_FACTOR = 0.1
+            }
+        }
+        mod_with_the_fra_navy_tooltip_3 = { 
+            allowed = {
+                original_tag = FRA
+            }
+
+            allowed_civil_war = {
+                always = yes
+            }
+                
+            removal_cost = -1
+
+            modifier = {
+                NAVAL_DAMAGE_FACTOR = 0.025
+                NAVAL_DEFENSE_FACTOR = 0.025
+            }
+        }
+        mod_with_the_fra_navy_tooltip_4 = { 
+            allowed = {
+                original_tag = FRA
+            }
+
+            allowed_civil_war = {
+                always = yes
+            }
+                
+            removal_cost = -1
+
+            modifier = {
+                NAVY_CAPITAL_SHIP_ATTACK_FACTOR = 0.05
+                NAVY_CAPITAL_SHIP_DEFENCE_FACTOR = 0.05
+            }
+        }
+        mod_with_the_fra_navy_tooltip_5 = { 
+            allowed = {
+                original_tag = FRA
+            }
+
+            allowed_civil_war = {
+                always = yes
+            }
+                
+            removal_cost = -1
+
+            modifier = {
+                CARRIER_SORTIE_EFFICIENCY_FACTOR = 0.05
+                CARRIER_CAPACITY_PENALTY_REDUCTION = -0.05
+                CARRIER_FIGHTER_SORTIE_EFFICIENCY_FACTOR = 0.05
+            }
+        }
+
+        mod_with_the_fra_navy_tooltip_6 = { 
+            allowed = {
+                original_tag = FRA
+            }
+
+            allowed_civil_war = {
+                always = yes
+            }
+                
+            removal_cost = -1
+
+            modifier = {
+                NAVY_ORG_FACTOR = 0.05
+                NAVAL_MORALE_FACTOR = 0.05
+                NAVAL_SPEED_FACTOR = 0.05
+            }
+        }
+
+        mod_with_the_fra_navy_tooltip_7 = { 
+            allowed = {
+                original_tag = FRA
+            }
+
+            allowed_civil_war = {
+                always = yes
+            }
+                
+            removal_cost = -1
+
+            modifier = {
+                NAVAL_TORPEDO_COOLDOWN_FACTOR = 0.05
+                NAVAL_TORPEDO_HIT_CHANCE_FACTOR = 0.05
+                NAVAL_TORPEDO_REVEAL_CHANCE_FACTOR = -0.05
+            }
+        }
+
+        mod_with_the_fra_navy_tooltip_8 = { 
+            allowed = {
+                original_tag = FRA
+            }
+
+            allowed_civil_war = {
+                always = yes
+            }
+                
+            removal_cost = -1
+
+            modifier = {
+                NAVY_SCREEN_ATTACK_FACTOR = 0.05
+                NAVY_SCREEN_DEFENCE_FACTOR = 0.05
+                NAVAL_MORALE_FACTOR = 0.05
+            }
+        }
+
+        mod_with_the_fra_navy_tooltip_9 = { 
+            allowed = {
+                original_tag = FRA
+            }
+
+            allowed_civil_war = {
+                always = yes
+            }
+                
+            removal_cost = -1
+
+            modifier = {
+                NAVY_ANTI_AIR_ATTACK_FACTOR = 0.05
+                NAVY_ORG_FACTOR = 0.05
+            }
+        }
+        mod_with_the_fra_navy_tooltip_10 = { 
+            allowed = {
+                original_tag = FRA
+            }
+
+            allowed_civil_war = {
+                always = yes
+            }
+                
+            removal_cost = -1
+
+            modifier = {
+                NAVAL_MORALE_FACTOR = 0.05
+                NAVY_ORG_FACTOR = 0.05
+            }
+        }
+
+        mod_with_the_fra_air_tooltip = { 
+            allowed = {
+                original_tag = FRA
+            }
+
+            allowed_civil_war = {
+                always = yes
+            }
+                
+            removal_cost = -1
+
+            modifier = {
+            }
+        }
+        mod_with_the_fra_air_tooltip_1 = { 
+            allowed = {
+                original_tag = FRA
+            }
+
+            allowed_civil_war = {
+                always = yes
+            }
+                
+            removal_cost = -1
+
+            modifier = {
+                AIR_TRAINING_XP_FACTOR = 0.1
+                AIR_ACCIDENTS_FACTOR = -0.1
+            }
+        }
+        mod_with_the_fra_air_tooltip_2 = { 
+            allowed = {
+                original_tag = FRA
+            }
+
+            allowed_civil_war = {
+                always = yes
+            }
+                
+            removal_cost = -1
+
+            modifier = {
+                AIR_ATTACK_FACTOR = 0.05
+                AIR_DEFENCE_FACTOR = 0.05
+                AIR_AGILITY_FACTOR = 0.05
+            }
+        }
+        mod_with_the_fra_air_tooltip_3 = { 
+            allowed = {
+                original_tag = FRA
+            }
+
+            allowed_civil_war = {
+                always = yes
+            }
+                
+            removal_cost = -1
+
+            modifier = {
+                air_power_projection_factor = 0.05
+                ARMY_BONUS_AIR_SUPERIORITY_FACTOR = 0.05
+                ground_attack_factor = 0.05
+            }
+        }
+        mod_with_the_fra_air_tooltip_4 = { 
+            allowed = {
+                original_tag = FRA
+            }
+
+            allowed_civil_war = {
+                always = yes
+            }
+                
+            removal_cost = -1
+
+            modifier = {
+                AIR_TRAINING_XP_FACTOR = 0.05
+                AIR_WING_XP_LOSS_WHEN_KILLED_FACTOR = -0.1
+                AIR_ACE_GENERATION_CHANCE_FACTOR = 0.1
+                experience_gain_air_factor = 0.05
+                AIR_MISSION_XP_FACTOR = 0.05
+            }
+        }
+        mod_with_the_fra_air_tooltip_5 = { 
+            allowed = {
+                original_tag = FRA
+            }
+
+            allowed_civil_war = {
+                always = yes
+            }
+                
+            removal_cost = -1
+
+            modifier = {
+                AIR_RANGE_FACTOR = 0.1
+                ground_attack_factor = 0.05
+                air_power_projection_factor = 0.05
+                air_cas_efficiency = 0.05
+            }
+        }
+        mod_with_the_fra_air_tooltip_6 = { 
+            allowed = {
+                original_tag = FRA
+            }
+
+            allowed_civil_war = {
+                always = yes
+            }
+                
+            removal_cost = -1
+
+            modifier = {
+                AIR_MAX_SPEED_FACTOR = 0.05
+                AIR_AGILITY_FACTOR = 0.025
+            }
+        }
+
+        GER_army_modifier_tooltip = { 
+            allowed = {
+               
+            }
+
+            allowed_civil_war = {
+                always = yes
+            }
+                
+            removal_cost = -1
+
+            modifier = {
+                
+            }
+        }
+
+        GER_army_modifier_tooltip_1 = { 
+            allowed = {
+               
+            }
+
+            allowed_civil_war = {
+                always = yes
+            }
+                
+            removal_cost = -1
+
+            modifier = {
+                mechanized_attack_factor = 0.02
+                army_armor_attack_factor = 0.02
+                motorized_attack_factor = 0.02
+            }
+        }
+
+        GER_army_modifier_tooltip_2 = { 
+            allowed = {
+               
+            }
+
+            allowed_civil_war = {
+                always = yes
+            }
+                
+            removal_cost = -1
+
+            modifier = {
+                army_infantry_attack_factor = 0.05
+                breakthrough_factor = 0.05
+            }
+        }
+
+        GER_army_modifier_tooltip_3 = { 
+            allowed = {
+               
+            }
+
+            allowed_civil_war = {
+                always = yes
+            }
+                
+            removal_cost = -1
+
+            modifier = {
+                motorized_defence_factor = 0.05
+            }
+        }
+
+        GER_army_modifier_tooltip_4 = { 
+            allowed = {
+               
+            }
+
+            allowed_civil_war = {
+                always = yes
+            }
+                
+            removal_cost = -1
+
+            modifier = {
+                army_attack_factor = 0.02
+                breakthrough_factor = 0.025
+            }
+        }
+
+        GER_army_modifier_tooltip_5 = { 
+            allowed = {
+               
+            }
+
+            allowed_civil_war = {
+                always = yes
+            }
+                
+            removal_cost = -1
+
+            modifier = {
+                army_speed_factor = 0.02
+            }
+        }
+
+        GER_army_modifier_tooltip_6 = { 
+            allowed = {
+               
+            }
+
+            allowed_civil_war = {
+                always = yes
+            }
+                
+            removal_cost = -1
+
+            modifier = {
+                mechanized_attack_factor = 0.025
+                mechanized_defence_factor = 0.025
+            }
+        }
+
+        GER_army_modifier_tooltip_7 = { 
+            allowed = {
+               
+            }
+
+            allowed_civil_war = {
+                always = yes
+            }
+                
+            removal_cost = -1
+
+            modifier = {
+                max_dig_in_factor = 0.05
+                army_defence_factor = 0.025
+            }
+        }
+
+        GER_army_modifier_tooltip_8 = { 
+            allowed = {
+               
+            }
+
+            allowed_civil_war = {
+                always = yes
+            }
+                
+            removal_cost = -1
+
+            modifier = {
+                army_armor_speed_factor = 0.05
+                army_armor_attack_factor = 0.025
+            }
+        }
+
+        GER_army_modifier_tooltip_9 = { 
+            allowed = {
+               
+            }
+
+            allowed_civil_war = {
+                always = yes
+            }
+                
+            removal_cost = -1
+
+            modifier = {
+                army_attack_factor = 0.05
+                army_defence_factor = 0.05
+            }
+        }
+
+        GER_airforce_modifier_tooltip = { 
+            allowed = {
+               
+            }
+
+            allowed_civil_war = {
+                always = yes
+            }
+                
+            removal_cost = -1
+
+            modifier = {
+                
+            }
+        }
+
+        GER_airforce_modifier_tooltip_1 = { 
+            allowed = {
+               
+            }
+
+            allowed_civil_war = {
+                always = yes
+            }
+                
+            removal_cost = -1
+
+            modifier = {
+                air_attack_factor = 0.05
+                air_defence_factor = 0.05
+            }
+        }
+
+        SOV_red_army_modifier_tooltip = { 
+            allowed = {
+               
+            }
+
+            allowed_civil_war = {
+                always = yes
+            }
+                
+            removal_cost = -1
+
+            modifier = {
+                
+            }
+        }
+
+        SOV_red_army_modifier_tooltip_1 = { 
+            allowed = {
+               
+            }
+
+            allowed_civil_war = {
+                always = yes
+            }
+                
+            removal_cost = -1
+
+            modifier = {
+                army_attack_factor = 0.03
+                army_defence_factor =  0.03
+                army_core_attack_factor = 0.05
+                army_core_defence_factor = 0.05
+                army_armor_attack_factor = 0.05
+                army_armor_defence_factor = 0.05
+                army_infantry_attack_factor = 0.05
+                army_infantry_defence_factor = 0.05
+                mechanized_attack_factor = 0.05
+                mechanized_defence_factor = 0.05
+                army_speed_factor = 0.05
+                land_reinforce_rate = 0.02
+                army_strength_factor = 0.075
+                conscription = 0.005
+                breakthrough_factor = 0.075
+                supply_factor = 0.075
+                supply_consumption_factor = -0.05
+                org_loss_when_moving = -0.05
+                army_bonus_air_superiority_factor = 0.075
+            }
+        }
+
+        SOV_red_army_modifier_tooltip_2 = { 
+            allowed = {
+               
+            }
+
+            allowed_civil_war = {
+                always = yes
+            }
+                
+            removal_cost = -1
+
+            modifier = {
+                army_attack_factor = 0.06
+                army_defence_factor =  0.06
+                army_core_attack_factor = 0.05
+                army_core_defence_factor = 0.05
+                army_armor_attack_factor = 0.05
+                army_armor_defence_factor = 0.05
+                army_infantry_attack_factor = 0.075
+                army_infantry_defence_factor = 0.075
+                mechanized_attack_factor = 0.05
+                mechanized_defence_factor = 0.05
+                army_speed_factor = 0.05
+                land_reinforce_rate = 0.03
+                army_strength_factor = 0.075
+                conscription = 0.005
+                breakthrough_factor = 0.075
+                supply_factor = 0.075
+                supply_consumption_factor = -0.05
+                org_loss_when_moving = -0.05
+                army_bonus_air_superiority_factor = 0.075
+                army_org_factor = 0.05
+
+			    experience_gain_army_factor = 0.1
+			    experience_loss_factor = -0.15
+			    mobilization_speed = 0.1
+			    conscription_factor = 0.1
+			    army_org_regain = 0.1
+			    cas_damage_reduction = 0.075
+			    max_dig_in = 2
+			    dig_in_speed_factor = 0.075
+            }
+        }
+
+        SOV_red_army_air_modifier_tooltip = { 
+            allowed = {
+               
+            }
+
+            allowed_civil_war = {
+                always = yes
+            }
+                
+            removal_cost = -1
+
+            modifier = {
+                
+            }
+        }
+
+        SOV_red_army_air_modifier_tooltip_1 = { 
+            allowed = {
+               
+            }
+
+            allowed_civil_war = {
+                always = yes
+            }
+                
+            removal_cost = -1
+
+            modifier = {
+                AIR_ATTACK_FACTOR = 0.05
+                AIR_DEFENCE_FACTOR = 0.05
+                air_home_defence_factor = 0.075
+                air_power_projection_factor = 0.075
+                ground_attack_factor = 0.05
+                ARMY_BONUS_AIR_SUPERIORITY_FACTOR = 0.075
+                AIR_MAX_SPEED_FACTOR = 0.05
+                air_accidents_factor = -0.15
+                air_ace_generation_chance_factor = 0.15
+                air_wing_xp_loss_when_killed_factor = -0.075
+                air_mission_xp_gain_factor = 0.05
+                air_training_xp_gain_factor = 0.05
+                air_range_factor = 0.05
+                air_fuel_consumption_factor = -0.05
+                air_agility_factor = 0.05
+                air_cas_present_factor = 0.05
+                air_mission_efficiency = 0.05
+                air_nav_efficiency = 0.075
+            }
+        }
+
+        #英美
+        USA_army_modifier_tooltip = { 
+            allowed = {
+               
+            }
+
+            allowed_civil_war = {
+                always = yes
+            }
+                
+            removal_cost = -1
+
+            modifier = {
+
+            }
+        }
+
+        USA_army_modifier_tooltip_1 = { 
+            allowed = {
+               
+            }
+
+            allowed_civil_war = {
+                always = yes
+            }
+                
+            removal_cost = -1
+
+            modifier = {
+                army_attack_factor = 0.03
+                army_defence_factor = 0.03
+                army_core_attack_factor = 0.04
+                army_core_defence_factor = 0.04
+                army_infantry_attack_factor = 0.025
+                army_infantry_defence_factor = 0.025
+                army_armor_attack_factor = 0.025
+                army_armor_defence_factor = 0.025
+                mechanized_attack_factor = 0.025
+                mechanized_defence_factor = 0.025
+                SPECIAL_FORCES_ATTACK_FACTOR = 0.025
+                SPECIAL_FORCES_DEFENCE_FACTOR = 0.025
+                army_artillery_attack_factor = 0.05
+                army_artillery_defence_factor = 0.05
+
+                army_org_factor = 0.05
+                max_command_power = 10
+                army_strength_factor = 0.025
+                max_dig_in_factor = 0.025
+                dig_in_speed_factor = 0.05
+                land_reinforce_rate = 0.01
+                max_planning_factor = 0.05
+                conscription_factor = 0.05
+                recon_factor = 0.025
+                terrain_penalty_reduction = 0.025
+            }
+        }
+
+        ENG_army_modifier_tooltip = { 
+            allowed = {
+               
+            }
+
+            allowed_civil_war = {
+                always = yes
+            }
+                
+            removal_cost = -1
+
+            modifier = {
+
+            }
+        }
+
+        ENG_army_modifier_tooltip_1 = { 
+            allowed = {
+               
+            }
+
+            allowed_civil_war = {
+                always = yes
+            }
+                
+            removal_cost = -1
+
+            modifier = {
+                army_attack_factor = 0.03
+                army_defence_factor = 0.03
+                army_core_attack_factor = 0.04
+                army_core_defence_factor = 0.04
+                army_infantry_attack_factor = 0.025
+                army_infantry_defence_factor = 0.025
+                army_armor_attack_factor = 0.025
+                army_armor_defence_factor = 0.025
+                mechanized_attack_factor = 0.025
+                mechanized_defence_factor = 0.025
+                SPECIAL_FORCES_ATTACK_FACTOR = 0.025
+                SPECIAL_FORCES_DEFENCE_FACTOR = 0.025
+                army_artillery_attack_factor = 0.05
+                army_artillery_defence_factor = 0.05
+
+                army_org_factor = 0.05
+                max_command_power = 10
+                army_strength_factor = 0.025
+                max_dig_in_factor = 0.025
+                dig_in_speed_factor = 0.05
+                land_reinforce_rate = 0.01
+                max_planning_factor = 0.05
+                conscription_factor = 0.05
+                recon_factor = 0.025
+                terrain_penalty_reduction = 0.025
+            }
+        }
+
+        USA_air_modifier_tooltip = { 
+            allowed = {
+               
+            }
+
+            allowed_civil_war = {
+                always = yes
+            }
+                
+            removal_cost = -1
+
+            modifier = {
+
+            }
+        }
+
+        USA_air_modifier_tooltip_1 = { 
+            allowed = {
+               
+            }
+
+            allowed_civil_war = {
+                always = yes
+            }
+                
+            removal_cost = -1
+
+            modifier = {
+                experience_gain_air_factor = 0.075
+                AIR_ATTACK_FACTOR = 0.05
+                AIR_DEFENCE_FACTOR = 0.05
+                AIR_AGILITY_FACTOR = 0.05
+                AIR_ACCIDENTS_FACTOR = -0.075
+                AIR_ACE_GENERATION_CHANCE_FACTOR = 0.05
+                AIR_TRAINING_XP_FACTOR = 0.075
+                AIR_MISSION_XP_FACTOR = 0.05
+                AIR_WING_XP_LOSS_WHEN_KILLED_FACTOR = -0.05
+                ARMY_BONUS_AIR_SUPERIORITY_FACTOR = 0.05
+                air_home_defence_factor = 0.05
+                air_power_projection_factor = 0.05
+                air_superiority_efficiency = 0.05
+                air_cas_efficiency = 0.05
+                ground_attack_factor = 0.05
+            }
+        }
+
+
+        ENG_air_modifier_tooltip = { 
+            allowed = {
+               
+            }
+
+            allowed_civil_war = {
+                always = yes
+            }
+                
+            removal_cost = -1
+
+            modifier = {
+
+            }
+        }
+
+        ENG_air_modifier_tooltip_1 = { 
+            allowed = {
+               
+            }
+
+            allowed_civil_war = {
+                always = yes
+            }
+                
+            removal_cost = -1
+
+            modifier = {
+                experience_gain_air_factor = 0.075
+                AIR_ATTACK_FACTOR = 0.05
+                AIR_DEFENCE_FACTOR = 0.05
+                AIR_AGILITY_FACTOR = 0.05
+                AIR_ACCIDENTS_FACTOR = -0.075
+                AIR_ACE_GENERATION_CHANCE_FACTOR = 0.05
+                AIR_TRAINING_XP_FACTOR = 0.075
+                AIR_MISSION_XP_FACTOR = 0.05
+                AIR_WING_XP_LOSS_WHEN_KILLED_FACTOR = -0.05
+                ARMY_BONUS_AIR_SUPERIORITY_FACTOR = 0.05
+                air_home_defence_factor = 0.05
+                air_power_projection_factor = 0.05
+                air_superiority_efficiency = 0.05
+                air_cas_efficiency = 0.05
+                ground_attack_factor = 0.05
+            }
+        }
+
+        USA_navy_modifier_tooltip = { 
+            allowed = {
+               
+            }
+
+            allowed_civil_war = {
+                always = yes
+            }
+                
+            removal_cost = -1
+
+            modifier = {
+
+            }
+        }
+
+        USA_navy_modifier_tooltip_1 = { 
+            allowed = {
+               
+            }
+
+            allowed_civil_war = {
+                always = yes
+            }
+                
+            removal_cost = -1
+
+            modifier = {
+                TRAINING_TIME_NAVY_FACTOR = -0.05
+                NAVY_ORG_FACTOR = 0.05
+                NAVAL_MORALE_FACTOR = 0.05
+                NAVY_ANTI_AIR_ATTACK_FACTOR = 0.05
+                NAVAL_DAMAGE_FACTOR = 0.05
+                NAVAL_DEFENSE_FACTOR = 0.05
+                NAVAL_TORPEDO_COOLDOWN_FACTOR = -0.025
+                NAVY_CAPITAL_SHIP_ATTACK_FACTOR = 0.05
+                NAVY_CAPITAL_SHIP_DEFENCE_FACTOR = 0.05
+                NAVY_SCREEN_ATTACK_FACTOR = 0.05
+                NAVY_SCREEN_DEFENCE_FACTOR = 0.05
+                NAVAL_STRIKE_ATTACK_FACTOR = 0.05
+                naval_invasion_capacity = 4
+                naval_invasion_penalty = -0.05
+                amphibious_invasion_defence = 0.025
+            }
+        }
+
+        ENG_navy_modifier_tooltip = { 
+            allowed = {
+               
+            }
+
+            allowed_civil_war = {
+                always = yes
+            }
+                
+            removal_cost = -1
+
+            modifier = {
+
+            }
+        }
+
+        ENG_navy_modifier_tooltip_1 = { 
+            allowed = {
+               
+            }
+
+            allowed_civil_war = {
+                always = yes
+            }
+                
+            removal_cost = -1
+
+            modifier = {
+                TRAINING_TIME_NAVY_FACTOR = -0.05
+                NAVY_ORG_FACTOR = 0.05
+                NAVAL_MORALE_FACTOR = 0.05
+                NAVY_ANTI_AIR_ATTACK_FACTOR = 0.05
+                NAVAL_DAMAGE_FACTOR = 0.05
+                NAVAL_DEFENSE_FACTOR = 0.05
+                NAVAL_TORPEDO_COOLDOWN_FACTOR = -0.025
+                NAVY_CAPITAL_SHIP_ATTACK_FACTOR = 0.05
+                NAVY_CAPITAL_SHIP_DEFENCE_FACTOR = 0.05
+                NAVY_SCREEN_ATTACK_FACTOR = 0.05
+                NAVY_SCREEN_DEFENCE_FACTOR = 0.05
+                NAVAL_STRIKE_ATTACK_FACTOR = 0.05
+                naval_invasion_capacity = 4
+                naval_invasion_penalty = -0.05
+                amphibious_invasion_defence = 0.025
+            }
+        }
+
+
+    }
+
+
+
+    
+
+
+    
+
+
+}

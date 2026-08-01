@@ -1,0 +1,1346 @@
+HUN_restored_categories = {
+
+    HUN_restored_categories_1 = { #巴尔干战争前提决议
+
+		icon = generic_political_address
+
+        allowed = {
+			original_tag = HUN
+		}
+
+        available = {
+
+        }
+
+        visible = {
+            has_completed_focus = wuw_HUN_protect_czechoslovakia
+        }
+
+        ai_will_do = {
+            factor = 1000
+        }
+
+        fire_only_once = yes
+
+		cost = 0
+		days_remove = 60
+
+		modifier = {
+			
+		}
+
+        remove_effect = {
+            BUL = {
+                country_event = { id = change_hun.1 days = 1 }
+            } 
+        }
+
+    }
+
+    HUN_restored_categories_2 = { #邀请加入罗尼战争
+
+		icon = generic_ignite_civil_war
+
+        allowed = {
+			original_tag = HUN
+		}
+
+        available = {
+            BUL = {
+                has_country_flag = attack_with_hun_flag
+            }
+            has_war_with = ROM
+        }
+
+        visible = {
+            BUL = {
+                has_country_flag = attack_with_hun_flag
+            }
+        }
+
+        ai_will_do = {
+            factor = 1000
+        }
+
+        fire_only_once = yes
+
+		cost = 0
+		days_remove = 1
+
+		modifier = {
+			
+		}
+
+        remove_effect = {
+            BUL = {
+                declare_war_on = {
+					target = ROM
+					type = take_state_focus
+				}
+            }
+			#news_event = { id = change_news.3 days = 1 }
+        }
+
+    }
+
+    HUN_restored_categories_3 = { #邀请加入南斯拉夫战争
+
+		icon = generic_ignite_civil_war
+
+        allowed = {
+			original_tag = HUN
+		}
+
+        available = {
+            BUL = {
+                has_country_flag = attack_with_hun_flag
+            }
+            has_war_with = YUG
+        }
+
+        visible = {
+            BUL = {
+                has_country_flag = attack_with_hun_flag
+            }
+        }
+
+        ai_will_do = {
+            factor = 1000
+        }
+
+        fire_only_once = yes
+
+		cost = 0
+		days_remove = 1
+
+		modifier = {
+			
+		}
+
+        remove_effect = {
+            BUL = {
+                declare_war_on = {
+					target = YUG
+					type = take_state_focus
+				}
+            }
+        }
+
+    }
+
+    HUN_restored_categories_4 = { #组建多瑙河条约
+
+		icon = generic_monarchy
+
+        allowed = {
+			original_tag = HUN
+		}
+
+        available = {
+            BUL = {
+                has_country_flag = attack_with_hun_flag
+                OR = {
+                    has_war_with = YUG
+					has_war_with = ROM
+                }
+            }
+            GER = {
+                AND = {
+                    NOT = { has_government = neutrality }
+                    NOT = { has_country_flag = third_empire_has_become_flag }
+                }
+            }
+            HUN = {
+                OR = {
+                    has_war_with = YUG
+					has_war_with = ROM
+                }
+                is_in_faction = NO
+            }
+            
+        }
+
+        visible = {
+            BUL = {
+                has_country_flag = attack_with_hun_flag
+            }
+        }
+
+        ai_will_do = {
+            factor = 1000
+        }
+
+        fire_only_once = yes
+
+		cost = 0
+		days_remove = 1
+
+		modifier = {
+			
+		}
+
+        remove_effect = {
+            HUN = {
+                create_faction_from_template = the_mod_faction_HUN_with_BUL_faction
+                add_to_faction = BUL
+            }
+        }
+
+    }
+
+    HUN_restored_categories_5 = { #释放罗尼傀儡
+
+		icon = generic_nationalism
+
+        allowed = {
+			original_tag = HUN
+		}
+
+        available = {
+			78 = { is_controlled_by_ROOT_or_ally = yes }
+			79 = { is_controlled_by_ROOT_or_ally = yes }
+			766 = { is_controlled_by_ROOT_or_ally = yes }
+        }
+
+        visible = {
+            BUL = {
+                has_country_flag = attack_with_hun_flag
+            }
+        }
+
+        ai_will_do = {
+            factor = 1000
+        }
+
+        fire_only_once = yes
+
+		cost = 0
+		days_remove = 1
+
+		modifier = {
+			
+		}
+
+        remove_effect = {
+            ROM = {
+				transfer_state = 79
+				transfer_state = 78
+				transfer_state = 766
+				}
+			HUN = {
+				set_autonomy = { target = ROM autonomy_state = autonomy_puppet }
+				transfer_state = 76
+				transfer_state = 83
+				transfer_state = 84
+				transfer_state = 82
+			}
+			BUL = {
+				transfer_state = 81
+				transfer_state = 46
+				transfer_state = 971
+				transfer_state = 77
+			}
+        }
+
+    }
+
+    HUN_restored_categories_6 = { #归还土地
+
+		icon = generic_operation
+
+        allowed = {
+			original_tag = HUN
+		}
+
+        available = {
+			AND = {
+				country_exists = BUL
+				OR = {
+                	HUN = {
+                    	any_owned_state = {
+							is_core_of = BUL
+							is_controlled_by = ROOT
+							is_owned_or_subject_trigger = yes
+						}
+                	}
+                	BUL = {
+                    	any_owned_state = {
+							is_core_of = HUN
+							is_controlled_by = ROOT
+							is_owned_or_subject_trigger = yes
+						}
+                	}
+            	}
+				NOT = {
+                	has_war_with = BUL
+            	}
+			}
+        }
+
+        visible = {
+            BUL = {
+                has_country_flag = attack_with_hun_flag
+            }
+        }
+
+        ai_will_do = {
+            factor = 100
+        }
+
+        fire_only_once = no
+
+		cost = 0
+		days_remove = 10
+
+		modifier = {
+			
+		}
+
+        remove_effect = {
+			every_state = {
+            	limit = {
+					is_core_of = BUL
+					CONTROLLER = {
+						tag = HUN
+					}
+				}
+				BUL = {
+					transfer_state = PREV
+				}
+			}
+
+            if = {
+				limit = {
+					BUL = { exists = yes }
+				}
+				every_state = {
+					limit = {
+						is_core_of = HUN
+						CONTROLLER = {
+							tag = BUL
+						}
+					}
+					HUN = {
+						transfer_state = PREV
+					}
+				}
+			}
+
+        }
+
+    }
+
+
+	HUN_restored_categories_7 = { #夺回布科维纳
+
+		icon = category_border_conflicts
+
+        allowed = {
+			original_tag = HUN
+		}
+
+        available = {
+			AND = {
+				80 = { 
+					CONTROLLER = {
+						tag = SOV
+					}
+				}
+				is_subject = no
+				NOT = {
+					has_war_with = SOV
+				}
+				HUN = {
+            		has_capitulated = no
+        		}
+			}
+        }
+
+        visible = {
+            80 = { OWNER = { NOT = { is_in_faction_with = HUN } } }
+        }
+
+        ai_will_do = {
+            factor = 100
+        }
+
+        fire_only_once = no
+
+		cost = 0
+		days_remove = 1
+
+		modifier = {
+			
+		}
+
+        remove_effect = {
+			HUN = {
+				transfer_state = 80
+			}
+			news_event = { id = change_news.29 days = 1 }
+			SOV = {
+				country_event = { id = change_sov.2 days = 2 }
+			}
+        }
+
+    }
+
+	HUN_restored_categories_8 = { #要求意大利归还土地
+
+		icon = category_border_war
+
+        allowed = {
+			original_tag = HUN
+		}
+
+        available = {
+			AND = {
+				country_exists = ITA
+				NOT = {
+                	has_war_with = ITA
+            	}
+				is_in_faction_with = ITA
+				ITA = {
+					is_puppet = yes
+				}
+			}
+        }
+
+        visible = {
+            has_completed_focus = wuw_HUN_restore_the_lombardo_venetian_kingdom
+        }
+
+        ai_will_do = {
+            factor = 100
+        }
+
+        fire_only_once = yes
+
+		cost = 0
+		days_remove = 5
+
+		modifier = {
+			
+		}
+
+        remove_effect = {
+			transfer_state = 163
+			transfer_state = 852
+			transfer_state = 736
+			transfer_state = 160
+			transfer_state = 39
+			transfer_state = 850
+        }
+
+    }
+
+	HUN_restored_categories_9 = { #宣告巴尔干霸权
+
+		icon = category_border_war
+
+        allowed = {
+			original_tag = HUN
+		}
+
+        available = {
+			AND = {
+				OR = {
+					AND = {
+						NOT = {
+							country_exists = YUG
+						}
+						every_state = {
+							limit = {
+								is_core_of = YUG
+							}
+							is_controlled_by_ROOT_or_ally = yes
+						}
+					}
+					YUG = {
+						is_puppet_of = ROOT
+					}
+					YUG = {
+						is_in_faction_with = ROOT
+					}
+				}
+				OR = {
+					AND = {
+						NOT = {
+							country_exists = ROM
+						}
+						every_state = {
+							limit = {
+								is_core_of = ROM
+							}
+							is_controlled_by_ROOT_or_ally = yes
+						}
+					}
+					ROM = {
+						is_puppet_of = ROOT
+					}
+					ROM = {
+						is_in_faction_with = ROOT
+					}
+				}
+				OR = {
+					AND = {
+						NOT = {
+							country_exists = CZE
+						}
+						every_state = {
+							limit = {
+								is_core_of = CZE
+							}
+							is_controlled_by_ROOT_or_ally = yes
+						}
+					}
+					CZE = {
+						is_puppet_of = ROOT
+					}
+					CZE = {
+						is_in_faction_with = ROOT
+					}
+				}
+				OR = {
+					AND = {
+						NOT = {
+							country_exists = BUL
+						}
+						every_state = {
+							limit = {
+								is_core_of = BUL
+							}
+							is_controlled_by_ROOT_or_ally = yes
+						}
+					}
+					BUL = {
+						is_puppet_of = ROOT
+					}
+					BUL = {
+						is_in_faction_with = ROOT
+					}
+				}
+			}
+        }
+
+        visible = {
+			OR = {
+				has_completed_focus = wuw_HUN_restore_the_lombardo_venetian_kingdom
+				BUL = {
+					has_country_flag = attack_with_hun_flag
+				}
+			}
+        }
+
+        ai_will_do = {
+            factor = 1000
+        }
+
+        fire_only_once = yes
+
+		cost = 0
+		days_remove = 0
+
+		modifier = {
+			
+		}
+
+        remove_effect = {
+			add_ideas = HUN_spuer_baergan
+			news_event = { id = change_news.57 days = 1 }
+        }
+
+    }
+
+	HUN_restored_categories_10 = { #划分波兰占领区
+
+		icon = category_border_war
+
+        allowed = {
+			original_tag = HUN
+		}
+
+        available = {
+			AND = {
+				is_in_faction_with = GER
+				OR = {
+					AND = {
+						NOT = {
+							country_exists = POL
+						}
+						10 = {
+							CONTROLLER = {
+								is_in_faction_with = ROOT
+							}
+						}
+
+					}
+					POL = {
+						is_subject_of = GER
+					}
+					POL = {
+						is_subject_of = HUN
+					}
+				}
+			}
+        }
+
+        visible = {
+			is_in_faction_with = GER
+        }
+
+        ai_will_do = {
+            factor = 100
+        }
+
+        fire_only_once = yes
+
+		cost = 0
+		days_remove = 0
+
+		modifier = {
+			
+		}
+
+        remove_effect = {
+			HUN = {
+				transfer_state = 88
+				transfer_state = 91
+				transfer_state = 89
+			}
+			GER = {
+				transfer_state = 85
+				transfer_state = 807
+				transfer_state = 86
+				transfer_state = 87
+				transfer_state = 762
+				transfer_state = 90
+				transfer_state = 10
+				transfer_state = 98
+				transfer_state = 97
+				transfer_state = 92
+				transfer_state = 93
+				transfer_state = 94
+				transfer_state = 95
+				transfer_state = 96
+				transfer_state = 784
+			}
+			
+        }
+
+    }
+
+	HUN_restored_categories_11 = { #划分南斯拉夫占领区
+
+		icon = category_border_war
+
+        allowed = {
+			original_tag = HUN
+		}
+
+        available = {
+			AND = {
+				is_in_faction_with = BUL
+				OR = {
+					AND = {
+						NOT = {
+							country_exists = YUG
+						}
+						107 = {
+							CONTROLLER = {
+								is_in_faction_with = ROOT
+							}
+						}
+
+					}
+					BUL = {
+						is_subject_of = BUL
+					}
+					BUL = {
+						is_subject_of = HUN
+					}
+				}
+			}
+        }
+
+        visible = {
+			is_in_faction_with = BUL
+        }
+
+        ai_will_do = {
+            factor = 100
+        }
+
+        fire_only_once = yes
+
+		cost = 0
+		days_remove = 0
+
+		modifier = {
+			
+		}
+
+        remove_effect = {
+			BUL = {
+				transfer_state = 107
+				transfer_state = 105
+				transfer_state = 108
+				transfer_state = 802
+				transfer_state = 803
+				transfer_state = 970
+				transfer_state = 106
+			}
+			
+        }
+
+    }
+
+}
+
+HUN_ai_categories = {
+
+	HUN_ai_base_equipment_add_1936 = {  #火星步兵师
+
+		allowed = {
+			original_tag = HUN
+		}
+		available = {
+			date > 1937.1.3
+		}
+
+		visible = {
+			has_government = neutrality
+		}
+
+		fire_only_once = no
+
+		cost = 0
+		days_remove = 45
+
+		modifier = {
+			
+		}
+
+		ai_will_do = {
+			factor = 1000
+		}
+		
+		remove_effect = {
+			add_manpower = 500
+
+            army_experience = 5
+			navy_experience = 5
+			air_experience = 5
+
+            add_equipment_to_stockpile = {
+				type = infantry_equipment
+				amount = 500
+			}
+			add_equipment_to_stockpile = { 
+				type = train_equipment 
+				amount = 5
+			}
+			add_equipment_to_stockpile = {
+				type = artillery_equipment
+				amount = 100
+			}
+			add_equipment_to_stockpile = {
+				type = anti_tank_equipment
+				amount = 100
+			}
+            add_equipment_to_stockpile = {
+				type = support_equipment
+				amount = 150
+			}
+			add_equipment_to_stockpile = { 
+				type = anti_air_equipment 
+				amount = 50
+			}
+
+			random_owned_controlled_state = {
+				limit = { ROOT = { has_full_control_of_state = PREV } }
+				prioritize = { 64 }
+				create_unit = {
+					division = "name = \"奥匈帝国步兵师I\" division_template = \"奥匈帝国步兵师I\" start_experience_factor = 0.5" 
+					owner = HUN
+					count = 1
+				}
+			}
+
+
+		}
+    }
+
+	HUN_ai_base_template_add_1= {  #火星步兵师模板
+
+		allowed = {
+			original_tag = HUN
+		}
+		available = {
+			date > 1937.1.1
+		}
+
+		visible = {
+			has_government = neutrality
+		}
+
+		fire_only_once = yes
+
+		cost = 0
+		days_remove = 30
+
+		modifier = {
+			
+		}
+
+		ai_will_do = {
+			factor = 1000
+		}
+		
+		remove_effect = {
+			add_manpower = 500
+
+            army_experience = 5
+			navy_experience = 5
+			air_experience = 5
+
+            add_equipment_to_stockpile = {
+				type = infantry_equipment
+				amount = 500
+			}
+			add_equipment_to_stockpile = { 
+				type = train_equipment 
+				amount = 5
+			}
+			add_equipment_to_stockpile = {
+				type = artillery_equipment
+				amount = 50
+			}
+			add_equipment_to_stockpile = {
+				type = anti_tank_equipment
+				amount = 100
+			}
+            add_equipment_to_stockpile = {
+				type = support_equipment
+				amount = 150
+			}
+			add_equipment_to_stockpile = { 
+				type = anti_air_equipment 
+				amount = 50
+			}
+
+            division_template = {
+					name = "奥匈帝国步兵师I"
+					regiments = {
+						infantry = { x = 0 y = 0 }
+						infantry = { x = 0 y = 1 }
+						infantry = { x = 0 y = 2 }
+						infantry = { x = 0 y = 3 }
+						infantry = { x = 0 y = 4 }
+						infantry = { x = 1 y = 0 }
+						infantry = { x = 1 y = 1 }
+						infantry = { x = 1 y = 2 }
+						infantry = { x = 1 y = 3 }
+						infantry = { x = 1 y = 4 }
+						infantry = { x = 2 y = 0 }
+						artillery_brigade = { x = 3 y = 0 }
+						artillery_brigade = { x = 3 y = 1 }
+                        artillery_brigade = { x = 3 y = 2 }
+                        artillery_brigade = { x = 3 y = 3 }
+						anti_tank_brigade = { x = 3 y = 4 }
+						anti_air_brigade = { x = 4 y = 0 }
+					}
+					regimental_support = {
+					field_guns = { x = 0 y = 0 }
+					field_guns = { x = 1 y = 0 }
+					medium_tank_destroyer_support = { x = 2 y = 0 }
+					medium_tank_destroyer_support = { x = 3 y = 0 }
+					medium_sp_anti_air_support = { x = 4 y = 0 }
+				}
+					support = {
+						engineer = { x = 0 y = 0 }
+						recon = { x = 0 y = 1 }
+						artillery = { x = 0 y = 2 }
+						field_hospital = { x = 0 y = 3 }
+						logistics_company = { x = 0 y = 4 }
+					}
+				}
+
+		}
+    }
+
+    HUN_ai_tank_equipment_add_1936 =  {  #火星装甲师
+        allowed = {
+			original_tag = HUN
+		}
+		available = {
+			date > 1938.1.3
+		}
+
+		visible = {
+			has_government = neutrality
+		}
+
+		fire_only_once = no
+
+		cost = 0
+		days_remove = 45
+
+		modifier = {
+			
+		}
+
+		ai_will_do = {
+			factor = 1000
+		}
+
+        remove_effect = {
+            add_manpower = 500
+            army_experience = 5
+            if = {
+				limit = {
+					has_tech = advanced_medium_tank_chassis
+				}
+				add_equipment_to_stockpile = { 
+					type = medium_tank_chassis_3 
+					amount = 500
+				}
+				add_equipment_to_stockpile = { 
+					type = medium_tank_destroyer_chassis_3
+					amount = 500
+				}
+			}
+			else_if = {
+				limit = {
+					has_tech = improved_medium_tank_chassis
+				}
+				add_equipment_to_stockpile = { 
+					type = medium_tank_chassis_2 
+					amount = 500
+				}
+				add_equipment_to_stockpile = { 
+					type = medium_tank_destroyer_chassis_2
+					amount = 500
+				}
+			}
+			else = {
+				add_equipment_to_stockpile = { 
+					type = medium_tank_chassis_1 
+					amount = 500
+				}
+				add_equipment_to_stockpile = { 
+					type = medium_tank_destroyer_chassis_1
+					amount = 500
+				}
+			}
+
+			add_equipment_to_stockpile = { 
+				type = medium_tank_flame_chassis_2
+				amount = 100
+			}
+
+			add_equipment_to_stockpile = { 
+				type = mechanized_equipment
+				amount = 500
+			}
+
+			add_equipment_to_stockpile = { 
+				type = armored_support_vehicle
+				amount = 300
+			}
+
+            
+			if = {
+				limit = {
+					date > 1938.1.1 
+					date < 1939.1.1
+				}
+				random_owned_controlled_state = {
+					limit = { ROOT = { has_full_control_of_state = PREV } }
+					prioritize = { 64 }
+					create_unit = {
+						division = "name = \"奥匈帝国装甲师\" division_template = \"奥匈帝国装甲师\" start_experience_factor = 0.5" 
+						owner = HUN
+						count = 4
+					}
+					
+				}
+			} else_if = {
+				limit = {
+					date > 1939.1.1
+					date < 1940.1.1
+				}
+				random_owned_controlled_state = {
+					limit = { ROOT = { has_full_control_of_state = PREV } }
+					prioritize = { 64 }
+					create_unit = {
+						division = "name = \"奥匈帝国装甲师\" division_template = \"奥匈帝国装甲师\" start_experience_factor = 0.5" 
+						owner = HUN
+						count = 6
+					}
+					
+				}
+			}  else_if = {
+				random_owned_controlled_state = {
+					limit = { ROOT = { has_full_control_of_state = PREV } }
+					prioritize = { 64 }
+					create_unit = {
+						division = "name = \"奥匈帝国装甲师\" division_template = \"奥匈帝国装甲师\" start_experience_factor = 0.5" 
+						owner = HUN
+						count = 8
+					}
+					
+				}
+			}
+
+        }
+    }
+
+	HUN_ai_tank_base_template_add_1 =  {  #火星装甲师模板
+        allowed = {
+			original_tag = HUN
+		}
+		available = {
+			date > 1938.1.1
+		}
+
+		visible = {
+			has_government = neutrality
+		}
+
+		fire_only_once = yes
+
+		cost = 0
+		days_remove = 30
+
+		modifier = {
+			
+		}
+
+		ai_will_do = {
+			factor = 1000
+		}
+
+        remove_effect = {
+            add_manpower = 500
+            army_experience = 5
+			set_technology = { basic_medium_tank_chassis = 1 }
+			set_technology = { improved_medium_tank_chassis = 1 }
+			set_technology = {improved_heavy_tank_chassis = 1}
+			set_technology = {improved_light_tank_chassis = 1 }
+			set_technology = {interwar_antitank = 1}
+			set_technology = {antitank1 = 1}
+			set_technology = {antitank2 = 1}
+			set_technology = {antitank3 = 1}
+			set_technology = {antitank4 = 1}
+			set_technology = {antitank5 = 1}
+			set_technology = {antiair1 = 1}
+			set_technology = {antiair2 = 1}
+			set_technology = {antiair3 = 1}
+			set_technology = {tech_maintenance_company2 = 1}
+			set_technology = {tech_field_hospital = 1}
+			set_technology = {tech_logistics_company = 1}
+			set_technology = {mechanised_infantry = 1}
+			set_technology = {amphibious_drive = 1}
+			set_technology = {sp_armored_engineer_tech = 1}
+			set_technology = {sp_land_military_engineering_vehicles = 1}
+			set_technology = {sp_land_flamethrower_tank = 1}
+            division_template = {
+				name = "奥匈帝国装甲师"
+				regiments = {
+					mechanized = { x = 0 y = 0 }
+					mechanized = { x = 0 y = 1 }
+					mechanized = { x = 0 y = 2 }
+					mechanized = { x = 0 y = 3 }
+					mechanized = { x = 1 y = 0 }
+					mechanized = { x = 1 y = 1 }
+					mechanized = { x = 1 y = 2 }
+					mechanized = { x = 1 y = 3 }
+					medium_armor = { x = 2 y = 0 }
+					medium_armor = { x = 2 y = 1 }
+					medium_armor = { x = 2 y = 2 }
+					medium_armor = { x = 2 y = 3 }
+					medium_armor = { x = 3 y = 0 }
+					medium_armor = { x = 3 y = 1 }
+					medium_armor = { x = 3 y = 2 }
+					medium_armor = { x = 3 y = 3 }
+					medium_tank_destroyer_brigade = { x = 4 y = 0 }
+					medium_tank_destroyer_brigade = { x = 4 y = 1 }
+				}
+				regimental_support = {
+					field_guns = { x = 0 y = 0 }
+					field_guns = { x = 1 y = 0 }
+					medium_tank_destroyer_support = { x = 2 y = 0 }
+					medium_tank_destroyer_support = { x = 3 y = 0 }
+					medium_sp_anti_air_support = { x = 4 y = 0 }
+				}
+				support = {
+					armored_engineer = { x = 0 y = 0 }
+					light_tank_recon = { x = 0 y = 1 }
+					field_hospital = { x = 0 y = 2 }
+					logistics_company = { x = 0 y = 3 }
+					medium_flame_tank = { x = 0 y = 4 }
+				}
+			}
+
+			create_equipment_variant = {
+                name = "antiair IV"
+                type = medium_tank_aa_chassis_2
+                design_team = mio:HUN_tatra_organization
+                parent_version = 0
+                modules = {
+                    main_armament_slot = tank_anti_air_cannon_2
+                    turret_type_slot = tank_medium_two_man_tank_turret
+                    suspension_type_slot = tank_bogie_suspension
+                    armor_type_slot = tank_riveted_armor
+                    engine_type_slot = tank_gasoline_engine
+                    special_type_slot_1 = tank_radio_1
+                    special_type_slot_2 = easy_maintenance
+                    special_type_slot_3 = extra_ammo_storage
+                    special_type_slot_4 = dozer_blade
+                }
+                upgrades = {
+                    tank_nsb_engine_upgrade = 0
+                    tank_nsb_armor_upgrade = 0
+                }
+                #icon = "GFX_GER_improve_medium_td_medium"
+            }
+
+
+			create_equipment_variant = {
+				name = "mediumtank G+"
+				type = medium_tank_chassis_2
+				design_team = mio:HUN_tatra_organization
+				parent_version = 0
+				modules = {
+					main_armament_slot = tank_medium_cannon_2 
+					turret_type_slot = tank_medium_three_man_tank_turret 
+					suspension_type_slot = tank_torsion_bar_suspension
+					armor_type_slot = tank_riveted_armor
+					engine_type_slot = tank_gasoline_engine
+					special_type_slot_1 = tank_radio_2
+					special_type_slot_2 = secondary_turret_hmg
+					special_type_slot_3 = secondary_turret_small_cannon
+					special_type_slot_4 = easy_maintenance
+				}
+				upgrades = {
+					tank_nsb_engine_upgrade = 0
+					tank_nsb_armor_upgrade = 4
+				}
+			}
+
+			create_equipment_variant = {
+				name = "tk_destory IV"
+				type = medium_tank_destroyer_chassis_2
+				design_team = mio:HUN_tatra_organization
+				parent_version = 0
+				modules = {
+					main_armament_slot = tank_high_velocity_cannon_2
+					turret_type_slot = tank_medium_fixed_superstructure_turret #炮塔
+					suspension_type_slot = tank_bogie_suspension #悬挂
+					armor_type_slot = tank_riveted_armor #装甲
+					engine_type_slot = tank_gasoline_engine #引擎
+					special_type_slot_1 = easy_maintenance
+					special_type_slot_2 = secondary_turret_small_cannon
+					special_type_slot_3 = secondary_turret_small_cannon
+					special_type_slot_4 = stabilizer
+				}
+				upgrades = {
+					tank_nsb_engine_upgrade = 0
+					tank_nsb_armor_upgrade = 4
+				}
+			}
+
+			create_equipment_variant = {
+				name = "flame IV"
+				type = medium_tank_flame_chassis_2
+				design_team = mio:HUN_tatra_organization
+				parent_version = 0
+				modules = {
+					main_armament_slot = advanced_flamethrower
+					turret_type_slot = tank_medium_three_man_tank_turret 
+					suspension_type_slot = tank_bogie_suspension 
+					armor_type_slot = tank_riveted_armor 
+					engine_type_slot = tank_diesel_engine
+					special_type_slot_1 = tank_radio_1
+					special_type_slot_2 = easy_maintenance
+					special_type_slot_3 = extra_ammo_storage
+					special_type_slot_4 = dozer_blade
+				}
+				upgrades = {
+					tank_nsb_engine_upgrade = 0
+					tank_nsb_armor_upgrade = 0
+				}
+			}
+
+        }
+    }
+
+
+	
+    
+
+	HUN_ai_categories_11 =  {  #山地师
+        allowed = {
+			original_tag = HUN
+		}
+		available = {
+			date > 1939.1.1
+		}
+
+		visible = {
+			has_government = neutrality
+		}
+
+		fire_only_once = no
+
+		cost = 0
+		days_remove = 90
+
+		modifier = {
+			
+		}
+
+		ai_will_do = {
+			factor = 1000
+		}
+
+        remove_effect = {
+            add_manpower = 2000
+
+            army_experience = 3
+			navy_experience = 3
+			air_experience = 3
+
+            add_equipment_to_stockpile = {
+				type = infantry_equipment
+				amount = 2000
+			}
+			add_equipment_to_stockpile = { 
+				type = train_equipment 
+				amount = 10
+			}
+			add_equipment_to_stockpile = {
+				type = artillery_equipment
+				amount = 300
+			}
+			add_equipment_to_stockpile = {
+				type = anti_tank_equipment
+				amount = 100
+			}
+            add_equipment_to_stockpile = {
+				type = support_equipment
+				amount = 500
+			}
+			add_equipment_to_stockpile = { 
+				type = anti_air_equipment 
+				amount = 100
+			}
+				random_owned_controlled_state = {
+					limit = { ROOT = { has_full_control_of_state = PREV } }
+					prioritize = { capital = ROOT }
+					create_unit = {
+						division = "name = \"奥匈帝国山地部队\" division_template = \"奥匈帝国山地部队\" start_experience_factor = 0.5" 
+						owner = HUN
+						count = 4
+					}
+				}
+
+        }
+    }
+
+	HUN_ai_base_template_categories_5 =  {  #山地师
+        allowed = {
+			original_tag = HUN
+		}
+		available = {
+			date > 1939.1.1
+		}
+
+		visible = {
+			has_government = neutrality
+		}
+
+		fire_only_once = yes
+
+		cost = 0
+		days_remove = 30
+
+		modifier = {
+			
+		}
+
+		ai_will_do = {
+			factor = 1000
+		}
+
+        remove_effect = {
+            add_manpower = 2000
+
+            army_experience = 3
+			navy_experience = 3
+			air_experience = 3
+
+            add_equipment_to_stockpile = {
+				type = infantry_equipment
+				amount = 2000
+			}
+			add_equipment_to_stockpile = { 
+				type = train_equipment 
+				amount = 10
+			}
+			add_equipment_to_stockpile = {
+				type = artillery_equipment
+				amount = 300
+			}
+			add_equipment_to_stockpile = {
+				type = anti_tank_equipment
+				amount = 100
+			}
+            add_equipment_to_stockpile = {
+				type = support_equipment
+				amount = 500
+			}
+			add_equipment_to_stockpile = { 
+				type = anti_air_equipment 
+				amount = 100
+			}
+
+            division_template = {
+					name = "奥匈帝国山地部队"
+					regiments = {
+						mountaineers = { x = 0 y = 0 }
+						mountaineers = { x = 0 y = 1 }
+						mountaineers = { x = 0 y = 2 }
+                        mountaineers = { x = 0 y = 3 }
+						mountaineers = { x = 1 y = 0 }
+						mountaineers = { x = 1 y = 1 }
+						mountaineers = { x = 1 y = 2 }
+                        mountaineers = { x = 1 y = 3 }
+						artillery_brigade = { x = 2 y = 0 }
+                        anti_air_brigade = { x = 2 y = 1 }
+                        anti_tank_brigade = { x = 2 y = 2 }
+                        medium_armor = { x = 3 y = 0 }
+                        medium_armor = { x = 3 y = 1 }
+					}
+					regimental_support = {
+					field_guns = { x = 0 y = 0 }
+					field_guns = { x = 1 y = 0 }
+					medium_tank_destroyer_support = { x = 2 y = 0 }
+					medium_tank_destroyer_support = { x = 3 y = 0 }
+					medium_sp_anti_air_support = { x = 4 y = 0 }
+				}
+					support = {
+						engineer = { x = 0 y = 0 }
+						recon = { x = 0 y = 1 }
+                        field_hospital =  { x = 0 y = 2 }
+                        logistics_company = { x = 0 y = 3 }
+                        artillery =  { x = 0 y = 4 }
+					}
+				}
+
+        }
+    }
+
+
+}

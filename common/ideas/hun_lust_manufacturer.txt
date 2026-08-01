@@ -1,0 +1,491 @@
+ideas = {
+    tank_manufacturer = {
+
+		designer = yes
+
+		HUN_ckd = { #斯柯达坦克设计局（轻坦）
+
+			picture = generic_tank_manufacturer_1
+
+			#allowed = {
+			#	original_tag = CZE
+			#}
+
+            visible = {
+				OR = {
+					has_completed_focus = HUN_protect_czechoslovakia
+					has_country_flag = HUN_can_use_ckd
+				}
+			}
+
+            available = {
+				OR ={
+					AND ={
+				        has_completed_focus = HUN_protect_czechoslovakia
+			        }
+			    has_country_flag = HUN_can_use_ckd
+                }
+		    }
+
+			research_bonus = {
+				armor = 0.15
+			}
+
+			traits = { fast_tank_manufacturer }
+
+			equipment_bonus = {
+				# made light/medium tanks panzerkampfwagen 38
+			}
+		}
+
+		HUN_tatra = { #斯柯达坦克设计局（中坦）
+
+			picture = generic_tank_manufacturer_2
+
+
+			#allowed = {
+			#	original_tag = CZE
+			#}
+
+            visible = {
+				OR = {
+					has_completed_focus = HUN_protect_czechoslovakia
+					has_country_flag = HUN_can_use_ckd
+				}
+			}
+
+            available = {
+				OR ={
+					AND ={
+				        has_completed_focus = HUN_protect_czechoslovakia
+			        }
+			    has_country_flag = HUN_can_use_ckd
+                }
+		    }
+
+			research_bonus = {
+				armor = 0.15
+			}
+
+			traits = { medium_tank_manufacturer }
+
+			equipment_bonus = {
+			}
+		}
+
+		HUN_skoda_armor = { #斯柯达坦克设计局（重坦）
+
+			picture = generic_tank_manufacturer_3
+
+
+			#allowed = {
+			#	original_tag = CZE
+			#}
+
+            visible = {
+				OR = {
+					has_completed_focus = HUN_protect_czechoslovakia
+					has_country_flag = HUN_can_use_ckd
+				}
+			}
+
+            available = {
+				OR ={
+					AND ={
+				        has_completed_focus = HUN_protect_czechoslovakia
+			        }
+			    has_country_flag = HUN_can_use_ckd
+                }
+		    }
+
+			research_bonus = {
+				armor = 0.15
+			}
+
+			traits = { heavy_tank_manufacturer }
+
+			equipment_bonus = {
+			}
+		}
+	}
+
+	naval_manufacturer = { #斯柯达海军设计局
+
+		designer = yes
+
+		HUN_skoda_shipyards = {
+
+			picture = generic_naval_manufacturer_3
+
+			#allowed = {
+			#	original_tag = CZE
+			#}
+
+            visible = {
+				OR = {
+					has_completed_focus = HUN_protect_czechoslovakia
+					has_country_flag = HUN_can_use_ckd
+				}
+			}
+
+            available = {
+				OR ={
+					AND ={
+				        has_completed_focus = HUN_protect_czechoslovakia
+			        }
+			    has_country_flag = HUN_can_use_ckd
+                }
+		    }
+
+			research_bonus = {
+				naval_equipment = 0.15
+			}
+
+			equipment_bonus = {
+
+			}
+
+			traits = { coastal_defence_naval_manufacturer }
+
+		}
+	}
+
+	aircraft_manufacturer = { #斯柯达海航设计局
+
+		designer = yes
+
+		HUN_ckd_praga = {
+
+			picture = generic_air_manufacturer_1
+
+
+			#allowed = {
+			#	original_tag = CZE
+			#}
+
+            visible = {
+				OR = {
+					has_completed_focus = HUN_protect_czechoslovakia
+					has_country_flag = HUN_can_use_ckd
+				}
+			}
+
+            available = {
+				OR ={
+					AND ={
+				        has_completed_focus = HUN_protect_czechoslovakia
+			        }
+			    has_country_flag = HUN_can_use_ckd
+                }
+		    }
+
+			research_bonus = {
+				air_equipment = 0.15
+			}
+
+			traits = { naval_aircraft_manufacturer }
+
+			# fighter aircraft B-534, versitile and high performing in manuverability and speed
+
+			ai_will_do = {
+				factor = 1
+			}
+		}
+
+		HUN_avia = { #斯柯达小型战机设计局
+
+			picture = generic_air_manufacturer_1
+
+
+			#allowed = {
+			#	original_tag = CZE
+			#}
+
+            visible = {
+				OR = {
+					has_completed_focus = HUN_protect_czechoslovakia
+					has_country_flag = HUN_can_use_ckd
+				}
+			}
+
+            available = {
+				OR ={
+					AND ={
+				        has_completed_focus = HUN_protect_czechoslovakia
+			        }
+			    has_country_flag = HUN_can_use_ckd
+                }
+		    }
+
+			research_bonus = {
+				air_equipment = 0.15
+			}
+
+			traits = { light_aircraft_manufacturer }
+
+			# fighter aircraft B-534, versitile and high performing in manuverability and speed
+
+			ai_will_do = {
+				factor = 1
+			}
+		}
+
+
+		HUN_aero = { #斯柯达重型战机设计局
+
+			picture = generic_air_manufacturer_2
+
+
+			#allowed = {
+			#	original_tag = CZE
+			#}
+
+            visible = {
+				OR = {
+					has_completed_focus = HUN_protect_czechoslovakia
+					has_country_flag = HUN_can_use_ckd
+				}
+			}
+
+            available = {
+				OR ={
+					AND ={
+				        has_completed_focus = HUN_protect_czechoslovakia
+			        }
+			    has_country_flag = HUN_can_use_ckd
+                }
+		    }
+
+			research_bonus = {
+				air_equipment = 0.15
+			}
+
+			traits = { medium_aircraft_manufacturer }
+
+
+			ai_will_do = {
+				factor = 1
+			}
+		}
+
+
+		HUN_letov = { #斯柯达战略轰炸机设计局
+
+			picture = generic_air_manufacturer_3
+
+
+			#allowed = {
+			#	original_tag = CZE
+			#}
+
+            visible = {
+				OR = {
+					has_completed_focus = HUN_protect_czechoslovakia
+					has_country_flag = HUN_can_use_ckd
+				}
+			}
+
+            available = {
+				OR ={
+					AND ={
+				        has_completed_focus = HUN_protect_czechoslovakia
+			        }
+			    has_country_flag = HUN_can_use_ckd
+                }
+		    }
+
+			research_bonus = {
+				air_equipment = 0.15
+			}
+
+			traits = { heavy_aircraft_manufacturer }
+
+			equipment_bonus = {
+				# produced almost 300 junker 290 heavy hombers during ww2, as well as own fighters prior to the war
+			}
+
+			ai_will_do = {
+				factor = 1
+			}
+		}
+	}
+
+	materiel_manufacturer = { #斯柯达武装设计局
+
+		designer = yes
+
+		HUN_zbrojovka_brno = {
+
+			picture = generic_infantry_equipment_manufacturer_2
+
+
+			#allowed = {
+			#	original_tag = CZE
+			#}
+
+            visible = {
+				OR = {
+					has_completed_focus = HUN_protect_czechoslovakia
+					has_country_flag = HUN_can_use_ckd
+				}
+			}
+
+            available = {
+				OR ={
+					AND ={
+				        has_completed_focus = HUN_protect_czechoslovakia
+			        }
+			    has_country_flag = HUN_can_use_ckd
+                }
+		    }
+
+			research_bonus = {
+				infantry_weapons = 0.15
+			}
+
+			traits = { infantry_equipment_manufacturer }
+
+			ai_will_do = {
+				factor = 1
+			}
+		}
+
+		HUN_skoda_artillery = { #斯柯达火炮
+
+			picture = generic_artillery_manufacturer_2
+
+
+			#allowed = {
+			#	original_tag = CZE
+			#}
+
+            visible = {
+				OR = {
+					has_completed_focus = HUN_protect_czechoslovakia
+					has_country_flag = HUN_can_use_ckd
+				}
+			}
+
+            available = {
+				OR ={
+					AND ={
+				        has_completed_focus = HUN_protect_czechoslovakia
+			        }
+			    has_country_flag = HUN_can_use_ckd
+                }
+		    }
+
+			research_bonus = {
+				artillery = 0.15
+			}
+
+			traits = { artillery_manufacturer }
+
+			equipment_bonus = {
+
+			}
+		}
+
+		HUN_praga = { #斯柯达汽车工厂
+
+			picture = generic_motorized_equipment_manufacturer_2
+
+			#allowed = {
+			#	original_tag = CZE
+			#}
+
+            visible = {
+				OR = {
+					has_completed_focus = HUN_protect_czechoslovakia
+					has_country_flag = HUN_can_use_ckd
+				}
+			}
+
+            available = {
+				OR ={
+					AND ={
+				        has_completed_focus = HUN_protect_czechoslovakia
+			        }
+			    has_country_flag = HUN_can_use_ckd
+                }
+		    }
+
+			research_bonus = {
+				motorized_equipment = 0.15
+			}
+
+			traits = { motorized_equipment_manufacturer }
+		}
+	}
+
+	industrial_concern = { #斯柯达机械电子研究所
+
+		HUN_elektra = {
+
+			picture = generic_industrial_concern_1
+
+			#allowed = {
+			#	original_tag = CZE
+			#}
+
+            visible = {
+				OR = {
+					has_completed_focus = HUN_protect_czechoslovakia
+					has_country_flag = HUN_can_use_ckd
+				}
+			}
+
+            available = {
+				OR ={
+					AND ={
+				        has_completed_focus = HUN_protect_czechoslovakia
+			        }
+			    has_country_flag = HUN_can_use_ckd
+                }
+		    }
+
+			research_bonus = {
+				electronics = 0.15
+			}
+
+			traits = { electronics_concern }
+
+			ai_will_do = {
+				factor = 1
+			}
+		}
+
+		HUN_skoda_works_2 = { #斯柯达工业研究所
+
+			picture = generic_electronics_concern_1
+
+			#allowed = {
+			#	original_tag = CZE
+			#}
+
+            visible = {
+				OR = {
+					has_completed_focus = HUN_protect_czechoslovakia
+					has_country_flag = HUN_can_use_ckd
+				}
+			}
+
+            available = {
+				OR ={
+					AND ={
+				        has_completed_focus = HUN_protect_czechoslovakia
+			        }
+			    has_country_flag = HUN_can_use_ckd
+                }
+		    }
+
+			research_bonus = {
+				industry = 0.15
+
+			}
+
+			traits = { industrial_concern }
+		}
+	}
+
+}

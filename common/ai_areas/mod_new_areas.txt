@@ -1,0 +1,55 @@
+areas = {  
+
+    ENG_invasion_unit_request_target = { 
+
+        strategic_regions = {
+            #FRA
+            14
+            15
+            78
+            29
+            19
+            23
+            30
+
+            #低地
+            6
+            7
+            35
+            36
+
+            #GER
+            56
+            58
+            59
+            909
+
+            912
+            99
+
+            #
+            142
+
+        }
+
+    }
+
+
+    FRA_invasion_unit_request_target = { 
+
+        strategic_regions = {
+            123
+            125
+            126
+            127
+
+            121
+            131
+            130
+
+        }
+
+    }
+
+
+}

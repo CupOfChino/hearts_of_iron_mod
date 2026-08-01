@@ -1,0 +1,139 @@
+add_namespace = change_hun
+
+country_event = {  #巴尔干战争
+    id = change_hun.1
+	title = change_hun.1.t
+	desc = change_hun.1.d
+
+    is_triggered_only = yes
+
+    option = { #接受
+        name = change_hun.1.a
+		ai_chance = {
+			factor = 99
+            modifier = {
+                factor = 1000
+                NOT = {
+                    BUL = {
+                        has_government = communism
+                    }
+                }
+            }
+		}
+        80 = {
+            add_core_of = HUN
+        }
+        BUL = {
+            add_state_claim = 81
+
+            add_state_claim = 46
+
+            add_state_claim = 105
+
+            add_state_claim = 107
+
+            add_state_claim = 108
+
+            add_state_claim = 802
+
+            add_state_claim = 970
+
+            add_state_claim = 934
+
+            add_state_claim = 44
+
+            add_state_claim = 805
+        }
+        81 = {
+            add_core_of = BUL
+        }
+        46 = {
+            add_core_of = BUL
+        }
+        105 = {
+            add_core_of = BUL
+        }
+        107 = {
+            add_core_of = BUL
+        }
+        108 = {
+            add_core_of = BUL
+        }
+        803 = {
+            add_core_of = BUL
+        }
+        106 = {
+            add_core_of = BUL
+        }
+
+        970 = {
+            add_core_of = BUL
+        }
+        BUL = {
+            set_country_flag = attack_with_hun_flag
+            add_offsite_building = { type = industrial_complex level = 8 }
+		    add_offsite_building = { type = arms_factory level = 8 }
+        }
+
+    }
+
+    option = { #拒绝
+        name = change_hun.1.b
+		ai_chance = {
+			factor = 0.1
+            modifier = {
+                factor = 100
+                BUL = {
+                    has_government = communism
+                }
+            }
+		}
+        HUN = {
+            country_event = { id = change_hun.2 days = 1 }
+        }
+    }
+}
+
+country_event = {  #拒绝
+    id = change_hun.2
+	title = change_hun.2.t
+	desc = change_hun.2.d
+
+    is_triggered_only = yes
+
+    option = { #拒绝
+        name = change_hun.2.b
+		ai_chance = {
+			factor = 100
+		}
+    }
+}
+
+country_event = {  #要求意大利归还土地（非ai）
+    id = change_hun.3
+	title = change_hun.3.t
+	desc = change_hun.3.d
+
+    is_triggered_only = yes
+
+    option = { #拒绝
+        name = change_hun.3.a
+    }
+
+    option = { #接受
+        name = change_hun.3.b
+        every_state = {
+			limit = {
+				is_core_of = HUN
+				CONTROLLER = {
+					tag = ITA
+				}
+			}
+			HUN = {
+				transfer_state = PREV
+			}
+		}
+    }
+
+}
+

@@ -1,0 +1,378 @@
+characters={
+	UNI_kafuu_chino={
+		name=UNI_kafuu_chino_name
+		portraits={
+			army={
+				large="gfx\Leaders\UNI\chino.png"
+				small="gfx\Leaders\UNI\chino_s.png"
+			}
+			civilian={
+				large="chino"
+				small="chino"
+			}
+		}
+		advisor={
+			slot = army_chief
+			idea_token = UNI_tedeza_chino
+			traits = {
+				UNI_chino_trait
+			}
+			allowed = {
+				OR = {
+					has_country_flag = can_use_rabit_gerneral_flag
+				}
+			}
+			cost = 50
+			ai_will_do = {
+				factor = 1.000
+			}
+		}
+		field_marshal={
+			traits={Infantry_Officer War_Hero Brilliant_Strategist} 
+			skill=3
+			attack_skill=6
+			defense_skill=4
+			planning_skill=4
+			logistics_skill=4
+			legacy_id=-1
+		}
+		country_leader={
+			ideology=marxism
+			large="gfx\Leaders\UNI\chino.png"
+			small="gfx\Leaders\UNI\chino_s.png"
+			traits={ 
+					  
+					}
+			expire="1965.1.1.1"
+			id=-1
+		}
+	}
+
+	UNI_tedeza_rize={
+		name=UNI_tedeza_rize_name
+		portraits={
+			army={
+				large="gfx\Leaders\UNI\rize.png"
+				small="gfx\Leaders\UNI\rize_s.png"
+			}
+		}
+		advisor={
+			slot = high_command
+			idea_token = UNI_tedeza_rize
+			traits = {
+				UNI_rize_trait
+			}
+			allowed = {
+				OR = {
+					has_country_flag = can_use_rabit_gerneral_flag
+				}
+			}
+			cost = 100
+			ai_will_do = {
+				factor = 1.000
+			}
+		}
+		
+		corps_commander={
+			traits={Infantry_Officer Anti-Bolshevik_Veteran Mountaineer}
+			skill=2
+			attack_skill=3
+			defense_skill=3
+			planning_skill=3
+			logistics_skill=4
+			legacy_id=-1
+		}
+	}
+
+	UNI_hoto_cocoa={
+		name=UNI_hoto_cocoa_name
+		portraits={
+			army={
+				large="gfx\Leaders\UNI\cocoa.png"
+				small="gfx\Leaders\UNI\cocoa_s.png"
+			}
+		}
+		advisor={
+			slot = high_command
+			idea_token = UNI_hoto_cocoa
+			ledger = army
+			traits = {
+				UNI_cocoa_trait
+			}
+			cost = 100
+			ai_will_do = {
+				factor = 1.000
+			}
+		}
+
+		corps_commander={
+			traits={Mountaineer Infantry_Leader}
+			skill=3
+			attack_skill=4
+			defense_skill=3
+			planning_skill=4
+			logistics_skill=5
+			legacy_id=-1
+		}
+	}
+
+	UNI_ujimatsu_chiya={
+		name=UNI_ujimatsu_chiya_name
+		portraits={
+			army={
+				large="gfx\Leaders\UNI\chiya.png"
+				small="gfx\Leaders\UNI\chiya_s.png"
+			}
+		}
+        advisor={
+			slot = theorist
+			idea_token = UNI_ujimatsu_chiya
+			traits = {
+				UNI_chiya_trait
+			}
+			allowed = {
+				OR = {
+					original_tag = UNI
+					has_country_flag = can_use_rabit_gerneral_flag
+				}
+			}
+			cost = 100
+			ai_will_do = {
+				factor = 1.000
+			}
+		}
+		corps_commander={
+			traits={Infantry_Officer War_Hero Brilliant_Strategist}
+			skill=3
+			attack_skill=3
+			defense_skill=5
+			planning_skill=3
+			logistics_skill=2
+			legacy_id=-1
+		}
+	}
+
+	UNI_kirima_sharo={
+		name=UNI_kirima_sharo_name
+		portraits={
+			army={
+				large="gfx\Leaders\UNI\sharo.png"
+				small="gfx\Leaders\UNI\sharo_s.png"
+			}
+		}
+        advisor={
+			slot = high_command
+			idea_token = UNI_kirima_sharo
+			ledger = army
+			traits = {
+				UNI_sharo_trait
+			}
+			allowed = {
+				OR = {
+					original_tag = UNI
+					has_country_flag = can_use_rabit_gerneral_flag
+				}
+			}
+			cost = 100
+			ai_will_do = {
+				factor = 1.000
+			}
+		}
+		corps_commander={
+			traits={Infantry_Officer War_Hero Brilliant_Strategist}
+			skill=4
+			attack_skill=4
+			defense_skill=5
+			planning_skill=3
+			logistics_skill=4
+			legacy_id=-1
+		}
+	}
+
+	UNI_jouga_maya={
+		name=UNI_jouga_maya_name
+		portraits={
+			army={
+				large="gfx\Leaders\UNI\maya.png"
+				small="gfx\Leaders\UNI\maya_s.png"
+			}
+			civilian={
+				large="chino"
+				small="gfx\Leaders\UNI\maya_s.png"
+			}
+		}
+        advisor={
+			slot = high_command
+			idea_token = UNI_jouga_maya
+			traits = {
+				UNI_maya_trait
+			}
+			allowed = {
+				OR = {
+					original_tag = UNI
+					has_country_flag = can_use_rabit_gerneral_flag
+				}
+			}
+			cost = 100
+			ai_will_do = {
+				factor = 1.000
+			}
+		}
+		field_marshal={
+			traits={Bearer_of_Artillery War_Hero Inflexible_Strategist}
+			skill=3
+			attack_skill=2
+			defense_skill=4
+			planning_skill=3
+			logistics_skill=4
+			legacy_id=-1
+		}
+		country_leader={
+			ideology=marxism
+			traits={ cornered_fox }
+			expire="1965.1.1.1"
+			id=-1
+		}
+	}
+
+	### THEORISTS ###
+
+	#Claire Lee Chennault in shared file
+
+	UNI_natsu_megu={
+		name=UNI_natsu_megu_name
+		portraits={
+			army={
+				large="gfx\Leaders\UNI\magu.png"
+				small="gfx\Leaders\UNI\magu_s.png"
+			}
+			civilian={
+				large="chino"
+				small="gfx\Leaders\UNI\magu_s.png"
+			}
+		}
+		field_marshal={
+			traits={Old_Guard War_Hero Inflexible_Strategist}
+			skill=3
+			attack_skill=2
+			defense_skill=4
+			planning_skill=3
+			logistics_skill=4
+			legacy_id=-1
+		}
+		advisor={
+			slot = navy_chief
+			idea_token = UNI_natsu_megu
+			available = {
+				UNI_natsu_megu = {
+					is_theorist = no
+				}
+			}
+			allowed = {
+				OR = {
+					original_tag = UNI
+					has_country_flag = can_use_rabit_gerneral_flag
+				}
+			}
+			traits = {
+				UNI_megu_trait
+			}
+			cost = 50
+		}
+		country_leader={
+			ideology=marxism
+			traits={ cornered_fox }
+			expire="1965.1.1.1"
+			id=-1
+		}
+	}
+
+	UNI_blue_mountain={
+		name=UNI_blue_mountain_name
+		portraits={
+			army={
+				large="gfx\Leaders\UNI\bm.png"
+				small="gfx\Leaders\UNI\bm_s.png"
+			}
+			civilian={
+				large="chino"
+				small="gfx\Leaders\UNI\bm_s.png"
+			}
+		}
+		advisor={
+			slot = air_chief
+			idea_token = UNI_blue_mountain
+			traits = {
+				UNI_mountain_trait
+			}
+			allowed = {
+				OR = {
+					original_tag = UNI
+					has_country_flag = can_use_rabit_gerneral_flag
+				}
+			}
+			cost = 100
+			ai_will_do = {
+				factor = 1.000
+			}
+		}
+		field_marshal={
+			traits={Infantry_Officer War_Hero Brilliant_Strategist}
+			skill=5
+			attack_skill=5
+			defense_skill=5
+			planning_skill=5
+			logistics_skill=7
+			legacy_id=-1
+		}
+		country_leader={
+			ideology=marxism
+			traits={ cornered_fox }
+			expire="1965.1.1.1"
+			id=-1
+		}
+	}
+
+	UNI_mocha={
+		name=UNI_mocha_name
+		portraits={
+			army={
+				large="gfx\Leaders\UNI\mocha.png"
+				small="gfx\Leaders\UNI\mocha_s.png"
+			}
+			civilian={
+				large="chino"
+				small="gfx\Leaders\UNI\mocha_s.png"
+			}
+		}
+		advisor={
+			slot = political_advisor
+			idea_token = UNI_mocha
+			traits  = {
+				UNI_moka_trait
+
+			}
+			allowed = {
+				OR = {
+					original_tag = UNI
+					has_country_flag = can_use_rabit_gerneral_flag
+				}
+			}
+		}
+		field_marshal={
+			traits={Armor_Officer War_Hero Brilliant_Strategist}
+			skill=4
+			attack_skill=3
+			defense_skill=4
+			planning_skill=5
+			logistics_skill=4
+			legacy_id=-1
+		}
+		country_leader={
+			ideology=marxism
+			traits={ cornered_fox }
+			expire="1965.1.1.1"
+			id=-1
+		}
+	}
+}

@@ -1,0 +1,647 @@
+#	Example:
+# 
+#	example_dynamic_modifier = {
+#		icon = "GFX_idea_unknown" # optional, will show up in guis if icon is specified
+#		enable = { always = yes } #optional, the modifier won't apply if not enabled
+#		remove_trigger = { always = no } #optional, will remove the modifier if true
+#       attacker_modifier = no  # if yes this modifier will also be read in combat for 
+#                               # people engaging in the combat even if not in the state
+#
+#		# list of modifiers
+#		fuel_cost = 321
+#		max_fuel = var_max_fuel # will be taken from a variable
+#	}
+#
+#
+#	In a script file:
+#
+#	effect = {
+#		add_dynamic_modifier = {
+#			modifier = example_dynamic_modifier
+#			scope = GER # optional, if you specify this your dynamic modifier scoped to this scope (root is the effect scope)
+#			days = 14 # optional, will be removed after this many days passes
+#		}
+#	}
+#
+#	can be added to countries, states, unit leaders or special projects
+#	will only updated daily, unless forced by force_update_dynamic_modifier effect
+
+mod_with_friend_ger = { #同盟国
+    enable = {
+        always = yes
+    }
+
+    icon = GFX_idea_AUS_habsburg_monarchy_restored
+
+    army_strength_factor = mod_with_friend_ger_army_strength_factor                 #
+    org_loss_when_moving = mod_with_friend_ger_org_loss_when_moving_factor   #
+    EXPERIENCE_LOSS_FACTOR = mod_with_friend_ger_EXPERIENCE_LOSS_FACTOR             #
+    land_reinforce_rate = mod_with_friend_ger_land_reinforce_rate                   #
+    industrial_capacity_factory = mod_with_friend_ger_industrial_capacity_factory   # 
+    industrial_capacity_dockyard = mod_with_friend_ger_industrial_capacity_dockyard  #   
+    army_attack_factor = mod_with_friend_ger_army_attack_factor                     #
+    army_defence_factor = mod_with_friend_ger_army_defence_factor                   #
+    army_core_attack_factor = mod_with_friend_ger_army_core_attack_factor           #
+    army_core_defence_factor = mod_with_friend_ger_army_core_defence_factor         #
+    production_speed_arms_factory_factor = mod_with_friend_ger_production_speed_arms_factory_factor   
+    production_speed_dockyard_factor = mod_with_friend_ger_production_speed_dockyard_factor   
+    production_speed_industrial_complex_factor = mod_with_friend_ger_production_speed_industrial_complex_factor  
+    conscription = mod_with_friend_ger_conscription                         #          
+    training_time_army_factor = mod_with_friend_ger_training_time_army_factor           #     
+    max_planning = mod_with_friend_ger_max_planning                         #               
+    dig_in_speed_factor = mod_with_friend_ger_dig_in_speed_factor        #               
+    production_factory_max_efficiency_factor = mod_with_friend_ger_production_factory_max_efficiency_factor     
+    production_factory_efficiency_gain_factor = mod_with_friend_ger_production_factory_efficiency_gain_factor   
+    ARMY_FUEL_CONSUMPTION_FACTOR = mod_with_friend_ger_ARMY_FUEL_CONSUMPTION_FACTOR     
+    AIR_FUEL_CONSUMPTION_FACTOR = mod_with_friend_ger_AIR_FUEL_CONSUMPTION_FACTOR       
+    NAVY_FUEL_CONSUMPTION_FACTOR = mod_with_friend_ger_NAVY_FUEL_CONSUMPTION_FACTOR     
+    #特战队
+    SPECIAL_FORCES_ATTACK_FACTOR = mod_with_friend_ger_SPECIAL_FORCES_ATTACK_FACTOR #
+    SPECIAL_FORCES_DEFENCE_FACTOR = mod_with_friend_ger_SPECIAL_FORCES_DEFENCE_FACTOR   #
+    SPECIAL_FORCES_MIN = mod_with_friend_ger_SPECIAL_FORCES_MIN #
+    ACCLIMATIZATION_COLD_CLIMATE_GAIN_FACTOR = mod_with_friend_ger_ACCLIMATIZATION_COLD_CLIMATE_GAIN_FACTOR #
+    ACCLIMATIZATION_HOT_CLIMATE_GAIN_FACTOR = mod_with_friend_ger_ACCLIMATIZATION_HOT_CLIMATE_GAIN_FACTOR #
+    #陆军新增其他
+    INITIATIVE_FACTOR = mod_with_friend_ger_INITIATIVE_FACTOR   #
+    TERRAIN_PENALTY_REDUCTION = mod_with_friend_ger_TERRAIN_PENALTY_REDUCTION   #
+    EQUIPMENT_CAPTURE_FACTOR = mod_with_friend_ger_EQUIPMENT_CAPTURE_FACTOR #
+    #空军
+    AIR_ATTACK_FACTOR = mod_with_friend_ger_AIR_ATTACK_FACTOR   #
+    AIR_DEFENCE_FACTOR = mod_with_friend_ger_AIR_DEFENCE_FACTOR #
+    AIR_AGILITY_FACTOR = mod_with_friend_ger_AIR_AGILITY_FACTOR #
+    AIR_ACCIDENTS_FACTOR = mod_with_friend_ger_AIR_ACCIDENTS_FACTOR #
+    AIR_MAX_SPEED_FACTOR = mod_with_friend_ger_AIR_MAX_SPEED_FACTOR #
+    AIR_RANGE_FACTOR = mod_with_friend_ger_AIR_RANGE_FACTOR #
+    AIR_ACE_GENERATION_CHANCE_FACTOR = mod_with_friend_ger_AIR_ACE_GENERATION_CHANCE_FACTOR #
+    AIR_TRAINING_XP_FACTOR = mod_with_friend_ger_AIR_TRAINING_XP_FACTOR #
+    AIR_MISSION_XP_FACTOR = mod_with_friend_ger_AIR_MISSION_XP_FACTOR   #
+    AIR_WING_XP_LOSS_WHEN_KILLED_FACTOR = mod_with_friend_ger_AIR_WING_XP_LOSS_WHEN_KILLED_FACTOR   #
+    ARMY_BONUS_AIR_SUPERIORITY_FACTOR = mod_with_friend_ger_ARMY_BONUS_AIR_SUPERIORITY_FACTOR   #
+    #海军
+    NAVAL_SPEED_FACTOR = mod_with_friend_ger_NAVAL_SPEED_FACTOR #
+    TRAINING_TIME_NAVY_FACTOR = mod_with_friend_ger_TRAINING_TIME_NAVY_FACTOR   #
+    NAVY_ORG_FACTOR = mod_with_friend_ger_NAVY_ORG_FACTOR   #
+    NAVAL_MORALE_FACTOR = mod_with_friend_ger_NAVAL_MORALE_FACTOR   #
+    NAVY_ANTI_AIR_ATTACK_FACTOR = mod_with_friend_ger_NAVY_ANTI_AIR_ATTACK_FACTOR   #
+    NAVAL_DAMAGE_FACTOR = mod_with_friend_ger_NAVAL_DAMAGE_FACTOR   #
+    NAVAL_DEFENSE_FACTOR = mod_with_friend_ger_NAVAL_DEFENSE_FACTOR #
+    NAVAL_TORPEDO_COOLDOWN_FACTOR = mod_with_friend_ger_NAVAL_TORPEDO_COOLDOWN_FACTOR #鱼雷
+    NAVAL_TORPEDO_HIT_CHANCE_FACTOR = mod_with_friend_ger_NAVAL_TORPEDO_HIT_CHANCE_FACTOR
+    NAVAL_TORPEDO_REVEAL_CHANCE_FACTOR = mod_with_friend_ger_NAVAL_TORPEDO_REVEAL_CHANCE_FACTOR
+    NAVAL_MINES_DAMAGE_FACTOR = mod_with_friend_ger_NAVAL_MINES_DAMAGE_FACTOR #水雷
+    MINES_SWEEPING_BY_FLEETS_FACTOR = mod_with_friend_ger_MINES_SWEEPING_BY_FLEETS_FACTOR
+    NAVY_CAPITAL_SHIP_ATTACK_FACTOR = mod_with_friend_ger_NAVY_CAPITAL_SHIP_ATTACK_FACTOR #主力 #
+    NAVY_CAPITAL_SHIP_DEFENCE_FACTOR = mod_with_friend_ger_NAVY_CAPITAL_SHIP_DEFENCE_FACTOR #
+    NAVY_SCREEN_ATTACK_FACTOR = mod_with_friend_ger_NAVY_SCREEN_ATTACK_FACTOR #屏卫舰   #
+    NAVY_SCREEN_DEFENCE_FACTOR = mod_with_friend_ger_NAVY_SCREEN_DEFENCE_FACTOR #
+    CARRIER_SORTIE_EFFICIENCY_FACTOR = mod_with_friend_ger_CARRIER_SORTIE_EFFICIENCY_FACTOR #航母
+    CARRIER_CAPACITY_PENALTY_REDUCTION = mod_with_friend_ger_CARRIER_CAPACITY_PENALTY_REDUCTION #
+    CARRIER_FIGHTER_SORTIE_EFFICIENCY_FACTOR = mod_with_friend_ger_CARRIER_FIGHTER_SORTIE_EFFICIENCY_FACTOR #
+    NAVAL_STRIKE_TARGETTING_FACTOR = mod_with_friend_ger_NAVAL_STRIKE_TARGETTING_FACTOR #
+    NAVAL_STRIKE_ATTACK_FACTOR = mod_with_friend_ger_NAVAL_STRIKE_ATTACK_FACTOR
+}
+
+mod_with_friend_eng = { #协约国
+    enable = {
+        always = yes
+    }
+
+    icon = GFX_idea_AUS_habsburg_monarchy_restored
+    army_strength_factor = mod_with_friend_eng_army_strength_factor                 #-0.1
+    org_loss_when_moving = mod_with_friend_eng_org_loss_when_moving_factor   #0.1
+    EXPERIENCE_LOSS_FACTOR = mod_with_friend_eng_EXPERIENCE_LOSS_FACTOR             #0
+    land_reinforce_rate = mod_with_friend_eng_land_reinforce_rate                   #-0.02
+    industrial_capacity_factory = mod_with_friend_eng_industrial_capacity_factory    #-0.2
+    industrial_capacity_dockyard = mod_with_friend_eng_industrial_capacity_dockyard     #-0.2
+    army_attack_factor = mod_with_friend_eng_army_attack_factor                     #-0.1
+    army_defence_factor = mod_with_friend_eng_army_defence_factor                   #-0.1
+    army_core_attack_factor = mod_with_friend_eng_army_core_attack_factor           #0
+    army_core_defence_factor = mod_with_friend_eng_army_core_defence_factor         #0
+    production_speed_arms_factory_factor = mod_with_friend_eng_production_speed_arms_factory_factor   #-0.2
+    production_speed_dockyard_factor = mod_with_friend_eng_production_speed_dockyard_factor   #-0.2
+    production_speed_industrial_complex_factor = mod_with_friend_eng_production_speed_industrial_complex_factor  #0.2
+    conscription = mod_with_friend_eng_conscription                                  #-0.01
+    training_time_army_factor = mod_with_friend_eng_training_time_army_factor            #0.15
+    max_planning = mod_with_friend_eng_max_planning                                    #0
+    dig_in_speed_factor = mod_with_friend_eng_dig_in_speed_factor                       #0
+    production_factory_max_efficiency_factor = mod_with_friend_eng_production_factory_max_efficiency_factor     #0
+    production_factory_efficiency_gain_factor = mod_with_friend_eng_production_factory_efficiency_gain_factor   #0
+    ARMY_FUEL_CONSUMPTION_FACTOR = mod_with_friend_eng_ARMY_FUEL_CONSUMPTION_FACTOR     #0
+    AIR_FUEL_CONSUMPTION_FACTOR = mod_with_friend_eng_AIR_FUEL_CONSUMPTION_FACTOR       #0
+    NAVY_FUEL_CONSUMPTION_FACTOR = mod_with_friend_eng_NAVY_FUEL_CONSUMPTION_FACTOR     #0
+
+    # 特战队
+    SPECIAL_FORCES_ATTACK_FACTOR = mod_with_friend_eng_SPECIAL_FORCES_ATTACK_FACTOR
+    SPECIAL_FORCES_DEFENCE_FACTOR = mod_with_friend_eng_SPECIAL_FORCES_DEFENCE_FACTOR
+    SPECIAL_FORCES_MIN = mod_with_friend_eng_SPECIAL_FORCES_MIN
+    ACCLIMATIZATION_COLD_CLIMATE_GAIN_FACTOR = mod_with_friend_eng_ACCLIMATIZATION_COLD_CLIMATE_GAIN_FACTOR
+    ACCLIMATIZATION_HOT_CLIMATE_GAIN_FACTOR = mod_with_friend_eng_ACCLIMATIZATION_HOT_CLIMATE_GAIN_FACTOR
+    # 陆军新增其他
+    INITIATIVE_FACTOR = mod_with_friend_eng_INITIATIVE_FACTOR
+    TERRAIN_PENALTY_REDUCTION = mod_with_friend_eng_TERRAIN_PENALTY_REDUCTION
+    EQUIPMENT_CAPTURE_FACTOR = mod_with_friend_eng_EQUIPMENT_CAPTURE_FACTOR
+    # 空军
+    AIR_ATTACK_FACTOR = mod_with_friend_eng_AIR_ATTACK_FACTOR
+    AIR_DEFENCE_FACTOR = mod_with_friend_eng_AIR_DEFENCE_FACTOR
+    AIR_AGILITY_FACTOR = mod_with_friend_eng_AIR_AGILITY_FACTOR
+    AIR_ACCIDENTS_FACTOR = mod_with_friend_eng_AIR_ACCIDENTS_FACTOR
+    AIR_MAX_SPEED_FACTOR = mod_with_friend_eng_AIR_MAX_SPEED_FACTOR
+    AIR_RANGE_FACTOR = mod_with_friend_eng_AIR_RANGE_FACTOR
+    AIR_ACE_GENERATION_CHANCE_FACTOR = mod_with_friend_eng_AIR_ACE_GENERATION_CHANCE_FACTOR
+    AIR_TRAINING_XP_FACTOR = mod_with_friend_eng_AIR_TRAINING_XP_FACTOR
+    AIR_MISSION_XP_FACTOR = mod_with_friend_eng_AIR_MISSION_XP_FACTOR
+    AIR_WING_XP_LOSS_WHEN_KILLED_FACTOR = mod_with_friend_eng_AIR_WING_XP_LOSS_WHEN_KILLED_FACTOR
+    ARMY_BONUS_AIR_SUPERIORITY_FACTOR = mod_with_friend_eng_ARMY_BONUS_AIR_SUPERIORITY_FACTOR
+    # 海军
+    NAVAL_SPEED_FACTOR = mod_with_friend_eng_NAVAL_SPEED_FACTOR
+    TRAINING_TIME_NAVY_FACTOR = mod_with_friend_eng_TRAINING_TIME_NAVY_FACTOR
+    NAVY_ORG_FACTOR = mod_with_friend_eng_NAVY_ORG_FACTOR
+    NAVAL_MORALE_FACTOR = mod_with_friend_eng_NAVAL_MORALE_FACTOR
+    NAVY_ANTI_AIR_ATTACK_FACTOR = mod_with_friend_eng_NAVY_ANTI_AIR_ATTACK_FACTOR
+    NAVAL_DAMAGE_FACTOR = mod_with_friend_eng_NAVAL_DAMAGE_FACTOR
+    NAVAL_DEFENSE_FACTOR = mod_with_friend_eng_NAVAL_DEFENSE_FACTOR
+    NAVAL_TORPEDO_COOLDOWN_FACTOR = mod_with_friend_eng_NAVAL_TORPEDO_COOLDOWN_FACTOR # 鱼雷
+    NAVAL_TORPEDO_HIT_CHANCE_FACTOR = mod_with_friend_eng_NAVAL_TORPEDO_HIT_CHANCE_FACTOR
+    NAVAL_TORPEDO_REVEAL_CHANCE_FACTOR = mod_with_friend_eng_NAVAL_TORPEDO_REVEAL_CHANCE_FACTOR
+    NAVAL_MINES_DAMAGE_FACTOR = mod_with_friend_eng_NAVAL_MINES_DAMAGE_FACTOR # 水雷
+    MINES_SWEEPING_BY_FLEETS_FACTOR = mod_with_friend_eng_MINES_SWEEPING_BY_FLEETS_FACTOR
+    NAVY_CAPITAL_SHIP_ATTACK_FACTOR = mod_with_friend_eng_NAVY_CAPITAL_SHIP_ATTACK_FACTOR # 主力
+    NAVY_CAPITAL_SHIP_DEFENCE_FACTOR = mod_with_friend_eng_NAVY_CAPITAL_SHIP_DEFENCE_FACTOR
+    NAVY_SCREEN_ATTACK_FACTOR = mod_with_friend_eng_NAVY_SCREEN_ATTACK_FACTOR # 屏卫舰
+    NAVY_SCREEN_DEFENCE_FACTOR = mod_with_friend_eng_NAVY_SCREEN_DEFENCE_FACTOR
+    CARRIER_SORTIE_EFFICIENCY_FACTOR = mod_with_friend_eng_CARRIER_SORTIE_EFFICIENCY_FACTOR # 航母
+    CARRIER_CAPACITY_PENALTY_REDUCTION = mod_with_friend_eng_CARRIER_CAPACITY_PENALTY_REDUCTION
+    CARRIER_FIGHTER_SORTIE_EFFICIENCY_FACTOR = mod_with_friend_eng_CARRIER_FIGHTER_SORTIE_EFFICIENCY_FACTOR
+    NAVAL_STRIKE_TARGETTING_FACTOR = mod_with_friend_eng_NAVAL_STRIKE_TARGETTING_FACTOR #
+    NAVAL_STRIKE_ATTACK_FACTOR = mod_with_friend_eng_NAVAL_STRIKE_ATTACK_FACTOR
+}
+
+
+dam_modifier = { #大坝
+    enable = {
+        always = yes
+    }
+
+    icon = GFX_modifiers_SOV_civilian_labor_in_defense
+    
+    state_production_speed_buildings_factor = 0.25
+	local_building_slots_factor = 0.25
+	state_resources_factor = 0.25
+	local_factories = 0.25
+    local_factory_energy_consumption = -0.25
+    state_resource_cost_steel = 3
+}
+
+
+bunker_modifier = { #要塞化
+    enable = {
+        always = yes
+    }
+
+    attacker_modifier = yes
+	remove_trigger = {
+		ROOT = {
+			not = {
+				is_owned_by = SOV
+			}
+		}
+	}
+
+    icon = GFX_modifiers_SOV_civilian_labor_in_defense
+    
+    army_attack_factor = -0.25
+    army_defence_factor = -0.25
+    army_speed_factor = -0.1
+    army_core_defence_factor = 0.5
+    army_core_attack_factor = 0.35
+    cas_damage_reduction = 0.5
+    ground_attack_factor = -0.3
+    air_cas_efficiency = -0.5
+    resistance_target = 0.15
+    resistance_decay = -0.15
+    local_building_slots_factor = -0.1
+    local_factories = -0.1
+    state_resources_factor = -0.15
+
+}
+
+
+
+mod_with_fra_the_five_plan = { #法国工业计划（法国）
+    enable = {
+        always = yes
+    }
+
+    icon = GFX_idea_GER_wirtschaftswunder
+    consumer_goods_factor = mod_with_fra_the_five_plan_consumer_goods_factor
+    stability_factor = mod_with_fra_the_five_plan_stability_factor
+    war_support_factor = mod_with_fra_the_five_plan_war_support_factor
+
+    production_speed_industrial_complex_factor = mod_with_fra_the_five_plan_production_speed_industrial_complex_factor
+    production_speed_arms_factory_factor = mod_with_fra_the_five_plan_production_speed_arms_factory_factor
+    production_speed_infrastructure_factor = mod_with_fra_the_five_plan_production_speed_infrastructure_factor
+    production_speed_rail_way_factor = mod_with_fra_the_five_plan_production_speed_rail_way_factor
+    production_speed_bunker_factor = mod_with_fra_the_five_plan_production_speed_bunker_factor
+
+    industrial_capacity_factory = mod_with_fra_the_five_plan_industrial_capacity_factory
+    industrial_capacity_dockyard = mod_with_fra_the_five_plan_industrial_capacity_dockyard
+    local_resources_factor = mod_with_fra_the_five_plan_local_resources_factor
+    research_speed_factor = mod_with_fra_the_five_plan_research_speed_factor
+
+    production_factory_start_efficiency_factor = mod_with_fra_the_five_plan_production_factory_start_efficiency_factor
+    production_factory_max_efficiency_factor = mod_with_fra_the_five_plan_production_factory_max_efficiency_factor
+    production_factory_efficiency_gain_factor = mod_with_fra_the_five_plan_production_factory_efficiency_gain_factor
+    line_change_production_efficiency_factor = mod_with_fra_the_five_plan_line_change_production_efficiency_factor
+    production_lack_of_resource_penalty_factor = mod_with_fra_the_five_plan_production_lack_of_resource_penalty_factor
+
+
+
+}
+
+
+mod_with_the_fra_army = { #法兰西陆军
+    enable = {
+        always = yes
+    }
+
+    icon = GFX_idea_NORDIC_army_communist
+    army_attack_factor = mod_with_the_fra_army_army_attack_factor
+    army_defence_factor = mod_with_the_fra_army_army_defence_factor
+    army_core_attack_factor = mod_with_the_fra_army_army_core_attack_factor
+    army_core_defence_factor = mod_with_the_fra_army_army_core_defence_factor
+    army_infantry_attack_factor = mod_with_the_fra_army_army_infantry_attack_factor
+    army_infantry_defence_factor = mod_with_the_fra_army_army_infantry_defence_factor
+    army_artillery_attack_factor = mod_with_the_fra_army_army_artillery_attack_factor
+    army_artillery_defence_factor = mod_with_the_fra_army_army_artillery_defence_factor
+    mechanized_attack_factor = mod_with_the_fra_army_mechanized_attack_factor
+    mechanized_defence_factor = mod_with_the_fra_army_mechanized_defence_factor
+
+    army_org_factor = mod_with_the_fra_army_army_org_factor
+    max_command_power = mod_with_the_fra_army_max_command_power
+    command_power_gain = mod_with_the_fra_army_command_power_gain
+    army_strength_factor = mod_with_the_fra_army_army_strength_factor
+    max_dig_in_factor = mod_with_the_fra_army_max_dig_in_factor
+    dig_in_speed_factor = mod_with_the_fra_army_dig_in_speed_factor
+    org_loss_when_moving = mod_with_the_fra_army_org_loss_when_moving_factor
+    army_morale_factor = mod_with_the_fra_army_army_morale_factor
+    land_reinforce_rate = mod_with_the_fra_army_land_reinforce_rate
+    terrain_penalty_reduction = mod_with_the_fra_army_terrain_penalty_reduction
+    experience_loss_factor = mod_with_the_fra_army_experience_loss_factor
+    recon_factor = mod_with_the_fra_army_recon_factor
+    training_time_army_factor = mod_with_the_fra_army_training_time_army_factor
+    planning_speed = mod_with_the_fra_army_planning_speed
+    max_planning_factor = mod_with_the_fra_army_max_planning_factor
+
+    production_speed_bunker_factor = mod_with_the_fra_army_production_speed_bunker_factor
+    production_speed_coastal_bunker_factor = mod_with_the_fra_army_production_speed_coastal_bunker_factor
+
+    conscription = mod_with_the_fra_army_conscription
+    conscription_factor = mod_with_the_fra_army_conscription_factor
+
+    army_bonus_air_superiority_factor = mod_with_the_fra_army_army_bonus_air_superiority_factor
+    enemy_army_bonus_air_superiority_factor = mod_with_the_fra_army_enemy_army_bonus_air_superiority_factor
+    air_cas_efficiency = mod_with_the_fra_army_air_cas_efficiency
+    air_agility_factor = mod_with_the_fra_army_air_agility_factor
+
+
+
+
+}
+
+mod_with_fra_air = { #法国空军
+    enable = {
+        always = yes
+    }
+
+    icon = GFX_idea_KAT_katangese_airforce
+
+    experience_gain_air_factor = mod_with_fra_air_experience_gain_air_factor
+    AIR_ATTACK_FACTOR = mod_with_fra_air_AIR_ATTACK_FACTOR
+    AIR_DEFENCE_FACTOR = mod_with_fra_air_AIR_DEFENCE_FACTOR
+    AIR_AGILITY_FACTOR = mod_with_fra_air_AIR_AGILITY_FACTOR
+    AIR_ACCIDENTS_FACTOR = mod_with_fra_air_AIR_ACCIDENTS_FACTOR
+    AIR_MAX_SPEED_FACTOR = mod_with_fra_air_AIR_MAX_SPEED_FACTOR
+    AIR_RANGE_FACTOR = mod_with_fra_air_AIR_RANGE_FACTOR
+    AIR_ACE_GENERATION_CHANCE_FACTOR = mod_with_fra_air_AIR_ACE_GENERATION_CHANCE_FACTOR
+    AIR_TRAINING_XP_FACTOR = mod_with_fra_air_AIR_TRAINING_XP_FACTOR
+    AIR_MISSION_XP_FACTOR = mod_with_fra_air_AIR_MISSION_XP_FACTOR
+    AIR_WING_XP_LOSS_WHEN_KILLED_FACTOR = mod_with_fra_air_AIR_WING_XP_LOSS_WHEN_KILLED_FACTOR
+    ARMY_BONUS_AIR_SUPERIORITY_FACTOR = mod_with_fra_air_ARMY_BONUS_AIR_SUPERIORITY_FACTOR
+    air_home_defence_factor = mod_with_fra_air_air_home_defence_factor
+    air_power_projection_factor = mod_with_fra_air_air_power_projection_factor
+    ground_attack_factor = mod_with_fra_air_ground_attack_factor
+    air_superiority_efficiency = mod_with_fra_air_air_superiority_efficiency
+    air_cas_efficiency = mod_with_fra_air_air_cas_efficiency
+
+}
+
+mod_with_fra_navy = { #法国海军
+    enable = {
+        always = yes
+    }
+
+    icon = GFX_idea_kure_naval_arsenal
+
+    NAVAL_SPEED_FACTOR = mod_with_fra_navy_NAVAL_SPEED_FACTOR
+    TRAINING_TIME_NAVY_FACTOR = mod_with_fra_navy_TRAINING_TIME_NAVY_FACTOR
+    NAVY_ORG_FACTOR = mod_with_fra_navy_NAVY_ORG_FACTOR
+    NAVAL_MORALE_FACTOR = mod_with_fra_navy_NAVAL_MORALE_FACTOR
+    NAVY_ANTI_AIR_ATTACK_FACTOR = mod_with_fra_navy_NAVY_ANTI_AIR_ATTACK_FACTOR
+    NAVAL_DAMAGE_FACTOR = mod_with_fra_navy_NAVAL_DAMAGE_FACTOR
+    NAVAL_DEFENSE_FACTOR = mod_with_fra_navy_NAVAL_DEFENSE_FACTOR
+    NAVY_MAX_RANGE_FACTOR = mod_with_fra_navy_NAVY_MAX_RANGE_FACTOR
+    NAVAL_TORPEDO_COOLDOWN_FACTOR = mod_with_fra_navy_NAVAL_TORPEDO_COOLDOWN_FACTOR # 鱼雷
+    NAVAL_TORPEDO_HIT_CHANCE_FACTOR = mod_with_fra_navy_NAVAL_TORPEDO_HIT_CHANCE_FACTOR
+    NAVAL_TORPEDO_REVEAL_CHANCE_FACTOR = mod_with_fra_navy_NAVAL_TORPEDO_REVEAL_CHANCE_FACTOR
+    NAVAL_MINES_DAMAGE_FACTOR = mod_with_fra_navy_NAVAL_MINES_DAMAGE_FACTOR # 水雷
+    MINES_SWEEPING_BY_FLEETS_FACTOR = mod_with_fra_navy_MINES_SWEEPING_BY_FLEETS_FACTOR
+    NAVY_CAPITAL_SHIP_ATTACK_FACTOR = mod_with_fra_navy_NAVY_CAPITAL_SHIP_ATTACK_FACTOR # 主力
+    NAVY_CAPITAL_SHIP_DEFENCE_FACTOR = mod_with_fra_navy_NAVY_CAPITAL_SHIP_DEFENCE_FACTOR
+    NAVY_SCREEN_ATTACK_FACTOR = mod_with_fra_navy_NAVY_SCREEN_ATTACK_FACTOR # 屏卫舰
+    NAVY_SCREEN_DEFENCE_FACTOR = mod_with_fra_navy_NAVY_SCREEN_DEFENCE_FACTOR
+    CARRIER_SORTIE_EFFICIENCY_FACTOR = mod_with_fra_navy_CARRIER_SORTIE_EFFICIENCY_FACTOR # 航母
+    CARRIER_CAPACITY_PENALTY_REDUCTION = mod_with_fra_navy_CARRIER_CAPACITY_PENALTY_REDUCTION
+    CARRIER_FIGHTER_SORTIE_EFFICIENCY_FACTOR = mod_with_fra_navy_CARRIER_FIGHTER_SORTIE_EFFICIENCY_FACTOR
+    NAVAL_STRIKE_TARGETTING_FACTOR = mod_with_fra_navy_NAVAL_STRIKE_TARGETTING_FACTOR #
+    NAVAL_STRIKE_ATTACK_FACTOR = mod_with_fra_navy_NAVAL_STRIKE_ATTACK_FACTOR
+
+    naval_invasion_capacity = mod_with_fra_navy_naval_invasion_capacity #登陆部队上限
+    invasion_preparation = mod_with_fra_navy_invasion_preparation #登陆准备时间
+    naval_invasion_penalty = mod_with_fra_navy_naval_invasion_penalty #登陆惩罚
+    amphibious_invasion_defence = mod_with_fra_navy_amphibious_invasion_defence
+
+}
+
+
+mod_with_eng_army = { #英国皇家陆军
+    enable = {
+        always = yes
+    }
+
+
+    icon = GFX_idea_BOL_plurinational_democracy
+
+    army_attack_factor = mod_with_the_eng_army_army_attack_factor
+    army_defence_factor = mod_with_the_eng_army_army_defence_factor
+    army_core_attack_factor = mod_with_the_eng_army_army_core_attack_factor
+    army_core_defence_factor = mod_with_the_eng_army_army_core_defence_factor
+    army_infantry_attack_factor = mod_with_the_eng_army_army_infantry_attack_factor
+    army_infantry_defence_factor = mod_with_the_eng_army_army_infantry_defence_factor
+    army_artillery_attack_factor = mod_with_the_eng_army_army_artillery_attack_factor
+    army_artillery_defence_factor = mod_with_the_eng_army_army_artillery_defence_factor
+    army_armor_attack_factor = mod_with_the_eng_army_army_armor_attack_factor
+    army_armor_defence_factor = mod_with_the_eng_army_army_armor_defence_factor
+    army_armor_speed_factor = mod_with_the_eng_army_army_armor_speed_factor
+    mechanized_attack_factor = mod_with_the_eng_army_mechanized_attack_factor
+    mechanized_defence_factor = mod_with_the_eng_army_mechanized_defence_factor
+    motorized_attack_factor = mod_with_the_eng_army_motorized_attack_factor
+    motorized_defence_factor = mod_with_the_eng_army_motorized_defence_factor
+    SPECIAL_FORCES_ATTACK_FACTOR = mod_with_the_eng_army_SPECIAL_FORCES_ATTACK_FACTOR 
+    SPECIAL_FORCES_DEFENCE_FACTOR = mod_with_the_eng_army_SPECIAL_FORCES_DEFENCE_FACTOR  
+
+
+
+    army_org_factor = mod_with_the_eng_army_army_org_factor
+    max_command_power = mod_with_the_eng_army_max_command_power
+    command_power_gain = mod_with_the_eng_army_command_power_gain
+    army_strength_factor = mod_with_the_eng_army_army_strength_factor
+    max_dig_in_factor = mod_with_the_eng_army_max_dig_in_factor
+    dig_in_speed_factor = mod_with_the_eng_army_dig_in_speed_factor
+    org_loss_when_moving = mod_with_the_eng_army_org_loss_when_moving_factor
+    army_morale_factor = mod_with_the_eng_army_army_morale_factor
+    land_reinforce_rate = mod_with_the_eng_army_land_reinforce_rate
+    terrain_penalty_reduction = mod_with_the_eng_army_terrain_penalty_reduction
+    experience_loss_factor = mod_with_the_eng_army_experience_loss_factor
+    recon_factor = mod_with_the_eng_army_recon_factor
+    training_time_army_factor = mod_with_the_eng_army_training_time_army_factor
+    planning_speed = mod_with_the_eng_army_planning_speed
+    max_planning_factor = mod_with_the_eng_army_max_planning_factor 
+    conscription = mod_with_the_eng_army_conscription
+    conscription_factor = mod_with_the_eng_army_conscription_factor
+
+    army_bonus_air_superiority_factor = mod_with_the_eng_army_army_bonus_air_superiority_factor
+    enemy_army_bonus_air_superiority_factor = mod_with_the_eng_army_enemy_army_bonus_air_superiority_factor
+
+    ACCLIMATIZATION_HOT_CLIMATE_GAIN_FACTOR = mod_with_the_eng_army_ACCLIMATIZATION_HOT_CLIMATE_GAIN_FACTOR
+    acclimatization_cold_climate_gain_factor = mod_with_the_eng_army_acclimatization_cold_climate_gain_factor
+
+    supply_consumption_factor = mod_with_eng_army_supply_consumption_factor
+    supply_node_range = mod_with_eng_army_supply_node_range
+    
+
+}
+
+
+mod_with_usa_army = { #美国陆军
+    enable = {
+        always = yes
+    }
+
+
+    icon = GFX_idea_IRQ_british_overseas_airway_corporation
+
+    army_attack_factor = mod_with_the_usa_army_army_attack_factor
+    army_defence_factor = mod_with_the_usa_army_army_defence_factor
+    army_core_attack_factor = mod_with_the_usa_army_army_core_attack_factor
+    army_core_defence_factor = mod_with_the_usa_army_army_core_defence_factor
+    army_infantry_attack_factor = mod_with_the_usa_army_army_infantry_attack_factor
+    army_infantry_defence_factor = mod_with_the_usa_army_army_infantry_defence_factor
+    army_artillery_attack_factor = mod_with_the_usa_army_army_artillery_attack_factor
+    army_artillery_defence_factor = mod_with_the_usa_army_army_artillery_defence_factor
+    army_armor_attack_factor = mod_with_the_usa_army_army_armor_attack_factor
+    army_armor_defence_factor = mod_with_the_usa_army_army_armor_defence_factor
+    army_armor_speed_factor = mod_with_the_usa_army_army_armor_speed_factor
+    mechanized_attack_factor = mod_with_the_usa_army_mechanized_attack_factor
+    mechanized_defence_factor = mod_with_the_usa_army_mechanized_defence_factor
+    motorized_attack_factor = mod_with_the_usa_army_motorized_attack_factor
+    motorized_defence_factor = mod_with_the_usa_army_motorized_defence_factor
+    SPECIAL_FORCES_ATTACK_FACTOR = mod_with_the_usa_army_SPECIAL_FORCES_ATTACK_FACTOR 
+    SPECIAL_FORCES_DEFENCE_FACTOR = mod_with_the_usa_army_SPECIAL_FORCES_DEFENCE_FACTOR  
+
+
+
+    army_org_factor = mod_with_the_usa_army_army_org_factor
+    max_command_power = mod_with_the_usa_army_max_command_power
+    command_power_gain = mod_with_the_usa_army_command_power_gain
+    army_strength_factor = mod_with_the_usa_army_army_strength_factor
+    max_dig_in_factor = mod_with_the_usa_army_max_dig_in_factor
+    dig_in_speed_factor = mod_with_the_usa_army_dig_in_speed_factor
+    org_loss_when_moving = mod_with_the_usa_army_org_loss_when_moving_factor
+    army_morale_factor = mod_with_the_usa_army_army_morale_factor
+    land_reinforce_rate = mod_with_the_usa_army_land_reinforce_rate
+    terrain_penalty_reduction = mod_with_the_usa_army_terrain_penalty_reduction
+    experience_loss_factor = mod_with_the_usa_army_experience_loss_factor
+    recon_factor = mod_with_the_usa_army_recon_factor
+    training_time_army_factor = mod_with_the_usa_army_training_time_army_factor
+    planning_speed = mod_with_the_usa_army_planning_speed
+    max_planning_factor = mod_with_the_usa_army_max_planning_factor 
+    conscription = mod_with_the_usa_army_conscription
+    conscription_factor = mod_with_the_usa_army_conscription_factor
+
+    army_bonus_air_superiority_factor = mod_with_the_usa_army_army_bonus_air_superiority_factor
+    enemy_army_bonus_air_superiority_factor = mod_with_the_usa_army_enemy_army_bonus_air_superiority_factor
+
+    ACCLIMATIZATION_HOT_CLIMATE_GAIN_FACTOR = mod_with_the_usa_army_ACCLIMATIZATION_HOT_CLIMATE_GAIN_FACTOR
+    acclimatization_cold_climate_gain_factor = mod_with_the_usa_army_acclimatization_cold_climate_gain_factor
+
+    supply_consumption_factor = mod_with_usa_army_supply_consumption_factor
+    supply_node_range = mod_with_usa_army_supply_node_range
+    
+
+}
+
+mod_with_eng_air = { #英国皇家空军
+    enable = {
+        always = yes
+    }
+
+    icon = GFX_idea_BALTIC_RAF
+
+    experience_gain_air_factor = mod_with_eng_air_experience_gain_air_factor
+    AIR_ATTACK_FACTOR = mod_with_eng_air_AIR_ATTACK_FACTOR
+    AIR_DEFENCE_FACTOR = mod_with_eng_air_AIR_DEFENCE_FACTOR
+    AIR_AGILITY_FACTOR = mod_with_eng_air_AIR_AGILITY_FACTOR
+    AIR_ACCIDENTS_FACTOR = mod_with_eng_air_AIR_ACCIDENTS_FACTOR
+    AIR_MAX_SPEED_FACTOR = mod_with_eng_air_AIR_MAX_SPEED_FACTOR
+    AIR_RANGE_FACTOR = mod_with_eng_air_AIR_RANGE_FACTOR
+    AIR_ACE_GENERATION_CHANCE_FACTOR = mod_with_eng_air_AIR_ACE_GENERATION_CHANCE_FACTOR
+    AIR_TRAINING_XP_FACTOR = mod_with_eng_air_AIR_TRAINING_XP_FACTOR
+    AIR_MISSION_XP_FACTOR = mod_with_eng_air_AIR_MISSION_XP_FACTOR
+    AIR_WING_XP_LOSS_WHEN_KILLED_FACTOR = mod_with_eng_air_AIR_WING_XP_LOSS_WHEN_KILLED_FACTOR
+    ARMY_BONUS_AIR_SUPERIORITY_FACTOR = mod_with_eng_air_ARMY_BONUS_AIR_SUPERIORITY_FACTOR
+    air_home_defence_factor = mod_with_eng_air_air_home_defence_factor
+    air_power_projection_factor = mod_with_eng_air_air_power_projection_factor
+    ground_attack_factor = mod_with_eng_air_ground_attack_factor
+    air_superiority_efficiency = mod_with_eng_air_air_superiority_efficiency
+    air_cas_efficiency = mod_with_eng_air_air_cas_efficiency
+
+}
+
+mod_with_usa_air = { #美国空军
+    enable = {
+        always = yes
+    }
+
+
+    icon = GFX_idea_CHL_fuerza_aerea_de_chile
+
+    experience_gain_air_factor = mod_with_usa_air_experience_gain_air_factor
+    AIR_ATTACK_FACTOR = mod_with_usa_air_AIR_ATTACK_FACTOR
+    AIR_DEFENCE_FACTOR = mod_with_usa_air_AIR_DEFENCE_FACTOR
+    AIR_AGILITY_FACTOR = mod_with_usa_air_AIR_AGILITY_FACTOR
+    AIR_ACCIDENTS_FACTOR = mod_with_usa_air_AIR_ACCIDENTS_FACTOR
+    AIR_MAX_SPEED_FACTOR = mod_with_usa_air_AIR_MAX_SPEED_FACTOR
+    AIR_RANGE_FACTOR = mod_with_usa_air_AIR_RANGE_FACTOR
+    AIR_ACE_GENERATION_CHANCE_FACTOR = mod_with_usa_air_AIR_ACE_GENERATION_CHANCE_FACTOR
+    AIR_TRAINING_XP_FACTOR = mod_with_usa_air_AIR_TRAINING_XP_FACTOR
+    AIR_MISSION_XP_FACTOR = mod_with_usa_air_AIR_MISSION_XP_FACTOR
+    AIR_WING_XP_LOSS_WHEN_KILLED_FACTOR = mod_with_usa_air_AIR_WING_XP_LOSS_WHEN_KILLED_FACTOR
+    ARMY_BONUS_AIR_SUPERIORITY_FACTOR = mod_with_usa_air_ARMY_BONUS_AIR_SUPERIORITY_FACTOR
+    air_home_defence_factor = mod_with_usa_air_air_home_defence_factor
+    air_power_projection_factor = mod_with_usa_air_air_power_projection_factor
+    ground_attack_factor = mod_with_usa_air_ground_attack_factor
+    air_superiority_efficiency = mod_with_usa_air_air_superiority_efficiency
+    air_cas_efficiency = mod_with_usa_air_air_cas_efficiency
+
+}
+
+mod_with_eng_navy = { #英国皇家海军
+    enable = {
+        always = yes
+    }
+
+
+
+    icon = GFX_idea_DEN_sovaernet_3
+
+    NAVAL_SPEED_FACTOR = mod_with_eng_navy_NAVAL_SPEED_FACTOR
+    TRAINING_TIME_NAVY_FACTOR = mod_with_eng_navy_TRAINING_TIME_NAVY_FACTOR
+    NAVY_ORG_FACTOR = mod_with_eng_navy_NAVY_ORG_FACTOR
+    NAVAL_MORALE_FACTOR = mod_with_eng_navy_NAVAL_MORALE_FACTOR
+    NAVY_ANTI_AIR_ATTACK_FACTOR = mod_with_eng_navy_NAVY_ANTI_AIR_ATTACK_FACTOR
+    NAVAL_DAMAGE_FACTOR = mod_with_eng_navy_NAVAL_DAMAGE_FACTOR
+    NAVAL_DEFENSE_FACTOR = mod_with_eng_navy_NAVAL_DEFENSE_FACTOR
+    NAVAL_TORPEDO_COOLDOWN_FACTOR = mod_with_eng_navy_NAVAL_TORPEDO_COOLDOWN_FACTOR # 鱼雷
+    NAVAL_TORPEDO_HIT_CHANCE_FACTOR = mod_with_eng_navy_NAVAL_TORPEDO_HIT_CHANCE_FACTOR
+    NAVAL_TORPEDO_REVEAL_CHANCE_FACTOR = mod_with_eng_navy_NAVAL_TORPEDO_REVEAL_CHANCE_FACTOR
+    NAVAL_MINES_DAMAGE_FACTOR = mod_with_eng_navy_NAVAL_MINES_DAMAGE_FACTOR # 水雷
+    MINES_SWEEPING_BY_FLEETS_FACTOR = mod_with_eng_navy_MINES_SWEEPING_BY_FLEETS_FACTOR
+    NAVY_CAPITAL_SHIP_ATTACK_FACTOR = mod_with_eng_navy_NAVY_CAPITAL_SHIP_ATTACK_FACTOR # 主力
+    NAVY_CAPITAL_SHIP_DEFENCE_FACTOR = mod_with_eng_navy_NAVY_CAPITAL_SHIP_DEFENCE_FACTOR
+    NAVY_SCREEN_ATTACK_FACTOR = mod_with_eng_navy_NAVY_SCREEN_ATTACK_FACTOR # 屏卫舰
+    NAVY_SCREEN_DEFENCE_FACTOR = mod_with_eng_navy_NAVY_SCREEN_DEFENCE_FACTOR
+    CARRIER_SORTIE_EFFICIENCY_FACTOR = mod_with_eng_navy_CARRIER_SORTIE_EFFICIENCY_FACTOR # 航母
+    CARRIER_CAPACITY_PENALTY_REDUCTION = mod_with_eng_navy_CARRIER_CAPACITY_PENALTY_REDUCTION
+    CARRIER_FIGHTER_SORTIE_EFFICIENCY_FACTOR = mod_with_eng_navy_CARRIER_FIGHTER_SORTIE_EFFICIENCY_FACTOR
+    NAVAL_STRIKE_TARGETTING_FACTOR = mod_with_eng_navy_NAVAL_STRIKE_TARGETTING_FACTOR #
+    NAVAL_STRIKE_ATTACK_FACTOR = mod_with_eng_navy_NAVAL_STRIKE_ATTACK_FACTOR
+
+    naval_invasion_capacity = mod_with_eng_navy_naval_invasion_capacity #登陆部队上限
+    invasion_preparation = mod_with_eng_navy_invasion_preparation #登陆准备时间
+    naval_invasion_penalty = mod_with_eng_navy_naval_invasion_penalty #登陆惩罚
+    amphibious_invasion_defence = mod_with_eng_navy_amphibious_invasion_defence
+
+
+}
+
+
+mod_with_usa_navy = { #美利坚海军
+    enable = {
+        always = yes
+    }
+
+
+    icon = GFX_idea_Cockatoo_doe
+
+    NAVAL_SPEED_FACTOR = mod_with_usa_navy_NAVAL_SPEED_FACTOR
+    TRAINING_TIME_NAVY_FACTOR = mod_with_usa_navy_TRAINING_TIME_NAVY_FACTOR
+    NAVY_ORG_FACTOR = mod_with_usa_navy_NAVY_ORG_FACTOR
+    NAVAL_MORALE_FACTOR = mod_with_usa_navy_NAVAL_MORALE_FACTOR
+    NAVY_ANTI_AIR_ATTACK_FACTOR = mod_with_usa_navy_NAVY_ANTI_AIR_ATTACK_FACTOR
+    NAVAL_DAMAGE_FACTOR = mod_with_usa_navy_NAVAL_DAMAGE_FACTOR
+    NAVAL_DEFENSE_FACTOR = mod_with_usa_navy_NAVAL_DEFENSE_FACTOR
+    NAVAL_TORPEDO_COOLDOWN_FACTOR = mod_with_usa_navy_NAVAL_TORPEDO_COOLDOWN_FACTOR # 鱼雷
+    NAVAL_TORPEDO_HIT_CHANCE_FACTOR = mod_with_usa_navy_NAVAL_TORPEDO_HIT_CHANCE_FACTOR
+    NAVAL_TORPEDO_REVEAL_CHANCE_FACTOR = mod_with_usa_navy_NAVAL_TORPEDO_REVEAL_CHANCE_FACTOR
+    NAVAL_MINES_DAMAGE_FACTOR = mod_with_usa_navy_NAVAL_MINES_DAMAGE_FACTOR # 水雷
+    MINES_SWEEPING_BY_FLEETS_FACTOR = mod_with_usa_navy_MINES_SWEEPING_BY_FLEETS_FACTOR
+    NAVY_CAPITAL_SHIP_ATTACK_FACTOR = mod_with_usa_navy_NAVY_CAPITAL_SHIP_ATTACK_FACTOR # 主力
+    NAVY_CAPITAL_SHIP_DEFENCE_FACTOR = mod_with_usa_navy_NAVY_CAPITAL_SHIP_DEFENCE_FACTOR
+    NAVY_SCREEN_ATTACK_FACTOR = mod_with_usa_navy_NAVY_SCREEN_ATTACK_FACTOR # 屏卫舰
+    NAVY_SCREEN_DEFENCE_FACTOR = mod_with_usa_navy_NAVY_SCREEN_DEFENCE_FACTOR
+    CARRIER_SORTIE_EFFICIENCY_FACTOR = mod_with_usa_navy_CARRIER_SORTIE_EFFICIENCY_FACTOR # 航母
+    CARRIER_CAPACITY_PENALTY_REDUCTION = mod_with_usa_navy_CARRIER_CAPACITY_PENALTY_REDUCTION
+    CARRIER_FIGHTER_SORTIE_EFFICIENCY_FACTOR = mod_with_usa_navy_CARRIER_FIGHTER_SORTIE_EFFICIENCY_FACTOR
+    NAVAL_STRIKE_TARGETTING_FACTOR = mod_with_usa_navy_NAVAL_STRIKE_TARGETTING_FACTOR #
+    NAVAL_STRIKE_ATTACK_FACTOR = mod_with_usa_navy_NAVAL_STRIKE_ATTACK_FACTOR
+
+    naval_invasion_capacity = mod_with_usa_navy_naval_invasion_capacity #登陆部队上限
+    invasion_preparation = mod_with_usa_navy_invasion_preparation #登陆准备时间
+    naval_invasion_penalty = mod_with_usa_navy_naval_invasion_penalty #登陆惩罚
+    amphibious_invasion_defence = mod_with_usa_navy_amphibious_invasion_defence
+
+}
+
+mod_with_chi = { #万众一心
+    enable = {
+        always = yes
+    }
+
+
+    icon = GFX_idea_GER_holy_roman_empire_of_the_german_nation
+
+    army_attack_factor = mod_with_chi_army_attack_factor
+    army_defence_factor = mod_with_chi_army_defence_factor
+    breakthrough_factor = mod_with_chi_breakthrough_factor
+    army_core_attack_factor = mod_with_chi_army_core_attack_factor
+    army_core_defence_factor = mod_with_chi_army_core_defence_factor
+    army_org_factor = mod_with_chi_army_org_factor
+    army_strength_factor = mod_with_chi_army_strength_factor
+    industrial_capacity_factory = mod_with_chi_industrial_capacity_factory
+    land_reinforce_rate = mod_with_chi_land_reinforce_rate
+    army_morale_factor = mod_with_chi_army_morale_factor
+
+}
+
+
+

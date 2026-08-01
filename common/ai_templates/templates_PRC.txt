@@ -1,0 +1,263 @@
+
+infantry_PRC = {
+
+	available_for = {
+		PRC
+	}
+	
+	role = infantry
+	
+	upgrade_prio = {
+		factor = 2
+
+		modifier = {
+			factor = 40
+			OR = {
+				NOT = {
+					PRC = { has_war_with = USA }
+				}
+				
+			}
+		}
+	}
+	
+	infantry_default_PRC = {
+	
+		upgrade_prio = {
+			factor = 5
+
+			modifier = {
+				factor = 2
+				OR = {
+					CHI = { has_capitulated = no }
+					country_exists = CHI
+				}
+			}
+		}
+		
+		target_template = {
+		
+			support = {
+				engineer = 1
+				recon = 1
+				artillery = 1
+				#logistics_company = 1
+			}
+			
+			regiments = {
+				infantry = 10
+				artillery_brigade = 1
+			}
+
+			regimental_support = {
+				fire_support = 1
+			}
+		}
+		
+		#replace_at_match = 0.6
+		#replace_with = infantry_PRC_2
+		#target_min_match = 0.5
+	}	
+
+	infantry_PRC_2 = {
+	
+		upgrade_prio = {
+			factor = 40
+
+			modifier = {
+				factor = 0
+				
+				date < 1940.1.1
+				CHI = {
+					is_ai = yes
+					has_capitulated = no
+					exists = yes
+					NOT = { is_subject_of = PRC	}
+				}
+			}
+		}
+		
+		# more expensive infantry template. we save it for later
+		enable = {
+			#date > 1940.1.1
+			CHI = {
+				OR = {
+					is_ai = no
+					has_capitulated = yes
+					exists = no
+					is_subject_of = PRC
+				}
+			}
+		}
+
+		target_template = {
+			
+			support = {
+				engineer = 1
+				recon = 1
+				artillery = 1
+				field_hospital = 1
+				logistics_company = 1
+			}
+
+			regimental_support = {
+				fire_support = 3
+				anti_tank_battery = 1
+				anti_air_battery = 1
+			}
+			
+			regiments = {
+				infantry = 12
+				artillery_brigade = 3
+				anti_air_brigade = 1
+				anti_tank_brigade = 1
+			}
+		}
+		
+	}	
+}
+
+armor_PRC = {
+
+	available_for = {
+		PRC
+	}
+	
+	role = armor
+
+	upgrade_prio = {
+		factor = 30
+		
+		modifier = {
+			factor = 0
+			not = {
+				has_tech = basic_medium_tank_chassis
+			}
+		}
+		
+		modifier = {
+			factor = 2
+			OR = {
+				has_tech = main_battle_tank
+				has_tech = main_battle_tank_chassis
+			}
+		}
+	}
+	
+	light_armor_default_PRC = {
+	
+		upgrade_prio = {
+			factor = 4
+
+			modifier = {
+				factor = 4
+			}
+		}
+		
+		target_template = {
+			support = {
+				engineer = 1
+				recon = 1
+				artillery = 1
+                anti_air = 1
+                anti_tank = 1
+			}
+			
+			regiments = {
+				light_armor = 5
+				motorized = 5
+			}
+
+			regimental_support = {
+				field_guns = 2
+			}
+		}
+		
+		replace_at_match = 0.4
+		replace_with = medium_armor_default_PRC
+		target_min_match = 0.5
+	}
+
+
+	medium_armor_default_PRC = {
+	
+		upgrade_prio = {
+			factor = 2
+
+			modifier = {
+				factor = 10
+			}
+			
+			modifier = {
+				factor = 30
+			    date > 1939.1.1	
+				has_tech = basic_medium_tank_chassis
+				NOT = {
+					has_tech = main_battle_tank_chassis
+				}
+			}
+		}
+		
+		target_template = {
+			
+			support = {
+				engineer = 1
+				recon = 1
+				field_hospital = 1
+				logistics_company = 1
+				anti_air = 1
+			}
+			
+			regiments = {
+				medium_armor = 9
+				infantry = 8
+				mot_anti_tank_brigade = 1
+			}
+
+			regimental_support = {
+				field_guns = 2
+			}
+		}
+
+		replace_at_match = 0.95
+		replace_with = modern_armor_default_PRC
+		target_min_match = 0.5
+	}
+
+
+	modern_armor_default_PRC = {
+
+		upgrade_prio = {
+			factor = 2
+
+			modifier = {
+				factor = 30
+				has_tech = main_battle_tank_chassis
+			}
+		}
+		
+		target_template = {
+			
+			support = {
+				engineer = 1
+				recon = 1
+				field_hospital = 1
+				logistics_company = 1
+				anti_air = 1
+			}
+			
+			regiments = {
+				medium_armor = 9
+				infantry = 8
+				mot_anti_tank_brigade = 1
+			}
+
+			regimental_support = {
+				field_guns = 2
+				medium_tank_destroyer_support = 2
+				medium_sp_anti_air_support = 1
+			}
+		}
+		
+	}
+}
