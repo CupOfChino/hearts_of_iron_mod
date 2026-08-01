@@ -1,223 +1,105 @@
-Three Emperors' Alliance (Original Name: Vanilla Alternate History Path Optimization)
+[h1]三皇同盟 Three Emperors' Alliance[/h1]
 
-Based on the vanilla game, this mod modifies and enhances some of the more humorous and painful "reverse" (restoration) paths.
-
-Most of the text and translations come from Deepseek.
-
-Limited technical skills.
-
-[h1] Current Mod Version: 1.2.2 [/h1]
-
-Current update content:
-
-Adapted for the new game version.
-
-For more detailed changes, please check the changelog. Minor updates will only be recorded there.
+[b]GitHub 仓库[/b]：[url=https://github.com/CupOfChino/hearts_of_iron_mod]https://github.com/CupOfChino/hearts_of_iron_mod[/url]
+模组完整源码已上传至 GitHub，欢迎查看、下载与反馈。
 
 ==============================================================================
 
-[h1] Major Changes [/h1]
-[b] Nations [/b]
+[h1]世界线简介[/h1]
 
-Germany (Focus times reduced; some focus effects adjusted; buffs enhanced; a few new focuses added)
+欧洲的君主制反动势力重现天日，为成为世界霸主，组建了一个恐怖的军事集团。在外敌的威胁下，帝国主义列强也共同组建军事集团，抗衡欧洲出现的庞然大物。整个世界都处于战火的阴霾之下。
 
-Hungary (Focus times reduced; some focus effects adjusted; buffs enhanced; additional focuses added)
+表面团结的各国均暗怀鬼胎，一旦共同的威胁消失，那么他们互相就会成为彼此最大的威胁。最后的赢家永远只会有一个……
 
-France (Focus times reduced; military and industrial trees heavily reworked while retaining the vanilla basis; most focus effects strengthened; Napoleonic path receives more focuses; buffs enhanced; mutually exclusive focuses removed)
-
-UK, USA, and France each get a unique tri-service dynamic national spirit.
-
-Germany and the USSR get enhanced unique national spirits.
-
-[b] AI Adjustments [/b]
-
-AI focus selection adjusted for countries with modified focus trees.
-
-AI production lines optimized – they will prioritise medium tanks and aircraft.
-
-AI division templates optimised; final templates are 35/36 width, with a higher tendency to use armour divisions.
-
-[b] Final templates tend toward 8 motorised + 8 medium tanks + 2 medium tank destroyers. [/b]
-
-[b] German AI additionally has a tendency toward 8 motorised + 8 heavy tanks + 2 medium tank destroyers. [/b]
-
-[b] Overall difficulty is on the high side, but not as tough as dedicated AI‑enhancement mods. [/b]
-[h2] Since this is only tested by one person, difficulty may well have bugs. [/h2]
-[h3] If you find it too hard, a starter gift pack is available at game start. [/h3]
-
-[b] Building Adjustments [/b]
-
-Up to 20 civilian factories can be assigned to construct buildings.
-
-Infrastructure, civilian factories, military factories, etc., gain additional effects, but construction cost increases per level.
-
-Integrated building expansion mod – you can build steel mills, coal industrial bases, and other structures.
-
-Some building level caps are doubled (air bases 10 → 20, naval bases 10 → 20).
-
-[b] Other Adjustments [/b]
-
-Experience cap for all three services raised to 1000; navy production now has 150 slots.
-
-Many new decisions added to spend excess political power.
-
-Minor tweaks to industrial/electronic tech tree values; tech gaps between electronic techs widened.
-
-If I missed anything, it's because I forgot.
-
-====================================================================================
-
-[b] This mod can be used as a base mod; compatibility has been tested and is generally fine. [/b]
-[b] If you encounter bugs with other mods' focuses or decisions (e.g., Japanese Communist path), you can fix them by moving those mods above this one in the load order. [/b]
-
-====================================================================================
-
-[h1] New Timeline: The Three Emperors' Alliance [/h1]
-
-Prerequisites:
-
-Germany restores the monarchy.
-
-Hungary restores Austria‑Hungary.
-
-France restores the Bonaparte dynasty (recommended: enable AI historical focuses; strongly recommend Bulgaria historical, and UK non‑communist).
-
-(Do not play as any Commonwealth nation other than the UK – a decision will forcibly merge them into the UK.)
-
-Content:
-Germany, France, and Austria‑Hungary form the "Three Emperors' Alliance," while the UK, USA, and USSR form the "Triple Entente." The two blocs will clash around 1941.
-The war will span almost all of Europe, Africa, Asia, and the Americas.
-Both sides will field nearly a thousand divisions.
-The Alliance side is relatively easier but requires naval proficiency.
-The Entente side is harder (less work done) – massive land pressure, especially for the USSR, though the USSR is also very hard to capitulate.
-
-[b] Recommended Paths [/b]
-
-Select "Three Emperors' Alliance" and enable historical focuses.
-
-Germany → Restore Monarchy
-
-Hungary → Austria‑Hungary
-
-France → Bonaparte
-
-USSR → Historical
-
-UK → Non‑communist (best if neutral; avoid civil war – the "Blue" path will mess with guarantees and derail the scenario)
-
-USA → Historical
-
-======================================================================================
-
-[h2] Since personal testing can't cover everything, bugs are common. Feel free to leave comments if you encounter any issues. [/h2]
-
-Planned updates:
-
-Add an "Inferno" difficulty.
-
-WWII mission chain.
-
-[h1] Friends' Links [/h1]
-Building Expansion Mod (already integrated)
-https://steamcommunity.com/sharedfiles/filedetails/?id=2710808459
-Gochiusa (Is the Order a Rabbit?)
-https://steamcommunity.com/sharedfiles/filedetails/?id=3264244353
-AI Navy Production Optimisation (highly recommended)
-https://steamcommunity.com/sharedfiles/filedetails/?id=2944020541
-
-中文：
-
-以原版为基础对一些比较幽默和坐牢的倒车线进行修改加强
-
-文案和翻译大多来自Deepseek
-
-技术有限
-
-[h1] 当前模组版本：1.2.2 [/h1]
-
-当前模组版本更新内容：
-1.完成了新版本内容的适配
-
-更多详细更新内容请查看改动说明，小更新改动只会写入改动说明中
+该模组目前只是个人制作的半成品，各方面内容都等待补充和打磨。
 
 ==============================================================================
 
-[h1] 主要改动内容 [/h1]
-[b] 国家 [/b]
-德国（国策时间缩短，部分国策效果调整，buff增强，新增少量国策）
-匈牙利（国策时间缩短，部分国策效果调整，buff增强，增加部分国策）
-法国（国策时间缩短，军事线工业线在保留原版基础上大改；大部分国策效果加强，拿皇线国策增量，buff增强，取消互斥国策）
-英美法均获得专属的三军动态民族精神
-苏德的专属民族精神获得强化
+[h1]模组介绍[/h1]
 
+[h2]基础说明 [/h2]
+基于原版游戏，对一些比较幽默和坐牢的倒车线进行修改加强，可作基础模组游玩。文案与翻译大多来自 Deepseek，技术有限敬请包涵。
 
-[b] ai调整 [/b]
-已经修改国策的国家ai国策组调整
-ai产线得到优化，会重点倾向生产中坦和飞机
-ai编制优化，最终编制均为35/36宽，装甲师倾向提高
-[b] 编制最终会倾向8机8中坦2中坦歼 [/b]
-[b] 德国ai额外有8机8重坦2中坦歼 [/b] 的倾向
-[b] 整体难度偏高，但没有达到专业ai强化模组的强度 [/b]
-[h2] 由于是个人测试，难度这一块很可能会出现bug [/h2]
-[h3] 如果觉得难度偏高，在游戏开始时还有新手大礼包可以领取 [/h3]
+[h2]主要改动 [/h2]
+[list]
+[*][b]国家[/b]：德国 / 匈牙利 / 法国国策大幅优化加强，英美法获得专属三军动态民族精神，苏德专属民族精神强化
+[*][b]AI[/b]：重点生产中坦与飞机，编制优化为 35/36 宽并提高装甲师倾向
+[*][b]建筑[/b]：最多 20 民工造建筑，整合建筑拓展模组（炼钢厂、煤炭工业基地等），部分建筑等级上限翻倍
+[*][b]其他[/b]：1000 三军经验上限、150 海军槽、大量消耗政治点决议、工业电子科技微调
+[/list]
 
+[h2]新世界线玩法 [/h2]
+德国复辟帝制、匈牙利重建奥匈、法国波拿马王朝后，德法奥匈组成《三皇同盟》，英美苏组成《三国协约》，两大集团约在 1941 年开战，战场将涉及整个欧、非、亚、美洲，双方各出动近千师。推荐按德→重建帝制、匈→奥匈、法→波拿马、苏→史实、英→非红中立、美→史实来游玩。
 
-[b] 建筑调整 [/b]
-最多可以20个民工造建筑
-基础设施、民工、军工等均获得额外效果，但是造价每一级都会提高
-整合建筑拓展mod，可以建造炼钢厂、煤炭工业基地等建筑
-部分建筑等级上限翻倍（机场从10->20、海军基地10->20）
+[h3]难度提示 [/h3]
+同盟侧较易但吃海军；协约侧较难，陆战压力大（苏联极难被击败）。整体难度偏高，个人测试可能存在 bug，请见谅。
 
-[b] 其他调整 [/b]
-1000三军经验上限、海军150槽生产
-新增大量决议用于消耗多余政治点
-工业电子科技树的数值微调，电子科技树之间的代差加大
+[h2]兼容性与后续计划 [/h2]
+[list]
+[*]本模组可作为基底游玩，若其他模组国策 / 决议出现 bug，将其移动到本模组上方即可解决
+[*]后续计划：新增炼狱难度、二战任务链
+[/list]
 
-没提到的就是我忘了
+==============================================================================
 
-====================================================================================
+[h1]友情链接 [/h1]
+[list]
+[*][b]建筑拓展模组[/b]（已整合其中）：[url=https://steamcommunity.com/sharedfiles/filedetails/?id=2710808459]https://steamcommunity.com/sharedfiles/filedetails/?id=2710808459[/url]
+[*][b]点兔 Gochiusa (Is the Order a Rabbit?)[/b]：[url=https://steamcommunity.com/sharedfiles/filedetails/?id=3264244353]https://steamcommunity.com/sharedfiles/filedetails/?id=3264244353[/url]
+[*][b]AI 海军生产优化[/b]（极力推荐）：[url=https://steamcommunity.com/sharedfiles/filedetails/?id=2944020541]https://steamcommunity.com/sharedfiles/filedetails/?id=2944020541[/url]
+[/list]
 
-[b] 本模组完全可以当基底进行游玩，经过测试兼容性还是可以的 [/b] 
-[b] 如果遇上其他模组的国策或者决议之类的出现bug（如日共等），可以通过将其他模组位置移动到本模组上方变更加载顺序即可解决 [/b] 
+==============================================================================
 
-====================================================================================
+English:
 
-[h1] 新世界线：三皇同盟 [/h1] 
+[h1]Three Emperors' Alliance[/h1]
 
-前提：德国复辟帝制；匈牙利重建奥匈帝国；法国波拿马王朝（建议：勾选ai史实国策；强烈建议保加利亚史实线，英国非红线）
+[b]GitHub Repository[/b]: [url=https://github.com/CupOfChino/hearts_of_iron_mod]https://github.com/CupOfChino/hearts_of_iron_mod[/url]
+The full source of this mod is uploaded to GitHub for viewing, downloading and feedback.
 
-（请勿游玩英国除外的英联邦国家，会有决议强行被英国合并）
+==============================================================================
 
-内容：德法奥匈三国组成《三皇同盟》，英美苏组成《三国协约》，两大集团大概会在1941开片
-战场将几乎涉及整个欧洲、非洲、亚洲与美洲
-双方均将会有近千个师进行对撞
-同盟国难度比较简单，但需要有海军熟练度
-协约国难度较高（没做多少），陆战压力极大，尤其是sov。但是sov也很难投降
+[h1]Worldline Overview[/h1]
 
-[b] 游玩建议 [/b]
-三皇同盟选上，历史国策勾上
-德->重建帝制
-匈->奥匈
-法->波拿马
-苏->史实
-英->非红即可，最好是中立，避免打内战（蓝色会乱保障独立导致剧本出现偏离）
-美->史实
+The reactionary monarchist forces of Europe have resurfaced. To dominate the world, they have formed a terrifying military bloc. Under the threat of this external foe, the imperialist powers also banded together into a rival military bloc to counter the behemoth rising in Europe. The whole world now lies under the shadow of war.
 
-======================================================================================
+Despite their apparent unity, every nation harbours its own agenda. Once the common threat vanishes, they will become each other's greatest danger. There can be only one final victor...
 
-[h2] 由于个人测试难以面面俱到，模组出现bug常有的。所以模组出现问题欢迎留言 [/h2] 
+This mod is currently an unfinished work made by a single person; much content still awaits completion and polish.
 
+==============================================================================
 
-后续更新计划：
-1.增加炼狱难度
-2.二战任务链
+[h1]Mod Introduction[/h1]
 
-[h1] 友情链接 [/h1] 
-建筑拓展mod（已经整合其中）
-https://steamcommunity.com/sharedfiles/filedetails/?id=2710808459
-点兔
-https://steamcommunity.com/sharedfiles/filedetails/?id=3264244353
-ai海军生产优化（极力推荐）
-https://steamcommunity.com/sharedfiles/filedetails/?id=2944020541
+[h2]Basics [/h2]
+Built on the vanilla game, this mod revamps and enhances some of the more humorous and painful "restoration" paths. Usable as a base mod. Most text and translations come from Deepseek; technical skill is limited, your patience is appreciated.
 
+[h2]Major Changes [/h2]
+[list]
+[*][b]Nations[/b]: Germany / Hungary / France focus trees optimized and strengthened; UK/USA/France get a unique tri-service dynamic national spirit; Germany & USSR national spirits enhanced
+[*][b]AI[/b]: Prioritizes medium tanks and aircraft; templates optimized to 35/36 width with higher tendency toward armour divisions
+[*][b]Buildings[/b]: Up to 20 civilian factories assigned to construction; building expansion mod integrated (steel mills, coal bases, etc.); some building level caps doubled
+[*][b]Other[/b]: 1000 XP cap for all services, 150 naval production slots, many decisions to spend political power, industrial/electronic tech tweaks
+[/list]
 
+[h2]New Timeline [/h2]
+With Germany restoring the monarchy, Hungary rebuilding Austria-Hungary, and France restoring the Bonapartes, the three form the "Three Emperors' Alliance" against the "Triple Entente" (UK/USA/USSR). The clash begins around 1941 across Europe, Africa, Asia and the Americas, with nearly a thousand divisions per side. Recommended setup: Germany → monarchy, Hungary → Austria-Hungary, France → Bonaparte, USSR → historical, UK → neutral non-communist, USA → historical.
+
+[h3]Difficulty [/h3]
+The Alliance side is easier but requires naval skill; the Entente side is harder with heavy land pressure (the USSR is extremely hard to capitulate). Overall difficulty is on the high side and, being single-tester, may contain bugs.
+
+[h2]Compatibility & Roadmap [/h2]
+[list]
+[*]Can be used as a base mod. If other mods' focuses/decisions glitch, move them above this mod in the load order.
+[*]Planned: new "Inferno" difficulty and a WWII mission chain.
+[/list]
+
+==============================================================================
+
+[h1]Friends' Links [/h1]
+[list]
+[*][b]Building Expansion Mod[/b] (already integrated): [url=https://steamcommunity.com/sharedfiles/filedetails/?id=2710808459]https://steamcommunity.com/sharedfiles/filedetails/?id=2710808459[/url]
+[*][b]Gochiusa (Is the Order a Rabbit?)[/b]: [url=https://steamcommunity.com/sharedfiles/filedetails/?id=3264244353]https://steamcommunity.com/sharedfiles/filedetails/?id=3264244353[/url]
+[*][b]AI Navy Production Optimization[/b] (highly recommended): [url=https://steamcommunity.com/sharedfiles/filedetails/?id=2944020541]https://steamcommunity.com/sharedfiles/filedetails/?id=2944020541[/url]
+[/list]
