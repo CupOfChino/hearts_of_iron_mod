@@ -1,0 +1,11 @@
+# Continue IDE 扩展本地配置（可能包含 API key 等敏感信息）
+.continue/
+
+# 操作系统文件
+Thumbs.db
+Desktop.ini
+.DS_Store
+
+# Python
+__pycache__/
+*.pyc

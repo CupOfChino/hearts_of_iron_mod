@@ -1,0 +1,1014 @@
+CHI_ai_categories = {
+
+    CHI_ai_base_equipment_add_1936 = {  #火星步兵师
+        allowed = {
+			original_tag = CHI
+		}
+		available = {
+			
+		}
+
+		visible = {
+			
+		}
+
+		fire_only_once = no
+
+		cost = 0
+		days_remove = 45
+
+		modifier = {
+			
+		}
+
+		ai_will_do = {
+			factor = 1000
+		}
+		
+		remove_effect = {
+			add_manpower = 500
+
+            army_experience = 2
+			navy_experience = 2
+			air_experience = 2
+
+            add_equipment_to_stockpile = {
+				type = infantry_equipment
+				amount = 1000
+			}
+			add_equipment_to_stockpile = {
+				type = support_equipment
+				amount = 500
+			}
+            if = {
+				limit = {
+					has_tech = advanced_medium_tank_chassis
+				}
+				add_equipment_to_stockpile = { 
+					type = medium_tank_chassis_3 
+					amount = 500
+				}
+				add_equipment_to_stockpile = { 
+					type = medium_tank_destroyer_chassis_3
+					amount = 500
+				}
+			}
+			else_if = {
+				limit = {
+					has_tech = improved_medium_tank_chassis
+				}
+				add_equipment_to_stockpile = { 
+					type = medium_tank_chassis_2 
+					amount = 500
+				}
+				add_equipment_to_stockpile = { 
+					type = medium_tank_destroyer_chassis_2
+					amount = 500
+				}
+			}
+			else = {
+				add_equipment_to_stockpile = { 
+					type = medium_tank_chassis_1 
+					amount = 500
+				}
+				add_equipment_to_stockpile = { 
+					type = medium_tank_destroyer_chassis_1
+					amount = 500
+				}
+			}
+
+			add_equipment_to_stockpile = { 
+				type = medium_tank_flame_chassis_2
+				amount = 100
+			}
+
+			add_equipment_to_stockpile = { 
+				type = mechanized_equipment
+				amount = 500
+			}
+
+			add_equipment_to_stockpile = { 
+				type = armored_support_vehicle
+				amount = 300
+			}
+
+			random_owned_controlled_state = {
+				limit = { ROOT = { has_full_control_of_state = PREV } }
+				create_unit = {
+					division = "name = \"中国步坦师\" division_template = \"中国步坦师\" start_experience_factor = 0.5" 
+					owner = CHI
+					count = 6
+				}
+			}
+
+
+		}
+    }
+
+    CHI_ai_base_template_add_1= {  #火星步兵师模板
+
+		allowed = {
+			original_tag = CHI
+		}
+		available = {
+			
+		}
+
+		visible = {
+
+		}
+
+		fire_only_once = yes
+
+		cost = 0
+		days_remove = 30
+
+		modifier = {
+			
+		}
+
+		ai_will_do = {
+			factor = 1000
+		}
+		
+		remove_effect = {
+			add_manpower = 500
+
+            army_experience = 2
+			navy_experience = 2
+			air_experience = 2
+
+            add_equipment_to_stockpile = {
+				type = infantry_equipment
+				amount = 1000
+			}
+			add_equipment_to_stockpile = {
+				type = support_equipment
+				amount = 500
+			}
+            if = {
+				limit = {
+					has_tech = advanced_medium_tank_chassis
+				}
+				add_equipment_to_stockpile = { 
+					type = medium_tank_chassis_3 
+					amount = 500
+				}
+				add_equipment_to_stockpile = { 
+					type = medium_tank_destroyer_chassis_3
+					amount = 500
+				}
+			}
+			else_if = {
+				limit = {
+					has_tech = improved_medium_tank_chassis
+				}
+				add_equipment_to_stockpile = { 
+					type = medium_tank_chassis_2 
+					amount = 500
+				}
+				add_equipment_to_stockpile = { 
+					type = medium_tank_destroyer_chassis_2
+					amount = 500
+				}
+			}
+			else = {
+				add_equipment_to_stockpile = { 
+					type = medium_tank_chassis_1 
+					amount = 500
+				}
+				add_equipment_to_stockpile = { 
+					type = medium_tank_destroyer_chassis_1
+					amount = 500
+				}
+			}
+            division_template = {
+					name = "中国步坦师"
+					regiments = {
+						infantry = { x = 0 y = 0 }
+						infantry = { x = 0 y = 1 }
+						infantry = { x = 0 y = 2 }
+						infantry = { x = 0 y = 3 }
+						infantry = { x = 1 y = 0 }
+						infantry = { x = 1 y = 1 }
+						infantry = { x = 1 y = 2 }
+						infantry = { x = 1 y = 3 }
+						medium_armor = { x = 2 y = 0 }
+						medium_armor = { x = 2 y = 1 }
+						medium_armor = { x = 2 y = 2 }
+						medium_armor = { x = 2 y = 3 }
+						medium_armor = { x = 3 y = 0 }
+						medium_armor = { x = 3 y = 1 }
+                        medium_armor = { x = 3 y = 2 }
+                        medium_armor = { x = 3 y = 3 }
+						medium_tank_destroyer_brigade = { x = 4 y = 0 }
+						medium_tank_destroyer_brigade = { x = 4 y = 1 }
+					}
+					regimental_support = {
+						field_guns = { x = 0 y = 0 }
+						field_guns = { x = 1 y = 0 }
+						medium_tank_destroyer_support = { x = 2 y = 0 }
+						medium_tank_destroyer_support = { x = 3 y = 0 }
+						medium_sp_anti_air_support = { x = 4 y = 0 }
+					}
+					support = {
+						armored_engineer = { x = 0 y = 0 }
+						light_tank_recon = { x = 0 y = 1 }
+						field_hospital = { x = 0 y = 2 }
+						logistics_company = { x = 0 y = 3 }
+						medium_flame_tank = { x = 0 y = 4 }
+					}
+				}
+
+		}
+    }
+
+    CHI_ai_tank_equipment_add_1936 =  {  #火星装甲师
+        allowed = {
+			original_tag = CHI
+		}
+		available = {
+			
+		}
+
+		visible = {
+		}
+
+		fire_only_once = no
+
+		cost = 0
+		days_remove = 45
+
+		modifier = {
+			
+		}
+
+		ai_will_do = {
+			factor = 1000
+		}
+
+        remove_effect = {
+            add_manpower = 500
+            army_experience = 1
+			add_manpower = 500
+            army_experience = 5
+			add_equipment_to_stockpile = {
+				type = infantry_equipment
+				amount = 1000
+			}
+			add_equipment_to_stockpile = {
+				type = support_equipment
+				amount = 500
+			}
+			add_equipment_to_stockpile = {
+				type = convoy
+				amount = 50
+			}
+            if = {
+				limit = {
+					has_tech = advanced_medium_tank_chassis
+				}
+				add_equipment_to_stockpile = { 
+					type = medium_tank_chassis_3 
+					amount = 1000
+				}
+				add_equipment_to_stockpile = { 
+					type = medium_tank_destroyer_chassis_3
+					amount = 1000
+				}
+			}
+			else_if = {
+				limit = {
+					has_tech = improved_medium_tank_chassis
+				}
+				add_equipment_to_stockpile = { 
+					type = medium_tank_chassis_2 
+					amount = 100
+				}
+				add_equipment_to_stockpile = { 
+					type = medium_tank_destroyer_chassis_2
+					amount = 1000
+				}
+			}
+			else = {
+				add_equipment_to_stockpile = { 
+					type = medium_tank_chassis_1 
+					amount = 1000
+				}
+				add_equipment_to_stockpile = { 
+					type = medium_tank_destroyer_chassis_1
+					amount = 1000
+				}
+			}
+
+			add_equipment_to_stockpile = { 
+				type = medium_tank_flame_chassis_2
+				amount = 500
+			}
+
+			add_equipment_to_stockpile = { 
+				type = mechanized_equipment
+				amount = 1000
+			}
+
+			add_equipment_to_stockpile = { 
+				type = armored_support_vehicle
+				amount = 1000
+			}
+			random_owned_controlled_state = {
+				limit = { ROOT = { has_full_control_of_state = PREV } }
+				create_unit = {
+					division = "name = \"中国装甲师\" division_template = \"中国装甲师\" start_experience_factor = 0.5" 
+					owner = CHI
+					count = 12
+				}
+				
+			}
+
+        }
+    }
+
+	CHI_ai_tank_base_template_add_1 =  {  #火星装甲师模板
+        allowed = {
+			original_tag = CHI
+		}
+		available = {
+			
+		}
+
+		visible = {
+			
+		}
+
+		fire_only_once = yes
+
+		cost = 0
+		days_remove = 30
+
+		modifier = {
+			
+		}
+
+		ai_will_do = {
+			factor = 1000
+		}
+
+        remove_effect = {
+            add_manpower = 500
+            army_experience = 5
+			set_technology = { basic_medium_tank_chassis = 1 }
+			set_technology = { improved_medium_tank_chassis = 1 }
+			set_technology = {improved_heavy_tank_chassis = 1}
+			set_technology = {improved_light_tank_chassis = 1 }
+			set_technology = {interwar_antitank = 1}
+			set_technology = {antitank1 = 1}
+			set_technology = {antitank2 = 1}
+			set_technology = {antitank3 = 1}
+			set_technology = {antitank4 = 1}
+			set_technology = {antitank5 = 1}
+			set_technology = {antiair1 = 1}
+			set_technology = {antiair2 = 1}
+			set_technology = {antiair3 = 1}
+			set_technology = {tech_maintenance_company2 = 1}
+			set_technology = {tech_field_hospital = 1}
+			set_technology = {tech_logistics_company = 1}
+			set_technology = {mechanised_infantry = 1}
+			set_technology = {amphibious_drive = 1}
+			set_technology = {sp_armored_engineer_tech = 1}
+			set_technology = {sp_land_military_engineering_vehicles = 1}
+			set_technology = {sp_land_flamethrower_tank = 1}
+
+			add_equipment_to_stockpile = {
+				type = convoy
+				amount = 3000
+			}
+			
+            division_template = {
+				name = "中国装甲师"
+				regiments = {
+					mechanized = { x = 0 y = 0 }
+					mechanized = { x = 0 y = 1 }
+					mechanized = { x = 0 y = 2 }
+					mechanized = { x = 0 y = 4 }
+					mechanized = { x = 1 y = 0 }
+					mechanized = { x = 1 y = 1 }
+					mechanized = { x = 1 y = 2 }
+					mechanized = { x = 1 y = 4 }
+					medium_armor = { x = 2 y = 0 }
+					medium_armor = { x = 2 y = 1 }
+					medium_armor = { x = 2 y = 2 }
+					medium_armor = { x = 2 y = 4 }
+					medium_armor = { x = 3 y = 0 }
+					medium_armor = { x = 3 y = 1 }
+					medium_armor = { x = 3 y = 2 }
+					medium_armor = { x = 3 y = 4 }
+					medium_tank_destroyer_brigade = { x = 4 y = 0 }
+					medium_tank_destroyer_brigade = { x = 4 y = 1 }
+				}
+				regimental_support = {
+					field_guns = { x = 0 y = 0 }
+					field_guns = { x = 1 y = 0 }
+					medium_tank_destroyer_support = { x = 2 y = 0 }
+					medium_tank_destroyer_support = { x = 3 y = 0 }
+					medium_sp_anti_air_support = { x = 4 y = 0 }
+				}
+				support = {
+					armored_engineer = { x = 0 y = 0 }
+					light_tank_recon = { x = 0 y = 1 }
+					field_hospital = { x = 0 y = 2 }
+					logistics_company = { x = 0 y = 3 }
+					medium_flame_tank = { x = 0 y = 4 }
+				}
+			}
+
+			create_equipment_variant = {
+                name = "antiair IV"
+                type = medium_tank_aa_chassis_2
+                design_team = mio:GER_henschel_organization
+                parent_version = 0
+                modules = {
+                    main_armament_slot = tank_anti_air_cannon_2
+                    turret_type_slot = tank_medium_two_man_tank_turret
+                    suspension_type_slot = tank_bogie_suspension
+                    armor_type_slot = tank_riveted_armor
+                    engine_type_slot = tank_gasoline_engine
+                    special_type_slot_1 = tank_radio_1
+                    special_type_slot_2 = easy_maintenance
+                    special_type_slot_3 = extra_ammo_storage
+                    special_type_slot_4 = dozer_blade
+                }
+                upgrades = {
+                    tank_nsb_engine_upgrade = 0
+                    tank_nsb_armor_upgrade = 0
+                }
+                #icon = "GFX_GER_improve_medium_td_medium"
+            }
+
+
+			create_equipment_variant = {
+				name = "40式+"
+				type = medium_tank_chassis_2
+				design_team = mio:GER_henschel_organization
+				parent_version = 0
+				modules = {
+					main_armament_slot = tank_medium_cannon_2 
+					turret_type_slot = tank_medium_three_man_tank_turret 
+					suspension_type_slot = tank_torsion_bar_suspension
+					armor_type_slot = tank_riveted_armor
+					engine_type_slot = tank_gasoline_engine
+					special_type_slot_1 = tank_radio_2
+					special_type_slot_2 = secondary_turret_hmg
+					special_type_slot_3 = secondary_turret_small_cannon
+					special_type_slot_4 = easy_maintenance
+				}
+				upgrades = {
+					tank_nsb_engine_upgrade = 0
+					tank_nsb_armor_upgrade = 4
+				}
+				icon = "GFX_GER_improve_medium_tank_medium"
+			}
+
+			create_equipment_variant = {
+				name = "40式 猎虎"
+				type = medium_tank_destroyer_chassis_2
+				design_team = mio:GER_henschel_organization
+				parent_version = 0
+				modules = {
+					main_armament_slot = tank_high_velocity_cannon_2
+					turret_type_slot = tank_medium_fixed_superstructure_turret #炮塔
+					suspension_type_slot = tank_bogie_suspension #悬挂
+					armor_type_slot = tank_riveted_armor #装甲
+					engine_type_slot = tank_gasoline_engine #引擎
+					special_type_slot_1 = easy_maintenance
+					special_type_slot_2 = secondary_turret_small_cannon
+					special_type_slot_3 = secondary_turret_small_cannon
+					special_type_slot_4 = squeezebore_adaptor
+				}
+				upgrades = {
+					tank_nsb_engine_upgrade = 0
+					tank_nsb_armor_upgrade = 4
+				}
+				icon = "GFX_GER_improve_medium_td_medium"
+			}
+
+			create_equipment_variant = {
+				name = "40式 火龙"
+				type = medium_tank_flame_chassis_2
+				design_team = mio:GER_henschel_organization
+				parent_version = 0
+				modules = {
+					main_armament_slot = advanced_flamethrower
+					turret_type_slot = tank_medium_three_man_tank_turret 
+					suspension_type_slot = tank_bogie_suspension 
+					armor_type_slot = tank_riveted_armor 
+					engine_type_slot = tank_diesel_engine
+					special_type_slot_1 = tank_radio_2
+					special_type_slot_2 = easy_maintenance
+					special_type_slot_3 = extra_ammo_storage
+					special_type_slot_4 = dozer_blade
+				}
+				upgrades = {
+					tank_nsb_engine_upgrade = 0
+					tank_nsb_armor_upgrade = 0
+				}
+				#icon = "GFX_GER_improve_medium_td_medium"
+			}
+
+        }
+    }
+
+
+}
+
+CHI_focus_categories = { 
+
+    CHI_focus_categories_00 = { #委员长遇害
+        allowed = {
+            original_tag = CHI
+            has_country_flag = the_eastern_chi_flag
+        }
+        visible = {
+            has_country_flag = the_eastern_chi_flag
+        }
+        available = {
+            has_country_flag = the_eastern_chi_flag
+        }
+
+        fire_only_once = yes
+
+		cost = 0
+		days_remove = 10
+
+		modifier = {
+			
+		}
+
+        remove_effect = {
+            CHI = {
+                country_event = { id = change_chi.1 days = 1 }
+            }
+			
+        }
+        ai_will_do = {
+            factor = 1000
+        }
+    }
+
+    CHI_focus_categories_01 = { #中华统一战线
+        allowed = {
+            original_tag = CHI
+            has_country_flag = the_eastern_chi_flag
+        }
+        visible = {
+            AND = {
+                has_country_flag = the_eastern_chi_flag
+                has_country_flag = chang_kai_shen_become_flag
+            }
+        }
+        available = {
+            AND = {
+                has_country_flag = the_eastern_chi_flag
+                has_country_flag = chang_kai_shen_become_flag
+            }
+        }
+
+        fire_only_once = yes
+
+		cost = 10
+		days_remove = 105
+
+		modifier = {
+			political_power_cost = 0.25
+		}
+
+        remove_effect = {
+            CHI = {
+				create_faction = Chinese_United_Front_faction
+			}
+			set_country_flag = has_bulid_Chinese_United_Front_flag
+        }
+        ai_will_do = {
+            factor = 1000
+        }
+    }
+
+    CHI_focus_categories_02 = { #要求军阀臣服
+        allowed = {
+            original_tag = CHI
+            has_country_flag = the_eastern_chi_flag
+        }
+        visible = {
+            AND = {
+                has_country_flag = the_eastern_chi_flag
+                has_country_flag = chang_kai_shen_become_flag
+                has_country_flag = has_bulid_Chinese_United_Front_flag
+            }
+        }
+        available = {
+            AND = {
+                has_country_flag = the_eastern_chi_flag
+                has_country_flag = chang_kai_shen_become_flag
+                has_country_flag = has_bulid_Chinese_United_Front_flag
+            }
+        }
+
+        fire_only_once = yes
+
+		cost = 10
+		days_remove = 70
+
+		modifier = {
+			political_power_cost = 0.25
+		}
+
+        remove_effect = {
+            CHI = {
+                add_to_faction = YUN
+                add_to_faction = SIK
+			    add_to_faction = GXC
+			    add_to_faction = SHX
+			    add_to_faction = XSM
+			    add_to_faction = TIB
+            }
+            hidden_effect = {
+                set_country_flag = CHI_focus_categories_02_flag
+            }
+        }
+        ai_will_do = {
+            factor = 1000
+        }
+    }
+
+    CHI_focus_categories_03 = { #吞并军阀
+        allowed = {
+            original_tag = CHI
+            has_country_flag = the_eastern_chi_flag
+        }
+        visible = {
+            has_country_flag = CHI_focus_categories_02_flag
+        }
+        available = {
+            has_country_flag = CHI_focus_categories_02_flag
+        }
+
+        fire_only_once = yes
+
+		cost = 10
+		days_remove = 35
+
+		modifier = {
+			political_power_cost = 0.25
+		}
+
+        remove_effect = {
+            army_experience= 100
+
+            hidden_effect = {
+                set_country_flag = CHI_focus_categories_03_flag
+            }
+
+            YUN = {
+			    every_unit_leader = {
+				    set_nationality = CHI
+			    }
+		    }
+            CHI = { 
+                annex_country = {
+                    target = YUN
+                    transfer_troops = yes 
+                }
+            }
+
+            SIK = {
+			    every_unit_leader = {
+				    set_nationality = CHI
+			    }
+		    }
+            CHI = { 
+                annex_country = {
+                    target = SIK
+                    transfer_troops = yes 
+                }
+            }
+
+            TIB = {
+			    every_unit_leader = {
+				    set_nationality = CHI
+			    }
+		    }
+            CHI = { 
+                annex_country = {
+                    target = TIB
+                    transfer_troops = yes 
+                }
+            }
+
+            GXC = {
+			    every_unit_leader = {
+				    set_nationality = CHI
+			    }
+		    }
+            CHI = { 
+                annex_country = {
+                    target = GXC
+                    transfer_troops = yes 
+                }
+            }
+
+            SHX = {
+			    every_unit_leader = {
+				    set_nationality = CHI
+			    }
+		    }
+            CHI = { 
+                annex_country = {
+                    target = SHX
+                    transfer_troops = yes 
+                }
+            }
+
+            XSM = {
+			    every_unit_leader = {
+				    set_nationality = CHI
+			    }
+		    }
+            CHI = { 
+                annex_country = {
+                    target = XSM
+                    transfer_troops = yes 
+                }
+            }
+        }
+        ai_will_do = {
+            factor = 1000
+        }
+    }
+
+    CHI_focus_categories_04 = { #根治国内问题
+        allowed = {
+            original_tag = CHI
+            has_country_flag = the_eastern_chi_flag
+        }
+        visible = {
+            has_country_flag = CHI_focus_categories_03_flag
+        }
+        available = {
+            has_country_flag = CHI_focus_categories_03_flag
+        }
+
+        fire_only_once = yes
+
+		cost = 10
+		days_remove = 365
+
+		modifier = {
+			political_power_cost = 0.25
+            stability_weekly = -0.005
+            consumer_goods_factor = 0.2
+		}
+
+        remove_effect = {
+            remove_ideas = CHI_war_of_resistance
+            remove_ideas = CHI_war_of_resistance_2
+            remove_ideas = CHI_executive_yuan
+            remove_ideas = CHI_ineffective_bureaucracy_warlord
+            remove_ideas = CHI_ineffective_bureaucracy
+            remove_ideas = CHI_army_corruption_1
+            remove_ideas = CHI_army_corruption_2
+            remove_ideas = CHI_army_corruption_3
+
+            add_ideas = CHI_Protector_Army
+            add_ideas = CHI_improve_industry
+            add_ideas = CHI_improve_produce
+            add_ideas = CHI_Three_People's_Principles
+            add_ideas = PRC_cas
+            hidden_effect = {
+                set_country_flag = CHI_focus_categories_04_flag
+            }
+        }
+        ai_will_do = {
+            factor = 1000
+        }
+    }
+
+    CHI_focus_categories_05 = { #先发逐日
+        allowed = {
+            original_tag = CHI
+            has_country_flag = the_eastern_chi_flag
+        }
+        visible = {
+            has_country_flag = CHI_focus_categories_03_flag
+        }
+        available = {
+            has_country_flag = CHI_focus_categories_03_flag
+            AND = {
+                country_exists = JAP
+                NOT = {
+                    has_war_with = JAP
+                }
+            }
+        }
+
+        fire_only_once = yes
+
+		cost = 10
+		days_remove = 35
+
+		modifier = {
+			political_power_cost = 0.25
+		}
+
+        remove_effect = {
+            add_ideas = CHI_The_last_battle_against_the_Japanese_invaders
+            declare_war_on = {
+				type = annex_everything
+				target = JAP
+			}
+        }
+        ai_will_do = {
+            factor = 1000
+        }
+    }
+
+    CHI_focus_categories_06 = { #立本放弃大陆
+        allowed = {
+            original_tag = CHI
+            has_country_flag = the_eastern_chi_flag
+        }
+        visible = {
+            has_country_flag = the_eastern_chi_flag
+        }
+        available = {
+            has_country_flag = the_eastern_chi_flag
+			OR = {
+				AND = {
+					has_war_with = JAP
+					MAN = {
+						is_in_faction_with = JAP
+						has_war_with = CHI
+						has_capitulated = yes
+					}
+					MEN = {
+						is_in_faction_with = JAP
+						has_war_with = CHI
+						has_capitulated = yes
+					}
+				}
+				AND = {
+					has_war_with = JAP
+					NOT = {
+						country_exists = MAN
+						country_exists = MEN
+					}
+				}
+			}
+        }
+
+        fire_only_once = yes
+
+		cost = 0
+		days_remove = 35
+
+		modifier = {
+			
+		}
+
+        remove_effect = {
+			JAP = {
+				white_peace = CHI
+			}
+            if = {
+				limit = {
+					country_exists = MAN
+					country_exists = MEN
+				}
+				CHI = { 
+					transfer_state = 524
+					transfer_state = 609
+					transfer_state = 745
+            		annex_country = {
+                		target = MAN
+            		}
+					annex_country = {
+                		target = MEN
+            		}
+					every_state = {
+						limit = {
+							has_state_flag = the_will_get_prc_flag
+							NOT = {
+								CONTROLLER = {
+									tag = CHI
+								}
+							}
+						}
+						CHI = { transfer_state = PREV }
+					}
+        		}
+			}
+			if = {
+				limit = {
+					NOT = {
+						country_exists = MAN
+						country_exists = MEN
+					}
+				}
+				CHI = {
+					transfer_state = 524
+					transfer_state = 609
+					transfer_state = 745
+					every_state = {
+						limit = {
+							has_state_flag = the_will_get_prc_flag
+							NOT = {
+								CONTROLLER = {
+									tag = CHI
+								}
+							}
+						}
+						CHI = { transfer_state = PREV }
+					}
+				}
+			}
+			KOR = {
+					transfer_state = 527
+					transfer_state = 525
+				}
+			
+				
+				CHI = {
+					set_autonomy = { target = KOR autonomy_state = autonomy_puppet }
+				}
+			news_event = { id = change_news.17 days = 2  }
+
+			
+        }
+        ai_will_do = {
+            factor = 1000
+        }
+    }
+
+
+
+    CHI_focus_categories_09 = { #加入世界大战
+        allowed = {
+            original_tag = CHI
+            has_country_flag = the_eastern_CHI_flag
+        }
+        visible = {
+            has_country_flag = the_eastern_CHI_flag
+        }
+        available = {
+            has_country_flag = the_eastern_chi_flag
+            AND = {
+                date > 1940.9.1
+                has_global_flag = the_world_war_tow_flag
+                GER = {
+                    has_war_with = ENG
+                }
+                ENG = {
+                    has_war_with = GER
+                }
+                CHI = {
+                    has_war = no
+                }
+            }
+        }
+
+        fire_only_once = yes
+
+		cost = 0
+		days_remove = 70
+
+		modifier = {
+			
+		}
+
+        remove_effect = {
+            random_owned_state = {
+				limit = { 
+					is_core_of = ROOT 
+				}
+                add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = industrial_complex
+					level = 2
+					instant_build = yes
+				}
+                add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = arms_factory
+					level = 2
+					instant_build = yes
+				}
+			}
+            CHI = {
+                country_event = { id = change_chi.9 days = 1 }
+            }
+        }
+        ai_will_do = {
+            factor = 1000
+        }
+    }
+
+
+}

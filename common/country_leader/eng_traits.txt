@@ -1,0 +1,36 @@
+leader_traits = {
+    ENG_god_bless_our_king = { #天佑吾王
+        war_support_weekly = 0.005
+        stability_weekly = 0.005
+        army_core_attack_factor = 0.025
+        army_defence_factor = 0.025
+        political_power_factor = 0.1
+        neutrality_drift = 0.1
+        stability_factor = 0.2
+        generate_wargoal_tension = -0.4
+        political_advisor_cost_factor = -0.25
+		theorist_cost_factor = -0.25
+		military_leader_cost_factor = -0.25
+        ai_desired_divisions_factor = 0.25
+
+    }
+
+    ENG_the_dream_of_the_Empire_on_Which_the_sun_never_sets = { #日不落之梦
+        stability_factor = -0.05
+        political_power_factor = -0.05
+        army_chief_cost_factor = -0.25
+        ARMY_ATTACK_AGAINST_MAJOR_FACTOR = 0.025
+        ARMY_DEFENCE_AGAINST_MAJOR_FACTOR = 0.025
+        naval_damage_factor = 0.075
+        naval_defense_factor = 0.075
+        naval_morale_factor = 0.1
+        justify_war_goal_time = -0.2
+        offensive_war_stability_factor = 0.1
+        production_speed_arms_factory_factor = 0.1
+        production_speed_dockyard_factor = 0.1
+        industrial_capacity_dockyard = 0.1
+        industrial_capacity_factory = 0.1
+
+    }
+
+}

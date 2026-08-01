@@ -1,0 +1,34 @@
+HUN_ai_categories = {
+
+    allowed = {
+        original_tag = HUN
+    }
+
+    visible = {
+        is_ai = yes
+        original_tag = HUN
+        has_army_manpower = { size < 3000000 }
+        is_subject = no
+        FRA = {
+            has_country_flag = cjg_open_the_third_empire
+        }
+        HUN = {
+            has_capitulated = no
+        }
+    }
+    priority = 100
+}
+
+HUN_restored_categories = { #巴尔干战争
+    allowed = {
+        original_tag = HUN
+    }
+
+    visible = {
+        original_tag = HUN
+        has_country_flag = HUN_has_restored_flag
+    }
+    picture = GFX_decision_cat_picture_balkan_faction
+    icon = GFX_decision_CHL_mapuche_liberate_inuit
+    priority = 200
+}

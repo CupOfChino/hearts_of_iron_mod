@@ -1,0 +1,3992 @@
+FRA_third_empire_categories = { #三皇同盟
+
+    FRA_third_empire_categories_1 = { #三皇同盟
+
+		icon = generic_pickelhaube
+
+        allowed = {
+			original_tag = FRA
+		}
+
+		available = {
+
+            original_tag = FRA
+
+            AND = {
+				date > 1938.4.1
+				country_exists = GER
+				country_exists = HUN
+                FRA = {
+                    has_country_flag = cjg_open_the_third_empire
+					NOT = {
+                        has_completed_focus = FRA_retribution_for_sedan
+                        is_in_faction_with = ENG
+                    }
+                    NOT = {
+                        has_war_with = GER
+                        has_war_with = HUN
+                    }
+                }
+            }
+            
+            AND = {
+                FRA = {
+                    has_government = neutrality
+                }
+                GER = {
+                    has_government = neutrality
+                }
+                HUN = {
+                    has_government = neutrality
+                }
+            }
+		}
+
+        visible = {
+            FRA = {
+                has_country_flag = cjg_open_the_third_empire
+            }
+        }
+
+        fire_only_once = yes
+
+		cost = 0
+		days_remove = 30
+
+		modifier = {
+			
+		}
+
+		ai_will_do = {
+			factor = 1000
+		}
+
+        complete_effect = {
+            
+        }
+
+        remove_effect = {
+            set_country_flag = has_factions_with_ger_flag
+            GER = {
+                set_country_flag = third_empire_has_become_flag
+                country_event = { id = change_germany.4 days = 1 }
+            }
+			news_event = { id = change_news.1 days = 1 }
+        }
+
+    }
+
+	FRA_third_empire_categories_2 = { #对英国作战
+
+		icon = generic_speech
+
+        allowed = {
+			original_tag = FRA
+		}
+
+		available = {
+            original_tag = FRA
+			FRA = {
+				has_country_flag = will_make_the_world_war
+			}
+            
+            AND = {
+				date > 1940.1.1
+                FRA = {
+                    has_government = neutrality
+                }
+				OR = {
+					GER = {
+						has_idea = GER_prepare_war_2
+                	}
+					GER = {
+						has_idea = GER_prepare_war_3
+                	}
+					GER = {
+						has_idea = GER_prepare_war_4
+                	}
+				}
+				OR = {
+					HUN = {
+						has_idea = GER_prepare_war_2
+                	}
+					HUN = {
+						has_idea = GER_prepare_war_3
+                	}
+					HUN = {
+						has_idea = GER_prepare_war_4
+                	}
+				}
+                GER = {
+                    has_government = neutrality
+                }
+                HUN = {
+                    has_government = neutrality
+                }
+				is_in_faction_with = GER
+				country_exists = ENG
+				NOT = {
+					has_war_with = ENG
+					is_in_faction_with = ENG
+				}
+            }
+		}
+
+        visible = {
+            FRA = {
+                has_country_flag = cjg_open_the_third_empire
+            }
+			NOT = {
+				country_exists = ZOM
+			}
+			NOT = {
+				country_exists = SUC
+			}
+        }
+
+        fire_only_once = yes
+
+		cost = 0
+		days_remove = 120
+
+		ai_will_do = {
+			factor = 200
+		}
+
+        complete_effect = {
+            complete_tooltip = the_world_war_tootip
+			set_global_flag = world_war_two_flag
+			hidden_effect = {
+				every_country = {
+					limit = {
+						is_in_faction_with = FRA
+					}
+					country_event = { id = change_france.17 days = 10 }
+					country_event = { id = change_france.18 days = 30 }
+					country_event = { id = change_france.19 days = 60 }
+					country_event = { id = change_france.20 days = 90 }
+					country_event = { id = change_france.21 days = 100 }
+					country_event = { id = change_france.22 days = 107 }
+					country_event = { id = change_france.23 days = 111 }
+					country_event = { id = change_france.24 days = 118 }
+				}
+				every_other_country = {
+					limit = {
+						is_in_faction_with = ENG
+					}
+					country_event = { id = change_eng.7 days = 62 }
+					country_event = { id = change_eng.8 days = 100 }
+					country_event = { id = change_eng.9 days = 108 }
+					country_event = { id = change_eng.10 days = 112 }
+					country_event = { id = change_eng.10 days = 118 }
+				}
+				news_event = { id = change_news.35 days = 62 }
+				news_event = { id = change_news.34 days = 102 }
+			}
+        }
+
+        remove_effect = {
+			country_event = { id = change_france.25 }
+			hidden_effect = {
+				news_event = { id = change_news.33 hours = 1}
+			}
+        }
+
+    }
+
+	FRA_third_empire_categories_02 = { #强行对英国作战
+
+		icon = generic_speech
+
+        allowed = {
+			original_tag = FRA
+		}
+
+		available = {
+            original_tag = FRA
+			FRA = {
+				has_country_flag = will_make_the_world_war
+			}
+            
+            AND = {
+				date > 1939.9.1
+				date < 1941.1.1
+                FRA = {
+                    has_government = neutrality
+                }
+                GER = {
+                    has_government = neutrality
+                }
+                HUN = {
+                    has_government = neutrality
+                }
+				is_in_faction_with = GER
+				country_exists = ENG
+				NOT = {
+					has_war_with = ENG
+					is_in_faction_with = ENG
+				}
+            }
+		}
+
+        visible = {
+            FRA = {
+                has_country_flag = cjg_open_the_third_empire
+            }
+        }
+
+        fire_only_once = yes
+
+		cost = 0
+		days_remove = 150
+
+		ai_will_do = {
+			factor = 0
+		}
+
+        complete_effect = {
+            complete_tooltip = the_world_war_tootip
+        }
+
+        remove_effect = {
+			set_global_flag = the_world_war_tow_flag
+            if = {
+				limit = {
+					not = { has_war_with = ENG }
+				}
+				declare_war_on = {
+					type = annex_everything
+					target = ENG
+				}
+			}
+			ENG = {
+				add_timed_idea = {
+					idea = HUN_unprepared
+					days = 120
+				}
+			}
+			USA = {
+				add_timed_idea = {
+					idea = HUN_unprepared
+					days = 120
+				}
+			}
+			SOV = {
+				add_timed_idea = {
+					idea = HUN_unprepared
+					days = 120
+				}
+			}
+			every_country = {
+				limit = {
+					OR = {
+						is_in_faction_with = FRA
+						is_in_faction_with = GER
+					}
+					NOT = {
+						has_idea = GER_prepare_war_2
+					}
+				}
+				country_event = { id = change_france.16 days = 1 }
+			}
+			news_event = { id = change_news.6 days = 1 }
+        }
+
+    }
+
+	FRA_third_empire_categories_3 = { #控制中东石油
+
+		icon = generic_welfare
+
+        allowed = {
+			original_tag = FRA
+		}
+
+		available = {
+            original_tag = FRA
+			FRA = {
+				has_country_flag = has_factions_with_ger_flag
+			}
+            
+            AND = {
+				date > 1939.1.1
+                FRA = {
+                    has_government = neutrality
+                }
+                GER = {
+                    has_government = neutrality
+                }
+                HUN = {
+                    has_government = neutrality
+                }
+				is_in_faction_with = GER
+				NOT = {
+					has_war_with = ENG
+				}
+            }
+		}
+
+        visible = {
+            FRA = {
+                has_country_flag = cjg_open_the_third_empire
+				has_country_flag = has_factions_with_ger_flag
+            }
+        }
+
+        fire_only_once = yes
+
+		cost = 0
+		days_remove = 70
+
+		modifier = {
+
+		}
+
+		ai_will_do = {
+			factor = 1000
+		}
+
+        complete_effect = {
+
+        }
+
+        remove_effect = {
+			PER = {
+				country_event = { id = change_france.14 days = 1 }
+			}
+			hidden_effect = {
+				set_country_flag = has_control_midwest_oid_flag
+			}
+        }
+
+    }
+
+	FRA_third_empire_categories_4 = { #扩建石油
+
+		icon = generic_construction
+
+        allowed = {
+			original_tag = FRA
+		}
+
+		available = {
+            original_tag = FRA
+			FRA = {
+				has_country_flag = has_factions_with_ger_flag
+			}
+            
+            AND = {
+				date > 1939.1.1
+                FRA = {
+                    has_government = neutrality
+                }
+                GER = {
+                    has_government = neutrality
+                }
+                HUN = {
+                    has_government = neutrality
+                }
+				is_in_faction_with = GER
+				NOT = {
+					has_war_with = ENG
+				}
+				random_owned_controlled_state = {
+					limit = {
+						PREV = { is_controlled_by_ROOT_or_ally = yes }
+						has_resources_amount = {
+							resource = oil
+							amount > 40
+						}
+					}
+				}
+				num_of_civilian_factories_available_for_projects > 15
+            }
+		}
+
+        visible = {
+            FRA = {
+                has_country_flag = cjg_open_the_third_empire
+				has_country_flag = has_factions_with_ger_flag
+            }
+        }
+
+        fire_only_once = yes
+
+		cost = 100
+		days_remove = 180
+
+		modifier = {
+			production_speed_buildings_factor = -0.1
+			consumer_goods_factor = 0.2
+			civilian_factory_use = 15
+		}
+
+		ai_will_do = {
+			factor = 1000
+		}
+
+        complete_effect = {
+
+        }
+
+        remove_effect = {
+			every_state = {
+				limit = {
+					is_controlled_by_ROOT_or_ally = yes
+					has_resources_amount = {
+						resource = oil
+						amount > 30
+					}
+				}
+				add_resource = {
+					type = oil
+					amount = 19
+				}
+			}
+			news_event = { id = change_news.37 days = 1 }
+        }
+
+    }
+
+	FRA_third_empire_categories_5 = { #承担海上重任
+
+		icon = generic_pickelhaube
+
+        allowed = {
+			original_tag = FRA
+		}
+
+		available = {
+            original_tag = FRA
+			FRA = {
+				has_country_flag = has_factions_with_ger_flag
+			}
+            
+            AND = {
+                FRA = {
+                    has_government = neutrality
+                }
+                GER = {
+                    has_government = neutrality
+                }
+                HUN = {
+                    has_government = neutrality
+                }
+				is_in_faction_with = GER
+				NOT = {
+					has_war_with = ENG
+				}
+            }
+		}
+
+        visible = {
+            FRA = {
+                has_country_flag = cjg_open_the_third_empire
+				has_country_flag = has_factions_with_ger_flag
+            }
+        }
+
+        fire_only_once = yes
+
+		cost = 10
+		days_remove = 10
+
+		ai_will_do = {
+			factor = 1000
+		}
+
+        remove_effect = {
+			add_ideas = FRA_Undertake_the_heavy_responsibility_of_the_navy
+			navy_experience = 50
+			random_owned_controlled_state = {
+				limit = {
+					is_fully_controlled_by = ROOT
+					is_coastal = yes
+				}
+				prioritize = { 158 } #PIEDMONT (Genoa)
+				add_extra_state_shared_building_slots = 6
+				add_building_construction = {
+					type = dockyard
+					level = 6
+					instant_build = yes
+				}
+			}
+			random_owned_controlled_state = {
+				limit = {
+					is_fully_controlled_by = ROOT
+					is_coastal = yes
+				}
+				prioritize = { 158 } #PIEDMONT (Genoa)
+				add_extra_state_shared_building_slots = 6
+				add_building_construction = {
+					type = dockyard
+					level = 6
+					instant_build = yes
+				}
+			}
+			random_owned_controlled_state = {
+				limit = {
+					is_fully_controlled_by = ROOT
+					is_coastal = yes
+				}
+				prioritize = { 158 } #PIEDMONT (Genoa)
+				add_extra_state_shared_building_slots = 6
+				add_building_construction = {
+					type = dockyard
+					level = 6
+					instant_build = yes
+				}
+			}
+        }
+
+    }
+
+	FRA_ai_tank_equipment_add_end =  {  #要死了
+        allowed = {
+			original_tag = FRA
+		}
+		available = {
+			date > 1939.1.3
+			OR = {
+				16 = {
+					any_neighbor_state = {
+						controller = {
+							has_war_with = ROOT
+						}
+					}
+				}
+				16 = {
+					controller = {
+						has_war_with = ROOT
+					}
+				}
+			}
+		}
+
+		visible = {
+			has_government = neutrality
+			is_ai = yes
+		}
+
+		fire_only_once = no
+
+		cost = 0
+		days_remove = 0
+		days_re_enable = 730
+
+		modifier = {
+			
+		}
+
+		ai_will_do = {
+			factor = 1000
+		}
+
+        remove_effect = {
+            add_manpower = 500
+            army_experience = 5
+            if = {
+				limit = {
+					has_tech = advanced_medium_tank_chassis
+				}
+				add_equipment_to_stockpile = { 
+					type = medium_tank_chassis_3 
+					amount = 5000
+				}
+				add_equipment_to_stockpile = { 
+					type = medium_tank_destroyer_chassis_3
+					amount = 5000
+				}
+			}
+			else_if = {
+				limit = {
+					has_tech = improved_medium_tank_chassis
+				}
+				add_equipment_to_stockpile = { 
+					type = medium_tank_chassis_2 
+					amount = 5000
+				}
+				add_equipment_to_stockpile = { 
+					type = medium_tank_destroyer_chassis_2
+					amount = 5000
+				}
+			}
+			else = {
+				add_equipment_to_stockpile = { 
+					type = medium_tank_chassis_1 
+					amount = 5000
+				}
+				add_equipment_to_stockpile = { 
+					type = medium_tank_destroyer_chassis_1
+					amount = 5000
+				}
+			}
+
+			add_equipment_to_stockpile = { 
+				type = medium_tank_flame_chassis_2
+				amount = 1000
+			}
+
+			add_equipment_to_stockpile = { 
+				type = mechanized_equipment
+				amount = 5000
+			}
+
+			add_equipment_to_stockpile = { 
+				type = armored_support_vehicle
+				amount = 3000
+			}
+
+            
+			capital_scope = {
+				create_unit = {
+					division = "name = \"法兰西装甲师\" division_template = \"法兰西装甲师\" start_experience_factor = 1" 
+					owner = FRA
+					count = 72
+				}
+				
+			}
+
+        }
+    }
+
+
+}
+
+FRA_old_firend_categories = { #旧同盟国
+    FRA_old_firend_categories_1 = {
+
+        allowed = {
+			original_tag = FRA
+		}
+
+        visible = {
+            FRA = {
+                has_country_flag = cjg_open_the_old_firend
+            }
+        }
+
+        available = {
+            AND = {
+                limit = {
+                    date > 1939.1.1
+                }
+            }
+            FRA = {
+                has_country_flag = cjg_open_the_old_firend
+                NOT = {
+                    has_country_flag = cjg_open_the_third_empire
+                }
+            }
+            GER = {
+                has_government = neutrality
+            }
+            HUN = {
+                has_government = neutrality
+            }
+        }
+
+        fire_only_once = yes
+
+		cost = 0
+		days_remove = 70
+
+		modifier = {
+			
+		}
+
+		ai_will_do = {
+			factor = 1000
+		}
+
+        complete_effect = {
+
+        }
+
+        remove_effect = {
+            ENG = {
+                country_event = { id = change_eng.1 days = 1 }
+            }
+            hidden_effect = {
+                GER = {
+                    country_event = { id = change_germany.5 days = 1 }
+                }
+            }
+        }
+    }
+}
+
+FRA_ai_categories = { #ai火星兵
+    FRA_ai_base_equipment_add_1936 = {  #火星步兵师
+
+		allowed = {
+			original_tag = FRA
+		}
+		available = {
+			date > 1937.1.3
+		}
+
+		visible = {
+			has_government = neutrality
+		}
+
+		fire_only_once = no
+
+		cost = 0
+		days_remove = 45
+
+		modifier = {
+			
+		}
+
+		ai_will_do = {
+			factor = 1000
+		}
+		
+		remove_effect = {
+			add_manpower = 500
+
+            army_experience = 5
+			navy_experience = 5
+			air_experience = 5
+
+            add_equipment_to_stockpile = {
+				type = infantry_equipment
+				amount = 500
+			}
+			add_equipment_to_stockpile = { 
+				type = train_equipment 
+				amount = 5
+			}
+			add_equipment_to_stockpile = {
+				type = artillery_equipment
+				amount = 100
+			}
+			add_equipment_to_stockpile = {
+				type = anti_tank_equipment
+				amount = 100
+			}
+            add_equipment_to_stockpile = {
+				type = support_equipment
+				amount = 150
+			}
+			add_equipment_to_stockpile = { 
+				type = anti_air_equipment 
+				amount = 50
+			}
+
+			random_owned_controlled_state = {
+				limit = { ROOT = { has_full_control_of_state = PREV } }
+				prioritize = { 64 }
+				create_unit = {
+					division = "name = \"法兰西步兵师I\" division_template = \"法兰西步兵师I\" start_experience_factor = 0.5" 
+					owner = FRA
+					count = 1
+				}
+			}
+
+
+		}
+    }
+
+	FRA_ai_base_template_add_1= {  #火星步兵师模板
+
+		allowed = {
+			original_tag = FRA
+		}
+		available = {
+			date > 1937.1.1
+		}
+
+		visible = {
+			has_government = neutrality
+		}
+
+		fire_only_once = yes
+
+		cost = 0
+		days_remove = 30
+
+		modifier = {
+			
+		}
+
+		ai_will_do = {
+			factor = 1000
+		}
+		
+		remove_effect = {
+			add_manpower = 500
+
+            army_experience = 5
+			navy_experience = 5
+			air_experience = 5
+
+            add_equipment_to_stockpile = {
+				type = infantry_equipment
+				amount = 500
+			}
+			add_equipment_to_stockpile = { 
+				type = train_equipment 
+				amount = 5
+			}
+			add_equipment_to_stockpile = {
+				type = artillery_equipment
+				amount = 50
+			}
+			add_equipment_to_stockpile = {
+				type = anti_tank_equipment
+				amount = 100
+			}
+            add_equipment_to_stockpile = {
+				type = support_equipment
+				amount = 150
+			}
+			add_equipment_to_stockpile = { 
+				type = anti_air_equipment 
+				amount = 50
+			}
+
+            division_template = {
+					name = "法兰西步兵师I"
+					regiments = {
+						infantry = { x = 0 y = 0 }
+						infantry = { x = 0 y = 1 }
+						infantry = { x = 0 y = 2 }
+						infantry = { x = 0 y = 3 }
+						infantry = { x = 0 y = 4 }
+						infantry = { x = 1 y = 0 }
+						infantry = { x = 1 y = 1 }
+						infantry = { x = 1 y = 2 }
+						infantry = { x = 1 y = 3 }
+						infantry = { x = 1 y = 4 }
+						infantry = { x = 2 y = 0 }
+						artillery_brigade = { x = 3 y = 0 }
+						artillery_brigade = { x = 3 y = 1 }
+                        artillery_brigade = { x = 3 y = 2 }
+                        artillery_brigade = { x = 3 y = 3 }
+						anti_tank_brigade = { x = 3 y = 4 }
+						anti_air_brigade = { x = 4 y = 0 }
+					}
+					regimental_support = {
+					field_guns = { x = 0 y = 0 }
+					field_guns = { x = 1 y = 0 }
+					medium_tank_destroyer_support = { x = 2 y = 0 }
+					medium_tank_destroyer_support = { x = 3 y = 0 }
+					medium_sp_anti_air_support = { x = 4 y = 0 }
+				}
+					support = {
+						engineer = { x = 0 y = 0 }
+						recon = { x = 0 y = 1 }
+						artillery = { x = 0 y = 2 }
+						field_hospital = { x = 0 y = 3 }
+						logistics_company = { x = 0 y = 4 }
+					}
+				}
+
+		}
+    }
+
+    FRA_ai_tank_equipment_add_1936 =  {  #火星装甲师
+        allowed = {
+			original_tag = FRA
+		}
+		available = {
+			date > 1938.1.3
+		}
+
+		visible = {
+			has_government = neutrality
+		}
+
+		fire_only_once = no
+
+		cost = 0
+		days_remove = 45
+
+		modifier = {
+			
+		}
+
+		ai_will_do = {
+			factor = 1000
+		}
+
+        remove_effect = {
+            add_manpower = 500
+            army_experience = 5
+            if = {
+				limit = {
+					has_tech = advanced_medium_tank_chassis
+				}
+				add_equipment_to_stockpile = { 
+					type = medium_tank_chassis_3 
+					amount = 500
+				}
+				add_equipment_to_stockpile = { 
+					type = medium_tank_destroyer_chassis_3
+					amount = 500
+				}
+			}
+			else_if = {
+				limit = {
+					has_tech = improved_medium_tank_chassis
+				}
+				add_equipment_to_stockpile = { 
+					type = medium_tank_chassis_2 
+					amount = 500
+				}
+				add_equipment_to_stockpile = { 
+					type = medium_tank_destroyer_chassis_2
+					amount = 500
+				}
+			}
+			else = {
+				add_equipment_to_stockpile = { 
+					type = medium_tank_chassis_1 
+					amount = 500
+				}
+				add_equipment_to_stockpile = { 
+					type = medium_tank_destroyer_chassis_1
+					amount = 500
+				}
+			}
+
+			add_equipment_to_stockpile = { 
+				type = medium_tank_flame_chassis_2
+				amount = 100
+			}
+
+			add_equipment_to_stockpile = { 
+				type = mechanized_equipment
+				amount = 500
+			}
+
+			add_equipment_to_stockpile = { 
+				type = armored_support_vehicle
+				amount = 300
+			}
+
+            
+			if = {
+				limit = {
+					date > 1938.1.1 
+					date < 1939.1.1
+				}
+				random_owned_controlled_state = {
+					limit = { ROOT = { has_full_control_of_state = PREV } }
+					prioritize = { 64 }
+					create_unit = {
+						division = "name = \"法兰西装甲师\" division_template = \"法兰西装甲师\" start_experience_factor = 0.5" 
+						owner = FRA
+						count = 4
+					}
+					
+				}
+			} else_if = {
+				limit = {
+					date > 1939.1.1
+					date < 1940.1.1
+				}
+				random_owned_controlled_state = {
+					limit = { ROOT = { has_full_control_of_state = PREV } }
+					prioritize = { 64 }
+					create_unit = {
+						division = "name = \"法兰西装甲师\" division_template = \"法兰西装甲师\" start_experience_factor = 0.5" 
+						owner = FRA
+						count = 6
+					}
+					
+				}
+			}  else_if = {
+				random_owned_controlled_state = {
+					limit = { ROOT = { has_full_control_of_state = PREV } }
+					prioritize = { 64 }
+					create_unit = {
+						division = "name = \"法兰西装甲师\" division_template = \"法兰西装甲师\" start_experience_factor = 0.5" 
+						owner = FRA
+						count = 8
+					}
+					
+				}
+			}
+
+        }
+    }
+
+	FRA_ai_tank_base_template_add_1 =  {  #火星装甲师模板
+        allowed = {
+			original_tag = FRA
+		}
+		available = {
+			date > 1938.1.1
+		}
+
+		visible = {
+			has_government = neutrality
+		}
+
+		fire_only_once = yes
+
+		cost = 0
+		days_remove = 30
+
+		modifier = {
+			
+		}
+
+		ai_will_do = {
+			factor = 1000
+		}
+
+        remove_effect = {
+            add_manpower = 500
+            army_experience = 5
+			set_technology = { basic_medium_tank_chassis = 1 }
+			set_technology = { improved_medium_tank_chassis = 1 }
+			set_technology = {improved_heavy_tank_chassis = 1}
+			set_technology = {improved_light_tank_chassis = 1 }
+			set_technology = {interwar_antitank = 1}
+			set_technology = {antitank1 = 1}
+			set_technology = {antitank2 = 1}
+			set_technology = {antitank3 = 1}
+			set_technology = {antitank4 = 1}
+			set_technology = {antitank5 = 1}
+			set_technology = {tech_maintenance_company2 = 1}
+			set_technology = {tech_field_hospital = 1}
+			set_technology = {tech_logistics_company = 1}
+			set_technology = {mechanised_infantry = 1}
+			set_technology = {amphibious_drive = 1}
+			set_technology = {sp_armored_engineer_tech = 1}
+			set_technology = {sp_land_military_engineering_vehicles = 1}
+			set_technology = {sp_land_flamethrower_tank = 1}
+            division_template = {
+				name = "法兰西装甲师"
+				regiments = {
+					mechanized = { x = 0 y = 0 }
+					mechanized = { x = 0 y = 1 }
+					mechanized = { x = 0 y = 2 }
+					mechanized = { x = 0 y = 3 }
+					mechanized = { x = 1 y = 0 }
+					mechanized = { x = 1 y = 1 }
+					mechanized = { x = 1 y = 2 }
+					mechanized = { x = 1 y = 3 }
+					medium_armor = { x = 2 y = 0 }
+					medium_armor = { x = 2 y = 1 }
+					medium_armor = { x = 2 y = 2 }
+					medium_armor = { x = 2 y = 3 }
+					medium_armor = { x = 3 y = 0 }
+					medium_armor = { x = 3 y = 1 }
+					medium_armor = { x = 3 y = 2 }
+					medium_armor = { x = 3 y = 3 }
+					medium_tank_destroyer_brigade = { x = 4 y = 0 }
+					medium_tank_destroyer_brigade = { x = 4 y = 1 }
+				}
+				regimental_support = {
+					field_guns = { x = 0 y = 0 }
+					field_guns = { x = 1 y = 0 }
+					medium_tank_destroyer_support = { x = 2 y = 0 }
+					medium_tank_destroyer_support = { x = 3 y = 0 }
+					medium_sp_anti_air_support = { x = 4 y = 0 }
+				}
+				support = {
+					armored_engineer = { x = 0 y = 0 }
+					light_tank_recon = { x = 0 y = 1 }
+					field_hospital = { x = 0 y = 2 }
+					logistics_company = { x = 0 y = 3 }
+					medium_flame_tank = { x = 0 y = 4 }
+				}
+			}
+
+
+			create_equipment_variant = {
+				name = "mediumtank G+"
+				type = medium_tank_chassis_2
+				design_team = mio:FRA_renault_organization
+				parent_version = 0
+				modules = {
+					main_armament_slot = tank_medium_cannon_2 
+					turret_type_slot = tank_medium_three_man_tank_turret 
+					suspension_type_slot = tank_torsion_bar_suspension
+					armor_type_slot = tank_riveted_armor
+					engine_type_slot = tank_gasoline_engine
+					special_type_slot_1 = tank_radio_2
+					special_type_slot_2 = secondary_turret_hmg
+					special_type_slot_3 = secondary_turret_small_cannon
+					special_type_slot_4 = easy_maintenance
+				}
+				upgrades = {
+					tank_nsb_engine_upgrade = 0
+					tank_nsb_armor_upgrade = 4
+				}
+			}
+
+			create_equipment_variant = {
+				name = "tk_destory IV"
+				type = medium_tank_destroyer_chassis_2
+				design_team = mio:FRA_renault_organization
+				parent_version = 0
+				modules = {
+					main_armament_slot = tank_high_velocity_cannon_2
+					turret_type_slot = tank_medium_fixed_superstructure_turret #炮塔
+					suspension_type_slot = tank_bogie_suspension #悬挂
+					armor_type_slot = tank_riveted_armor #装甲
+					engine_type_slot = tank_gasoline_engine #引擎
+					special_type_slot_1 = easy_maintenance
+					special_type_slot_2 = secondary_turret_small_cannon
+					special_type_slot_3 = secondary_turret_small_cannon
+					special_type_slot_4 = stabilizer
+				}
+				upgrades = {
+					tank_nsb_engine_upgrade = 0
+					tank_nsb_armor_upgrade = 4
+				}
+			}
+
+			create_equipment_variant = {
+				name = "flame IV"
+				type = medium_tank_flame_chassis_2
+				design_team = mio:FRA_renault_organization
+				parent_version = 0
+				modules = {
+					main_armament_slot = advanced_flamethrower
+					turret_type_slot = tank_medium_three_man_tank_turret 
+					suspension_type_slot = tank_bogie_suspension 
+					armor_type_slot = tank_riveted_armor 
+					engine_type_slot = tank_diesel_engine
+					special_type_slot_1 = tank_radio_1
+					special_type_slot_2 = easy_maintenance
+					special_type_slot_3 = extra_ammo_storage
+					special_type_slot_4 = dozer_blade
+				}
+				upgrades = {
+					tank_nsb_engine_upgrade = 0
+					tank_nsb_armor_upgrade = 0
+				}
+			}
+
+        }
+    }
+
+
+
+	FRA_ai_tank_equipment_add_1940 =  {  #火星装甲师
+        allowed = {
+			original_tag = FRA
+		}
+		available = {
+			date > 1939.1.3
+		}
+
+		visible = {
+			has_government = neutrality
+		}
+
+		fire_only_once = no
+
+		cost = 0
+		days_remove = 50
+
+		modifier = {
+			
+		}
+
+		ai_will_do = {
+			factor = 1000
+		}
+
+        remove_effect = {
+            add_manpower = 500
+            army_experience = 5
+            if = {
+				limit = {
+					has_tech = advanced_medium_tank_chassis
+				}
+				add_equipment_to_stockpile = { 
+					type = medium_tank_chassis_3 
+					amount = 500
+				}
+				add_equipment_to_stockpile = { 
+					type = medium_tank_destroyer_chassis_3
+					amount = 500
+				}
+			}
+			else_if = {
+				limit = {
+					has_tech = improved_medium_tank_chassis
+				}
+				add_equipment_to_stockpile = { 
+					type = medium_tank_chassis_2 
+					amount = 500
+				}
+				add_equipment_to_stockpile = { 
+					type = medium_tank_destroyer_chassis_2
+					amount = 500
+				}
+			}
+			else = {
+				add_equipment_to_stockpile = { 
+					type = medium_tank_chassis_1 
+					amount = 500
+				}
+				add_equipment_to_stockpile = { 
+					type = medium_tank_destroyer_chassis_1
+					amount = 500
+				}
+			}
+
+			add_equipment_to_stockpile = { 
+				type = medium_tank_flame_chassis_2
+				amount = 100
+			}
+
+			add_equipment_to_stockpile = { 
+				type = mechanized_equipment
+				amount = 500
+			}
+
+			add_equipment_to_stockpile = { 
+				type = armored_support_vehicle
+				amount = 300
+			}
+
+            
+			if = {
+				limit = {
+					date > 1938.1.1 
+					date < 1939.1.1
+				}
+				random_owned_controlled_state = {
+					limit = { ROOT = { has_full_control_of_state = PREV } }
+					prioritize = { 64 }
+					create_unit = {
+						division = "name = \"法兰西两栖装甲师\" division_template = \"法兰西两栖装甲师\" start_experience_factor = 0.5" 
+						owner = FRA
+						count = 2
+					}
+					
+				}
+			} else_if = {
+				limit = {
+					date > 1939.1.1
+					date < 1940.1.1
+				}
+				random_owned_controlled_state = {
+					limit = { ROOT = { has_full_control_of_state = PREV } }
+					prioritize = { 64 }
+					create_unit = {
+						division = "name = \"法兰西两栖装甲师\" division_template = \"法兰西两栖装甲师\" start_experience_factor = 0.5" 
+						owner = FRA
+						count = 4
+					}
+					
+				}
+			}  else_if = {
+				random_owned_controlled_state = {
+					limit = { ROOT = { has_full_control_of_state = PREV } }
+					prioritize = { 64 }
+					create_unit = {
+						division = "name = \"法兰西两栖装甲师\" division_template = \"法兰西两栖装甲师\" start_experience_factor = 0.5" 
+						owner = FRA
+						count = 6
+					}
+					
+				}
+			}
+
+        }
+    }
+
+
+	
+
+	FRA_ai_tank_base_template_add_2 =  {  #火星装甲师模板
+        allowed = {
+			original_tag = FRA
+		}
+		available = {
+			date > 1939.1.1
+		}
+
+		visible = {
+			has_government = neutrality
+		}
+
+		fire_only_once = yes
+
+		cost = 0
+		days_remove = 30
+
+		modifier = {
+			
+		}
+
+		ai_will_do = {
+			factor = 1000
+		}
+
+        remove_effect = {
+            add_manpower = 500
+            army_experience = 5
+            division_template = {
+				name = "法兰西两栖装甲师"
+				regiments = {
+					marine = { x = 0 y = 0 }
+					marine = { x = 0 y = 1 }
+					marine = { x = 0 y = 2 }
+					marine = { x = 0 y = 4 }
+					marine = { x = 1 y = 0 }
+					marine = { x = 1 y = 1 }
+					marine = { x = 1 y = 2 }
+					marine = { x = 1 y = 4 }
+					medium_tank_amphibious_chassis = { x = 2 y = 0 }
+					medium_tank_amphibious_chassis = { x = 2 y = 1 }
+					medium_tank_amphibious_chassis = { x = 2 y = 2 }
+					medium_tank_amphibious_chassis = { x = 2 y = 4 }
+					medium_tank_amphibious_chassis = { x = 3 y = 0 }
+					medium_tank_amphibious_chassis = { x = 3 y = 1 }
+					medium_tank_amphibious_chassis = { x = 3 y = 2 }
+					medium_tank_amphibious_chassis = { x = 3 y = 4 }
+					medium_tank_destroyer_brigade = { x = 4 y = 0 }
+					medium_tank_destroyer_brigade = { x = 4 y = 1 }
+				}
+				regimental_support = {
+					field_guns = { x = 0 y = 0 }
+					field_guns = { x = 1 y = 0 }
+					medium_tank_destroyer_support = { x = 2 y = 0 }
+					medium_tank_destroyer_support = { x = 3 y = 0 }
+					medium_sp_anti_air_support = { x = 4 y = 0 }
+				}
+				support = {
+					armored_engineer = { x = 0 y = 0 }
+					light_tank_recon = { x = 0 y = 1 }
+					field_hospital = { x = 0 y = 2 }
+					logistics_company = { x = 0 y = 3 }
+					medium_flame_tank = { x = 0 y = 4 }
+				}
+			}
+
+
+			create_equipment_variant = {
+				name = "mediumtankhailu G+"
+				type = medium_tank_amphibious_chassis_2
+				design_team = mio:FRA_renault_organization
+				parent_version = 0
+				modules = {
+					main_armament_slot  = tank_medium_cannon_2
+					turret_type_slot = tank_medium_three_man_tank_turret 
+					suspension_type_slot = tank_torsion_bar_suspension
+					armor_type_slot = tank_riveted_armor
+					engine_type_slot = tank_diesel_engine
+					special_type_slot_1 = secondary_turret_small_cannon
+					special_type_slot_2 = secondary_turret_small_cannon
+					special_type_slot_3 = amphibious_drive
+					special_type_slot_4 = easy_maintenance
+				}
+				upgrades = {
+					tank_nsb_engine_upgrade = 0
+					tank_nsb_armor_upgrade = 4
+				}
+			}
+
+
+        }
+    }
+
+}
+
+FRA_start_industry_categories = {
+
+	FRA_start_industry_categories_1 = { #建设里昂军工
+
+		icon = generic_decision
+
+        allowed = {
+			original_tag = FRA
+		}
+
+		available = {
+            original_tag = FRA
+			FRA = {
+				has_country_flag = FRA_start_industry_flag
+				has_completed_focus = FRA_begin_rearmament
+			}
+            num_of_civilian_factories_available_for_projects > 4
+		}
+
+        visible = {
+            FRA = {
+                has_country_flag = FRA_start_industry_flag
+            }
+        }
+
+        fire_only_once = yes
+
+		cost = 50
+		days_remove = 70
+
+		modifier = {
+			consumer_goods_factor = 0.1
+			civilian_factory_use = 5
+		}
+
+		ai_will_do = {
+			factor = 100
+		}
+
+        complete_effect = {
+			
+        }
+
+        remove_effect = {
+			20 = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = arms_factory
+					level = 2
+					instant_build = yes
+				}
+			}
+			add_to_variable = { 
+				mod_with_fra_the_five_plan_industrial_capacity_factory = 0.05
+			}
+			add_to_variable = { 
+				mod_with_fra_the_five_plan_industrial_capacity_dockyard = 0.05
+			}
+			effect_tooltip = {
+				swap_ideas = {
+					add_idea = mod_with_fra_the_five_plan_tooltip_7
+					remove_idea = mod_with_fra_the_five_plan_tooltip
+				}
+			}
+        }
+
+    }
+
+	FRA_start_industry_categories_2 = { #兴修大坝
+
+		icon = generic_decision
+
+        allowed = {
+			original_tag = FRA
+		}
+
+		available = {
+            original_tag = FRA
+			FRA = {
+				has_country_flag = FRA_start_industry_flag
+			}
+            num_of_civilian_factories_available_for_projects > 9
+		}
+
+        visible = {
+            FRA = {
+                has_country_flag = FRA_start_industry_flag
+            }
+        }
+
+        fire_only_once = yes
+
+		cost = 50
+		days_remove = 100
+
+		modifier = {
+			consumer_goods_factor = 0.1
+			civilian_factory_use = 10
+		}
+
+		ai_will_do = {
+			factor = 100
+		}
+
+        complete_effect = {
+			
+        }
+
+        remove_effect = {
+			20 = {
+				add_building_construction = {
+					type = dam
+					level = 1
+					instant_build = yes
+					province = {
+						id = 6639
+					}
+				}
+			}
+			26 = {
+				add_building_construction = {
+					type = dam
+					level = 1
+					instant_build = yes
+					province = {
+						id = 3594
+					}
+				}
+			}
+			31 = {
+				add_building_construction = {
+					type = dam
+					level = 1
+					instant_build = yes
+					province = {
+						id = 3915
+					}
+				}
+			}
+			
+        }
+
+    }
+
+	FRA_start_industry_categories_3 = { #投资图尔兵工厂
+
+		icon = generic_decision
+
+        allowed = {
+			original_tag = FRA
+		}
+
+		available = {
+            original_tag = FRA
+			FRA = {
+				has_country_flag = FRA_start_industry_flag
+				has_completed_focus = FRA_begin_rearmament
+			}
+            num_of_civilian_factories_available_for_projects > 4
+		}
+
+        visible = {
+            FRA = {
+                has_country_flag = FRA_start_industry_flag
+            }
+        }
+
+        fire_only_once = yes
+
+		cost = 50
+		days_remove = 70
+
+		modifier = {
+			consumer_goods_factor = 0.1
+			civilian_factory_use = 5
+		}
+
+		ai_will_do = {
+			factor = 100
+		}
+
+        complete_effect = {
+			
+        }
+
+        remove_effect = {
+			24 = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = arms_factory
+					level = 2
+					instant_build = yes
+				}
+			}
+			add_to_variable = { 
+				mod_with_fra_the_five_plan_production_factory_max_efficiency_factor = 0.025
+			}
+			add_to_variable = { 
+				mod_with_fra_the_five_plan_production_factory_efficiency_gain_factor = 0.05
+			}
+			effect_tooltip = {
+				swap_ideas = {
+					add_idea = mod_with_fra_the_five_plan_tooltip_10
+					remove_idea = mod_with_fra_the_five_plan_tooltip
+				}
+			}
+			
+        }
+
+    }
+
+	FRA_start_industry_categories_4 = { #投资布列塔尼造船业
+
+		icon = generic_decision
+
+        allowed = {
+			original_tag = FRA
+		}
+
+		available = {
+            original_tag = FRA
+			FRA = {
+				has_country_flag = FRA_start_industry_flag
+				has_completed_focus = FRA_begin_rearmament
+			}
+            num_of_civilian_factories_available_for_projects > 4
+		}
+
+        visible = {
+            FRA = {
+                has_country_flag = FRA_start_industry_flag
+            }
+        }
+
+        fire_only_once = yes
+
+		cost = 50
+		days_remove = 70
+
+		modifier = {
+			consumer_goods_factor = 0.1
+			civilian_factory_use = 5
+		}
+
+		ai_will_do = {
+			factor = 100
+		}
+
+        complete_effect = {
+			
+        }
+
+        remove_effect = {
+			14 = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = dockyard
+					level = 2
+					instant_build = yes
+				}
+			}
+			IF = {
+				limit = { has_dlc = "Arms Against Tyranny" }
+				mio:FRA_aeb_organization = {
+					add_mio_funds = 10000
+				}
+			}
+			add_tech_bonus = {
+				name = FRA_start_industry_categories_4
+				ahead_reduction = 2
+				uses = 1
+				category = cv_tech
+			}
+			
+        }
+
+    }
+
+	FRA_start_industry_categories_5 = { #投资卢瓦尔造船厂
+
+		icon = generic_decision
+
+        allowed = {
+			original_tag = FRA
+		}
+
+		available = {
+            original_tag = FRA
+			FRA = {
+				has_country_flag = FRA_start_industry_flag
+				has_completed_focus = FRA_begin_rearmament
+			}
+            num_of_civilian_factories_available_for_projects > 4
+		}
+
+        visible = {
+            FRA = {
+                has_country_flag = FRA_start_industry_flag
+            }
+        }
+
+        fire_only_once = yes
+
+		cost = 50
+		days_remove = 70
+
+		modifier = {
+			consumer_goods_factor = 0.1
+			civilian_factory_use = 5
+		}
+
+		ai_will_do = {
+			factor = 100
+		}
+
+        complete_effect = {
+			
+        }
+
+        remove_effect = {
+			30 = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = dockyard
+					level = 2
+					instant_build = yes
+				}
+			}
+			IF = {
+				limit = { has_dlc = "Arms Against Tyranny" }
+				mio:FRA_acl_organization = {
+					add_mio_funds = 10000
+				}
+			}
+
+			add_tech_bonus = {
+				name = FRA_start_industry_categories_5
+				ahead_reduction = 2
+				uses = 1
+				category = bb_tech
+			}
+			
+        }
+
+    }
+
+	FRA_start_industry_categories_6 = { #建设国立大学
+
+		icon = generic_decision
+
+        allowed = {
+			original_tag = FRA
+		}
+
+		available = {
+            original_tag = FRA
+			FRA = {
+				has_country_flag = FRA_start_industry_flag
+				NOT = {
+					has_completed_focus = FRA_extra_research_slot
+				}
+			}
+            num_of_civilian_factories_available_for_projects > 4
+		}
+
+        visible = {
+            FRA = {
+                has_country_flag = FRA_start_industry_flag
+				NOT = {
+					has_completed_focus = FRA_extra_research_slot
+				}
+            }
+        }
+
+        fire_only_once = yes
+
+		cost = 50
+		days_remove = 100
+
+		modifier = {
+			consumer_goods_factor = 0.1
+			civilian_factory_use = 5
+		}
+
+		ai_will_do = {
+			factor = 1000
+		}
+
+        complete_effect = {
+			set_country_flag = FRA_extra_research_slot_doing_flag
+        }
+
+        remove_effect = {
+			FRA = {
+				complete_national_focus = FRA_extra_research_slot
+			}
+			
+        }
+
+    }
+
+	FRA_start_industry_categories_7 = { #建设国家科研中心
+
+		icon = generic_decision
+
+        allowed = {
+			original_tag = FRA
+		}
+
+		available = {
+            original_tag = FRA
+			FRA = {
+				has_country_flag = FRA_start_industry_flag
+				NOT = {
+					has_completed_focus = FRA_extra_research_slot_2
+				}
+			}
+            num_of_civilian_factories_available_for_projects > 4
+		}
+
+        visible = {
+            FRA = {
+                has_country_flag = FRA_start_industry_flag
+				NOT = {
+					has_completed_focus = FRA_extra_research_slot_2
+				}
+            }
+        }
+
+        fire_only_once = yes
+
+		cost = 50
+		days_remove = 100
+
+		modifier = {
+			consumer_goods_factor = 0.1
+			civilian_factory_use = 5
+		}
+
+		ai_will_do = {
+			factor = 1000
+		}
+
+        complete_effect = {
+			set_country_flag = FRA_extra_research_slot_2_doing_flag
+			
+        }
+
+        remove_effect = {
+			FRA = {
+				complete_national_focus = FRA_extra_research_slot_2
+			}
+			
+        }
+
+    }
+
+	FRA_start_industry_categories_8 = { #保障权益
+
+		icon = generic_decision
+
+        allowed = {
+			original_tag = FRA
+		}
+
+		available = {
+            original_tag = FRA
+			FRA = {
+				has_country_flag = FRA_start_industry_flag
+			}
+            num_of_civilian_factories_available_for_projects > 4
+		}
+
+        visible = {
+            FRA = {
+                has_country_flag = FRA_start_industry_flag
+            }
+        }
+
+        fire_only_once = yes
+
+		cost = 50
+		days_remove = 70
+
+		modifier = {
+			consumer_goods_factor = 0.1
+			civilian_factory_use = 5
+		}
+
+		ai_will_do = {
+			factor = 100
+		}
+
+        complete_effect = {
+			
+			
+        }
+
+        remove_effect = {
+			add_to_variable = { 
+				mod_with_fra_the_five_plan_production_factory_start_efficiency_factor = 0.05
+			}
+			add_to_variable = { 
+				mod_with_fra_the_five_plan_production_factory_max_efficiency_factor = 0.05
+			}
+			add_to_variable = { 
+				mod_with_fra_the_five_plan_production_factory_efficiency_gain_factor = 0.1
+			}
+			add_to_variable = { 
+				mod_with_fra_the_five_plan_industrial_capacity_dockyard = 0.05
+			}
+			add_to_variable = { 
+				mod_with_fra_the_five_plan_industrial_capacity_factory = 0.05
+			}
+			effect_tooltip = {
+				swap_ideas = {
+					add_idea = mod_with_fra_the_five_plan_tooltip_9
+					remove_idea = mod_with_fra_the_five_plan_tooltip
+				}
+			}
+        }
+
+    }
+
+	FRA_start_industry_categories_9 = { #投资飞机制造
+
+		icon = generic_decision
+
+        allowed = {
+			original_tag = FRA
+		}
+
+		available = {
+            original_tag = FRA
+			FRA = {
+				has_country_flag = FRA_start_industry_flag
+				has_completed_focus = FRA_begin_rearmament
+			}
+            num_of_civilian_factories_available_for_projects > 4
+		}
+
+        visible = {
+            FRA = {
+                has_country_flag = FRA_start_industry_flag
+            }
+        }
+
+        fire_only_once = yes
+
+		cost = 50
+		days_remove = 150
+
+		modifier = {
+			consumer_goods_factor = 0.1
+			civilian_factory_use = 5
+		}
+
+		ai_will_do = {
+			factor = 100
+		}
+
+        complete_effect = {
+			
+			
+        }
+
+        remove_effect = {
+			add_tech_bonus = {
+				name = FRA_start_industry_categories_9
+				ahead_reduction = 2
+				uses = 1
+				category = air_equipment
+			}
+			IF = {
+				limit = { has_dlc = "Arms Against Tyranny" }
+				mio:FRA_morane_saulnier_organization = {
+					add_mio_funds = 10000
+				}
+				mio:FRA_bloch_organization = {
+					add_mio_funds = 10000
+				}
+			}
+
+        }
+
+    }
+
+	FRA_start_industry_categories_10 = { #坦克升级
+
+		icon = generic_decision
+
+        allowed = {
+			original_tag = FRA
+		}
+
+		available = {
+            original_tag = FRA
+			FRA = {
+				has_country_flag = FRA_start_industry_flag
+				has_completed_focus = FRA_begin_rearmament
+			}
+            num_of_civilian_factories_available_for_projects > 4
+		}
+
+        visible = {
+            FRA = {
+                has_country_flag = FRA_start_industry_flag
+            }
+        }
+
+        fire_only_once = yes
+
+		cost = 50
+		days_remove = 150
+
+		modifier = {
+			consumer_goods_factor = 0.1
+			civilian_factory_use = 5
+		}
+
+		ai_will_do = {
+			factor = 100
+		}
+
+        complete_effect = {
+			
+			
+        }
+
+        remove_effect = {
+			add_tech_bonus = {
+				name = FRA_start_industry_categories_10
+				ahead_reduction = 2
+				uses = 1
+				category = armor
+			}
+			IF = {
+				limit = { has_dlc = "Arms Against Tyranny" }
+				mio:FRA_renault_organization = {
+					add_mio_funds = 10000
+				}
+				mio:FRA_apx_organization = {
+					add_mio_funds = 10000
+				}
+			}
+			add_to_variable = { 
+				mod_with_the_fra_army_army_core_attack_factor = 0.02
+			}
+			add_to_variable = { 
+				mod_with_the_fra_army_army_attack_factor = 0.02
+			}
+			effect_tooltip = {
+				swap_ideas = {
+					add_idea = mod_with_the_fra_army_tooltip_7
+					remove_idea = mod_with_the_fra_army_tooltip
+				}
+			}
+
+        }
+
+    }
+
+	FRA_start_industry_categories_11 = { #步兵装备升级
+
+		icon = generic_decision
+
+        allowed = {
+			original_tag = FRA
+		}
+
+		available = {
+            original_tag = FRA
+			FRA = {
+				has_country_flag = FRA_start_industry_flag
+				has_completed_focus = FRA_begin_rearmament
+			}
+            num_of_civilian_factories_available_for_projects > 4
+		}
+
+        visible = {
+            FRA = {
+                has_country_flag = FRA_start_industry_flag
+            }
+        }
+
+        fire_only_once = yes
+
+		cost = 50
+		days_remove = 150
+
+		modifier = {
+			consumer_goods_factor = 0.1
+			civilian_factory_use = 5
+		}
+
+		ai_will_do = {
+			factor = 100
+		}
+
+        complete_effect = {
+			
+			
+        }
+
+        remove_effect = {
+			add_tech_bonus = {
+				name = FRA_start_industry_categories_11
+				ahead_reduction = 2
+				uses = 1
+				category = infantry_weapons
+			}
+			IF = {
+				limit = { has_dlc = "Arms Against Tyranny" }
+				mio:FRA_mas_organization = {
+					add_mio_funds = 10000
+				}
+				mio:FRA_somua_organization = {
+					add_mio_funds = 10000
+				}
+			}
+			add_to_variable = { 
+				mod_with_the_fra_army_army_core_defence_factor = 0.02
+			}
+			add_to_variable = { 
+				mod_with_the_fra_army_army_defence_factor = 0.02
+			}
+			effect_tooltip = {
+				swap_ideas = {
+					add_idea = mod_with_the_fra_army_tooltip_6
+					remove_idea = mod_with_the_fra_army_tooltip
+				}
+			}
+
+        }
+
+    }
+
+	FRA_start_industry_categories_12 = { #开发国内南部铁矿
+
+		icon = generic_decision
+
+        allowed = {
+			original_tag = FRA
+		}
+
+		available = {
+            original_tag = FRA
+			FRA = {
+				has_country_flag = FRA_start_industry_flag
+				has_completed_focus = FRA_metropolitan_france
+			}
+            num_of_civilian_factories_available_for_projects > 4
+			has_tech = excavation2
+		}
+
+        visible = {
+            FRA = {
+                has_country_flag = FRA_start_industry_flag
+            }
+        }
+
+        fire_only_once = yes
+
+		cost = 50
+		days_remove = 100
+
+		modifier = {
+			consumer_goods_factor = 0.1
+			civilian_factory_use = 5
+		}
+
+		ai_will_do = {
+			factor = 100
+		}
+
+        complete_effect = {
+			
+			
+        }
+
+        remove_effect = {
+			add_to_variable = { 
+				mod_with_fra_the_five_plan_local_resources_factor = 0.05
+			}
+			add_to_variable = { 
+				mod_with_fra_the_five_plan_production_lack_of_resource_penalty_factor = -0.05
+			}
+
+			effect_tooltip = {
+				swap_ideas = {
+					add_idea = mod_with_fra_the_five_plan_tooltip_4
+					remove_idea = mod_with_fra_the_five_plan_tooltip
+				}
+			}
+			31 = {
+				add_resource = {
+					type = steel
+					amount = 32
+				}
+			}
+			22 = {
+				add_resource = {
+					type = steel
+					amount = 19
+				}
+			}
+			806 = {
+				add_resource = {
+					type = steel
+					amount = 21
+				}
+			}
+
+        }
+
+    }
+
+	FRA_start_industry_categories_13 = { #勘探国内油田
+
+		icon = generic_decision
+
+        allowed = {
+			original_tag = FRA
+		}
+
+		available = {
+            original_tag = FRA
+			FRA = {
+				has_country_flag = FRA_start_industry_flag
+				has_completed_focus = FRA_metropolitan_france
+			}
+            num_of_civilian_factories_available_for_projects > 4
+			has_tech = excavation3
+		}
+
+        visible = {
+            FRA = {
+                has_country_flag = FRA_start_industry_flag
+            }
+        }
+
+        fire_only_once = yes
+
+		cost = 50
+		days_remove = 100
+
+		modifier = {
+			consumer_goods_factor = 0.1
+			civilian_factory_use = 5
+		}
+
+		ai_will_do = {
+			factor = 100
+		}
+
+        complete_effect = {
+			
+			
+        }
+
+        remove_effect = {
+			add_to_variable = { 
+				mod_with_fra_the_five_plan_local_resources_factor = 0.05
+			}
+			add_to_variable = { 
+				mod_with_fra_the_five_plan_production_lack_of_resource_penalty_factor = -0.05
+			}
+
+			effect_tooltip = {
+				swap_ideas = {
+					add_idea = mod_with_fra_the_five_plan_tooltip_4
+					remove_idea = mod_with_fra_the_five_plan_tooltip
+				}
+			}
+			16 = {
+				add_resource = {
+					type = oil
+					amount = 6
+				}
+			}
+			25 = {
+				add_resource = {
+					type = oil
+					amount = 19
+				}
+			}
+
+        }
+
+    }
+
+	FRA_start_industry_categories_14 = { #完善南部基础设施
+
+		icon = generic_decision
+
+        allowed = {
+			original_tag = FRA
+		}
+
+		available = {
+            original_tag = FRA
+			FRA = {
+				has_country_flag = FRA_start_industry_flag
+				has_completed_focus = FRA_autoroutes
+			}
+            num_of_civilian_factories_available_for_projects > 9
+		}
+
+        visible = {
+            FRA = {
+                has_country_flag = FRA_start_industry_flag
+            }
+        }
+
+        fire_only_once = yes
+
+		cost = 50
+		days_remove = 150
+
+		modifier = {
+			consumer_goods_factor = 0.1
+			civilian_factory_use = 10
+		}
+
+		ai_will_do = {
+			factor = 100
+		}
+
+        complete_effect = {
+			
+			
+        }
+
+        remove_effect = {
+			add_to_variable = { 
+				mod_with_fra_the_five_plan_production_speed_infrastructure_factor = 0.1
+			}
+			add_to_variable = { 
+				mod_with_fra_the_five_plan_production_speed_rail_way_factor = 0.1
+			}
+			effect_tooltip = {
+				swap_ideas = {
+					add_idea = mod_with_fra_the_five_plan_tooltip_2
+					remove_idea = mod_with_fra_the_five_plan_tooltip
+				}
+			}
+			32 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 5
+					instant_build = yes
+				}
+			}
+			735 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 5
+					instant_build = yes
+				}
+				add_building_construction = {
+					type = supply_node
+					level = 1
+					instant_build = yes
+					province = {
+						id = 6609
+					}
+				}
+			}
+			851 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 5
+					instant_build = yes
+				}
+			}
+			21 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 5
+					instant_build = yes
+				}
+			}
+			22 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 5
+					instant_build = yes
+				}
+			}
+			26 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 5
+					instant_build = yes
+				}
+			}
+			25 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 5
+					instant_build = yes
+				}
+			}
+			31 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 5
+					instant_build = yes
+				}
+			}
+			806 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 5
+					instant_build = yes
+				}
+			}
+			19 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 5
+					instant_build = yes
+				}
+			}
+
+        }
+
+    }
+
+
+	FRA_start_industry_categories_15 = { #城市化建设
+
+		icon = generic_decision
+
+        allowed = {
+			original_tag = FRA
+		}
+
+		available = {
+            original_tag = FRA
+			FRA = {
+				has_country_flag = FRA_start_industry_flag
+				has_completed_focus = FRA_autoroutes
+			}
+            num_of_civilian_factories_available_for_projects > 9
+		}
+
+        visible = {
+            FRA = {
+                has_country_flag = FRA_start_industry_flag
+            }
+        }
+
+        fire_only_once = yes
+
+		cost = 50
+		days_remove = 150
+
+		modifier = {
+			consumer_goods_factor = 0.1
+			civilian_factory_use = 10
+		}
+
+		ai_will_do = {
+			factor = 100
+		}
+
+        complete_effect = {
+			
+			
+        }
+
+        remove_effect = {
+			add_to_variable = { 
+				mod_with_fra_the_five_plan_production_speed_infrastructure_factor = 0.1
+			}
+			add_to_variable = { 
+				mod_with_fra_the_five_plan_production_speed_rail_way_factor = 0.1
+			}
+			effect_tooltip = {
+				swap_ideas = {
+					add_idea = mod_with_fra_the_five_plan_tooltip_2
+					remove_idea = mod_with_fra_the_five_plan_tooltip
+				}
+			}
+			if = {
+				limit = {
+					24 = { 
+						is_owned_and_controlled_by = ROOT
+					}
+				}
+				24 = { 
+					set_state_category = metropolis
+					add_building_construction = {
+						type = industrial_complex
+						level = 1
+						instant_build = yes
+					}
+				}
+				
+			}
+			if = {
+				limit = {
+					18 = { 
+						is_owned_and_controlled_by = ROOT
+					}
+				}
+				18 = { 
+					set_state_category = metropolis
+					add_building_construction = {
+						type = industrial_complex
+						level = 1
+						instant_build = yes
+					}
+				}
+			}
+			if = {
+				limit = {
+					14 = { 
+						is_owned_and_controlled_by = ROOT
+					}
+				}
+				14 = { 
+					set_state_category = metropolis
+					add_building_construction = {
+						type = industrial_complex
+						level = 1
+						instant_build = yes
+					}
+				}
+			}
+
+        }
+
+    }
+
+}
+
+
+
+#法国军改
+FRA_the_army_rearmament_categories = {
+
+	#第一阶段军事改革
+	FRA_the_army_rearmament_categories_11 = { #重拾信心
+
+		icon = CHL_carabineros
+
+        allowed = {
+			original_tag = FRA
+		}
+
+		available = {
+            original_tag = FRA
+			FRA = {
+				has_country_flag = FRA_start_army_rearmament_flag
+				has_completed_focus = FRA_begin_rearmament
+			}
+			OR = {
+				NOT = {
+					has_country_flag = Now_we_are_rearmament_flag
+				}
+				FRA = {
+					has_completed_focus = FRA_proclaim_the_third_empire
+				}
+			}
+			OR = {
+				is_ai = yes
+				has_army_experience > 29.9
+			}
+		}
+
+        visible = {
+            FRA = {
+                has_country_flag = FRA_start_army_rearmament_flag
+            }
+        }
+
+        fire_only_once = yes
+
+		cost = 20
+		days_remove = 120
+
+		modifier = {
+			experience_gain_army_factor = -0.1
+		}
+
+		ai_will_do = {
+			factor = 1000
+		}
+
+        complete_effect = {
+			army_experience = -30
+			set_country_flag = Now_we_are_rearmament_flag
+        }
+
+        remove_effect = {
+			clr_country_flag = Now_we_are_rearmament_flag
+			set_country_flag = FRA_the_army_rearmament_categories_11_flag
+
+			add_to_variable = { 
+				mod_with_the_fra_army_army_attack_factor = 0.025
+			}
+			add_to_variable = { 
+				mod_with_the_fra_army_army_defence_factor = 0.025
+			}
+			effect_tooltip = {
+				swap_ideas = {
+					add_idea = mod_with_the_fra_army_tooltip_13
+					remove_idea = mod_with_the_fra_army_tooltip
+				}
+			}
+
+
+        }
+
+    }
+
+	FRA_the_army_rearmament_categories_12 = { #提升军事素养
+
+		icon = CHL_carabineros
+
+        allowed = {
+			original_tag = FRA
+		}
+
+		available = {
+            original_tag = FRA
+			FRA = {
+				has_country_flag = FRA_start_army_rearmament_flag
+				has_completed_focus = FRA_begin_rearmament
+			}
+			OR = {
+				NOT = {
+					has_country_flag = Now_we_are_rearmament_flag
+				}
+				FRA = {
+					has_completed_focus = FRA_proclaim_the_third_empire
+				}
+			}
+			OR = {
+				is_ai = yes
+				has_army_experience > 29.9
+			}
+		}
+
+        visible = {
+            FRA = {
+                has_country_flag = FRA_start_army_rearmament_flag
+            }
+        }
+
+        fire_only_once = yes
+
+		cost = 20
+		days_remove = 120
+
+		modifier = {
+			experience_gain_army_factor = -0.1
+		}
+
+		ai_will_do = {
+			factor = 1000
+		}
+
+        complete_effect = {
+			army_experience = -30
+			set_country_flag = Now_we_are_rearmament_flag
+        }
+
+        remove_effect = {
+			clr_country_flag = Now_we_are_rearmament_flag
+			set_country_flag = FRA_the_army_rearmament_categories_12_flag
+
+			add_to_variable = { 
+				mod_with_the_fra_army_army_org_factor = 0.05
+			}
+			add_to_variable = { 
+				mod_with_the_fra_army_army_strength_factor = 0.05
+			}
+			add_to_variable = { 
+				mod_with_the_fra_army_army_morale_factor = 0.025
+			}
+			add_to_variable = { 
+				mod_with_the_fra_army_enemy_army_bonus_air_superiority_factor = -0.025
+			}
+			add_to_variable = { 
+				mod_with_the_fra_army_land_reinforce_rate = 0.01
+			}
+			effect_tooltip = {
+				swap_ideas = {
+					add_idea = mod_with_the_fra_army_tooltip_14
+					remove_idea = mod_with_the_fra_army_tooltip
+				}
+			}
+
+
+        }
+
+    }
+
+	FRA_the_army_rearmament_categories_13 = { #提高军官水平
+
+		icon = CHL_carabineros
+
+        allowed = {
+			original_tag = FRA
+		}
+
+		available = {
+            original_tag = FRA
+			FRA = {
+				has_country_flag = FRA_start_army_rearmament_flag
+				has_completed_focus = FRA_begin_rearmament
+			}
+			OR = {
+				NOT = {
+					has_country_flag = Now_we_are_rearmament_flag
+				}
+				FRA = {
+					has_completed_focus = FRA_proclaim_the_third_empire
+				}
+			}
+			OR = {
+				is_ai = yes
+				has_army_experience > 29.9
+			}
+		}
+
+        visible = {
+            FRA = {
+                has_country_flag = FRA_start_army_rearmament_flag
+            }
+        }
+
+        fire_only_once = yes
+
+		cost = 20
+		days_remove = 120
+
+		modifier = {
+			experience_gain_army_factor = -0.1
+		}
+
+		ai_will_do = {
+			factor = 1000
+		}
+
+        complete_effect = {
+			army_experience = -30
+			set_country_flag = Now_we_are_rearmament_flag
+        }
+
+        remove_effect = {
+			clr_country_flag = Now_we_are_rearmament_flag
+			set_country_flag = FRA_the_army_rearmament_categories_13_flag
+
+			add_to_variable = { 
+				mod_with_the_fra_army_command_power_gain = 0.1
+			}
+			add_to_variable = { 
+				mod_with_the_fra_army_max_command_power = 25
+			}
+			add_to_variable = { 
+				mod_with_the_fra_army_planning_speed = 0.1
+			}
+			add_to_variable = { 
+				mod_with_the_fra_army_max_planning_factor = 0.02
+			}
+			effect_tooltip = {
+				swap_ideas = {
+					add_idea = mod_with_the_fra_army_tooltip_15
+					remove_idea = mod_with_the_fra_army_tooltip
+				}
+			}
+
+
+        }
+
+    }
+
+
+	FRA_the_army_rearmament_categories_14 = { #扩大宣传
+
+		icon = CHL_carabineros
+
+        allowed = {
+			original_tag = FRA
+		}
+
+		available = {
+            original_tag = FRA
+			FRA = {
+				has_country_flag = FRA_start_army_rearmament_flag
+				has_completed_focus = FRA_begin_rearmament
+			}
+			OR = {
+				NOT = {
+					has_country_flag = Now_we_are_rearmament_flag
+				}
+				FRA = {
+					has_completed_focus = FRA_proclaim_the_third_empire
+				}
+			}
+			OR = {
+				is_ai = yes
+				has_army_experience > 29.9
+			}
+		}
+
+        visible = {
+            FRA = {
+                has_country_flag = FRA_start_army_rearmament_flag
+            }
+        }
+
+        fire_only_once = yes
+
+		cost = 20
+		days_remove = 60
+
+		modifier = {
+			experience_gain_army_factor = -0.1
+		}
+
+		ai_will_do = {
+			factor = 1000
+		}
+
+        complete_effect = {
+			army_experience = -30
+			set_country_flag = Now_we_are_rearmament_flag
+        }
+
+        remove_effect = {
+			clr_country_flag = Now_we_are_rearmament_flag
+			set_country_flag = FRA_the_army_rearmament_categories_14_flag
+
+			add_to_variable = { 
+				mod_with_the_fra_army_conscription = 0.001
+			}
+			add_to_variable = { 
+				mod_with_the_fra_army_conscription_factor = 0.05
+			}
+			effect_tooltip = {
+				swap_ideas = {
+					add_idea = mod_with_the_fra_army_tooltip_4
+					remove_idea = mod_with_the_fra_army_tooltip
+				}
+			}
+
+
+        }
+
+    }
+
+	FRA_the_army_rearmament_categories_15 = { #完成第一阶段改革
+
+		icon = CHL_carabineros
+
+        allowed = {
+			original_tag = FRA
+		}
+
+		available = {
+            original_tag = FRA
+			FRA = {
+				has_country_flag = FRA_start_army_rearmament_flag
+				has_completed_focus = FRA_begin_rearmament
+				has_country_flag = FRA_the_army_rearmament_categories_11_flag
+				has_country_flag = FRA_the_army_rearmament_categories_12_flag
+				has_country_flag = FRA_the_army_rearmament_categories_13_flag
+				has_country_flag = FRA_the_army_rearmament_categories_14_flag
+			}
+			
+		}
+
+        visible = {
+            FRA = {
+                has_country_flag = FRA_start_army_rearmament_flag
+            }
+        }
+
+        fire_only_once = yes
+
+		cost = 0
+
+		ai_will_do = {
+			factor = 1000
+		}
+
+        complete_effect = {
+			set_country_flag = FRA_the_army_rearmament_categories_15_flag
+			clr_country_flag = Now_we_are_rearmament_flag
+			clr_country_flag = FRA_the_army_rearmament_categories_11_flag
+			clr_country_flag = FRA_the_army_rearmament_categories_12_flag
+			clr_country_flag = FRA_the_army_rearmament_categories_13_flag
+			clr_country_flag = FRA_the_army_rearmament_categories_14_flag
+
+			add_to_variable = { 
+				mod_with_the_fra_army_army_attack_factor = 0.025
+			}
+			add_to_variable = { 
+				mod_with_the_fra_army_army_defence_factor = 0.025
+			}
+			add_to_variable = { 
+				mod_with_the_fra_army_army_core_attack_factor = 0.025
+			}
+			add_to_variable = { 
+				mod_with_the_fra_army_army_core_defence_factor = 0.025
+			}
+			effect_tooltip = {
+				swap_ideas = {
+					add_idea = mod_with_the_fra_army_tooltip_16
+					remove_idea = mod_with_the_fra_army_tooltip
+				}
+			}
+			if = {
+				limit = {
+					FRA = {
+						has_completed_focus = FRA_complete_aggressive_focus
+						has_completed_focus = FRA_complete_defensive_focus
+					}
+				}
+				FRA =  {
+					complete_national_focus = FRA_complete_army_reform
+				}
+			}
+        }
+
+        remove_effect = {
+			
+
+
+        }
+
+    }
+
+	#第二阶段改革
+	FRA_the_army_rearmament_categories_17 = { #空地一体化
+
+		icon = CHL_mapuche_liberate_isthmo_amerindia
+
+        allowed = {
+			original_tag = FRA
+		}
+
+		available = {
+            original_tag = FRA
+			FRA = {
+				has_country_flag = FRA_start_army_rearmament_flag
+				has_completed_focus = FRA_begin_rearmament
+				has_country_flag = FRA_the_army_rearmament_categories_15_flag
+				has_completed_focus = FRA_flying_artillery
+			}
+
+			OR = {
+				is_ai = yes
+				has_army_experience > 29.9
+			}
+		}
+
+        visible = {
+            FRA = {
+                has_country_flag = FRA_the_army_rearmament_categories_15_flag
+            }
+        }
+
+        fire_only_once = yes
+
+		cost = 20
+		days_remove = 120
+
+		modifier = {
+			experience_gain_army_factor = -0.1
+		}
+
+		ai_will_do = {
+			factor = 1000
+		}
+
+        complete_effect = {
+			army_experience = -30
+        }
+
+        remove_effect = {
+			add_to_variable = { 
+				mod_with_the_fra_army_air_cas_efficiency = 0.1
+			}
+			add_to_variable = { 
+				mod_with_the_fra_army_army_bonus_air_superiority_factor = 0.1
+			}
+			effect_tooltip = {
+				swap_ideas = {
+					add_idea = mod_with_the_fra_army_tooltip_21
+					remove_idea = mod_with_the_fra_army_tooltip
+				}
+			}
+
+
+        }
+
+    }
+
+	FRA_the_army_rearmament_categories_18 = { #有序作战
+
+		icon = CHL_mapuche_liberate_isthmo_amerindia
+
+        allowed = {
+			original_tag = FRA
+		}
+
+		available = {
+            original_tag = FRA
+			FRA = {
+				has_country_flag = FRA_start_army_rearmament_flag
+				has_completed_focus = FRA_begin_rearmament
+				has_country_flag = FRA_the_army_rearmament_categories_15_flag
+				has_completed_focus = FRA_methodical_battle
+			}
+
+			OR = {
+				is_ai = yes
+				has_army_experience > 29.9
+			}
+		}
+
+        visible = {
+            FRA = {
+                has_country_flag = FRA_the_army_rearmament_categories_15_flag
+            }
+        }
+
+        fire_only_once = yes
+
+		cost = 20
+		days_remove = 120
+
+		modifier = {
+			experience_gain_army_factor = -0.1
+		}
+
+		ai_will_do = {
+			factor = 1000
+		}
+
+        complete_effect = {
+			army_experience = -30
+        }
+
+        remove_effect = {
+			add_to_variable = { 
+				mod_with_the_fra_army_army_infantry_defence_factor = 0.05
+			}
+			effect_tooltip = {
+				swap_ideas = {
+					add_idea = mod_with_the_fra_army_tooltip_20
+					remove_idea = mod_with_the_fra_army_tooltip
+				}
+			}
+
+
+        }
+
+    }
+
+	FRA_the_army_rearmament_categories_19 = { #火力覆盖
+
+		icon = CHL_mapuche_liberate_isthmo_amerindia
+
+        allowed = {
+			original_tag = FRA
+		}
+
+		available = {
+            original_tag = FRA
+			FRA = {
+				has_country_flag = FRA_start_army_rearmament_flag
+				has_completed_focus = FRA_begin_rearmament
+				has_country_flag = FRA_the_army_rearmament_categories_15_flag
+				has_completed_focus = FRA_artillery_focus
+			}
+
+			OR = {
+				is_ai = yes
+				has_army_experience > 29.9
+			}
+		}
+
+        visible = {
+            FRA = {
+                has_country_flag = FRA_the_army_rearmament_categories_15_flag
+            }
+        }
+
+        fire_only_once = yes
+
+		cost = 20
+		days_remove = 120
+
+		modifier = {
+			experience_gain_army_factor = -0.1
+		}
+
+		ai_will_do = {
+			factor = 1000
+		}
+
+        complete_effect = {
+			army_experience = -30
+        }
+
+        remove_effect = {
+
+			add_to_variable = { 
+				mod_with_the_fra_army_army_artillery_attack_factor = 0.025
+			}
+			add_to_variable = { 
+				mod_with_the_fra_army_army_artillery_defence_factor = 0.05
+			}
+			effect_tooltip = {
+				swap_ideas = {
+					add_idea = mod_with_the_fra_army_tooltip_19
+					remove_idea = mod_with_the_fra_army_tooltip
+				}
+			}
+
+
+        }
+
+    }
+
+
+	FRA_the_army_rearmament_categories_20 = { #注重机动战术
+
+		icon = CHL_mapuche_liberate_isthmo_amerindia
+
+        allowed = {
+			original_tag = FRA
+		}
+
+		available = {
+            original_tag = FRA
+			FRA = {
+				has_country_flag = FRA_start_army_rearmament_flag
+				has_completed_focus = FRA_begin_rearmament
+				has_country_flag = FRA_the_army_rearmament_categories_15_flag
+				has_completed_focus = FRA_mechanized_focus
+			}
+
+			OR = {
+				is_ai = yes
+				has_army_experience > 29.9
+			}
+		}
+
+        visible = {
+            FRA = {
+                has_country_flag = FRA_the_army_rearmament_categories_15_flag
+            }
+        }
+
+        fire_only_once = yes
+
+		cost = 20
+		days_remove = 120
+
+		modifier = {
+			experience_gain_army_factor = -0.1
+		}
+
+		ai_will_do = {
+			factor = 1000
+		}
+
+        complete_effect = {
+			army_experience = -30
+        }
+
+        remove_effect = {
+
+			add_to_variable = { 
+				mod_with_the_fra_army_mechanized_attack_factor = 0.025
+			}
+			add_to_variable = { 
+				mod_with_the_fra_army_mechanized_defence_factor = 0.05
+			}
+			effect_tooltip = {
+				swap_ideas = {
+					add_idea = mod_with_the_fra_army_tooltip_18
+					remove_idea = mod_with_the_fra_army_tooltip
+				}
+			}
+
+
+        }
+
+    }
+
+
+	FRA_the_army_rearmament_categories_21 = { #战术思维变换
+
+		icon = CHL_mapuche_liberate_isthmo_amerindia
+
+        allowed = {
+			original_tag = FRA
+		}
+
+		available = {
+            original_tag = FRA
+			FRA = {
+				has_country_flag = FRA_start_army_rearmament_flag
+				has_completed_focus = FRA_begin_rearmament
+				has_country_flag = FRA_the_army_rearmament_categories_15_flag
+			}
+			OR = {
+				NOT = {
+					has_country_flag = Now_we_are_rearmament_flag
+				}
+				FRA = {
+					has_completed_focus = FRA_proclaim_the_third_empire
+				}
+			}
+			OR = {
+				is_ai = yes
+				has_army_experience > 29.9
+			}
+		}
+
+        visible = {
+            FRA = {
+                has_country_flag = FRA_the_army_rearmament_categories_15_flag
+            }
+        }
+
+        fire_only_once = yes
+
+		cost = 20
+		days_remove = 120
+
+		modifier = {
+			experience_gain_army_factor = -0.1
+		}
+
+		ai_will_do = {
+			factor = 1000
+		}
+
+        complete_effect = {
+			army_experience = -30
+			set_country_flag = Now_we_are_rearmament_flag
+        }
+
+        remove_effect = {
+			clr_country_flag = Now_we_are_rearmament_flag
+			set_country_flag = FRA_the_army_rearmament_categories_21_flag
+
+			add_to_variable = { 
+				mod_with_the_fra_army_army_attack_factor = 0.05
+			}
+			add_to_variable = { 
+				mod_with_the_fra_army_army_defence_factor = 0.05
+			}
+			effect_tooltip = {
+				swap_ideas = {
+					add_idea = mod_with_the_fra_army_tooltip_17
+					remove_idea = mod_with_the_fra_army_tooltip
+				}
+			}
+
+
+        }
+
+    }
+
+	FRA_the_army_rearmament_categories_22 = { #改进战术
+
+		icon = CHL_mapuche_liberate_isthmo_amerindia
+
+        allowed = {
+			original_tag = FRA
+		}
+
+		available = {
+            original_tag = FRA
+			FRA = {
+				has_country_flag = FRA_start_army_rearmament_flag
+				has_completed_focus = FRA_begin_rearmament
+				has_country_flag = FRA_the_army_rearmament_categories_15_flag
+			}
+			OR = {
+				NOT = {
+					has_country_flag = Now_we_are_rearmament_flag
+				}
+				FRA = {
+					has_completed_focus = FRA_proclaim_the_third_empire
+				}
+			}
+			OR = {
+				is_ai = yes
+				has_army_experience > 29.9
+			}
+		}
+
+        visible = {
+            FRA = {
+                has_country_flag = FRA_the_army_rearmament_categories_15_flag
+            }
+        }
+
+        fire_only_once = yes
+
+		cost = 20
+		days_remove = 120
+
+		modifier = {
+			experience_gain_army_factor = -0.1
+		}
+
+		ai_will_do = {
+			factor = 1000
+		}
+
+        complete_effect = {
+			army_experience = -30
+			set_country_flag = Now_we_are_rearmament_flag
+        }
+
+        remove_effect = {
+			clr_country_flag = Now_we_are_rearmament_flag
+			set_country_flag = FRA_the_army_rearmament_categories_22_flag
+
+			add_to_variable = { 
+				mod_with_the_fra_army_army_org_factor = 0.05
+			}
+			add_to_variable = { 
+				mod_with_the_fra_army_army_strength_factor = 0.05
+			}
+			add_to_variable = { 
+				mod_with_the_fra_army_army_morale_factor = 0.025
+			}
+			add_to_variable = { 
+				mod_with_the_fra_army_enemy_army_bonus_air_superiority_factor = -0.025
+			}
+			add_to_variable = { 
+				mod_with_the_fra_army_land_reinforce_rate = 0.01
+			}
+			effect_tooltip = {
+				swap_ideas = {
+					add_idea = mod_with_the_fra_army_tooltip_14
+					remove_idea = mod_with_the_fra_army_tooltip
+				}
+			}
+
+
+        }
+
+    }
+
+	FRA_the_army_rearmament_categories_23 = { #增进军官思维
+
+		icon = CHL_mapuche_liberate_isthmo_amerindia
+
+        allowed = {
+			original_tag = FRA
+		}
+
+		available = {
+            original_tag = FRA
+			FRA = {
+				has_country_flag = FRA_start_army_rearmament_flag
+				has_completed_focus = FRA_begin_rearmament
+				has_country_flag = FRA_the_army_rearmament_categories_15_flag
+			}
+			OR = {
+				NOT = {
+					has_country_flag = Now_we_are_rearmament_flag
+				}
+				FRA = {
+					has_completed_focus = FRA_proclaim_the_third_empire
+				}
+			}
+			OR = {
+				is_ai = yes
+				has_army_experience > 29.9
+			}
+		}
+
+        visible = {
+            FRA = {
+                has_country_flag = FRA_the_army_rearmament_categories_15_flag
+            }
+        }
+
+        fire_only_once = yes
+
+		cost = 20
+		days_remove = 120
+
+		modifier = {
+			experience_gain_army_factor = -0.1
+		}
+
+		ai_will_do = {
+			factor = 1000
+		}
+
+        complete_effect = {
+			army_experience = -30
+			set_country_flag = Now_we_are_rearmament_flag
+        }
+
+        remove_effect = {
+			clr_country_flag = Now_we_are_rearmament_flag
+			set_country_flag = FRA_the_army_rearmament_categories_23_flag
+
+			add_to_variable = { 
+				mod_with_the_fra_army_command_power_gain = 0.1
+			}
+			add_to_variable = { 
+				mod_with_the_fra_army_max_command_power = 25
+			}
+			add_to_variable = { 
+				mod_with_the_fra_army_planning_speed = 0.1
+			}
+			add_to_variable = { 
+				mod_with_the_fra_army_max_planning_factor = 0.02
+			}
+			effect_tooltip = {
+				swap_ideas = {
+					add_idea = mod_with_the_fra_army_tooltip_15
+					remove_idea = mod_with_the_fra_army_tooltip
+				}
+			}
+
+
+        }
+
+    }
+
+	FRA_the_army_rearmament_categories_24 = { #扩大招兵
+
+		icon = CHL_mapuche_liberate_isthmo_amerindia
+
+        allowed = {
+			original_tag = FRA
+		}
+
+		available = {
+            original_tag = FRA
+			FRA = {
+				has_country_flag = FRA_start_army_rearmament_flag
+				has_completed_focus = FRA_begin_rearmament
+				has_country_flag = FRA_the_army_rearmament_categories_15_flag
+			}
+			OR = {
+				NOT = {
+					has_country_flag = Now_we_are_rearmament_flag
+				}
+				FRA = {
+					has_completed_focus = FRA_proclaim_the_third_empire
+				}
+			}
+			OR = {
+				is_ai = yes
+				has_army_experience > 29.9
+			}
+		}
+
+        visible = {
+            FRA = {
+                has_country_flag = FRA_the_army_rearmament_categories_15_flag
+            }
+        }
+
+        fire_only_once = yes
+
+		cost = 20
+		days_remove = 120
+
+		modifier = {
+			experience_gain_army_factor = -0.1
+		}
+
+		ai_will_do = {
+			factor = 1000
+		}
+
+        complete_effect = {
+			army_experience = -30
+			set_country_flag = Now_we_are_rearmament_flag
+        }
+
+        remove_effect = {
+			clr_country_flag = Now_we_are_rearmament_flag
+			set_country_flag = FRA_the_army_rearmament_categories_24_flag
+
+			add_to_variable = { 
+				mod_with_the_fra_army_conscription = 0.001
+			}
+			add_to_variable = { 
+				mod_with_the_fra_army_conscription_factor = 0.05
+			}
+			effect_tooltip = {
+				swap_ideas = {
+					add_idea = mod_with_the_fra_army_tooltip_4
+					remove_idea = mod_with_the_fra_army_tooltip
+				}
+			}
+
+
+        }
+
+    }
+
+
+	FRA_the_army_rearmament_categories_25 = { #完成第2阶段改革
+
+		icon = CHL_carabineros
+
+        allowed = {
+			original_tag = FRA
+		}
+
+		available = {
+            original_tag = FRA
+			FRA = {
+				has_country_flag = FRA_start_army_rearmament_flag
+				has_completed_focus = FRA_begin_rearmament
+				has_country_flag = FRA_the_army_rearmament_categories_21_flag
+				has_country_flag = FRA_the_army_rearmament_categories_22_flag
+				has_country_flag = FRA_the_army_rearmament_categories_23_flag
+				has_country_flag = FRA_the_army_rearmament_categories_24_flag
+			}
+			
+		}
+
+        visible = {
+            FRA = {
+                has_country_flag = FRA_start_army_rearmament_flag
+				has_country_flag = FRA_the_army_rearmament_categories_15_flag
+            }
+        }
+
+        fire_only_once = yes
+
+		cost = 0
+
+		ai_will_do = {
+			factor = 1000
+		}
+
+        complete_effect = {
+			set_country_flag = FRA_the_army_rearmament_categories_25_flag
+			clr_country_flag = Now_we_are_rearmament_flag
+			clr_country_flag = FRA_the_army_rearmament_categories_21_flag
+			clr_country_flag = FRA_the_army_rearmament_categories_22_flag
+			clr_country_flag = FRA_the_army_rearmament_categories_23_flag
+			clr_country_flag = FRA_the_army_rearmament_categories_24_flag
+
+			add_to_variable = { 
+				mod_with_the_fra_army_army_attack_factor = 0.025
+			}
+			add_to_variable = { 
+				mod_with_the_fra_army_army_defence_factor = 0.025
+			}
+			add_to_variable = { 
+				mod_with_the_fra_army_army_core_attack_factor = 0.025
+			}
+			add_to_variable = { 
+				mod_with_the_fra_army_army_core_defence_factor = 0.025
+			}
+			effect_tooltip = {
+				swap_ideas = {
+					add_idea = mod_with_the_fra_army_tooltip_16
+					remove_idea = mod_with_the_fra_army_tooltip
+				}
+			}
+			FRA =  {
+				complete_national_focus = FRA_complete_army_reform
+			}
+        }
+
+        remove_effect = {
+			
+
+
+        }
+
+    }
+
+	#第三阶段改革
+	FRA_the_army_rearmament_categories_31 = { #军队现代化
+
+		icon = eng_blackshirt_speech
+
+        allowed = {
+			original_tag = FRA
+		}
+
+		available = {
+            original_tag = FRA
+			FRA = {
+				has_country_flag = FRA_start_army_rearmament_flag
+				has_completed_focus = FRA_begin_rearmament
+				has_country_flag = FRA_the_army_rearmament_categories_25_flag
+			}
+			OR = {
+				NOT = {
+					has_country_flag = Now_we_are_rearmament_flag
+				}
+				FRA = {
+					has_completed_focus = FRA_proclaim_the_third_empire
+				}
+			}
+			OR = {
+				is_ai = yes
+				has_army_experience > 29.9
+			}
+		}
+
+        visible = {
+            FRA = {
+                has_country_flag = FRA_the_army_rearmament_categories_25_flag
+            }
+        }
+
+        fire_only_once = yes
+
+		cost = 20
+		days_remove = 90
+
+		modifier = {
+			experience_gain_army_factor = -0.1
+		}
+
+		ai_will_do = {
+			factor = 1000
+		}
+
+        complete_effect = {
+			army_experience = -30
+			set_country_flag = Now_we_are_rearmament_flag
+        }
+
+        remove_effect = {
+			clr_country_flag = Now_we_are_rearmament_flag
+			set_country_flag = FRA_the_army_rearmament_categories_31_flag
+
+			add_to_variable = { 
+				mod_with_the_fra_army_army_attack_factor = 0.05
+			}
+			add_to_variable = { 
+				mod_with_the_fra_army_army_defence_factor = 0.05
+			}
+			effect_tooltip = {
+				swap_ideas = {
+					add_idea = mod_with_the_fra_army_tooltip_17
+					remove_idea = mod_with_the_fra_army_tooltip
+				}
+			}
+
+
+        }
+
+    }
+
+	FRA_the_army_rearmament_categories_32 = { #组织现代化
+
+		icon = eng_blackshirt_speech
+
+        allowed = {
+			original_tag = FRA
+		}
+
+		available = {
+            original_tag = FRA
+			FRA = {
+				has_country_flag = FRA_start_army_rearmament_flag
+				has_completed_focus = FRA_begin_rearmament
+				has_country_flag = FRA_the_army_rearmament_categories_25_flag
+			}
+			OR = {
+				NOT = {
+					has_country_flag = Now_we_are_rearmament_flag
+				}
+				FRA = {
+					has_completed_focus = FRA_proclaim_the_third_empire
+				}
+			}
+			OR = {
+				is_ai = yes
+				has_army_experience > 29.9
+			}
+		}
+
+        visible = {
+            FRA = {
+                has_country_flag = FRA_the_army_rearmament_categories_25_flag
+            }
+        }
+
+        fire_only_once = yes
+
+		cost = 20
+		days_remove = 90
+
+		modifier = {
+			experience_gain_army_factor = -0.1
+		}
+
+		ai_will_do = {
+			factor = 1000
+		}
+
+        complete_effect = {
+			army_experience = -30
+			set_country_flag = Now_we_are_rearmament_flag
+        }
+
+        remove_effect = {
+			clr_country_flag = Now_we_are_rearmament_flag
+			set_country_flag = FRA_the_army_rearmament_categories_32_flag
+
+			add_to_variable = { 
+				mod_with_the_fra_army_army_org_factor = 0.05
+			}
+			add_to_variable = { 
+				mod_with_the_fra_army_army_strength_factor = 0.05
+			}
+			add_to_variable = { 
+				mod_with_the_fra_army_army_morale_factor = 0.025
+			}
+			add_to_variable = { 
+				mod_with_the_fra_army_enemy_army_bonus_air_superiority_factor = -0.025
+			}
+			add_to_variable = { 
+				mod_with_the_fra_army_land_reinforce_rate = 0.01
+			}
+			effect_tooltip = {
+				swap_ideas = {
+					add_idea = mod_with_the_fra_army_tooltip_14
+					remove_idea = mod_with_the_fra_army_tooltip
+				}
+			}
+
+
+        }
+
+    }
+
+
+	FRA_the_army_rearmament_categories_33 = { #现代军官学院
+
+		icon = eng_blackshirt_speech
+
+        allowed = {
+			original_tag = FRA
+		}
+
+		available = {
+            original_tag = FRA
+			FRA = {
+				has_country_flag = FRA_start_army_rearmament_flag
+				has_completed_focus = FRA_begin_rearmament
+				has_country_flag = FRA_the_army_rearmament_categories_25_flag
+			}
+			OR = {
+				NOT = {
+					has_country_flag = Now_we_are_rearmament_flag
+				}
+				FRA = {
+					has_completed_focus = FRA_proclaim_the_third_empire
+				}
+			}
+			OR = {
+				is_ai = yes
+				has_army_experience > 29.9
+			}
+		}
+
+        visible = {
+            FRA = {
+                has_country_flag = FRA_the_army_rearmament_categories_25_flag
+            }
+        }
+
+        fire_only_once = yes
+
+		cost = 20
+		days_remove = 90
+
+		modifier = {
+			experience_gain_army_factor = -0.1
+		}
+
+		ai_will_do = {
+			factor = 1000
+		}
+
+        complete_effect = {
+			army_experience = -30
+			set_country_flag = Now_we_are_rearmament_flag
+        }
+
+        remove_effect = {
+			clr_country_flag = Now_we_are_rearmament_flag
+			set_country_flag = FRA_the_army_rearmament_categories_33_flag
+
+			add_to_variable = { 
+				mod_with_the_fra_army_command_power_gain = 0.1
+			}
+			add_to_variable = { 
+				mod_with_the_fra_army_max_command_power = 25
+			}
+			add_to_variable = { 
+				mod_with_the_fra_army_planning_speed = 0.1
+			}
+			add_to_variable = { 
+				mod_with_the_fra_army_max_planning_factor = 0.02
+			}
+			effect_tooltip = {
+				swap_ideas = {
+					add_idea = mod_with_the_fra_army_tooltip_15
+					remove_idea = mod_with_the_fra_army_tooltip
+				}
+			}
+
+
+        }
+
+    }
+
+	FRA_the_army_rearmament_categories_34 = { #扩大招兵
+
+		icon = eng_blackshirt_speech
+
+        allowed = {
+			original_tag = FRA
+		}
+
+		available = {
+            original_tag = FRA
+			FRA = {
+				has_country_flag = FRA_start_army_rearmament_flag
+				has_completed_focus = FRA_begin_rearmament
+				has_country_flag = FRA_the_army_rearmament_categories_25_flag
+			}
+			OR = {
+				NOT = {
+					has_country_flag = Now_we_are_rearmament_flag
+				}
+				FRA = {
+					has_completed_focus = FRA_proclaim_the_third_empire
+				}
+			}
+			OR = {
+				is_ai = yes
+				has_army_experience > 29.9
+			}
+		}
+
+        visible = {
+            FRA = {
+                has_country_flag = FRA_the_army_rearmament_categories_25_flag
+            }
+        }
+
+        fire_only_once = yes
+
+		cost = 20
+		days_remove = 90
+
+		modifier = {
+			experience_gain_army_factor = -0.1
+		}
+
+		ai_will_do = {
+			factor = 1000
+		}
+
+        complete_effect = {
+			army_experience = -30
+			set_country_flag = Now_we_are_rearmament_flag
+        }
+
+        remove_effect = {
+			clr_country_flag = Now_we_are_rearmament_flag
+			set_country_flag = FRA_the_army_rearmament_categories_34_flag
+
+			add_to_variable = { 
+				mod_with_the_fra_army_conscription = 0.001
+			}
+			add_to_variable = { 
+				mod_with_the_fra_army_conscription_factor = 0.05
+			}
+			effect_tooltip = {
+				swap_ideas = {
+					add_idea = mod_with_the_fra_army_tooltip_4
+					remove_idea = mod_with_the_fra_army_tooltip
+				}
+			}
+
+
+        }
+
+    }
+
+
+	FRA_the_army_rearmament_categories_35 = { #完成第三阶段改革
+
+		icon = eng_blackshirt_speech
+
+        allowed = {
+			original_tag = FRA
+		}
+
+		available = {
+            original_tag = FRA
+			FRA = {
+				has_country_flag = FRA_start_army_rearmament_flag
+				has_completed_focus = FRA_begin_rearmament
+				has_country_flag = FRA_the_army_rearmament_categories_31_flag
+				has_country_flag = FRA_the_army_rearmament_categories_32_flag
+				has_country_flag = FRA_the_army_rearmament_categories_33_flag
+				has_country_flag = FRA_the_army_rearmament_categories_34_flag
+			}
+			
+		}
+
+        visible = {
+            FRA = {
+                has_country_flag = FRA_start_army_rearmament_flag
+				has_country_flag = FRA_the_army_rearmament_categories_25_flag
+            }
+        }
+
+        fire_only_once = yes
+
+		cost = 0
+
+		ai_will_do = {
+			factor = 1000
+		}
+
+        complete_effect = {
+			set_country_flag = FRA_the_army_rearmament_categories_35_flag
+			clr_country_flag = Now_we_are_rearmament_flag
+			clr_country_flag = FRA_the_army_rearmament_categories_31_flag
+			clr_country_flag = FRA_the_army_rearmament_categories_32_flag
+			clr_country_flag = FRA_the_army_rearmament_categories_33_flag
+			clr_country_flag = FRA_the_army_rearmament_categories_34_flag
+
+			add_to_variable = { 
+				mod_with_the_fra_army_army_attack_factor = 0.025
+			}
+			add_to_variable = { 
+				mod_with_the_fra_army_army_defence_factor = 0.025
+			}
+			add_to_variable = { 
+				mod_with_the_fra_army_army_core_attack_factor = 0.025
+			}
+			add_to_variable = { 
+				mod_with_the_fra_army_army_core_defence_factor = 0.025
+			}
+			effect_tooltip = {
+				swap_ideas = {
+					add_idea = mod_with_the_fra_army_tooltip_16
+					remove_idea = mod_with_the_fra_army_tooltip
+				}
+			}
+			if = {
+				limit = {
+					FRA = {
+						NOT = {
+							has_completed_focus = FRA_complete_army_reform
+						}
+					}
+				}
+				FRA = {
+					complete_national_focus = FRA_complete_army_reform
+				}
+			}
+        }
+
+        remove_effect = {
+			
+
+
+        }
+
+    }
+	
+
+}

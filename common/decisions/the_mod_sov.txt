@@ -1,0 +1,8479 @@
+SOV_invite_categories = {
+    SOV_invite_categories_1 = { #拉东亚入局
+
+        allowed = {
+			original_tag = SOV
+		}
+
+        visible = {
+            AND = {
+                limit = {
+                    NOT = { country_exists = CHI }
+                }
+                country_exists = PRC
+                country_exists = JAP
+                PRC = {
+                    has_government = communism
+                }
+                JAP = {
+                    has_government = communism
+                }
+            }
+            original_tag = SOV
+            has_country_flag = join_eng_factions
+        }
+
+        available = {
+            original_tag = SOV
+            has_country_flag = join_eng_factions
+            AND = {
+                limit = {
+                    country_exists = PRC
+                    country_exists = JAP
+                }
+                PRC = {
+                    has_government = communism
+                }
+                JAP = {
+                    has_government = communism
+                }
+            }
+        }
+
+        fire_only_once = yes
+
+		cost = 0
+		days_remove = 70
+
+        complete_effect = {
+            PRC = {
+                country_event = { id = change_sov.1 days = 1 }
+            }
+            JAP = {
+                country_event = { id = change_sov.1 days = 1 }
+            }
+
+        }
+
+        ai_will_do = {
+            factor = 0
+        }
+
+    }
+}
+
+
+SOV_the_third_empire_categories = { #苏联扩张线
+
+	SOV_the_third_empire_categories_00 = { #对抗同盟国的先锋
+		allowed = {
+			original_tag = SOV
+		}
+
+		icon = GFX_decision_generic_coastal_fortification
+
+        visible = {
+            FRA = {
+				has_country_flag = cjg_open_the_third_empire
+			}
+        }
+
+        available = {
+			ENG = {
+				has_country_flag = the_triple_entente_flag
+			}
+        }
+
+        fire_only_once = yes
+
+		cost = 10
+		days_remove = 10
+
+		remove_effect = {
+			country_event = { id = change_sov.9 }
+			set_country_flag = will_buling_eastern_flag
+		}
+
+        ai_will_do = {
+            factor = 1000
+        }
+	}
+
+	SOV_the_third_empire_categories_001 = { #建设新时代军队
+		allowed = {
+			original_tag = SOV
+		}
+
+		icon = CHL_carabineros
+
+        visible = {
+            
+        }
+
+        available = {
+			has_government = communism
+			date > 1939.1.1
+			OR = {
+				has_army_experience > 199.99
+				is_ai = yes
+			}
+        }
+
+        fire_only_once = yes
+
+		cost = 50
+		days_remove = 150
+
+		complete_effect = {
+			army_experience = -200
+		}
+
+		remove_effect = {
+			set_country_flag = SOV_the_third_empire_categories_001_flag
+			hidden_effect = {
+				set_variable = { var = SOV_the_red_army_army_attack_factor value = 0 }
+				set_variable = { var = SOV_the_red_army_army_defence_factor value = 0 }
+				set_variable = { var = SOV_the_red_army_army_core_attack_factor value = 0 }
+				set_variable = { var = SOV_the_red_army_army_core_defence_factor value = 0 }
+				set_variable = { var = SOV_the_red_army_army_armor_attack_factor value = 0 }
+				set_variable = { var = SOV_the_red_army_army_armor_defence_factor value = 0 }
+
+				set_variable = { var = SOV_the_red_army_army_infantry_attack_factor value = 0 }
+				set_variable = { var = SOV_the_red_army_army_infantry_defence_factor value = 0 }
+				set_variable = { var = SOV_the_red_army_mechanized_attack_factor value = 0 }
+				set_variable = { var = SOV_the_red_army_mechanized_defence_factor value = 0 }
+				set_variable = { var = SOV_the_red_army_army_speed_factor value = 0 }
+				set_variable = { var = SOV_the_red_army_land_reinforce_rate value = 0 }
+
+				set_variable = { var = SOV_the_red_army_army_strength_factor value = 0 }
+				set_variable = { var = SOV_the_red_army_conscription value = 0 }
+				set_variable = { var = SOV_the_red_army_breakthrough_factor value = 0 }
+				set_variable = { var = SOV_the_red_army_supply_factor value = 0 }
+				set_variable = { var = SOV_the_red_army_supply_consumption_factor value = 0 }
+				set_variable = { var = SOV_the_red_army_org_loss_when_moving value = 0 }
+				set_variable = { var = SOV_the_red_army_army_bonus_air_superiority_factor value = 0 }
+			}
+			add_to_variable = { 
+				SOV_the_red_army_army_attack_factor = 0.03
+			}
+			add_to_variable = { 
+				SOV_the_red_army_army_defence_factor = 0.03
+			}
+			add_to_variable = { 
+				SOV_the_red_army_army_core_attack_factor = 0.05
+			}
+			add_to_variable = { 
+				SOV_the_red_army_army_core_defence_factor = 0.05
+			}
+			add_to_variable = { 
+				SOV_the_red_army_army_armor_attack_factor = 0.05
+			}
+			add_to_variable = { 
+				SOV_the_red_army_army_armor_defence_factor = 0.05
+			}
+			add_to_variable = { 
+				SOV_the_red_army_army_infantry_attack_factor = 0.05
+			}
+			add_to_variable = { 
+				SOV_the_red_army_army_infantry_defence_factor = 0.05
+			}
+			add_to_variable = { 
+				SOV_the_red_army_mechanized_attack_factor = 0.05
+			}
+			add_to_variable = { 
+				SOV_the_red_army_mechanized_defence_factor = 0.05
+			}
+			add_to_variable = { 
+				SOV_the_red_army_army_speed_factor = 0.05
+			}
+			add_to_variable = { 
+				SOV_the_red_army_land_reinforce_rate = 0.02
+			}
+
+			add_to_variable = { 
+				SOV_the_red_army_army_strength_factor = 0.075
+			}
+			add_to_variable = { 
+				SOV_the_red_army_conscription = 0.005
+			}
+			add_to_variable = { 
+				SOV_the_red_army_breakthrough_factor = 0.075
+			}
+			add_to_variable = { 
+				SOV_the_red_army_supply_factor = 0.075
+			}
+			add_to_variable = { 
+				SOV_the_red_army_supply_consumption_factor = -0.05
+			}
+			add_to_variable = { 
+				SOV_the_red_army_org_loss_when_moving = -0.05
+			}
+			add_to_variable = { 
+				SOV_the_red_army_army_bonus_air_superiority_factor = 0.075
+			}
+			effect_tooltip = {
+				swap_ideas = {
+					add_idea = SOV_red_army_modifier_tooltip_1
+					remove_idea = SOV_red_army_modifier_tooltip
+				}
+			}
+		}
+
+        ai_will_do = {
+            factor = 1000
+        }
+	}
+
+	SOV_the_third_empire_categories_002 = { #红军最强大
+		allowed = {
+			original_tag = SOV
+		}
+
+		icon = CHL_carabineros
+
+        visible = {
+            
+        }
+
+        available = {
+			AND = {
+				has_government = communism
+				date > 1940.1.1
+				OR = {
+					has_army_experience > 199.99
+					is_ai = yes
+				}
+				has_country_flag = SOV_the_third_empire_categories_001_flag
+				FRA = {
+					has_country_flag = cjg_open_the_third_empire
+				}
+			}
+        }
+
+        fire_only_once = yes
+
+		cost = 50
+		days_remove = 150
+
+		complete_effect = {
+			army_experience = -200
+		}
+
+		remove_effect = {
+			set_country_flag = SOV_the_third_empire_categories_002_flag
+			add_to_variable = { 
+				SOV_the_red_army_army_attack_factor = 0.03
+			}
+			add_to_variable = { 
+				SOV_the_red_army_army_defence_factor = 0.03
+			}
+			add_to_variable = { 
+				SOV_the_red_army_army_core_attack_factor = 0.05
+			}
+			add_to_variable = { 
+				SOV_the_red_army_army_core_defence_factor = 0.05
+			}
+			add_to_variable = { 
+				SOV_the_red_army_army_armor_attack_factor = 0.05
+			}
+			add_to_variable = { 
+				SOV_the_red_army_army_armor_defence_factor = 0.05
+			}
+			add_to_variable = { 
+				SOV_the_red_army_army_infantry_attack_factor = 0.05
+			}
+			add_to_variable = { 
+				SOV_the_red_army_army_infantry_defence_factor = 0.05
+			}
+			add_to_variable = { 
+				SOV_the_red_army_mechanized_attack_factor = 0.05
+			}
+			add_to_variable = { 
+				SOV_the_red_army_mechanized_defence_factor = 0.05
+			}
+			add_to_variable = { 
+				SOV_the_red_army_army_speed_factor = 0.05
+			}
+			add_to_variable = { 
+				SOV_the_red_army_land_reinforce_rate = 0.02
+			}
+
+			add_to_variable = { 
+				SOV_the_red_army_army_strength_factor = 0.075
+			}
+			add_to_variable = { 
+				SOV_the_red_army_conscription = 0.005
+			}
+			add_to_variable = { 
+				SOV_the_red_army_breakthrough_factor = 0.075
+			}
+			add_to_variable = { 
+				SOV_the_red_army_supply_factor = 0.075
+			}
+			add_to_variable = { 
+				SOV_the_red_army_supply_consumption_factor = -0.05
+			}
+			add_to_variable = { 
+				SOV_the_red_army_org_loss_when_moving = -0.05
+			}
+			add_to_variable = { 
+				SOV_the_red_army_army_bonus_air_superiority_factor = 0.075
+			}
+
+			add_to_variable = { 
+				SOV_the_red_army_army_org_factor = 0.05
+			}
+			add_to_variable = { 
+				SOV_the_red_army_experience_gain_army_factor = 0.1
+			}
+			add_to_variable = { 
+				SOV_the_red_army_experience_loss_factor = -0.15
+			}
+			add_to_variable = { 
+				SOV_the_red_army_mobilization_speed = 0.1
+			}
+			add_to_variable = { 
+				SOV_the_red_army_conscription_factor = 0.1
+			}
+			add_to_variable = { 
+				SOV_the_red_army_army_org_regain = 0.1
+			}
+			add_to_variable = { 
+				SOV_the_red_army_cas_damage_reduction = 0.075
+			}
+			add_to_variable = { 
+				SOV_the_red_army_max_dig_in = 2
+			}
+			add_to_variable = { 
+				SOV_the_red_army_dig_in_speed_factor = 0.075
+			}
+			effect_tooltip = {
+				swap_ideas = {
+					add_idea = SOV_red_army_modifier_tooltip_1
+					remove_idea = SOV_red_army_modifier_tooltip
+				}
+			}
+		}
+
+        ai_will_do = {
+            factor = 1000
+        }
+	}
+
+	SOV_the_third_empire_categories_003 = { #改变战术思维
+		allowed = {
+			original_tag = SOV
+		}
+
+		icon = CHL_carabineros
+
+        visible = {
+            has_country_flag = SOV_the_third_empire_categories_001_flag
+        }
+
+        available = {
+			has_government = communism
+			date > 1939.1.1
+			OR = {
+				has_army_experience > 199.99
+				is_ai = yes
+			}
+			any_enemy_country = {
+				is_major = yes
+			}
+        }
+
+        fire_only_once = yes
+
+		cost = 50
+		days_remove = 180
+
+		complete_effect = {
+			army_experience = -200
+		}
+
+		remove_effect = {
+			add_to_variable = { 
+				SOV_the_red_army_army_attack_factor = 0.06
+			}
+			add_to_variable = { 
+				SOV_the_red_army_army_defence_factor = 0.06
+			}
+			add_to_variable = { 
+				SOV_the_red_army_army_core_attack_factor = 0.075
+			}
+			add_to_variable = { 
+				SOV_the_red_army_army_core_defence_factor = 0.075
+			}
+			add_to_variable = { 
+				SOV_the_red_army_army_armor_attack_factor = 0.05
+			}
+			add_to_variable = { 
+				SOV_the_red_army_army_armor_defence_factor = 0.05
+			}
+			add_to_variable = { 
+				SOV_the_red_army_army_infantry_attack_factor = 0.075
+			}
+			add_to_variable = { 
+				SOV_the_red_army_army_infantry_defence_factor = 0.075
+			}
+			add_to_variable = { 
+				SOV_the_red_army_mechanized_attack_factor = 0.05
+			}
+			add_to_variable = { 
+				SOV_the_red_army_mechanized_defence_factor = 0.05
+			}
+			add_to_variable = { 
+				SOV_the_red_army_army_speed_factor = 0.05
+			}
+			add_to_variable = { 
+				SOV_the_red_army_land_reinforce_rate = 0.03
+			}
+
+			add_to_variable = { 
+				SOV_the_red_army_army_strength_factor = 0.075
+			}
+			add_to_variable = { 
+				SOV_the_red_army_conscription = 0.005
+			}
+			add_to_variable = { 
+				SOV_the_red_army_breakthrough_factor = 0.075
+			}
+			add_to_variable = { 
+				SOV_the_red_army_supply_factor = 0.075
+			}
+			add_to_variable = { 
+				SOV_the_red_army_supply_consumption_factor = -0.05
+			}
+			add_to_variable = { 
+				SOV_the_red_army_org_loss_when_moving = -0.05
+			}
+			add_to_variable = { 
+				SOV_the_red_army_army_bonus_air_superiority_factor = 0.075
+			}
+
+			add_to_variable = { 
+				SOV_the_red_army_army_org_factor = 0.05
+			}
+			add_to_variable = { 
+				SOV_the_red_army_experience_gain_army_factor = 0.1
+			}
+			add_to_variable = { 
+				SOV_the_red_army_experience_loss_factor = -0.15
+			}
+			add_to_variable = { 
+				SOV_the_red_army_mobilization_speed = 0.1
+			}
+			add_to_variable = { 
+				SOV_the_red_army_conscription_factor = 0.1
+			}
+			add_to_variable = { 
+				SOV_the_red_army_army_org_regain = 0.1
+			}
+			add_to_variable = { 
+				SOV_the_red_army_cas_damage_reduction = 0.075
+			}
+			add_to_variable = { 
+				SOV_the_red_army_max_dig_in = 2
+			}
+			add_to_variable = { 
+				SOV_the_red_army_dig_in_speed_factor = 0.075
+			}
+			effect_tooltip = {
+				swap_ideas = {
+					add_idea = SOV_red_army_modifier_tooltip_2
+					remove_idea = SOV_red_army_modifier_tooltip
+				}
+			}
+		}
+
+        ai_will_do = {
+            factor = 1000
+        }
+	}
+
+	SOV_the_third_empire_categories_004 = { #改组空军
+		allowed = {
+			original_tag = SOV
+		}
+
+		icon = generic_human_torpedo
+
+        visible = {
+            #has_country_flag = SOV_the_third_empire_categories_001_flag
+        }
+
+        available = {
+			has_government = communism
+			date > 1939.1.1
+			OR = {
+				has_air_experience > 199.99
+				is_ai = yes
+			}
+			#has_country_flag = SOV_the_third_empire_categories_001_flag
+        }
+
+        fire_only_once = yes
+
+		cost = 50
+		days_remove = 180
+
+		complete_effect = {
+			air_experience = -200
+		}
+
+		remove_effect = {
+			hidden_effect = {
+				set_variable = { var = SOV_soviet_airforce_AIR_ATTACK_FACTOR value = 0 }
+				set_variable = { var = SOV_soviet_airforce_AIR_DEFENCE_FACTOR value = 0 }
+				set_variable = { var = SOV_soviet_airforce_air_home_defence_factor value = 0 }
+				set_variable = { var = SOV_soviet_airforce_air_power_projection_factor value = 0 }
+				set_variable = { var = SOV_soviet_airforce_ground_attack_factor value = 0 }
+				set_variable = { var = SOV_soviet_airforce_ARMY_BONUS_AIR_SUPERIORITY_FACTOR value = 0 }
+				set_variable = { var = SOV_soviet_airforce_AIR_MAX_SPEED_FACTOR value = 0 }
+			}
+			set_country_flag = SOV_the_third_empire_categories_004
+
+
+			add_to_variable = { 
+				SOV_soviet_airforce_AIR_ATTACK_FACTOR = 0.05
+			}
+			add_to_variable = { 
+				SOV_soviet_airforce_AIR_DEFENCE_FACTOR = 0.05
+			}
+			add_to_variable = { 
+				SOV_soviet_airforce_air_home_defence_factor = 0.075
+			}
+			add_to_variable = { 
+				SOV_soviet_airforce_air_power_projection_factor = 0.075
+			}
+			add_to_variable = { 
+				SOV_soviet_airforce_ground_attack_factor = 0.05
+			}
+			add_to_variable = { 
+				SOV_soviet_airforce_ARMY_BONUS_AIR_SUPERIORITY_FACTOR = 0.075
+			}
+			add_to_variable = { 
+				SOV_soviet_airforce_AIR_MAX_SPEED_FACTOR = 0.05
+			}
+			add_to_variable = { 
+				SOV_soviet_airforce_air_accidents_factor = -0.15
+			}
+			add_to_variable = { 
+				SOV_soviet_airforce_air_ace_generation_chance_factor = 0.15
+			}
+			add_to_variable = { 
+				SOV_soviet_airforce_air_wing_xp_loss_when_killed_factor = -0.075
+			}
+			add_to_variable = { 
+				SOV_soviet_airforce_air_mission_xp_gain_factor = 0.05
+			}
+			add_to_variable = { 
+				SOV_soviet_airforce_air_training_xp_gain_factor = 0.05
+			}
+
+			add_to_variable = { 
+				SOV_soviet_airforce_air_range_factor = 0.05
+			}
+			add_to_variable = { 
+				SOV_soviet_airforce_air_fuel_consumption_factor = -0.05
+			}
+			add_to_variable = { 
+				SOV_soviet_airforce_air_agility_factor = 0.05
+			}
+			add_to_variable = { 
+				SOV_soviet_airforce_air_cas_present_factor = 0.05
+			}
+			add_to_variable = { 
+				SOV_soviet_airforce_air_mission_efficiency = 0.05
+			}
+			add_to_variable = { 
+				SOV_soviet_airforce_air_nav_efficiency = 0.075
+			}
+			
+			effect_tooltip = {
+				swap_ideas = {
+					add_idea = SOV_red_army_air_modifier_tooltip_1
+					remove_idea = SOV_red_army_air_modifier_tooltip
+				}
+			}
+		}
+
+        ai_will_do = {
+            factor = 1000
+        }
+	}
+
+	SOV_the_third_empire_categories_005 = { #空军现代化
+		allowed = {
+			original_tag = SOV
+		}
+
+		icon = generic_human_torpedo
+
+        visible = {
+            has_country_flag = SOV_the_third_empire_categories_004
+        }
+
+        available = {
+			has_government = communism
+			date > 1939.1.1
+			OR = {
+				has_air_experience > 199.99
+				is_ai = yes
+			}
+			#has_country_flag = SOV_the_third_empire_categories_001_flag
+        }
+
+        fire_only_once = yes
+
+		cost = 50
+		days_remove = 180
+
+		complete_effect = {
+			air_experience = -200
+		}
+
+		remove_effect = {
+			add_to_variable = { 
+				SOV_soviet_airforce_AIR_ATTACK_FACTOR = 0.05
+			}
+			add_to_variable = { 
+				SOV_soviet_airforce_AIR_DEFENCE_FACTOR = 0.05
+			}
+			add_to_variable = { 
+				SOV_soviet_airforce_air_home_defence_factor = 0.075
+			}
+			add_to_variable = { 
+				SOV_soviet_airforce_air_power_projection_factor = 0.075
+			}
+			add_to_variable = { 
+				SOV_soviet_airforce_ground_attack_factor = 0.05
+			}
+			add_to_variable = { 
+				SOV_soviet_airforce_ARMY_BONUS_AIR_SUPERIORITY_FACTOR = 0.075
+			}
+			add_to_variable = { 
+				SOV_soviet_airforce_AIR_MAX_SPEED_FACTOR = 0.05
+			}
+			add_to_variable = { 
+				SOV_soviet_airforce_air_accidents_factor = -0.15
+			}
+			add_to_variable = { 
+				SOV_soviet_airforce_air_ace_generation_chance_factor = 0.15
+			}
+			add_to_variable = { 
+				SOV_soviet_airforce_air_wing_xp_loss_when_killed_factor = -0.075
+			}
+			add_to_variable = { 
+				SOV_soviet_airforce_air_mission_xp_gain_factor = 0.05
+			}
+			add_to_variable = { 
+				SOV_soviet_airforce_air_training_xp_gain_factor = 0.05
+			}
+
+			add_to_variable = { 
+				SOV_soviet_airforce_air_range_factor = 0.05
+			}
+			add_to_variable = { 
+				SOV_soviet_airforce_air_fuel_consumption_factor = -0.05
+			}
+			add_to_variable = { 
+				SOV_soviet_airforce_air_agility_factor = 0.05
+			}
+			add_to_variable = { 
+				SOV_soviet_airforce_air_cas_present_factor = 0.05
+			}
+			add_to_variable = { 
+				SOV_soviet_airforce_air_mission_efficiency = 0.05
+			}
+			add_to_variable = { 
+				SOV_soviet_airforce_air_nav_efficiency = 0.075
+			}
+			
+			effect_tooltip = {
+				swap_ideas = {
+					add_idea = SOV_red_army_air_modifier_tooltip_1
+					remove_idea = SOV_red_army_air_modifier_tooltip
+				}
+			}
+		}
+
+        ai_will_do = {
+            factor = 1000
+        }
+	}
+
+	SOV_the_third_empire_categories_006 = { #战争的教训
+		allowed = {
+			original_tag = SOV
+		}
+
+		icon = generic_human_torpedo
+
+        visible = {
+            
+        }
+
+        available = {
+			has_government = communism
+			date > 1939.1.1
+			OR = {
+				has_air_experience > 199.99
+				is_ai = yes
+			}
+			has_country_flag = SOV_the_third_empire_categories_004
+			any_enemy_country = {
+				is_major = yes
+			}
+        }
+
+        fire_only_once = yes
+
+		cost = 50
+		days_remove = 180
+
+		complete_effect = {
+			air_experience = -200
+		}
+
+		remove_effect = {
+			add_to_variable = { 
+				SOV_soviet_airforce_AIR_ATTACK_FACTOR = 0.05
+			}
+			add_to_variable = { 
+				SOV_soviet_airforce_AIR_DEFENCE_FACTOR = 0.05
+			}
+			add_to_variable = { 
+				SOV_soviet_airforce_air_home_defence_factor = 0.075
+			}
+			add_to_variable = { 
+				SOV_soviet_airforce_air_power_projection_factor = 0.075
+			}
+			add_to_variable = { 
+				SOV_soviet_airforce_ground_attack_factor = 0.05
+			}
+			add_to_variable = { 
+				SOV_soviet_airforce_ARMY_BONUS_AIR_SUPERIORITY_FACTOR = 0.075
+			}
+			add_to_variable = { 
+				SOV_soviet_airforce_AIR_MAX_SPEED_FACTOR = 0.05
+			}
+			add_to_variable = { 
+				SOV_soviet_airforce_air_accidents_factor = -0.15
+			}
+			add_to_variable = { 
+				SOV_soviet_airforce_air_ace_generation_chance_factor = 0.15
+			}
+			add_to_variable = { 
+				SOV_soviet_airforce_air_wing_xp_loss_when_killed_factor = -0.075
+			}
+			add_to_variable = { 
+				SOV_soviet_airforce_air_mission_xp_gain_factor = 0.05
+			}
+			add_to_variable = { 
+				SOV_soviet_airforce_air_training_xp_gain_factor = 0.05
+			}
+
+			add_to_variable = { 
+				SOV_soviet_airforce_air_range_factor = 0.05
+			}
+			add_to_variable = { 
+				SOV_soviet_airforce_air_fuel_consumption_factor = -0.05
+			}
+			add_to_variable = { 
+				SOV_soviet_airforce_air_agility_factor = 0.05
+			}
+			add_to_variable = { 
+				SOV_soviet_airforce_air_cas_present_factor = 0.05
+			}
+			add_to_variable = { 
+				SOV_soviet_airforce_air_mission_efficiency = 0.05
+			}
+			add_to_variable = { 
+				SOV_soviet_airforce_air_nav_efficiency = 0.075
+			}
+			
+			effect_tooltip = {
+				swap_ideas = {
+					add_idea = SOV_red_army_air_modifier_tooltip_1
+					remove_idea = SOV_red_army_air_modifier_tooltip
+				}
+			}
+		}
+
+        ai_will_do = {
+            factor = 1000
+        }
+	}
+
+	SOV_the_third_empire_categories_007 = { #苏维埃永远在抵抗
+		allowed = {
+			original_tag = SOV
+		}
+
+		icon = generic_reorganize_irregulars
+
+        visible = {
+            
+        }
+
+        available = {
+			has_government = communism
+			surrender_progress > 0.8
+			any_enemy_country = {
+				is_major = yes
+			}
+			has_war = yes
+			OR = {
+				AND = {
+					is_in_faction_with = ENG
+					ENG = {
+						has_capitulated = no
+					}
+				}
+				AND = {
+					is_in_faction_with = USA
+					USA = {
+						has_capitulated = no
+					}
+				}
+
+			}
+        }
+
+        fire_only_once = yes
+
+		cost = 0
+
+		complete_effect = {
+			news_event = { id = change_news.66 days = 1 }
+			add_ideas = SOV_never_give_up
+			add_offsite_building = { type = arms_factory level = 20 }
+			add_offsite_building = { type = industrial_complex level = 20 }
+			division_template = {
+				name = "最后的装甲师"
+				regiments = {
+					mechanised_infantry = { x = 0 y = 0 }
+					mechanised_infantry = { x = 0 y = 1 }
+					mechanised_infantry = { x = 0 y = 2 }
+					mechanised_infantry = { x = 0 y = 3 }
+					mechanised_infantry = { x = 0 y = 4 }
+					mechanised_infantry = { x = 1 y = 0 }
+					mechanised_infantry = { x = 1 y = 1 }
+					mechanised_infantry = { x = 1 y = 2 }
+					mechanised_infantry = { x = 1 y = 3 }
+					medium_armor = { x = 2 y = 0 }
+					medium_armor = { x = 2 y = 1 }
+					medium_armor = { x = 2 y = 2 }
+					medium_armor = { x = 2 y = 3 }
+					medium_armor = { x = 2 y = 4 }
+					medium_armor = { x = 3 y = 0 }
+					medium_armor = { x = 3 y = 1 }
+					medium_armor = { x = 3 y = 2 }
+					medium_armor = { x = 3 y = 3 }
+				}
+				regimental_support = {
+					field_guns = { x = 0 y = 0 }
+					field_guns = { x = 1 y = 0 }
+					medium_tank_destroyer_support = { x = 2 y = 0 }
+					medium_tank_destroyer_support = { x = 3 y = 0 }
+					medium_sp_anti_air_support = { x = 4 y = 0 }
+				}
+				support = {
+					engineer = { x = 0 y = 0 }
+					recon = { x = 0 y = 1 }
+					anti_air =  { x = 0 y = 2 }
+					logistics_company = { x = 0 y = 3 }
+					artillery =  { x = 0 y = 4 }
+				}
+			}
+			if = {
+				limit = {
+					is_ai = yes
+				}
+				random_owned_controlled_state = {
+					limit = { ROOT = { has_full_control_of_state = PREV } }
+					create_unit = {
+						division = "name = \"最后的装甲师\" division_template = \"最后的装甲师\" start_experience_factor = 0.5" 
+						owner = SOV
+						count = 48
+					}
+				}
+			} else = {
+				random_owned_controlled_state = {
+					limit = { ROOT = { has_full_control_of_state = PREV } }
+					create_unit = {
+						division = "name = \"最后的装甲师\" division_template = \"最后的装甲师\" start_experience_factor = 0.5" 
+						owner = SOV
+						count = 24
+					}
+				}
+			}
+			
+		}
+
+		remove_effect = {
+			
+		}
+
+        ai_will_do = {
+            factor = 1000
+        }
+	}
+
+	SOV_xiboliya_buliding_0 = { #西伯利亚扩建
+		allowed = {
+			original_tag = SOV
+		}
+
+		icon = generic_construction
+
+        visible = {
+            #has_country_flag = will_buling_eastern_flag
+        }
+
+        available = {
+
+			#has_country_flag = will_buling_eastern_flag
+			NOT = {
+				has_war = yes
+			}
+			num_of_civilian_factories_available_for_projects > 14
+        }
+
+        fire_only_once = yes
+
+		cost = 50
+		days_remove = 180
+
+		modifier = {
+			civilian_factory_use = 15
+		}
+
+		remove_effect = {
+			407 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+				set_state_flag = SOV_development_of_first_xiboliya_flag
+			}
+			406 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+				set_state_flag = SOV_development_of_first_xiboliya_flag
+			}
+			402 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+				set_state_flag = SOV_development_of_first_xiboliya_flag
+			}
+			404 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+				set_state_flag = SOV_development_of_first_xiboliya_flag
+			}
+			589 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+				set_state_flag = SOV_development_of_first_xiboliya_flag
+			}
+			588 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+				set_state_flag = SOV_development_of_first_xiboliya_flag
+			}
+			654 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+				set_state_flag = SOV_development_of_first_xiboliya_flag
+			}
+			40 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+				set_state_flag = SOV_development_of_first_xiboliya_flag
+			}
+			566 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+				set_state_flag = SOV_development_of_first_xiboliya_flag
+			}
+			567 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+				set_state_flag = SOV_development_of_first_xiboliya_flag
+			}
+			568 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+				set_state_flag = SOV_development_of_first_xiboliya_flag
+			}
+			569 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+				set_state_flag = SOV_development_of_first_xiboliya_flag
+			}
+			561 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+				set_state_flag = SOV_development_of_first_xiboliya_flag
+			}
+			563 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+				set_state_flag = SOV_development_of_first_xiboliya_flag
+			}
+			564 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+				set_state_flag = SOV_development_of_first_xiboliya_flag
+			}
+			565 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+				set_state_flag = SOV_development_of_first_xiboliya_flag
+			}
+			657 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+				set_state_flag = SOV_development_of_first_xiboliya_flag
+			}
+			409 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+				set_state_flag = SOV_development_of_first_xiboliya_flag
+			}
+			set_country_flag = SOV_prepare_xiboliya_building
+		}
+
+        ai_will_do = {
+            factor = 1000
+        }
+	}
+
+	SOV_xiboliya_buliding = { #西伯利亚建设
+		allowed = {
+			original_tag = SOV
+		}
+
+		icon = generic_construction
+
+        visible = {
+            #has_country_flag = will_buling_eastern_flag
+        }
+
+        available = {
+			has_country_flag = SOV_prepare_xiboliya_building
+
+			#has_country_flag = will_buling_eastern_flag
+			NOT = {
+				has_war = yes
+			}
+			num_of_civilian_factories_available_for_projects > 19
+        }
+
+        fire_only_once = yes
+
+		cost = 50
+		days_remove = 120
+
+		modifier = {
+			civilian_factory_use = 20
+		}
+
+		remove_effect = {
+			custom_effect_tooltip = SOV_xiboliya_buliding_tooltip
+			country_event = { id = change_sov.10 }
+			set_country_flag = SOV_xiboliay_has_finished_flag
+		}
+
+        ai_will_do = {
+            factor = 1000
+        }
+	}
+
+	SOV_xiboliya_factories_buliding = { #工业基地
+		allowed = {
+			original_tag = SOV
+		}
+
+		icon = generic_factory
+
+        visible = {
+            has_country_flag = SOV_xiboliay_has_finished_flag
+        }
+
+        available = {
+			date > 1939.1.1
+			has_country_flag = SOV_xiboliay_has_finished_flag
+			NOT = {
+				has_war = yes
+			}
+			num_of_civilian_factories_available_for_projects > 15
+        }
+
+        fire_only_once = yes
+
+		cost = 50
+		days_remove = 90
+
+		modifier = {
+			civilian_factory_use = 15
+		}
+
+		remove_effect = {
+			custom_effect_tooltip = SOV_industry_base_tooltip
+			country_event = { id = change_sov.11 }
+		}
+
+        ai_will_do = {
+            factor = 1000
+        }
+	}
+
+	SOV_tank_city_buliding = { #发展坦克城
+		allowed = {
+			original_tag = SOV
+		}
+
+		icon = generic_factory
+
+        visible = {
+            has_country_flag = SOV_xiboliay_has_finished_flag
+        }
+
+        available = {
+			ENG = {
+				has_country_flag = the_triple_entente_flag
+			}
+			has_country_flag = SOV_xiboliay_has_finished_flag
+			NOT = {
+				has_war = yes
+			}
+			num_of_civilian_factories_available_for_projects > 15
+        }
+
+        fire_only_once = yes
+
+		cost = 50
+		days_remove = 90
+
+		modifier = {
+			civilian_factory_use = 15
+		}
+
+		remove_effect = {
+			add_ideas = SOV_tank_city
+			custom_effect_tooltip = SOV_tank_city_tooltip
+			while_loop_effect = {
+				limit = {
+					check_variable = { temp_targets_index = 10 compare = less_than }
+				}
+				random_owned_state = {
+					limit = {
+						is_on_continent = asia
+						arms_factory > 2
+						NOT = { has_state_flag = SOV_development_of_xiboliya_flag }
+					}
+					add_extra_state_shared_building_slots = 4
+					add_building_construction = {
+						type = arms_factory
+						level = 2
+						instant_build = yes
+					}
+					set_state_flag = SOV_development_of_xiboliya_flag
+					add_to_temp_variable = { SOV.temp_targets_index = 1 }
+					#log = "Round [?SOV.temp_targets_index]"
+				}
+			}
+		}
+
+        ai_will_do = {
+            factor = 1000
+        }
+	}
+
+	SOV_get_rubber = { #进口橡胶
+		allowed = {
+			original_tag = SOV
+		}
+
+		icon = generic_confiscation
+
+        visible = {
+            
+        }
+
+        available = {
+			ENG = {
+				has_country_flag = the_triple_entente_flag
+				has_resources_in_country= {
+					resource = rubber
+					amount > 69
+					extracted = yes
+				}
+			}
+			has_country_flag = SOV_xiboliay_has_finished_flag
+			NOT = {
+				has_war = yes
+			}
+			num_of_civilian_factories_available_for_projects > 15
+        }
+
+        fire_only_once = yes
+
+		cost = 100
+		days_remove = 90
+
+		modifier = {
+			civilian_factory_use = 15
+		}
+
+		remove_effect = {
+			ENG = {
+				country_event = { id = change_usa.11 days = 1 }
+				random_owned_state = {
+					limit = {
+						is_on_continent = europe
+						is_core_of = ENG
+					}
+					add_extra_state_shared_building_slots = 2
+					add_building_construction = {
+						type = industrial_complex
+						level = 2
+						instant_build = yes
+					}
+				}
+				random_owned_state = {
+					limit = {
+						is_on_continent = europe
+						is_core_of = ENG
+					}
+					add_extra_state_shared_building_slots = 2
+					add_building_construction = {
+						type = industrial_complex
+						level = 2
+						instant_build = yes
+					}
+				}
+			}
+			SOV = {
+				while_loop_effect = {
+					limit = {
+						check_variable = { temp_targets_index = 10 compare = less_than }
+					}
+					random_owned_state = {
+						limit = {
+							is_core_of = SOV
+							is_on_continent = asia
+							infrastructure > 2
+							NOT = { has_state_flag = USA_will_have_resource_flag }
+						}
+						add_extra_state_shared_building_slots = 4
+						add_building_construction = {
+							type = infrastructure
+							level = 1
+							instant_build = yes
+						}
+						add_resource = {
+							type = rubber
+							amount = 2
+						}
+						set_state_flag = USA_will_have_resource_flag
+						#log = "Round [?SOV.temp_targets_index]"
+					}
+				}
+			}
+		}
+
+        ai_will_do = {
+            factor = 1000
+        }
+	}
+
+	SOV_the_third_empire_categories_01 = { #确保列宁格勒安全
+		allowed = {
+			original_tag = SOV
+		}
+
+		icon = generic_prepare_civil_war
+
+        visible = {
+            FRA = {
+				has_country_flag = cjg_open_the_third_empire
+			}
+        }
+
+        available = {
+            date > 1939.8.1
+			ENG = {
+				has_country_flag = the_triple_entente_flag
+			}
+			NOT = {
+				FIN = {
+					is_in_faction_with = SOV
+				}
+			}
+        }
+
+        fire_only_once = yes
+
+		cost = 0
+		days_remove = 7
+
+        complete_effect = {
+            every_state = {
+				limit = {
+					is_core_of = FIN
+				}
+				SOV = {
+					add_state_claim = PREV
+				}
+			}
+
+        }
+
+		remove_effect = {
+			FIN = {
+				country_event = { id = change_sov.3 }
+			}
+		}
+
+        ai_will_do = {
+            factor = 1000
+        }
+	}
+
+	SOV_the_third_empire_categories_02 = { #吞并芬兰
+		allowed = {
+			original_tag = SOV
+		}
+
+		icon = GFX_decision_generic_political_discourse
+
+        visible = {
+            FRA = {
+				has_country_flag = cjg_open_the_third_empire
+			}
+        }
+
+        available = {
+            date > 1939.8.1
+			FIN = {
+				is_in_faction_with = SOV
+				is_ai = yes
+			}
+			ENG = {
+				has_country_flag = the_triple_entente_flag
+			}
+        }
+
+        fire_only_once = yes
+
+		cost = 0
+		days_remove = 30
+
+		remove_effect = {
+			SOV = {
+				annex_country = {
+					target = FIN
+					transfer_troops = yes
+				}
+			}
+		}
+
+        ai_will_do = {
+            factor = 1000
+        }
+	}
+
+	SOV_the_third_empire_categories_03 = { #吞并唐努图瓦
+		allowed = {
+			original_tag = SOV
+		}
+
+		icon = generic_tank
+
+        visible = {
+            FRA = {
+				has_country_flag = cjg_open_the_third_empire
+			}
+        }
+
+        available = {
+            date > 1939.1.1
+			country_exists = TAN
+			TAN = {
+				is_ai = yes
+			}
+			ENG = {
+				has_country_flag = the_triple_entente_flag
+			}
+        }
+
+        fire_only_once = yes
+
+		cost = 0
+		days_remove = 30
+
+		remove_effect = {
+			TAN = {
+				country_event = { id = change_sov.5 days = 1 }
+			}
+		}
+
+        ai_will_do = {
+            factor = 1000
+        }
+	}
+
+	SOV_the_third_empire_categories_04 = { #波罗的海安全
+		allowed = {
+			original_tag = SOV
+		}
+
+		icon = generic_protection
+
+        visible = {
+            FRA = {
+				has_country_flag = cjg_open_the_third_empire
+			}
+        }
+
+        available = {
+            date > 1939.10.1
+			ENG = {
+				has_country_flag = the_triple_entente_flag
+			}
+			OR = {
+				country_exists = LIT
+				country_exists = EST
+				country_exists = LAT
+			}
+        }
+
+        fire_only_once = yes
+
+		cost = 0
+		days_remove = 30
+
+		remove_effect = {
+			every_state = {
+				limit = {
+					is_core_of = LIT
+				}
+				SOV = {
+					add_state_claim = PREV
+				}
+			}
+			every_state = {
+				limit = {
+					is_core_of = EST
+				}
+				SOV = {
+					add_state_claim = PREV
+				}
+			}
+			every_state = {
+				limit = {
+					is_core_of = LAT
+				}
+				SOV = {
+					add_state_claim = PREV
+				}
+			}
+			LIT = {
+				country_event = { id = change_sov.7 }
+			}
+			EST = {
+				country_event = { id = change_sov.7 }
+			}
+			LAT = {
+				country_event = { id = change_sov.7 }
+			}
+		}
+
+        ai_will_do = {
+            factor = 1000
+        }
+	}
+
+
+	SOV_the_third_empire_categories_05 = { #将蒙古关回樊笼
+		allowed = {
+			original_tag = SOV
+		}
+
+		icon = generic_welfare
+
+        visible = {
+            FRA = {
+				has_country_flag = cjg_open_the_third_empire
+			}
+        }
+
+        available = {
+            date > 1939.4.1
+			ENG = {
+				has_country_flag = the_triple_entente_flag
+			}
+			country_exists = MON
+			CHI = {
+				is_in_faction_with = GER
+			}
+			JAP = {
+				is_in_faction_with = ENG
+			}
+			OR = {
+				MON = {
+					is_in_faction = no
+				}
+				AND = {
+					MON = {
+						is_in_faction = yes
+					}
+					NOT = {
+						MON = {
+							is_in_faction_with = GER
+						}
+					}
+					NOT = {
+						MON = {
+							is_in_faction_with = SOV
+						}
+					}
+					NOT = {
+						MON = {
+							is_in_faction_with = ENG
+						}
+					}
+				}
+			}
+        }
+
+        fire_only_once = yes
+
+		cost = 50
+		days_remove = 35
+
+		remove_effect = {
+			every_state = {
+				limit = {
+					is_core_of = MON
+				}
+				SOV = {
+					add_state_claim = PREV
+				}
+			}
+			hidden_effect = {
+				MON = {
+					add_ideas = cant_in_faction
+				}
+			}
+			country_event = { id = change_sov.62 }
+		}
+
+        ai_will_do = {
+            factor = 1000
+        }
+	}
+
+	SOV_the_third_empire_categories_06 = { #设防远东
+		allowed = {
+			original_tag = SOV
+		}
+
+		icon = GFX_generic_mountain_fortification
+
+        visible = {
+            FRA = {
+				has_country_flag = cjg_open_the_third_empire
+			}
+        }
+
+        available = {
+			ENG = {
+				has_country_flag = the_triple_entente_flag
+			}
+			CHI = {
+				is_in_faction_with = GER
+			}
+			JAP = {
+				is_in_faction_with = ENG
+			}
+			num_of_civilian_factories_available_for_projects > 9
+        }
+
+        fire_only_once = yes
+
+		cost = 50
+		days_remove = 90
+
+		modifier = {
+			civilian_factory_use = 10
+		}
+
+
+		remove_effect = {
+			custom_effect_tooltip = SOV_the_third_empire_categories_06_tooltip
+			country_event = { id = change_sov.65 }
+		}
+
+        ai_will_do = {
+            factor = 1000
+        }
+	}
+
+	SOV_the_third_empire_categories_07 = { #打通南方交通线
+		allowed = {
+			original_tag = SOV
+		}
+
+		icon = GFX_decision_generic_welfare
+
+        visible = {
+            FRA = {
+				has_country_flag = cjg_open_the_third_empire
+			}
+        }
+
+        available = {
+            date > 1939.12.1
+			ENG = {
+				has_country_flag = the_triple_entente_flag
+			}
+			country_exists = AFG
+			OR = {
+				PER = {
+					is_in_faction_with = GER
+				}
+				IRQ = {
+					is_in_faction_with = GER
+				}
+			}
+			OR = {
+				AFG = {
+					is_in_faction = no
+				}
+				AND = {
+					AFG = {
+						is_in_faction = yes
+					}
+					NOT = {
+						AFG = {
+							is_in_faction_with = GER
+						}
+					}
+					NOT = {
+						AFG = {
+							is_in_faction_with = SOV
+						}
+					}
+					NOT = {
+						AFG = {
+							is_in_faction_with = ENG
+						}
+					}
+				}
+			}
+        }
+
+        fire_only_once = yes
+
+		cost = 50
+		days_remove = 35
+
+		modifier = {
+		}
+
+
+		remove_effect = {
+			add_war_support = 0.1
+            create_wargoal = {
+				target = AFG
+				type = annex_everything
+				expire = 0
+			}
+			hidden_effect = {
+				AFG = {
+					add_ideas = cant_in_faction
+				}
+			}
+			news_event = { id = change_news.64 hours = 12 }
+		}
+
+        ai_will_do = {
+            factor = 1000
+        }
+	}
+
+
+	SOV_ai_tank_equipment_end =  {  #要似了你2龙马
+        allowed = {
+			original_tag = SOV
+		}
+		available = {
+			OR = {
+				219 = {
+					any_neighbor_state = {
+						controller = {
+							has_war_with = ROOT
+						}
+					}
+				}
+				219 = {
+					controller = {
+						has_war_with = ROOT
+					}
+				}
+			}
+		}
+
+		visible = {
+			NOT = {
+				has_government = neutrality
+			}
+			is_ai = yes
+		}
+
+		fire_only_once = no
+
+		cost = 0
+		days_remove = 0
+		days_re_enable = 240
+
+		modifier = {
+			
+		}
+
+		ai_will_do = {
+			factor = 1000
+		}
+
+        remove_effect = {
+            add_manpower = 500
+            army_experience = 5
+            if = {
+				limit = {
+					has_tech = advanced_medium_tank_chassis
+				}
+				add_equipment_to_stockpile = { 
+					type = medium_tank_chassis_3 
+					amount = 5000
+				}
+				add_equipment_to_stockpile = { 
+					type = medium_tank_destroyer_chassis_3
+					amount = 5000
+				}
+			}
+			else_if = {
+				limit = {
+					has_tech = improved_medium_tank_chassis
+				}
+				add_equipment_to_stockpile = { 
+					type = medium_tank_chassis_2 
+					amount = 5000
+				}
+				add_equipment_to_stockpile = { 
+					type = medium_tank_destroyer_chassis_2
+					amount = 5000
+				}
+			}
+			else = {
+				add_equipment_to_stockpile = { 
+					type = medium_tank_chassis_1 
+					amount = 5000
+				}
+				add_equipment_to_stockpile = { 
+					type = medium_tank_destroyer_chassis_1
+					amount = 5000
+				}
+			}
+
+			add_equipment_to_stockpile = { 
+				type = medium_tank_flame_chassis_2
+				amount = 1000
+			}
+
+			add_equipment_to_stockpile = { 
+				type = mechanized_equipment
+				amount = 5000
+			}
+
+			add_equipment_to_stockpile = { 
+				type = armored_support_vehicle
+				amount = 3000
+			}
+
+            
+			capital_scope = {
+				create_unit = {
+					division = "name = \"苏维埃近卫装甲师\" division_template = \"苏维埃近卫装甲师\" start_experience_factor = 1" 
+					owner = SOV
+					count = 48
+				}
+				
+			}
+
+        }
+    }
+
+
+
+}
+
+political_actions = {
+	SOV_the_mon_defeat = { #蒙古投降
+		allowed = {
+			original_tag = MON
+		}
+
+		icon = GFX_decision_generic_protection
+
+        visible = {
+            FRA = {
+				has_country_flag = cjg_open_the_third_empire
+			}
+        }
+
+        available = {
+			ENG = {
+				has_country_flag = the_triple_entente_flag
+			}
+			surrender_progress > 0.7
+			has_war_with = SOV
+			has_war_with = CHI
+			SOV = {
+				is_in_faction_with = ENG
+			}
+			CHI = {
+				is_in_faction_with = GER
+			}
+			NOT = {
+				SOV = {
+					has_war_with = CHI
+				}
+			}
+        }
+
+        fire_only_once = yes
+
+		cost = 0
+
+		modifier = {
+		}
+
+
+		remove_effect = {
+			news_event = { id = change_news.65 hours = 1 }
+			SOV = {
+				annex_country = {
+					target = MON
+				}
+			}
+			CHI = {
+				transfer_state = 818
+				transfer_state = 817
+				transfer_state = 819
+			}
+		}
+
+        ai_will_do = {
+            factor = 1000
+        }
+	}
+
+	ENG_the_BRM_defeat = { #缅甸投降
+		allowed = {
+			original_tag = BRM
+		}
+
+		icon = GFX_decision_generic_protection
+
+        visible = {
+            FRA = {
+				has_country_flag = cjg_open_the_third_empire
+			}
+        }
+
+        available = {
+			ENG = {
+				has_country_flag = the_triple_entente_flag
+			}
+			surrender_progress > 0.65
+			has_war_with = ENG
+			SOV = {
+				is_in_faction_with = ENG
+			}
+			USA = {
+				is_in_faction_with = ENG
+			}
+        }
+
+        fire_only_once = yes
+
+		cost = 0
+
+		modifier = {
+		}
+
+
+		remove_effect = {
+			ENG = {
+				annex_country = {
+					target = BRM
+				}
+			}
+
+		}
+
+        ai_will_do = {
+            factor = 1000
+        }
+	}
+
+	SOV_the_AFG_defeat = { #阿富汗投降
+		allowed = {
+			original_tag = AFG
+		}
+
+		icon = GFX_decision_generic_protection
+
+        visible = {
+            FRA = {
+				has_country_flag = cjg_open_the_third_empire
+			}
+        }
+
+        available = {
+			ENG = {
+				has_country_flag = the_triple_entente_flag
+			}
+			surrender_progress > 0.7
+			has_war_with = SOV
+			SOV = {
+				is_in_faction_with = ENG
+			}
+			USA = {
+				is_in_faction_with = ENG
+			}
+        }
+
+        fire_only_once = yes
+
+		cost = 0
+
+		modifier = {
+		}
+
+
+		remove_effect = {
+			white_peace = SOV
+			SOV = {
+				set_autonomy = { target = AFG autonomy_state = autonomy_puppet }
+			}
+
+
+		}
+
+        ai_will_do = {
+            factor = 1000
+        }
+	}
+
+
+	JAP_revenge_chi = { #复仇主义宣传
+		allowed = {
+			original_tag = JAP
+		}
+
+		icon = generic_protection
+
+        visible = {
+            FRA = {
+				has_country_flag = cjg_open_the_third_empire
+			}
+        }
+
+        available = {
+			CHI = {
+				is_in_faction_with = GER
+			}
+			JAP = {
+				is_in_faction_with = ENG
+			}
+			NOT = {
+				has_war_with = CHI
+			}
+        }
+
+        fire_only_once = yes
+
+		cost = 0
+
+		modifier = {
+		}
+
+
+		remove_effect = {
+			add_ideas = JAP_revenge_china
+		}
+
+        ai_will_do = {
+            factor = 1000
+        }
+	}
+
+	
+
+}
+
+SOV_ai_categories = {
+	SOV_ai_categories_0 = {  #波兰和平协约
+
+		allowed = {
+			original_tag = SOV
+		}
+		available = {
+            AND = {
+				has_war_with = POL
+                FRA = {
+                    has_country_flag = cjg_open_the_third_empire
+                }
+				POL = {
+					surrender_progress > 0.5
+				}
+            }
+		}
+
+		visible = {
+			FRA = {
+                has_country_flag = cjg_open_the_third_empire
+            }
+		}
+
+		fire_only_once = yes
+
+		cost = 0
+		days_remove = 10
+
+		modifier = {
+			
+		}
+
+		ai_will_do = {
+			factor = 1000
+		}
+		
+		remove_effect = {
+			
+			add_offsite_building = { type = industrial_complex level = 6 }
+			add_offsite_building = { type = arms_factory level = 6 }
+
+			white_peace = POL
+
+		}
+    }
+
+
+
+
+	SOV_ai_base_equipment_add_1936 = {  #火星步兵师
+
+		allowed = {
+			original_tag = SOV
+		}
+		available = {
+			date > 1937.1.3
+		}
+
+		visible = {
+			
+		}
+
+		fire_only_once = no
+
+		cost = 0
+		days_remove = 60
+
+		modifier = {
+			
+		}
+
+		ai_will_do = {
+			factor = 1000
+		}
+		
+		remove_effect = {
+			add_manpower = 500
+
+            army_experience = 5
+			navy_experience = 5
+			air_experience = 5
+
+            add_equipment_to_stockpile = {
+				type = infantry_equipment
+				amount = 500
+			}
+			add_equipment_to_stockpile = { 
+				type = train_equipment 
+				amount = 5
+			}
+			add_equipment_to_stockpile = {
+				type = artillery_equipment
+				amount = 100
+			}
+			add_equipment_to_stockpile = {
+				type = anti_tank_equipment
+				amount = 100
+			}
+            add_equipment_to_stockpile = {
+				type = support_equipment
+				amount = 150
+			}
+			add_equipment_to_stockpile = { 
+				type = anti_air_equipment 
+				amount = 50
+			}
+
+			random_owned_controlled_state = {
+				limit = { ROOT = { has_full_control_of_state = PREV } }
+				prioritize = { 64 }
+				create_unit = {
+					division = "name = \"苏维埃步兵师I\" division_template = \"苏维埃步兵师I\" start_experience_factor = 0.5" 
+					owner = SOV
+					count = 1
+				}
+			}
+
+
+		}
+    }
+
+	SOV_ai_base_template_add_1= {  #火星步兵师模板
+
+		allowed = {
+			original_tag = SOV
+		}
+		available = {
+			date > 1937.1.1
+		}
+
+		visible = {
+		}
+
+		fire_only_once = yes
+
+		cost = 0
+		days_remove = 30
+
+		modifier = {
+			
+		}
+
+		ai_will_do = {
+			factor = 1000
+		}
+		
+		remove_effect = {
+			add_manpower = 500
+
+            army_experience = 5
+			navy_experience = 5
+			air_experience = 5
+
+            add_equipment_to_stockpile = {
+				type = infantry_equipment
+				amount = 500
+			}
+			add_equipment_to_stockpile = { 
+				type = train_equipment 
+				amount = 5
+			}
+			add_equipment_to_stockpile = {
+				type = artillery_equipment
+				amount = 50
+			}
+			add_equipment_to_stockpile = {
+				type = anti_tank_equipment
+				amount = 100
+			}
+            add_equipment_to_stockpile = {
+				type = support_equipment
+				amount = 150
+			}
+			add_equipment_to_stockpile = { 
+				type = anti_air_equipment 
+				amount = 50
+			}
+
+            division_template = {
+					name = "苏维埃步兵师I"
+					regiments = {
+						infantry = { x = 0 y = 0 }
+						infantry = { x = 0 y = 1 }
+						infantry = { x = 0 y = 2 }
+						infantry = { x = 0 y = 3 }
+						infantry = { x = 0 y = 4 }
+						infantry = { x = 1 y = 0 }
+						infantry = { x = 1 y = 1 }
+						infantry = { x = 1 y = 2 }
+						infantry = { x = 1 y = 3 }
+						infantry = { x = 1 y = 4 }
+						infantry = { x = 2 y = 0 }
+						artillery_brigade = { x = 3 y = 0 }
+						artillery_brigade = { x = 3 y = 1 }
+                        artillery_brigade = { x = 3 y = 2 }
+                        artillery_brigade = { x = 3 y = 3 }
+						anti_tank_brigade = { x = 3 y = 4 }
+						anti_air_brigade = { x = 4 y = 0 }
+					}
+					regimental_support = {
+					field_guns = { x = 0 y = 0 }
+					field_guns = { x = 1 y = 0 }
+					medium_tank_destroyer_support = { x = 2 y = 0 }
+					medium_tank_destroyer_support = { x = 3 y = 0 }
+					medium_sp_anti_air_support = { x = 4 y = 0 }
+				}
+					support = {
+						engineer = { x = 0 y = 0 }
+						recon = { x = 0 y = 1 }
+						artillery = { x = 0 y = 2 }
+						field_hospital = { x = 0 y = 3 }
+						logistics_company = { x = 0 y = 4 }
+					}
+				}
+
+		}
+    }
+
+    SOV_ai_tank_equipment_add_1936 =  {  #火星装甲师
+        allowed = {
+			original_tag = SOV
+		}
+		available = {
+			date > 1938.1.3
+		}
+
+		visible = {
+			NOT = {
+				has_government = neutrality
+			}
+		}
+
+		fire_only_once = no
+
+		cost = 0
+		days_remove = 60
+
+		modifier = {
+			
+		}
+
+		ai_will_do = {
+			factor = 1000
+		}
+
+        remove_effect = {
+            add_manpower = 500
+            army_experience = 5
+            if = {
+				limit = {
+					has_tech = advanced_medium_tank_chassis
+				}
+				add_equipment_to_stockpile = { 
+					type = medium_tank_chassis_3 
+					amount = 500
+				}
+				add_equipment_to_stockpile = { 
+					type = medium_tank_destroyer_chassis_3
+					amount = 500
+				}
+			}
+			else_if = {
+				limit = {
+					has_tech = improved_medium_tank_chassis
+				}
+				add_equipment_to_stockpile = { 
+					type = medium_tank_chassis_2 
+					amount = 500
+				}
+				add_equipment_to_stockpile = { 
+					type = medium_tank_destroyer_chassis_2
+					amount = 500
+				}
+			}
+			else = {
+				add_equipment_to_stockpile = { 
+					type = medium_tank_chassis_1 
+					amount = 500
+				}
+				add_equipment_to_stockpile = { 
+					type = medium_tank_destroyer_chassis_1
+					amount = 500
+				}
+			}
+
+			add_equipment_to_stockpile = { 
+				type = medium_tank_flame_chassis_2
+				amount = 100
+			}
+
+			add_equipment_to_stockpile = { 
+				type = mechanized_equipment
+				amount = 500
+			}
+
+			add_equipment_to_stockpile = { 
+				type = armored_support_vehicle
+				amount = 300
+			}
+
+            
+			if = {
+				limit = {
+					date > 1938.1.1 
+					date < 1939.1.1
+				}
+				random_owned_controlled_state = {
+					limit = { ROOT = { has_full_control_of_state = PREV } }
+					prioritize = { 64 }
+					create_unit = {
+						division = "name = \"苏维埃近卫装甲师\" division_template = \"苏维埃近卫装甲师\" start_experience_factor = 0.5" 
+						owner = SOV
+						count = 4
+					}
+					
+				}
+			} else_if = {
+				limit = {
+					date > 1939.1.1
+					date < 1940.1.1
+				}
+				random_owned_controlled_state = {
+					limit = { ROOT = { has_full_control_of_state = PREV } }
+					prioritize = { 64 }
+					create_unit = {
+						division = "name = \"苏维埃近卫装甲师\" division_template = \"苏维埃近卫装甲师\" start_experience_factor = 0.5" 
+						owner = SOV
+						count = 7
+					}
+					
+				}
+			}  else_if = {
+				random_owned_controlled_state = {
+					limit = { ROOT = { has_full_control_of_state = PREV } }
+					prioritize = { 64 }
+					create_unit = {
+						division = "name = \"苏维埃近卫装甲师\" division_template = \"苏维埃近卫装甲师\" start_experience_factor = 0.5" 
+						owner = SOV
+						count = 10
+					}
+					
+				}
+			}
+
+        }
+    }
+
+	SOV_ai_tank_base_template_add_1 =  {  #火星装甲师模板
+        allowed = {
+			original_tag = SOV
+		}
+		available = {
+			date > 1938.1.1
+		}
+
+		visible = {
+			NOT = {
+				has_government = neutrality
+			}
+		}
+
+		fire_only_once = yes
+
+		cost = 0
+		days_remove = 30
+
+		modifier = {
+			
+		}
+
+		ai_will_do = {
+			factor = 1000
+		}
+
+        remove_effect = {
+            add_manpower = 500
+            army_experience = 5
+			set_technology = { basic_medium_tank_chassis = 1 }
+			set_technology = { improved_medium_tank_chassis = 1 }
+			set_technology = {improved_heavy_tank_chassis = 1}
+			set_technology = {improved_light_tank_chassis = 1 }
+			set_technology = {interwar_antitank = 1}
+			set_technology = {antitank1 = 1}
+			set_technology = {antitank2 = 1}
+			set_technology = {antitank3 = 1}
+			set_technology = {antitank4 = 1}
+			set_technology = {antitank5 = 1}
+			set_technology = {tech_maintenance_company2 = 1}
+			set_technology = {tech_field_hospital = 1}
+			set_technology = {tech_logistics_company = 1}
+			set_technology = {mechanised_infantry = 1}
+			set_technology = {amphibious_drive = 1}
+			set_technology = {sp_armored_engineer_tech = 1}
+			set_technology = {sp_land_military_engineering_vehicles = 1}
+			set_technology = {sp_land_flamethrower_tank = 1}
+            division_template = {
+				name = "苏维埃近卫装甲师"
+				regiments = {
+					mechanized = { x = 0 y = 0 }
+					mechanized = { x = 0 y = 1 }
+					mechanized = { x = 0 y = 2 }
+					mechanized = { x = 0 y = 3 }
+					mechanized = { x = 1 y = 0 }
+					mechanized = { x = 1 y = 1 }
+					mechanized = { x = 1 y = 2 }
+					mechanized = { x = 1 y = 3 }
+					medium_armor = { x = 2 y = 0 }
+					medium_armor = { x = 2 y = 1 }
+					medium_armor = { x = 2 y = 2 }
+					medium_armor = { x = 2 y = 3 }
+					medium_armor = { x = 3 y = 0 }
+					medium_armor = { x = 3 y = 1 }
+					medium_armor = { x = 3 y = 2 }
+					medium_armor = { x = 3 y = 3 }
+					medium_tank_destroyer_brigade = { x = 4 y = 0 }
+					medium_tank_destroyer_brigade = { x = 4 y = 1 }
+				}
+				regimental_support = {
+					field_guns = { x = 0 y = 0 }
+					field_guns = { x = 1 y = 0 }
+					medium_tank_destroyer_support = { x = 2 y = 0 }
+					medium_tank_destroyer_support = { x = 3 y = 0 }
+					medium_sp_anti_air_support = { x = 4 y = 0 }
+				}
+				support = {
+					armored_engineer = { x = 0 y = 0 }
+					light_tank_recon = { x = 0 y = 1 }
+					field_hospital = { x = 0 y = 2 }
+					logistics_company = { x = 0 y = 3 }
+					medium_flame_tank = { x = 0 y = 4 }
+				}
+			}
+
+
+			create_equipment_variant = {
+				name = "mediumtank G+"
+				type = medium_tank_chassis_2
+				design_team = mio:SOV_okmo_organization
+				parent_version = 0
+				modules = {
+					main_armament_slot = tank_medium_cannon_2 
+					turret_type_slot = tank_medium_three_man_tank_turret 
+					suspension_type_slot = tank_torsion_bar_suspension
+					armor_type_slot = tank_riveted_armor
+					engine_type_slot = tank_gasoline_engine
+					special_type_slot_1 = tank_radio_2
+					special_type_slot_2 = secondary_turret_hmg
+					special_type_slot_3 = secondary_turret_small_cannon
+					special_type_slot_4 = easy_maintenance
+				}
+				upgrades = {
+					tank_nsb_engine_upgrade = 0
+					tank_nsb_armor_upgrade = 4
+				}
+			}
+
+			create_equipment_variant = {
+				name = "tk_destory IV"
+				type = medium_tank_destroyer_chassis_2
+				design_team = mio:SOV_okmo_organization
+				parent_version = 0
+				modules = {
+					main_armament_slot = tank_high_velocity_cannon_2
+					turret_type_slot = tank_medium_fixed_superstructure_turret #炮塔
+					suspension_type_slot = tank_bogie_suspension #悬挂
+					armor_type_slot = tank_riveted_armor #装甲
+					engine_type_slot = tank_gasoline_engine #引擎
+					special_type_slot_1 = easy_maintenance
+					special_type_slot_2 = secondary_turret_small_cannon
+					special_type_slot_3 = secondary_turret_small_cannon
+					special_type_slot_4 = stabilizer
+				}
+				upgrades = {
+					tank_nsb_engine_upgrade = 0
+					tank_nsb_armor_upgrade = 4
+				}
+			}
+
+			create_equipment_variant = {
+				name = "flame IV"
+				type = medium_tank_flame_chassis_2
+				design_team = mio:SOV_okmo_organization
+				parent_version = 0
+				modules = {
+					main_armament_slot = advanced_flamethrower
+					turret_type_slot = tank_medium_three_man_tank_turret 
+					suspension_type_slot = tank_bogie_suspension 
+					armor_type_slot = tank_riveted_armor 
+					engine_type_slot = tank_diesel_engine
+					special_type_slot_1 = tank_radio_1
+					special_type_slot_2 = easy_maintenance
+					special_type_slot_3 = extra_ammo_storage
+					special_type_slot_4 = dozer_blade
+				}
+				upgrades = {
+					tank_nsb_engine_upgrade = 0
+					tank_nsb_armor_upgrade = 0
+				}
+			}
+
+        }
+    }
+
+
+	
+
+
+    
+
+    SOV_ai_categories_6 =  {  #
+        allowed = {
+			original_tag = SOV
+		}
+		available = {
+			date > 1939.1.1
+            AND = {
+                FRA = {
+                    has_country_flag = cjg_open_the_third_empire
+                }
+            }
+		}
+
+		visible = {
+			FRA = {
+                has_country_flag = cjg_open_the_third_empire
+            }
+		}
+
+		fire_only_once = no
+
+		cost = 0
+		days_remove = 90
+
+		modifier = {
+			
+		}
+
+		ai_will_do = {
+			factor = 1000
+		}
+
+        remove_effect = {
+            add_manpower = 1000
+
+            army_experience = 2
+			navy_experience = 2
+			air_experience = 2
+
+            add_equipment_to_stockpile = {
+				type = infantry_equipment
+				amount = 1000
+			}
+			add_equipment_to_stockpile = { 
+				type = train_equipment 
+				amount = 5
+			}
+			add_equipment_to_stockpile = {
+				type = artillery_equipment
+				amount = 100
+			}
+			add_equipment_to_stockpile = {
+				type = cat_anti_tank_equipment
+				amount = 50
+			}
+            add_equipment_to_stockpile = {
+				type = support_equipment
+				amount = 200
+			}
+			add_equipment_to_stockpile = { 
+				type = anti_air_equipment 
+				amount = 50
+			}
+				random_owned_controlled_state = {
+					limit = { ROOT = { has_full_control_of_state = PREV } }
+					prioritize = { capital = ROOT }
+					create_unit = {
+						division = "name = \"苏联山地部队\" division_template = \"苏联山地部队\" start_experience_factor = 0.5" 
+						owner = SOV
+						count = 8
+					}
+				}
+
+        }
+    }
+
+	SOV_ai_base_template_categories_4 =  {  #山地模板
+        allowed = {
+			original_tag = SOV
+		}
+		available = {
+			date > 1939.1.1
+            AND = {
+                FRA = {
+                    has_country_flag = cjg_open_the_third_empire
+                }
+            }
+		}
+
+		visible = {
+			FRA = {
+                has_country_flag = cjg_open_the_third_empire
+            }
+		}
+
+		fire_only_once = yes
+
+		cost = 0
+		days_remove = 30
+
+		modifier = {
+			
+		}
+
+		ai_will_do = {
+			factor = 1000
+		}
+
+        remove_effect = {
+            add_manpower = 1000
+
+            army_experience = 2
+			navy_experience = 2
+			air_experience = 2
+
+            add_equipment_to_stockpile = {
+				type = infantry_equipment
+				amount = 1000
+			}
+			add_equipment_to_stockpile = { 
+				type = train_equipment 
+				amount = 5
+			}
+			add_equipment_to_stockpile = {
+				type = artillery_equipment
+				amount = 100
+			}
+			add_equipment_to_stockpile = {
+				type = cat_anti_tank_equipment
+				amount = 50
+			}
+            add_equipment_to_stockpile = {
+				type = support_equipment
+				amount = 200
+			}
+			add_equipment_to_stockpile = { 
+				type = anti_air_equipment 
+				amount = 50
+			}
+
+            division_template = {
+					name = "苏联山地部队"
+					regiments = {
+						mountaineers = { x = 0 y = 0 }
+						mountaineers = { x = 0 y = 1 }
+						mountaineers = { x = 0 y = 2 }
+                        mountaineers = { x = 0 y = 3 }
+                        mountaineers = { x = 0 y = 4 }
+						mountaineers = { x = 1 y = 0 }
+                        mountaineers = { x = 1 y = 1 }
+						artillery_brigade = { x = 2 y = 0 }
+						artillery_brigade = { x = 2 y = 1 }
+                        anti_air_brigade = { x = 2 y = 2 }
+                        anti_tank_brigade = { x = 2 y = 3 }
+                        medium_armor = { x = 3 y = 0 }
+                        medium_armor = { x = 3 y = 1 }
+					}
+					regimental_support = {
+					field_guns = { x = 0 y = 0 }
+					field_guns = { x = 1 y = 0 }
+					medium_tank_destroyer_support = { x = 2 y = 0 }
+					medium_tank_destroyer_support = { x = 3 y = 0 }
+					medium_sp_anti_air_support = { x = 4 y = 0 }
+				}
+					support = {
+						engineer = { x = 0 y = 0 }
+						recon = { x = 0 y = 1 }
+                        field_hospital =  { x = 0 y = 2 }
+                        logistics_company = { x = 0 y = 3 }
+                        artillery =  { x = 0 y = 4 }
+					}
+				}
+
+        }
+    }
+
+   
+}
+
+
+SOV_Great_Patriotic_War_categories = { #卫国战争动员
+
+	SOV_Great_Patriotic_War_level_up = {
+		icon = CHL_mapuche_liberate_isthmo_amerindia
+
+		days_mission_timeout = 210
+
+		selectable_mission = no
+
+		allowed = {
+			original_tag = SOV
+		}
+
+		available = {#完成  
+			has_idea = SOV_Great_Patriotic_War_level_5
+		}
+		activation = { #启用          
+			SOV = {
+				AND = {
+					is_subject = no
+					has_country_flag = the_SOV_Great_Patriotic_War_open_flag
+					has_government = communism
+					has_defensive_war = yes
+					any_enemy_country = { is_major = yes }
+					NOT = {
+						has_idea = SOV_Great_Patriotic_War_SOV_lose_war
+						has_idea = SOV_Great_Patriotic_War_level_5
+					}
+				}
+			}
+		}    
+		
+
+		is_good = yes                      
+
+		timeout_effect = {          
+			if = {
+				limit = {
+					has_idea = SOV_Great_Patriotic_War_level_1
+				}
+				hidden_effect = {
+					remove_ideas = SOV_Great_Patriotic_War_level_1
+				}
+				add_ideas = SOV_Great_Patriotic_War_level_2
+			}
+			else_if = {
+				limit = {
+					has_idea = SOV_Great_Patriotic_War_level_2
+				}
+				hidden_effect = {
+					remove_ideas = SOV_Great_Patriotic_War_level_2
+				}
+				add_ideas = SOV_Great_Patriotic_War_level_3
+			}
+			else_if = {
+				limit = {
+					has_idea = SOV_Great_Patriotic_War_level_3
+				}
+				hidden_effect = {
+					remove_ideas = SOV_Great_Patriotic_War_level_3
+				}
+				add_ideas = SOV_Great_Patriotic_War_level_4
+			}
+			else_if = {
+				limit = {
+					has_idea = SOV_Great_Patriotic_War_level_4
+				}
+				hidden_effect = {
+					remove_ideas = SOV_Great_Patriotic_War_level_4
+				}
+				add_ideas = SOV_Great_Patriotic_War_level_5
+			}
+			else_if = {
+				limit = {
+					NOT = {
+						has_idea = SOV_Great_Patriotic_War_level_1
+						has_idea = SOV_Great_Patriotic_War_level_2
+						has_idea = SOV_Great_Patriotic_War_level_3
+						has_idea = SOV_Great_Patriotic_War_level_4
+						has_idea = SOV_Great_Patriotic_War_level_5
+					}
+				}
+				add_ideas = SOV_Great_Patriotic_War_level_1
+			}
+			activate_mission = SOV_Great_Patriotic_War_level_up
+			country_event = { id = change_sov.16 }
+			any_enemy_country = {
+				limit = {
+					is_subject = no
+				}
+				country_event = { id = change_sov.15 }
+			}
+		}       
+		complete_effect = {       
+			country_event = { id = change_sov.17 }      
+			news_event = { id = change_news.47 days = 2 }       
+			any_enemy_country = {
+				limit = {
+					is_subject = no
+				}
+				country_event = { id = change_sov.15 }
+			}
+		}
+		cancel_trigger = {
+			has_war = no
+		}
+		cancel_effect = {
+			
+		}
+
+
+	}
+
+
+	SOV_Great_Patriotic_War_production_level_up = { #生产动员
+		icon = generic_construction
+
+		days_mission_timeout = 90
+
+		selectable_mission = no
+
+		allowed = {
+			original_tag = SOV
+		}
+
+		available = {#完成  
+			has_idea = SOV_Great_Patriotic_War_production_level_5
+		}
+		activation = { #启用          
+			SOV = {
+				AND = {
+					is_subject = no
+					has_country_flag = the_SOV_Great_Patriotic_War_open_flag
+					has_government = communism
+					has_defensive_war = yes
+					any_enemy_country = { is_major = yes }
+					NOT = {
+						has_idea = SOV_Great_Patriotic_War_SOV_lose_war
+					}
+				}
+			}
+		}    
+		
+
+		is_good = yes                      
+
+		timeout_effect = {           
+			if = {
+				limit = {
+					has_idea = SOV_Great_Patriotic_War_production_level_1
+				}
+				hidden_effect = {
+					remove_ideas = SOV_Great_Patriotic_War_production_level_1
+				}
+				add_ideas = SOV_Great_Patriotic_War_production_level_2
+			}
+			else_if = {
+				limit = {
+					has_idea = SOV_Great_Patriotic_War_production_level_2
+				}
+				hidden_effect = {
+					remove_ideas = SOV_Great_Patriotic_War_production_level_2
+				}
+				add_ideas = SOV_Great_Patriotic_War_production_level_3
+			}
+			else_if = {
+				limit = {
+					has_idea = SOV_Great_Patriotic_War_production_level_3
+				}
+				hidden_effect = {
+					remove_ideas = SOV_Great_Patriotic_War_production_level_3
+				}
+				add_ideas = SOV_Great_Patriotic_War_production_level_4
+			}
+			else_if = {
+				limit = {
+					has_idea = SOV_Great_Patriotic_War_production_level_4
+				}
+				hidden_effect = {
+					remove_ideas = SOV_Great_Patriotic_War_production_level_4
+				}
+				add_ideas = SOV_Great_Patriotic_War_production_level_5
+			}
+			else_if = {
+				limit = {
+					AND = {
+						NOT = {
+							has_idea = SOV_Great_Patriotic_War_production_level_1
+							has_idea = SOV_Great_Patriotic_War_production_level_2
+							has_idea = SOV_Great_Patriotic_War_production_level_3
+							has_idea = SOV_Great_Patriotic_War_production_level_4
+							has_idea = SOV_Great_Patriotic_War_production_level_5
+						}
+					}
+				}
+				add_ideas = SOV_Great_Patriotic_War_production_level_1
+			}
+			activate_mission = SOV_Great_Patriotic_War_production_level_up
+		}       
+		complete_effect = {       
+			
+		}
+		cancel_trigger = {
+			has_war = no
+		}
+		cancel_effect = {
+			
+		}
+
+
+	}
+
+
+	SOV_Great_Patriotic_War_the_end = { #丢三大城
+		icon = generic_fortification
+
+		days_mission_timeout = 1600
+
+		selectable_mission = no
+
+		allowed = {
+			original_tag = SOV
+		}
+
+		available = {#完成  
+			SOV = {
+				is_subject = no
+				has_capitulated = no
+				has_country_flag = the_SOV_Great_Patriotic_War_open_flag
+				has_government = communism
+				has_defensive_war = yes
+				any_enemy_country = { is_major = yes }
+				NOT = {
+					has_idea = SOV_Great_Patriotic_War_SOV_lose_war
+				}
+				#202 基辅
+				#242 斯摩棱斯克
+				#220 库尔斯克
+				#206 明斯克
+				#247 加里宁
+				#221 哈尔科夫
+				#218 罗斯托夫
+				#192 敖德萨
+				NOT = { controls_state = 219 }
+				NOT = { controls_state = 195 }
+				NOT = { controls_state = 217 }
+				NOT = { controls_state = 229 }
+			}
+			if = {
+				limit = {
+					FRA = {
+						has_country_flag = cjg_open_the_third_empire
+					}
+				}
+				SOV = {
+					NOT = { controls_state = 252 }
+					NOT = { controls_state = 249 }
+					NOT = { controls_state = 651 }
+				}
+			}
+		}
+		activation = { #启用          
+			SOV = {
+				is_subject = no
+				has_country_flag = the_SOV_Great_Patriotic_War_open_flag
+				has_government = communism
+				has_defensive_war = yes
+				any_enemy_country = { is_major = yes }
+				NOT = {
+					has_idea = SOV_Great_Patriotic_War_SOV_lose_war
+				}
+			}
+		}    
+		
+
+		is_good = yes      
+
+		timeout_effect = {           
+			any_enemy_country = {
+				add_ideas = SOV_Great_Patriotic_War_other_lose_war
+			}
+		}       
+		complete_effect = {       
+			add_ideas = SOV_Great_Patriotic_War_SOV_lose_war
+		}
+		cancel_trigger = {
+			OR = {
+				has_war = no
+				has_idea = SOV_Great_Patriotic_War_SOV_lose_war
+			}
+		}
+		cancel_effect = {
+			
+		}
+
+
+	}
+
+
+	SOV_Great_Patriotic_War_level_up_start_retreat = { #有序撤退
+		icon = generic_ignite_civil_war
+
+        allowed = {
+			tag = SOV
+		}
+
+        visible = {
+            has_active_mission = SOV_Great_Patriotic_War_level_up
+        }
+
+        available = {
+			surrender_progress > 0.075
+			OR = {
+				NOT = {
+					controls_state = 206
+				}
+				NOT = {
+					controls_state = 202
+				}
+			}
+        }
+
+        fire_only_once = yes
+
+		cost = 10
+
+		days_remove = 120
+		#days_re_enable = 60
+
+		modifier = {
+			army_defence_factor = -0.05
+			army_speed_factor = 0.25
+			ARMY_MORALE_FACTOR = 0.1
+			org_loss_when_moving_factor = -0.5
+		}
+
+        complete_effect = {
+            
+        }
+
+		remove_effect = {
+			add_days_mission_timeout = {
+			    mission = SOV_Great_Patriotic_War_level_up
+			    days = -60
+			}
+		}
+		
+		ai_will_do = {
+			factor = 5000
+		}
+
+
+	}
+
+	SOV_Great_Patriotic_War_level_up_protect_homeland = { #保卫家园
+		icon = generic_ignite_civil_war
+
+        allowed = {
+			tag = SOV
+		}
+
+        visible = {
+            has_active_mission = SOV_Great_Patriotic_War_level_up
+        }
+
+        available = {
+			has_active_mission = SOV_Great_Patriotic_War_level_up
+        }
+
+        fire_only_once = no
+		custom_cost_trigger = {
+			command_power > 24
+			has_political_power > 24
+		}
+		custom_cost_text = decision_cost_CP_25_pp_25
+
+		days_remove = 90
+
+		modifier = {
+			army_core_attack_factor = 0.1
+			army_core_defence_factor = 0.1
+		}
+
+        complete_effect = {
+            
+        }
+
+		remove_effect = {
+			add_days_mission_timeout = {
+			    mission = SOV_Great_Patriotic_War_level_up
+			    days = -30
+			}
+		}
+		
+		ai_will_do = {
+			factor = 5000
+		}
+
+
+	}
+
+
+	SOV_Great_Patriotic_War_level_up_begin_227 = { #227号命令
+		icon = generic_military
+
+        allowed = {
+			tag = SOV
+		}
+
+        visible = {
+            has_active_mission = SOV_Great_Patriotic_War_level_up
+        }
+
+        available = {
+			surrender_progress > 0.15
+        }
+
+        fire_only_once = yes
+
+		cost = 10
+
+		days_remove = 1
+		#days_re_enable = 60
+
+		modifier = {
+
+		}
+
+        complete_effect = {
+            add_days_mission_timeout = {
+			    mission = SOV_Great_Patriotic_War_level_up
+			    days = -60
+			}
+        }
+
+		remove_effect = {
+			add_ideas = SOV_Great_Patriotic_227_command
+			add_days_mission_timeout = {
+			    mission = SOV_Great_Patriotic_War_level_up
+			    days = -10
+			}
+			news_event = { id = change_news.51 days = 1 }
+		}
+		
+		ai_will_do = {
+			factor = 5000
+		}
+
+
+	}
+
+	SOV_Great_Patriotic_War_level_up_begin_transport = { #运输对红军必不可少
+		icon = generic_motorized
+
+        allowed = {
+			tag = SOV
+		}
+
+        visible = {
+			has_idea = SOV_Great_Patriotic_227_command
+        }
+
+        available = {
+			
+        }
+
+        fire_only_once = yes
+
+		cost = 10
+
+		days_remove = 30
+		#days_re_enable = 60
+
+		modifier = {
+
+		}
+
+        complete_effect = {
+            add_days_mission_timeout = {
+			    mission = SOV_Great_Patriotic_War_level_up
+			    days = -60
+			}
+
+			add_days_mission_timeout = {
+			    mission = SOV_Great_Patriotic_War_production_level_up
+			    days = -90
+			}
+        }
+
+		remove_effect = {
+			add_ideas = SOV_Great_Patriotic_War_transport
+			add_days_mission_timeout = {
+			    mission = SOV_Great_Patriotic_War_level_up
+			    days = -10
+			}
+			add_equipment_to_stockpile = { 
+				type = train_equipment 
+				amount = 200
+			}
+			add_equipment_to_stockpile = { 
+				type = motorized_equipment_1
+				amount = 1000
+			}
+		}
+		
+		ai_will_do = {
+			factor = 5000
+		}
+
+
+	}
+
+	SOV_Great_Patriotic_War_level_up_begin_hongchang = { #准备红场阅兵
+		icon = generic_reorganize_irregulars
+
+        allowed = {
+			tag = SOV
+		}
+
+        visible = {
+			
+        }
+
+        available = {
+			controls_state = 219 #Moscow
+			has_idea = SOV_Great_Patriotic_227_command
+			219 = {
+				any_neighbor_state = {
+					controller = {
+						has_war_with = ROOT
+					}
+				}
+			}
+        }
+
+        fire_only_once = yes
+
+		cost = 10
+
+		days_remove = 3
+		#days_re_enable = 1600
+
+		modifier = {
+			army_core_attack_factor = 0.1
+			army_core_defence_factor = 0.1
+		}
+
+        complete_effect = {
+            add_days_mission_timeout = {
+			    mission = SOV_Great_Patriotic_War_level_up
+			    days = -10
+			}
+			add_ideas = SOV_Great_Patriotic_guerilla  
+			news_event = { id = change_news.48 }
+			activate_mission = SOV_Great_Patriotic_War_level_up_strat_hongchang
+
+			division_template = {
+				name = "红军"
+				regiments = {
+					infantry = { x = 0 y = 0 }
+					infantry = { x = 0 y = 1 }
+					infantry = { x = 0 y = 2 }
+					infantry = { x = 0 y = 3 }
+					infantry = { x = 0 y = 4 }
+					infantry = { x = 1 y = 0 }
+					infantry = { x = 1 y = 1 }
+					infantry = { x = 1 y = 2 }
+					infantrys = { x = 1 y = 3 }
+					infantrys = { x = 1 y = 4 }
+					artillery_brigade = { x = 2 y = 0 }
+					artillery_brigade = { x = 2 y = 1 }
+					artillery_brigade = { x = 2 y = 2 }
+					anti_air_brigade = { x = 2 y = 3 }
+					anti_tank_brigade = { x = 2 y = 4 }
+					medium_armor = { x = 3 y = 0 }
+					medium_armor = { x = 3 y = 1 }
+				}
+				regimental_support = {
+					field_guns = { x = 0 y = 0 }
+					field_guns = { x = 1 y = 0 }
+					medium_tank_destroyer_support = { x = 2 y = 0 }
+					medium_tank_destroyer_support = { x = 3 y = 0 }
+					medium_sp_anti_air_support = { x = 4 y = 0 }
+				}
+				support = {
+					engineer = { x = 0 y = 0 }
+					recon = { x = 0 y = 1 }
+					field_hospital =  { x = 0 y = 2 }
+					logistics_company = { x = 0 y = 3 }
+					artillery =  { x = 0 y = 4 }
+				}
+			}
+        }
+
+		remove_effect = {
+			set_country_flag = Sov_self_hongchang_flag
+		}
+		
+		ai_will_do = {
+			factor = 5000
+		}
+
+	}
+
+
+	SOV_Great_Patriotic_War_level_up_strat_hongchang = { #红场阅兵进行时
+		icon = GFX_decision_generic_construction
+
+		days_mission_timeout = 7
+
+		selectable_mission = no
+
+		allowed = {
+			original_tag = SOV
+		}
+
+		available = {#完成  
+			NOT = {
+				controls_state = 219
+			}
+		}
+		activation = { #启用          
+			219 = {
+				any_neighbor_state = {
+					controller = {
+						has_war_with = ROOT
+					}
+				}
+			}
+			is_subject = no
+			has_country_flag = the_SOV_Great_Patriotic_War_open_flag
+			has_government = communism
+			has_defensive_war = yes
+			any_enemy_country = { is_major = yes }
+			NOT = {
+				has_idea = SOV_Great_Patriotic_War_SOV_lose_war
+			}
+			has_country_flag = Sov_self_hongchang_flag
+		}    
+		
+
+		is_good = yes                      
+
+		timeout_effect = {         
+			add_days_mission_timeout = {
+			    mission = SOV_Great_Patriotic_War_level_up
+			    days = -365
+			}
+			random_owned_controlled_state = {
+				limit = { ROOT = { has_full_control_of_state = PREV } }
+				prioritize = { 219 }
+				create_unit = {
+					division = "name = \"红军\" division_template = \"红军\" start_experience_factor = 0.2" 
+					owner = SOV
+					count = 24
+				}
+			}
+			any_enemy_country = {
+				country_event = { id = change_sov.18 }
+			}
+			news_event = { id = change_news.49 days = 1 }
+			set_country_flag = SOV_hongchang_win_flag
+			clr_country_flag = Sov_self_hongchang_flag
+		}       
+		complete_effect = {       
+			add_war_support = -0.1
+			add_stability = -0.1
+			country_event = { id = change_sov.19 }
+			news_event = { id = change_news.50 days = 1 }
+			clr_country_flag = Sov_self_hongchang_flag
+		}
+		cancel_trigger = {
+			has_war = no
+		}
+		cancel_effect = {
+			clr_country_flag = Sov_self_hongchang_flag
+		}
+
+
+	}
+
+	SOV_Great_Patriotic_War_level_up_begin_youji = { #游击队无上光荣
+		icon = generic_reorganize_irregulars
+
+        allowed = {
+			tag = SOV
+		}
+
+        visible = {
+			has_idea = SOV_Great_Patriotic_227_command
+        }
+
+        available = {
+			
+        }
+
+        fire_only_once = yes
+
+		cost = 10
+
+		days_remove = 30
+		#days_re_enable = 60
+
+		modifier = {
+
+		}
+
+        complete_effect = {
+            add_days_mission_timeout = {
+			    mission = SOV_Great_Patriotic_War_level_up
+			    days = -10
+			}
+			division_template = {
+				name = "红军精锐游击队"
+				regiments = {
+					infantry = { x = 0 y = 0 }
+					infantry = { x = 0 y = 1 }
+					infantry = { x = 0 y = 2 }
+					infantry = { x = 0 y = 3 }
+					infantry = { x = 0 y = 4 }
+					infantry = { x = 1 y = 0 }
+					infantry = { x = 1 y = 1 }
+					infantry = { x = 1 y = 2 }
+					infantrys = { x = 1 y = 3 }
+					infantrys = { x = 1 y = 4 }
+					artillery_brigade = { x = 2 y = 0 }
+					anti_air_brigade = { x = 2 y = 3 }
+					anti_tank_brigade = { x = 2 y = 4 }
+				}
+				regimental_support = {
+					field_guns = { x = 0 y = 0 }
+					field_guns = { x = 1 y = 0 }
+					medium_tank_destroyer_support = { x = 2 y = 0 }
+					medium_tank_destroyer_support = { x = 3 y = 0 }
+					medium_sp_anti_air_support = { x = 4 y = 0 }
+				}
+				support = {
+					engineer = { x = 0 y = 0 }
+					recon = { x = 0 y = 1 }
+					field_hospital =  { x = 0 y = 2 }
+					logistics_company = { x = 0 y = 3 }
+					artillery =  { x = 0 y = 4 }
+				}
+			}
+        }
+
+		remove_effect = {
+			add_ideas = SOV_Great_Patriotic_guerilla 
+			add_days_mission_timeout = {
+			    mission = SOV_Great_Patriotic_War_level_up
+			    days = -30
+			}
+		}
+		
+		ai_will_do = {
+			factor = 5000
+		}
+
+
+	}
+
+	SOV_Great_Patriotic_War_level_up_begin_kill = { #入侵者必死
+		icon = generic_reorganize_irregulars
+
+        allowed = {
+			tag = SOV
+		}
+
+        visible = {
+			has_idea = SOV_Great_Patriotic_227_command
+        }
+
+        available = {
+			
+        }
+
+        fire_only_once = yes
+
+		cost = 10
+
+		days_remove = 30
+		#days_re_enable = 60
+
+		modifier = {
+
+		}
+
+        complete_effect = {
+            add_days_mission_timeout = {
+			    mission = SOV_Great_Patriotic_War_level_up
+			    days = -10
+			}
+        }
+
+		remove_effect = {
+			add_ideas = SOV_Great_Patriotic_War_kill_emery
+			add_days_mission_timeout = {
+			    mission = SOV_Great_Patriotic_War_level_up
+			    days = -30
+			}
+			division_template = {
+				name = "红军预备装甲师"
+				regiments = {
+					motorized = { x = 0 y = 0 }
+					motorized = { x = 0 y = 1 }
+					motorized = { x = 0 y = 2 }
+					motorized = { x = 0 y = 3 }
+					motorized = { x = 0 y = 4 }
+					motorized = { x = 1 y = 0 }
+					motorized = { x = 1 y = 1 }
+					motorized = { x = 1 y = 2 }
+					medium_armor = { x = 2 y = 0 }
+					medium_armor = { x = 2 y = 1 }
+					medium_armor = { x = 2 y = 2 }
+					medium_armor = { x = 2 y = 3 }
+					medium_armor = { x = 2 y = 4 }
+					medium_armor = { x = 3 y = 0 }
+					medium_armor = { x = 3 y = 1 }
+					medium_armor = { x = 3 y = 2 }
+					medium_armor = { x = 3 y = 3 }
+					mot_anti_air_brigade = { x = 4 y = 0 }
+					mot_anti_tank_brigade = { x = 4 y = 1 }
+				}
+				regimental_support = {
+					field_guns = { x = 0 y = 0 }
+					field_guns = { x = 1 y = 0 }
+					medium_tank_destroyer_support = { x = 2 y = 0 }
+					medium_tank_destroyer_support = { x = 3 y = 0 }
+					medium_sp_anti_air_support = { x = 4 y = 0 }
+				}
+				support = {
+					engineer = { x = 0 y = 0 }
+					recon = { x = 0 y = 1 }
+					field_hospital =  { x = 0 y = 2 }
+					logistics_company = { x = 0 y = 3 }
+					artillery =  { x = 0 y = 4 }
+				}
+			}
+			random_owned_controlled_state = {
+				limit = { ROOT = { has_full_control_of_state = PREV } }
+				prioritize = { 219 }
+				create_unit = {
+					division = "name = \"红军预备装甲师\" division_template = \"红军预备装甲师\" start_experience_factor = 0.5" 
+					owner = SOV
+					count = 8
+				}
+			}
+		}
+		
+		ai_will_do = {
+			factor = 5000
+		}
+
+
+	}
+
+	SOV_Great_Patriotic_War_level_up_begin_break = { #弱点突破
+		icon = hol_engelandvaarders
+
+        allowed = {
+			tag = SOV
+		}
+
+        visible = {
+			has_idea = SOV_Great_Patriotic_War_kill_emery
+        }
+
+        available = {
+			has_idea = SOV_Great_Patriotic_War_kill_emery
+        }
+
+        fire_only_once = yes
+
+		cost = 10
+
+		days_remove = 45
+		#days_re_enable = 60
+
+		modifier = {
+
+		}
+
+        complete_effect = {
+            add_days_mission_timeout = {
+			    mission = SOV_Great_Patriotic_War_level_up
+			    days = -10
+			}
+        }
+
+		remove_effect = {
+			add_ideas = SOV_Great_Patriotic_War_breakthrough
+			add_days_mission_timeout = {
+			    mission = SOV_Great_Patriotic_War_level_up
+			    days = -30
+			}
+			division_template = {
+				name = "红军突破装甲师"
+				regiments = {
+					motorized = { x = 0 y = 0 }
+					motorized = { x = 0 y = 1 }
+					motorized = { x = 0 y = 2 }
+					motorized = { x = 0 y = 3 }
+					motorized = { x = 0 y = 4 }
+					motorized = { x = 1 y = 0 }
+					motorized = { x = 1 y = 1 }
+					motorized = { x = 1 y = 2 }
+					medium_armor = { x = 2 y = 0 }
+					medium_armor = { x = 2 y = 1 }
+					medium_armor = { x = 2 y = 2 }
+					medium_armor = { x = 2 y = 3 }
+					medium_armor = { x = 2 y = 4 }
+					medium_armor = { x = 3 y = 0 }
+					medium_armor = { x = 3 y = 1 }
+					medium_armor = { x = 3 y = 2 }
+					medium_armor = { x = 3 y = 3 }
+					mot_anti_air_brigade = { x = 4 y = 0 }
+					mot_anti_tank_brigade = { x = 4 y = 1 }
+				}
+				regimental_support = {
+					field_guns = { x = 0 y = 0 }
+					field_guns = { x = 1 y = 0 }
+					medium_tank_destroyer_support = { x = 2 y = 0 }
+					medium_tank_destroyer_support = { x = 3 y = 0 }
+					medium_sp_anti_air_support = { x = 4 y = 0 }
+				}
+				support = {
+					engineer = { x = 0 y = 0 }
+					recon = { x = 0 y = 1 }
+					field_hospital =  { x = 0 y = 2 }
+					logistics_company = { x = 0 y = 3 }
+					artillery =  { x = 0 y = 4 }
+				}
+			}
+			random_owned_controlled_state = {
+				limit = { ROOT = { has_full_control_of_state = PREV } }
+				prioritize = { 219 }
+				create_unit = {
+					division = "name = \"红军突破装甲师\" division_template = \"红军突破装甲师\" start_experience_factor = 1" 
+					owner = SOV
+					count = 8
+				}
+			}
+		}
+		
+		ai_will_do = {
+			factor = 5000
+		}
+
+
+	}
+
+	SOV_Great_Patriotic_War_level_up_begin_kuersike = { #库尔斯克会战
+		icon = hol_draw_up_staff_plans
+
+        allowed = {
+			tag = SOV
+		}
+
+        visible = {
+			activate_mission = SOV_Great_Patriotic_War_level_up
+        }
+
+        available = {
+			
+			controls_state = 220
+			220 = {
+				OR = {
+					any_neighbor_state = {
+						controller = {
+							has_war_with = ROOT
+						}
+					}
+					controller = {
+						has_war_with = ROOT
+					}
+				}
+			}
+			221 = {
+				OR = {
+					any_neighbor_state = {
+						controller = {
+							has_war_with = ROOT
+						}
+					}
+					controller = {
+						has_war_with = ROOT
+					}
+				}
+			}
+			240 = {
+				OR = {
+					any_neighbor_state = {
+						controller = {
+							has_war_with = ROOT
+						}
+					}
+					controller = {
+						has_war_with = ROOT
+					}
+				}
+			}
+			222 = {
+				OR = {
+					any_neighbor_state = {
+						controller = {
+							has_war_with = ROOT
+						}
+					}
+					controller = {
+						has_war_with = ROOT
+					}
+				}
+			}
+        }
+
+        fire_only_once = no
+
+		cost = 10
+
+		days_remove = 21
+		days_re_enable = 1600
+
+		modifier = {
+
+		}
+
+        complete_effect = {
+            add_days_mission_timeout = {
+			    mission = SOV_Great_Patriotic_War_level_up
+			    days = -10
+			}
+        }
+
+		remove_effect = {
+			set_country_flag = SOV_self_kuersike_flag
+			add_ideas = SOV_Great_Patriotic_armor_breakthrough
+			activate_mission = SOV_kuersike_mission
+			any_enemy_country = {
+				country_event = { id = change_sov.29 }
+			}
+			add_days_mission_timeout = {
+			    mission = SOV_Great_Patriotic_War_level_up
+			    days = -30
+			}
+			news_event = { id = change_news.54 days = 1 }
+			if = {
+				limit = {
+					NOT = {
+						has_tech = mechanized_equipment_1
+					}
+					set_technology = mechanized_equipment_1
+				}
+			}
+			division_template = {
+				name = "红军精锐装甲师"
+				regiments = {
+					mechanised_infantry = { x = 0 y = 0 }
+					mechanised_infantry = { x = 0 y = 1 }
+					mechanised_infantry = { x = 0 y = 2 }
+					mechanised_infantry = { x = 0 y = 3 }
+					mechanised_infantry = { x = 0 y = 4 }
+					mechanised_infantry = { x = 1 y = 0 }
+					mechanised_infantry = { x = 1 y = 1 }
+					mechanised_infantry = { x = 1 y = 2 }
+					mechanised_infantry = { x = 1 y = 3 }
+					medium_armor = { x = 2 y = 0 }
+					medium_armor = { x = 2 y = 1 }
+					medium_armor = { x = 2 y = 2 }
+					medium_armor = { x = 2 y = 3 }
+					medium_armor = { x = 2 y = 4 }
+					medium_armor = { x = 3 y = 0 }
+					medium_armor = { x = 3 y = 1 }
+					medium_armor = { x = 3 y = 2 }
+					medium_armor = { x = 3 y = 3 }
+				}
+				regimental_support = {
+					field_guns = { x = 0 y = 0 }
+					field_guns = { x = 1 y = 0 }
+					medium_tank_destroyer_support = { x = 2 y = 0 }
+					medium_tank_destroyer_support = { x = 3 y = 0 }
+					medium_sp_anti_air_support = { x = 4 y = 0 }
+				}
+				support = {
+					engineer = { x = 0 y = 0 }
+					recon = { x = 0 y = 1 }
+					anti_air =  { x = 0 y = 2 }
+					logistics_company = { x = 0 y = 3 }
+					artillery =  { x = 0 y = 4 }
+				}
+			}
+			random_owned_controlled_state = {
+				limit = { ROOT = { has_full_control_of_state = PREV } }
+				prioritize = { 220 }
+				create_unit = {
+					division = "name = \"红军精锐装甲师\" division_template = \"红军精锐装甲师\" start_experience_factor = 1" 
+					owner = SOV
+					count = 8
+				}
+			}
+			if = {
+				limit = {
+					is_ai = yes
+				}
+				add_political_power = 100
+				random_owned_controlled_state = {
+					limit = { ROOT = { has_full_control_of_state = PREV } }
+					prioritize = { 220 }
+					create_unit = {
+						division = "name = \"红军精锐装甲师\" division_template = \"红军精锐装甲师\" start_experience_factor = 1" 
+						owner = SOV
+						count = 40
+					}
+				}
+			}
+		}
+		
+		ai_will_do = {
+			factor = 5000
+		}
+
+
+	}
+
+
+	SOV_kuersike_mission = { #库尔斯克会战任务（苏联）
+		icon = hol_draw_up_staff_plans
+
+		days_mission_timeout = 60
+
+		selectable_mission = no
+
+		allowed = {
+			original_tag = SOV
+		}
+
+		available = {#完成  
+			controls_state = 219
+			controls_state = 220
+			controls_state = 221
+			controls_state = 240
+			controls_state = 222
+			220 = {
+				every_neighbor_state = {
+					controller = {
+						NOT = {
+							has_war_with = ROOT
+						}
+					}
+				}
+			}
+			221 = {
+				every_neighbor_state = {
+					controller = {
+						NOT = {
+							has_war_with = ROOT
+						}
+					}
+				}
+			}
+			240 = {
+				every_neighbor_state = {
+					controller = {
+						NOT = {
+							has_war_with = ROOT
+						}
+					}
+				}
+			}
+			222 = {
+				every_neighbor_state = {
+					controller = {
+						NOT = {
+							has_war_with = ROOT
+						}
+					}
+				}
+			}
+		}
+		activation = { #启用          
+			has_country_flag = SOV_self_kuersike_flag
+		}    
+		
+
+		is_good = yes     
+
+		timeout_effect = {        
+			
+		}       
+		complete_effect = {       
+			add_war_support = 0.2
+			add_stability = 0.2
+			country_event = { id = change_sov.20 }
+			news_event = { id = change_news.52 days = 1 }
+		}
+		cancel_trigger = {
+			NOT = {
+				controls_state = 219
+				controls_state = 220
+				controls_state = 221
+				controls_state = 240
+				controls_state = 222
+			}
+		}
+		cancel_effect = {
+			country_event = { id = change_sov.21 }
+			
+		}
+
+
+	}
+
+	SOV_Great_Patriotic_War_level_up_begin_mingsike = { #明斯克战役
+		icon = hol_draw_up_staff_plans
+
+        allowed = {
+			tag = SOV
+		}
+
+        visible = {
+			activate_mission = SOV_Great_Patriotic_War_level_up
+        }
+
+        available = {
+			controls_state = 206
+			206 = {
+				any_neighbor_state = {
+					controller = {
+						has_war_with = ROOT
+					}
+				}
+			}
+			204 = {
+				OR = {
+					any_neighbor_state = {
+						controller = {
+							has_war_with = ROOT
+						}
+					}
+					controller = {
+						has_war_with = ROOT
+					}
+				}
+			}
+        }
+
+        fire_only_once = no
+
+		cost = 10
+
+		days_remove = 7
+		days_re_enable = 1600
+
+		modifier = {
+
+		}
+
+        complete_effect = {
+            
+        }
+
+		remove_effect = {
+			set_country_flag = SOV_self_mingsike_flag
+			activate_mission = SOV_mingsike_mission
+			every_enemy_country = {
+				country_event = { id = change_sov.30 }
+			}
+			if = {
+				limit = {
+					NOT = {
+						has_tech = mechanized_equipment_1
+					}
+					set_technology = mechanized_equipment_1
+				}
+			}
+			division_template = {
+				name = "红军主力装甲师"
+				regiments = {
+					mechanised_infantry = { x = 0 y = 0 }
+					mechanised_infantry = { x = 0 y = 1 }
+					mechanised_infantry = { x = 0 y = 2 }
+					mechanised_infantry = { x = 0 y = 3 }
+					mechanised_infantry = { x = 0 y = 4 }
+					mechanised_infantry = { x = 1 y = 0 }
+					mechanised_infantry = { x = 1 y = 1 }
+					mechanised_infantry = { x = 1 y = 2 }
+					mechanised_infantry = { x = 1 y = 3 }
+					medium_armor = { x = 2 y = 0 }
+					medium_armor = { x = 2 y = 1 }
+					medium_armor = { x = 2 y = 2 }
+					medium_armor = { x = 2 y = 3 }
+					medium_armor = { x = 2 y = 4 }
+					medium_armor = { x = 3 y = 0 }
+					medium_armor = { x = 3 y = 1 }
+					medium_armor = { x = 3 y = 2 }
+					medium_armor = { x = 3 y = 3 }
+				}
+				regimental_support = {
+					field_guns = { x = 0 y = 0 }
+					field_guns = { x = 1 y = 0 }
+					medium_tank_destroyer_support = { x = 2 y = 0 }
+					medium_tank_destroyer_support = { x = 3 y = 0 }
+					medium_sp_anti_air_support = { x = 4 y = 0 }
+				}
+				support = {
+					engineer = { x = 0 y = 0 }
+					recon = { x = 0 y = 1 }
+					anti_air =  { x = 0 y = 2 }
+					logistics_company = { x = 0 y = 3 }
+					artillery =  { x = 0 y = 4 }
+				}
+			}
+			random_owned_controlled_state = {
+				limit = { ROOT = { has_full_control_of_state = PREV } }
+				prioritize = { 206 }
+				create_unit = {
+					division = "name = \"红军主力装甲师\" division_template = \"红军主力装甲师\" start_experience_factor = 1" 
+					owner = SOV
+					count = 2
+				}
+			}
+			if = {
+				limit = {
+					is_ai = yes
+				}
+				add_political_power = 100
+				random_owned_controlled_state = {
+					limit = { ROOT = { has_full_control_of_state = PREV } }
+					prioritize = { 206 }
+					create_unit = {
+						division = "name = \"红军主力装甲师\" division_template = \"红军主力装甲师\" start_experience_factor = 1" 
+						owner = SOV
+						count = 2
+					}
+				}
+			}
+		}
+		
+		ai_will_do = {
+			factor = 5000
+		}
+
+
+	}
+
+	SOV_mingsike_mission = { #明斯克会战任务（苏联）
+		icon = hol_draw_up_staff_plans
+
+		days_mission_timeout = 30
+
+		selectable_mission = no
+
+		allowed = {
+			original_tag = SOV
+		}
+
+		available = {#完成  
+			NOT = {
+				controls_state = 206
+				controls_state = 204
+			}
+		}
+		activation = { #启用          
+			
+			has_country_flag = SOV_self_mingsike_flag
+
+		}    
+		
+
+		is_good = yes          
+
+		timeout_effect = {        
+			country_event = { id = change_sov.25 }
+		}       
+		complete_effect = {       
+			country_event = { id = change_sov.26 }
+		}
+		cancel_trigger = {
+			has_war = no
+		}
+		cancel_effect = {
+			country_event = { id = change_sov.25 }
+			
+		}
+
+
+	}
+
+
+	SOV_Great_Patriotic_War_level_up_begin_jifu = { #基辅战役
+		icon = hol_draw_up_staff_plans
+
+        allowed = {
+			tag = SOV
+		}
+
+        visible = {
+			activate_mission = SOV_Great_Patriotic_War_level_up
+        }
+
+        available = {
+			controls_state = 202
+			202 = {
+				any_neighbor_state = {
+					controller = {
+						has_war_with = ROOT
+					}
+				}
+			}
+        }
+
+        fire_only_once = no
+
+		cost = 10
+
+		days_remove = 7
+		days_re_enable = 1600
+
+		modifier = {
+
+		}
+
+        complete_effect = {
+            
+        }
+
+		remove_effect = {
+			set_country_flag = SOV_self_jifu_flag
+			activate_mission = SOV_jifu_mission
+			
+			every_enemy_country = {
+				country_event = { id = change_sov.31 }
+			}
+			if = {
+				limit = {
+					NOT = {
+						has_tech = mechanized_equipment_1
+					}
+					set_technology = mechanized_equipment_1
+				}
+			}
+			division_template = {
+				name = "红军主力装甲师"
+				regiments = {
+					mechanised_infantry = { x = 0 y = 0 }
+					mechanised_infantry = { x = 0 y = 1 }
+					mechanised_infantry = { x = 0 y = 2 }
+					mechanised_infantry = { x = 0 y = 3 }
+					mechanised_infantry = { x = 0 y = 4 }
+					mechanised_infantry = { x = 1 y = 0 }
+					mechanised_infantry = { x = 1 y = 1 }
+					mechanised_infantry = { x = 1 y = 2 }
+					mechanised_infantry = { x = 1 y = 3 }
+					medium_armor = { x = 2 y = 0 }
+					medium_armor = { x = 2 y = 1 }
+					medium_armor = { x = 2 y = 2 }
+					medium_armor = { x = 2 y = 3 }
+					medium_armor = { x = 2 y = 4 }
+					medium_armor = { x = 3 y = 0 }
+					medium_armor = { x = 3 y = 1 }
+					medium_armor = { x = 3 y = 2 }
+					medium_armor = { x = 3 y = 3 }
+				}
+				regimental_support = {
+					field_guns = { x = 0 y = 0 }
+					field_guns = { x = 1 y = 0 }
+					medium_tank_destroyer_support = { x = 2 y = 0 }
+					medium_tank_destroyer_support = { x = 3 y = 0 }
+					medium_sp_anti_air_support = { x = 4 y = 0 }
+				}
+				support = {
+					engineer = { x = 0 y = 0 }
+					recon = { x = 0 y = 1 }
+					anti_air =  { x = 0 y = 2 }
+					logistics_company = { x = 0 y = 3 }
+					artillery =  { x = 0 y = 4 }
+				}
+			}
+			random_owned_controlled_state = {
+				limit = { ROOT = { has_full_control_of_state = PREV } }
+				prioritize = { 202 }
+				create_unit = {
+					division = "name = \"红军主力装甲师\" division_template = \"红军主力装甲师\" start_experience_factor = 1" 
+					owner = SOV
+					count = 2
+				}
+			}
+			if = {
+				limit = {
+					is_ai = yes
+				}
+				add_political_power = 100
+				random_owned_controlled_state = {
+					limit = { ROOT = { has_full_control_of_state = PREV } }
+					prioritize = { 202 }
+					create_unit = {
+						division = "name = \"红军主力装甲师\" division_template = \"红军主力装甲师\" start_experience_factor = 1" 
+						owner = SOV
+						count = 2
+					}
+				}
+			}
+		}
+		
+		ai_will_do = {
+			factor = 5000
+		}
+
+
+	}
+
+	SOV_jifu_mission = { #基辅会战任务（苏联）
+		icon = hol_draw_up_staff_plans
+
+		days_mission_timeout = 30
+
+		selectable_mission = no
+
+		allowed = {
+			original_tag = SOV
+		}
+
+		available = {#完成  
+			NOT = {
+				controls_state = 202
+			}
+		}
+		activation = { #启用          
+
+			has_country_flag = SOV_self_jifu_flag
+
+		}    
+		
+
+		is_good = no               
+
+		timeout_effect = {        
+			country_event = { id = change_sov.32 }
+		}       
+		complete_effect = {       
+			country_event = { id = change_sov.33 }
+		}
+		cancel_trigger = {
+			has_war = no
+		}
+		cancel_effect = {
+			country_event = { id = change_sov.32 }
+			
+		}
+
+
+	}
+
+	SOV_Great_Patriotic_War_level_up_begin_mosike = { #莫斯科战役
+		icon = hol_draw_up_staff_plans
+
+        allowed = {
+			tag = SOV
+		}
+
+        visible = {
+			activate_mission = SOV_Great_Patriotic_War_level_up
+        }
+
+        available = {
+			controls_state = 219
+			219 = {
+				any_neighbor_state = {
+					controller = {
+						has_war_with = ROOT
+					}
+				}
+			}
+        }
+
+        fire_only_once = no
+
+		cost = 10
+
+		days_remove = 7
+		days_re_enable = 1600
+
+		modifier = {
+
+		}
+
+        complete_effect = {
+            
+        }
+
+		remove_effect = {
+			set_country_flag = SOV_self_mosike_flag
+			activate_mission = SOV_mosike_mission
+			
+			219 = {
+				add_building_construction = {
+					type = bunker
+					level = 3
+					instant_build = yes
+					province = 3358
+				}
+				add_building_construction = {
+					type = bunker
+					level = 3
+					instant_build = yes
+					province = 11282
+				}
+				add_building_construction = {
+					type = bunker
+					level = 5
+					instant_build = yes
+					province = 6380
+				}
+				add_building_construction = {
+					type = bunker
+					level = 3
+					instant_build = yes
+					province = 6414
+				}
+				add_building_construction = {
+					type = bunker
+					level = 3
+					instant_build = yes
+					province = 9348
+				}
+				add_building_construction = {
+					type = bunker
+					level = 3
+					instant_build = yes
+					province = 6240
+				}
+			}
+			every_enemy_country = {
+				country_event = { id = change_sov.36 }
+			}
+			if = {
+				limit = {
+					NOT = {
+						has_tech = mechanized_equipment_1
+					}
+					set_technology = mechanized_equipment_1
+				}
+			}
+			division_template = {
+				name = "红军主力装甲师"
+				regiments = {
+					mechanised_infantry = { x = 0 y = 0 }
+					mechanised_infantry = { x = 0 y = 1 }
+					mechanised_infantry = { x = 0 y = 2 }
+					mechanised_infantry = { x = 0 y = 3 }
+					mechanised_infantry = { x = 0 y = 4 }
+					mechanised_infantry = { x = 1 y = 0 }
+					mechanised_infantry = { x = 1 y = 1 }
+					mechanised_infantry = { x = 1 y = 2 }
+					mechanised_infantry = { x = 1 y = 3 }
+					medium_armor = { x = 2 y = 0 }
+					medium_armor = { x = 2 y = 1 }
+					medium_armor = { x = 2 y = 2 }
+					medium_armor = { x = 2 y = 3 }
+					medium_armor = { x = 2 y = 4 }
+					medium_armor = { x = 3 y = 0 }
+					medium_armor = { x = 3 y = 1 }
+					medium_armor = { x = 3 y = 2 }
+					medium_armor = { x = 3 y = 3 }
+				}
+				regimental_support = {
+					field_guns = { x = 0 y = 0 }
+					field_guns = { x = 1 y = 0 }
+					medium_tank_destroyer_support = { x = 2 y = 0 }
+					medium_tank_destroyer_support = { x = 3 y = 0 }
+					medium_sp_anti_air_support = { x = 4 y = 0 }
+				}
+				support = {
+					engineer = { x = 0 y = 0 }
+					recon = { x = 0 y = 1 }
+					anti_air =  { x = 0 y = 2 }
+					logistics_company = { x = 0 y = 3 }
+					artillery =  { x = 0 y = 4 }
+				}
+			}
+			random_owned_controlled_state = {
+				limit = { ROOT = { has_full_control_of_state = PREV } }
+				prioritize = { 219 }
+				create_unit = {
+					division = "name = \"红军主力装甲师\" division_template = \"红军主力装甲师\" start_experience_factor = 1" 
+					owner = SOV
+					count = 2
+				}
+			}
+			if = {
+				limit = {
+					is_ai = yes
+				}
+				add_political_power = 100
+				random_owned_controlled_state = {
+					limit = { ROOT = { has_full_control_of_state = PREV } }
+					prioritize = { 219 }
+					create_unit = {
+						division = "name = \"红军主力装甲师\" division_template = \"红军主力装甲师\" start_experience_factor = 1" 
+						owner = SOV
+						count = 2
+					}
+				}
+			}
+		}
+		
+		ai_will_do = {
+			factor = 5000
+		}
+
+
+	}
+
+	SOV_mosike_mission = { #莫斯科战役（苏联）
+		icon = hol_draw_up_staff_plans
+
+		days_mission_timeout = 30
+
+		selectable_mission = no
+
+		allowed = {
+			original_tag = SOV
+		}
+
+		available = {#完成  
+			NOT = {
+				controls_state = 219
+			}
+		}
+		activation = { #启用          
+			has_country_flag = SOV_self_mosike_flag
+		}    
+		
+
+		is_good = no               
+
+		timeout_effect = {        
+			country_event = { id = change_sov.37 }
+		}       
+		complete_effect = {       
+			country_event = { id = change_sov.38 }
+		}
+		cancel_trigger = {
+			has_war = no
+		}
+		cancel_effect = {
+			country_event = { id = change_sov.37 }
+			
+		}
+
+
+	}
+
+	SOV_Great_Patriotic_War_level_up_begin_sidalinggele = { #斯大林格勒战役
+		icon = hol_draw_up_staff_plans
+
+        allowed = {
+			tag = SOV
+		}
+
+        visible = {
+			activate_mission = SOV_Great_Patriotic_War_level_up
+        }
+
+        available = {
+			controls_state = 217
+			217 = {
+				any_neighbor_state = {
+					controller = {
+						has_war_with = ROOT
+					}
+				}
+			}
+        }
+
+        fire_only_once = no
+
+		cost = 10
+
+		days_remove = 7
+		days_re_enable = 1600
+
+		modifier = {
+
+		}
+
+        complete_effect = {
+            
+        }
+
+		remove_effect = {
+			set_country_flag = SOV_self_sidalinggele_flag
+			activate_mission = SOV_sidalinggele_mission
+			
+			every_enemy_country = {
+				country_event = { id = change_sov.41 }
+			}
+			217 = {
+				add_building_construction = {
+					type = bunker
+					level = 6
+					instant_build = yes
+					province = 3529
+				}
+				add_building_construction = {
+					type = bunker
+					level = 3
+					instant_build = yes
+					province = 9504
+				}
+
+				add_building_construction = {
+					type = bunker
+					level = 3
+					instant_build = yes
+					province = 6527
+				}
+				add_building_construction = {
+					type = bunker
+					level = 3
+					instant_build = yes
+					province = 9474
+				}
+				add_building_construction = {
+					type = bunker
+					level = 3
+					instant_build = yes
+					province = 6503
+				}
+				add_building_construction = {
+					type = bunker
+					level = 3
+					instant_build = yes
+					province = 9459
+				}
+				add_building_construction = {
+					type = bunker
+					level = 3
+					instant_build = yes
+					province = 11447
+				}
+				add_building_construction = {
+					type = bunker
+					level = 3
+					instant_build = yes
+					province = 498
+				}
+				add_building_construction = {
+					type = bunker
+					level = 3
+					instant_build = yes
+					province = 3555
+				}
+				add_building_construction = {
+					type = bunker
+					level = 3
+					instant_build = yes
+					province = 11474
+				}
+			}
+			if = {
+				limit = {
+					NOT = {
+						has_tech = mechanized_equipment_1
+					}
+					set_technology = mechanized_equipment_1
+				}
+			}
+			division_template = {
+				name = "红军主力装甲师"
+				regiments = {
+					mechanised_infantry = { x = 0 y = 0 }
+					mechanised_infantry = { x = 0 y = 1 }
+					mechanised_infantry = { x = 0 y = 2 }
+					mechanised_infantry = { x = 0 y = 3 }
+					mechanised_infantry = { x = 0 y = 4 }
+					mechanised_infantry = { x = 1 y = 0 }
+					mechanised_infantry = { x = 1 y = 1 }
+					mechanised_infantry = { x = 1 y = 2 }
+					mechanised_infantry = { x = 1 y = 3 }
+					medium_armor = { x = 2 y = 0 }
+					medium_armor = { x = 2 y = 1 }
+					medium_armor = { x = 2 y = 2 }
+					medium_armor = { x = 2 y = 3 }
+					medium_armor = { x = 2 y = 4 }
+					medium_armor = { x = 3 y = 0 }
+					medium_armor = { x = 3 y = 1 }
+					medium_armor = { x = 3 y = 2 }
+					medium_armor = { x = 3 y = 3 }
+				}
+				regimental_support = {
+					field_guns = { x = 0 y = 0 }
+					field_guns = { x = 1 y = 0 }
+					medium_tank_destroyer_support = { x = 2 y = 0 }
+					medium_tank_destroyer_support = { x = 3 y = 0 }
+					medium_sp_anti_air_support = { x = 4 y = 0 }
+				}
+				support = {
+					engineer = { x = 0 y = 0 }
+					recon = { x = 0 y = 1 }
+					anti_air =  { x = 0 y = 2 }
+					logistics_company = { x = 0 y = 3 }
+					artillery =  { x = 0 y = 4 }
+				}
+			}
+			random_owned_controlled_state = {
+				limit = { ROOT = { has_full_control_of_state = PREV } }
+				prioritize = { 217 }
+				create_unit = {
+					division = "name = \"红军主力装甲师\" division_template = \"红军主力装甲师\" start_experience_factor = 1" 
+					owner = SOV
+					count = 2
+				}
+			}
+			if = {
+				limit = {
+					is_ai = yes
+				}
+				add_political_power = 100
+				random_owned_controlled_state = {
+					limit = { ROOT = { has_full_control_of_state = PREV } }
+					prioritize = { 217 }
+					create_unit = {
+						division = "name = \"红军主力装甲师\" division_template = \"红军主力装甲师\" start_experience_factor = 1" 
+						owner = SOV
+						count = 2
+					}
+				}
+			}
+		}
+		
+		ai_will_do = {
+			factor = 5000
+		}
+
+
+	}
+
+	SOV_sidalinggele_mission = { #斯大林格勒战役（苏联）
+		icon = hol_draw_up_staff_plans
+
+		days_mission_timeout = 90
+
+		selectable_mission = no
+
+		allowed = {
+			original_tag = SOV
+		}
+
+		available = {#完成  
+			NOT = {
+				controls_state = 217
+			}
+		}
+		activation = { #启用          
+
+			has_country_flag = SOV_self_sidalinggele_flag
+
+		}    
+		
+
+		is_good = no      
+
+		timeout_effect = {        
+			country_event = { id = change_sov.42 }
+		}       
+		complete_effect = {       
+			country_event = { id = change_sov.43 }
+		}
+		cancel_trigger = {
+			has_war = no
+		}
+		cancel_effect = {
+			country_event = { id = change_sov.42 }
+			
+		}
+
+
+	}
+
+
+	SOV_Great_Patriotic_War_level_up_begin_liening = { #列宁格勒战役
+		icon = hol_draw_up_staff_plans
+
+        allowed = {
+			tag = SOV
+		}
+
+        visible = {
+			activate_mission = SOV_Great_Patriotic_War_level_up
+        }
+
+        available = {
+			controls_state = 195
+			195 = {
+				any_neighbor_state = {
+					controller = {
+						has_war_with = ROOT
+					}
+				}
+			}
+        }
+
+        fire_only_once = no
+
+		cost = 10
+
+		days_remove = 7
+		days_re_enable = 1600
+
+		modifier = {
+
+		}
+
+        complete_effect = {
+            
+        }
+
+		remove_effect = {
+			set_country_flag = SOV_self_liening_flag
+			activate_mission = SOV_liening_mission
+			195 = {
+				add_building_construction = {
+					type = anti_air_building
+					level = 2
+					instant_build = yes
+				}
+				add_building_construction = {
+					type = coastal_bunker
+					level = 3
+					instant_build = yes
+					province = 3151
+				}
+				add_building_construction = {
+					type = bunker
+					level = 3
+					instant_build = yes
+					province = 149
+				}
+				add_building_construction = {
+					type = bunker
+					level = 3
+					instant_build = yes
+					province = 3151
+				}
+
+			}
+			every_enemy_country = {
+				country_event = { id = change_sov.46 }
+			}
+			if = {
+				limit = {
+					NOT = {
+						has_tech = mechanized_equipment_1
+					}
+					set_technology = mechanized_equipment_1
+				}
+			}
+			division_template = {
+				name = "红军主力装甲师"
+				regiments = {
+					mechanised_infantry = { x = 0 y = 0 }
+					mechanised_infantry = { x = 0 y = 1 }
+					mechanised_infantry = { x = 0 y = 2 }
+					mechanised_infantry = { x = 0 y = 3 }
+					mechanised_infantry = { x = 0 y = 4 }
+					mechanised_infantry = { x = 1 y = 0 }
+					mechanised_infantry = { x = 1 y = 1 }
+					mechanised_infantry = { x = 1 y = 2 }
+					mechanised_infantry = { x = 1 y = 3 }
+					medium_armor = { x = 2 y = 0 }
+					medium_armor = { x = 2 y = 1 }
+					medium_armor = { x = 2 y = 2 }
+					medium_armor = { x = 2 y = 3 }
+					medium_armor = { x = 2 y = 4 }
+					medium_armor = { x = 3 y = 0 }
+					medium_armor = { x = 3 y = 1 }
+					medium_armor = { x = 3 y = 2 }
+					medium_armor = { x = 3 y = 3 }
+				}
+				regimental_support = {
+					field_guns = { x = 0 y = 0 }
+					field_guns = { x = 1 y = 0 }
+					medium_tank_destroyer_support = { x = 2 y = 0 }
+					medium_tank_destroyer_support = { x = 3 y = 0 }
+					medium_sp_anti_air_support = { x = 4 y = 0 }
+				}
+				support = {
+					engineer = { x = 0 y = 0 }
+					recon = { x = 0 y = 1 }
+					anti_air =  { x = 0 y = 2 }
+					logistics_company = { x = 0 y = 3 }
+					artillery =  { x = 0 y = 4 }
+				}
+			}
+			random_owned_controlled_state = {
+				limit = { ROOT = { has_full_control_of_state = PREV } }
+				prioritize = { 195 }
+				create_unit = {
+					division = "name = \"红军主力装甲师\" division_template = \"红军主力装甲师\" start_experience_factor = 1" 
+					owner = SOV
+					count = 2
+				}
+			}
+			if = {
+				limit = {
+					is_ai = yes
+				}
+				add_political_power = 100
+				random_owned_controlled_state = {
+					limit = { ROOT = { has_full_control_of_state = PREV } }
+					prioritize = { 195 }
+					create_unit = {
+						division = "name = \"红军主力装甲师\" division_template = \"红军主力装甲师\" start_experience_factor = 1" 
+						owner = SOV
+						count = 2
+					}
+				}
+			}
+		}
+		
+		ai_will_do = {
+			factor = 5000
+		}
+
+
+	}
+
+	SOV_sidalinggele_mission = { #列宁格勒战役（苏联）
+		icon = hol_draw_up_staff_plans
+
+		days_mission_timeout = 365
+
+		selectable_mission = no
+
+		allowed = {
+			original_tag = SOV
+		}
+
+		available = {#完成  
+			NOT = {
+				controls_state = 195
+			}
+			
+		}
+		activation = { #启用          
+
+			has_country_flag = SOV_self_liening_flag
+
+		}    
+		
+
+		is_good = no                   
+
+		timeout_effect = {        
+			country_event = { id = change_sov.42 }
+		}       
+		complete_effect = {       
+			country_event = { id = change_sov.43 }
+		}
+		cancel_trigger = {
+			has_war = no
+		}
+		cancel_effect = {
+			country_event = { id = change_sov.42 }
+			
+		}
+
+
+	}
+
+	SOV_Great_Patriotic_War_level_up_begin_baku = { #巴库保卫战
+		icon = hol_draw_up_staff_plans
+
+        allowed = {
+			tag = SOV
+		}
+
+        visible = {
+			activate_mission = SOV_Great_Patriotic_War_level_up
+        }
+
+        available = {
+			controls_state = 229
+			229 = {
+				any_neighbor_state = {
+					controller = {
+						has_war_with = ROOT
+					}
+				}
+			}
+        }
+
+        fire_only_once = no
+
+		cost = 10
+
+		days_remove = 7
+		days_re_enable = 1600
+
+		modifier = {
+
+		}
+
+        complete_effect = {
+            
+        }
+
+		remove_effect = {
+			set_country_flag = SOV_self_baku_flag
+			activate_mission = SOV_baku_mission
+			
+			229 = {
+				add_building_construction = {
+					type = anti_air_building
+					level = 2
+					instant_build = yes
+				}
+				add_building_construction = {
+					type = coastal_bunker
+					level = 6
+					instant_build = yes
+					province = 7661
+				}
+
+			}
+			every_enemy_country = {
+				country_event = { id = change_sov.51 }
+			}
+			if = {
+				limit = {
+					NOT = {
+						has_tech = mechanized_equipment_1
+					}
+					set_technology = mechanized_equipment_1
+				}
+			}
+			division_template = {
+				name = "红军主力装甲师"
+				regiments = {
+					mechanised_infantry = { x = 0 y = 0 }
+					mechanised_infantry = { x = 0 y = 1 }
+					mechanised_infantry = { x = 0 y = 2 }
+					mechanised_infantry = { x = 0 y = 3 }
+					mechanised_infantry = { x = 0 y = 4 }
+					mechanised_infantry = { x = 1 y = 0 }
+					mechanised_infantry = { x = 1 y = 1 }
+					mechanised_infantry = { x = 1 y = 2 }
+					mechanised_infantry = { x = 1 y = 3 }
+					medium_armor = { x = 2 y = 0 }
+					medium_armor = { x = 2 y = 1 }
+					medium_armor = { x = 2 y = 2 }
+					medium_armor = { x = 2 y = 3 }
+					medium_armor = { x = 2 y = 4 }
+					medium_armor = { x = 3 y = 0 }
+					medium_armor = { x = 3 y = 1 }
+					medium_armor = { x = 3 y = 2 }
+					medium_armor = { x = 3 y = 3 }
+				}
+				regimental_support = {
+					field_guns = { x = 0 y = 0 }
+					field_guns = { x = 1 y = 0 }
+					medium_tank_destroyer_support = { x = 2 y = 0 }
+					medium_tank_destroyer_support = { x = 3 y = 0 }
+					medium_sp_anti_air_support = { x = 4 y = 0 }
+				}
+				support = {
+					engineer = { x = 0 y = 0 }
+					recon = { x = 0 y = 1 }
+					anti_air =  { x = 0 y = 2 }
+					logistics_company = { x = 0 y = 3 }
+					artillery =  { x = 0 y = 4 }
+				}
+			}
+			random_owned_controlled_state = {
+				limit = { ROOT = { has_full_control_of_state = PREV } }
+				prioritize = { 229 }
+				create_unit = {
+					division = "name = \"红军主力装甲师\" division_template = \"红军主力装甲师\" start_experience_factor = 1" 
+					owner = SOV
+					count = 2
+				}
+			}
+			if = {
+				limit = {
+					is_ai = yes
+				}
+				add_political_power = 100
+				random_owned_controlled_state = {
+					limit = { ROOT = { has_full_control_of_state = PREV } }
+					prioritize = { 229 }
+					create_unit = {
+						division = "name = \"红军主力装甲师\" division_template = \"红军主力装甲师\" start_experience_factor = 1" 
+						owner = SOV
+						count = 2
+					}
+				}
+			}
+		}
+		
+		ai_will_do = {
+			factor = 5000
+		}
+
+
+	}
+
+
+	SOV_baku_mission = { #巴库保卫战（苏联）
+		icon = hol_draw_up_staff_plans
+
+		days_mission_timeout = 60
+
+		selectable_mission = no
+
+		allowed = {
+			original_tag = SOV
+		}
+
+		available = {#完成  
+			NOT = {
+				controls_state = 229
+			}
+			
+		}
+		activation = { #启用          
+			has_country_flag = SOV_self_baku_flag
+		}    
+		
+
+		is_good = no               
+
+		timeout_effect = {        
+			country_event = { id = change_sov.42 }
+		}       
+		complete_effect = {       
+			country_event = { id = change_sov.43 }
+		}
+		cancel_trigger = {
+			has_war = no
+		}
+		cancel_effect = {
+			country_event = { id = change_sov.42 }
+			
+		}
+
+
+	}
+
+
+
+
+	SOV_Great_Patriotic_War_level_up_begin_find_youji = { #召集游击队
+		icon = generic_reorganize_irregulars
+
+        allowed = {
+			tag = SOV
+		}
+
+        visible = {
+			has_idea = SOV_Great_Patriotic_guerilla
+        }
+
+        available = {
+			has_idea = SOV_Great_Patriotic_guerilla
+			controls_state = 219
+			has_army_manpower = { size < 75000000 }
+        }
+
+        fire_only_once = no
+
+		cost = 10
+
+		days_remove = 14
+		days_re_enable = 90
+
+		modifier = {
+
+		}
+
+        complete_effect = {
+
+        }
+
+		remove_effect = {
+			random_owned_controlled_state = {
+				limit = { ROOT = { has_full_control_of_state = PREV } }
+				prioritize = { 219 }
+				create_unit = {
+					division = "name = \"红军精锐游击队\" division_template = \"红军精锐游击队\" start_experience_factor = 1" 
+					owner = SOV
+					count = 4
+				}
+			}
+			if = {
+				limit = {
+					is_ai = no
+				}
+				add_political_power = 100
+				random_owned_controlled_state = {
+					limit = { ROOT = { has_full_control_of_state = PREV } }
+					prioritize = { 219 }
+					create_unit = {
+						division = "name = \"红军精锐游击队\" division_template = \"红军精锐游击队\" start_experience_factor = 1" 
+						owner = SOV
+						count = 4
+					}
+				}
+			}
+		}
+		
+		ai_will_do = {
+			factor = 500
+		}
+
+
+	}
+
+
+	SOV_Great_Patriotic_War_level_up_begin_building_infantry = { #步兵装备生产
+		icon = generic_protection
+
+        allowed = {
+			tag = SOV
+		}
+
+        visible = {
+			has_active_mission = SOV_Great_Patriotic_War_production_level_up
+        }
+
+        available = {
+			
+        }
+
+        fire_only_once = yes
+
+		cost = 100
+
+		days_remove = 100
+		#days_re_enable = 90
+
+		modifier = {
+			industrial_capacity_factory = -0.2
+		}
+
+        complete_effect = {
+
+        }
+
+		remove_effect = {
+			add_ideas = SOV_Great_Patriotic_War_infantry_equipment
+			add_days_mission_timeout = {
+			    mission = SOV_Great_Patriotic_War_level_up
+			    days = -50
+			}
+			add_days_mission_timeout = {
+			    mission = SOV_Great_Patriotic_War_production_level_up
+			    days = -100
+			}
+			add_equipment_to_stockpile = { 
+				type = infantry_equipment 
+				amount = 100000
+			}
+			add_equipment_to_stockpile = { 
+				type = artillery_equipment
+				amount = 2000
+			}
+			add_equipment_to_stockpile = { 
+				type = support_equipment
+				amount = 10000
+			}
+			add_equipment_to_stockpile = { 
+				type = anti_air_equipment
+				amount = 2000
+			}
+			add_equipment_to_stockpile = { 
+				type = anti_tank_equipment
+				amount = 2000
+			}
+			
+		}
+		
+		ai_will_do = {
+			factor = 100
+		}
+
+
+	}
+
+
+	SOV_Great_Patriotic_War_level_up_begin_building_tank = { #装甲生产
+		icon = generic_merge_plant_tank
+
+        allowed = {
+			tag = SOV
+		}
+
+        visible = {
+			has_active_mission = SOV_Great_Patriotic_War_production_level_up
+        }
+
+        available = {
+			has_idea = SOV_Great_Patriotic_War_infantry_equipment
+        }
+
+        fire_only_once = yes
+
+		cost = 100
+
+		days_remove = 100
+		#days_re_enable = 90
+
+		modifier = {
+			industrial_capacity_factory = -0.2
+		}
+
+        complete_effect = {
+
+        }
+
+		remove_effect = {
+			add_ideas = SOV_Great_Patriotic_War_tank_equipment
+			add_days_mission_timeout = {
+			    mission = SOV_Great_Patriotic_War_level_up
+			    days = -50
+			}
+			add_days_mission_timeout = {
+			    mission = SOV_Great_Patriotic_War_production_level_up
+			    days = -100
+			}
+			if = {
+				limit = {
+					has_tech = advanced_medium_tank_chassis
+				}
+				add_equipment_to_stockpile = { 
+					type = medium_tank_chassis_3 
+					amount = 5000
+				}
+			}
+			else_if = {
+				limit = {
+					has_tech = improved_medium_tank_chassis
+				}
+				add_equipment_to_stockpile = { 
+					type = medium_tank_chassis_2 
+					amount = 5000
+				}
+			}
+			else = {
+				add_equipment_to_stockpile = { 
+					type = medium_tank_chassis_1 
+					amount = 5000
+				}
+			}
+
+            if = {
+				limit = {
+					has_tech = advanced_medium_tank_chassis
+				}
+				add_equipment_to_stockpile = { 
+					type = light_tank_chassis_3 
+					amount = 5000
+				}
+			}
+			else_if = {
+				limit = {
+					has_tech = improved_medium_tank_chassis
+				}
+				add_equipment_to_stockpile = { 
+					type = light_tank_chassis_2 
+					amount = 5000
+				}
+			}
+			else = {
+				add_equipment_to_stockpile = { 
+					type = light_tank_chassis_1 
+					amount = 5000
+				}
+			}
+			
+		}
+		
+		ai_will_do = {
+			factor = 100
+		}
+
+
+	}
+
+
+	SOV_Great_Patriotic_War_level_up_begin_building_air = { #空军生产
+		icon = generic_human_torpedo
+
+        allowed = {
+			tag = SOV
+		}
+
+        visible = {
+			has_active_mission = SOV_Great_Patriotic_War_production_level_up
+        }
+
+        available = {
+			has_idea = SOV_Great_Patriotic_War_tank_equipment
+        }
+
+        fire_only_once = yes
+
+		cost = 100
+
+		days_remove = 50
+		#days_re_enable = 90
+
+		modifier = {
+			industrial_capacity_factory = -0.2
+		}
+
+        complete_effect = {
+
+        }
+
+		remove_effect = {
+			add_ideas = SOV_Great_Patriotic_War_air_equipment
+			add_days_mission_timeout = {
+			    mission = SOV_Great_Patriotic_War_level_up
+			    days = -50
+			}
+			add_days_mission_timeout = {
+			    mission = SOV_Great_Patriotic_War_production_level_up
+			    days = -100
+			}
+			
+			
+		}
+		
+		ai_will_do = {
+			factor = 100
+		}
+
+
+	}
+
+
+
+	SOV_Great_Patriotic_War_level_up_create_division = { #准备预备队集结
+		icon = generic_prepare_civil_war
+
+        allowed = {
+			tag = SOV
+		}
+
+        visible = {
+			has_active_mission = SOV_Great_Patriotic_War_level_up
+        }
+
+        available = {
+			has_active_mission = SOV_Great_Patriotic_War_level_up
+        }
+
+        fire_only_once = no
+
+		cost = 10
+
+		#days_remove = 30
+		days_re_enable = 1600
+
+		modifier = {
+
+		}
+
+        complete_effect = {
+			set_country_flag = SOV_prepare_army_1_flag
+			activate_mission = SOV_Great_Patriotic_War_level_up_add_army_1
+
+			division_template = {
+				name = "红军预备步兵师"
+				regiments = {
+					infantry = { x = 0 y = 0 }
+					infantry = { x = 0 y = 1 }
+					infantry = { x = 0 y = 2 }
+					infantry = { x = 0 y = 3 }
+					infantry = { x = 0 y = 4 }
+					infantry = { x = 1 y = 0 }
+					infantry = { x = 1 y = 1 }
+					infantry = { x = 1 y = 2 }
+					infantrys = { x = 1 y = 3 }
+					infantrys = { x = 1 y = 4 }
+					artillery_brigade = { x = 2 y = 0 }
+					artillery_brigade = { x = 2 y = 1 }
+					artillery_brigade = { x = 2 y = 2 }
+					anti_air_brigade = { x = 2 y = 3 }
+					anti_tank_brigade = { x = 2 y = 4 }
+					medium_armor = { x = 3 y = 0 }
+					medium_armor = { x = 3 y = 1 }
+				}
+				regimental_support = {
+					field_guns = { x = 0 y = 0 }
+					field_guns = { x = 1 y = 0 }
+					medium_tank_destroyer_support = { x = 2 y = 0 }
+					medium_tank_destroyer_support = { x = 3 y = 0 }
+					medium_sp_anti_air_support = { x = 4 y = 0 }
+				}
+				support = {
+					engineer = { x = 0 y = 0 }
+					recon = { x = 0 y = 1 }
+					field_hospital =  { x = 0 y = 2 }
+					logistics_company = { x = 0 y = 3 }
+					artillery =  { x = 0 y = 4 }
+				}
+			}
+
+			division_template = {
+				name = "红军预备装甲师"
+				regiments = {
+					infantry = { x = 0 y = 0 }
+					infantry = { x = 0 y = 1 }
+					infantry = { x = 0 y = 2 }
+					infantry = { x = 0 y = 3 }
+					infantry = { x = 0 y = 4 }
+					infantry = { x = 1 y = 0 }
+					infantry = { x = 1 y = 1 }
+					infantry = { x = 1 y = 2 }
+					infantrys = { x = 1 y = 3 }
+					medium_armor = { x = 2 y = 0 }
+					medium_armor = { x = 2 y = 1 }
+					medium_armor = { x = 2 y = 2 }
+					medium_armor = { x = 2 y = 3 }
+					medium_armor = { x = 2 y = 4 }
+					medium_armor = { x = 3 y = 0 }
+					medium_armor = { x = 3 y = 1 }
+					medium_armor = { x = 3 y = 2 }
+					medium_armor = { x = 3 y = 3 }
+					mot_anti_air_brigade = { x = 4 y = 0 }
+					mot_anti_tank_brigade = { x = 4 y = 1 }
+					
+				}
+				regimental_support = {
+					field_guns = { x = 0 y = 0 }
+					field_guns = { x = 1 y = 0 }
+					medium_tank_destroyer_support = { x = 2 y = 0 }
+					medium_tank_destroyer_support = { x = 3 y = 0 }
+					medium_sp_anti_air_support = { x = 4 y = 0 }
+				}
+				support = {
+					engineer = { x = 0 y = 0 }
+					recon = { x = 0 y = 1 }
+					anti_air =  { x = 0 y = 2 }
+					logistics_company = { x = 0 y = 3 }
+					artillery =  { x = 0 y = 4 }
+				}
+			}
+        }
+
+		remove_effect = {
+		
+		}
+		
+		ai_will_do = {
+			factor = 5000
+		}
+
+	}
+
+
+	SOV_Great_Patriotic_War_level_up_add_army_1 = { #军队集结
+		icon = GFX_decision_generic_construction
+
+		days_mission_timeout = 120
+
+		selectable_mission = no
+
+		allowed = {
+			original_tag = SOV
+		}
+
+		available = {#完成  
+			surrender_progress > 0.99
+		}
+		activation = { #启用          
+			has_active_mission = SOV_Great_Patriotic_War_level_up
+			has_country_flag = SOV_prepare_army_1_flag
+			is_subject = no
+			has_country_flag = the_SOV_Great_Patriotic_War_open_flag
+			has_government = communism
+			has_defensive_war = yes
+			any_enemy_country = { is_major = yes }
+			NOT = {
+				has_idea = SOV_Great_Patriotic_War_SOV_lose_war
+			}
+		}    
+		
+
+		is_good = yes                      
+
+		timeout_effect = {       
+			activate_mission = SOV_Great_Patriotic_War_level_up_add_army_1
+			random_owned_controlled_state = {
+				limit = { ROOT = { has_full_control_of_state = PREV } }
+				prioritize = { 219 }
+				create_unit = {
+					division = "name = \"红军预备步兵师\" division_template = \"红军预备步兵师\" start_experience_factor = 0.5" 
+					owner = SOV
+					count = 1
+				}
+			}
+
+			random_owned_controlled_state = {
+				limit = { ROOT = { has_full_control_of_state = PREV } }
+				prioritize = { 219 }
+				create_unit = {
+					division = "name = \"红军预备装甲师\" division_template = \"红军预备装甲师\" start_experience_factor = 0.5" 
+					owner = SOV
+					count = 1
+				}
+			}
+			
+		}       
+		complete_effect = {       
+			
+		}
+		cancel_trigger = {
+			has_war = no
+		}
+		cancel_effect = {
+			
+		}
+
+
+	}
+
+
+	SOV_Great_Patriotic_War_level_up_add_army_2 = { #军队集结2
+		icon = GFX_decision_generic_construction
+
+		days_mission_timeout = 30
+
+		selectable_mission = no
+
+		allowed = {
+			original_tag = SOV
+		}
+
+		available = {#完成  
+			has_war = no
+		}
+		activation = { #启用          
+			has_idea = SOV_Great_Patriotic_War_production_level_2
+			is_ai = yes
+		}    
+		
+
+		is_good = yes                      
+
+		timeout_effect = {    
+			activate_mission = SOV_Great_Patriotic_War_level_up_add_army_2
+			add_equipment_to_stockpile = {
+				type = infantry_equipment
+				amount = 1000
+			}
+			add_equipment_to_stockpile = { 
+				type = train_equipment 
+				amount = 50
+			}
+			add_equipment_to_stockpile = {
+				type = artillery_equipment
+				amount = 100
+			}
+			add_equipment_to_stockpile = {
+				type = anti_tank_equipment
+				amount = 100
+			}
+            add_equipment_to_stockpile = {
+				type = support_equipment
+				amount = 150
+			}
+			add_equipment_to_stockpile = { 
+				type = anti_air_equipment 
+				amount = 50
+			}
+			add_equipment_to_stockpile = { 
+				type = anti_tank_equipment 
+				amount = 50
+			}
+
+			if = {
+				limit = {
+					has_tech = advanced_medium_tank_chassis
+				}
+				add_equipment_to_stockpile = { 
+					type = medium_tank_chassis_3 
+					amount = 100
+				}
+			}
+			else_if = {
+				limit = {
+					has_tech = improved_medium_tank_chassis
+				}
+				add_equipment_to_stockpile = { 
+					type = medium_tank_chassis_2 
+					amount = 100
+				}
+			}
+			else = {
+				add_equipment_to_stockpile = { 
+					type = medium_tank_chassis_1 
+					amount = 100
+				}
+			}
+
+            if = {
+				limit = {
+					has_tech = advanced_medium_tank_chassis
+				}
+				add_equipment_to_stockpile = { 
+					type = light_tank_chassis_3 
+					amount = 100
+				}
+			}
+			else_if = {
+				limit = {
+					has_tech = improved_medium_tank_chassis
+				}
+				add_equipment_to_stockpile = { 
+					type = light_tank_chassis_2 
+					amount = 100
+				}
+			}
+			else = {
+				add_equipment_to_stockpile = { 
+					type = light_tank_chassis_1 
+					amount = 100
+				}
+			}
+
+			if = {
+				limit = {
+					has_tech = mechanized_equipment
+				}
+				add_equipment_to_stockpile = { 
+					type = mechanized_equipment
+					amount = 100
+				}
+			} 
+			else_if = {
+				limit = {
+					has_tech = mechanized_equipment_1
+				}
+				add_equipment_to_stockpile = { 
+					type = mechanized_equipment_1
+					amount = 100
+				}
+			} 
+			else_if = {
+				limit = {
+					has_tech = mechanized_equipment_2
+				}
+				add_equipment_to_stockpile = { 
+					type = mechanized_equipment_2
+					amount = 100
+				}
+			}
+			if = {
+				limit = {
+					has_army_manpower = { size < 100000000 }
+				}
+
+				random_owned_controlled_state = {
+					limit = { ROOT = { has_full_control_of_state = PREV } }
+					prioritize = { 219 }
+					create_unit = {
+						division = "name = \"红军预备步兵师\" division_template = \"红军预备步兵师\" start_experience_factor = 0.5" 
+						owner = SOV
+						count = 1
+					}
+				}
+
+				random_owned_controlled_state = {
+					limit = { ROOT = { has_full_control_of_state = PREV } }
+					prioritize = { 219 }
+					create_unit = {
+						division = "name = \"红军预备装甲师\" division_template = \"红军预备装甲师\" start_experience_factor = 0.5" 
+						owner = SOV
+						count = 1
+					}
+				}
+			}
+			
+		}       
+		complete_effect = {       
+			
+		}
+		cancel_trigger = {
+			has_war = no
+		}
+		cancel_effect = {
+			
+		}
+
+
+	}
+
+
+
+	SOV_Great_Patriotic_War_level_up_add_army_3 = { #军队集结3
+		icon = GFX_decision_generic_construction
+
+		days_mission_timeout = 30
+
+		selectable_mission = no
+
+		allowed = {
+			original_tag = SOV
+		}
+
+		available = {#完成  
+			has_war = no
+		}
+		activation = { #启用          
+			has_idea = SOV_Great_Patriotic_War_production_level_3
+			is_ai = yes
+		}    
+		
+
+		is_good = yes                      
+
+		timeout_effect = {    
+			activate_mission = SOV_Great_Patriotic_War_level_up_add_army_3
+			add_equipment_to_stockpile = {
+				type = infantry_equipment
+				amount = 5000
+			}
+			add_equipment_to_stockpile = { 
+				type = train_equipment 
+				amount = 75
+			}
+			add_equipment_to_stockpile = {
+				type = artillery_equipment
+				amount = 200
+			}
+			add_equipment_to_stockpile = {
+				type = anti_tank_equipment
+				amount = 200
+			}
+            add_equipment_to_stockpile = {
+				type = support_equipment
+				amount = 500
+			}
+			add_equipment_to_stockpile = { 
+				type = anti_air_equipment 
+				amount = 200
+			}
+			add_equipment_to_stockpile = { 
+				type = anti_tank_equipment 
+				amount = 200
+			}
+
+			if = {
+				limit = {
+					has_tech = advanced_medium_tank_chassis
+				}
+				add_equipment_to_stockpile = { 
+					type = medium_tank_chassis_3 
+					amount = 500
+				}
+			}
+			else_if = {
+				limit = {
+					has_tech = improved_medium_tank_chassis
+				}
+				add_equipment_to_stockpile = { 
+					type = medium_tank_chassis_2 
+					amount = 500
+				}
+			}
+			else = {
+				add_equipment_to_stockpile = { 
+					type = medium_tank_chassis_1 
+					amount = 500
+				}
+			}
+
+            if = {
+				limit = {
+					has_tech = advanced_medium_tank_chassis
+				}
+				add_equipment_to_stockpile = { 
+					type = light_tank_chassis_3 
+					amount = 300
+				}
+			}
+			else_if = {
+				limit = {
+					has_tech = improved_medium_tank_chassis
+				}
+				add_equipment_to_stockpile = { 
+					type = light_tank_chassis_2 
+					amount = 300
+				}
+			}
+			else = {
+				add_equipment_to_stockpile = { 
+					type = light_tank_chassis_1 
+					amount = 300
+				}
+			}
+
+			if = {
+				limit = {
+					has_tech = mechanized_equipment
+				}
+				add_equipment_to_stockpile = { 
+					type = mechanized_equipment
+					amount = 500
+				}
+			} 
+			else_if = {
+				limit = {
+					has_tech = mechanized_equipment_1
+				}
+				add_equipment_to_stockpile = { 
+					type = mechanized_equipment_1
+					amount = 500
+				}
+			} 
+			else_if = {
+				limit = {
+					has_tech = mechanized_equipment_2
+				}
+				add_equipment_to_stockpile = { 
+					type = mechanized_equipment_2
+					amount = 500
+				}
+			}
+
+			if = {
+				limit = {
+					has_army_manpower = { size < 75000000 }
+				}
+				random_owned_controlled_state = {
+					limit = { ROOT = { has_full_control_of_state = PREV } }
+					prioritize = { 219 }
+					create_unit = {
+						division = "name = \"红军预备步兵师\" division_template = \"红军预备步兵师\" start_experience_factor = 0.5" 
+						owner = SOV
+						count = 1
+					}
+				}
+
+				random_owned_controlled_state = {
+					limit = { ROOT = { has_full_control_of_state = PREV } }
+					prioritize = { 219 }
+					create_unit = {
+						division = "name = \"红军预备装甲师\" division_template = \"红军预备装甲师\" start_experience_factor = 0.5" 
+						owner = SOV
+						count = 3
+					}
+				}
+
+
+			}
+			
+		}       
+		complete_effect = {       
+			if = {
+				limit = {
+					has_army_manpower = { size < 100000000 }
+				}
+
+				random_owned_controlled_state = {
+					limit = { ROOT = { has_full_control_of_state = PREV } }
+					prioritize = { 219 }
+					create_unit = {
+						division = "name = \"红军预备装甲师\" division_template = \"红军预备装甲师\" start_experience_factor = 0.5" 
+						owner = SOV
+						count = 12
+					}
+				}
+
+
+			}
+		}
+		cancel_trigger = {
+			has_war = no
+		}
+		cancel_effect = {
+			
+		}
+
+
+	}
+
+
+	SOV_Great_Patriotic_War_level_up_add_army_4 = { #军队集结4
+		icon = GFX_decision_generic_construction
+
+		days_mission_timeout = 30
+
+		selectable_mission = no
+
+		allowed = {
+			original_tag = SOV
+		}
+
+		available = {#完成  
+			has_war = no
+		}
+		activation = { #启用          
+			has_idea = SOV_Great_Patriotic_War_production_level_4
+			is_ai = yes
+		}    
+		
+
+		is_good = yes                      
+
+		timeout_effect = {    
+			activate_mission = SOV_Great_Patriotic_War_level_up_add_army_4
+			add_equipment_to_stockpile = {
+				type = infantry_equipment
+				amount = 10000
+			}
+			add_equipment_to_stockpile = { 
+				type = train_equipment 
+				amount = 150
+			}
+			add_equipment_to_stockpile = {
+				type = artillery_equipment
+				amount = 1000
+			}
+			add_equipment_to_stockpile = {
+				type = anti_tank_equipment
+				amount = 1000
+			}
+            add_equipment_to_stockpile = {
+				type = support_equipment
+				amount = 2000
+			}
+			add_equipment_to_stockpile = {
+				type = motorized_equipment_1
+				amount = 2000
+			}
+			add_equipment_to_stockpile = { 
+				type = anti_air_equipment 
+				amount = 1000
+			}
+
+			add_equipment_to_stockpile = { 
+				type = anti_tank_equipment 
+				amount = 1000
+			}
+
+			if = {
+				limit = {
+					has_tech = advanced_medium_tank_chassis
+				}
+				add_equipment_to_stockpile = { 
+					type = medium_tank_chassis_3 
+					amount = 1000
+				}
+			}
+			else_if = {
+				limit = {
+					has_tech = improved_medium_tank_chassis
+				}
+				add_equipment_to_stockpile = { 
+					type = medium_tank_chassis_2 
+					amount = 1000
+				}
+			}
+			else = {
+				add_equipment_to_stockpile = { 
+					type = medium_tank_chassis_1 
+					amount = 1000
+				}
+			}
+
+            if = {
+				limit = {
+					has_tech = advanced_medium_tank_chassis
+				}
+				add_equipment_to_stockpile = { 
+					type = light_tank_chassis_3 
+					amount = 1000
+				}
+			}
+			else_if = {
+				limit = {
+					has_tech = improved_medium_tank_chassis
+				}
+				add_equipment_to_stockpile = { 
+					type = light_tank_chassis_2 
+					amount = 1000
+				}
+			}
+			else = {
+				add_equipment_to_stockpile = { 
+					type = light_tank_chassis_1 
+					amount = 1000
+				}
+			}
+
+			if = {
+				limit = {
+					has_tech = mechanized_equipment
+				}
+				add_equipment_to_stockpile = { 
+					type = mechanized_equipment
+					amount = 1000
+				}
+			} 
+			else_if = {
+				limit = {
+					has_tech = mechanized_equipment_1
+				}
+				add_equipment_to_stockpile = { 
+					type = mechanized_equipment_1
+					amount = 1000
+				}
+			} 
+			else_if = {
+				limit = {
+					has_tech = mechanized_equipment_2
+				}
+				add_equipment_to_stockpile = { 
+					type = mechanized_equipment_2
+					amount = 1000
+				}
+			}
+
+			if = {
+				limit = {
+					has_army_manpower = { size < 100000000 }
+				}
+				random_owned_controlled_state = {
+					limit = { ROOT = { has_full_control_of_state = PREV } }
+					prioritize = { 219 }
+					create_unit = {
+						division = "name = \"红军预备步兵师\" division_template = \"红军预备步兵师\" start_experience_factor = 0.5" 
+						owner = SOV
+						count = 1
+					}
+				}
+
+				random_owned_controlled_state = {
+					limit = { ROOT = { has_full_control_of_state = PREV } }
+					prioritize = { 219 }
+					create_unit = {
+						division = "name = \"红军预备装甲师\" division_template = \"红军预备装甲师\" start_experience_factor = 0.5" 
+						owner = SOV
+						count = 6
+					}
+				}
+
+
+			}
+			
+		}       
+		complete_effect = {       
+			if = {
+				limit = {
+					has_army_manpower = { size < 100000000 }
+				}
+
+				random_owned_controlled_state = {
+					limit = { ROOT = { has_full_control_of_state = PREV } }
+					prioritize = { 219 }
+					create_unit = {
+						division = "name = \"红军预备装甲师\" division_template = \"红军预备装甲师\" start_experience_factor = 0.5" 
+						owner = SOV
+						count = 6
+					}
+				}
+
+
+			}
+		}
+		cancel_trigger = {
+			has_war = no
+		}
+		cancel_effect = {
+			
+		}
+
+
+	}
+
+
+	SOV_Great_Patriotic_War_level_up_add_army_5 = { #军队集结5
+		icon = GFX_decision_generic_construction
+
+		days_mission_timeout = 30
+
+		selectable_mission = no
+
+		allowed = {
+			original_tag = SOV
+		}
+
+		available = {#完成  
+			has_war = no
+		}
+		activation = { #启用          
+			has_idea = SOV_Great_Patriotic_War_production_level_5
+			is_ai = yes
+		}    
+		
+
+		is_good = yes                      
+
+		timeout_effect = {    
+			activate_mission = SOV_Great_Patriotic_War_level_up_add_army_5
+			add_equipment_to_stockpile = {
+				type = infantry_equipment
+				amount = 10000
+			}
+			add_equipment_to_stockpile = { 
+				type = train_equipment 
+				amount = 150
+			}
+			add_equipment_to_stockpile = {
+				type = artillery_equipment
+				amount = 1000
+			}
+			add_equipment_to_stockpile = {
+				type = anti_tank_equipment
+				amount = 1000
+			}
+            add_equipment_to_stockpile = {
+				type = support_equipment
+				amount = 2000
+			}
+			add_equipment_to_stockpile = { 
+				type = anti_air_equipment 
+				amount = 1000
+			}
+			add_equipment_to_stockpile = { 
+				type = anti_tank_equipment 
+				amount = 1000
+			}
+
+			if = {
+				limit = {
+					has_tech = advanced_medium_tank_chassis
+				}
+				add_equipment_to_stockpile = { 
+					type = medium_tank_chassis_3 
+					amount = 2000
+				}
+			}
+			else_if = {
+				limit = {
+					has_tech = improved_medium_tank_chassis
+				}
+				add_equipment_to_stockpile = { 
+					type = medium_tank_chassis_2 
+					amount = 2000
+				}
+			}
+			else = {
+				add_equipment_to_stockpile = { 
+					type = medium_tank_chassis_1 
+					amount = 2000
+				}
+			}
+
+            if = {
+				limit = {
+					has_tech = advanced_medium_tank_chassis
+				}
+				add_equipment_to_stockpile = { 
+					type = light_tank_chassis_3 
+					amount = 2000
+				}
+			}
+			else_if = {
+				limit = {
+					has_tech = improved_medium_tank_chassis
+				}
+				add_equipment_to_stockpile = { 
+					type = light_tank_chassis_2 
+					amount = 2000
+				}
+			}
+			else = {
+				add_equipment_to_stockpile = { 
+					type = light_tank_chassis_1 
+					amount = 2000
+				}
+			}
+
+			if = {
+				limit = {
+					has_tech = mechanized_equipment
+				}
+				add_equipment_to_stockpile = { 
+					type = mechanized_equipment
+					amount = 2000
+				}
+			} 
+			else_if = {
+				limit = {
+					has_tech = mechanized_equipment_1
+				}
+				add_equipment_to_stockpile = { 
+					type = mechanized_equipment_1
+					amount = 2000
+				}
+			} 
+			else_if = {
+				limit = {
+					has_tech = mechanized_equipment_2
+				}
+				add_equipment_to_stockpile = { 
+					type = mechanized_equipment_2
+					amount = 2000
+				}
+			}
+			if = {
+				limit = {
+					has_army_manpower = { size < 100000000 }
+				}
+
+				random_owned_controlled_state = {
+					limit = { ROOT = { has_full_control_of_state = PREV } }
+					prioritize = { 219 }
+					create_unit = {
+						division = "name = \"红军预备装甲师\" division_template = \"红军预备装甲师\" start_experience_factor = 0.5" 
+						owner = SOV
+						count = 6
+					}
+				}
+			}
+			
+		}       
+		complete_effect = {       
+			
+		}
+		cancel_trigger = {
+			has_war = no
+		}
+		cancel_effect = {
+			
+		}
+
+
+	}
+
+
+	SOV_Great_Patriotic_War_level_up_make_upgrade_1 = { #祖国召唤1
+		icon = generic_military
+
+        allowed = {
+			tag = SOV
+		}
+
+        visible = {
+            has_active_mission = SOV_Great_Patriotic_War_level_up
+        }
+
+        available = {
+			surrender_progress > 0.1
+        }
+
+        fire_only_once = no
+
+		cost = 0
+
+		days_remove = 1
+		days_re_enable = 1600
+
+		modifier = {
+			
+		}
+
+        complete_effect = {
+            
+        }
+
+		remove_effect = {
+			add_days_mission_timeout = {
+			    mission = SOV_Great_Patriotic_War_level_up
+			    days = -365
+			}
+			add_offsite_building = { type = arms_factory level = 20 }
+			add_offsite_building = { type = industrial_complex level = 20 }
+			add_equipment_to_stockpile = {
+				type = infantry_equipment
+				amount = 10000
+			}
+			add_equipment_to_stockpile = { 
+				type = train_equipment 
+				amount = 150
+			}
+			add_equipment_to_stockpile = {
+				type = artillery_equipment
+				amount = 1000
+			}
+			add_equipment_to_stockpile = {
+				type = anti_tank_equipment
+				amount = 1000
+			}
+            add_equipment_to_stockpile = {
+				type = support_equipment
+				amount = 2000
+			}
+			add_equipment_to_stockpile = { 
+				type = anti_air_equipment 
+				amount = 1000
+			}
+			add_equipment_to_stockpile = { 
+				type = anti_tank_equipment 
+				amount = 1000
+			}
+
+			if = {
+				limit = {
+					has_tech = advanced_medium_tank_chassis
+				}
+				add_equipment_to_stockpile = { 
+					type = medium_tank_chassis_3 
+					amount = 2000
+				}
+			}
+			else_if = {
+				limit = {
+					has_tech = improved_medium_tank_chassis
+				}
+				add_equipment_to_stockpile = { 
+					type = medium_tank_chassis_2 
+					amount = 2000
+				}
+			}
+			else = {
+				add_equipment_to_stockpile = { 
+					type = medium_tank_chassis_1 
+					amount = 2000
+				}
+			}
+
+            if = {
+				limit = {
+					has_tech = advanced_medium_tank_chassis
+				}
+				add_equipment_to_stockpile = { 
+					type = light_tank_chassis_3 
+					amount = 2000
+				}
+			}
+			else_if = {
+				limit = {
+					has_tech = improved_medium_tank_chassis
+				}
+				add_equipment_to_stockpile = { 
+					type = light_tank_chassis_2 
+					amount = 2000
+				}
+			}
+			else = {
+				add_equipment_to_stockpile = { 
+					type = light_tank_chassis_1 
+					amount = 2000
+				}
+			}
+
+			if = {
+				limit = {
+					has_tech = mechanized_equipment
+				}
+				add_equipment_to_stockpile = { 
+					type = mechanized_equipment
+					amount = 2000
+				}
+			} 
+			else_if = {
+				limit = {
+					has_tech = mechanized_equipment_1
+				}
+				add_equipment_to_stockpile = { 
+					type = mechanized_equipment_1
+					amount = 2000
+				}
+			} 
+			else_if = {
+				limit = {
+					has_tech = mechanized_equipment_2
+				}
+				add_equipment_to_stockpile = { 
+					type = mechanized_equipment_2
+					amount = 2000
+				}
+			}
+		}
+		
+		ai_will_do = {
+			factor = 5000
+		}
+
+
+	}
+
+	SOV_Great_Patriotic_War_level_up_make_upgrade_2 = { #祖国召唤2
+		icon = generic_military
+
+        allowed = {
+			tag = SOV
+		}
+
+        visible = {
+            has_active_mission = SOV_Great_Patriotic_War_level_up
+			surrender_progress > 0.2
+        }
+
+        available = {
+			surrender_progress > 0.2
+        }
+
+        fire_only_once = no
+
+		cost = 0
+
+		days_remove = 1
+		days_re_enable = 1600
+
+		modifier = {
+			
+		}
+
+        complete_effect = {
+            
+        }
+
+		remove_effect = {
+			add_days_mission_timeout = {
+			    mission = SOV_Great_Patriotic_War_level_up
+			    days = -365
+			}
+			add_offsite_building = { type = arms_factory level = 20 }
+			add_offsite_building = { type = industrial_complex level = 20 }
+			add_equipment_to_stockpile = {
+				type = infantry_equipment
+				amount = 10000
+			}
+			add_equipment_to_stockpile = { 
+				type = train_equipment 
+				amount = 150
+			}
+			add_equipment_to_stockpile = {
+				type = artillery_equipment
+				amount = 1000
+			}
+			add_equipment_to_stockpile = {
+				type = anti_tank_equipment
+				amount = 1000
+			}
+            add_equipment_to_stockpile = {
+				type = support_equipment
+				amount = 2000
+			}
+			add_equipment_to_stockpile = { 
+				type = anti_air_equipment 
+				amount = 1000
+			}
+			add_equipment_to_stockpile = { 
+				type = anti_tank_equipment 
+				amount = 1000
+			}
+
+			if = {
+				limit = {
+					has_tech = advanced_medium_tank_chassis
+				}
+				add_equipment_to_stockpile = { 
+					type = medium_tank_chassis_3 
+					amount = 2000
+				}
+			}
+			else_if = {
+				limit = {
+					has_tech = improved_medium_tank_chassis
+				}
+				add_equipment_to_stockpile = { 
+					type = medium_tank_chassis_2 
+					amount = 2000
+				}
+			}
+			else = {
+				add_equipment_to_stockpile = { 
+					type = medium_tank_chassis_1 
+					amount = 2000
+				}
+			}
+
+            if = {
+				limit = {
+					has_tech = advanced_medium_tank_chassis
+				}
+				add_equipment_to_stockpile = { 
+					type = light_tank_chassis_3 
+					amount = 2000
+				}
+			}
+			else_if = {
+				limit = {
+					has_tech = improved_medium_tank_chassis
+				}
+				add_equipment_to_stockpile = { 
+					type = light_tank_chassis_2 
+					amount = 2000
+				}
+			}
+			else = {
+				add_equipment_to_stockpile = { 
+					type = light_tank_chassis_1 
+					amount = 2000
+				}
+			}
+
+			if = {
+				limit = {
+					has_tech = mechanized_equipment
+				}
+				add_equipment_to_stockpile = { 
+					type = mechanized_equipment
+					amount = 2000
+				}
+			} 
+			else_if = {
+				limit = {
+					has_tech = mechanized_equipment_1
+				}
+				add_equipment_to_stockpile = { 
+					type = mechanized_equipment_1
+					amount = 2000
+				}
+			} 
+			else_if = {
+				limit = {
+					has_tech = mechanized_equipment_2
+				}
+				add_equipment_to_stockpile = { 
+					type = mechanized_equipment_2
+					amount = 2000
+				}
+			}
+		}
+		
+		ai_will_do = {
+			factor = 5000
+		}
+
+
+	}
+
+
+	SOV_Great_Patriotic_War_level_up_make_upgrade_3 = { #祖国召唤3
+		icon = generic_military
+
+        allowed = {
+			tag = SOV
+		}
+
+        visible = {
+            has_active_mission = SOV_Great_Patriotic_War_level_up
+			surrender_progress > 0.5
+        }
+
+        available = {
+			surrender_progress > 0.5
+        }
+
+        fire_only_once = no
+
+		cost = 0
+
+		days_remove = 7
+		days_re_enable = 1600
+
+		modifier = {
+			
+		}
+
+        complete_effect = {
+            add_days_mission_timeout = {
+			    mission = SOV_Great_Patriotic_War_level_up
+			    days = -365
+			}
+        }
+
+		remove_effect = {
+			add_days_mission_timeout = {
+			    mission = SOV_Great_Patriotic_War_level_up
+			    days = -365
+			}
+			add_offsite_building = { type = arms_factory level = 30 }
+			add_offsite_building = { type = industrial_complex level = 30 }
+			add_equipment_to_stockpile = {
+				type = infantry_equipment
+				amount = 10000
+			}
+			add_equipment_to_stockpile = { 
+				type = train_equipment 
+				amount = 150
+			}
+			add_equipment_to_stockpile = {
+				type = artillery_equipment
+				amount = 1000
+			}
+			add_equipment_to_stockpile = {
+				type = anti_tank_equipment
+				amount = 1000
+			}
+            add_equipment_to_stockpile = {
+				type = support_equipment
+				amount = 2000
+			}
+			add_equipment_to_stockpile = { 
+				type = anti_air_equipment 
+				amount = 1000
+			}
+			add_equipment_to_stockpile = { 
+				type = anti_tank_equipment 
+				amount = 1000
+			}
+
+			if = {
+				limit = {
+					has_tech = advanced_medium_tank_chassis
+				}
+				add_equipment_to_stockpile = { 
+					type = medium_tank_chassis_3 
+					amount = 2000
+				}
+			}
+			else_if = {
+				limit = {
+					has_tech = improved_medium_tank_chassis
+				}
+				add_equipment_to_stockpile = { 
+					type = medium_tank_chassis_2 
+					amount = 2000
+				}
+			}
+			else = {
+				add_equipment_to_stockpile = { 
+					type = medium_tank_chassis_1 
+					amount = 2000
+				}
+			}
+
+            if = {
+				limit = {
+					has_tech = advanced_medium_tank_chassis
+				}
+				add_equipment_to_stockpile = { 
+					type = light_tank_chassis_3 
+					amount = 2000
+				}
+			}
+			else_if = {
+				limit = {
+					has_tech = improved_medium_tank_chassis
+				}
+				add_equipment_to_stockpile = { 
+					type = light_tank_chassis_2 
+					amount = 2000
+				}
+			}
+			else = {
+				add_equipment_to_stockpile = { 
+					type = light_tank_chassis_1 
+					amount = 2000
+				}
+			}
+
+			if = {
+				limit = {
+					has_tech = mechanized_equipment
+				}
+				add_equipment_to_stockpile = { 
+					type = mechanized_equipment
+					amount = 2000
+				}
+			} 
+			else_if = {
+				limit = {
+					has_tech = mechanized_equipment_1
+				}
+				add_equipment_to_stockpile = { 
+					type = mechanized_equipment_1
+					amount = 2000
+				}
+			} 
+			else_if = {
+				limit = {
+					has_tech = mechanized_equipment_2
+				}
+				add_equipment_to_stockpile = { 
+					type = mechanized_equipment_2
+					amount = 2000
+				}
+			}
+		}
+		
+		ai_will_do = {
+			factor = 5000
+		}
+
+
+	}
+
+	SOV_we_must_defend = { #土地要塞化
+
+		icon = generic_industry
+
+		available = {
+			num_of_civilian_factories_available_for_projects > 7
+		}
+		visible = {
+			has_government = communism
+			surrender_progress > 0.1
+			any_controlled_state = {
+				not = {
+					has_dynamic_modifier = { modifier = bunker_modifier }
+				}
+			}
+		}
+		cost = 15
+		fire_only_once = no
+		days_remove = 7
+		modifier = {
+			civilian_factory_use = 8
+		}
+		complete_effect = {
+			hidden_effect = {
+				if = {
+					limit = {
+						is_ai = yes
+					}
+					add_political_power = 15
+				}
+			}
+			if = {
+				limit = {
+					SOV = {
+						NOT = {
+							has_country_flag = SOV_bunker_land_flag
+						}
+					}
+				}
+				news_event = { id = change_news.55 }
+			}
+		}
+		remove_effect = {
+			every_controlled_state = {
+				limit = {
+					is_core_of = ROOT
+					not = {
+						has_dynamic_modifier = { modifier = bunker_modifier }
+					}
+				}
+				add_dynamic_modifier = {
+					modifier = bunker_modifier
+				}
+			}
+
+
+			set_country_flag = SOV_bunker_land_flag
+		}
+
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 1000
+				surrender_progress > 0.125
+			}
+		}
+	}
+
+
+	SOV_remove_land_defend = {
+
+		icon = generic_industry
+
+		available = {
+			num_of_civilian_factories_available_for_projects > 7
+		}
+		visible = {
+			has_government = communism
+			any_owned_state = {
+				has_dynamic_modifier = { modifier = bunker_modifier }
+			}
+		}
+		cost = 15
+		fire_only_once = no
+		days_remove = 10
+		
+		modifier = {
+			civilian_factory_use = 8
+		}
+		complete_effect = {
+			hidden_effect = {
+				if = {
+					limit = {
+						is_ai = yes
+					}
+					add_political_power = 15
+				}
+			}
+		}
+		remove_effect = {
+			every_owned_state = {
+				limit = {
+					has_dynamic_modifier = { modifier = bunker_modifier }
+				}
+				remove_dynamic_modifier = {
+					modifier = bunker_modifier
+				}
+			}
+		}
+		ai_will_do = {
+			factor = 0 #200
+			modifier = {
+				factor = 1000
+				surrender_progress > 0.02
+			}
+		}
+	}
+
+
+
+
+
+
+
+
+
+}
+
+
+Attack_SOV_categories = {
+
+	Attack_SOV_Great_Patriotic_War_the_end = { #丢三大城
+		icon = GFX_decision_generic_construction
+
+		days_mission_timeout = 1600
+
+		selectable_mission = no
+
+		allowed = {
+			
+		}
+
+		available = {#完成  
+			OR = {
+				AND = {
+					SOV = {
+						is_subject = no
+						has_country_flag = the_SOV_Great_Patriotic_War_open_flag
+						has_government = communism
+						has_defensive_war = yes
+						any_enemy_country = { is_major = yes }
+						NOT = {
+							has_idea = SOV_Great_Patriotic_War_SOV_lose_war
+						}
+						NOT = { controls_state = 219 }
+						NOT = { controls_state = 195 }
+						NOT = { controls_state = 217 }
+						NOT = { controls_state = 229 }
+						
+					}
+					if = {
+						limit = {
+							FRA = {
+								has_country_flag = cjg_open_the_third_empire
+							}
+						}
+						SOV = {
+							NOT = { controls_state = 252 }
+							NOT = { controls_state = 249 }
+							NOT = { controls_state = 651 }
+						}
+					}
+				}
+				SOV = {
+					has_capitulated = yes
+				}
+			}
+		}
+		activation = { #启用    
+			has_war_with = SOV
+			is_major = yes      
+			SOV = {
+				is_subject = no
+				has_country_flag = the_SOV_Great_Patriotic_War_open_flag
+				has_government = communism
+				has_defensive_war = yes
+				any_enemy_country = { is_major = yes }
+				NOT = {
+					has_idea = SOV_Great_Patriotic_War_SOV_lose_war
+				}
+			}
+		}    
+		
+
+		is_good = no
+
+		timeout_effect = {           
+			add_ideas = SOV_Great_Patriotic_War_SOV_lose_war
+		}       
+		complete_effect = {       
+			SOV = {
+				add_ideas = SOV_Great_Patriotic_War_SOV_lose_war
+			}
+			add_offsite_building = { type = dockyard level = 20 }
+		}
+		cancel_trigger = {
+			OR = {
+				has_war = no
+			}
+		}
+		cancel_effect = {
+			
+		}
+
+
+	}
+
+
+	SOV_emery_kuersike_mission = { #库尔斯克会战任务（敌人）
+		icon = GFX_decision_generic_construction
+
+		days_mission_timeout = 90
+
+		selectable_mission = no
+
+		allowed = {
+
+		}
+
+		available = {#完成  
+			controls_state = 219
+			controls_state = 220
+			controls_state = 221
+			controls_state = 240
+			controls_state = 222
+			220 = {
+				every_neighbor_state = {
+					controller = {
+						NOT = {
+							has_war_with = ROOT
+						}
+					}
+				}
+			}
+			221 = {
+				every_neighbor_state = {
+					controller = {
+						NOT = {
+							has_war_with = ROOT
+						}
+					}
+				}
+			}
+			240 = {
+				every_neighbor_state = {
+					controller = {
+						NOT = {
+							has_war_with = ROOT
+						}
+					}
+				}
+			}
+			222 = {
+				every_neighbor_state = {
+					controller = {
+						NOT = {
+							has_war_with = ROOT
+						}
+					}
+				}
+			}
+		}
+		activation = { #启用          
+			has_war_with = SOV
+			is_major = yes      
+			has_country_flag = SOV_emery_kuersike_flag
+			SOV = {
+				
+				has_country_flag = SOV_self_kuersike_flag
+			}
+		
+			
+		}    
+		
+
+		is_good = no                 
+
+		timeout_effect = {        
+			
+		}       
+		complete_effect = {       
+			add_war_support = 0.2
+			add_stability = 0.2
+			country_event = { id = change_sov.24 }
+			news_event = { id = change_news.53 days = 1 }
+		}
+		cancel_trigger = {
+			NOT = {
+				controls_state = 219
+				controls_state = 220
+				controls_state = 221
+				controls_state = 240
+				controls_state = 222
+			}
+			220 = {
+				any_neighbor_state = {
+					controller = {
+						has_war_with = ROOT
+					}
+				}
+			}
+			221 = {
+				any_neighbor_state = {
+					controller = {
+						has_war_with = ROOT
+					}
+				}
+			}
+			240 = {
+				any_neighbor_state = {
+					controller = {
+						has_war_with = ROOT
+					}
+				}
+			}
+			222 = {
+				any_neighbor_state = {
+					controller = {
+						has_war_with = ROOT
+					}
+				}
+			}
+		}
+		cancel_effect = {
+			add_war_support = -0.3
+			add_stability = -0.3
+			country_event = { id = change_sov.23 }
+			
+		}
+
+
+	}
+
+
+	SOV_emery_mingsike_mission = { #明斯克会战任务（敌人）
+		icon = GFX_decision_generic_construction
+
+		days_mission_timeout = 30
+
+		selectable_mission = no
+
+		allowed = {
+			
+		}
+
+		available = {#完成  
+			OR = {
+				206 = {
+					controller = {
+						NOT = {
+							has_war_with = ROOT
+						}
+					}
+				}
+				controls_state = 206
+			}
+			OR = {
+				204 = {
+					controller = {
+						NOT = {
+							has_war_with = ROOT
+						}
+					}
+				}
+				controls_state = 204
+			}
+		}
+		activation = { #启用    
+			has_war_with = SOV
+			is_major = yes      
+			has_country_flag = SOV_emery_mingsike_flag
+			SOV = {
+
+				has_country_flag = SOV_self_mingsike_flag
+
+			}      
+			
+
+		}    
+		
+
+		is_good = no   
+
+		timeout_effect = {        
+			country_event = { id = change_sov.28 }
+		}       
+		complete_effect = {       
+			country_event = { id = change_sov.27 }
+		}
+		cancel_trigger = {
+			
+		}
+		cancel_effect = {
+			
+			
+		}
+
+
+	}
+
+	SOV_emery_jifu_mission = { #基辅会战任务（敌人）
+		icon = GFX_decision_generic_construction
+
+		days_mission_timeout = 30
+
+		selectable_mission = no
+
+		allowed = {
+			
+		}
+
+		available = {#完成  
+			OR = {
+				controls_state = 202
+				202 = {
+					controller = {
+						NOT = {
+							has_war_with = ROOT
+						}
+					}
+				}
+			}
+		}
+		activation = { #启用          
+			has_war_with = SOV
+			is_major = yes      
+			has_country_flag = SOV_emery_jifu_flag
+			SOV = {
+
+				has_country_flag = SOV_self_jifu_flag
+
+			}   
+
+		}    
+		
+
+		is_good = no   
+
+		timeout_effect = {        
+			country_event = { id = change_sov.35 }
+		}       
+		complete_effect = {       
+			country_event = { id = change_sov.34 }
+		}
+		cancel_trigger = {
+			
+		}
+		cancel_effect = {
+			
+			
+		}
+
+
+	}
+
+
+	SOV_emery_mosike_mission = { #莫斯科战役（敌人）
+		icon = GFX_decision_generic_construction
+
+		days_mission_timeout = 30
+
+		selectable_mission = no
+
+		allowed = {
+			
+		}
+
+		available = {#完成  
+			OR = {
+				controls_state = 219
+				219 = {
+					controller = {
+						NOT = {
+							has_war_with = ROOT
+						}
+					}
+				}
+			}
+		}
+		activation = { #启用          
+			has_war_with = SOV
+			is_major = yes    
+			has_country_flag = SOV_emery_mosike_flag  
+			SOV = {
+
+				has_country_flag = SOV_self_mosike_flag
+
+			}  
+
+		}    
+		
+
+		is_good = no   
+
+		timeout_effect = {        
+			country_event = { id = change_sov.40 }
+		}       
+		complete_effect = {       
+			country_event = { id = change_sov.39 }
+		}
+		cancel_trigger = {
+			
+		}
+		cancel_effect = {
+			
+			
+		}
+
+
+	}
+
+
+	SOV_emery_sidalinggele_mission = { #斯大林格勒战役（敌人）
+		icon = GFX_decision_generic_construction
+
+		days_mission_timeout = 90
+
+		selectable_mission = no
+
+		allowed = {
+			
+		}
+
+		available = {#完成  
+			OR = {
+				controls_state = 217
+				217 = {
+					controller = {
+						NOT = {
+							has_war_with = ROOT
+						}
+					}
+				}
+			}
+		}
+		activation = { #启用          
+			has_war_with = SOV
+			is_major = yes      
+			has_country_flag = SOV_emery_sidalinggele_flag
+			SOV = {
+
+				has_country_flag = SOV_self_sidalinggele_flag
+
+			}  
+
+		}    
+		
+
+		is_good = no   
+
+		timeout_effect = {        
+			country_event = { id = change_sov.45 }
+		}       
+		complete_effect = {       
+			country_event = { id = change_sov.44 }
+		}
+		cancel_trigger = {
+			
+		}
+		cancel_effect = {
+			
+			
+		}
+
+
+	}
+
+	SOV_emery_liening_mission = { #列宁格勒战役（敌人）
+		icon = GFX_decision_generic_construction
+
+		days_mission_timeout = 365
+
+		selectable_mission = no
+
+		allowed = {
+			
+		}
+
+		available = {#完成  
+			OR = {
+				controls_state = 195
+				195 = {
+					controller = {
+						NOT = {
+							has_war_with = ROOT
+						}
+					}
+				}
+			}
+		}
+		activation = { #启用          
+			has_war_with = SOV
+			is_major = yes      
+			has_country_flag = SOV_emery_liening_flag
+			SOV = {
+
+				has_country_flag = SOV_self_liening_flag
+
+			}  
+
+		}    
+		
+
+		is_good = no   
+
+		timeout_effect = {        
+			country_event = { id = change_sov.50 }
+		}       
+		complete_effect = {       
+			country_event = { id = change_sov.49 }
+		}
+		cancel_trigger = {
+			
+		}
+		cancel_effect = {
+			
+			
+		}
+
+
+	}
+
+	SOV_emery_baku_mission = { #巴库战役（敌人）
+		icon = GFX_decision_generic_construction
+
+		days_mission_timeout = 60
+
+		selectable_mission = no
+
+		allowed = {
+			
+		}
+
+		available = {#完成  
+			OR = {
+				controls_state = 229
+				229 = {
+					controller = {
+						NOT = {
+							has_war_with = ROOT
+						}
+					}
+				}
+			}
+		}
+		activation = { #启用          
+			has_war_with = SOV
+			is_major = yes      
+			has_country_flag = SOV_emery_baku_flag
+			SOV = {
+
+				has_country_flag = SOV_self_baku_flag
+
+			} 
+
+		}    
+		
+
+		is_good = no   
+
+		timeout_effect = {        
+			country_event = { id = change_sov.55 }
+		}       
+		complete_effect = {       
+			country_event = { id = change_sov.54 }
+		}
+		cancel_trigger = {
+			
+		}
+		cancel_effect = {
+			
+			
+		}
+
+
+	}
+
+	SOV_emery_attack = { #进攻计划
+		icon = generic_ignite_civil_war
+
+        allowed = {
+			
+		}
+
+        visible = {
+            has_active_mission = Attack_SOV_Great_Patriotic_War_the_end
+        }
+
+        available = {
+			has_active_mission = Attack_SOV_Great_Patriotic_War_the_end
+        }
+
+        fire_only_once = no
+		custom_cost_trigger = {
+			command_power > 24
+			has_political_power > 24
+		}
+		custom_cost_text = decision_cost_CP_25_pp_25
+
+		days_remove = 60
+		#days_re_enable = 150
+
+		targeted_modifier = {
+			tag = SOV
+			attack_bonus_against = 0.075
+			breakthrough_bonus_against = 0.075
+		}
+
+        complete_effect = {
+            hidden_effect = {
+				add_command_power = -25
+			}
+        }
+
+		remove_effect = {
+			
+		}
+		
+		ai_will_do = {
+			factor = 5
+		}
+
+
+	}
+
+	SOV_emery_defend = { #设置防线
+		icon = generic_ignite_civil_war
+
+        allowed = {
+			
+		}
+
+        visible = {
+            has_active_mission = Attack_SOV_Great_Patriotic_War_the_end
+        }
+
+        available = {
+			has_active_mission = Attack_SOV_Great_Patriotic_War_the_end
+        }
+
+        fire_only_once = no
+		custom_cost_trigger = {
+			command_power > 24
+			has_political_power > 24
+		}
+		custom_cost_text = decision_cost_CP_25_pp_25
+
+		days_remove = 60
+		#days_re_enable = 150
+
+		targeted_modifier = {
+			tag = SOV
+			defense_bonus_against = 0.075
+		}
+
+        complete_effect = {
+            hidden_effect = {
+				add_command_power = -25
+			}
+        }
+
+		remove_effect = {
+			
+		}
+		
+		ai_will_do = {
+			factor = 5
+		}
+
+
+	}
+
+	SOV_emery_armor_attack = { #装甲突破
+		icon = generic_ignite_civil_war
+
+        allowed = {
+			
+		}
+
+        visible = {
+            has_active_mission = Attack_SOV_Great_Patriotic_War_the_end
+        }
+
+        available = {
+			has_active_mission = Attack_SOV_Great_Patriotic_War_the_end
+        }
+
+        fire_only_once = no
+		custom_cost_trigger = {
+			command_power > 24
+			has_political_power > 24
+		}
+		custom_cost_text = decision_cost_CP_25_pp_25
+
+		days_remove = 60
+		#days_re_enable = 150
+
+		modifier = {
+			army_armor_attack_factor = 0.075
+			army_armor_defence_factor = 0.075
+			army_armor_speed_factor = 0.075
+		}
+
+        complete_effect = {
+            hidden_effect = {
+				add_command_power = -25
+			}
+        }
+
+		remove_effect = {
+			
+		}
+		
+		ai_will_do = {
+			factor = 5
+		}
+
+
+	}
+
+
+	SOV_our_supply = { #优化补给
+		icon = generic_ignite_civil_war
+
+        allowed = {
+			
+		}
+
+        visible = {
+            has_active_mission = Attack_SOV_Great_Patriotic_War_the_end
+        }
+
+        available = {
+			has_active_mission = Attack_SOV_Great_Patriotic_War_the_end
+        }
+
+        fire_only_once = no
+		custom_cost_trigger = {
+			command_power > 24
+			has_political_power > 24
+		}
+		custom_cost_text = decision_cost_CP_25_pp_25
+
+		days_remove = 60
+		#days_re_enable = 150
+
+		modifier = {
+			supply_consumption_factor = -0.05
+			no_supply_grace = 24
+			supply_node_range = 0.1
+		}
+
+        complete_effect = {
+            hidden_effect = {
+				add_command_power = -25
+			}
+        }
+
+		remove_effect = {
+			
+		}
+		
+		ai_will_do = {
+			factor = 5
+		}
+
+
+	}
+
+	SOV_clean = { #请扫政策
+		icon = generic_ignite_civil_war
+
+        allowed = {
+			
+		}
+
+        visible = {
+            has_active_mission = Attack_SOV_Great_Patriotic_War_the_end
+        }
+
+        available = {
+			has_active_mission = Attack_SOV_Great_Patriotic_War_the_end
+        }
+
+        fire_only_once = no
+		custom_cost_trigger = {
+			command_power > 24
+			has_political_power > 24
+		}
+		custom_cost_text = decision_cost_CP_25_pp_25
+
+		days_remove = 60
+		#days_re_enable = 150
+
+		modifier = {
+			resistance_target = -0.25
+			resistance_growth = -0.1
+			weekly_manpower = -2000
+
+		}
+
+        complete_effect = {
+            hidden_effect = {
+				add_command_power = -25
+			}
+        }
+
+		remove_effect = {
+			
+		}
+		
+		ai_will_do = {
+			factor = 5
+		}
+
+
+	}
+
+	SOV_remove_local_army_factory = { #掠夺当地军工
+		icon = generic_ignite_civil_war
+
+        allowed = {
+			
+		}
+
+        visible = {
+            has_active_mission = Attack_SOV_Great_Patriotic_War_the_end
+        }
+
+        available = {
+			has_active_mission = Attack_SOV_Great_Patriotic_War_the_end
+			num_of_civilian_factories_available_for_projects > 4
+			random_owned_controlled_state = {
+				limit = {
+					is_core_of = SOV
+					arms_factory > 1
+				}
+			}
+        }
+
+        fire_only_once = no
+		custom_cost_trigger = {
+			command_power > 24
+			has_political_power > 24
+		}
+		custom_cost_text = decision_cost_CP_25_pp_25
+
+		days_remove = 240
+		#days_re_enable = 150
+
+		modifier = {
+			civilian_factory_use = 5
+
+		}
+
+        complete_effect = {
+            hidden_effect = {
+				add_command_power = -25
+			}
+        }
+
+		remove_effect = {
+			random_controlled_state = {
+				limit = {
+					is_core_of = SOV
+					arms_factory > 1
+				}
+				add_building_construction = {
+					type = arms_factory
+					level = -1
+					instant_build = yes
+				}
+			}
+			random_owned_controlled_state = {
+				limit = {
+					is_core_of = ROOT
+				}
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+		
+		ai_will_do = {
+			factor = 0
+		}
+
+
+	}
+
+	SOV_remove_local_industrial_complex = { #掠夺当地民工
+		icon = generic_ignite_civil_war
+
+        allowed = {
+			
+		}
+
+        visible = {
+            has_active_mission = Attack_SOV_Great_Patriotic_War_the_end
+        }
+
+        available = {
+			has_active_mission = Attack_SOV_Great_Patriotic_War_the_end
+			num_of_civilian_factories_available_for_projects > 4
+			random_owned_controlled_state = {
+				limit = {
+					is_core_of = SOV
+					industrial_complex > 1
+				}
+			}
+        }
+
+        fire_only_once = no
+		custom_cost_trigger = {
+			command_power > 24
+			has_political_power > 24
+		}
+		custom_cost_text = decision_cost_CP_25_pp_25
+
+		days_remove = 240
+		#days_re_enable = 150
+
+		modifier = {
+			civilian_factory_use = 5
+
+		}
+
+        complete_effect = {
+            hidden_effect = {
+				add_command_power = -25
+			}
+        }
+
+		remove_effect = {
+			random_controlled_state = {
+				limit = {
+					is_core_of = SOV
+					industrial_complex > 1
+				}
+				add_building_construction = {
+					type = industrial_complex
+					level = -1
+					instant_build = yes
+				}
+			}
+			random_owned_controlled_state = {
+				limit = {
+					is_core_of = ROOT
+				}
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+		
+		ai_will_do = {
+			factor = 0
+		}
+
+
+	}
+
+
+	SOV_run_with_time = { #与时间赛跑
+		icon = generic_ignite_civil_war
+
+        allowed = {
+			
+		}
+
+        visible = {
+            has_active_mission = Attack_SOV_Great_Patriotic_War_the_end
+        }
+
+        available = {
+			has_active_mission = Attack_SOV_Great_Patriotic_War_the_end
+			OR = {
+				SOV = {
+					has_idea = SOV_Great_Patriotic_War_level_3
+				}
+				SOV = {
+					has_idea = SOV_Great_Patriotic_War_level_4
+				}
+				SOV = {
+					has_idea = SOV_Great_Patriotic_War_level_5
+				}
+			}
+        }
+
+        fire_only_once = no
+		custom_cost_trigger = {
+			command_power > 24
+			has_political_power > 24
+		}
+		custom_cost_text = decision_cost_CP_25_pp_25
+
+		days_remove = 240
+		#days_re_enable = 150
+
+		targeted_modifier = {
+			tag = SOV
+			attack_bonus_against = 0.125
+			breakthrough_bonus_against = 0.125
+			defense_bonus_against = 0.125
+		}
+
+		modifier = {
+			army_armor_attack_factor = 0.125
+			army_armor_defence_factor = 0.125
+			army_infantry_attack_factor = 0.125
+			army_infantry_defence_factor = 0.125
+			supply_consumption_factor = -0.1
+			no_supply_grace = 48
+			supply_node_range = 0.15
+		}
+
+        complete_effect = {
+            add_offsite_building = { type = arms_factory level = 2 }
+			add_offsite_building = { type = industrial_complex level = 2 }
+			hidden_effect = {
+				add_command_power = -25
+			}
+			if = {
+				limit = {
+					is_ai = yes
+				}
+				add_equipment_to_stockpile = {
+					type = infantry_equipment
+					amount = 50000
+				}
+				add_equipment_to_stockpile = { 
+					type = train_equipment 
+					amount = 300
+				}
+				add_equipment_to_stockpile = {
+					type = artillery_equipment
+					amount = 1000
+				}
+				add_equipment_to_stockpile = {
+					type = anti_tank_equipment
+					amount = 1000
+				}
+				add_equipment_to_stockpile = {
+					type = support_equipment
+					amount = 2000
+				}
+				add_equipment_to_stockpile = { 
+					type = anti_air_equipment 
+					amount = 1000
+				}
+				add_equipment_to_stockpile = { 
+					type = anti_tank_equipment 
+					amount = 1000
+				}
+
+				if = {
+					limit = {
+						has_tech = advanced_medium_tank_chassis
+					}
+					add_equipment_to_stockpile = { 
+						type = medium_tank_chassis_3 
+						amount = 2000
+					}
+				}
+				else_if = {
+					limit = {
+						has_tech = improved_medium_tank_chassis
+					}
+					add_equipment_to_stockpile = { 
+						type = medium_tank_chassis_2 
+						amount = 2000
+					}
+				}
+				else = {
+					add_equipment_to_stockpile = { 
+						type = medium_tank_chassis_1 
+						amount = 2000
+					}
+				}
+
+				if = {
+					limit = {
+						has_tech = advanced_medium_tank_chassis
+					}
+					add_equipment_to_stockpile = { 
+						type = light_tank_chassis_3 
+						amount = 2000
+					}
+				}
+				else_if = {
+					limit = {
+						has_tech = improved_medium_tank_chassis
+					}
+					add_equipment_to_stockpile = { 
+						type = light_tank_chassis_2 
+						amount = 2000
+					}
+				}
+				else = {
+					add_equipment_to_stockpile = { 
+						type = light_tank_chassis_1 
+						amount = 2000
+					}
+				}
+
+				if = {
+					limit = {
+						has_tech = mechanized_equipment
+					}
+					add_equipment_to_stockpile = { 
+						type = mechanized_equipment
+						amount = 2000
+					}
+				} 
+				else_if = {
+					limit = {
+						has_tech = mechanized_equipment_1
+					}
+					add_equipment_to_stockpile = { 
+						type = mechanized_equipment_1
+						amount = 2000
+					}
+				} 
+				else_if = {
+					limit = {
+						has_tech = mechanized_equipment_2
+					}
+					add_equipment_to_stockpile = { 
+						type = mechanized_equipment_2
+						amount = 2000
+					}
+				}
+			}
+        }
+
+		remove_effect = {
+			
+		}
+		
+		ai_will_do = {
+			factor = 5000
+		}
+
+
+	}
+
+
+	SOV_prepare_attack_plan_1 = { #第一阶段进攻
+		icon = generic_ignite_civil_war
+
+        allowed = {
+			
+		}
+
+        visible = {
+            has_active_mission = Attack_SOV_Great_Patriotic_War_the_end
+        }
+
+        available = {
+			has_active_mission = Attack_SOV_Great_Patriotic_War_the_end
+			#202 基辅
+			#242 斯摩棱斯克
+			#220 库尔斯克
+			#206 明斯克
+			#247 加里宁
+			#221 哈尔科夫
+			#218 罗斯托夫
+			#192 敖德萨
+			OR = {
+				202 = {
+					controller = {
+						has_war_with = ROOT
+					}
+				}
+				206 = {
+					controller = {
+						has_war_with = ROOT
+					}
+				}
+				192 = {
+					controller = {
+						has_war_with = ROOT
+					}
+				}
+			}
+        }
+
+        fire_only_once = no
+		#custom_cost_trigger = {
+		#	command_power > 24
+		#	has_political_power > 24
+		#}
+		#custom_cost_text = decision_cost_CP_25_pp_25
+
+		cost = 0
+
+		days_remove = 7
+		days_re_enable = 1600
+
+		modifier = {
+			
+
+		}
+
+        complete_effect = {
+            hidden_effect = {
+				add_command_power = -25
+			}
+        }
+
+		remove_effect = {
+			set_country_flag = SOV_emery_first_attack_plan_flag
+			add_ideas = Attack_SOV_plan_1
+			custom_effect_tooltip = SOV_prepare_attack_plan_1_tooltip
+			activate_mission = SOV_emery_first_attack_plan_mission
+		}
+		
+		ai_will_do = {
+			factor = 1000
+		}
+
+
+	}
+
+	SOV_emery_first_attack_plan_mission = { #第一阶段进攻目标
+		icon = GFX_decision_generic_construction
+
+		days_mission_timeout = 30
+
+		selectable_mission = no
+
+		allowed = {
+			
+		}
+
+		available = {#完成  
+			OR = {
+				controls_state = 202
+				202 = {
+					controller = {
+						NOT = {
+							has_war_with = ROOT
+						}
+					}
+				}
+			}
+			OR = {
+				controls_state = 206
+				206 = {
+					controller = {
+						NOT = {
+							has_war_with = ROOT
+						}
+					}
+				}
+			}
+			OR = {
+				controls_state = 192
+				192 = {
+					controller = {
+						NOT = {
+							has_war_with = ROOT
+						}
+					}
+				}
+			}
+		}
+		activation = { #启用          
+			has_war_with = SOV   
+			has_country_flag = SOV_emery_first_attack_plan_flag
+		}    
+		
+
+		is_good = no   
+
+		timeout_effect = {        
+			clr_country_flag = SOV_emery_first_attack_plan_flag
+			country_event = { id = change_sov.57 }
+		}       
+		complete_effect = {       
+			clr_country_flag = SOV_emery_first_attack_plan_flag
+			country_event = { id = change_sov.56 }
+		}
+		cancel_trigger = {
+			has_capitulated = yes
+			SOV = {
+				has_capitulated = yes
+			}
+		}
+		cancel_effect = {
+			clr_country_flag = SOV_emery_first_attack_plan_flag
+			remove_ideas = Attack_SOV_plan_1
+		}
+
+
+	}
+
+
+	SOV_prepare_attack_plan_2 = { #第二阶段进攻
+		icon = generic_ignite_civil_war
+
+        allowed = {
+			
+		}
+
+        visible = {
+            has_active_mission = Attack_SOV_Great_Patriotic_War_the_end
+        }
+
+        available = {
+			has_active_mission = Attack_SOV_Great_Patriotic_War_the_end
+			AND = {
+				202 = {
+					controller = {
+						has_war_with = SOV
+					}
+				}
+				206 = {
+					controller = {
+						has_war_with = SOV
+					}
+				}
+				192 = {
+					controller = {
+						has_war_with = SOV
+					}
+				}
+				OR = {
+					219 = {
+						controller = {
+							has_war_with = ROOT
+						}
+					}
+					195 = {
+						controller = {
+							has_war_with = ROOT
+						}
+					}
+					217 = {
+						controller = {
+							has_war_with = ROOT
+						}
+					}
+				}
+			}
+        }
+
+        fire_only_once = no
+
+		cost = 0
+
+		days_remove = 14
+		days_re_enable = 1600
+
+		modifier = {
+			
+
+		}
+
+        complete_effect = {
+            
+        }
+
+		remove_effect = {
+			set_country_flag = SOV_emery_second_attack_plan_flag
+			add_ideas = Attack_SOV_plan_2
+			custom_effect_tooltip = SOV_prepare_attack_plan_2_tooltip
+			activate_mission = SOV_emery_second_attack_plan_mission
+		}
+		
+		ai_will_do = {
+			factor = 1000
+		}
+
+
+	}
+
+
+
+	SOV_emery_second_attack_plan_mission = { #第二阶段进攻目标
+		icon = GFX_decision_generic_construction
+
+		days_mission_timeout = 150
+
+		selectable_mission = no
+
+		allowed = {
+			
+		}
+
+		available = {#完成  
+			OR = {
+				controls_state = 219
+				219 = {
+					controller = {
+						NOT = {
+							has_war_with = ROOT
+						}
+					}
+				}
+			}
+			OR = {
+				controls_state = 195
+				195 = {
+					controller = {
+						NOT = {
+							has_war_with = ROOT
+						}
+					}
+				}
+			}
+			OR = {
+				controls_state = 217
+				217 = {
+					controller = {
+						NOT = {
+							has_war_with = ROOT
+						}
+					}
+				}
+			}
+		}
+		activation = { #启用          
+			has_war_with = SOV   
+			has_country_flag = SOV_emery_second_attack_plan_flag
+		}    
+		
+
+		is_good = no   
+
+		timeout_effect = {        
+			clr_country_flag = SOV_emery_second_attack_plan_flag
+			country_event = { id = change_sov.59 }
+		}       
+		complete_effect = {       
+			clr_country_flag = SOV_emery_second_attack_plan_flag
+			country_event = { id = change_sov.58 }
+		}
+		cancel_trigger = {
+			has_capitulated = yes
+			SOV = {
+				has_capitulated = yes
+			}
+		}
+		cancel_effect = {
+			clr_country_flag = SOV_emery_second_attack_plan_flag
+			remove_ideas = Attack_SOV_plan_2
+		}
+
+
+	}
+
+	SOV_prepare_attack_plan_3 = { #第三阶段进攻
+		icon = generic_ignite_civil_war
+
+        allowed = {
+			
+		}
+
+        visible = {
+            has_active_mission = Attack_SOV_Great_Patriotic_War_the_end
+        }
+
+        available = {
+			has_active_mission = Attack_SOV_Great_Patriotic_War_the_end
+			AND = {
+				SOV = {
+					has_capitulated = no
+				}
+				202 = {
+					controller = {
+						has_war_with = SOV
+					}
+				}
+				206 = {
+					controller = {
+						has_war_with = SOV
+					}
+				}
+				192 = {
+					controller = {
+						has_war_with = SOV
+					}
+				}
+				219 = {
+					controller = {
+						has_war_with = SOV
+					}
+				}
+				195 = {
+					controller = {
+						has_war_with = SOV
+					}
+				}
+				217 = {
+					controller = {
+						has_war_with = SOV
+					}
+				}
+			}
+        }
+
+        fire_only_once = no
+		cost = 0
+
+		days_remove = 30
+		days_re_enable = 1600
+
+		modifier = {
+			
+
+		}
+
+        complete_effect = {
+            
+        }
+
+		remove_effect = {
+			set_country_flag = SOV_emery_third_attack_plan_flag
+			add_ideas = Attack_SOV_plan_3
+			activate_mission = SOV_emery_third_attack_plan_mission
+		}
+		
+		ai_will_do = {
+			factor = 1000
+		}
+
+
+	}
+
+
+
+	SOV_emery_third_attack_plan_mission = { #第三阶段进攻
+		icon = GFX_decision_generic_construction
+
+		days_mission_timeout = 400
+
+		selectable_mission = no
+
+		allowed = {
+			
+		}
+
+		available = {#完成  
+			OR = {
+				SOV = {
+					has_capitulated = yes
+				}
+				NOT = {
+					country_exists = SOV
+				}
+			}
+		}
+		activation = { #启用          
+			has_war_with = SOV   
+			has_country_flag = SOV_emery_third_attack_plan_flag
+		}    
+		
+
+		is_good = no   
+
+		timeout_effect = {        
+			clr_country_flag = SOV_emery_third_attack_plan_flag
+			country_event = { id = change_sov.59 }
+		}       
+		complete_effect = {       
+			clr_country_flag = SOV_emery_third_attack_plan_flag
+			country_event = { id = change_sov.58 }
+		}
+		cancel_trigger = {
+			has_capitulated = yes
+			has_war = no
+		}
+		cancel_effect = {
+			clr_country_flag = SOV_emery_third_attack_plan_flag
+			remove_ideas = Attack_SOV_plan_3
+		}
+
+
+	}
+
+
+}

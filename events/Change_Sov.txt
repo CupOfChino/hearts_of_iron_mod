@@ -1,0 +1,2639 @@
+add_namespace = change_sov
+
+country_event = {
+
+    id = change_sov.1
+	title = change_sov.1.t
+	desc = change_sov.1.d
+
+    is_triggered_only = yes
+
+    option = {
+		name = change_sov.1.a
+		ai_chance = {
+			factor = 40
+            modifier = {
+                factor = 0
+                has_idea = GER_support_china
+            }
+		}
+        
+        ENG = {
+            add_to_faction = ROOT
+        }
+	}
+
+    option = {
+        name = change_sov.1.b
+        ai_chance = {
+            factor = 40
+            modifier = {
+                factor = 100
+                OR = {
+                    has_idea = GER_support_china
+                    has_opinion = {
+                        target = GER
+                        value > 30
+                    }
+                }
+            }
+        }
+        SOV = {
+            country_event = { id = change_hun.2 days = 1 }
+        }
+    }
+
+}
+
+country_event = { #奥匈夺回布科维纳
+
+    id = change_sov.2
+	title = change_sov.2.t
+	desc = change_sov.2.d
+
+    picture = GFX_news_event_generic_riot
+
+    is_triggered_only = yes
+
+    option = { #算了
+		name = change_sov.2.a
+		ai_chance = {
+			factor = 40
+            modifier = {
+                factor = 1000
+                FRA = {
+                    has_country_flag = cjg_open_the_third_empire
+                }
+            }
+		}
+        news_event = { id = change_news.30 days = 1 }
+        war_support_factor = -0.05
+	}
+
+    option = { #干他丫的
+        name = change_sov.2.b
+        ai_chance = {
+            factor = 40
+        }
+        war_support_factor = 0.05
+        stability_factor = -0.1
+        SOV = {
+            declare_war_on = {
+				target = HUN
+				type = take_state_focus
+			}
+        }
+        if = {
+            limit = {
+                FRA = {
+                    has_country_flag = cjg_open_the_third_empire
+                }
+                GER = {
+                    has_country_flag = third_empire_has_become_flag
+                }
+            }
+            news_event = { id = change_news.32 days = 1 }
+            hidden_effect = {
+                news_event = { id = change_news.6 days = 3 }
+            }
+        }
+
+        if = {
+            limit = {
+                OR = {
+                    AND = {
+                        NOT = {
+                            FRA = {
+                                has_country_flag = cjg_open_the_third_empire
+                            }
+                        }
+                        NOT = {
+                            GER = {
+                                has_country_flag = third_empire_has_become_flag
+                            }
+                        }
+                    }
+                    AND = {
+                        FRA = {
+                            has_country_flag = cjg_open_the_third_empire
+                        }
+                        NOT = {
+                            GER = {
+                                has_country_flag = third_empire_has_become_flag
+                            }
+                        }
+                    }
+                }
+            }
+            news_event = { id = change_news.31 days = 1 }
+        }
+        
+    }
+
+}
+
+country_event = { #芬兰的命运
+
+    id = change_sov.3
+	title = change_sov.3.t
+	desc = change_sov.3.d
+
+    picture = GFX_news_event_012
+
+    is_triggered_only = yes
+
+    option = { #投降
+		name = change_sov.3.a
+		ai_chance = {
+			factor = 1
+		}
+        SOV = {
+            set_autonomy = { target = FIN autonomy_state = autonomy_puppet }
+        }
+        news_event = { id = change_news.38 days = 1 }
+	}
+
+    option = { #干他丫的
+        name = change_sov.3.b
+        ai_chance = {
+            factor = 99
+        }
+        SOV = {
+            country_event = { id = change_sov.4 }
+        }
+        news_event = { id = change_news.39 hours = 12 }
+    }
+
+}
+
+
+country_event = { #芬兰不同意
+
+    id = change_sov.4
+	title = change_sov.4.t
+	desc = change_sov.4.d
+
+    picture = GFX_news_event_012
+
+    is_triggered_only = yes
+
+    option = { #干他丫的
+        name = change_sov.4.b
+        ai_chance = {
+            factor = 40
+        }
+        SOV = {
+            add_war_support = 0.1
+            create_wargoal = {
+				target = FIN
+				type = annex_everything
+				expire = 0
+			}
+        }
+        
+    }
+
+}
+
+country_event = { #什么图瓦的命运
+
+    id = change_sov.5
+	title = change_sov.5.t
+	desc = change_sov.5.d
+
+    picture = GFX_news_event_061
+
+    is_triggered_only = yes
+
+    option = { #投降
+		name = change_sov.5.a
+		ai_chance = {
+			factor = 100
+		}
+        SOV = {
+            annex_country = {
+                target = TAN
+                transfer_troops = yes
+            }
+        }
+        news_event = { id = change_news.38 days = 1 }
+	}
+
+    option = { #干他丫的
+        name = change_sov.5.b
+        ai_chance = {
+            factor = 0
+        }
+        SOV = {
+            country_event = { id = change_sov.6 }
+        }
+        news_event = { id = change_news.39 hours = 12 }
+    }
+
+}
+
+
+country_event = { #不同意
+
+    id = change_sov.6
+	title = change_sov.6.t
+	desc = change_sov.6.d
+
+    picture = GFX_news_event_061
+
+    is_triggered_only = yes
+
+    option = { #干他丫的
+        name = change_sov.6.a
+        ai_chance = {
+            factor = 40
+        }
+        SOV = {
+            add_war_support = 0.1
+            create_wargoal = {
+				target = TAN
+				type = annex_everything
+				expire = 0
+			}
+        }
+        
+    }
+
+}
+
+country_event = { #波罗的海的命运
+
+    id = change_sov.7
+	title = change_sov.7.t
+	desc = change_sov.7.d
+
+    picture = GFX_news_event_061
+
+    is_triggered_only = yes
+
+    option = { #投降
+		name = change_sov.7.a
+		ai_chance = {
+			factor = 30
+            modifier = {
+                factor = 1000
+                FRA = {
+                    is_in_faction_with = GER
+                }
+            }
+		}
+        SOV = {
+            annex_country = {
+                target = ROOT
+                transfer_troops = yes
+            }
+        }
+        news_event = { id = change_news.38 days = 1 }
+	}
+
+    option = { #干他丫的
+        name = change_sov.7.b
+        ai_chance = {
+            factor = 30
+        }
+        SOV = {
+            country_event = { id = change_sov.8 }
+            create_wargoal = {
+				target = ROOT
+				type = annex_everything
+				expire = 0
+			}
+        }
+        news_event = { id = change_news.39 hours = 12 }
+    }
+
+}
+
+country_event = { #波罗的海不同意
+
+    id = change_sov.8
+	title = change_sov.8.t
+	desc = change_sov.8.d
+
+    picture = GFX_news_event_061
+
+    is_triggered_only = yes
+
+    option = { #干他丫的
+        name = change_sov.8.a
+        ai_chance = {
+            factor = 40
+        }
+        SOV = {
+            add_war_support = 0.1
+        }
+        
+    }
+
+}
+
+country_event = { #对抗同盟国的先锋
+
+    id = change_sov.9
+	title = change_sov.9.t
+	desc = change_sov.9.d
+
+    picture = GFX_news_event_NOR_trotsky_frida
+
+    is_triggered_only = yes
+
+    option = { #
+        name = change_sov.9.a
+        ai_chance = {
+            factor = 40
+        }
+        army_experience = 100
+        add_political_power = 100
+        add_ideas = sov_the_attack_ger_buff
+        
+    }
+
+}
+
+country_event = { #西伯利亚建设
+
+    id = change_sov.10
+	title = change_sov.10.t
+	desc = change_sov.10.d
+
+    picture = GFX_news_event_NOR_trotsky_frida
+
+    is_triggered_only = yes
+
+    option = { #
+        name = change_sov.10.a
+        ai_chance = {
+            factor = 40
+        }
+        add_political_power = 100
+        add_stability = 0.1
+
+        while_loop_effect = {
+			limit = {
+				check_variable = { temp_targets_index = 20 compare = less_than }
+			}
+			random_owned_state = {
+				limit = {
+					is_on_continent = asia
+					infrastructure < 4
+					NOT = { has_state_flag = SOV_development_of_xiboliya_flag }
+				}
+				add_extra_state_shared_building_slots = 3
+				add_building_construction = {
+					type = infrastructure
+					level = 4
+					instant_build = yes
+				}
+                add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+				set_state_flag = SOV_development_of_xiboliya_flag
+				add_to_temp_variable = { SOV.temp_targets_index = 1 }
+				#log = "Round [?SOV.temp_targets_index]"
+			}
+		}
+
+        news_event = { id = change_news.40 days = 1 }
+        
+    }
+
+}
+
+country_event = { #后备工厂
+
+    id = change_sov.11
+	title = change_sov.11.t
+	desc = change_sov.11.d
+
+    picture = GFX_news_event_tank_factory
+
+    is_triggered_only = yes
+
+    option = { #
+        name = change_sov.11.a
+        ai_chance = {
+            factor = 40
+        }
+        add_political_power = 100
+
+        every_controlled_state = {
+            limit = {
+                OR = {
+                    has_state_flag = SOV_development_of_xiboliya_flag
+                    has_state_flag = SOV_development_of_first_xiboliya_flag
+                }
+            }
+            add_extra_state_shared_building_slots = 4
+			add_building_construction = {
+				type = arms_factory
+				level = 2
+				instant_build = yes
+			}
+            add_building_construction = {
+				type = industrial_complex
+				level = 1
+				instant_build = yes
+			}
+        }
+        
+    }
+
+
+}
+
+country_event = { #伟大的卫国战争启用
+
+    id = change_sov.12
+	title = change_sov.12.t
+	desc = change_sov.12.d
+
+    picture = GFX_report_event_DEN_resistance
+
+    is_triggered_only = yes
+
+    option = { #
+        name = change_sov.12.a
+        ai_chance = {
+            factor = 40
+        }
+        
+    }
+
+
+}
+
+
+country_event = { #卫国战争开始
+
+    id = change_sov.13
+	title = change_sov.13.t
+	desc = change_sov.13.d
+
+    picture = GFX_report_event_soviet_soldiers
+
+    is_triggered_only = yes
+
+    option = { #
+        name = change_sov.13.a
+        ai_chance = {
+            factor = 40
+        }
+        add_war_support = 0.1
+        add_stability = 0.1
+        activate_mission = SOV_Great_Patriotic_War_level_up
+        activate_mission = SOV_Great_Patriotic_War_production_level_up
+        set_country_flag = SOV_in_Great_Patriotic_War_flag
+        
+    }
+
+
+}
+
+
+country_event = { #苏联卫国战争等级提高
+
+    id = change_sov.14
+	title = change_sov.14.t
+	desc = change_sov.14.d
+
+    picture = GFX_report_event_french_tanks
+
+    is_triggered_only = yes
+
+    option = { #
+        name = change_sov.14.a
+        ai_chance = {
+            factor = 40
+        }
+        add_war_support = 0.1
+        add_stability = 0.1
+        add_offsite_building = { type = industrial_complex level = 10 }
+		add_offsite_building = { type = arms_factory level = 10 }
+        if = {
+            limit = {
+                is_ai = no
+            }
+            add_offsite_building = { type = industrial_complex level = 25 }
+		    add_offsite_building = { type = arms_factory level = 25 }
+            add_manpower = 100000
+            add_equipment_to_stockpile = {
+				type = infantry_equipment
+				amount = 20000
+			}
+			add_equipment_to_stockpile = { 
+				type = train_equipment 
+				amount = 300
+			}
+			add_equipment_to_stockpile = {
+				type = artillery_equipment
+				amount = 5000
+			}
+			add_equipment_to_stockpile = {
+				type = cat_anti_tank_equipment
+				amount = 3000
+			}
+            add_equipment_to_stockpile = {
+				type = motorized_equipment_1
+				amount = 3000
+			}
+            add_equipment_to_stockpile = {
+				type = support_equipment
+				amount = 5000
+			}
+			add_equipment_to_stockpile = { 
+				type = anti_air_equipment 
+				amount = 3000
+			}
+
+            if = {
+				limit = {
+					has_tech = advanced_medium_tank_chassis
+				}
+				add_equipment_to_stockpile = { 
+					type = medium_tank_chassis_3 
+					amount = 2000
+				}
+			}
+			else_if = {
+				limit = {
+					has_tech = improved_medium_tank_chassis
+				}
+				add_equipment_to_stockpile = { 
+					type = medium_tank_chassis_2 
+					amount = 2000
+				}
+			}
+			else = {
+				add_equipment_to_stockpile = { 
+					type = medium_tank_chassis_1 
+					amount = 2000
+				}
+			}
+
+            if = {
+				limit = {
+					has_tech = advanced_medium_tank_chassis
+				}
+				add_equipment_to_stockpile = { 
+					type = light_tank_chassis_3 
+					amount = 1000
+				}
+			}
+			else_if = {
+				limit = {
+					has_tech = improved_medium_tank_chassis
+				}
+				add_equipment_to_stockpile = { 
+					type = light_tank_chassis_2 
+					amount = 1000
+				}
+			}
+			else = {
+				add_equipment_to_stockpile = { 
+					type = light_tank_chassis_1 
+					amount = 1000
+				}
+			}
+
+            division_template = {
+                name = "装甲师"
+                regiments = {
+                    motorized = { x = 0 y = 0 }
+                    motorized  = { x = 0 y = 1 }
+                    motorized  = { x = 0 y = 2 }
+                    motorized  = { x = 0 y = 3 }
+                    motorized  = { x = 0 y = 4 }
+                    motorized  = { x = 1 y = 0 }
+                    motorized  = { x = 1 y = 1 }
+                    motorized  = { x = 1 y = 2 }
+                    motorized  = { x = 1 y = 3 }
+                    medium_armor = { x = 2 y = 0 }
+                    medium_armor = { x = 2 y = 1 }
+                    medium_armor = { x = 2 y = 2 }
+                    medium_armor = { x = 2 y = 3 }
+                    medium_armor = { x = 2 y = 4 }
+                    medium_armor = { x = 3 y = 0 }
+                    medium_armor = { x = 3 y = 1 }
+                    medium_armor = { x = 3 y = 2 }
+                    medium_armor = { x = 3 y = 3 }
+                }
+                regimental_support = {
+					field_guns = { x = 0 y = 0 }
+					field_guns = { x = 1 y = 0 }
+					medium_tank_destroyer_support = { x = 2 y = 0 }
+					medium_tank_destroyer_support = { x = 3 y = 0 }
+					medium_sp_anti_air_support = { x = 4 y = 0 }
+				}
+                support = {
+                    engineer = { x = 0 y = 0 }
+                    recon = { x = 0 y = 1 }
+                    field_hospital =  { x = 0 y = 2 }
+                    logistics_company = { x = 0 y = 3 }
+                    artillery =  { x = 0 y = 4 }
+                }
+            }
+            random_owned_controlled_state = {
+                limit = { ROOT = { has_full_control_of_state = PREV } }
+                prioritize = { capital = ROOT }
+                create_unit = {
+                    division = "name = \"装甲师\" division_template = \"装甲师\" start_experience_factor = 1" 
+                    owner = ROOT
+                    count = 24
+                }
+            }
+        }
+        
+        
+    }
+
+
+}
+
+
+country_event = { #苏联卫国战争达到最高
+
+    id = change_sov.15
+	title = change_sov.15.t
+	desc = change_sov.15.d
+
+    picture = GFX_report_event_french_tanks
+
+    is_triggered_only = yes
+
+    option = { #
+        name = change_sov.15.a
+        ai_chance = {
+            factor = 40
+        }
+        add_war_support = 0.1
+        add_stability = 0.1
+        add_offsite_building = { type = industrial_complex level = 25 }
+		add_offsite_building = { type = arms_factory level = 25 }
+        if = {
+            limit = {
+                is_ai = no
+            }
+            add_offsite_building = { type = industrial_complex level = 25 }
+		    add_offsite_building = { type = arms_factory level = 25 }
+            add_manpower = 100000
+            add_equipment_to_stockpile = {
+				type = infantry_equipment
+				amount = 20000
+			}
+			add_equipment_to_stockpile = { 
+				type = train_equipment 
+				amount = 300
+			}
+			add_equipment_to_stockpile = {
+				type = artillery_equipment
+				amount = 5000
+			}
+			add_equipment_to_stockpile = {
+				type = cat_anti_tank_equipment
+				amount = 3000
+			}
+            add_equipment_to_stockpile = {
+				type = motorized_equipment_1
+				amount = 3000
+			}
+            add_equipment_to_stockpile = {
+				type = support_equipment
+				amount = 5000
+			}
+			add_equipment_to_stockpile = { 
+				type = anti_air_equipment 
+				amount = 3000
+			}
+
+            if = {
+				limit = {
+					has_tech = advanced_medium_tank_chassis
+				}
+				add_equipment_to_stockpile = { 
+					type = medium_tank_chassis_3 
+					amount = 2000
+				}
+			}
+			else_if = {
+				limit = {
+					has_tech = improved_medium_tank_chassis
+				}
+				add_equipment_to_stockpile = { 
+					type = medium_tank_chassis_2 
+					amount = 2000
+				}
+			}
+			else = {
+				add_equipment_to_stockpile = { 
+					type = medium_tank_chassis_1 
+					amount = 2000
+				}
+			}
+
+            if = {
+				limit = {
+					has_tech = advanced_medium_tank_chassis
+				}
+				add_equipment_to_stockpile = { 
+					type = light_tank_chassis_3 
+					amount = 1000
+				}
+			}
+			else_if = {
+				limit = {
+					has_tech = improved_medium_tank_chassis
+				}
+				add_equipment_to_stockpile = { 
+					type = light_tank_chassis_2 
+					amount = 1000
+				}
+			}
+			else = {
+				add_equipment_to_stockpile = { 
+					type = light_tank_chassis_1 
+					amount = 1000
+				}
+			}
+
+            division_template = {
+                name = "装甲师"
+                regiments = {
+                    motorized = { x = 0 y = 0 }
+                    motorized  = { x = 0 y = 1 }
+                    motorized  = { x = 0 y = 2 }
+                    motorized  = { x = 0 y = 3 }
+                    motorized  = { x = 0 y = 4 }
+                    motorized  = { x = 1 y = 0 }
+                    motorized  = { x = 1 y = 1 }
+                    motorized  = { x = 1 y = 2 }
+                    motorized  = { x = 1 y = 3 }
+                    medium_armor = { x = 2 y = 0 }
+                    medium_armor = { x = 2 y = 1 }
+                    medium_armor = { x = 2 y = 2 }
+                    medium_armor = { x = 2 y = 3 }
+                    medium_armor = { x = 2 y = 4 }
+                    medium_armor = { x = 3 y = 0 }
+                    medium_armor = { x = 3 y = 1 }
+                    medium_armor = { x = 3 y = 2 }
+                    medium_armor = { x = 3 y = 3 }
+                }
+                support = {
+                    engineer = { x = 0 y = 0 }
+                    recon = { x = 0 y = 1 }
+                    field_hospital =  { x = 0 y = 2 }
+                    logistics_company = { x = 0 y = 3 }
+                    artillery =  { x = 0 y = 4 }
+                }
+            }
+            random_owned_controlled_state = {
+                limit = { ROOT = { has_full_control_of_state = PREV } }
+                prioritize = { capital = ROOT }
+                create_unit = {
+                    division = "name = \"装甲师\" division_template = \"装甲师\" start_experience_factor = 1" 
+                    owner = ROOT
+                    count = 48
+                }
+            }
+        }
+        
+        
+    }
+
+
+}
+
+
+country_event = { #苏联卫国战争提高（自己）
+
+    id = change_sov.16
+	title = change_sov.16.t
+	desc = change_sov.16.d
+
+    picture = GFX_report_event_ETH_ethiopian_warriors
+
+    is_triggered_only = yes
+
+    option = { #
+        name = change_sov.16.a
+        ai_chance = {
+            factor = 40
+        }
+        add_war_support = 0.1
+        add_stability = 0.1
+
+        division_template = {
+                name = "装甲师"
+                regiments = {
+                    motorized = { x = 0 y = 0 }
+                    motorized  = { x = 0 y = 1 }
+                    motorized  = { x = 0 y = 2 }
+                    motorized  = { x = 0 y = 3 }
+                    motorized  = { x = 0 y = 4 }
+                    motorized  = { x = 1 y = 0 }
+                    motorized  = { x = 1 y = 1 }
+                    motorized  = { x = 1 y = 2 }
+                    motorized  = { x = 1 y = 3 }
+                    medium_armor = { x = 2 y = 0 }
+                    medium_armor = { x = 2 y = 1 }
+                    medium_armor = { x = 2 y = 2 }
+                    medium_armor = { x = 2 y = 3 }
+                    medium_armor = { x = 2 y = 4 }
+                    medium_armor = { x = 3 y = 0 }
+                    medium_armor = { x = 3 y = 1 }
+                    medium_armor = { x = 3 y = 2 }
+                    medium_armor = { x = 3 y = 3 }
+                }
+                regimental_support = {
+					field_guns = { x = 0 y = 0 }
+					field_guns = { x = 1 y = 0 }
+					medium_tank_destroyer_support = { x = 2 y = 0 }
+					medium_tank_destroyer_support = { x = 3 y = 0 }
+					medium_sp_anti_air_support = { x = 4 y = 0 }
+				}
+                support = {
+                    engineer = { x = 0 y = 0 }
+                    recon = { x = 0 y = 1 }
+                    field_hospital =  { x = 0 y = 2 }
+                    logistics_company = { x = 0 y = 3 }
+                    artillery =  { x = 0 y = 4 }
+                }
+            }
+            random_owned_controlled_state = {
+                limit = { ROOT = { has_full_control_of_state = PREV } }
+                prioritize = { capital = ROOT }
+                create_unit = {
+                    division = "name = \"装甲师\" division_template = \"装甲师\" start_experience_factor = 1" 
+                    owner = ROOT
+                    count = 12
+                }
+            }
+
+        if = {
+            limit = {
+                is_ai = no
+            }
+            add_manpower = 100000
+            add_equipment_to_stockpile = {
+				type = infantry_equipment
+				amount = 20000
+			}
+			add_equipment_to_stockpile = { 
+				type = train_equipment 
+				amount = 300
+			}
+			add_equipment_to_stockpile = {
+				type = artillery_equipment
+				amount = 5000
+			}
+			add_equipment_to_stockpile = {
+				type = cat_anti_tank_equipment
+				amount = 3000
+			}
+            add_equipment_to_stockpile = {
+				type = motorized_equipment_1
+				amount = 3000
+			}
+            add_equipment_to_stockpile = {
+				type = support_equipment
+				amount = 5000
+			}
+			add_equipment_to_stockpile = { 
+				type = anti_air_equipment 
+				amount = 3000
+			}
+
+            if = {
+				limit = {
+					has_tech = advanced_medium_tank_chassis
+				}
+				add_equipment_to_stockpile = { 
+					type = medium_tank_chassis_3 
+					amount = 2000
+				}
+			}
+			else_if = {
+				limit = {
+					has_tech = improved_medium_tank_chassis
+				}
+				add_equipment_to_stockpile = { 
+					type = medium_tank_chassis_2 
+					amount = 2000
+				}
+			}
+			else = {
+				add_equipment_to_stockpile = { 
+					type = medium_tank_chassis_1 
+					amount = 2000
+				}
+			}
+
+            if = {
+				limit = {
+					has_tech = advanced_medium_tank_chassis
+				}
+				add_equipment_to_stockpile = { 
+					type = light_tank_chassis_3 
+					amount = 1000
+				}
+			}
+			else_if = {
+				limit = {
+					has_tech = improved_medium_tank_chassis
+				}
+				add_equipment_to_stockpile = { 
+					type = light_tank_chassis_2 
+					amount = 1000
+				}
+			}
+			else = {
+				add_equipment_to_stockpile = { 
+					type = light_tank_chassis_1 
+					amount = 1000
+				}
+			}
+        }
+        
+        
+    }
+
+
+}
+
+
+country_event = { #苏联卫国战争最高（自己）
+
+    id = change_sov.17
+	title = change_sov.17.t
+	desc = change_sov.17.d
+
+    picture = GFX_report_event_ETH_ethiopian_warriors
+
+    is_triggered_only = yes
+
+    option = { #
+        name = change_sov.17.a
+        ai_chance = {
+            factor = 40
+        }
+        add_war_support = 0.1
+        add_stability = 0.1
+
+        division_template = {
+                name = "装甲师"
+                regiments = {
+                    motorized = { x = 0 y = 0 }
+                    motorized  = { x = 0 y = 1 }
+                    motorized  = { x = 0 y = 2 }
+                    motorized  = { x = 0 y = 3 }
+                    motorized  = { x = 0 y = 4 }
+                    motorized  = { x = 1 y = 0 }
+                    motorized  = { x = 1 y = 1 }
+                    motorized  = { x = 1 y = 2 }
+                    motorized  = { x = 1 y = 3 }
+                    medium_armor = { x = 2 y = 0 }
+                    medium_armor = { x = 2 y = 1 }
+                    medium_armor = { x = 2 y = 2 }
+                    medium_armor = { x = 2 y = 3 }
+                    medium_armor = { x = 2 y = 4 }
+                    medium_armor = { x = 3 y = 0 }
+                    medium_armor = { x = 3 y = 1 }
+                    medium_armor = { x = 3 y = 2 }
+                    medium_armor = { x = 3 y = 3 }
+                }
+                regimental_support = {
+					field_guns = { x = 0 y = 0 }
+					field_guns = { x = 1 y = 0 }
+					medium_tank_destroyer_support = { x = 2 y = 0 }
+					medium_tank_destroyer_support = { x = 3 y = 0 }
+					medium_sp_anti_air_support = { x = 4 y = 0 }
+				}
+                support = {
+                    engineer = { x = 0 y = 0 }
+                    recon = { x = 0 y = 1 }
+                    field_hospital =  { x = 0 y = 2 }
+                    logistics_company = { x = 0 y = 3 }
+                    artillery =  { x = 0 y = 4 }
+                }
+            }
+            random_owned_controlled_state = {
+                limit = { ROOT = { has_full_control_of_state = PREV } }
+                prioritize = { capital = ROOT }
+                create_unit = {
+                    division = "name = \"装甲师\" division_template = \"装甲师\" start_experience_factor = 1" 
+                    owner = ROOT
+                    count = 12
+                }
+            }
+
+        if = {
+            limit = {
+                is_ai = no
+            }
+            add_manpower = 100000
+            add_equipment_to_stockpile = {
+				type = infantry_equipment
+				amount = 20000
+			}
+			add_equipment_to_stockpile = { 
+				type = train_equipment 
+				amount = 300
+			}
+			add_equipment_to_stockpile = {
+				type = artillery_equipment
+				amount = 5000
+			}
+			add_equipment_to_stockpile = {
+				type = cat_anti_tank_equipment
+				amount = 3000
+			}
+            add_equipment_to_stockpile = {
+				type = motorized_equipment_1
+				amount = 3000
+			}
+            add_equipment_to_stockpile = {
+				type = support_equipment
+				amount = 5000
+			}
+			add_equipment_to_stockpile = { 
+				type = anti_air_equipment 
+				amount = 3000
+			}
+
+            if = {
+				limit = {
+					has_tech = advanced_medium_tank_chassis
+				}
+				add_equipment_to_stockpile = { 
+					type = medium_tank_chassis_3 
+					amount = 2000
+				}
+			}
+			else_if = {
+				limit = {
+					has_tech = improved_medium_tank_chassis
+				}
+				add_equipment_to_stockpile = { 
+					type = medium_tank_chassis_2 
+					amount = 2000
+				}
+			}
+			else = {
+				add_equipment_to_stockpile = { 
+					type = medium_tank_chassis_1 
+					amount = 2000
+				}
+			}
+
+            if = {
+				limit = {
+					has_tech = advanced_medium_tank_chassis
+				}
+				add_equipment_to_stockpile = { 
+					type = light_tank_chassis_3 
+					amount = 1000
+				}
+			}
+			else_if = {
+				limit = {
+					has_tech = improved_medium_tank_chassis
+				}
+				add_equipment_to_stockpile = { 
+					type = light_tank_chassis_2 
+					amount = 1000
+				}
+			}
+			else = {
+				add_equipment_to_stockpile = { 
+					type = light_tank_chassis_1 
+					amount = 1000
+				}
+			}
+        }
+        
+        
+    }
+
+
+}
+
+country_event = { #苏联红场阅兵成功（敌人）
+
+    id = change_sov.18
+	title = change_sov.18.t
+	desc = change_sov.18.d
+
+    picture = GFX_report_event_chinese_army_training
+
+    is_triggered_only = yes
+
+    option = { #
+        name = change_sov.18.a
+        ai_chance = {
+            factor = 40
+        }
+        add_war_support = -0.1
+        add_stability = -0.1
+
+    }
+
+
+}
+
+country_event = { #苏联红场阅兵失败（自己）
+
+    id = change_sov.19
+	title = change_sov.19.t
+	desc = change_sov.19.d
+
+    picture = GFX_report_event_generic_destroyed_vehicles
+
+    is_triggered_only = yes
+
+    option = { #
+        name = change_sov.19.a
+        ai_chance = {
+            factor = 40
+        }
+        add_war_support = -0.1
+        add_stability = -0.1
+
+    }
+
+
+}
+
+country_event = { #苏联库尔斯克会战胜利（自己）
+
+    id = change_sov.20
+	title = change_sov.20.t
+	desc = change_sov.20.d
+
+    picture = GFX_report_event_generic_communist_militia
+
+    is_triggered_only = yes
+
+    option = { #
+        name = change_sov.20.a
+        ai_chance = {
+            factor = 40
+        }
+        clr_country_flag = SOV_self_kuersike_flag
+        add_political_power = 100
+        army_experience = 100
+        add_war_support = 0.1
+        add_stability = 0.1
+
+    }
+
+
+}
+
+country_event = { #苏联库尔斯克会战失败（自己）
+
+    id = change_sov.21
+	title = change_sov.21.t
+	desc = change_sov.21.d
+
+    picture = GFX_report_event_gre_city_devastated
+
+    is_triggered_only = yes
+
+    option = { #
+        name = change_sov.21.a
+        ai_chance = {
+            factor = 40
+        }
+        clr_country_flag = SOV_self_kuersike_flag
+        add_political_power = -100
+        army_experience = -100
+        add_war_support = -0.1
+        add_stability = -0.1
+
+    }
+
+
+}
+
+country_event = { #苏联库尔斯克会战胜利（敌人）
+
+    id = change_sov.23
+	title = change_sov.23.t
+	desc = change_sov.23.d
+
+    picture = GFX_report_event_glorious_vehicle
+
+    is_triggered_only = yes
+
+    option = { #
+        name = change_sov.23.a
+        ai_chance = {
+            factor = 40
+        }
+        clr_country_flag = SOV_emery_kuersike_flag
+        add_political_power = -100
+        army_experience = -100
+        add_war_support = -0.1
+        add_stability = -0.1
+
+    }
+
+
+}
+
+country_event = { #苏联库尔斯克会战失败（敌人）
+
+    id = change_sov.24
+	title = change_sov.24.t
+	desc = change_sov.24.d
+
+    picture = GFX_report_event_gre_city_devastated
+
+    is_triggered_only = yes
+
+    option = { #
+        name = change_sov.24.a
+        ai_chance = {
+            factor = 40
+        }
+        clr_country_flag = SOV_emery_kuersike_flag
+        add_political_power = 100
+        army_experience = 100
+        add_war_support = 0.1
+        add_stability = 0.1
+
+    }
+
+
+}
+
+country_event = { #苏联明斯克战役胜利
+
+    id = change_sov.25
+	title = change_sov.25.t
+	desc = change_sov.25.d
+
+    picture = GFX_report_event_swedish_soldier
+
+    is_triggered_only = yes
+
+    option = { #
+        name = change_sov.25.a
+        ai_chance = {
+            factor = 40
+        }
+        clr_country_flag = SOV_self_mingsike_flag
+        add_political_power = 100
+        army_experience = 100
+        add_war_support = 0.1
+        add_stability = 0.1
+
+    }
+
+
+}
+
+
+country_event = { #苏联明斯克战役失败
+
+    id = change_sov.26
+	title = change_sov.26.t
+	desc = change_sov.26.d
+
+    picture = GFX_report_event_spr_spanish_civil_war
+
+    is_triggered_only = yes
+
+    option = { #
+        name = change_sov.26.a
+        ai_chance = {
+            factor = 40
+        }
+        clr_country_flag = SOV_self_mingsike_flag
+        #add_political_power = 100
+        #army_experience = 100
+        add_war_support = -0.01
+        add_stability = -0.01
+
+    }
+
+
+}
+
+country_event = { #明斯克战役胜利
+
+    id = change_sov.27
+	title = change_sov.27.t
+	desc = change_sov.27.d
+
+    picture = GFX_report_event_spr_italian_volunteers
+
+    is_triggered_only = yes
+
+    option = { #
+        name = change_sov.27.a
+        ai_chance = {
+            factor = 40
+        }
+        clr_country_flag = SOV_emery_mingsike_flag
+        add_political_power = 100
+        army_experience = 100
+        add_war_support = 0.1
+        add_stability = 0.1
+
+    }
+
+
+}
+
+country_event = { #明斯克战役失败
+
+    id = change_sov.28
+	title = change_sov.28.t
+	desc = change_sov.28.d
+
+    picture = GFX_report_event_spr_nationalists_capture_tank
+
+    is_triggered_only = yes
+
+    option = { #
+        name = change_sov.28.a
+        ai_chance = {
+            factor = 40
+        }
+        clr_country_flag = SOV_emery_mingsike_flag
+        add_political_power = -100
+        army_experience = -100
+        add_war_support = -0.1
+        add_stability = -0.1
+
+    }
+
+
+}
+
+country_event = { #库尔斯克战役开始
+
+    id = change_sov.29
+	title = change_sov.29.t
+	desc = change_sov.29.d
+
+    picture = GFX_report_event_soviet_invasion_map
+
+    is_triggered_only = yes
+
+    option = { #
+        name = change_sov.29.a
+        ai_chance = {
+            factor = 40
+        }
+        set_country_flag = SOV_emery_kuersike_flag
+        activate_mission = SOV_emery_kuersike_mission
+
+    }
+
+
+}
+
+country_event = { #明斯克战役开始
+
+    id = change_sov.30
+	title = change_sov.30.t
+	desc = change_sov.30.d
+
+    picture = GFX_report_event_soviet_invasion_map
+
+    is_triggered_only = yes
+
+    option = { #
+        name = change_sov.30.a
+        ai_chance = {
+            factor = 40
+        }
+        set_country_flag = SOV_emery_mingsike_flag
+        activate_mission = SOV_emery_mingsike_mission
+
+    }
+
+
+}
+
+country_event = { #基辅战役开始
+
+    id = change_sov.31
+	title = change_sov.31.t
+	desc = change_sov.31.d
+
+    picture = GFX_report_event_soviet_invasion_map
+
+    is_triggered_only = yes
+
+    option = { #
+        name = change_sov.31.a
+        ai_chance = {
+            factor = 40
+        }
+        set_country_flag = SOV_emery_jifu_flag
+        activate_mission = SOV_emery_jifu_mission
+
+    }
+
+
+}
+
+
+country_event = { #苏联基辅战役胜利
+
+    id = change_sov.32
+	title = change_sov.32.t
+	desc = change_sov.32.d
+
+    picture = GFX_report_event_NOR_royal_family_exiled
+
+    is_triggered_only = yes
+
+    option = { #
+        name = change_sov.32.a
+        ai_chance = {
+            factor = 40
+        }
+        clr_country_flag = SOV_self_jifu_flag
+        add_political_power = 100
+        army_experience = 100
+        add_war_support = 0.1
+        add_stability = 0.1
+
+    }
+
+
+}
+
+country_event = { #苏联基辅战役失败
+
+    id = change_sov.33
+	title = change_sov.33.t
+	desc = change_sov.33.d
+
+    picture = GFX_report_event_spr_civil_war_faction_defeated
+
+    is_triggered_only = yes
+
+    option = { #
+        name = change_sov.33.a
+        ai_chance = {
+            factor = 40
+        }
+        clr_country_flag = SOV_self_jifu_flag
+        #add_political_power = 100
+        army_experience = -10
+        add_war_support = -0.01
+        add_stability = -0.01
+
+    }
+
+
+}
+
+
+country_event = { #基辅战役胜利
+
+    id = change_sov.34
+	title = change_sov.34.t
+	desc = change_sov.34.d
+
+    picture = GFX_report_event_spr_army_of_africa
+
+    is_triggered_only = yes
+
+    option = { #
+        name = change_sov.34.a
+        ai_chance = {
+            factor = 40
+        }
+        clr_country_flag = SOV_emery_jifu_flag
+        add_political_power = 100
+        army_experience = 100
+        add_war_support = 0.1
+        add_stability = 0.1
+
+    }
+
+
+}
+
+country_event = { #基辅战役失败
+
+    id = change_sov.35
+	title = change_sov.35.t
+	desc = change_sov.35.d
+
+    picture = GFX_report_event_tanks_vietnam
+
+    is_triggered_only = yes
+
+    option = { #
+        name = change_sov.35.a
+        ai_chance = {
+            factor = 40
+        }
+        clr_country_flag = SOV_emery_jifu_flag
+        add_political_power = -100
+        army_experience = -100
+        add_war_support = -0.1
+        add_stability = -0.1
+
+    }
+
+
+}
+
+country_event = { #莫斯科战役开始
+
+    id = change_sov.36
+	title = change_sov.36.t
+	desc = change_sov.36.d
+
+    picture = GFX_report_event_soviet_invasion_map
+
+    is_triggered_only = yes
+
+    option = { #
+        name = change_sov.36.a
+        ai_chance = {
+            factor = 40
+        }
+        set_country_flag = SOV_emery_mosike_flag
+        activate_mission = SOV_emery_mosike_mission
+
+    }
+
+
+}
+
+
+country_event = { #苏联莫斯科战役胜利
+
+    id = change_sov.37
+	title = change_sov.37.t
+	desc = change_sov.37.d
+
+    picture = GFX_report_event_stalin_propaganda
+
+    is_triggered_only = yes
+
+    option = { #
+        name = change_sov.37.a
+        ai_chance = {
+            factor = 40
+        }
+        clr_country_flag = SOV_self_mosike_flag
+        add_political_power = 100
+        army_experience = 100
+        add_war_support = 0.1
+        add_stability = 0.1
+
+    }
+
+
+}
+
+country_event = { #苏联莫斯科战役失败
+
+    id = change_sov.38
+	title = change_sov.38.t
+	desc = change_sov.38.d
+
+    picture = GFX_report_event_stalin_01
+
+    is_triggered_only = yes
+
+    option = { #
+        name = change_sov.38.a
+        ai_chance = {
+            factor = 40
+        }
+        clr_country_flag = SOV_self_mosike_flag
+        add_political_power = 100
+        army_experience = -100
+        add_war_support = -0.2
+        add_stability = -0.2
+
+    }
+
+
+}
+
+country_event = { #莫斯科战役胜利
+
+    id = change_sov.39
+	title = change_sov.39.t
+	desc = change_sov.39.d
+
+    picture = GFX_report_event_gre_political_march
+
+    is_triggered_only = yes
+
+    option = { #
+        name = change_sov.39.a
+        ai_chance = {
+            factor = 40
+        }
+        clr_country_flag = SOV_emery_mosike_flag
+        add_political_power = 100
+        army_experience = 100
+        add_war_support = 0.5
+        add_stability = 0.5
+
+    }
+
+
+}
+
+country_event = { #莫斯科战役失败
+
+    id = change_sov.40
+	title = change_sov.40.t
+	desc = change_sov.40.d
+
+    picture = GFX_report_event_gre_city_devastated
+
+    is_triggered_only = yes
+
+    option = { #
+        name = change_sov.40.a
+        ai_chance = {
+            factor = 40
+        }
+        clr_country_flag = SOV_emery_mosike_flag
+        add_political_power = -100
+        army_experience = -100
+        add_war_support = -0.1
+        add_stability = -0.1
+
+    }
+
+
+}
+
+country_event = { #斯大林格勒战役开始
+
+    id = change_sov.41
+	title = change_sov.41.t
+	desc = change_sov.41.d
+
+    picture = GFX_report_event_soviet_invasion_map
+
+    is_triggered_only = yes
+
+    option = { #
+        name = change_sov.41.a
+        ai_chance = {
+            factor = 40
+        }
+        set_country_flag = SOV_emery_sidalinggele_flag
+        activate_mission = SOV_emery_sidalinggele_mission
+
+    }
+
+
+}
+
+
+country_event = { #苏联斯大林格勒战役胜利
+
+    id = change_sov.42
+	title = change_sov.42.t
+	desc = change_sov.42.d
+
+    picture = GFX_report_event_spr_anarchist_uprising2
+
+    is_triggered_only = yes
+
+    option = { #
+        name = change_sov.42.a
+        ai_chance = {
+            factor = 40
+        }
+        clr_country_flag = SOV_self_sidalinggele_flag
+        add_political_power = 100
+        army_experience = 100
+        add_war_support = 0.1
+        add_stability = 0.1
+
+    }
+
+
+}
+
+country_event = { #苏联斯大林格勒战役失败
+
+    id = change_sov.43
+	title = change_sov.43.t
+	desc = change_sov.43.d
+
+    picture = GFX_report_event_spr_civil_war_faction_defeated
+
+    is_triggered_only = yes
+
+    option = { #
+        name = change_sov.43.a
+        ai_chance = {
+            factor = 40
+        }
+        clr_country_flag = SOV_self_sidalinggele_flag
+        add_political_power = 100
+        army_experience = -100
+        add_war_support = -0.2
+        add_stability = -0.2
+
+    }
+
+
+}
+
+country_event = { #斯大林格勒战役胜利
+
+    id = change_sov.44
+	title = change_sov.44.t
+	desc = change_sov.44.d
+
+    picture = GFX_report_event_spr_plane_crash
+
+    is_triggered_only = yes
+
+    option = { #
+        name = change_sov.44.a
+        ai_chance = {
+            factor = 40
+        }
+        clr_country_flag = SOV_emery_sidalinggele_flag
+        add_political_power = 100
+        army_experience = 100
+        add_war_support = 0.5
+        add_stability = 0.5
+
+    }
+
+
+}
+
+country_event = { #斯大林格勒战役失败
+
+    id = change_sov.45
+	title = change_sov.45.t
+	desc = change_sov.45.d
+
+    picture = GFX_report_event_swedish_soldier
+
+    is_triggered_only = yes
+
+    option = { #
+        name = change_sov.45.a
+        ai_chance = {
+            factor = 40
+        }
+        clr_country_flag = SOV_emery_sidalinggele_flag
+        add_political_power = -100
+        army_experience = -100
+        add_war_support = -0.1
+        add_stability = -0.1
+
+    }
+
+
+}
+
+country_event = { #列宁格勒战役开始
+
+    id = change_sov.46
+	title = change_sov.46.t
+	desc = change_sov.46.d
+
+    picture = GFX_report_event_soviet_invasion_map
+
+    is_triggered_only = yes
+
+    option = { #
+        name = change_sov.46.a
+        ai_chance = {
+            factor = 40
+        }
+        set_country_flag = SOV_emery_liening_flag
+        activate_mission = SOV_emery_liening_mission
+
+    }
+
+
+}
+
+country_event = { #苏联列宁格勒战役胜利
+
+    id = change_sov.47
+	title = change_sov.47.t
+	desc = change_sov.47.d
+
+    picture = GFX_report_event_spain_civil_war_volunteers_02
+
+    is_triggered_only = yes
+
+    option = { #
+        name = change_sov.47.a
+        ai_chance = {
+            factor = 40
+        }
+        clr_country_flag = SOV_self_liening_flag
+        add_political_power = 100
+        add_command_power = 100
+        army_experience = 100
+        add_war_support = 0.1
+        add_stability = 0.1
+
+    }
+
+
+}
+
+country_event = { #苏联列宁格勒战役失败
+
+    id = change_sov.48
+	title = change_sov.48.t
+	desc = change_sov.48.d
+
+    picture = GFX_report_event_romanian_soldiers
+
+    is_triggered_only = yes
+
+    option = { #
+        name = change_sov.48.a
+        ai_chance = {
+            factor = 40
+        }
+        clr_country_flag = SOV_self_liening_flag
+        add_political_power = 100
+        army_experience = -100
+        add_war_support = -0.2
+        add_stability = -0.2
+
+    }
+
+
+}
+
+country_event = { #列宁格勒战役胜利
+
+    id = change_sov.49
+	title = change_sov.49.t
+	desc = change_sov.49.d
+
+    picture = GFX_report_event_romanian_soldiers
+
+    is_triggered_only = yes
+
+    option = { #
+        name = change_sov.49.a
+        ai_chance = {
+            factor = 40
+        }
+        clr_country_flag = SOV_emery_liening_flag
+        add_political_power = 100
+        add_command_power = 100
+        army_experience = 100
+        add_war_support = 0.5
+        add_stability = 0.5
+
+    }
+
+
+}
+
+country_event = { #列宁格勒战役失败
+
+    id = change_sov.50
+	title = change_sov.50.t
+	desc = change_sov.50.d
+
+    picture = GFX_report_event_spr_solidify_the_frontlines
+
+    is_triggered_only = yes
+
+    option = { #
+        name = change_sov.50.a
+        ai_chance = {
+            factor = 40
+        }
+        clr_country_flag = SOV_emery_liening_flag
+        add_political_power = -100
+        army_experience = -100
+        add_war_support = -0.1
+        add_stability = -0.1
+
+    }
+
+
+}
+
+
+country_event = { #巴库战役开始
+
+    id = change_sov.51
+	title = change_sov.51.t
+	desc = change_sov.51.d
+
+    picture = GFX_report_event_soviet_invasion_map
+
+    is_triggered_only = yes
+
+    option = { #
+        name = change_sov.51.a
+        ai_chance = {
+            factor = 40
+        }
+        set_country_flag = SOV_emery_baku_flag
+        activate_mission = SOV_emery_baku_mission
+
+    }
+
+
+}
+
+country_event = { #苏联巴库保卫战役胜利
+
+    id = change_sov.52
+	title = change_sov.52.t
+	desc = change_sov.52.d
+
+    picture = GFX_report_event_tur_turkish_soldiers
+
+    is_triggered_only = yes
+
+    option = { #
+        name = change_sov.52.a
+        ai_chance = {
+            factor = 40
+        }
+        clr_country_flag = SOV_self_baku_flag
+        add_political_power = 100
+        add_command_power = 100
+        army_experience = 100
+        add_war_support = 0.1
+        add_stability = 0.1
+        229 = {
+            add_resource = {
+                type = oil
+                amount = -50
+            }
+        }
+
+        219 = {
+            add_resource = {
+                type = oil
+                amount = 100
+            }
+        }
+
+    }
+
+
+}
+
+country_event = { #苏联巴库保卫战役失败
+
+    id = change_sov.53
+	title = change_sov.53.t
+	desc = change_sov.53.d
+
+    picture = GFX_report_event_yugoslavia_partisans
+
+    is_triggered_only = yes
+
+    option = { #
+        name = change_sov.53.a
+        ai_chance = {
+            factor = 40
+        }
+        clr_country_flag = SOV_self_baku_flag
+        add_political_power = 100
+        army_experience = -25
+        add_war_support = -0.1
+        add_stability = -0.1
+
+    }
+
+
+}
+
+country_event = { #巴库战役胜利
+
+    id = change_sov.54
+	title = change_sov.54.t
+	desc = change_sov.54.d
+
+    picture = GFX_report_event_saf_soldiers_3
+
+    is_triggered_only = yes
+
+    option = { #
+        name = change_sov.54.a
+        ai_chance = {
+            factor = 40
+        }
+        clr_country_flag = SOV_emery_baku_flag
+        add_political_power = 100
+        add_command_power = 100
+        army_experience = 100
+        add_war_support = 0.5
+        add_stability = 0.5
+
+    }
+
+
+}
+
+country_event = { #巴库战役失败
+
+    id = change_sov.55
+	title = change_sov.55.t
+	desc = change_sov.55.d
+
+    picture = GFX_report_event_soviet_tanks_snow
+
+    is_triggered_only = yes
+
+    option = { #
+        name = change_sov.55.a
+        ai_chance = {
+            factor = 40
+        }
+        clr_country_flag = SOV_emery_baku_flag
+        add_political_power = -100
+        army_experience = -100
+        add_war_support = -0.1
+        add_stability = -0.1
+
+    }
+
+
+}
+
+
+country_event = { #第一阶段进攻计划成功
+
+    id = change_sov.56
+	title = change_sov.56.t
+	desc = change_sov.56.d
+
+    picture = GFX_report_event_soviet_invasion_map
+
+    is_triggered_only = yes
+
+    option = { #
+        name = change_sov.56.a
+        ai_chance = {
+            factor = 40
+        }
+        add_political_power = 100
+        army_experience = 100
+        add_war_support = 0.1
+        add_stability = 0.1
+
+    }
+
+
+}
+
+country_event = { #第一阶段进攻计划失败
+
+    id = change_sov.57
+	title = change_sov.57.t
+	desc = change_sov.57.d
+
+    picture = GFX_report_event_soviet_invasion_map
+
+    is_triggered_only = yes
+
+    option = { #
+        name = change_sov.57.a
+        ai_chance = {
+            factor = 40
+        }
+        add_political_power = -100
+        army_experience = -100
+        add_war_support = -0.05
+        add_stability = -0.05
+        remove_ideas = Attack_SOV_plan_1
+
+    }
+
+
+}
+
+country_event = { #第二阶段进攻计划成功
+
+    id = change_sov.58
+	title = change_sov.58.t
+	desc = change_sov.58.d
+
+    picture = GFX_report_event_soviet_invasion_map
+
+    is_triggered_only = yes
+
+    option = { #
+        name = change_sov.58.a
+        ai_chance = {
+            factor = 40
+        }
+        add_political_power = 100
+        army_experience = 100
+        add_war_support = 0.1
+        add_stability = 0.1
+
+    }
+
+
+}
+
+country_event = { #第二阶段进攻计划失败
+
+    id = change_sov.59
+	title = change_sov.59.t
+	desc = change_sov.59.d
+
+    picture = GFX_report_event_soviet_invasion_map
+
+    is_triggered_only = yes
+
+    option = { #
+        name = change_sov.59.a
+        ai_chance = {
+            factor = 40
+        }
+        add_political_power = -100
+        army_experience = -100
+        add_war_support = -0.05
+        add_stability = -0.05
+        remove_ideas = Attack_SOV_plan_2
+
+    }
+
+
+}
+
+
+country_event = { #第三阶段进攻计划成功
+
+    id = change_sov.60
+	title = change_sov.60.t
+	desc = change_sov.60.d
+
+    picture = GFX_report_event_soviet_invasion_map
+
+    is_triggered_only = yes
+
+    option = { #
+        name = change_sov.60.a
+        ai_chance = {
+            factor = 40
+        }
+        add_political_power = 100
+        army_experience = 100
+        add_war_support = 0.1
+        add_stability = 0.1
+
+    }
+
+
+}
+
+country_event = { #第三阶段进攻计划失败
+
+    id = change_sov.61
+	title = change_sov.61.t
+	desc = change_sov.61.d
+
+    picture = GFX_report_event_soviet_invasion_map
+
+    is_triggered_only = yes
+
+    option = { #
+        name = change_sov.61.a
+        ai_chance = {
+            factor = 40
+        }
+        add_political_power = -100
+        army_experience = -100
+        add_war_support = -0.05
+        add_stability = -0.05
+        remove_ideas = Attack_SOV_plan_3
+
+    }
+
+
+}
+
+
+country_event = { #入侵蒙古
+
+    id = change_sov.62
+	title = change_sov.62.t
+	desc = change_sov.62.d
+
+    picture = GFX_report_event_generic_panzer_attack
+
+    is_triggered_only = yes
+
+    option = { #
+        name = change_sov.62.a
+        ai_chance = {
+            factor = 40
+        }
+        add_war_support = 0.1
+        declare_war_on = {
+            type = annex_everything
+            target = MON
+        }
+        news_event = { id = change_news.61 hours = 1 }
+        add_named_threat = { threat = 5 name = change_sov.62.t }
+        CHI = {
+            country_event = { id = change_sov.63 hours = 2 }
+        }
+
+    }
+
+
+}
+
+country_event = { #中国入侵蒙古
+
+    id = change_sov.63
+	title = change_sov.63.t
+	desc = change_sov.63.d
+
+    picture = GFX_report_event_generic_troops_at_rivier_in_iraq
+
+    is_triggered_only = yes
+
+    option = { #
+        name = change_sov.63.a
+        ai_chance = {
+            factor = 40
+        }
+        add_war_support = 0.1
+        declare_war_on = {
+            type = annex_everything
+            target = MON
+        }
+        CHI = {
+            diplomatic_relation = {
+                country = KOR
+                relation = guarantee
+                active = yes
+            }
+        }
+        every_state = {
+            limit = {
+                is_core_of = MON
+            }
+            CHI = {
+                add_state_claim = PREV
+            }
+        }
+        news_event = { id = change_news.62 hours = 1 }
+        add_named_threat = { threat = 5 name = change_sov.63.t }
+        SOV = {
+            country_event = { id = change_sov.64 hours = 2 }
+        }
+
+    }
+
+    option = { #
+        name = change_sov.63.b
+        ai_chance = {
+            factor = 0
+        }
+        add_war_support = -0.05
+        CHI = {
+            diplomatic_relation = {
+                country = KOR
+                relation = guarantee
+                active = yes
+            }
+        }
+        
+
+    }
+
+
+}
+
+country_event = { #苏联得知中国入侵蒙古
+
+    id = change_sov.64
+	title = change_sov.64.t
+	desc = change_sov.64.d
+
+    picture = GFX_report_event_soviet_invasion_map
+
+    is_triggered_only = yes
+
+    option = { #
+        name = change_sov.64.a
+        ai_chance = {
+            factor = 100
+        }
+        add_war_support = 0.1
+
+    }
+
+    option = { #
+        name = change_sov.64.b
+        ai_chance = {
+            factor = 0
+        }
+        add_stability = -0.05
+        add_political_power = -50
+        declare_war_on = {
+            type = annex_everything
+            target = CHI
+        }
+        news_event = { id = change_news.63 hours = 1 }
+        
+
+    }
+
+
+}
+
+country_event = { #远东防线
+
+    id = change_sov.65
+	title = change_sov.65.t
+	desc = change_sov.65.d
+
+    picture = GFX_report_event_soviet_invasion_map
+
+    is_triggered_only = yes
+
+    option = { #
+        name = change_sov.65.a
+        ai_chance = {
+            factor = 100
+        }
+        add_political_power = 100
+        add_ideas = SOV_defend_china
+        408 = {
+            add_building_construction = {
+                type = anti_air_building
+                level = 2
+                instant_build = yes
+            }
+            add_building_construction = {
+                type = bunker
+                level = 6
+                instant_build = yes
+                province = 957
+            }
+            add_building_construction = {
+                type = bunker
+                level = 4
+                instant_build = yes
+                province = 6989
+            }
+            add_building_construction = {
+                type = bunker
+                level = 4
+                instant_build = yes
+                province = 11750
+            }
+            add_building_construction = {
+                type = bunker
+                level = 4
+                instant_build = yes
+                province = 6684
+            }
+            add_building_construction = {
+                type = bunker
+                level = 4
+                instant_build = yes
+                province = 664
+            }
+            add_building_construction = {
+                type = bunker
+                level = 4
+                instant_build = yes
+                province = 6686
+            }
+            add_building_construction = {
+                type = bunker
+                level = 4
+                instant_build = yes
+                province = 11643
+            }
+
+        }
+        409 = {
+            add_building_construction = {
+                type = anti_air_building
+                level = 2
+                instant_build = yes
+            }
+            add_building_construction = {
+                type = bunker
+                level = 4
+                instant_build = yes
+                province = 10466
+            }
+            add_building_construction = {
+                type = bunker
+                level = 6
+                instant_build = yes
+                province = 12189
+            }
+        }
+        657 = {
+            add_building_construction = {
+                type = anti_air_building
+                level = 2
+                instant_build = yes
+            }
+            add_building_construction = {
+                type = bunker
+                level = 4
+                instant_build = yes
+                province = 4805
+            }
+            add_building_construction = {
+                type = bunker
+                level = 4
+                instant_build = yes
+                province = 12261
+            }
+            add_building_construction = {
+                type = bunker
+                level = 4
+                instant_build = yes
+                province = 12678
+            }
+            add_building_construction = {
+                type = bunker
+                level = 4
+                instant_build = yes
+                province = 7801
+            }
+            add_building_construction = {
+                type = bunker
+                level = 4
+                instant_build = yes
+                province = 10655
+            }
+            add_building_construction = {
+                type = bunker
+                level = 6
+                instant_build = yes
+                province = 4725
+            }
+            add_building_construction = {
+                type = bunker
+                level = 4
+                instant_build = yes
+                province = 7763
+            }
+        }
+
+        561 = {
+            add_building_construction = {
+                type = anti_air_building
+                level = 2
+                instant_build = yes
+            }
+            add_building_construction = {
+                type = bunker
+                level = 4
+                instant_build = yes
+                province = 12657
+            }
+            add_building_construction = {
+                type = bunker
+                level = 4
+                instant_build = yes
+                province = 10678
+            }
+            add_building_construction = {
+                type = bunker
+                level = 4
+                instant_build = yes
+                province = 7851
+            }
+            add_building_construction = {
+                type = bunker
+                level = 4
+                instant_build = yes
+                province = 12543
+            }
+        }
+
+        563 = {
+            add_building_construction = {
+                type = anti_air_building
+                level = 2
+                instant_build = yes
+            }
+            add_building_construction = {
+                type = bunker
+                level = 4
+                instant_build = yes
+                province = 10559
+            }
+            add_building_construction = {
+                type = bunker
+                level = 4
+                instant_build = yes
+                province = 7725
+            }
+            add_building_construction = {
+                type = bunker
+                level = 6
+                instant_build = yes
+                province = 4677
+            }
+            add_building_construction = {
+                type = bunker
+                level = 4
+                instant_build = yes
+                province = 7786
+            }
+        }
+
+        589 = {
+            add_building_construction = {
+                type = supply_node
+                level = 1
+                instant_build = yes
+                province = 10680
+            }
+            add_building_construction = {
+                type = coastal_bunker
+                level = 6
+                instant_build = yes
+                province = 10680
+            }
+        }
+        build_railway = {
+            level = 2
+            start_province = 10696
+            target_province = 7350
+        }
+        build_railway = {
+            level = 2
+            start_province = 7350
+            target_province = 10680
+        }
+        build_railway = {
+            level = 2
+            start_province = 7350
+            target_province = 1959
+        }
+
+        if = {
+            limit = {
+                330 = {
+                    is_controlled_by_ROOT_or_ally = yes
+                }
+                820 = {
+                    is_controlled_by_ROOT_or_ally = yes
+                }
+                329 = {
+                    is_controlled_by_ROOT_or_ally = yes
+                }
+            }
+            build_railway = {
+                level = 2
+                start_province = 4797
+                target_province = 4801
+            }
+            build_railway = {
+                level = 2
+                start_province = 12691
+                target_province = 10627
+            }
+            build_railway = {
+                level = 2
+                start_province = 4801
+                target_province = 10627
+            }
+            build_railway = {
+                level = 2
+                start_province = 4801
+                target_province = 10683
+            }
+        }
+        
+
+    }
+
+}

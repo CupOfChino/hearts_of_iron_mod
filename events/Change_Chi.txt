@@ -1,0 +1,297 @@
+add_namespace = change_chi
+
+country_event = { #委员长遇害
+    id = change_chi.1
+	title = change_chi.1.t
+	desc = change_chi.1.d
+
+    is_triggered_only = yes
+
+	picture = GFX_report_event_china_chiang_kai_shek #这个笑容太符合了
+
+    option = {
+		name = change_chi.1.a
+		ai_chance = {
+			modifier = {
+				factor = 100
+			}
+		}
+        retire_country_leader = yes
+        hidden_effect = {
+            PRC = {
+                country_event = { id = change_chi.2 hours = 12 } #来哀悼
+            }
+            CHI = {
+                country_event = { id = change_chi.5 days = 7 } #诈尸
+            }
+        }
+	}
+}
+
+country_event = { #委员长遇害(prc)
+    id = change_chi.2
+	title = change_chi.2.t
+	desc = change_chi.2.d
+
+    is_triggered_only = yes
+
+	picture = GFX_report_event_china_chiang_kai_shek
+
+    option = { #派人去哀悼
+		name = change_chi.2.a 
+		ai_chance = {
+            factor = 100
+			modifier = {
+                has_country_flag = the_eastern_prc_flag
+				factor = 0
+			}
+		} 
+        CHI = {
+            country_event = { id = change_chi.3 hours = 12  }
+        }
+	}
+
+    option = { #不去
+		name = change_chi.2.b
+		ai_chance = {
+            factor = 0
+			modifier = {
+                has_country_flag = the_eastern_prc_flag
+				factor = 100
+			}
+
+		} 
+	}
+}
+
+country_event = { #委员长遇害(prc来chi)
+    id = change_chi.3
+	title = change_chi.3.t
+	desc = change_chi.3.d
+
+    is_triggered_only = yes
+
+	picture = GFX_report_event_ARG_coup_detat
+
+    option = { #热烈欢迎
+		name = change_chi.3.a 
+		ai_chance = {
+            factor = 100
+			modifier = {
+                has_country_flag = the_eastern_prc_flag
+				factor = 0
+			}
+		} 
+        set_country_flag = prc_has_comming_flag
+	}
+
+    option = { #肯定是想来偷偷搞破坏
+		name = change_chi.3.b
+		ai_chance = {
+            factor = 0
+			modifier = {
+                has_country_flag = the_eastern_prc_flag
+				factor = 100
+			}
+		} 
+        PRC = {
+            country_event = { id = change_chi.4 hours = 12 }
+        }
+	}
+}
+
+country_event = { #委员长遇害(chi不欢迎prc来)
+    id = change_chi.4
+	title = change_chi.4.t
+	desc = change_chi.4.d
+
+    is_triggered_only = yes
+
+    option = { #有毛病
+		name = change_chi.4.a 
+		ai_chance = {
+            factor = 100
+		} 
+        war_support_factor = 0.01
+	}
+}
+
+country_event = { #委员长遇害(诈尸)
+    id = change_chi.5
+	title = change_chi.5.t
+	desc = change_chi.5.d
+
+    is_triggered_only = yes
+
+	picture = GFX_report_event_china_chiang_kai_shek
+
+    option = { #
+		name = change_chi.5.a 
+		ai_chance = {
+            factor = 100
+		} 
+        country_event = { id = change_chi.6 days = 1 }
+        hidden_effect = {
+            if = {
+                limit = {
+                    CHI = {
+                        has_country_flag = prc_has_comming_flag
+                    }
+                }
+                PRC = {
+                    country_event = { id = change_chi.7 days = 3 }
+                }
+            }
+        }
+	}
+}
+
+
+country_event = { #委员长遇害(重新当总统)
+    id = change_chi.6
+	title = change_chi.6.t
+	desc = change_chi.6.d
+
+    is_triggered_only = yes
+
+	picture = GFX_report_event_china_chiang_kai_shek
+
+    option = { #
+		name = change_chi.6.a 
+		ai_chance = {
+            factor = 100
+		} 
+        retire_country_leader = yes
+        hidden_effect = {
+            set_country_flag = chang_kai_shen_become_flag
+			set_country_leader_name = { name = "蒋介石" }
+			set_country_leader_portrait = { portrait = "gfx/Leaders/CHI/Portrait_China_Chiang_Kai_Shek.dds" }
+		}
+
+		add_country_leader_trait = CHI_Chairman
+        add_country_leader_trait = CHI_the_jiang_change
+        add_country_leader_trait = CHI_The_advantage_is_in_my_doctrine_of_proponents
+	}
+}
+
+country_event = { #加入chi
+    id = change_chi.7
+	title = change_chi.7.t
+	desc = change_chi.7.d
+
+    is_triggered_only = yes
+
+	picture = GFX_report_event_chinese_japanese_handshake
+
+    option = { #
+		name = change_chi.7.a 
+		ai_chance = {
+            factor = 100
+		} 
+        CHI = {
+            country_event = { id = change_chi.8 days = 1 }
+        }
+	}
+}
+
+country_event = { #prc加入chi
+    id = change_chi.8
+	title = change_chi.8.t
+	desc = change_chi.8.d
+
+    is_triggered_only = yes
+
+	picture = GFX_report_event_chinese_japanese_handshake
+
+    option = { #
+		name = change_chi.8.a 
+		ai_chance = {
+            factor = 100
+		} 
+        PRC = {
+			every_unit_leader = {
+				set_nationality = CHI
+			}
+		}
+		CHI = { 
+            annex_country = {
+                target = PRC
+                transfer_troops = yes 
+            }
+            add_ideas = CHI_be_family_with_prc
+            add_ideas = CHI_mao
+            add_popularity = {
+				ideology = communism
+				popularity = 0.3
+			}
+        }
+
+        news_event = { id = change_news.19 days = 1 }
+	}
+}
+
+
+country_event = { #加入世界大战
+    id = change_chi.9
+	title = change_chi.9.t
+	desc = change_chi.9.d
+
+    is_triggered_only = yes
+
+	picture = GFX_report_event_chinese_japanese_handshake
+
+    option = { #加入德国一方
+		name = change_chi.9.a 
+		ai_chance = {
+            factor = 50
+            modifier = {
+                GER = {
+                    has_country_flag = has_help_china_flag
+                }
+                factor = 1000
+            }
+		} 
+        GER = {
+            add_to_faction = ROOT
+        }
+        every_state = {
+            limit = {
+                is_core_of = ROOT
+                CONTROLLER = {
+                    is_in_faction_with = GER
+                }
+            }
+            transfer_state = ROOT
+        }
+        news_event = { id = change_news.20 days = 1 }
+	}
+
+    option = { #加入英国一方
+		name = change_chi.9.b
+		ai_chance = {
+            factor = 50
+            modifier = {
+                GER = {
+                    has_country_flag = has_help_china_flag
+                }
+                factor = 0
+            }
+		} 
+        ENG = {
+            add_to_faction = ROOT
+        }
+        every_state = {
+            limit = {
+                is_core_of = ROOT
+                CONTROLLER = {
+                    is_in_faction_with = ENG
+                }
+            }
+            transfer_state = ROOT
+        }
+        news_event = { id = change_news.21 days = 1 }
+
+	}
+
+
+}

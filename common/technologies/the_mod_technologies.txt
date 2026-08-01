@@ -1,0 +1,592 @@
+technologies = {
+
+    GER_destory_bunker_tech = {
+		allow = {
+			always = no
+		}
+
+		research_cost = 1
+		start_year = 1936
+
+		engineer = {    
+			river = {
+                attack = 0.25
+                movement = 0.25
+            }
+
+            fort = {
+				attack = 0.4
+			}
+
+            forest = {
+                attack = -0.025
+            }
+
+            hills = {
+                attack = -0.05
+            }
+
+            jungle = {
+                attack = -0.05
+            }
+
+            marsh = {
+                attack = -0.05 
+            }
+			
+		}
+
+        assault_engineer = {
+			river = {
+                attack = 0.25
+                movement = 0.25
+            }
+            fort = {
+				attack = 0.4
+			}
+
+            forest = {
+                attack = -0.025
+            }
+
+            hills = {
+                attack = -0.05
+            }
+
+            jungle = {
+                attack = -0.05
+            }
+
+            marsh = {
+                attack = -0.05 
+            }
+		}
+
+		armored_engineer = {
+			river = {
+                attack = 0.25
+                movement = 0.25
+            }
+            fort = {
+				attack = 0.4
+			}
+
+            forest = {
+                attack = -0.025
+            }
+
+            hills = {
+                attack = -0.05
+            }
+
+            jungle = {
+                attack = -0.05
+            }
+
+            marsh = {
+                attack = -0.05 
+            }
+		}
+
+        recon = {
+            river = {
+                attack = 0.15
+                movement = 0.15
+            }
+            fort = {
+				attack = 0.25
+			}
+        }
+        mot_recon = {
+            river = {
+                attack = 0.15
+                movement = 0.15
+            }
+            fort = {
+				attack = 0.25
+			}
+        }
+        armored_car_recon = {
+            river = {
+                attack = 0.15
+                movement = 0.15
+            }
+            fort = {
+				attack = 0.25
+			}
+        }
+        light_tank_recon = {
+            river = {
+                attack = 0.15
+                movement = 0.15
+            }
+            fort = {
+				attack = 0.25
+			}
+        }
+        airborne_light_armor = {
+            river = {
+                attack = 0.15
+                movement = 0.15
+            }
+            fort = {
+				attack = 0.25
+			}
+        }
+        rangers_support = {
+            river = {
+                attack = 0.15
+                movement = 0.15
+            }
+            fort = {
+				attack = 0.25
+			}
+        }
+        winter_logistics_support = {
+            river = {
+                attack = 0.15
+                movement = 0.15
+            }
+            fort = {
+				attack = 0.25
+			}
+        }
+        long_range_patrol_support = {
+            river = {
+                attack = 0.15
+                movement = 0.15
+            }
+            fort = {
+				attack = 0.25
+			}
+        }
+        helicopter_recon = {
+            river = {
+                attack = 0.15
+                movement = 0.15
+            }
+            fort = {
+				attack = 0.25
+			}
+        }
+
+        light_flame_tank = {
+            river = {
+                attack = 0.2
+            }
+
+			fort = {
+				attack = 0.5
+			}
+
+            forest = {
+                attack = -0.025
+            }
+
+            hills = {
+                attack = -0.05
+            }
+
+            jungle = {
+                attack = -0.05
+            }
+
+            marsh = {
+                attack = -0.05 
+            }
+		}
+		medium_flame_tank = {
+            river = {
+                attack = 0.3
+            }
+
+			fort = {
+				attack = 0.5
+			}
+
+            forest = {
+                attack = -0.01
+            }
+
+            hills = {
+                attack = -0.02
+            }
+
+            jungle = {
+                attack = -0.02
+            }
+
+            marsh = {
+                attack = -0.02
+            }
+		}
+		heavy_flame_tank = {
+            river = {
+                attack = 0.25
+            }
+
+			fort = {
+				attack = 0.5
+			}
+
+            forest = {
+                attack = -0.025
+            }
+
+            hills = {
+                attack = -0.05
+            }
+
+            jungle = {
+                attack = -0.05
+            }
+
+            marsh = {
+                attack = -0.05 
+            }
+		}
+
+	}
+
+    mod_building_steelworks_tech_1 = {
+        allow = {
+			always = no
+		}
+
+		research_cost = 1
+		start_year = 1936
+
+        on_research_complete = {
+			modify_building_resources = {
+				building = steelworks
+				resource = steel
+				amount = 2
+			}
+		}
+    }
+
+    mod_building_steelworks_tech_2 = {
+        allow = {
+			always = no
+		}
+
+		research_cost = 1
+		start_year = 1936
+
+        on_research_complete = {
+			modify_building_resources = {
+				building = steelworks
+				resource = steel
+				amount = 2
+			}
+		}
+    }
+
+    mod_building_steelworks_tech_3 = {
+        allow = {
+			always = no
+		}
+
+		research_cost = 1
+		start_year = 1936
+
+        on_research_complete = {
+			modify_building_resources = {
+				building = steelworks
+				resource = steel
+				amount = 2
+			}
+		}
+    }
+
+    mod_building_steelworks_tech_4 = {
+        allow = {
+			always = no
+		}
+
+		research_cost = 1
+		start_year = 1936
+
+        on_research_complete = {
+			modify_building_resources = {
+				building = steelworks
+				resource = steel
+				amount = 3
+			}
+		}
+    }
+
+    mod_building_steelworks_tech_5 = {
+        allow = {
+			always = no
+		}
+
+		research_cost = 1
+		start_year = 1936
+
+        on_research_complete = {
+			modify_building_resources = {
+				building = steelworks
+				resource = steel
+				amount = 3
+			}
+		}
+    }
+
+    mod_building_aluminum_smelter_tech_1 = {
+        allow = {
+			always = no
+		}
+
+		research_cost = 1
+		start_year = 1936
+
+        on_research_complete = {
+			modify_building_resources = {
+				building = aluminum_smelter
+				resource = aluminium
+				amount = 2
+			}
+		}
+    }
+
+    mod_building_aluminum_smelter_tech_2 = {
+        allow = {
+			always = no
+		}
+
+		research_cost = 1
+		start_year = 1936
+        
+        on_research_complete = {
+			modify_building_resources = {
+				building = aluminum_smelter
+				resource = aluminium
+				amount = 2
+			}
+		}
+    }
+
+    mod_building_aluminum_smelter_tech_3 = {
+        allow = {
+			always = no
+		}
+
+		research_cost = 1
+		start_year = 1936
+
+        on_research_complete = {
+			modify_building_resources = {
+				building = aluminum_smelter
+				resource = aluminium
+				amount = 2
+			}
+		}
+    }
+
+    mod_building_aluminum_smelter_tech_4 = {
+        allow = {
+			always = no
+		}
+
+		research_cost = 1
+		start_year = 1936
+
+        on_research_complete = {
+			modify_building_resources = {
+				building = aluminum_smelter
+				resource = aluminium
+				amount = 2
+			}
+		}
+    }
+
+    mod_building_aluminum_smelter_tech_5 = {
+        allow = {
+			always = no
+		}
+
+		research_cost = 1
+		start_year = 1936
+
+        on_research_complete = {
+			modify_building_resources = {
+				building = aluminum_smelter
+				resource = aluminium
+				amount = 2
+			}
+		}
+    }
+
+    mod_building_tungsten_smelter_tech_1 = {
+        allow = {
+			always = no
+		}
+
+		research_cost = 1
+		start_year = 1936
+
+        on_research_complete = {
+			modify_building_resources = {
+				building = tungsten_smelter
+				resource = tungsten
+				amount = 2
+			}
+		}
+    }
+
+    mod_building_tungsten_smelter_tech_2 = {
+        allow = {
+			always = no
+		}
+
+		research_cost = 1
+		start_year = 1936
+
+        on_research_complete = {
+			modify_building_resources = {
+				building = tungsten_smelter
+				resource = tungsten
+				amount = 2
+			}
+		}
+    }
+
+    mod_building_tungsten_smelter_tech_3 = {
+        allow = {
+			always = no
+		}
+
+		research_cost = 1
+		start_year = 1936
+
+        on_research_complete = {
+			modify_building_resources = {
+				building = tungsten_smelter
+				resource = tungsten
+				amount = 2
+			}
+		}
+    }
+
+    mod_building_tungsten_smelter_tech_4 = {
+        allow = {
+			always = no
+		}
+
+		research_cost = 1
+		start_year = 1936
+
+        on_research_complete = {
+			modify_building_resources = {
+				building = tungsten_smelter
+				resource = tungsten
+				amount = 2
+			}
+		}
+    }
+
+    mod_building_tungsten_smelter_tech_5 = {
+        allow = {
+			always = no
+		}
+
+		research_cost = 1
+		start_year = 1936
+
+        on_research_complete = {
+			modify_building_resources = {
+				building = tungsten_smelter
+				resource = tungsten
+				amount = 2
+			}
+		}
+    }
+
+    mod_building_chromium_smelter_tech_1 = {
+        allow = {
+			always = no
+		}
+
+		research_cost = 1
+		start_year = 1936
+
+        on_research_complete = {
+			modify_building_resources = {
+				building = chromium_smelter
+				resource = chromium
+				amount = 2
+			}
+		}
+    }
+
+    mod_building_chromium_smelter_tech_2 = {
+        allow = {
+			always = no
+		}
+
+		research_cost = 1
+		start_year = 1936
+
+        on_research_complete = {
+			modify_building_resources = {
+				building = chromium_smelter
+				resource = chromium
+				amount = 2
+			}
+		}
+    }
+
+    mod_building_chromium_smelter_tech_3 = {
+        allow = {
+			always = no
+		}
+
+		research_cost = 1
+		start_year = 1936
+
+        on_research_complete = {
+			modify_building_resources = {
+				building = chromium_smelter
+				resource = chromium
+				amount = 2
+			}
+		}
+    }
+
+    mod_building_chromium_smelter_tech_4 = {
+        allow = {
+			always = no
+		}
+
+		research_cost = 1
+		start_year = 1936
+
+        on_research_complete = {
+			modify_building_resources = {
+				building = chromium_smelter
+				resource = chromium
+				amount = 2
+			}
+		}
+    }
+
+    mod_building_chromium_smelter_tech_5 = {
+        allow = {
+			always = no
+		}
+
+		research_cost = 1
+		start_year = 1936
+        
+        on_research_complete = {
+			modify_building_resources = {
+				building = chromium_smelter
+				resource = chromium
+				amount = 2
+			}
+		}
+    }
+
+
+}

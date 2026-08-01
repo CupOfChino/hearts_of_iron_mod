@@ -1,0 +1,1138 @@
+add_namespace = change_eng
+
+country_event = { #旧同盟国
+    id = change_eng.1
+	title = change_eng.1.t
+	desc = change_eng.1.d
+
+    is_triggered_only = yes
+
+	picture = GFX_event_05
+
+    option = {
+		name = change_eng.1.a
+		ai_chance = {
+			modifier = {
+				factor = 100
+			}
+		}
+        
+		ENG = {
+            create_faction = ENG_old_friend_faction
+			add_to_faction = FRA
+		}
+
+        hidden_effect = {
+            if = {
+                limit = {
+                    ENG = {
+                        has_war_with = FRA
+                    }
+                }
+                white_peace = FRA
+            }
+        }
+
+	}
+}
+
+country_event = { #三国协约
+    id = change_eng.2
+	title = change_eng.2.t
+	desc = change_eng.2.d
+
+    is_triggered_only = yes
+
+	picture = GFX_news_event_canada_patriation
+
+    option = {
+        name = change_eng.2.a
+        ai_chance = {
+            modifier = {
+                factor = 1000
+            }
+        }
+
+		set_country_flag = the_triple_entente_flag
+		activate_mission = we_must_prepare_war_01
+
+		add_offsite_building = { type = industrial_complex level = 25 }
+		#add_offsite_building = { type = arms_factory level = 25 }
+		add_offsite_building = { type = dockyard level = 15 }
+
+		#add_ideas = GER_unprepare_war
+
+		if = {
+			limit = {
+				has_country_flag = try_new_third_empire_prepare_war_flag
+			}
+			add_war_support = 0.2
+		} 
+		else = {
+			add_ideas = GER_unprepare_war
+			add_war_support = 0.2
+		}
+
+		add_dynamic_modifier = {
+			modifier = mod_with_friend_eng
+		}
+
+		if = {
+			limit = {
+				is_ai = yes
+			}
+			add_manpower = 5000000
+			add_offsite_building = { type = industrial_complex level = 25 }
+			add_offsite_building = { type = arms_factory level = 25 }
+			add_offsite_building = { type = dockyard level = 15 }
+
+            army_experience = 100
+			navy_experience = 100
+			air_experience = 100
+
+            add_equipment_to_stockpile = {
+				type = infantry_equipment
+				amount = 20000
+			}
+			add_equipment_to_stockpile = { 
+				type = motorized_equipment
+				amount = 2000
+			}
+			add_equipment_to_stockpile = {
+				type = artillery_equipment
+				amount = 800
+			}
+            add_equipment_to_stockpile = {
+				type = support_equipment
+				amount = 3000
+			}
+
+            if = {
+				limit = {
+					has_tech = advanced_medium_tank_chassis
+				}
+				add_equipment_to_stockpile = { 
+					type = medium_tank_chassis_3 
+					amount = 2000
+				}
+			}
+			else_if = {
+				limit = {
+					has_tech = improved_medium_tank_chassis
+				}
+				add_equipment_to_stockpile = { 
+					type = medium_tank_chassis_2 
+					amount = 2000
+				}
+			}
+			else = {
+				add_equipment_to_stockpile = { 
+					type = medium_tank_chassis_1 
+					amount = 2000
+				}
+			}
+
+            if = {
+				limit = {
+					has_tech = advanced_medium_tank_chassis
+				}
+				add_equipment_to_stockpile = { 
+					type = light_tank_chassis_3 
+					amount = 2000
+				}
+			}
+			else_if = {
+				limit = {
+					has_tech = improved_medium_tank_chassis
+				}
+				add_equipment_to_stockpile = { 
+					type = light_tank_chassis_2 
+					amount = 2000
+				}
+			}
+			else = {
+				add_equipment_to_stockpile = { 
+					type = light_tank_chassis_1 
+					amount = 2000
+				}
+			}
+
+            division_template = {
+				name = "联合装甲师"
+				regiments = {
+					motorized = { x = 0 y = 0 }
+					motorized = { x = 0 y = 1 }
+					motorized = { x = 0 y = 2 }
+					motorized = { x = 0 y = 3 }
+					motorized = { x = 0 y = 4 }
+					motorized = { x = 1 y = 0 }
+					motorized = { x = 1 y = 1 }
+					motorized = { x = 1 y = 2 }
+					medium_armor = { x = 2 y = 0 }
+					medium_armor = { x = 2 y = 1 }
+					medium_armor = { x = 2 y = 2 }
+					medium_armor = { x = 2 y = 3 }
+					medium_armor = { x = 2 y = 4 }
+					medium_armor = { x = 3 y = 0 }
+					medium_armor = { x = 3 y = 1 }
+					medium_armor = { x = 3 y = 2 }
+					medium_armor = { x = 3 y = 3 }
+					mot_anti_air_brigade = { x = 4 y = 0 }
+					mot_anti_tank_brigade = { x = 4 y = 1 }
+				}
+				regimental_support = {
+					field_guns = { x = 0 y = 0 }
+					field_guns = { x = 1 y = 0 }
+					medium_tank_destroyer_support = { x = 2 y = 0 }
+					medium_tank_destroyer_support = { x = 3 y = 0 }
+					medium_sp_anti_air_support = { x = 4 y = 0 }
+				}
+				support = {
+					engineer = { x = 0 y = 0 }
+					recon = { x = 0 y = 1 }
+					field_hospital =  { x = 0 y = 2 }
+					logistics_company = { x = 0 y = 3 }
+					artillery =  { x = 0 y = 4 }
+				}
+			}
+			random_owned_controlled_state = {
+				limit = { ENG = { has_full_control_of_state = PREV } }
+				prioritize = { capital = ENG }
+				create_unit = {
+					division = "name = \"联合装甲师\" division_template = \"联合装甲师\" start_experience_factor = 0.5" 
+					owner = ENG
+					count = 8
+				}
+			}
+
+			add_equipment_to_stockpile = {
+				type = infantry_equipment
+				amount = 20000
+			}
+			add_equipment_to_stockpile = { 
+				type = train_equipment 
+				amount = 100
+			}
+			add_equipment_to_stockpile = {
+				type = artillery_equipment
+				amount = 3000
+			}
+			add_equipment_to_stockpile = {
+				type = cat_anti_tank_equipment
+				amount = 1000
+			}
+            add_equipment_to_stockpile = {
+				type = support_equipment
+				amount = 5000
+			}
+			add_equipment_to_stockpile = { 
+				type = anti_air_equipment 
+				amount = 1000
+			}
+
+            division_template = {
+				name = "联合步兵师"
+				regiments = {
+					infantry = { x = 0 y = 0 }
+					infantry = { x = 0 y = 1 }
+					infantry = { x = 0 y = 2 }
+					infantry = { x = 0 y = 3 }
+					infantry = { x = 0 y = 4 }
+					infantry = { x = 1 y = 0 }
+					infantry = { x = 1 y = 1 }
+					infantry = { x = 1 y = 2 }
+					infantry = { x = 1 y = 3 }
+					infantry = { x = 1 y = 4 }
+					infantry = { x = 2 y = 0 }
+					infantry = { x = 2 y = 1 }
+					artillery_brigade = { x = 3 y = 0 }
+					artillery_brigade = { x = 3 y = 1 }
+					anti_air_brigade = { x = 3 y = 2 }
+					anti_tank_brigade = { x = 3 y = 2 }
+					medium_armor = { x = 4 y = 0 }
+					medium_armor = { x = 4 y = 1 }
+				}
+				regimental_support = {
+					field_guns = { x = 0 y = 0 }
+					field_guns = { x = 1 y = 0 }
+					medium_tank_destroyer_support = { x = 2 y = 0 }
+					medium_tank_destroyer_support = { x = 3 y = 0 }
+					medium_sp_anti_air_support = { x = 4 y = 0 }
+				}
+				support = {
+					engineer = { x = 0 y = 0 }
+					recon = { x = 0 y = 1 }
+					field_hospital =  { x = 0 y = 2 }
+					logistics_company = { x = 0 y = 3 }
+					artillery =  { x = 0 y = 4 }
+				}
+			}
+			random_owned_controlled_state = {
+				limit = { ENG = { has_full_control_of_state = PREV } }
+				prioritize = { capital = ENG }
+				create_unit = {
+					division = "name = \"联合步兵师\" division_template = \"联合步兵师\" start_experience_factor = 0.5" 
+					owner = ENG
+					count = 16
+				}
+			}
+
+            
+		}
+		
+
+        hidden_effect = {
+			add_ideas = mod_the_buff_1
+			add_ideas = mod_the_buff_2
+			add_ideas = mod_the_buff_3
+			add_ideas = mod_the_buff_4
+			add_ideas = mod_the_buff_5
+			add_ideas = mod_the_buff_6
+			news_event = { id = change_news.2 days = 2 }
+            SOV = {
+                set_country_flag = join_eng_factions
+
+				add_dynamic_modifier = {
+					modifier = mod_with_friend_eng
+					scope = ENG
+				}
+            }
+            if = {
+                limit = {
+                    ENG = {
+                        has_war_with = USA
+                    }
+                }
+                white_peace = USA
+            }
+
+            if = {
+                limit = {
+                    USA = {
+                        has_war_with = SOV
+                    }
+                }
+                USA = {
+                    white_peace = SOV
+                }
+            }
+
+            if = {
+                limit = {
+                    ENG = {
+                        has_war_with = SOV
+                    }
+                }
+                white_peace = SOV
+            }
+
+            ENG = {
+                add_ai_strategy = {
+					type = alliance
+					id = USA
+					value = 1000
+				}
+				add_ai_strategy = {
+					type = protect
+					id = USA
+					value = 1000
+				}
+				add_ai_strategy = {
+					type = send_volunteers_desire
+					id = USA
+					value = 1000
+				}
+				add_ai_strategy = {
+					type = support
+					id = USA
+					value = 1000
+				}
+
+                add_ai_strategy = {
+					type = alliance
+					id = SOV
+					value = 1000
+				}
+				add_ai_strategy = {
+					type = protect
+					id = SOV
+					value = 1000
+				}
+				add_ai_strategy = {
+					type = send_volunteers_desire
+					id = SOV
+					value = 1000
+				}
+				add_ai_strategy = {
+					type = support
+					id = SOV
+					value = 1000
+				}
+            }
+
+            USA = {
+				add_dynamic_modifier = {
+					modifier = mod_with_friend_eng
+					scope = ENG
+				}
+                add_ai_strategy = {
+					type = alliance
+					id = ENG
+					value = 1000
+				}
+				add_ai_strategy = {
+					type = protect
+					id = ENG
+					value = 1000
+				}
+				add_ai_strategy = {
+					type = send_volunteers_desire
+					id = ENG
+					value = 1000
+				}
+				add_ai_strategy = {
+					type = support
+					id = ENG
+					value = 1000
+				}
+
+                add_ai_strategy = {
+					type = alliance
+					id = SOV
+					value = 1000
+				}
+				add_ai_strategy = {
+					type = protect
+					id = SOV
+					value = 1000
+				}
+				add_ai_strategy = {
+					type = send_volunteers_desire
+					id = SOV
+					value = 1000
+				}
+				add_ai_strategy = {
+					type = support
+					id = SOV
+					value = 1000
+				}
+            }
+
+            SOV = {
+                add_ai_strategy = {
+					type = alliance
+					id = ENG
+					value = 1000
+				}
+				add_ai_strategy = {
+					type = protect
+					id = ENG
+					value = 1000
+				}
+				add_ai_strategy = {
+					type = send_volunteers_desire
+					id = ENG
+					value = 1000
+				}
+				add_ai_strategy = {
+					type = support
+					id = ENG
+					value = 1000
+				}
+
+                add_ai_strategy = {
+					type = alliance
+					id = USA
+					value = 1000
+				}
+				add_ai_strategy = {
+					type = protect
+					id = USA
+					value = 1000
+				}
+				add_ai_strategy = {
+					type = send_volunteers_desire
+					id = USA
+					value = 1000
+				}
+				add_ai_strategy = {
+					type = support
+					id = USA
+					value = 1000
+				}
+            }
+        }
+
+
+        ENG = {
+            create_faction_from_template = the_mod_faction_ENG_the_third_empire_faction
+			add_to_faction = SOV
+			add_to_faction = USA
+			add_to_faction = MON
+			add_to_faction = TAN
+        }
+
+    }
+}
+
+country_event = { #苏美回应
+    id = change_eng.3
+	title = change_eng.3.t
+	desc = change_eng.3.d
+
+    is_triggered_only = yes
+
+	picture = GFX_news_event_canada_patriation
+
+    option = {
+        name = change_eng.3.a
+        ai_chance = {
+            modifier = {
+                factor = 1000
+            }
+        }
+		add_offsite_building = { type = industrial_complex level = 25 }
+		add_offsite_building = { type = arms_factory level = 25 }
+		add_offsite_building = { type = dockyard level = 15 }
+
+		activate_mission = we_must_prepare_war_01
+
+		#add_ideas = GER_unprepare_war
+		if = {
+			limit = {
+				has_country_flag = try_new_third_empire_prepare_war_flag
+			}
+			add_war_support = 0.2
+		} 
+		else = {
+			add_ideas = GER_unprepare_war
+			add_war_support = 0.2
+		}
+
+		add_ideas = mod_the_buff_1
+		add_ideas = mod_the_buff_2
+		add_ideas = mod_the_buff_3
+		add_ideas = mod_the_buff_4
+		add_ideas = mod_the_buff_5
+		add_ideas = mod_the_buff_6
+
+		if = {
+			limit = {
+				is_ai = yes
+			}
+			add_manpower = 5000000
+
+            army_experience = 100
+			navy_experience = 100
+			air_experience = 100
+
+            add_equipment_to_stockpile = {
+				type = infantry_equipment
+				amount = 20000
+			}
+			add_equipment_to_stockpile = { 
+				type = motorized_equipment
+				amount = 2000
+			}
+			add_equipment_to_stockpile = {
+				type = artillery_equipment
+				amount = 800
+			}
+            add_equipment_to_stockpile = {
+				type = support_equipment
+				amount = 3000
+			}
+
+            if = {
+				limit = {
+					has_tech = advanced_medium_tank_chassis
+				}
+				add_equipment_to_stockpile = { 
+					type = medium_tank_chassis_3 
+					amount = 2000
+				}
+			}
+			else_if = {
+				limit = {
+					has_tech = improved_medium_tank_chassis
+				}
+				add_equipment_to_stockpile = { 
+					type = medium_tank_chassis_2 
+					amount = 2000
+				}
+			}
+			else = {
+				add_equipment_to_stockpile = { 
+					type = medium_tank_chassis_1 
+					amount = 2000
+				}
+			}
+
+            if = {
+				limit = {
+					has_tech = advanced_medium_tank_chassis
+				}
+				add_equipment_to_stockpile = { 
+					type = light_tank_chassis_3 
+					amount = 2000
+				}
+			}
+			else_if = {
+				limit = {
+					has_tech = improved_medium_tank_chassis
+				}
+				add_equipment_to_stockpile = { 
+					type = light_tank_chassis_2 
+					amount = 2000
+				}
+			}
+			else = {
+				add_equipment_to_stockpile = { 
+					type = light_tank_chassis_1 
+					amount = 2000
+				}
+			}
+
+            division_template = {
+					name = "联合装甲师"
+					regiments = {
+						motorized = { x = 0 y = 0 }
+						motorized = { x = 0 y = 1 }
+						motorized = { x = 0 y = 2 }
+                        motorized = { x = 0 y = 3 }
+                        motorized = { x = 0 y = 4 }
+                        motorized = { x = 1 y = 0 }
+						motorized = { x = 1 y = 1 }
+						motorized = { x = 1 y = 2 }
+						medium_armor = { x = 2 y = 0 }
+						medium_armor = { x = 2 y = 1 }
+                        medium_armor = { x = 2 y = 2 }
+                        medium_armor = { x = 2 y = 3 }
+                        medium_armor = { x = 2 y = 4 }
+                        medium_armor = { x = 3 y = 0 }
+						medium_armor = { x = 3 y = 1 }
+                        medium_armor = { x = 3 y = 2 }
+                        medium_armor = { x = 3 y = 3 }
+                        mot_anti_air_brigade = { x = 4 y = 0 }
+                        mot_anti_tank_brigade = { x = 4 y = 1 }
+					}
+					regimental_support = {
+						field_guns = { x = 0 y = 0 }
+						field_guns = { x = 1 y = 0 }
+						medium_tank_destroyer_support = { x = 2 y = 0 }
+						medium_tank_destroyer_support = { x = 3 y = 0 }
+						medium_sp_anti_air_support = { x = 4 y = 0 }
+					}
+					support = {
+						engineer = { x = 0 y = 0 }
+						recon = { x = 0 y = 1 }
+                        field_hospital =  { x = 0 y = 2 }
+                        logistics_company = { x = 0 y = 3 }
+                        artillery =  { x = 0 y = 4 }
+					}
+				}
+				random_owned_controlled_state = {
+					limit = { USA = { has_full_control_of_state = PREV } }
+					prioritize = { capital = USA }
+					create_unit = {
+						division = "name = \"联合装甲师\" division_template = \"联合装甲师\" start_experience_factor = 0.5" 
+						owner = USA
+						count = 24
+					}
+				}
+				random_owned_controlled_state = {
+					limit = { SOV = { has_full_control_of_state = PREV } }
+					prioritize = { capital = SOV }
+					create_unit = {
+						division = "name = \"联合装甲师\" division_template = \"联合装甲师\" start_experience_factor = 0.5" 
+						owner = SOV
+						count = 24
+					}
+				}
+
+			add_equipment_to_stockpile = {
+				type = infantry_equipment
+				amount = 20000
+			}
+			add_equipment_to_stockpile = { 
+				type = train_equipment 
+				amount = 100
+			}
+			add_equipment_to_stockpile = {
+				type = artillery_equipment
+				amount = 3000
+			}
+			add_equipment_to_stockpile = {
+				type = cat_anti_tank_equipment
+				amount = 1000
+			}
+            add_equipment_to_stockpile = {
+				type = support_equipment
+				amount = 5000
+			}
+			add_equipment_to_stockpile = { 
+				type = anti_air_equipment 
+				amount = 1000
+			}
+
+            division_template = {
+					name = "联合步兵师"
+					regiments = {
+						infantry = { x = 0 y = 0 }
+						infantry = { x = 0 y = 1 }
+						infantry = { x = 0 y = 2 }
+                        infantry = { x = 0 y = 3 }
+                        infantry = { x = 0 y = 4 }
+						infantry = { x = 1 y = 0 }
+						infantry = { x = 1 y = 1 }
+						infantry = { x = 1 y = 2 }
+                        infantry = { x = 1 y = 3 }
+                        infantry = { x = 1 y = 4 }
+						infantry = { x = 2 y = 0 }
+						infantry = { x = 2 y = 1 }
+						artillery_brigade = { x = 3 y = 0 }
+						artillery_brigade = { x = 3 y = 1 }
+                        anti_air_brigade = { x = 3 y = 2 }
+                        anti_tank_brigade = { x = 3 y = 2 }
+                        medium_armor = { x = 4 y = 0 }
+                        medium_armor = { x = 4 y = 1 }
+					}
+					regimental_support = {
+						field_guns = { x = 0 y = 0 }
+						field_guns = { x = 1 y = 0 }
+						medium_tank_destroyer_support = { x = 2 y = 0 }
+						medium_tank_destroyer_support = { x = 3 y = 0 }
+						medium_sp_anti_air_support = { x = 4 y = 0 }
+					}
+					support = {
+						engineer = { x = 0 y = 0 }
+						recon = { x = 0 y = 1 }
+                        field_hospital =  { x = 0 y = 2 }
+                        logistics_company = { x = 0 y = 3 }
+                        artillery =  { x = 0 y = 4 }
+					}
+				}
+				random_owned_controlled_state = {
+					limit = { USA = { has_full_control_of_state = PREV } }
+					prioritize = { capital = USA }
+					create_unit = {
+						division = "name = \"联合步兵师\" division_template = \"联合步兵师\" start_experience_factor = 0.5" 
+						owner = USA
+						count = 16
+					}
+				}
+				random_owned_controlled_state = {
+					limit = { SOV = { has_full_control_of_state = PREV } }
+					prioritize = { capital = SOV }
+					create_unit = {
+						division = "name = \"联合步兵师\" division_template = \"联合步兵师\" start_experience_factor = 0.5" 
+						owner = SOV
+						count = 16
+					}
+				}
+            
+		}
+			
+    }
+}
+
+country_event = { #英国邀请土耳其
+    id = change_eng.4
+	title = change_eng.4.t
+	desc = change_eng.4.d
+
+    is_triggered_only = yes
+
+	picture = GFX_news_event_canada_patriation
+
+    option = {
+        name = change_eng.4.a
+        ai_chance = {
+            modifier = {
+                factor = 100
+            }
+        }
+		ENG = {
+			add_to_faction = TUR
+		}
+		news_event = { id = change_news.28 days = 1 }
+    }
+
+	option = {
+        name = change_eng.4.b
+        ai_chance = {
+            modifier = {
+                factor = 0
+            }
+        }
+		ENG = {
+			country_event = { id = change_eng.6 days = 1 }
+		}
+    }
+}
+
+country_event = { #英国邀请希腊
+    id = change_eng.5
+	title = change_eng.5.t
+	desc = change_eng.5.d
+
+    is_triggered_only = yes
+
+	picture = GFX_news_event_canada_patriation
+
+    option = {
+        name = change_eng.5.a
+        ai_chance = {
+            modifier = {
+                factor = 100
+            }
+        }
+		ENG = {
+			add_to_faction = GRE
+		}
+    }
+
+	option = {
+        name = change_eng.5.b
+        ai_chance = {
+            modifier = {
+                factor = 0
+            }
+        }
+		ENG = {
+			country_event = { id = change_eng.6 days = 1 }
+		}
+    }
+}
+
+country_event = { #被拒绝
+    id = change_eng.6
+	title = change_eng.6.t
+	desc = change_eng.6.d
+
+    is_triggered_only = yes
+
+    option = {
+        name = change_eng.6.a
+        ai_chance = {
+            modifier = {
+                factor = 100
+            }
+        }
+    }
+
+}
+
+country_event = { #同盟国演习回应
+    id = change_eng.7
+	title = change_eng.7.t
+	desc = change_eng.7.d
+	picture = GFX_report_event_DEN_fascist_troops
+
+    is_triggered_only = yes
+
+    option = {
+        name = change_eng.7.a
+        ai_chance = {
+            modifier = {
+                factor = 100
+            }
+        }
+		add_political_power = 100
+		add_war_support = 0.1
+		add_ideas = war_economy
+    }
+
+}
+
+country_event = { #同盟国空军入侵！！
+    id = change_eng.8
+	title = change_eng.8.t
+	desc = change_eng.8.d
+
+	picture = GFX_report_event_GER_bombers
+
+    is_triggered_only = yes
+
+    option = {
+        name = change_eng.8.a
+        ai_chance = {
+            modifier = {
+                factor = 100
+            }
+        }
+		add_political_power = 100
+		add_war_support = 0.1
+		air_experience = 100
+    }
+
+}
+
+country_event = { #同盟国海军异常举动入侵！！
+    id = change_eng.9
+	title = change_eng.9.t
+	desc = change_eng.9.d
+
+	picture = GFX_report_event_usa_heavy_cruiser
+
+    is_triggered_only = yes
+
+    option = {
+        name = change_eng.9.a
+        ai_chance = {
+            modifier = {
+                factor = 100
+            }
+        }
+		add_political_power = 100
+		add_war_support = 0.1
+		navy_experience = 100
+		add_command_power = 50
+    }
+
+}
+
+country_event = { #同盟国陆军大规模集结！！
+    id = change_eng.10
+	title = change_eng.10.t
+	desc = change_eng.10.d
+
+	picture = GFX_report_event_saf_soldiers_2
+
+    is_triggered_only = yes
+
+    option = {
+        name = change_eng.10.a
+        ai_chance = {
+            modifier = {
+                factor = 100
+            }
+        }
+		add_political_power = 100
+		add_war_support = 0.2
+		army_experience = 100
+		add_command_power = 50
+    }
+
+}
+
+country_event = { #法国军队制造边境摩擦！！！
+    id = change_eng.11
+	title = change_eng.11.t
+	desc = change_eng.11.d
+
+	picture = GFX_report_event_bul_ff_troops_yugoslavia
+
+
+    is_triggered_only = yes
+
+    option = {
+        name = change_eng.11.a
+        ai_chance = {
+            modifier = {
+                factor = 100
+            }
+        }
+		add_political_power = 100
+		add_war_support = 0.2
+		army_experience = 100
+		add_command_power = 50
+    }
+
+}
+
+country_event = { #海军陆战队训练
+    id = change_eng.12
+	title = change_eng.12.t
+	desc = change_eng.12.d
+
+	picture = GFX_news_event_canadian_soldiers
+
+
+    is_triggered_only = yes
+
+    option = {
+        name = change_eng.12.a
+        ai_chance = {
+            modifier = {
+                factor = 100
+            }
+        }
+		navy_experience = -20
+		add_timed_idea = { 
+			idea = ENG_train_ideas
+			days = 60
+		}
+    }
+
+}
+
+country_event = { #海军陆战队训练完成
+    id = change_eng.13
+	title = change_eng.13.t
+	desc = change_eng.13.d
+
+	picture = GFX_news_event_canadian_soldiers
+
+
+    is_triggered_only = yes
+
+    option = {
+        name = change_eng.13.a
+        ai_chance = {
+            modifier = {
+                factor = 100
+            }
+        }
+		navy_experience = 20
+		war_support_factor = 0.1
+		add_ideas = ENG_the_better_navy_army_ideas
+		set_technology = { amphibious_drive = 1 }
+		#set_technology = { amphibious_mechanized_equipment_1 = 1 }
+		set_technology = { amphibious_mechanized_infantry = 1 }
+
+		create_equipment_variant = {
+			name = "两栖装甲"
+			type = medium_tank_amphibious_chassis_2
+			parent_version = 0
+			modules = {
+				main_armament_slot  = tank_medium_cannon_2
+				turret_type_slot = tank_medium_three_man_tank_turret 
+				suspension_type_slot = tank_torsion_bar_suspension
+				armor_type_slot = tank_riveted_armor
+				engine_type_slot = tank_diesel_engine
+				special_type_slot_1 = secondary_turret_small_cannon
+				special_type_slot_2 = secondary_turret_small_cannon
+				special_type_slot_3 = amphibious_drive
+				special_type_slot_4 = easy_maintenance
+			}
+			upgrades = {
+				tank_nsb_engine_upgrade = 0
+				tank_nsb_armor_upgrade = 4
+			}
+		}
+
+		create_equipment_variant = {
+			name = "TankDestoryer"
+			type = medium_tank_destroyer_chassis_2
+			parent_version = 0
+			modules = {
+				main_armament_slot = tank_high_velocity_cannon_2
+				turret_type_slot = tank_medium_fixed_superstructure_turret #炮塔
+				suspension_type_slot = tank_bogie_suspension #悬挂
+				armor_type_slot = tank_riveted_armor #装甲
+				engine_type_slot = tank_gasoline_engine #引擎
+				special_type_slot_1 = easy_maintenance
+				special_type_slot_2 = secondary_turret_small_cannon
+				special_type_slot_3 = secondary_turret_small_cannon
+				special_type_slot_4 = squeezebore_adaptor
+			}
+			upgrades = {
+				tank_nsb_engine_upgrade = 0
+				tank_nsb_armor_upgrade = 4
+			}
+		}
+
+		add_equipment_to_stockpile = {
+			type = amphibious_mechanized_equipment
+			amount = 5000
+		}
+
+		add_equipment_to_stockpile = {
+			type = medium_tank_amphibious_chassis
+			amount = 5000
+		}
+
+		add_equipment_to_stockpile = {
+			type = medium_tank_destroyer_chassis
+			amount = 5000
+		}
+
+		division_template = {
+			name = "精英海军陆战队"
+			regiments = {
+				amphibious_mechanized = { x = 0 y = 0 }
+				amphibious_mechanized = { x = 0 y = 1 }
+				amphibious_mechanized = { x = 0 y = 2 }
+				amphibious_mechanized = { x = 0 y = 3 }
+				amphibious_mechanized = { x = 1 y = 0 }
+				amphibious_mechanized = { x = 1 y = 1 }
+				amphibious_mechanized = { x = 1 y = 2 }
+				amphibious_mechanized = { x = 1 y = 3 }
+				amphibious_medium_armor = { x = 2 y = 0 }
+				amphibious_medium_armor = { x = 2 y = 1 }
+				amphibious_medium_armor = { x = 2 y = 2 }
+				amphibious_medium_armor = { x = 2 y = 3 }
+				amphibious_medium_armor = { x = 3 y = 0 }
+				amphibious_medium_armor = { x = 3 y = 1 }
+				amphibious_medium_armor = { x = 3 y = 2 }
+				amphibious_medium_armor = { x = 3 y = 3 }
+				medium_tank_destroyer_brigade = { x = 4 y = 0 }
+				medium_tank_destroyer_brigade = { x = 4 y = 1 }
+			}
+			regimental_support = {
+				field_guns = { x = 0 y = 0 }
+				field_guns = { x = 1 y = 0 }
+				medium_tank_destroyer_support = { x = 2 y = 0 }
+				medium_tank_destroyer_support = { x = 3 y = 0 }
+				medium_sp_anti_air_support = { x = 4 y = 0 }
+			}
+			support = {
+				pioneer_support = { x = 0 y = 0 }
+				light_tank_recon = { x = 0 y = 1 }
+				field_hospital = { x = 0 y = 2 }
+				logistics_company = { x = 0 y = 3 }
+				medium_flame_tank = { x = 0 y = 4 }
+			}
+		}
+		if = {
+			limit = {
+				is_ai = yes
+			}
+			capital_scope = {
+				create_unit = {
+					division = "name = \"精英海军陆战队\" division_template = \"精英海军陆战队\" start_equipment_factor = 1 start_experience_factor = 1" 
+					owner = ROOT
+					count = 24
+				}
+			}
+		} else = {
+			capital_scope = {
+				create_unit = {
+					division = "name = \"精英海军陆战队\" division_template = \"精英海军陆战队\" start_equipment_factor = 1 start_experience_factor = 1" 
+					owner = ROOT
+					count = 12
+				}
+			}
+		}
+
+    }
+
+}
+
+country_event = { #协约国军队异常调动
+    id = change_eng.14
+	title = change_eng.14.t
+	desc = change_eng.14.d
+
+	picture = GFX_news_event_canadian_soldiers
+
+
+    is_triggered_only = yes
+
+    option = {
+        name = change_eng.14.a
+        ai_chance = {
+            modifier = {
+                factor = 100
+            }
+        }
+		war_support_factor = 0.1
+
+    }
+
+}
+
+
+
+

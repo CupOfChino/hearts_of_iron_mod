@@ -1,0 +1,86 @@
+units = {
+    # 来自州 36
+    division = {
+        name = "精英海军陆战队"
+        location = 11318
+        division_template = "精英海军陆战队"
+        start_experience_factor = 1
+        start_equipment_factor = 1
+    }
+    division = {
+        name = "精英海军陆战队"
+        location = 9335
+        division_template = "精英海军陆战队"
+        start_experience_factor = 1
+        start_equipment_factor = 1
+    }
+    division = {
+        name = "精英海军陆战队"
+        location = 6336
+        division_template = "精英海军陆战队"
+        start_experience_factor = 1
+        start_equipment_factor = 1
+    }
+
+    # 来自州 7
+    division = {
+        name = "精英海军陆战队"
+        location = 3314
+        division_template = "精英海军陆战队"
+        start_experience_factor = 1
+        start_equipment_factor = 1
+    }
+    division = {
+        name = "精英海军陆战队"
+        location = 68
+        division_template = "精英海军陆战队"
+        start_experience_factor = 1
+        start_equipment_factor = 1
+    }
+    division = {
+        name = "精英海军陆战队"
+        location = 3211
+        division_template = "精英海军陆战队"
+        start_experience_factor = 1
+        start_equipment_factor = 1
+    }
+    division = {
+        name = "精英海军陆战队"
+        location = 9498
+        division_template = "精英海军陆战队"
+        start_experience_factor = 1
+        start_equipment_factor = 1
+    }
+
+    # 来自州 35
+    division = {
+        name = "精英海军陆战队"
+        location = 9431
+        division_template = "精英海军陆战队"
+        start_experience_factor = 1
+        start_equipment_factor = 1
+    }
+    division = {
+        name = "精英海军陆战队"
+        location = 480
+        division_template = "精英海军陆战队"
+        start_experience_factor = 1
+        start_equipment_factor = 1
+    }
+
+    # 来自州 6
+    division = {
+        name = "精英海军陆战队"
+        location = 6560
+        division_template = "精英海军陆战队"
+        start_experience_factor = 1
+        start_equipment_factor = 1
+    }
+    division = {
+        name = "精英海军陆战队"
+        location = 6446
+        division_template = "精英海军陆战队"
+        start_experience_factor = 1
+        start_equipment_factor = 1
+    }
+}

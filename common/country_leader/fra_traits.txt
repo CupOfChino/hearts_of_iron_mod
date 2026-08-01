@@ -1,0 +1,36 @@
+leader_traits = {
+    FRA_napoleon = { #拿破仑后裔
+        army_attack_factor = 0.05
+        army_defence_factor = 0.05
+        experience_loss_factor = -0.15
+        political_power_factor = 0.1
+        generate_wargoal_tension = -0.4
+        political_advisor_cost_factor = -0.30
+		theorist_cost_factor = -0.30
+		military_leader_cost_factor = -0.30
+        neutrality_drift = 0.1
+        war_support_factor = 0.1
+        production_speed_arms_factory_factor = 0.1
+        war_support_weekly = 0.005
+        winter_attrition_factor = -0.1
+        heat_attrition_factor = -0.1
+        ai_desired_divisions_factor = 0.2
+    }
+
+    FRA_empire_builder = { #帝国缔造者
+        consumer_goods_factor = -0.2
+        neutrality_drift = 0.1
+        industrial_capacity_factory = 0.1
+        political_power_factor = 0.15
+        stability_weekly = 0.0025
+        war_support_weekly = 0.0025
+        resistance_target = -0.1
+        production_speed_arms_factory_factor = 0.1
+        production_speed_industrial_complex_factor = 0.1
+        production_factory_max_efficiency_factor = 0.05
+        production_factory_efficiency_gain_factor = 0.05
+        weekly_manpower = 500
+    }
+
+    
+}

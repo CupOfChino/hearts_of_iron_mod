@@ -1,0 +1,86 @@
+PRC_ai_categories = {
+
+    allowed = {
+        original_tag = PRC
+    }
+
+    visible = {
+        is_ai = yes
+        is_subject = no
+        has_army_manpower = { size < 3000000 }
+        AND = {
+            original_tag = PRC
+            PRC = {
+                has_country_flag = the_eastern_prc_flag
+            }
+        }
+        PRC = {
+            has_capitulated = no
+        }
+    }
+    priority = 100
+}
+
+PRC_focus_categories = {
+    allowed = {
+        original_tag = PRC
+    }
+    visible = {
+        original_tag = PRC
+	is_subject = no
+        has_country_flag = the_eastern_prc_flag
+    }
+    priority = 120
+}
+
+PRC_army_categories = {
+    allowed = {
+        original_tag = PRC
+    }
+    visible = {
+        original_tag = PRC
+	is_subject = no
+        has_country_flag = the_eastern_prc_flag
+    }
+    priority = 110
+}
+
+PRC_help_jap_com_categories = {
+    allowed = {
+        original_tag = PRC
+    }
+    visible = {
+        original_tag = PRC
+	    is_subject = no
+        AND = {
+            has_country_flag = the_eastern_prc_flag
+            JAP = {
+                has_country_flag = JAP_The_defeat_of_the_continent_flag
+            }
+        }
+        
+    }
+    priority = 105
+}
+
+PRC_attack_jap_categories = {
+    allowed = {
+        OR = {
+            original_tag = PRC
+            original_tag = CHI
+        }
+    }
+    visible = {
+        OR = {
+            original_tag = PRC
+            original_tag = CHI
+        }
+	    is_subject = no
+        has_war_with = JAP
+        has_defensive_war = yes
+    }
+    priority = 170
+
+    icon = GFX_decision_category_generic_fortification
+    picture = GFX_decision_cat_picture_generic_border_conflicts
+}

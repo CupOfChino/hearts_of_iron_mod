@@ -1,0 +1,109 @@
+steelworks_build = {
+	enable = {
+		AND = {
+			check_variable  = {
+				resource@steel < -8
+			}
+		}
+	}
+	
+	abort_when_not_enabled = yes
+	
+	ai_strategy = {
+		type = building_target
+		id = steelworks
+		value = 1
+	}
+}
+
+aluminum_smelter_build = {
+	enable = {
+		AND = {
+			check_variable  = {
+				resource@aluminium < -8
+			}
+		}
+	}
+	
+	abort_when_not_enabled = yes
+	
+	ai_strategy = {
+		type = building_target
+		id = aluminum_smelter
+		value = 1
+	}
+}
+
+tungsten_smelter_build = {
+	enable = {
+		AND = {
+			check_variable  = {
+				resource@tungsten < -8
+			}
+		}
+	}
+	
+	abort_when_not_enabled = yes
+	
+	ai_strategy = {
+		type = building_target
+		id = tungsten_smelter
+		value = 1
+	}
+}
+
+chromium_smelter_build = {
+	enable = {
+		AND = {
+			check_variable  = {
+				resource@chromium < -8
+			}
+		}
+	}
+	
+	abort_when_not_enabled = yes
+	
+	ai_strategy = {
+		type = building_target
+		id = chromium_smelter
+		value = 1
+	}
+}
+
+coal_smelter_build = {
+	enable = {
+		AND = {
+			check_variable  = {
+				resource@coal < -8
+			}
+		}
+	}
+	
+	abort_when_not_enabled = yes
+	
+	ai_strategy = {
+		type = building_target
+		id = coal_smelter
+		value = 1
+	}
+}
+
+GER_build_synthetic_refinery = { #种点橡胶
+	enable = {
+		AND = {
+			has_tech = synthetic_refinery
+			date > 1938.6.1
+			check_variable  = {
+				resource@rubber < 10
+			}
+		}
+	}
+	
+	abort_when_not_enabled = yes
+	
+	ai_strategy = {
+		type = building_target
+		id = synthetic_refinery
+		value = 2
+	}
+}

@@ -1,0 +1,11 @@
+faction_owned_states = {
+	input = game:scope
+	operators = {
+		faction_members
+		owned_states
+        limit = {
+            is_controlled_by = PREV
+        }
+	}
+	name = COLLECTION_FACTION_OWNED_STATES
+}

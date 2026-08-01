@@ -1,0 +1,72 @@
+add_namespace = event_UNI
+add_namespace = event_UNI_header
+add_namespace = event_UNI_name
+country_event = {
+	id = event_UNI_header.1
+	title = event_UNI_header.1.t
+	desc = event_UNI_header.1.d
+	picture = GFX_report_event_ger_civil_war
+
+	is_triggered_only = yes
+
+	option = {
+		name = event_UNI_header.1.a
+        ##彩蛋
+        add_country_leader_trait = little_succubus
+        add_country_leader_trait = succubus_advocate 
+        add_country_leader_trait = succubus_eiko_god_avatar 
+		add_country_leader_trait = succubus_eiko_fraternity 
+        ###
+        add_country_leader_trait = economy_reformer 
+        add_country_leader_trait = prime_minister_cakmak 
+        add_country_leader_trait = SWI_diplomat 
+        add_country_leader_trait = peoples_commissar_of_finance 
+	}
+}
+
+country_event = { #智乃回来
+	id = event_UNI_header.2
+	title = event_UNI_header.2.t
+	desc = event_UNI_header.2.d
+	picture = GFX_report_event_ger_civil_war
+
+	is_triggered_only = yes
+
+	option = {
+		name = event_UNI_header.2.a
+		retire_country_leader = yes
+		hidden_effect = {
+			set_country_leader_name = { name = "香风智乃" }
+			set_country_leader_portrait = { portrait = "gfx\Leaders\UNI\chino.png" }
+			set_country_leader_description = { desc = PASA_DESC }
+
+			#彩蛋特质（需要有以艾可之名mod）
+			add_country_leader_trait = little_succubus
+			add_country_leader_trait = succubus_advocate 
+			add_country_leader_trait = succubus_eiko_god_avatar
+			add_country_leader_trait = human_rbq 
+			add_country_leader_trait = succubus_collectivized_society
+			add_country_leader_trait = succubus_eiko_fraternity
+			add_country_leader_trait = succubus_eiko_god_follower
+			add_country_leader_trait = succubus_commercial_oligarchs 
+			add_country_leader_trait = succubus_gluttony
+			add_country_leader_trait = succubus_former_aristocrat
+			add_country_leader_trait = succubus_grand_knight_chief
+			add_country_leader_trait = succubus_philosopher
+        	#正常特质
+			add_country_leader_trait = economy_reformer 
+        	add_country_leader_trait = prime_minister_cakmak 
+        	add_country_leader_trait = SWI_diplomat 
+       	 	add_country_leader_trait = peoples_commissar_of_finance 
+		}
+
+		create_country_leader = {
+			ideology = despotism
+			ideology = neutrality
+			ideology = fascism
+			ideology = communism
+			ideology = succubus
+		}
+	}
+}
+

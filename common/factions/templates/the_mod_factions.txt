@@ -1,0 +1,169 @@
+the_mod_faction_GER_the_kaiserreich = { #帝国公约
+	name = GER_the_kaiserreich
+	icon = GFX_GER_the_kaiserreich
+	manifest = faction_manifest_european_dominance
+
+	goals = {
+
+		# Short term goals
+		faction_goal_one_germany #It is ok for them not to start with a free slot
+		faction_goal_high_seas_fleet
+
+		# Medium term goals
+		faction_goal_secure_european_continent
+        faction_goal_industrial_expansion
+
+		# Long terms
+		faction_goal_resource_control
+        faction_goal_defeating_our_enemies
+        faction_goal_great_offensive
+	
+	}
+
+	default_rules = {
+		call_to_war_rule_independent_only
+		joining_rule_non_communist
+		faction_peace_rule_conquest_focus
+		change_leader_rule_manpower
+		change_leader_rule_manifest_below_35
+		dismissal_rule_offensive_war
+	}
+	
+}
+
+the_mod_faction_GER_the_third_empire_faction = { #三皇同盟
+	name = GER_the_third_empire_faction
+	icon = GFX_GER_the_third_empire_faction
+	manifest = faction_manifest_mod
+
+	goals = {
+
+		# Short term goals
+		# faction_goal_one_germany #It is ok for them not to start with a free slot
+		faction_goal_high_seas_fleet
+        faction_goal_an_armored_fist
+
+		# Medium term goals
+		faction_goal_secure_european_continent
+        faction_goal_industrial_expansion
+
+		# Long terms
+		faction_goal_resource_control
+        rule_the_waves_goal_name
+        faction_goal_defeating_our_enemies
+        faction_goal_great_offensive
+	
+	}
+
+	default_rules = {
+
+		change_leader_rule_manifest_below_35
+		change_leader_rule_industry
+		change_leader_rule_manpower
+		change_leader_rule_influence
+		call_to_war_rule_independent_only
+		faction_peace_rule_conquest_focus
+		dismissal_rule_offensive_war
+		manpower_contribution_high
+		joining_rule_non_communist
+	}
+	
+}
+
+the_mod_faction_ENG_the_third_empire_faction = { #三国协约
+	name = ENG_the_third_empire_faction
+	manifest = faction_manifest_mod
+    
+	goals = {
+
+		# Short term goals
+        faction_goal_an_infantry_army
+        faction_goal_building_up_guam
+		
+		# Medium term goals
+		faction_goal_the_arteries_of_trade
+        faction_goal_secure_north_africa
+        faction_goal_control_mexican_oil
+        faction_goal_control_venezuelan_oil
+
+
+		# Long term goals
+		faction_goal_the_atomic_race
+		faction_goal_rule_the_waves
+        rule_the_waves_goal_name
+        faction_goal_defeating_our_enemies
+        faction_goal_great_offensive
+
+	}
+
+
+	default_rules = {
+		change_leader_rule_manifest_below_35
+		change_leader_rule_industry
+		change_leader_rule_manpower
+		change_leader_rule_influence
+		call_to_war_rule_independent_only
+		faction_peace_rule_conquest_focus
+		dismissal_rule_offensive_war
+		manpower_contribution_high
+	}
+	
+	icon = GFX_ENG_the_third_empire_faction
+}
+
+
+the_mod_faction_the_LatinAmerica_faction = { #拉丁同盟
+	name = the_LatinAmerica_faction
+	icon = GFX_the_LatinAmerica_faction
+	manifest = faction_manifest_spread_of_communism
+
+	goals = {
+
+		# Short term goals
+		# faction_goal_stall_the_fascist_threat
+
+		# Medium term goals
+		
+
+		# Long term goals
+	
+		
+	}
+
+	default_rules = {
+		joining_rule_communist_only
+		faction_peace_rule_puppeting_focus
+		change_leader_rule_manpower
+		change_leader_rule_industry
+		war_declaration_rule_major_only
+	}
+	
+}
+
+the_mod_faction_HUN_with_BUL_faction = { #多瑙河条约
+	name = HUN_with_BUL_faction
+	icon = GFX_HUN_with_BUL_faction
+	manifest = faction_manifest_habsburg_hegemony
+
+	goals = {
+
+		# Short term goals
+		# faction_goal_stall_the_fascist_threat
+
+		# Medium term goals
+		
+
+		# Long term goals
+	
+		
+	}
+
+	default_rules = {
+
+		faction_peace_rule_puppeting_focus
+		change_leader_rule_manpower
+		change_leader_rule_industry
+		war_declaration_rule_major_only
+	}
+	
+}

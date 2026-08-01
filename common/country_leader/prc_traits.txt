@@ -1,0 +1,76 @@
+leader_traits = {
+    PRC_Great_thinker = { #伟大的思想家
+        army_core_attack_factor = 0.1
+        army_core_defence_factor = 0.1
+        political_power_factor = 0.15
+        communism_drift = 0.1
+        stability_factor = 0.2
+        #supply_consumption_factor = -0.1
+        political_advisor_cost_factor = -0.25
+		theorist_cost_factor = -0.25
+		military_leader_cost_factor = -0.25
+        research_speed_factor = 0.125
+        weekly_manpower = 500
+        #ai_desired_divisions_factor = 0.20
+    }
+
+    PRC_The_founder_of_the_Workers_and_Peasants_Red_Army = { #工农红军的缔造者
+        ai_desired_divisions_factor = 0.25
+        war_support_weekly = 0.005
+        army_attack_factor = 0.1
+        army_defence_factor = 0.1
+        breakthrough_factor = 0.2
+        experience_loss_factor = -0.2
+        max_command_power = 50
+        command_power_gain = 0.2
+        army_org_factor = 0.05
+        experience_gain_army_factor = 0.25
+        experience_gain_factor = 0.15
+        army_leader_start_level = 2
+		army_leader_cost_factor = -0.3 
+        army_leader_start_attack_level = 2
+		army_leader_start_planning_level = 1
+		army_leader_start_defense_level = 1
+    }
+
+    PRC_Master_of_infantry_guerrilla_warfare = { #步兵战术大师
+        experience_gain_army = 0.2
+        army_infantry_attack_factor = 0.1
+        army_infantry_defence_factor = 0.2
+        army_infantry_speed_factor = 0.1
+        breakthrough_factor = 0.1
+        supply_consumption_factor = -0.1
+        army_strength_factor = 0.125
+        ENEMY_ARMY_BONUS_AIR_SUPERIORITY_FACTOR = -0.2
+        land_reinforce_rate = 0.05
+        land_night_attack = 0.1
+        pocket_penalty = -0.2
+        equipment_capture_factor = 0.1
+        max_dig_in_factor = 0.05
+        army_morale_factor = 0.1
+        combat_width_factor = -0.1
+    }
+
+    PRC_Desperate_War_Fox = { #绝境战狐
+        army_core_attack_factor = 0.25
+        army_core_defence_factor = 0.25
+        max_dig_in_factor = 0.1
+        war_support_factor = 0.2
+        land_reinforce_rate = 0.05
+        no_supply_grace = 48
+        OUT_OF_SUPPLY_FACTOR = -0.25
+        ENEMY_ARMY_BONUS_AIR_SUPERIORITY_FACTOR = -0.2
+        army_org_Factor = 0.1
+        ARMY_MORALE_FACTOR = 0.2
+        equipment_capture_factor = 0.2
+        surrender_limit = 0.2
+        pocket_penalty = -0.2
+        army_intel_to_others = -30.0
+        winter_attrition_factor = -0.15
+        heat_attrition_factor = -0.15
+        acclimatization_cold_climate_gain_factor = 0.15
+        acclimatization_hot_climate_gain_factor = 0.15
+    }
+
+
+}

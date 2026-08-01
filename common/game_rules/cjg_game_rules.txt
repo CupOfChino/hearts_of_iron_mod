@@ -1,0 +1,217 @@
+The_third_empire_family = {
+    name = "the_third_empire"
+    group = "RULE_GROUP_CJG_SETUP"
+    default = {
+		name = DEFAULT
+        text = "RLUE_GROUP_OPTION_DEFAULT" 
+        desc = "cjg_game_rule_third_empire"
+    }
+    option = {
+        name = the_third_empire_flag #有傻子flag和按钮弄反了结果只能全部反着来了（乐）
+		text = "cjg_open_the_third_empire_t"
+		desc = "cjg_open_the_third_empire_desc"
+    }
+    option = {
+        name = the_old_firend_flag
+		text = "cjg_open_the_old_firend_t"
+		desc = "cjg_open_the_old_firend_desc"
+    }
+
+}
+#东亚适配先放这吧。。。
+#The_eastern_game_rule = {
+#    name = "the_eastern"
+#    group = "RULE_GROUP_CJG_SETUP"
+#    default = {
+#		name = DEFAULT
+#        text = "RLUE_GROUP_EASTERN_OPTION_DEFAULT" 
+#        desc = "the_eastern_desc"
+#    }
+#    option = {
+#        name = the_eastern_prc
+#		text = "the_eastern_prc_t"
+#		desc = "the_eastern_prc_desc"
+#    }
+#    option = {
+#        name = the_eastern_chi
+#		text = "the_eastern_chi_t"
+#		desc = "the_eastern_chi_desc"
+#    }
+#    option = {
+#        name = the_eastern_man
+#		text = "the_eastern_man_t"
+#		desc = "the_eastern_man_desc"
+#    }
+#    option = {
+#        name = the_eastern_jap
+#		text = "the_eastern_jap_t"
+#		desc = "the_eastern_jap_desc"
+#    }
+#    option = {
+#        name = the_eastern_random
+#		text = "the_eastern_random_t"
+#		desc = "the_eastern_random_desc"
+#    }
+#}
+
+The_eastern_now_rule = {
+    name = "the_eastern_now"
+    group = "RULE_GROUP_CJG_SETUP"
+    default = {
+		name = DEFAULT
+        text = "RLUE_GROUP_EASTERN_NOW_OPTION_DEFAULT" 
+        desc = "the_eastern_now_desc"
+    }
+    option = { #中共统一
+        name = the_eastern_now_1
+		text = "the_eastern_now_1_t"
+		desc = "the_eastern_now_1_desc"
+    }
+    option = { #老蒋统一
+        name = the_eastern_now_2
+		text = "the_eastern_now_2_t"
+		desc = "the_eastern_now_2_desc"
+    }
+}
+
+#The_LatinAmerica_game_rule = {
+#    name = "the_LatinAmerica"
+#    group = "RULE_GROUP_CJG_SETUP"
+#    default = {
+#		name = DEFAULT
+#        text = "RLUE_GROUP_LATINAMERICA_OPTION_DEFAULT" 
+#        desc = "the_LatinAmerica_desc"
+#    }
+#    option = {
+#        name = the_LatinAmerica
+#		text = "the_LatinAmerica_t"
+#		desc = "the_LatinAmerica_desc"
+#    }
+#}
+
+
+The_SOV_game_rule = {
+    name = "the_SOV_Great_Patriotic_War"
+    group = "RULE_GROUP_CJG_SETUP"
+    default = {
+		name = DEFAULT
+        text = "the_SOV_Great_Patriotic_War_open_default" 
+        desc = "the_SOV_Great_Patriotic_War_desc"
+    }
+    option = {
+        name = the_SOV_Great_Patriotic_War_open
+		text = "the_SOV_Great_Patriotic_War_open_t"
+		desc = "the_SOV_Great_Patriotic_War_open_desc"
+    }
+}
+
+The_USA_game_rule = {
+    name = "the_USA_factory_more"
+    group = "RULE_GROUP_CJG_SETUP"
+    default = {
+		name = DEFAULT
+        text = "the_USA_factory_more_open_default" 
+        desc = "the_USA_factory_more_desc"
+    }
+    option = {
+        name = the_USA_factory_more_open
+		text = "the_USA_factory_more_open_t"
+		desc = "the_USA_factory_more_open_desc"
+    }
+}
+
+The_lamei_game_rule = {
+    name = "The_lamei_game_rule"
+    group = "RULE_GROUP_CJG_SETUP"
+    default = {
+		name = DEFAULT
+        text = "The_lamei_game_rule_default_t" 
+        desc = "The_lamei_game_rule_default_desc"
+    }
+    option = {
+        name = The_lamei_game_rule_open
+		text = "The_lamei_game_rule_open_t"
+		desc = "The_lamei_game_rule_open_desc"
+    }
+}
+
+
+The_air_game_rule = {
+    name = "The_air_game_rule"
+    group = "RULE_GROUP_CJG_SETUP"
+    default = {
+		name = DEFAULT
+        text = "The_air_game_rule_default" 
+        desc = "The_air_game_rule_default_desc"
+    }
+    option = {
+        name = The_air_game_rule_open
+		text = "The_air_game_rule_open_t"
+		desc = "The_air_game_rule_open_desc"
+    }
+}
+
+The_army_game_rule = {
+    name = "The_army_game_rule"
+    group = "RULE_GROUP_CJG_SETUP"
+    default = {
+		name = DEFAULT
+        text = "The_army_game_rule_default" 
+        desc = "The_army_game_rule_default_desc"
+    }
+    option = {
+        name = The_army_game_rule_open
+		text = "The_army_game_rule_open_t"
+		desc = "The_army_game_rule_open_desc"
+    }
+}
+
+The_navy_game_rule = {
+    name = "The_navy_game_rule"
+    group = "RULE_GROUP_CJG_SETUP"
+    default = {
+		name = DEFAULT
+        text = "The_navy_game_rule_default" 
+        desc = "The_navy_game_rule_default_desc"
+    }
+    option = {
+        name = The_navy_game_rule_open
+		text = "The_navy_game_rule_open_t"
+		desc = "The_navy_game_rule_open_desc"
+    }
+}
+
+The_Purgatory_game_rule = {
+    name = "The_Purgatory_game_rule"
+    group = "RULE_GROUP_CJG_SETUP"
+    default = {
+		name = DEFAULT
+        text = "The_Purgatory_game_rule_default" 
+        desc = "The_Purgatory_game_rule_default_desc"
+    }
+    option = {
+        name = The_Purgatory_game_rule_army_open
+		text = "The_Purgatory_game_rule_army_open_t"
+		desc = "The_Purgatory_game_rule_army_open_desc"
+    }
+    option = {
+        name = The_Purgatory_game_rule_air_open
+		text = "The_Purgatory_game_rule_air_open_t"
+		desc = "The_Purgatory_game_rule_air_open_desc"
+    }
+    option = {
+        name = The_Purgatory_game_rule_navy_open
+		text = "The_Purgatory_game_rule_navy_open_t"
+		desc = "The_Purgatory_game_rule_navy_open_desc"
+    }
+    option = {
+        name = The_Purgatory_game_rule_country_open
+		text = "The_Purgatory_game_rule_country_open_t"
+		desc = "The_Purgatory_game_rule_country_open_desc"
+    }
+    option = {
+        name = The_Purgatory_game_rule_all_open
+		text = "The_Purgatory_game_rule_all_open_t"
+		desc = "The_Purgatory_game_rule_all_open_desc"
+    }
+}

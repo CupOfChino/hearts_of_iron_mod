@@ -1,0 +1,37 @@
+difficulty_settings = {
+
+	difficulty_setting = {
+		key = "加强匈牙利"
+		modifier = diff_strong_ai_generic
+		countries = { HUN } 
+		multiplier = 2.0
+	}
+
+	difficulty_setting = {
+		key = "加强保加利亚"
+		modifier = diff_strong_ai_generic
+		countries = { BUL } 
+		multiplier = 2.0
+	}
+
+	difficulty_setting = {
+		key = "加强拉丁同盟"
+		modifier = diff_strong_ai_generic
+		countries = { MEX }
+		multiplier = 2.0
+	}
+
+	difficulty_setting = {
+		key = "同盟国超级强化"
+		modifier = diff_strong_ai_generic_faction
+		countries = { GER HUN FRA }
+		multiplier = 2.0
+	}
+
+	difficulty_setting = {
+		key = "协约国超级强化"
+		modifier = diff_strong_ai_generic_faction
+		countries = { USA SOV ENG }
+		multiplier = 2.0
+	}
+}

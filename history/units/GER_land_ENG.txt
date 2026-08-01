@@ -1,0 +1,44 @@
+units = {
+    # 来自州 131
+    division = {
+        name = "两栖步兵师"
+        location = 351
+        division_template = "两栖步兵师"
+        start_experience_factor = 1
+        start_equipment_factor = 1
+    }
+
+    # 来自州 130
+    division = {
+        name = "两栖步兵师"
+        location = 11297
+        division_template = "两栖步兵师"
+        start_experience_factor = 1
+        start_equipment_factor = 1
+    }
+
+    # 来自州 125
+    division = {
+        name = "两栖步兵师"
+        location = 271
+        division_template = "两栖步兵师"
+        start_experience_factor = 1
+        start_equipment_factor = 1
+    }
+
+    # 来自州 127
+    division = {
+        name = "两栖步兵师"
+        location = 3501
+        division_template = "两栖步兵师"
+        start_experience_factor = 1
+        start_equipment_factor = 1
+    }
+    division = {
+        name = "两栖步兵师"
+        location = 9458
+        division_template = "两栖步兵师"
+        start_experience_factor = 1
+        start_equipment_factor = 1
+    }
+}

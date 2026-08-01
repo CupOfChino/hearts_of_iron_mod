@@ -1,0 +1,2393 @@
+MEX_ai_categories = {
+
+    MEX_ai_categories_00 = {
+        allowed = {
+			tag = MEX
+		}
+
+		available = {
+			AND = {
+                has_country_flag = the_LatinAmerica_flag
+				has_civil_war = yes
+				has_government = communism
+			}
+		}
+
+		visible = {
+			AND = {
+                has_country_flag = the_LatinAmerica_flag
+				has_civil_war = yes
+				has_government = communism
+			}
+		}
+
+		fire_only_once = no
+
+		cost = 0
+		days_remove = 70
+
+		modifier = {
+			
+		}
+
+		remove_effect = {
+			country_event = { id = change_germany.13 days = 1  }
+		}
+		
+		ai_will_do = {
+			factor = 1000
+		}
+    }
+
+    MEX_ai_base_equipment_add_1936 = {  #火星步兵师
+        allowed = {
+			original_tag = MEX
+		}
+		available = {
+			date < 1938.1.1
+		}
+
+		visible = {
+			
+		}
+
+		fire_only_once = no
+
+		cost = 0
+		days_remove = 60
+
+		modifier = {
+			
+		}
+
+		ai_will_do = {
+			factor = 1000
+		}
+		
+		remove_effect = {
+			add_manpower = 5000
+
+            army_experience = 20
+			navy_experience = 20
+			air_experience = 20
+
+            add_equipment_to_stockpile = {
+				type = infantry_equipment
+				amount = 5000
+			}
+			add_equipment_to_stockpile = { 
+				type = train_equipment 
+				amount = 50
+			}
+			add_equipment_to_stockpile = {
+				type = artillery_equipment
+				amount = 1000
+			}
+			add_equipment_to_stockpile = {
+				type = anti_tank_equipment
+				amount = 1000
+			}
+            add_equipment_to_stockpile = {
+				type = support_equipment
+				amount = 1500
+			}
+			add_equipment_to_stockpile = { 
+				type = anti_air_equipment 
+				amount = 500
+			}
+
+				random_owned_controlled_state = {
+					limit = { ROOT = { has_full_control_of_state = PREV } }
+					prioritize = { 64 }
+					create_unit = {
+						division = "name = \"步兵师I\" division_template = \"步兵师I\" start_experience_factor = 0.5" 
+						owner = MEX
+						count = 6
+					}
+				}
+
+
+		}
+    }
+
+    MEX_ai_base_template_add_1= {  #火星步兵师模板
+
+		allowed = {
+			original_tag = MEX
+		}
+		available = {
+			date < 1938.1.1
+		}
+
+		visible = {
+
+		}
+
+		fire_only_once = yes
+
+		cost = 0
+		days_remove = 30
+
+		modifier = {
+			
+		}
+
+		ai_will_do = {
+			factor = 1000
+		}
+		
+		remove_effect = {
+			add_manpower = 5000
+
+            army_experience = 20
+			navy_experience = 20
+			air_experience = 20
+
+            add_equipment_to_stockpile = {
+				type = infantry_equipment
+				amount = 5000
+			}
+			add_equipment_to_stockpile = { 
+				type = train_equipment 
+				amount = 50
+			}
+			add_equipment_to_stockpile = {
+				type = artillery_equipment
+				amount = 500
+			}
+			add_equipment_to_stockpile = {
+				type = anti_tank_equipment
+				amount = 1000
+			}
+            add_equipment_to_stockpile = {
+				type = support_equipment
+				amount = 1500
+			}
+			add_equipment_to_stockpile = { 
+				type = anti_air_equipment 
+				amount = 500
+			}
+
+            division_template = {
+					name = "步兵师I"
+					regiments = {
+						infantry = { x = 0 y = 0 }
+						infantry = { x = 0 y = 1 }
+						infantry = { x = 0 y = 2 }
+						infantry = { x = 1 y = 0 }
+						infantry = { x = 1 y = 1 }
+						infantry = { x = 1 y = 2 }
+						infantry = { x = 2 y = 0 }
+						infantry = { x = 2 y = 1 }
+						infantry = { x = 2 y = 2 }
+						artillery_brigade = { x = 3 y = 0 }
+						artillery_brigade = { x = 3 y = 1 }
+                        artillery_brigade = { x = 3 y = 2 }
+                        artillery_brigade = { x = 3 y = 3 }
+					}
+					support = {
+						engineer = { x = 0 y = 0 }
+						recon = { x = 0 y = 1 }
+                        artillery =  { x = 0 y = 4 }
+					}
+				}
+
+		}
+    }
+
+    MEX_ai_tank_equipment_add_1936 =  {  #火星装甲师
+        allowed = {
+			original_tag = MEX
+		}
+		available = {
+			date < 1938.1.1
+		}
+
+		visible = {
+		}
+
+		fire_only_once = no
+
+		cost = 0
+		days_remove = 90
+
+		modifier = {
+			
+		}
+
+		ai_will_do = {
+			factor = 1000
+		}
+
+        remove_effect = {
+            add_manpower = 5000
+            army_experience = 15
+			if = {
+				limit = {
+					NOT = {
+						has_tech = medium_tank_chassis_1
+					}
+				}
+				set_technology = medium_tank_chassis_1
+			}
+			if = {
+				limit = {
+					NOT = {
+						has_tech = artillery2
+					}
+				}
+				set_technology = artillery2
+			}
+            if = {
+				limit = {
+					has_tech = advanced_medium_tank_chassis
+				}
+				add_equipment_to_stockpile = { 
+					type = medium_tank_chassis_3 
+					amount = 250
+				}
+			}
+			else_if = {
+				limit = {
+					has_tech = improved_medium_tank_chassis
+				}
+				add_equipment_to_stockpile = { 
+					type = medium_tank_chassis_2 
+					amount = 250
+				}
+			}
+			else = {
+				add_equipment_to_stockpile = { 
+					type = medium_tank_chassis_1 
+					amount = 250
+				}
+			}
+
+            if = {
+				limit = {
+					has_tech = advanced_medium_tank_chassis
+				}
+				add_equipment_to_stockpile = { 
+					type = light_tank_chassis_3 
+					amount = 500
+				}
+			}
+			else_if = {
+				limit = {
+					has_tech = improved_medium_tank_chassis
+				}
+				add_equipment_to_stockpile = { 
+					type = light_tank_chassis_2 
+					amount = 500
+				}
+			}
+			else = {
+				add_equipment_to_stockpile = { 
+					type = light_tank_chassis_1 
+					amount = 500
+				}
+			}
+				random_owned_controlled_state = {
+					limit = { ROOT = { has_full_control_of_state = PREV } }
+					prioritize = { 64 }
+					create_unit = {
+						division = "name = \"装甲师I\" division_template = \"装甲师I\" start_experience_factor = 0.5" 
+						owner = MEX
+						count = 4
+					}
+                    
+				}
+
+        }
+    }
+
+	MEX_ai_tank_base_template_add_1 =  {  #火星装甲师模板
+        allowed = {
+			original_tag = MEX
+		}
+		available = {
+			date > 1936.1.1
+		}
+
+		visible = {
+			
+		}
+
+		fire_only_once = yes
+
+		cost = 0
+		days_remove = 30
+
+		modifier = {
+			
+		}
+
+		ai_will_do = {
+			factor = 1000
+		}
+
+        remove_effect = {
+            add_manpower = 5000
+            army_experience = 15
+			if = {
+				limit = {
+					NOT = {
+						has_tech = medium_tank_chassis_1
+					}
+				}
+				set_technology = medium_tank_chassis_1
+			}
+			if = {
+				limit = {
+					NOT = {
+						has_tech = artillery2
+					}
+				}
+				set_technology = artillery2
+			}
+            if = {
+				limit = {
+					has_tech = advanced_medium_tank_chassis
+				}
+				add_equipment_to_stockpile = { 
+					type = medium_tank_chassis_3 
+					amount = 250
+				}
+			}
+			else_if = {
+				limit = {
+					has_tech = improved_medium_tank_chassis
+				}
+				add_equipment_to_stockpile = { 
+					type = medium_tank_chassis_2 
+					amount = 250
+				}
+			}
+			else = {
+				add_equipment_to_stockpile = { 
+					type = medium_tank_chassis_1 
+					amount = 250
+				}
+			}
+
+            if = {
+				limit = {
+					has_tech = advanced_medium_tank_chassis
+				}
+				add_equipment_to_stockpile = { 
+					type = light_tank_chassis_3 
+					amount = 500
+				}
+			}
+			else_if = {
+				limit = {
+					has_tech = improved_medium_tank_chassis
+				}
+				add_equipment_to_stockpile = { 
+					type = light_tank_chassis_2 
+					amount = 500
+				}
+			}
+			else = {
+				add_equipment_to_stockpile = { 
+					type = light_tank_chassis_1 
+					amount = 500
+				}
+			}
+            division_template = {
+					name = "装甲师I"
+					regiments = {
+						infantry = { x = 0 y = 0 }
+						infantry = { x = 0 y = 1 }
+						infantry = { x = 0 y = 2 }
+						infantry = { x = 1 y = 0 }
+						infantry = { x = 1 y = 1 }
+						infantry = { x = 1 y = 2 }
+						infantry = { x = 2 y = 0 }
+						infantry = { x = 2 y = 1 }
+						infantry = { x = 2 y = 2 }
+						artillery_brigade = { x = 3 y = 0 }
+						artillery_brigade = { x = 3 y = 1 }
+                        anti_air_brigade = { x = 3 y = 2 }
+                        anti_tank_brigade = { x = 3 y = 3 }
+                        medium_armor = { x = 4 y = 0 }
+                        medium_armor = { x = 4 y = 1 }
+					}
+					support = {
+						engineer = { x = 0 y = 0 }
+						recon = { x = 0 y = 1 }
+                        artillery =  { x = 0 y = 4 }
+					}
+				}
+
+        }
+    }
+
+    MEX_ai_base_equipment_add_1937 =  {  #步兵师1937
+        allowed = {
+			original_tag = MEX
+		}
+		available = {
+			date > 1937.1.1
+            AND = {
+                date < 1938.1.1
+            }
+		}
+
+		visible = {
+			
+		}
+
+		fire_only_once = no
+
+		cost = 0
+		days_remove = 75
+
+		modifier = {
+			
+		}
+
+		ai_will_do = {
+			factor = 1000
+		}
+
+        remove_effect = {
+            add_manpower = 5000
+
+            army_experience = 20
+			navy_experience = 20
+			air_experience = 20
+
+            add_equipment_to_stockpile = {
+				type = infantry_equipment
+				amount = 8000
+			}
+			add_equipment_to_stockpile = { 
+				type = train_equipment 
+				amount = 50
+			}
+			add_equipment_to_stockpile = {
+				type = artillery_equipment
+				amount = 600
+			}
+			add_equipment_to_stockpile = {
+				type = anti_tank_equipment
+				amount = 1000
+			}
+            add_equipment_to_stockpile = {
+				type = support_equipment
+				amount = 1500
+			}
+			add_equipment_to_stockpile = { 
+				type = anti_air_equipment 
+				amount = 500
+			}
+
+				random_owned_controlled_state = {
+					limit = { ROOT = { has_full_control_of_state = PREV } }
+					prioritize = { 64 }
+					create_unit = {
+						division = "name = \"步兵师II\" division_template = \"步兵师II\" start_experience_factor = 0.5" 
+						owner = MEX
+						count = 4
+					}
+				}
+        }
+
+    }
+
+	MEX_ai_base_template_add_2 =  {  #步兵师1937模板
+        allowed = {
+			original_tag = MEX
+		}
+		available = {
+			date > 1937.1.1
+            AND = {
+                date < 1938.1.1
+            }
+		}
+
+		visible = {
+			
+		}
+
+		fire_only_once = yes
+
+		cost = 0
+		days_remove = 30
+
+		modifier = {
+			
+		}
+
+		ai_will_do = {
+			factor = 1000
+		}
+
+        remove_effect = {
+            add_manpower = 5000
+
+            army_experience = 20
+			navy_experience = 20
+			air_experience = 20
+
+            add_equipment_to_stockpile = {
+				type = infantry_equipment
+				amount = 8000
+			}
+			add_equipment_to_stockpile = { 
+				type = train_equipment 
+				amount = 50
+			}
+			add_equipment_to_stockpile = {
+				type = artillery_equipment
+				amount = 600
+			}
+			add_equipment_to_stockpile = {
+				type = anti_tank_equipment
+				amount = 500
+			}
+            add_equipment_to_stockpile = {
+				type = support_equipment
+				amount = 1500
+			}
+			add_equipment_to_stockpile = { 
+				type = anti_air_equipment 
+				amount = 500
+			}
+
+            division_template = {
+					name = "步兵师II"
+					regiments = {
+						infantry = { x = 0 y = 0 }
+						infantry = { x = 0 y = 1 }
+						infantry = { x = 0 y = 2 }
+                        infantry = { x = 0 y = 3 }
+						infantry = { x = 1 y = 0 }
+						infantry = { x = 1 y = 1 }
+						infantry = { x = 1 y = 2 }
+                        infantry = { x = 1 y = 3 }
+						infantry = { x = 2 y = 0 }
+						infantry = { x = 2 y = 1 }
+						infantry = { x = 2 y = 2 }
+                        infantry = { x = 2 y = 3 }
+						artillery_brigade = { x = 3 y = 0 }
+						artillery_brigade = { x = 3 y = 1 }
+                        artillery_brigade = { x = 3 y = 2 }
+                        anti_air_brigade = { x = 4 y = 0 }
+                        anti_tank_brigade = { x = 4 y = 1 }
+					}
+					support = {
+						engineer = { x = 0 y = 0 }
+						recon = { x = 0 y = 1 }
+                        field_hospital =  { x = 0 y = 2 }
+                        logistics_company = { x = 0 y = 3 }
+                        artillery =  { x = 0 y = 4 }
+					}
+				}
+        }
+
+    }
+
+    MEX_ai_tank_equipment_add_1937 =  {  #装甲师1937
+        allowed = {
+			original_tag = MEX
+		}
+		available = {
+			date > 1937.1.1
+            AND = {
+                date < 1938.1.1
+            }
+		}
+
+		visible = {
+			
+		}
+
+		fire_only_once = no
+
+		cost = 0
+		days_remove = 75
+
+		modifier = {
+			
+		}
+
+		ai_will_do = {
+			factor = 1000
+		}
+
+        remove_effect = {
+            add_manpower = 5000
+
+            army_experience = 20
+			navy_experience = 20
+			air_experience = 20
+
+            add_equipment_to_stockpile = {
+				type = infantry_equipment
+				amount = 8000
+			}
+			add_equipment_to_stockpile = { 
+				type = motorized_equipment
+				amount = 800
+			}
+			add_equipment_to_stockpile = {
+				type = artillery_equipment
+				amount = 600
+			}
+            add_equipment_to_stockpile = {
+				type = support_equipment
+				amount = 1500
+			}
+
+            if = {
+				limit = {
+					has_tech = advanced_medium_tank_chassis
+				}
+				add_equipment_to_stockpile = { 
+					type = medium_tank_chassis_3 
+					amount = 250
+				}
+			}
+			else_if = {
+				limit = {
+					has_tech = improved_medium_tank_chassis
+				}
+				add_equipment_to_stockpile = { 
+					type = medium_tank_chassis_2 
+					amount = 250
+				}
+			}
+			else = {
+				add_equipment_to_stockpile = { 
+					type = medium_tank_chassis_1 
+					amount = 250
+				}
+			}
+
+            if = {
+				limit = {
+					has_tech = advanced_medium_tank_chassis
+				}
+				add_equipment_to_stockpile = { 
+					type = light_tank_chassis_3 
+					amount = 500
+				}
+			}
+			else_if = {
+				limit = {
+					has_tech = improved_medium_tank_chassis
+				}
+				add_equipment_to_stockpile = { 
+					type = light_tank_chassis_2 
+					amount = 500
+				}
+			}
+			else = {
+				add_equipment_to_stockpile = { 
+					type = light_tank_chassis_1 
+					amount = 500
+				}
+			}
+				random_owned_controlled_state = {
+					limit = { ROOT = { has_full_control_of_state = PREV } }
+					prioritize = { 64 }
+					create_unit = {
+						division = "name = \"装甲师II\" division_template = \"装甲师II\" start_experience_factor = 0.5" 
+						owner = MEX
+						count = 2
+					}
+				}
+
+        }
+    }
+
+
+	MEX_ai_tank_base_template_add_2 =  {  #装甲师1937模板
+        allowed = {
+			original_tag = MEX
+		}
+		available = {
+			date > 1937.1.1
+            AND = {
+                date < 1938.1.1
+            }
+		}
+
+		visible = {
+			
+		}
+
+		fire_only_once = yes
+
+		cost = 0
+		days_remove = 30
+
+		modifier = {
+			
+		}
+
+		ai_will_do = {
+			factor = 1000
+		}
+
+        remove_effect = {
+            add_manpower = 5000
+
+            army_experience = 20
+			navy_experience = 20
+			air_experience = 20
+
+            add_equipment_to_stockpile = {
+				type = infantry_equipment
+				amount = 8000
+			}
+			add_equipment_to_stockpile = { 
+				type = motorized_equipment
+				amount = 800
+			}
+			add_equipment_to_stockpile = {
+				type = artillery_equipment
+				amount = 600
+			}
+            add_equipment_to_stockpile = {
+				type = support_equipment
+				amount = 1500
+			}
+
+            if = {
+				limit = {
+					has_tech = advanced_medium_tank_chassis
+				}
+				add_equipment_to_stockpile = { 
+					type = medium_tank_chassis_3 
+					amount = 250
+				}
+			}
+			else_if = {
+				limit = {
+					has_tech = improved_medium_tank_chassis
+				}
+				add_equipment_to_stockpile = { 
+					type = medium_tank_chassis_2 
+					amount = 250
+				}
+			}
+			else = {
+				add_equipment_to_stockpile = { 
+					type = medium_tank_chassis_1 
+					amount = 250
+				}
+			}
+
+            if = {
+				limit = {
+					has_tech = advanced_medium_tank_chassis
+				}
+				add_equipment_to_stockpile = { 
+					type = light_tank_chassis_3 
+					amount = 500
+				}
+			}
+			else_if = {
+				limit = {
+					has_tech = improved_medium_tank_chassis
+				}
+				add_equipment_to_stockpile = { 
+					type = light_tank_chassis_2 
+					amount = 500
+				}
+			}
+			else = {
+				add_equipment_to_stockpile = { 
+					type = light_tank_chassis_1 
+					amount = 500
+				}
+			}
+
+            division_template = {
+					name = "装甲师II"
+					regiments = {
+						motorized = { x = 0 y = 0 }
+						motorized = { x = 0 y = 1 }
+						motorized = { x = 0 y = 2 }
+                        motorized = { x = 0 y = 3 }
+						motorized = { x = 1 y = 0 }
+						motorized = { x = 1 y = 1 }
+						motorized = { x = 1 y = 2 }
+                        motorized = { x = 1 y = 3 }
+						motorized = { x = 2 y = 0 }
+						motorized = { x = 2 y = 1 }
+						motorized = { x = 2 y = 2 }
+						medium_armor = { x = 3 y = 0 }
+						medium_armor = { x = 3 y = 1 }
+                        medium_armor = { x = 3 y = 2 }
+                        medium_armor = { x = 3 y = 3 }
+                        mot_anti_air_brigade = { x = 4 y = 0 }
+                        mot_anti_tank_brigade = { x = 4 y = 1 }
+                        mot_artillery_brigade = { x = 4 y = 2 }
+					}
+					support = {
+						engineer = { x = 0 y = 0 }
+						recon = { x = 0 y = 1 }
+                        field_hospital =  { x = 0 y = 2 }
+                        logistics_company = { x = 0 y = 3 }
+                        artillery =  { x = 0 y = 4 }
+					}
+				}
+
+
+        }
+    }
+
+    MEX_ai_base_equipment_add_1938 =  {  #步兵师1938
+        allowed = {
+			original_tag = MEX
+		}
+		available = {
+			date > 1938.1.1
+            AND = {
+                date < 1939.1.1
+            }
+		}
+
+		visible = {
+			
+		}
+
+		fire_only_once = no
+
+		cost = 0
+		days_remove = 90
+
+		modifier = {
+			
+		}
+
+		ai_will_do = {
+			factor = 1000
+		}
+
+        remove_effect = {
+            add_manpower = 10000
+
+            army_experience = 25
+			navy_experience = 25
+			air_experience = 25
+
+            add_equipment_to_stockpile = {
+				type = infantry_equipment
+				amount = 10000
+			}
+			add_equipment_to_stockpile = { 
+				type = train_equipment 
+				amount = 50
+			}
+			add_equipment_to_stockpile = {
+				type = artillery_equipment
+				amount = 1000
+			}
+			add_equipment_to_stockpile = {
+				type = anti_tank_equipment
+				amount = 500
+			}
+            add_equipment_to_stockpile = {
+				type = support_equipment
+				amount = 2000
+			}
+			add_equipment_to_stockpile = { 
+				type = anti_air_equipment 
+				amount = 500
+			}
+				random_owned_controlled_state = {
+					limit = { ROOT = { has_full_control_of_state = PREV } }
+					prioritize = { 64 }
+					create_unit = {
+						division = "name = \"步兵师III\" division_template = \"步兵师III\" start_experience_factor = 0.5" 
+						owner = MEX
+						count = 6
+					}
+				}
+
+        }
+    }
+
+	MEX_ai_base_template_add_3 =  {  #步兵师1938模板
+        allowed = {
+			original_tag = MEX
+		}
+		available = {
+			date > 1938.1.1
+            AND = {
+                date < 1939.1.1
+            }
+		}
+
+		visible = {
+			
+		}
+
+		fire_only_once = yes
+
+		cost = 0
+		days_remove = 30
+
+		modifier = {
+			
+		}
+
+		ai_will_do = {
+			factor = 1000
+		}
+
+        remove_effect = {
+            add_manpower = 10000
+
+            army_experience = 25
+			navy_experience = 25
+			air_experience = 25
+
+            add_equipment_to_stockpile = {
+				type = infantry_equipment
+				amount = 10000
+			}
+			add_equipment_to_stockpile = { 
+				type = train_equipment 
+				amount = 50
+			}
+			add_equipment_to_stockpile = {
+				type = artillery_equipment
+				amount = 1000
+			}
+			add_equipment_to_stockpile = {
+				type = anti_tank_equipment
+				amount = 500
+			}
+            add_equipment_to_stockpile = {
+				type = support_equipment
+				amount = 2000
+			}
+			add_equipment_to_stockpile = { 
+				type = anti_air_equipment 
+				amount = 500
+			}
+
+            division_template = {
+					name = "步兵师III"
+					regiments = {
+						infantry = { x = 0 y = 0 }
+						infantry = { x = 0 y = 1 }
+						infantry = { x = 0 y = 2 }
+                        infantry = { x = 0 y = 3 }
+                        infantry = { x = 0 y = 4 }
+						infantry = { x = 1 y = 0 }
+						infantry = { x = 1 y = 1 }
+						infantry = { x = 1 y = 2 }
+                        infantry = { x = 1 y = 3 }
+                        infantry = { x = 1 y = 4 }
+						infantry = { x = 2 y = 0 }
+						infantry = { x = 2 y = 1 }
+						artillery_brigade = { x = 3 y = 0 }
+						artillery_brigade = { x = 3 y = 1 }
+                        artillery_brigade = { x = 3 y = 2 }
+                        anti_air_brigade = { x = 4 y = 0 }
+                        anti_tank_brigade = { x = 4 y = 1 }
+					}
+					support = {
+						engineer = { x = 0 y = 0 }
+						recon = { x = 0 y = 1 }
+                        field_hospital =  { x = 0 y = 2 }
+                        logistics_company = { x = 0 y = 3 }
+                        artillery =  { x = 0 y = 4 }
+					}
+				}
+
+        }
+    }
+
+    MEX_ai_tank_equipment_add_1938 =  {  #装甲师1938
+        allowed = {
+			original_tag = MEX
+		}
+		available = {
+			date > 1938.1.1
+            AND = {
+                date < 1940.1.1
+            }
+		}
+
+		visible = {
+			
+		}
+
+		fire_only_once = no
+
+		cost = 0
+		days_remove = 90
+
+		modifier = {
+			
+		}
+
+		ai_will_do = {
+			factor = 1000
+		}
+
+        remove_effect = {
+            add_manpower = 10000
+
+            army_experience = 30
+			navy_experience = 30
+			air_experience = 30
+
+            add_equipment_to_stockpile = {
+				type = infantry_equipment
+				amount = 10000
+			}
+			add_equipment_to_stockpile = { 
+				type = motorized_equipment
+				amount = 1200
+			}
+			add_equipment_to_stockpile = {
+				type = artillery_equipment
+				amount = 600
+			}
+            add_equipment_to_stockpile = {
+				type = support_equipment
+				amount = 2000
+			}
+
+            if = {
+				limit = {
+					has_tech = advanced_medium_tank_chassis
+				}
+				add_equipment_to_stockpile = { 
+					type = medium_tank_chassis_3 
+					amount = 800
+				}
+			}
+			else_if = {
+				limit = {
+					has_tech = improved_medium_tank_chassis
+				}
+				add_equipment_to_stockpile = { 
+					type = medium_tank_chassis_2 
+					amount = 800
+				}
+			}
+			else = {
+				add_equipment_to_stockpile = { 
+					type = medium_tank_chassis_1 
+					amount = 800
+				}
+			}
+
+            if = {
+				limit = {
+					has_tech = advanced_medium_tank_chassis
+				}
+				add_equipment_to_stockpile = { 
+					type = light_tank_chassis_3 
+					amount = 800
+				}
+			}
+			else_if = {
+				limit = {
+					has_tech = improved_medium_tank_chassis
+				}
+				add_equipment_to_stockpile = { 
+					type = light_tank_chassis_2 
+					amount = 800
+				}
+			}
+			else = {
+				add_equipment_to_stockpile = { 
+					type = light_tank_chassis_1 
+					amount = 800
+				}
+			}
+				random_owned_controlled_state = {
+					limit = { ROOT = { has_full_control_of_state = PREV } }
+					prioritize = { 64 }
+					create_unit = {
+						division = "name = \"装甲师III\" division_template = \"装甲师III\" start_experience_factor = 0.5" 
+						owner = MEX
+						count = 3
+					}
+				}
+            }
+
+        }
+
+
+		MEX_ai_tank_base_template_add_3 =  {  #装甲师1938模板
+        allowed = {
+			original_tag = MEX
+		}
+		available = {
+			date > 1938.1.1
+            AND = {
+                date < 1940.1.1
+            }
+		}
+
+		visible = {
+			
+		}
+
+		fire_only_once = yes
+
+		cost = 0
+		days_remove = 30
+
+		modifier = {
+			
+		}
+
+		ai_will_do = {
+			factor = 1000
+		}
+
+        remove_effect = {
+            add_manpower = 10000
+
+            army_experience = 30
+			navy_experience = 30
+			air_experience = 30
+
+            add_equipment_to_stockpile = {
+				type = infantry_equipment
+				amount = 10000
+			}
+			add_equipment_to_stockpile = { 
+				type = motorized_equipment
+				amount = 1200
+			}
+			add_equipment_to_stockpile = {
+				type = artillery_equipment
+				amount = 600
+			}
+            add_equipment_to_stockpile = {
+				type = support_equipment
+				amount = 2000
+			}
+
+            if = {
+				limit = {
+					has_tech = advanced_medium_tank_chassis
+				}
+				add_equipment_to_stockpile = { 
+					type = medium_tank_chassis_3 
+					amount = 800
+				}
+			}
+			else_if = {
+				limit = {
+					has_tech = improved_medium_tank_chassis
+				}
+				add_equipment_to_stockpile = { 
+					type = medium_tank_chassis_2 
+					amount = 800
+				}
+			}
+			else = {
+				add_equipment_to_stockpile = { 
+					type = medium_tank_chassis_1 
+					amount = 800
+				}
+			}
+
+            if = {
+				limit = {
+					has_tech = advanced_medium_tank_chassis
+				}
+				add_equipment_to_stockpile = { 
+					type = light_tank_chassis_3 
+					amount = 800
+				}
+			}
+			else_if = {
+				limit = {
+					has_tech = improved_medium_tank_chassis
+				}
+				add_equipment_to_stockpile = { 
+					type = light_tank_chassis_2 
+					amount = 800
+				}
+			}
+			else = {
+				add_equipment_to_stockpile = { 
+					type = light_tank_chassis_1 
+					amount = 800
+				}
+			}
+
+            division_template = {
+					name = "装甲师III"
+					regiments = {
+						motorized = { x = 0 y = 0 }
+						motorized = { x = 0 y = 1 }
+						motorized = { x = 0 y = 2 }
+                        motorized = { x = 0 y = 3 }
+                        motorized = { x = 1 y = 0 }
+						motorized = { x = 1 y = 1 }
+						motorized = { x = 1 y = 2 }
+                        motorized = { x = 1 y = 3 }
+						medium_armor = { x = 2 y = 0 }
+						medium_armor = { x = 2 y = 1 }
+                        medium_armor = { x = 2 y = 2 }
+                        medium_armor = { x = 3 y = 0 }
+						medium_armor = { x = 3 y = 1 }
+                        medium_armor = { x = 3 y = 2 }
+                        mot_anti_air_brigade = { x = 4 y = 0 }
+                        mot_anti_tank_brigade = { x = 4 y = 1 }
+                        mot_artillery_brigade = { x = 4 y = 2 }
+                        mot_artillery_brigade = { x = 4 y = 3 }
+					}
+					support = {
+						engineer = { x = 0 y = 0 }
+						recon = { x = 0 y = 1 }
+                        field_hospital =  { x = 0 y = 2 }
+                        logistics_company = { x = 0 y = 3 }
+                        artillery =  { x = 0 y = 4 }
+					}
+				}
+
+            }
+
+        }
+
+        MEX_ai_base_equipment_add_1939 =  {  #步兵师1939
+        allowed = {
+			original_tag = MEX
+		}
+		available = {
+			date > 1939.1.1
+            AND = {
+                date < 1940.1.1
+            }
+		}
+
+		visible = {
+			
+		}
+
+		fire_only_once = no
+
+		cost = 0
+		days_remove = 90
+
+		modifier = {
+			
+		}
+
+		ai_will_do = {
+			factor = 1000
+		}
+
+        remove_effect = {
+            add_manpower = 20000
+
+            army_experience = 30
+			navy_experience = 30
+			air_experience = 30
+
+            add_equipment_to_stockpile = {
+				type = infantry_equipment
+				amount = 20000
+			}
+			add_equipment_to_stockpile = { 
+				type = train_equipment 
+				amount = 100
+			}
+			add_equipment_to_stockpile = {
+				type = artillery_equipment
+				amount = 3000
+			}
+			add_equipment_to_stockpile = {
+				type = anti_tank_equipment
+				amount = 1000
+			}
+            add_equipment_to_stockpile = {
+				type = support_equipment
+				amount = 5000
+			}
+			add_equipment_to_stockpile = { 
+				type = anti_air_equipment 
+				amount = 1000
+			}
+
+				random_owned_controlled_state = {
+					limit = { ROOT = { has_full_control_of_state = PREV } }
+					prioritize = { 64 }
+					create_unit = {
+						division = "name = \"步兵师IV\" division_template = \"步兵师IV\" start_experience_factor = 0.5" 
+						owner = MEX
+						count = 6
+					}
+				}
+
+        }
+    }
+
+	MEX_ai_base_template_add_4 =  {  #步兵师1939模板
+        allowed = {
+			original_tag = MEX
+		}
+		available = {
+			date > 1939.1.1
+		}
+
+		visible = {
+			
+		}
+
+		fire_only_once = yes
+
+		cost = 0
+		days_remove = 30
+
+		modifier = {
+			
+		}
+
+		ai_will_do = {
+			factor = 1000
+		}
+
+        remove_effect = {
+            add_manpower = 20000
+
+            army_experience = 30
+			navy_experience = 30
+			air_experience = 30
+
+            add_equipment_to_stockpile = {
+				type = infantry_equipment
+				amount = 20000
+			}
+			add_equipment_to_stockpile = { 
+				type = train_equipment 
+				amount = 100
+			}
+			add_equipment_to_stockpile = {
+				type = artillery_equipment
+				amount = 3000
+			}
+			add_equipment_to_stockpile = {
+				type = anti_tank_equipment
+				amount = 1000
+			}
+            add_equipment_to_stockpile = {
+				type = support_equipment
+				amount = 5000
+			}
+			add_equipment_to_stockpile = { 
+				type = anti_air_equipment 
+				amount = 1000
+			}
+
+            division_template = {
+					name = "步兵师IV"
+					regiments = {
+						infantry = { x = 0 y = 0 }
+						infantry = { x = 0 y = 1 }
+						infantry = { x = 0 y = 2 }
+                        infantry = { x = 0 y = 3 }
+                        infantry = { x = 0 y = 4 }
+						infantry = { x = 1 y = 0 }
+						infantry = { x = 1 y = 1 }
+						infantry = { x = 1 y = 2 }
+                        infantry = { x = 1 y = 3 }
+                        infantry = { x = 1 y = 4 }
+						infantry = { x = 2 y = 0 }
+                        infantry = { x = 2 y = 1 }
+						artillery_brigade = { x = 3 y = 0 }
+						artillery_brigade = { x = 3 y = 1 }
+                        anti_air_brigade = { x = 3 y = 2 }
+                        anti_tank_brigade = { x = 3 y = 3 }
+                        medium_armor = { x = 4 y = 0 }
+                        medium_armor = { x = 4 y = 1 }
+					}
+					support = {
+						engineer = { x = 0 y = 0 }
+						recon = { x = 0 y = 1 }
+                        field_hospital =  { x = 0 y = 2 }
+                        logistics_company = { x = 0 y = 3 }
+                        artillery =  { x = 0 y = 4 }
+					}
+				}
+
+
+        }
+    }
+
+	MEX_ai_base_equipment_add_1940 =  {  #步兵师1940
+        allowed = {
+			original_tag = MEX
+		}
+		available = {
+			date > 1940.1.1
+		}
+
+		visible = {
+			
+		}
+
+		fire_only_once = no
+
+		cost = 0
+		days_remove = 90
+
+		modifier = {
+			
+		}
+
+		ai_will_do = {
+			factor = 1000
+		}
+
+        remove_effect = {
+            add_manpower = 20000
+
+            army_experience = 30
+			navy_experience = 30
+			air_experience = 30
+
+            add_equipment_to_stockpile = {
+				type = infantry_equipment
+				amount = 20000
+			}
+			add_equipment_to_stockpile = { 
+				type = train_equipment 
+				amount = 100
+			}
+			add_equipment_to_stockpile = {
+				type = artillery_equipment
+				amount = 3000
+			}
+			add_equipment_to_stockpile = {
+				type = anti_tank_equipment
+				amount = 1000
+			}
+            add_equipment_to_stockpile = {
+				type = support_equipment
+				amount = 5000
+			}
+			add_equipment_to_stockpile = { 
+				type = anti_air_equipment 
+				amount = 1000
+			}
+
+				random_owned_controlled_state = {
+					limit = { ROOT = { has_full_control_of_state = PREV } }
+					prioritize = { 64 }
+					create_unit = {
+						division = "name = \"山地步兵师IV\" division_template = \"山地步兵师IV\" start_experience_factor = 0.5" 
+						owner = MEX
+						count = 8
+					}
+				}
+
+        }
+    }
+
+	MEX_ai_base_template_add_5 =  {  #步兵师1940模板
+        allowed = {
+			original_tag = MEX
+		}
+		available = {
+			date > 1940.1.1
+		}
+
+		visible = {
+			
+		}
+
+		fire_only_once = yes
+
+		cost = 0
+		days_remove = 30
+
+		modifier = {
+			
+		}
+
+		ai_will_do = {
+			factor = 1000
+		}
+
+        remove_effect = {
+            add_manpower = 20000
+
+            army_experience = 30
+			navy_experience = 30
+			air_experience = 30
+
+            add_equipment_to_stockpile = {
+				type = infantry_equipment
+				amount = 20000
+			}
+			add_equipment_to_stockpile = { 
+				type = train_equipment 
+				amount = 100
+			}
+			add_equipment_to_stockpile = {
+				type = artillery_equipment
+				amount = 3000
+			}
+			add_equipment_to_stockpile = {
+				type = anti_tank_equipment
+				amount = 1000
+			}
+            add_equipment_to_stockpile = {
+				type = support_equipment
+				amount = 5000
+			}
+			add_equipment_to_stockpile = { 
+				type = anti_air_equipment 
+				amount = 1000
+			}
+
+            division_template = {
+					name = "山地步兵师"
+					regiments = {
+						mountaineers = { x = 0 y = 0 }
+						mountaineers = { x = 0 y = 1 }
+						mountaineers = { x = 0 y = 2 }
+                        mountaineers = { x = 0 y = 3 }
+						mountaineers = { x = 1 y = 0 }
+						mountaineers = { x = 1 y = 1 }
+						mountaineers = { x = 1 y = 2 }
+                        mountaineers = { x = 1 y = 3 }
+						artillery_brigade = { x = 2 y = 0 }
+                        anti_air_brigade = { x = 2 y = 1 }
+                        anti_tank_brigade = { x = 2 y = 2 }
+                        medium_armor = { x = 3 y = 0 }
+                        medium_armor = { x = 3 y = 1 }
+					}
+					support = {
+						engineer = { x = 0 y = 0 }
+						recon = { x = 0 y = 1 }
+                        field_hospital =  { x = 0 y = 2 }
+                        logistics_company = { x = 0 y = 3 }
+                        artillery =  { x = 0 y = 4 }
+					}
+				}
+
+        }
+    }
+
+    MEX_ai_tank_equipment_add_1938 =  {  #装甲师1939
+        allowed = {
+			original_tag = MEX
+		}
+		available = {
+			date > 1941.1.1
+		}
+
+		visible = {
+
+		}
+
+		fire_only_once = no
+
+		cost = 0
+		days_remove = 90
+
+		modifier = {
+			
+		}
+
+		ai_will_do = {
+			factor = 1000
+		}
+
+        remove_effect = {
+            add_manpower = 20000
+
+            army_experience = 30
+			navy_experience = 30
+			air_experience = 30
+
+            add_equipment_to_stockpile = {
+				type = infantry_equipment
+				amount = 20000
+			}
+			add_equipment_to_stockpile = { 
+				type = motorized_equipment
+				amount = 2000
+			}
+			add_equipment_to_stockpile = {
+				type = artillery_equipment
+				amount = 800
+			}
+            add_equipment_to_stockpile = {
+				type = support_equipment
+				amount = 3000
+			}
+
+            if = {
+				limit = {
+					has_tech = advanced_medium_tank_chassis
+				}
+				add_equipment_to_stockpile = { 
+					type = medium_tank_chassis_3 
+					amount = 2000
+				}
+			}
+			else_if = {
+				limit = {
+					has_tech = improved_medium_tank_chassis
+				}
+				add_equipment_to_stockpile = { 
+					type = medium_tank_chassis_2 
+					amount = 2000
+				}
+			}
+			else = {
+				add_equipment_to_stockpile = { 
+					type = medium_tank_chassis_1 
+					amount = 2000
+				}
+			}
+
+            if = {
+				limit = {
+					has_tech = advanced_medium_tank_chassis
+				}
+				add_equipment_to_stockpile = { 
+					type = light_tank_chassis_3 
+					amount = 2000
+				}
+			}
+			else_if = {
+				limit = {
+					has_tech = improved_medium_tank_chassis
+				}
+				add_equipment_to_stockpile = { 
+					type = light_tank_chassis_2 
+					amount = 2000
+				}
+			}
+			else = {
+				add_equipment_to_stockpile = { 
+					type = light_tank_chassis_1 
+					amount = 2000
+				}
+			}
+				random_owned_controlled_state = {
+					limit = { ROOT = { has_full_control_of_state = PREV } }
+					prioritize = { 64 }
+					create_unit = {
+						division = "name = \"装甲师IV\" division_template = \"装甲师IV\" start_experience_factor = 0.5" 
+						owner = MEX
+						count = 6
+					}
+				}
+            }
+
+        }
+
+		MEX_ai_tank_base_template_add_4 =  {  #装甲师1939模板
+        allowed = {
+			original_tag = MEX
+		}
+		available = {
+			date > 1941.1.1
+		}
+
+		visible = {
+			
+		}
+
+		fire_only_once = yes
+
+		cost = 0
+		days_remove = 30
+
+		modifier = {
+			
+		}
+
+		ai_will_do = {
+			factor = 1000
+		}
+
+        remove_effect = {
+            add_manpower = 20000
+
+            army_experience = 30
+			navy_experience = 30
+			air_experience = 30
+
+            add_equipment_to_stockpile = {
+				type = infantry_equipment
+				amount = 20000
+			}
+			add_equipment_to_stockpile = { 
+				type = motorized_equipment
+				amount = 2000
+			}
+			add_equipment_to_stockpile = {
+				type = artillery_equipment
+				amount = 800
+			}
+            add_equipment_to_stockpile = {
+				type = support_equipment
+				amount = 3000
+			}
+
+            if = {
+				limit = {
+					has_tech = advanced_medium_tank_chassis
+				}
+				add_equipment_to_stockpile = { 
+					type = medium_tank_chassis_3 
+					amount = 2000
+				}
+			}
+			else_if = {
+				limit = {
+					has_tech = improved_medium_tank_chassis
+				}
+				add_equipment_to_stockpile = { 
+					type = medium_tank_chassis_2 
+					amount = 2000
+				}
+			}
+			else = {
+				add_equipment_to_stockpile = { 
+					type = medium_tank_chassis_1 
+					amount = 2000
+				}
+			}
+
+            if = {
+				limit = {
+					has_tech = advanced_medium_tank_chassis
+				}
+				add_equipment_to_stockpile = { 
+					type = light_tank_chassis_3 
+					amount = 2000
+				}
+			}
+			else_if = {
+				limit = {
+					has_tech = improved_medium_tank_chassis
+				}
+				add_equipment_to_stockpile = { 
+					type = light_tank_chassis_2 
+					amount = 2000
+				}
+			}
+			else = {
+				add_equipment_to_stockpile = { 
+					type = light_tank_chassis_1 
+					amount = 2000
+				}
+			}
+
+            division_template = {
+					name = "装甲师IV"
+					regiments = {
+						motorized = { x = 0 y = 0 }
+						motorized = { x = 0 y = 1 }
+						motorized = { x = 0 y = 2 }
+                        motorized = { x = 0 y = 3 }
+                        motorized = { x = 0 y = 4 }
+                        motorized = { x = 1 y = 0 }
+						motorized = { x = 1 y = 1 }
+						motorized = { x = 1 y = 2 }
+						medium_armor = { x = 2 y = 0 }
+						medium_armor = { x = 2 y = 1 }
+                        medium_armor = { x = 2 y = 2 }
+                        medium_armor = { x = 2 y = 3 }
+                        medium_armor = { x = 2 y = 4 }
+                        medium_armor = { x = 3 y = 0 }
+						medium_armor = { x = 3 y = 1 }
+                        medium_armor = { x = 3 y = 2 }
+                        medium_armor = { x = 3 y = 3 }
+                        mot_anti_air_brigade = { x = 4 y = 0 }
+                        mot_anti_tank_brigade = { x = 4 y = 1 }
+					}
+					support = {
+						engineer = { x = 0 y = 0 }
+						recon = { x = 0 y = 1 }
+                        field_hospital =  { x = 0 y = 2 }
+                        logistics_company = { x = 0 y = 3 }
+                        artillery =  { x = 0 y = 4 }
+					}
+				}
+			}
+
+
+        }
+
+        MEX_ai_tank_equipment_add_1939 =  {  #机械化装甲师
+        allowed = {
+			original_tag = MEX
+		}
+		available = {
+			date > 1942.1.1
+		}
+
+		visible = {
+			
+		}
+
+		fire_only_once = no
+
+		cost = 0
+		days_remove = 90
+
+		modifier = {
+			
+		}
+
+		ai_will_do = {
+			factor = 1000
+		}
+
+        remove_effect = {
+            add_manpower = 20000
+
+            army_experience = 30
+			navy_experience = 30
+			air_experience = 30
+
+            add_equipment_to_stockpile = {
+				type = infantry_equipment
+				amount = 20000
+			}
+			add_equipment_to_stockpile = { 
+				type = mechanised_infantry
+				amount = 2000
+			}
+			add_equipment_to_stockpile = {
+				type = artillery_equipment
+				amount = 800
+			}
+            add_equipment_to_stockpile = {
+				type = support_equipment
+				amount = 3000
+			}
+			if = {
+				limit = {
+					NOT = {
+						has_tech = motorized_equipment
+					}
+				}
+				set_technology = motorized_equipment_1
+			}
+
+            if = {
+				limit = {
+					has_tech = advanced_medium_tank_chassis
+				}
+				add_equipment_to_stockpile = { 
+					type = medium_tank_chassis_3 
+					amount = 2000
+				}
+			}
+			else_if = {
+				limit = {
+					has_tech = improved_medium_tank_chassis
+				}
+				add_equipment_to_stockpile = { 
+					type = medium_tank_chassis_2 
+					amount = 2000
+				}
+			}
+			else = {
+				add_equipment_to_stockpile = { 
+					type = medium_tank_chassis_1 
+					amount = 2000
+				}
+			}
+
+            if = {
+				limit = {
+					has_tech = advanced_medium_tank_chassis
+				}
+				add_equipment_to_stockpile = { 
+					type = light_tank_chassis_3 
+					amount = 2000
+				}
+			}
+			else_if = {
+				limit = {
+					has_tech = improved_medium_tank_chassis
+				}
+				add_equipment_to_stockpile = { 
+					type = light_tank_chassis_2 
+					amount = 2000
+				}
+			}
+			else = {
+				add_equipment_to_stockpile = { 
+					type = light_tank_chassis_1 
+					amount = 2000
+				}
+			}
+				random_owned_controlled_state = {
+					limit = { ROOT = { has_full_control_of_state = PREV } }
+					prioritize = { 64 }
+					create_unit = {
+						division = "name = \"机械化师I\" division_template = \"机械化师I\" start_experience_factor = 0.5" 
+						owner = MEX
+						count = 8
+					}
+				}
+            }
+
+        }
+
+		MEX_ai_tank_base_template_add_5 =  {  #机械化装甲师模板
+        allowed = {
+			original_tag = MEX
+		}
+		available = {
+			date > 1942.1.1
+		}
+
+		visible = {
+			
+		}
+
+		fire_only_once = yes
+
+		cost = 0
+		days_remove = 30
+
+		modifier = {
+			
+		}
+
+		ai_will_do = {
+			factor = 1000
+		}
+
+        remove_effect = {
+            add_manpower = 20000
+
+            army_experience = 30
+			navy_experience = 30
+			air_experience = 30
+
+            add_equipment_to_stockpile = {
+				type = infantry_equipment
+				amount = 20000
+			}
+			add_equipment_to_stockpile = { 
+				type = mechanised_infantry
+				amount = 20000
+			}
+			add_equipment_to_stockpile = {
+				type = artillery_equipment
+				amount = 800
+			}
+            add_equipment_to_stockpile = {
+				type = support_equipment
+				amount = 3000
+			}
+			if = {
+				limit = {
+					NOT = {
+						has_tech = motorized_equipment
+					}
+				}
+				set_technology = motorized_equipment_1
+			}
+
+            if = {
+				limit = {
+					has_tech = advanced_medium_tank_chassis
+				}
+				add_equipment_to_stockpile = { 
+					type = medium_tank_chassis_3 
+					amount = 2000
+				}
+			}
+			else_if = {
+				limit = {
+					has_tech = improved_medium_tank_chassis
+				}
+				add_equipment_to_stockpile = { 
+					type = medium_tank_chassis_2 
+					amount = 2000
+				}
+			}
+			else = {
+				add_equipment_to_stockpile = { 
+					type = medium_tank_chassis_1 
+					amount = 2000
+				}
+			}
+
+            if = {
+				limit = {
+					has_tech = advanced_medium_tank_chassis
+				}
+				add_equipment_to_stockpile = { 
+					type = light_tank_chassis_3 
+					amount = 2000
+				}
+			}
+			else_if = {
+				limit = {
+					has_tech = improved_medium_tank_chassis
+				}
+				add_equipment_to_stockpile = { 
+					type = light_tank_chassis_2 
+					amount = 2000
+				}
+			}
+			else = {
+				add_equipment_to_stockpile = { 
+					type = light_tank_chassis_1 
+					amount = 2000
+				}
+			}
+
+            division_template = {
+					name = "机械化师I"
+					regiments = {
+						mechanized = { x = 0 y = 0 }
+						mechanized = { x = 0 y = 1 }
+						mechanized = { x = 0 y = 2 }
+                        mechanized = { x = 0 y = 3 }
+                        mechanized = { x = 0 y = 4 }
+                        mechanized = { x = 1 y = 0 }
+						mechanized = { x = 1 y = 1 }
+						mechanized = { x = 1 y = 2 }
+                        mechanized = { x = 1 y = 3 }
+						medium_armor = { x = 2 y = 0 }
+						medium_armor = { x = 2 y = 1 }
+                        medium_armor = { x = 2 y = 2 }
+                        medium_armor = { x = 2 y = 3 }
+                        medium_armor = { x = 2 y = 4 }
+                        medium_armor = { x = 3 y = 0 }
+						medium_armor = { x = 3 y = 1 }
+                        medium_armor = { x = 3 y = 2 }
+                        medium_armor = { x = 3 y = 3 }
+					}
+					support = {
+						engineer = { x = 0 y = 0 }
+						recon = { x = 0 y = 1 }
+                        field_hospital =  { x = 0 y = 2 }
+                        logistics_company = { x = 0 y = 3 }
+                        artillery =  { x = 0 y = 4 }
+					}
+				}
+            }
+
+        }
+
+
+	MEX_ai_tank_equipment_add_end_1 =  {  #要寄了给的装甲师
+        allowed = {
+			original_tag = MEX
+		}
+		available = {
+			surrender_progress > 0.5
+			AND = {
+				date > 1941.1.1
+			}
+		}
+
+		visible = {
+			
+		}
+
+		fire_only_once = no
+
+		cost = 0
+		days_remove = 10
+		days_re_enable = 240
+
+		modifier = {
+			
+		}
+
+		ai_will_do = {
+			factor = 1000
+		}
+
+        remove_effect = {
+			set_technology = motorized_equipment
+            add_manpower = 2000000
+
+            army_experience = 100
+			navy_experience = 100
+			air_experience = 100
+
+			if = {
+				limit = {
+					NOT = { 
+						has_tech = mechanized_equipment_2
+					}
+				}
+				set_technology = mechanized_equipment_2
+			}
+
+            if = {
+				limit = {
+					has_tech = advanced_medium_tank_chassis
+				}
+				add_equipment_to_stockpile = { 
+					type = medium_tank_chassis_3 
+					amount = 50000
+				}
+			}
+			else_if = {
+				limit = {
+					has_tech = improved_medium_tank_chassis
+				}
+				add_equipment_to_stockpile = { 
+					type = medium_tank_chassis_2 
+					amount = 50000
+				}
+			}
+			else = {
+				add_equipment_to_stockpile = { 
+					type = medium_tank_chassis_1 
+					amount = 50000
+				}
+			}
+
+            if = {
+				limit = {
+					has_tech = advanced_medium_tank_chassis
+				}
+				add_equipment_to_stockpile = { 
+					type = light_tank_chassis_3 
+					amount = 20000
+				}
+			}
+			else_if = {
+				limit = {
+					has_tech = improved_medium_tank_chassis
+				}
+				add_equipment_to_stockpile = { 
+					type = light_tank_chassis_2 
+					amount = 20000
+				}
+			}
+			else = {
+				add_equipment_to_stockpile = { 
+					type = light_tank_chassis_1 
+					amount = 20000
+				}
+			}
+
+			add_equipment_to_stockpile = {
+				type = infantry_equipment
+				amount = 200000
+			}
+			add_equipment_to_stockpile = { 
+				type = mechanised_infantry
+				amount = 50000
+			}
+			add_equipment_to_stockpile = {
+				type = artillery_equipment
+				amount = 8000
+			}
+            add_equipment_to_stockpile = {
+				type = support_equipment
+				amount = 30000
+			}
+
+            division_template = {
+					name = "人民卫队"
+					regiments = {
+						mechanized = { x = 0 y = 0 }
+						mechanized = { x = 0 y = 1 }
+						mechanized = { x = 0 y = 2 }
+                        mechanized = { x = 0 y = 3 }
+                        mechanized = { x = 0 y = 4 }
+                        mechanized = { x = 1 y = 0 }
+						mechanized = { x = 1 y = 1 }
+						mechanized = { x = 1 y = 2 }
+                        mechanized = { x = 1 y = 3 }
+						medium_armor = { x = 2 y = 0 }
+						medium_armor = { x = 2 y = 1 }
+                        medium_armor = { x = 2 y = 2 }
+                        medium_armor = { x = 2 y = 3 }
+                        medium_armor = { x = 2 y = 4 }
+                        medium_armor = { x = 3 y = 0 }
+						medium_armor = { x = 3 y = 1 }
+                        medium_armor = { x = 3 y = 2 }
+                        medium_armor = { x = 3 y = 3 }
+					}
+					support = {
+						engineer = { x = 0 y = 0 }
+						recon = { x = 0 y = 1 }
+                        field_hospital =  { x = 0 y = 2 }
+                        logistics_company = { x = 0 y = 3 }
+                        artillery =  { x = 0 y = 4 }
+					}
+				}
+				random_owned_controlled_state = {
+					limit = { ROOT = { has_full_control_of_state = PREV } }
+					prioritize = { 64 }
+					create_unit = {
+						division = "name = \"人民卫队\" division_template = \"人民卫队\" start_experience_factor = 1" 
+						owner = MEX
+						count = 48
+					}
+				}
+            }
+
+        }
+
+}  
+
+MEX_focus_categories = {
+
+    MEX_focus_categories_00 = { #创建拉丁同盟
+        allowed = {
+			tag = MEX
+		}
+
+		available = {
+			AND = {
+                has_country_flag = the_LatinAmerica_flag
+				has_government = communism
+                has_civil_war = no
+                has_war = no
+			}
+		}
+
+		visible = {
+			AND = {
+                has_country_flag = the_LatinAmerica_flag
+				has_government = communism
+			}
+		}
+		cost = 0
+
+		fire_only_once = yes
+		days_remove = 10
+		complete_effect = {
+			
+		}
+
+		remove_effect = {
+			stability_factor = 100
+			war_support_factor = 100
+			MEX = {
+                create_faction_from_template = the_mod_faction_the_LatinAmerica_faction
+                set_cosmetic_tag = MEX_the_LatinAmerica
+            }
+            hidden_effect = {
+                set_country_flag = the_LatinAmerica_faction_flag
+                news_event = { id = change_news.26 days = 1 }
+            }
+		}
+		
+		ai_will_do = {
+			factor = 1000
+		}
+    }
+
+    MEX_focus_categories_01 = { #拉丁同盟倡议
+        allowed = {
+			tag = MEX
+		}
+
+		available = {
+			AND = {
+                has_country_flag = the_LatinAmerica_flag
+				has_government = communism
+                has_civil_war = no
+                has_war = no
+			}
+		}
+
+		visible = {
+			AND = {
+                has_country_flag = the_LatinAmerica_flag
+				has_government = communism
+                has_country_flag = the_LatinAmerica_faction_flag
+			}
+		}
+
+		state_target = yes
+		on_map_mode = map_and_decisions_view
+		target_trigger = {
+			FROM = {
+				is_capital = yes
+				is_core_of = OWNER
+                OR = {
+                    is_on_continent = south_america
+                    is_on_continent = central_america
+                }
+			}
+		}
+		cost = 10
+
+		fire_only_once = no
+		days_remove = 30
+		complete_effect = {
+			
+		}
+
+		remove_effect = {
+			FROM = {
+				OWNER = {
+					country_event = {
+						id = change_mex.1
+						days = 2
+					}
+				}
+			}
+		}
+		
+		ai_will_do = {
+			factor = 1000
+		}
+    }
+
+    MEX_focus_categories_02 = { #组建人民军
+        allowed = {
+			tag = MEX
+		}
+
+		available = {
+			AND = {
+                has_country_flag = the_LatinAmerica_flag
+				has_government = communism
+                has_civil_war = no
+                has_war = no
+			}
+		}
+
+		visible = {
+			AND = {
+                has_country_flag = the_LatinAmerica_flag
+				has_government = communism
+                has_country_flag = the_LatinAmerica_faction_flag
+			}
+		}
+
+		cost = 10
+
+		fire_only_once = no
+		days_remove = 70
+		complete_effect = {
+			
+		}
+
+		remove_effect = {
+			add_ideas = MEX_KPA
+		}
+		
+		ai_will_do = {
+			factor = 1000
+		}
+    }
+    
+
+}

@@ -1,0 +1,2979 @@
+add_namespace = change_germany
+
+country_event = { #欢迎
+	id = change_germany.0
+	title = change_germany.0.t
+	desc = change_germany.0.d
+
+	is_triggered_only = yes
+
+	option = {
+		name = change_germany.0.a
+		custom_effect_tooltip = welcome_coming_tooltip
+		hidden_effect = {
+			every_state = {
+				limit = {
+					is_core_of = TIB
+				}
+				add_core_of = PRC
+				add_core_of = CHI
+			}
+			every_country = {
+                limit = {
+                    is_ai = yes
+                }
+                add_ideas = help_ai_production
+            }
+		}
+	}
+}
+
+country_event = {
+	id = change_germany.1
+	title = change_germany.1.t
+	desc = change_germany.1.d
+	picture = GFX_report_event_royal_parade
+
+	is_triggered_only = yes
+
+	#威威
+	option = {
+		name = change_germany.1.a
+		ai_chance = {
+			factor = 50
+		}
+		retire_country_leader = yes
+		hidden_effect = {
+			set_country_leader_name = { name = "威廉二世" }
+			set_country_leader_portrait = { portrait = "gfx/Leaders/GER/wilhelm_ii.png" }
+		}
+
+		add_country_leader_trait = GER_prince_of_ger
+        add_country_leader_trait = anti_democrat 
+        add_country_leader_trait = imperial_connections
+        add_country_leader_trait = GER_empire_builder
+		add_country_leader_trait = GER_genius_diplomat
+		#GER_wilhelm_ii = {
+		#	add_country_leader_role = {
+		#		country_leader = {
+		#			expire = "1965.1.1"
+		#			ideology = despotism
+		#			traits = {
+		#				GER_prince_of_ger
+		#				anti_democrat
+		#				imperial_connections
+		#				GER_empire_builder
+		#				GER_genius_diplomat
+		#			}
+		#		}
+		#		promote_leader = yes
+		#	}
+		#}
+	}
+
+	#威威威
+	option = {
+		name = change_germany.1.b
+		ai_chance = {
+			factor = 30
+		}
+		retire_country_leader = yes
+		hidden_effect = {
+			set_country_leader_name = { name = "威廉三世" }
+			set_country_leader_portrait = { portrait = "gfx/Leaders/GER/portrait_ger_wilhelm_iii.png" }
+		}
+
+		add_country_leader_trait = GER_prince_of_ger
+        add_country_leader_trait = popular_figurehead2
+        add_country_leader_trait = GER_empire_builder
+		#GER_wilhelm_iii = {
+		#	add_country_leader_role = {
+		#		country_leader = {
+		#			expire = "1965.1.1"
+		#			ideology = despotism
+		#			traits = {
+		#				GER_prince_of_ger
+		#				popular_figurehead2
+		#				GER_empire_builder
+		#			}
+		#		}
+		#		promote_leader = yes
+		#	}
+		#}
+	}
+
+	#维多利亚
+	option = {
+		name = change_germany.1.c
+		ai_chance = {
+			factor = 20
+		}
+		retire_country_leader = yes
+		hidden_effect = {
+			set_country_leader_name = { name = "维多利亚三世" }
+			set_country_leader_portrait = { portrait = "gfx/Leaders/GER/portrait_ger_victoria_louise.png" }
+		}
+
+		add_country_leader_trait = GER_prince_of_ger
+        add_country_leader_trait = kaiserin_of_the_people
+		add_country_leader_trait = victoria_iii
+        add_country_leader_trait = GER_empire_builder
+		#GER_victoria = {
+		#	add_country_leader_role = {
+		#		country_leader = {
+		#			expire = "1965.1.1"
+		#			ideology = despotism
+		#			traits = {
+		#				GER_prince_of_ger
+		#				kaiserin_of_the_people
+		#				victoria_iii
+		#				GER_empire_builder
+		#			}
+		#		}
+		#		promote_leader = yes
+		#	}
+		#}
+	}
+
+}
+
+country_event = { #援助中国
+	id = change_germany.2
+	title = change_germany.2.t
+	desc = change_germany.2.d
+
+	is_triggered_only = yes
+
+	option = { #支持prc
+		name = change_germany.2.a
+		ai_chance = {
+			modifier = {
+				factor = 100
+				has_opinion = {
+					PRC = {
+						is_ai = NO
+					}
+				}
+			}
+			modifier = {
+				factor = 20
+				has_opinion = {
+					target = PRC
+					value > 10
+				}
+			}
+			modifier = {
+				factor = 1
+				has_opinion = {
+					target = PRC
+					value < -20
+				}
+			}
+			modifier = {
+				factor = 0
+				has_war_with = PRC
+				PRC = { exists = no }
+			}
+		}
+		PRC = {
+			add_ideas = GER_support_china
+			add_ai_strategy = {
+				type = befriend
+				id = GER	
+				value = 500
+			}
+			add_ai_strategy = {
+				type = alliance
+				id = GER			
+				value = 300
+			}
+			add_ai_strategy = {
+				type = volunteers
+				id = GER
+				value = 300
+			}
+			country_event = change_germany.3
+		}
+		GER = {
+			add_ideas = GER_eastern_experience
+			add_ai_strategy = {
+				type = befriend
+				id = PRC
+				value = 500
+			}
+			add_ai_strategy = {
+				type = alliance
+				id = PRC			
+				value = 300
+			}
+			add_ai_strategy = {
+				type = volunteers
+				id = PRC
+				value = 300
+			}
+		}
+	}
+
+	option = { #支持老将
+		name = change_germany.2.b
+		ai_chance = {
+			modifier = {
+				factor = 1000
+			}
+			modifier = {
+				factor = 1
+				has_opinion = {
+					target = CHI
+					value < -20
+				}
+			}
+			modifier = {
+				factor = 0
+				has_war_with = CHI
+				CHI = { exists = no }
+			}
+		}
+		CHI = {
+			add_ideas = GER_support_china
+			add_ai_strategy = {
+				type = befriend
+				id = GER	
+				value = 500
+			}
+			add_ai_strategy = {
+				type = alliance
+				id = GER			
+				value = 300
+			}
+			add_ai_strategy = {
+				type = volunteers
+				id = GER
+				value = 300
+			}
+			country_event = change_germany.3
+		}
+		GER = {
+			add_ideas = GER_eastern_experience
+			add_ai_strategy = {
+				type = befriend
+				id = CHI
+				value = 500
+			}
+			add_ai_strategy = {
+				type = alliance
+				id = CHI		
+				value = 300
+			}
+			add_ai_strategy = {
+				type = volunteers
+				id = CHI
+				value = 300
+			}
+		}
+	}
+}
+
+country_event = { #拿到援助
+	id = change_germany.3
+	title = change_germany.3.t
+	desc = change_germany.3.d
+
+	is_triggered_only = yes
+
+	option = {
+		name = change_germany.3.a
+		ai_chance = {
+			modifier = {
+				factor = 100
+			}
+		}
+		add_research_slot = 1
+			random_owned_controlled_state = {
+				limit = {
+					free_building_slots = {
+						building = arms_factory
+						size > 0
+						include_locked = yes
+					}
+					OR = {
+						is_in_home_area = yes
+						NOT = {
+							owner = {
+								any_owned_state = {
+									free_building_slots = {
+										building = arms_factory
+										size > 0
+										include_locked = yes
+									}
+									is_in_home_area = yes
+								}
+							}
+						}
+					}
+				}
+				add_extra_state_shared_building_slots = 4
+				add_building_construction = {
+					type = arms_factory
+					level = 2
+					instant_build = yes
+				}
+				add_building_construction = {
+					type = industrial_complex
+					level = 2
+					instant_build = yes
+				}
+			}
+			random_owned_controlled_state = {
+				limit = {
+					free_building_slots = {
+						building = arms_factory
+						size > 0
+						include_locked = yes
+					}
+					OR = {
+						is_in_home_area = yes
+						NOT = {
+							owner = {
+								any_owned_state = {
+									free_building_slots = {
+										building = arms_factory
+										size > 0
+										include_locked = yes
+									}
+									is_in_home_area = yes
+								}
+							}
+						}
+					}
+				}
+				add_extra_state_shared_building_slots = 4
+				add_building_construction = {
+					type = arms_factory
+					level = 2
+					instant_build = yes
+				}
+				add_building_construction = {
+					type = industrial_complex
+					level = 2
+					instant_build = yes
+				}
+			}
+		add_equipment_to_stockpile = {
+				type = infantry_equipment
+				amount = 30000
+				producer = GER
+			}
+		add_equipment_to_stockpile = {
+				type = artillery_equipment
+				amount = 5000
+				producer = GER
+			}
+	}
+}
+
+country_event = { #三皇同盟
+	id = change_germany.4
+	title = change_germany.4.t
+	desc = change_germany.4.d
+
+	is_triggered_only = yes
+
+	picture = GFX_report_event_royal_parade
+
+	option = {
+		name = change_germany.4.a
+		ai_chance = {
+			modifier = {
+				factor = 1000
+			}
+		}
+
+		GER = {
+			if = {
+				limit = {
+					has_country_flag = try_new_third_empire_prepare_war_flag
+				}
+				add_war_support = 0.3
+				add_ideas = war_economy
+			} 
+			else = {
+				add_ideas = GER_unprepare_war
+				add_war_support = 0.3
+				add_ideas = war_economy
+			}
+			set_country_flag = third_empire_has_become_flag
+			create_faction_from_template = the_mod_faction_GER_the_third_empire_faction
+			add_to_faction = FRA
+			add_to_faction = HUN
+			activate_mission = we_must_prepare_war_01
+			if = {
+				BUL = {
+					has_government = neutrality
+				}
+				add_to_faction = BUL
+			}
+			diplomatic_relation = {
+				country = FRA
+				relation = guarantee
+				active = yes
+			}
+			diplomatic_relation = {
+				country = HUN
+				relation = guarantee
+				active = yes
+			}
+
+			98 = {
+				add_core_of = GER
+			}
+
+			87 = {
+				add_core_of = 87
+			}
+
+			add_state_claim = 98
+
+			add_state_claim = 87
+
+			add_dynamic_modifier = {
+				modifier = mod_with_friend_ger
+			}
+		}
+		80 = {
+			add_core_of = HUN
+		}
+
+		159 = {
+			add_core_of = HUN
+		}
+
+		HUN = {
+			diplomatic_relation = {
+				country = GER
+				relation = guarantee
+				active = yes
+			}
+
+			diplomatic_relation = {
+				country = FRA
+				relation = guarantee
+				active = yes
+			}
+
+			add_dynamic_modifier = {
+				modifier = mod_with_friend_ger
+				scope = GER
+			}
+		}
+
+		FRA = {
+			every_state = {
+				limit = {
+					is_core_of = HOL
+					is_core_of = BEL
+				}
+				add_state_claim = PREV
+			}
+
+			add_dynamic_modifier = {
+				modifier = mod_with_friend_ger
+				scope = GER
+			}
+
+			add_state_claim = 158
+
+			diplomatic_relation = {
+				country = GER
+				relation = guarantee
+				active = yes
+			}
+
+			diplomatic_relation = {
+				country = HUN
+				relation = guarantee
+				active = yes
+			}
+
+			annex_country = {
+				target = LEB
+			}
+
+			annex_country = {
+				tag = SYR
+			}
+		}
+
+		every_other_country = {
+			limit = {
+				is_in_faction_with = GER
+			}
+			if = {
+				limit = {
+					has_country_flag = try_new_third_empire_prepare_war_flag
+				}
+				add_war_support = 0.3
+				add_ideas = war_economy
+			} 
+			else = {
+				add_ideas = GER_unprepare_war
+				add_war_support = 0.3
+				add_ideas = war_economy
+			}
+			activate_mission = we_must_prepare_war_01
+			add_offsite_building = { type = industrial_complex level = 25 }
+			add_offsite_building = { type = arms_factory level = 25 }
+			add_offsite_building = { type = dockyard level = 15 }
+		}
+
+		hidden_effect = {
+			if = { #三皇同盟
+				limit = {
+					FRA = {
+						has_country_flag = cjg_open_the_third_empire
+					}
+				}
+				add_ai_strategy = {
+					type = alliance
+					id = HUN
+					value = 1000
+				}
+				add_ai_strategy = {
+					type = alliance
+					id = FRA
+					value = 1000
+				}
+				add_ai_strategy = {
+					type = protect
+					id = HUN
+					value = 1000
+				}
+				add_ai_strategy = {
+					type = protect
+					id = FRA
+					value = 1000
+				}
+				add_ai_strategy = {
+					type = send_volunteers_desire
+					id = HUN
+					value = 1000
+				}
+				add_ai_strategy = {
+					type = send_volunteers_desire
+					id = FRA
+					value = 1000
+				}
+				add_ai_strategy = {
+					type = support
+					id = HUN
+					value = 1000
+				}
+				add_ai_strategy = {
+					type = support
+					id = FRA
+					value = 1000
+				}
+				HUN = {
+					add_ai_strategy = {
+						type = alliance
+						id = GER
+						value = 1000
+					}
+					add_ai_strategy = {
+						type = alliance
+						id = FRA
+						value = 1000
+					}
+					add_ai_strategy = {
+						type = protect
+						id = GER
+						value = 1000
+					}
+					add_ai_strategy = {
+						type = protect
+						id = FRA
+						value = 1000
+					}
+					add_ai_strategy = {
+						type = send_volunteers_desire
+						id = GER
+						value = 1000
+					}
+					add_ai_strategy = {
+						type = send_volunteers_desire
+						id = FRA
+						value = 1000
+					}
+					add_ai_strategy = {
+						type = support
+						id = GER
+						value = 1000
+					}
+					add_ai_strategy = {
+						type = support
+						id = FRA
+						value = 1000
+					}
+				}
+				FRA = {
+					add_ai_strategy = {
+						type = alliance
+						id = GER
+						value = 1000
+					}
+					add_ai_strategy = {
+						type = alliance
+						id = HUN
+						value = 1000
+					}
+					add_ai_strategy = {
+						type = protect
+						id = GER
+						value = 1000
+					}
+					add_ai_strategy = {
+						type = protect
+						id = HUN
+						value = 1000
+					}
+					add_ai_strategy = {
+						type = send_volunteers_desire
+						id = GER
+						value = 1000
+					}
+					add_ai_strategy = {
+						type = send_volunteers_desire
+						id = HUN
+						value = 1000
+					}
+					add_ai_strategy = {
+						type = support
+						id = GER
+						value = 1000
+					}
+					add_ai_strategy = {
+						type = support
+						id = HUN
+						value = 1000
+					}
+				}
+			}
+		}
+
+	}
+}
+
+country_event = { #旧同盟国
+	id = change_germany.5
+	title = change_germany.5.t
+	desc = change_germany.5.d
+
+	is_triggered_only = yes
+
+	picture = GFX_event_05
+
+	option = {
+		name = change_germany.5.a
+		ai_chance = {
+			modifier = {
+				factor = 100
+			}
+		}
+		GER = {
+			add_to_faction = HUN
+		}
+
+	}
+}
+
+country_event = { #意大利命运
+	id = change_germany.6
+	title = change_germany.6.t
+	desc = change_germany.6.d
+
+	is_triggered_only = yes
+
+
+	option = { #自己体面
+		name = change_germany.6.a
+		ai_chance = {
+			factor = 100
+			modifier = {
+				factor = 1000
+				ITA = {
+					is_puppet = yes
+				}
+			}
+		}
+		ITA = {
+			country_event = { id = change_germany.7 days = 1 }
+		}
+	}
+
+	option = { #帮他体面
+		name = change_germany.6.b
+		ai_chance = {
+			modifier = {
+				factor = 0
+			}
+		}
+		every_country = {
+			limit = {
+				OR = {
+					tag = ITA
+					original_tag = ITA
+				}
+			}
+			GER = {
+				create_wargoal = {
+					target = PREV
+					type = annex_everything
+				}
+			}
+		}
+	}
+}
+
+country_event = { #意大利命运(意大利)
+	id = change_germany.7
+	title = change_germany.7.t
+	desc = change_germany.7.d
+
+	is_triggered_only = yes
+
+
+	option = { #自己体面
+		name = change_germany.7.a
+		ai_chance = {
+			factor = 10
+			modifier = {
+				factor = 1000
+				ITA = {
+					is_puppet = yes
+				}
+			}
+		}
+		GER = {
+			country_event = { id = change_germany.8 days = 1 }
+		}
+	}
+
+	option = { #NO
+		name = change_germany.7.b
+		ai_chance = {
+			factor = 10
+			modifier = {
+				factor = 100
+				ITA = {
+					is_puppet = no
+				}
+			}
+		}
+		GER = {
+			country_event = { id = change_germany.9 days = 1 }
+		}
+	}
+
+	option = { #向英国求助
+		name = change_germany.7.c
+		ai_chance = {
+			factor = 25
+			modifier = {
+				factor = 100
+				ENG = {
+					has_country_flag = ENG_the_third_empire_flag
+				}
+			}
+		}
+		ENG = {
+			country_event = { id = change_germany.10 days = 1 }
+		}
+	}
+}
+
+country_event = { #自己体面
+	id = change_germany.8
+	title = change_germany.8.t
+	desc = change_germany.8.d
+
+	is_triggered_only = yes
+
+
+	option = { #自己体面
+		name = change_germany.8.a
+		ai_chance = {
+			factor = 100
+		}
+		GER = {
+			annex_country = {
+				target = ITA
+				transfer_troops = yes
+			}
+		}
+		FRA = {
+			transfer_state = 158
+			transfer_state = 161
+			transfer_state = 162
+			transfer_state = 114
+		}
+		HUN = {
+			transfer_state = 163
+			transfer_state = 852
+			transfer_state = 736
+			transfer_state = 160
+			transfer_state = 39
+			transfer_state = 850
+
+
+			transfer_state = 159
+			transfer_state = 448
+			transfer_state = 449
+			transfer_state = 450
+			transfer_state = 451
+			transfer_state = 661
+			transfer_state = 662
+			transfer_state = 663
+		}
+		news_event = { id = change_news.46 days = 1 }
+	}
+
+}
+
+country_event = { #帮它体面
+	id = change_germany.9
+	title = change_germany.9.t
+	desc = change_germany.9.d
+
+	is_triggered_only = yes
+
+
+	option = { #打
+		name = change_germany.9.a
+		ai_chance = {
+			modifier = {
+				factor = 0
+			}
+		}
+		every_country = {
+			limit = {
+				OR = {
+					tag = ITA
+					original_tag = ITA
+				}
+			}
+			GER = {
+				create_wargoal = {
+					target = PREV
+					type = annex_everything
+				}
+			}
+		}
+	}
+}
+
+
+country_event = { #意大利命运(英国)
+	id = change_germany.10
+	title = change_germany.10.t
+	desc = change_germany.10.d
+
+	is_triggered_only = yes
+
+
+	option = { #保护他们
+		name = change_germany.10.a
+		ai_chance = {
+			factor = 50
+			modifier = {
+				factor = 100
+				date > 1941.1.1
+			}
+		}
+		hidden_effect = {
+			ENG = {
+                add_ai_strategy = {
+					type = alliance
+					id = ITA
+					value = 1000
+				}
+				add_ai_strategy = {
+					type = protect
+					id = ITA
+					value = 1000
+				}
+				add_ai_strategy = {
+					type = send_volunteers_desire
+					id = ITA
+					value = 1000
+				}
+				add_ai_strategy = {
+					type = support
+					id = USA
+					value = 1000
+				}
+			}
+			ITA = {
+                add_ai_strategy = {
+					type = alliance
+					id = ENG
+					value = 1000
+				}
+				add_ai_strategy = {
+					type = protect
+					id = ENG
+					value = 1000
+				}
+				add_ai_strategy = {
+					type = send_volunteers_desire
+					id = ENG
+					value = 1000
+				}
+				add_ai_strategy = {
+					type = support
+					id = ENG
+					value = 1000
+				}
+			}
+
+		}
+		news_event = { id = change_news.5 }
+		GER = {
+			country_event = { id = change_germany.9 days = 5 }
+		}
+	}
+
+	option = { #算了喵
+		name = change_germany.10.b
+		ai_chance = {
+			factor = 30
+			modifier = {
+				date < 1940.6.1
+				factor = 100
+			}
+		}
+		ITA = {
+			country_event = { id = change_germany.11 days = 1 }
+		}
+	}
+}
+
+
+country_event = { #意大利命运2(意大利)
+	id = change_germany.11
+	title = change_germany.11.t
+	desc = change_germany.11.d
+
+	is_triggered_only = yes
+
+
+	option = { #自己体面
+		name = change_germany.11.a
+		ai_chance = {
+			modifier = {
+				factor = 100
+			}
+		}
+		GER = {
+			country_event = { id = change_germany.8 days = 1 }
+		}
+		news_event = { id = change_news.46 days = 1 }
+	}
+
+	option = { #NO
+		name = change_germany.11.b
+		ai_chance = {
+			modifier = {
+				factor = 0
+			}
+		}
+		GER = {
+			country_event = { id = change_germany.9 days = 1 }
+		}
+	}
+
+
+}
+
+country_event = { #加入阵营
+	id = change_germany.12
+	title = change_germany.12.t
+	desc = change_germany.12.d
+
+	is_triggered_only = yes
+
+
+	option = { #加入
+		name = change_germany.12.a
+		ai_chance = {
+			modifier = {
+				factor = 100
+			}
+		}
+		GER = {
+			add_to_faction = ROOT
+		}
+	}
+
+	option = { #拒绝
+		name = change_germany.12.b
+		ai_chance = {
+			modifier = {
+				factor = 0
+			}
+		}
+	}
+
+
+}
+
+country_event = {
+	id = change_germany.13
+	title = change_germany.13.t
+	desc = change_germany.13.d
+
+	picture = GFX_report_event_journalists_speech
+	is_triggered_only = yes
+	option = {
+		name = change_germany.13.a
+		random_other_country = {
+			limit = {
+				original_tag = ROOT
+				NOT = { tag = ROOT }
+			}
+			ROOT = { annex_country = { target = PREV transfer_troops = yes } }
+		}
+		news_event = { id = change_news.14 days = 1 }
+		add_timed_idea = {
+			idea = complete_civilization
+			days = 240
+		}
+		hidden_effect = {
+			set_country_flag = civilization_has_complete_flag
+		}
+	}
+}
+
+country_event = { #德国来投资油田
+	id = change_germany.14
+	title = change_germany.14.t
+	desc = change_germany.14.d
+
+	is_triggered_only = yes
+	option = {
+		name = change_germany.14.a
+
+		add_offsite_building = { type = industrial_complex level = 8 }
+		every_owned_controlled_state = {
+			limit = {
+				oil > 10
+			}
+			add_resource = {
+				type = oil
+				amount = 10
+			}
+		}
+	}
+}
+
+country_event = { #重建国家
+	id = change_germany.15
+	title = change_germany.15.t
+	desc = change_germany.15.d
+	picture = GFX_report_event_bul_boris_military
+
+	is_triggered_only = yes
+	option = {
+		name = change_germany.15.a
+		add_stability = 0.1
+		add_political_power = 100
+		add_ideas = GER_reorganize_economy
+	}
+}
+
+country_event = { #普鲁士军队的荣耀
+	id = change_germany.16
+	title = change_germany.16.t
+	desc = change_germany.16.d
+	picture = GFX_report_event_british_inspect_troops
+	is_triggered_only = yes
+	option = {
+		name = change_germany.16.a
+		army_experience = 25
+		add_tech_bonus = {
+			name = med_armor_bonus
+			uses = 2
+			ahead_reduction = 2
+			category = armor
+		}
+
+		add_tech_bonus = {
+			ahead_reduction = 2
+			uses = 3
+			category = light_air
+			category = medium_air
+			category = heavy_air
+		}
+
+		add_tech_bonus = {
+			name = mech_army_bonus
+			bonus = 2
+			uses = 2
+			category = artillery
+		}
+		add_tech_bonus = {
+			name = mech_army_bonus
+			bonus = 2
+			uses = 2
+			category = support_tech
+		}
+
+		add_tech_bonus = {
+			name = mech_army_bonus
+			bonus = 2
+			uses = 2
+			category = infantry
+		}
+
+		add_ideas = GER_the_old
+	}
+}
+
+country_event = { #要求归还阿尔萨斯
+	id = change_germany.17
+	title = change_germany.17.t
+	desc = change_germany.17.d
+	picture = GFX_report_event_baltic_entente_one
+
+	is_triggered_only = yes
+	option = { #可以
+		name = change_germany.17.a
+		28 = {
+			set_state_controller_to = GER
+		}
+	}
+
+	option = { #要资源
+		name = change_germany.17.b
+		GER = {
+			country_event = { id = change_germany.18 days = 1 }
+		}
+	}
+}
+
+country_event = { #要求投资与开采权
+	id = change_germany.18
+	title = change_germany.18.t
+	desc = change_germany.18.d
+
+	is_triggered_only = yes
+	option = {
+		name = change_germany.18.a
+		28 = {
+			OWNER = {
+				add_ideas = GER_support_china
+			}
+		}
+
+		28 = {
+			set_state_controller_to = GER
+			give_resource_rights = FRA
+		}
+
+	}
+}
+
+country_event = { #建设海军
+	id = change_germany.19
+	title = change_germany.19.t
+	desc = change_germany.19.d
+	picture = GFX_report_event_generic_factory
+
+	is_triggered_only = yes
+	option = {
+		name = change_germany.19.a
+		ai_chance = {
+			factor = 100
+		}
+		add_ideas = GER_navy_competition
+		every_country = {
+			limit = {
+				is_major = yes
+				NOT = {
+					tag = GER
+				}
+				OR = {
+					tag = ENG
+					tag = FRA
+					tag = USA
+					tag = SOV
+					tag = JAP
+				}
+			}
+			country_event = { id = change_germany.21 days = 1 }
+		}
+		news_event = { id = change_news.36 days = 2 }
+		random_core_state = {
+				limit = {
+					is_fully_controlled_by = ROOT
+					is_coastal = yes
+					free_building_slots = {
+						building = dockyard
+						size > 3
+						include_locked = yes
+					}
+				}
+				add_extra_state_shared_building_slots = 4
+				add_building_construction = {
+					type = dockyard
+					level = 4
+					instant_build = yes
+				}
+			}
+
+			random_core_state = {
+				limit = {
+					is_fully_controlled_by = ROOT
+					is_coastal = yes
+					free_building_slots = {
+						building = dockyard
+						size > 3
+						include_locked = yes
+					}
+				}
+				add_extra_state_shared_building_slots = 4
+				add_building_construction = {
+					type = dockyard
+					level = 4
+					instant_build = yes
+				}
+			}
+
+			random_core_state = {
+				limit = {
+					is_fully_controlled_by = ROOT
+					is_coastal = yes
+					free_building_slots = {
+						building = dockyard
+						size > 3
+						include_locked = yes
+					}
+				}
+				add_extra_state_shared_building_slots = 4
+				add_building_construction = {
+					type = dockyard
+					level = 4
+					instant_build = yes
+				}
+			}
+
+	}
+
+	option = {
+		name = change_germany.19.b
+	}
+}
+
+country_event = { #公海舰队
+	id = change_germany.20
+	title = change_germany.20.t
+	desc = change_germany.20.d
+	picture = GFX_report_event_usa_heavy_cruiser
+
+	is_triggered_only = yes
+	option = {
+		name = change_germany.20.a
+		
+		add_ideas = GER_supper_imperial_navy
+	}
+}
+
+country_event = { #海军竞赛
+	id = change_germany.21
+	title = change_germany.21.t
+	desc = change_germany.21.d
+	picture = GFX_report_event_generic_factory
+
+	is_triggered_only = yes
+	option = {
+		name = change_germany.21.a
+		ai_chance = {
+			factor = 1000
+		}
+		add_ideas = GER_navy_competition
+		random_core_state = {
+				limit = {
+					is_fully_controlled_by = ROOT
+					is_coastal = yes
+					free_building_slots = {
+						building = dockyard
+						size > 3
+						include_locked = yes
+					}
+				}
+				add_extra_state_shared_building_slots = 4
+				add_building_construction = {
+					type = dockyard
+					level = 4
+					instant_build = yes
+				}
+			}
+
+			random_core_state = {
+				limit = {
+					is_fully_controlled_by = ROOT
+					is_coastal = yes
+					free_building_slots = {
+						building = dockyard
+						size > 3
+						include_locked = yes
+					}
+				}
+				add_extra_state_shared_building_slots = 4
+				add_building_construction = {
+					type = dockyard
+					level = 4
+					instant_build = yes
+				}
+			}
+
+			random_core_state = {
+				limit = {
+					is_fully_controlled_by = ROOT
+					is_coastal = yes
+					free_building_slots = {
+						building = dockyard
+						size > 3
+						include_locked = yes
+					}
+				}
+				add_extra_state_shared_building_slots = 4
+				add_building_construction = {
+					type = dockyard
+					level = 4
+					instant_build = yes
+				}
+			}
+	}
+
+	option = {
+		name = change_germany.21.b
+	}
+
+}
+
+country_event = { #给白鹅刷兵
+	id = change_germany.22
+	title = change_germany.22.t
+	desc = change_germany.22.d
+
+	is_triggered_only = yes
+	option = {
+		name = change_germany.22.a
+		ai_chance = {
+			factor = 100
+		}
+		army_experience = 50
+		add_equipment_to_stockpile = {
+			type = infantry_equipment
+			amount = 5000
+			producer = GER
+		}
+		add_equipment_to_stockpile = { 
+			type = train_equipment 
+			amount = 20
+			producer = GER
+		}
+		add_equipment_to_stockpile = {
+			type = artillery_equipment
+			amount = 1000
+			producer = GER
+		}
+		add_equipment_to_stockpile = {
+			type = anti_tank_equipment
+			amount = 500
+			producer = GER
+		}
+        add_equipment_to_stockpile = {
+			type = support_equipment
+			amount = 3000
+			producer = GER
+		}
+		add_equipment_to_stockpile = { 
+			type = anti_air_equipment 
+			amount = 500
+			producer = GER
+		}
+
+        division_template = {
+			name = "德械步兵师"
+			regiments = {
+				infantry = { x = 0 y = 0 }
+				infantry = { x = 0 y = 1 }
+				infantry = { x = 0 y = 2 }
+                infantry = { x = 0 y = 3 }
+                infantry = { x = 0 y = 4 }
+				infantry = { x = 1 y = 0 }
+				infantry = { x = 1 y = 1 }
+				infantry = { x = 1 y = 2 }
+                infantry = { x = 1 y = 3 }
+                infantry = { x = 1 y = 4 }
+				artillery_brigade = { x = 3 y = 0 }
+				artillery_brigade = { x = 3 y = 1 }
+                anti_air_brigade = { x = 3 y = 2 }
+                anti_tank_brigade = { x = 3 y = 3 }
+                medium_armor = { x = 4 y = 0 }
+                medium_armor = { x = 4 y = 1 }
+				medium_armor = { x = 4 y = 2 }
+                medium_armor = { x = 4 y = 3 }
+			}
+			regimental_support = {
+					field_guns = { x = 0 y = 0 }
+					field_guns = { x = 1 y = 0 }
+					medium_tank_destroyer_support = { x = 2 y = 0 }
+					medium_tank_destroyer_support = { x = 3 y = 0 }
+					medium_sp_anti_air_support = { x = 4 y = 0 }
+				}
+			support = {
+				engineer = { x = 0 y = 0 }
+				recon = { x = 0 y = 1 }
+                field_hospital =  { x = 0 y = 2 }
+                logistics_company = { x = 0 y = 3 }
+                artillery =  { x = 0 y = 4 }
+			}
+		}
+
+		capital_scope = {
+            create_unit = {
+                division = "name = \"德械步兵师\" division_template = \"德械步兵师\" start_experience_factor = 0.5 start_equipment_factor = 1 start_manpower_factor = 1"
+                owner = ROOT
+                allow_spawning_on_enemy_provs = yes 
+                count = 8
+            }
+        }
+		
+	}
+
+}
+
+country_event = { #动员程度提升
+	id = change_germany.23
+	title = change_germany.23.t
+	desc = change_germany.23.d
+
+	picture = GFX_report_event_british_inspect_troops
+
+	is_triggered_only = yes
+	option = {
+		name = change_germany.23.a
+		ai_chance = {
+			factor = 100
+		}
+		army_experience = 100
+		air_experience = 100
+		navy_experience = 100
+
+		random_owned_controlled_state = {
+			limit = {
+				is_core_of = ROOT
+			}
+			add_extra_state_shared_building_slots = 2
+			add_building_construction = {
+				type = arms_factory
+				level = 2
+				instant_build = yes
+			}
+		}
+
+		random_owned_controlled_state = {
+			limit = {
+				is_core_of = ROOT
+			}
+			add_extra_state_shared_building_slots = 2
+			add_building_construction = {
+				type = arms_factory
+				level = 2
+				instant_build = yes
+			}
+		}
+
+		random_owned_controlled_state = {
+			limit = {
+				is_core_of = ROOT
+			}
+			add_extra_state_shared_building_slots = 2
+			add_building_construction = {
+				type = arms_factory
+				level = 2
+				instant_build = yes
+			}
+		}
+		
+	}
+
+}
+
+country_event = { #战争动员
+	id = change_germany.24
+	title = change_germany.24.t
+	desc = change_germany.24.d
+
+	picture = GFX_report_event_british_inspect_troops
+
+	trigger = {
+		AND = {
+			has_war = yes
+			GER = {
+				has_country_flag = third_empire_has_become_flag
+			}
+			ENG = {
+				has_country_flag = the_triple_entente_flag
+			}
+			OR = {
+				is_in_faction_with = GER
+				is_in_faction_with = ENG
+			}
+			NOT = {
+				has_country_flag = has_change_germany_24_flag
+			}
+			any_enemy_country = {
+				is_major = yes
+			}
+			OR = {
+				has_idea = GER_unprepare_war
+				has_idea = GER_prepare_war_1
+				has_idea = GER_prepare_war_2
+			}
+		}
+	}
+
+	immediate = {
+		set_country_flag = has_change_germany_24_flag
+	}
+
+
+	option = { #总动员
+		name = change_germany.24.a
+		ai_chance = {
+			factor = 50
+		}
+		set_country_flag = choose_prepare_war_02
+		activate_mission = we_must_prepare_war_02
+	}
+
+	option = { #紧急动员
+		name = change_germany.24.b
+		ai_chance = {
+			factor = 50
+		}
+		set_country_flag = choose_prepare_war_03
+		activate_decision = we_must_prepare_war_03
+		
+	}
+
+}
+
+country_event = { #机械设计局建设
+	id = change_germany.25
+	title = change_germany.25.t
+	desc = change_germany.25.d
+
+	picture = GFX_report_event_bul_boris_military
+
+	is_triggered_only = yes
+
+	option = { 
+		name = change_germany.25.a
+		ai_chance = {
+			factor = 50
+		}
+		add_ideas = GER_mechanical_engineering
+	}
+
+}
+
+country_event = { #及时动员完成
+	id = change_germany.26
+	title = change_germany.26.t
+	desc = change_germany.26.d
+
+	picture = GFX_report_event_british_inspect_troops
+
+	is_triggered_only = yes
+
+	option = { 
+		name = change_germany.26.a
+		ai_chance = {
+			factor = 50
+		}
+		add_war_support = 0.2
+		add_political_power = 200
+		random_owned_controlled_state = {
+			limit = {
+				is_core_of = ROOT
+			}
+			add_extra_state_shared_building_slots = 2
+			add_building_construction = {
+				type = arms_factory
+				level = 2
+				instant_build = yes
+			}
+		}
+
+		random_owned_controlled_state = {
+			limit = {
+				is_core_of = ROOT
+			}
+			add_extra_state_shared_building_slots = 2
+			add_building_construction = {
+				type = arms_factory
+				level = 2
+				instant_build = yes
+			}
+		}
+	}
+
+}
+
+
+country_event = { #欧陆绝对霸权
+	id = change_germany.27
+	title = change_germany.27.t
+	desc = change_germany.27.d
+
+	picture = GFX_report_event_bul_boris_military
+
+	is_triggered_only = yes
+
+	option = { 
+		name = change_germany.27.a
+		ai_chance = {
+			factor = 50
+		}
+		add_war_support = 0.1
+		add_political_power = 100
+		add_ideas = GER_Absolute_hegemony_in_Europe
+		random_owned_controlled_state = {
+			limit = {
+				is_core_of = ROOT
+			}
+			add_extra_state_shared_building_slots = 2
+			add_building_construction = {
+				type = arms_factory
+				level = 2
+				instant_build = yes
+			}
+		}
+
+		random_owned_controlled_state = {
+			limit = {
+				is_core_of = ROOT
+			}
+			add_extra_state_shared_building_slots = 2
+			add_building_construction = {
+				type = arms_factory
+				level = 2
+				instant_build = yes
+			}
+		}
+
+		random_owned_controlled_state = {
+			limit = {
+				is_core_of = ROOT
+			}
+			add_extra_state_shared_building_slots = 2
+			add_building_construction = {
+				type = arms_factory
+				level = 2
+				instant_build = yes
+			}
+		}
+	}
+
+}
+
+
+country_event = { #帮助玩家
+	id = change_germany.28
+	title = change_germany.28.t
+	desc = change_germany.28.d
+
+	picture = GFX_report_event_china_chiang_kai_shek
+
+	is_triggered_only = yes
+
+	option = { 
+		name = change_germany.28.a
+		ai_chance = {
+			factor = 50
+		}
+		custom_effect_tooltip = welcome_coming_tooltip
+		add_political_power = 1
+	}
+
+	option = { 
+		name = change_germany.28.b
+		ai_chance = {
+			factor = 50
+		}
+		custom_effect_tooltip = welcome_coming_tooltip
+		add_political_power = 200
+		add_ideas = mod_help_player_0
+	}
+
+	option = { 
+		name = change_germany.28.c
+		ai_chance = {
+			factor = 50
+		}
+		custom_effect_tooltip = welcome_coming_tooltip
+		add_political_power = 500
+		add_ideas = mod_help_player_1
+	}
+
+	option = { 
+		name = change_germany.28.e
+		ai_chance = {
+			factor = 50
+		}
+		custom_effect_tooltip = welcome_coming_tooltip
+		add_political_power = 500
+		add_offsite_building = { type = industrial_complex level = 20 }
+		add_offsite_building = { type = arms_factory level = 10 }
+		add_offsite_building = { type = dockyard level = 10 }
+		add_ideas = mod_help_player_2
+		custom_effect_tooltip = really_only_it_tooltip
+		hidden_effect = {
+			add_ideas = mod_help_player_3
+		}
+	}
+
+}
+
+
+country_event = { #东亚局势
+	id = change_germany.29
+	title = change_germany.29.t
+	desc = change_germany.29.d
+
+	picture = GFX_report_event_chinese_soldiers_city_ruin
+
+	is_triggered_only = yes
+
+	option = { 
+		name = change_germany.29.a
+		ai_chance = {
+			factor = 100
+		}
+		add_timed_idea = {
+			idea = GER_help_china
+			days = 730
+		}
+		CHI = {
+			country_event = { id = change_germany.30 }
+		}
+		add_ai_strategy = { 
+			type = send_volunteers_desire	
+			id = CHI
+			value = 1000
+		}	
+	}
+
+	option = { 
+		name = change_germany.29.b
+		ai_chance = {
+			factor = 0
+		}
+
+	}
+
+}
+
+country_event = { #同盟国的援助
+	id = change_germany.30
+	title = change_germany.30.t
+	desc = change_germany.30.d
+
+	picture = GFX_report_event_china_ledo_road
+
+	is_triggered_only = yes
+
+	option = { 
+		name = change_germany.30.a
+		ai_chance = {
+			factor = 100
+		}
+		add_offsite_building = { type = industrial_complex level = 1 }
+		add_offsite_building = { type = arms_factory level = 1 }
+		add_ai_strategy = { 
+			type = send_volunteers_desire	
+			id = FROM
+			value = 1000
+		}	
+		random_owned_controlled_state = {
+			add_resource = {
+				type = steel
+				amount = 8
+			}
+			add_resource = {
+				type = aluminium
+				amount = 4
+			}
+			add_resource = {
+				type = chromium
+				amount = 4
+			}
+		}
+		random_owned_controlled_state = {
+			add_resource = {
+				type = steel
+				amount = 4
+			}
+			add_resource = {
+				type = oil
+				amount = 2
+			}
+			add_resource = {
+				type = coal
+				amount = 2
+			}
+		}
+		add_to_variable = { mod_with_chi_army_attack_factor = 0.025 }
+		add_to_variable = { mod_with_chi_army_defence_factor = 0.025 }
+		add_to_variable = { mod_with_chi_breakthrough_factor = 0.05 }
+		add_to_variable = { mod_with_chi_army_core_attack_factor = 0.05 }
+		add_to_variable = { mod_with_chi_army_core_defence_factor = 0.05 }
+		add_to_variable = { mod_with_chi_army_org_factor = 0.05 }
+		add_to_variable = { mod_with_chi_army_strength_factor = 0.05 }
+		add_to_variable = { mod_with_chi_industrial_capacity_factory = 0.05 }
+		add_to_variable = { mod_with_chi_land_reinforce_rate = 0.01 }
+		add_to_variable = { mod_with_chi_army_morale_factor = 0.05 }
+
+		effect_tooltip = {
+			swap_ideas = {
+				remove_idea = help_chi_idea_0
+				add_idea = help_chi_idea_1
+			}
+		}
+		
+	}
+
+}
+
+country_event = { #豪鹰与醒龙
+	id = change_germany.31
+	title = change_germany.31.t
+	desc = change_germany.31.d
+
+	picture = GFX_report_event_generic_rally_3
+
+	is_triggered_only = yes
+
+	option = { 
+		name = change_germany.31.a
+		ai_chance = {
+			factor = 1000
+		}
+		GER = {
+			complete_national_focus = GER_the_sino_germanic_pact
+			add_ideas = GER_chi_other_help
+		}
+		CHI = {
+			add_ai_strategy = {
+				type = alliance
+				id = GER
+				value = 1000
+			}
+			add_ai_strategy = {
+				type = protect
+				id = GER
+				value = 1000
+			}
+			add_ai_strategy = {
+				type = send_volunteers_desire
+				id = GER
+				value = 1000
+			}
+			add_ai_strategy = {
+				type = support
+				id = GER
+				value = 1000
+			}
+		}
+		if = {
+			limit = {
+				GER = {
+					has_idea = GER_north_europen
+				}
+			}
+			add_ideas = GER_north_europen
+		}
+		if = {
+			limit = {
+				GER = {
+					has_idea = GER_need_oil
+				}
+			}
+			add_ideas = GER_need_oil
+		}
+		if = {
+			limit = {
+				GER = {
+					has_idea = GER_swi_gold
+				}
+			}
+			add_ideas = GER_swi_gold
+		}
+		if = {
+			limit = {
+				GER = {
+					has_idea = GER_Absolute_hegemony_in_Europe
+				}
+			}
+			add_ideas = GER_Absolute_hegemony_in_Europe
+		}
+		
+	}
+
+	option = { 
+		name = change_germany.31.b
+		ai_chance = {
+			factor = 0
+		}	
+	}
+
+}
+
+country_event = { #德国支持统一中国
+	id = change_germany.32
+	title = change_germany.32.t
+	desc = change_germany.32.d
+
+	picture = GFX_report_event_generic_read_write
+
+	is_triggered_only = yes
+
+	option = { 
+		name = change_germany.32.a
+		ai_chance = {
+			factor = 1000
+		}
+		hidden_effect = {
+			every_state = {
+				limit = {
+					is_core_of = PRC
+				}
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+			}
+			news_event = { id = change_news.59 days = 1 }
+			ENG = {
+				country_event = { id = change_germany.33 days = 2 }
+			}
+		}
+
+		set_gobal_flag = china_join_ger_flag
+
+		add_to_variable = { mod_with_chi_army_attack_factor = 0.025 }
+		add_to_variable = { mod_with_chi_army_defence_factor = 0.025 }
+		add_to_variable = { mod_with_chi_breakthrough_factor = 0.05 }
+		add_to_variable = { mod_with_chi_army_core_attack_factor = 0.05 }
+		add_to_variable = { mod_with_chi_army_core_defence_factor = 0.05 }
+		add_to_variable = { mod_with_chi_army_org_factor = 0.05 }
+		add_to_variable = { mod_with_chi_army_strength_factor = 0.05 }
+		add_to_variable = { mod_with_chi_industrial_capacity_factory = 0.05 }
+		add_to_variable = { mod_with_chi_land_reinforce_rate = 0.01 }
+		add_to_variable = { mod_with_chi_army_morale_factor = 0.05 }
+
+		effect_tooltip = {
+			swap_ideas = {
+				remove_idea = help_chi_idea_0
+				add_idea = help_chi_idea_1
+			}
+		}
+
+		SHX = {
+			every_unit_leader = {
+				set_nationality = CHI
+			}
+		}
+
+		NXM = {
+			every_unit_leader = {
+				set_nationality = CHI
+			}
+		}
+
+		GSM = {
+			every_unit_leader = {
+				set_nationality = CHI
+			}
+		}
+
+		XSM = {
+			every_unit_leader = {
+				set_nationality = CHI
+			}
+		}
+
+		SIK = {
+			every_unit_leader = {
+				set_nationality = CHI
+			}
+		}
+
+		KHM = {
+			every_unit_leader = {
+				set_nationality = CHI
+			}
+		}
+
+		TIB = {
+			every_unit_leader = {
+				set_nationality = CHI
+			}
+		}
+
+		SIC = {
+			every_unit_leader = {
+				set_nationality = CHI
+			}
+		}
+
+		XIC = {
+			every_unit_leader = {
+				set_nationality = CHI
+			}
+		}
+
+		YUN = {
+			every_unit_leader = {
+				set_nationality = CHI
+			}
+		}
+
+		GXC = {
+			every_unit_leader = {
+				set_nationality = CHI
+			}
+		}
+
+		GDC = {
+			every_unit_leader = {
+				set_nationality = CHI
+			}
+		}
+
+		HBC = {
+			every_unit_leader = {
+				set_nationality = CHI
+			}
+		}
+
+		SND = {
+			every_unit_leader = {
+				set_nationality = CHI
+			}
+		}
+
+		CHI = {
+			annex_country = {
+				target = SHX
+				transfer_troops = yes
+			}
+
+			annex_country = {
+				target = NXM
+				transfer_troops = yes
+			}
+
+			annex_country = {
+				target = GSM
+				transfer_troops = yes
+			}
+
+			annex_country = {
+				target = XSM
+				transfer_troops = yes
+			}
+
+			annex_country = {
+				target = SIK
+				transfer_troops = yes
+			}
+
+			annex_country = {
+				target = KHM
+				transfer_troops = yes
+			}
+
+			annex_country = {
+				target = TIB
+				transfer_troops = yes
+			}
+
+			annex_country = {
+				target = SIC
+				transfer_troops = yes
+			}
+
+			annex_country = {
+				target = XIC
+				transfer_troops = yes
+			}
+
+			annex_country = {
+				target = YUN
+				transfer_troops = yes
+			}
+
+			annex_country = {
+				target = GXC
+				transfer_troops = yes
+			}
+
+			annex_country = {
+				target = GDC
+				transfer_troops = yes
+			}
+
+			annex_country = {
+				target = HBC
+				transfer_troops = yes
+			}
+
+			annex_country = {
+				target = SND
+				transfer_troops = yes
+			}
+
+			annex_country = {
+				target = PRC
+				transfer_troops = no
+			}
+		}
+		
+	}
+
+
+}
+
+
+country_event = { #拉拢日本
+	id = change_germany.33
+	title = change_germany.33.t
+	desc = change_germany.33.d
+
+	picture = GFX_report_event_german_turkish_pact
+
+	is_triggered_only = yes
+
+	option = { 
+		name = change_germany.33.a
+		ai_chance = {
+			factor = 1000
+		}
+		JAP = {
+			country_event = { id = change_germany.34 days = 1 }
+		}
+		
+	}
+
+
+}
+
+country_event = { #日本同意
+	id = change_germany.34
+	title = change_germany.34.t
+	desc = change_germany.34.d
+
+	picture = GFX_report_event_soviet_japanese_pact
+
+	is_triggered_only = yes
+
+	option = { 
+		name = change_germany.34.a
+		ai_chance = {
+			factor = 1000
+		}
+		ENG = {
+			country_event = { id = change_germany.35 }
+		}
+		add_offsite_building = { type = industrial_complex level = 30 }
+		add_offsite_building = { type = arms_factory level = 30 }
+		every_state = {
+			limit = {
+				is_core_of = CHI
+			}
+			JAP = {
+				add_state_claim = PREV
+			}
+		}
+
+		add_ideas = ENG_the_better_navy_army_ideas
+		add_ideas = JAP_The_spirit_of_bushido
+		set_technology = { amphibious_drive = 1 }
+		#set_technology = { amphibious_mechanized_equipment_1 = 1 }
+		set_technology = { amphibious_mechanized_infantry = 1 }
+		random_owned_controlled_state = {
+			add_resource = {
+				type = steel
+				amount = 24
+			}
+			add_resource = {
+				type = aluminium
+				amount = 16
+			}
+			add_resource = {
+				type = chromium
+				amount = 16
+			}
+		}
+		random_owned_controlled_state = {
+			add_resource = {
+				type = steel
+				amount = 24
+			}
+			add_resource = {
+				type = oil
+				amount = 24
+			}
+			add_resource = {
+				type = coal
+				amount = 24
+			}
+		}
+		random_owned_controlled_state = {
+			add_resource = {
+				type = steel
+				amount = 24
+			}
+			add_resource = {
+				type = aluminium
+				amount = 16
+			}
+			add_resource = {
+				type = chromium
+				amount = 16
+			}
+		}
+		random_owned_controlled_state = {
+			add_resource = {
+				type = steel
+				amount = 24
+			}
+			add_resource = {
+				type = oil
+				amount = 24
+			}
+			add_resource = {
+				type = coal
+				amount = 24
+			}
+		}
+
+		create_equipment_variant = {
+			name = "两栖装甲"
+			type = medium_tank_amphibious_chassis_2
+			parent_version = 0
+			modules = {
+				main_armament_slot  = tank_medium_cannon_2
+				turret_type_slot = tank_medium_three_man_tank_turret 
+				suspension_type_slot = tank_torsion_bar_suspension
+				armor_type_slot = tank_riveted_armor
+				engine_type_slot = tank_diesel_engine
+				special_type_slot_1 = secondary_turret_small_cannon
+				special_type_slot_2 = secondary_turret_small_cannon
+				special_type_slot_3 = amphibious_drive
+				special_type_slot_4 = easy_maintenance
+			}
+			upgrades = {
+				tank_nsb_engine_upgrade = 0
+				tank_nsb_armor_upgrade = 4
+			}
+		}
+
+		create_equipment_variant = {
+			name = "TankDestoryer"
+			type = medium_tank_destroyer_chassis_2
+			parent_version = 0
+			modules = {
+				main_armament_slot = tank_high_velocity_cannon_2
+				turret_type_slot = tank_medium_fixed_superstructure_turret #炮塔
+				suspension_type_slot = tank_bogie_suspension #悬挂
+				armor_type_slot = tank_riveted_armor #装甲
+				engine_type_slot = tank_gasoline_engine #引擎
+				special_type_slot_1 = easy_maintenance
+				special_type_slot_2 = secondary_turret_small_cannon
+				special_type_slot_3 = secondary_turret_small_cannon
+				special_type_slot_4 = squeezebore_adaptor
+			}
+			upgrades = {
+				tank_nsb_engine_upgrade = 0
+				tank_nsb_armor_upgrade = 4
+			}
+		}
+
+		add_equipment_to_stockpile = {
+			type = amphibious_mechanized_equipment
+			amount = 5000
+		}
+
+		add_equipment_to_stockpile = {
+			type = medium_tank_amphibious_chassis
+			amount = 5000
+		}
+
+		add_equipment_to_stockpile = {
+			type = medium_tank_destroyer_chassis
+			amount = 5000
+		}
+
+		division_template = {
+			name = "精英海军陆战队"
+			regiments = {
+				amphibious_mechanized = { x = 0 y = 0 }
+				amphibious_mechanized = { x = 0 y = 1 }
+				amphibious_mechanized = { x = 0 y = 2 }
+				amphibious_mechanized = { x = 0 y = 3 }
+				amphibious_mechanized = { x = 1 y = 0 }
+				amphibious_mechanized = { x = 1 y = 1 }
+				amphibious_mechanized = { x = 1 y = 2 }
+				amphibious_mechanized = { x = 1 y = 3 }
+				amphibious_medium_armor = { x = 2 y = 0 }
+				amphibious_medium_armor = { x = 2 y = 1 }
+				amphibious_medium_armor = { x = 2 y = 2 }
+				amphibious_medium_armor = { x = 2 y = 3 }
+				amphibious_medium_armor = { x = 3 y = 0 }
+				amphibious_medium_armor = { x = 3 y = 1 }
+				amphibious_medium_armor = { x = 3 y = 2 }
+				amphibious_medium_armor = { x = 3 y = 3 }
+				medium_tank_destroyer_brigade = { x = 4 y = 0 }
+				medium_tank_destroyer_brigade = { x = 4 y = 1 }
+			}
+			regimental_support = {
+					field_guns = { x = 0 y = 0 }
+					field_guns = { x = 1 y = 0 }
+					medium_tank_destroyer_support = { x = 2 y = 0 }
+					medium_tank_destroyer_support = { x = 3 y = 0 }
+					medium_sp_anti_air_support = { x = 4 y = 0 }
+				}
+			support = {
+				pioneer_support = { x = 0 y = 0 }
+				light_tank_recon = { x = 0 y = 1 }
+				field_hospital = { x = 0 y = 2 }
+				logistics_company = { x = 0 y = 3 }
+				medium_flame_tank = { x = 0 y = 4 }
+			}
+		}
+		if = {
+			limit = {
+				is_ai = yes
+			}
+			capital_scope = {
+				create_unit = {
+					division = "name = \"精英海军陆战队\" division_template = \"精英海军陆战队\" start_equipment_factor = 1 start_experience_factor = 1" 
+					owner = ROOT
+					count = 24
+				}
+			}
+		} else = {
+			capital_scope = {
+				create_unit = {
+					division = "name = \"精英海军陆战队\" division_template = \"精英海军陆战队\" start_equipment_factor = 1 start_experience_factor = 1" 
+					owner = ROOT
+					count = 12
+				}
+			}
+		}
+		
+	}
+
+
+}
+
+country_event = { #英国收到日本同意
+	id = change_germany.35
+	title = change_germany.35.t
+	desc = change_germany.35.d
+
+	picture = GFX_report_event_british_inspect_troops
+
+	is_triggered_only = yes
+
+	option = { 
+		name = change_germany.35.a
+		ai_chance = {
+			factor = 1000
+		}
+		ENG = {
+			add_to_faction = JAP
+		}
+		news_event = { id = change_news.60 days = 1 }
+
+		JAP = {
+			# alliance
+			add_ai_strategy = {
+				type = alliance
+				id = SOV
+				value = 1000
+			}
+			add_ai_strategy = {
+				type = alliance
+				id = ENG
+				value = 1000
+			}
+			add_ai_strategy = {
+				type = alliance
+				id = USA
+				value = 1000
+			}
+			# protect
+			add_ai_strategy = {
+				type = protect
+				id = SOV
+				value = 1000
+			}
+			add_ai_strategy = {
+				type = protect
+				id = ENG
+				value = 1000
+			}
+			add_ai_strategy = {
+				type = protect
+				id = USA
+				value = 1000
+			}
+			# send_volunteers_desire
+			add_ai_strategy = {
+				type = send_volunteers_desire
+				id = SOV
+				value = 1000
+			}
+			add_ai_strategy = {
+				type = send_volunteers_desire
+				id = ENG
+				value = 1000
+			}
+			add_ai_strategy = {
+				type = send_volunteers_desire
+				id = USA
+				value = 1000
+			}
+			# support
+			add_ai_strategy = {
+				type = support
+				id = SOV
+				value = 1000
+			}
+			add_ai_strategy = {
+				type = support
+				id = ENG
+				value = 1000
+			}
+			add_ai_strategy = {
+				type = support
+				id = USA
+				value = 1000
+			}
+			}
+		ENG = {
+			add_ai_strategy = {
+				type = alliance
+				id = JAP
+				value = 1000
+			}
+			add_ai_strategy = {
+				type = protect
+				id = JAP
+				value = 1000
+			}
+			add_ai_strategy = {
+				type = send_volunteers_desire
+				id = JAP
+				value = 1000
+			}
+			add_ai_strategy = {
+				type = support
+				id = JAP
+				value = 1000
+			}
+		}
+		USA = {
+			add_ai_strategy = {
+				type = alliance
+				id = JAP
+				value = 1000
+			}
+			add_ai_strategy = {
+				type = protect
+				id = JAP
+				value = 1000
+			}
+			add_ai_strategy = {
+				type = send_volunteers_desire
+				id = JAP
+				value = 1000
+			}
+			add_ai_strategy = {
+				type = support
+				id = JAP
+				value = 1000
+			}
+		}
+		SOV = {
+			add_ai_strategy = {
+				type = alliance
+				id = JAP
+				value = 1000
+			}
+			add_ai_strategy = {
+				type = protect
+				id = JAP
+				value = 1000
+			}
+			add_ai_strategy = {
+				type = send_volunteers_desire
+				id = JAP
+				value = 1000
+			}
+			add_ai_strategy = {
+				type = support
+				id = JAP
+				value = 1000
+			}
+		}
+		
+	}
+
+
+}
+
+
+country_event = { #德国援建阿根廷完成
+	id = change_germany.36
+	title = change_germany.36.t
+	desc = change_germany.36.d
+
+	picture = GFX_report_event_british_inspect_troops
+
+	is_triggered_only = yes
+
+	option = { 
+		name = change_germany.36.a
+		ai_chance = {
+			factor = 1000
+		}
+		GER = {
+			add_to_faction = ARG
+		}
+		news_event = { id = change_news.68 days = 1 }
+		add_ideas = GER_support
+		add_ideas = GER_support_china
+		add_offsite_building = { type = industrial_complex level = 10 }
+		add_offsite_building = { type = arms_factory level = 10 }
+		random_owned_controlled_state = {
+			add_resource = {
+				type = steel
+				amount = 16
+			}
+			add_resource = {
+				type = aluminium
+				amount = 8
+			}
+			add_resource = {
+				type = chromium
+				amount = 8
+			}
+		}
+		random_owned_controlled_state = {
+			add_resource = {
+				type = steel
+				amount = 8
+			}
+			add_resource = {
+				type = oil
+				amount = 4
+			}
+			add_resource = {
+				type = coal
+				amount = 4
+			}
+		}
+		random_owned_controlled_state = {
+			add_resource = {
+				type = steel
+				amount = 16
+			}
+			add_resource = {
+				type = aluminium
+				amount = 8
+			}
+			add_resource = {
+				type = chromium
+				amount = 8
+			}
+		}
+		random_owned_controlled_state = {
+			add_resource = {
+				type = steel
+				amount = 8
+			}
+			add_resource = {
+				type = oil
+				amount = 4
+			}
+			add_resource = {
+				type = coal
+				amount = 4
+			}
+		}
+
+		if = {
+			limit = {
+				GER = {
+					has_idea = GER_north_europen
+				}
+			}
+			add_ideas = GER_north_europen
+		}
+		if = {
+			limit = {
+				GER = {
+					has_idea = GER_need_oil
+				}
+			}
+			add_ideas = GER_need_oil
+		}
+		if = {
+			limit = {
+				GER = {
+					has_idea = GER_swi_gold
+				}
+			}
+			add_ideas = GER_swi_gold
+		}
+		if = {
+			limit = {
+				GER = {
+					has_idea = GER_Absolute_hegemony_in_Europe
+				}
+			}
+			add_ideas = GER_Absolute_hegemony_in_Europe
+		}
+
+		
+		
+	}
+
+
+}
+
+country_event = { #德国援建玻利维亚完成
+	id = change_germany.37
+	title = change_germany.37.t
+	desc = change_germany.37.d
+
+	picture = GFX_report_event_british_inspect_troops
+
+	is_triggered_only = yes
+
+	option = { 
+		name = change_germany.37.a
+		ai_chance = {
+			factor = 1000
+		}
+		GER = {
+			add_to_faction = BOL
+		}
+		news_event = { id = change_news.69 days = 1 }
+		add_ideas = GER_support
+		add_ideas = GER_support_china
+		add_offsite_building = { type = industrial_complex level = 10 }
+		add_offsite_building = { type = arms_factory level = 10 }
+		random_owned_controlled_state = {
+			add_resource = {
+				type = steel
+				amount = 16
+			}
+			add_resource = {
+				type = aluminium
+				amount = 8
+			}
+			add_resource = {
+				type = chromium
+				amount = 8
+			}
+		}
+		random_owned_controlled_state = {
+			add_resource = {
+				type = steel
+				amount = 8
+			}
+			add_resource = {
+				type = oil
+				amount = 4
+			}
+			add_resource = {
+				type = coal
+				amount = 4
+			}
+		}
+		random_owned_controlled_state = {
+			add_resource = {
+				type = steel
+				amount = 16
+			}
+			add_resource = {
+				type = aluminium
+				amount = 8
+			}
+			add_resource = {
+				type = chromium
+				amount = 8
+			}
+		}
+		random_owned_controlled_state = {
+			add_resource = {
+				type = steel
+				amount = 8
+			}
+			add_resource = {
+				type = oil
+				amount = 4
+			}
+			add_resource = {
+				type = coal
+				amount = 4
+			}
+		}
+		if = {
+			limit = {
+				GER = {
+					has_idea = GER_north_europen
+				}
+			}
+			add_ideas = GER_north_europen
+		}
+		if = {
+			limit = {
+				GER = {
+					has_idea = GER_need_oil
+				}
+			}
+			add_ideas = GER_need_oil
+		}
+		if = {
+			limit = {
+				GER = {
+					has_idea = GER_swi_gold
+				}
+			}
+			add_ideas = GER_swi_gold
+		}
+		if = {
+			limit = {
+				GER = {
+					has_idea = GER_Absolute_hegemony_in_Europe
+				}
+			}
+			add_ideas = GER_Absolute_hegemony_in_Europe
+		}
+
+		
+		
+	}
+
+
+}
+
+
+country_event = { #德国邀请中美洲
+	id = change_germany.38
+	title = change_germany.38.t
+	desc = change_germany.38.d
+
+	picture = GFX_report_event_british_inspect_troops
+
+	is_triggered_only = yes
+
+	option = { 
+		name = change_germany.38.a
+		ai_chance = {
+			factor = 1000
+		}
+		GER = {
+			country_event = { id = change_germany.39 }
+		}
+		add_ideas = GER_support
+		add_ideas = GER_support_china
+		add_offsite_building = { type = industrial_complex level = 10 }
+		add_offsite_building = { type = arms_factory level = 10 }
+		if = {
+			limit = {
+				GER = {
+					has_idea = GER_north_europen
+				}
+			}
+			add_ideas = GER_north_europen
+		}
+		if = {
+			limit = {
+				GER = {
+					has_idea = GER_need_oil
+				}
+			}
+			add_ideas = GER_need_oil
+		}
+		if = {
+			limit = {
+				GER = {
+					has_idea = GER_swi_gold
+				}
+			}
+			add_ideas = GER_swi_gold
+		}
+		if = {
+			limit = {
+				GER = {
+					has_idea = GER_Absolute_hegemony_in_Europe
+				}
+			}
+			add_ideas = GER_Absolute_hegemony_in_Europe
+		}
+
+		hidden_effect = {
+			division_template = {
+				name = "NIC_Armor"
+				regiments = {
+					infantry = { x = 0 y = 0 }
+					infantry = { x = 0 y = 1 }
+					infantry = { x = 0 y = 2 }
+					infantry = { x = 0 y = 3 }
+					infantry = { x = 1 y = 0 }
+					infantry = { x = 1 y = 1 }
+					infantry = { x = 1 y = 2 }
+					infantry = { x = 1 y = 3 }
+					medium_armor = { x = 2 y = 0 }
+					medium_armor = { x = 2 y = 1 }
+					medium_armor = { x = 2 y = 2 }
+					medium_armor = { x = 2 y = 3 }
+					medium_armor = { x = 3 y = 0 }
+					medium_armor = { x = 3 y = 1 }
+					medium_armor = { x = 3 y = 2 }
+					medium_armor = { x = 3 y = 3 }
+					medium_tank_destroyer_brigade = { x = 4 y = 0 }
+					medium_tank_destroyer_brigade = { x = 4 y = 1 }
+				}
+				regimental_support = {
+					field_guns = { x = 0 y = 0 }
+					field_guns = { x = 1 y = 0 }
+					medium_tank_destroyer_support = { x = 2 y = 0 }
+					medium_tank_destroyer_support = { x = 3 y = 0 }
+					medium_sp_anti_air_support = { x = 4 y = 0 }
+				}
+				support = {
+					engineer = { x = 0 y = 0 }
+					light_tank_recon = { x = 0 y = 1 }
+					field_hospital = { x = 0 y = 2 }
+					logistics_company = { x = 0 y = 3 }
+					medium_flame_tank = { x = 0 y = 4 }
+				}
+			}
+			if = {
+				limit = {
+					is_ai = yes
+				}
+				capital_scope = {
+					create_unit = {
+						division = "name = \"NIC_Armor\" division_template = \"NIC_Armor\" start_equipment_factor = 1 start_experience_factor = 0.5" 
+						owner = ROOT
+						count = 48
+					}
+				}
+			} else = {
+				capital_scope = {
+					create_unit = {
+						division = "name = \"NIC_Armor\" division_template = \"NIC_Armor\" start_equipment_factor = 1 start_experience_factor = 0.5" 
+						owner = ROOT
+						count = 24
+					}
+				}
+			}
+		}
+
+		
+		
+	}
+
+	option = { 
+		name = change_germany.38.b
+		ai_chance = {
+			factor = 0
+		}
+		GER = {
+			country_event = { id = change_germany.40 days = 1 }
+		}
+	}
+
+
+}
+
+
+country_event = { #中美洲同意加入
+	id = change_germany.39
+	title = change_germany.39.t
+	desc = change_germany.39.d
+
+	picture = GFX_report_event_british_inspect_troops
+
+	is_triggered_only = yes
+
+	option = { 
+		name = change_germany.39.a
+		ai_chance = {
+			factor = 1000
+		}
+		GER = {
+			add_to_faction = NIC
+		}
+		add_political_power = 100
+		add_war_support = 0.05
+		add_stability = 0.05
+		news_event = { id = change_news.71 days = 1 }
+		
+	}
+
+
+}
+
+
+country_event = { #中美洲拒绝
+	id = change_germany.40
+	title = change_germany.40.t
+	desc = change_germany.40.d
+
+	picture = GFX_report_event_british_inspect_troops
+
+	is_triggered_only = yes
+
+	option = { 
+		name = change_germany.40.a
+		ai_chance = {
+			factor = 1000
+		}
+		add_political_power = -10
+		
+	}
+
+
+}
+
+
+
+
+
+
+
