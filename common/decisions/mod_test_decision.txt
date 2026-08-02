@@ -1,0 +1,260 @@
+GER_the_test_categories = {
+    GER_the_test_categories_1 = { #触发三皇
+        icon = ger_military_buildup
+
+        allowed = {
+			
+		}
+
+        visible = {
+           is_debug = yes
+           is_ai = no
+        }
+
+        available = {
+            
+        }
+
+        fire_only_once = yes
+
+		cost = 0
+		days_remove = 0
+
+        complete_effect = {
+            GER = {
+                set_country_flag = third_empire_has_become_flag
+            }
+            country_event = { id = change_germany.4 }
+        }
+
+		remove_effect = {
+			
+		}
+		
+		ai_will_do = {
+			factor = 0
+		}
+
+    }
+
+    GER_the_test_categories_2 = { #触发协约国
+        icon = ger_military_buildup
+
+        allowed = {
+			
+		}
+
+        visible = {
+           is_debug = yes
+           is_ai = no
+        }
+
+        available = {
+            
+        }
+
+        fire_only_once = yes
+
+		cost = 0
+		days_remove = 0
+
+        complete_effect = {
+            ENG = {
+                set_country_flag = ENG_the_third_empire_flag
+                country_event = { id = change_eng.2 }
+            }
+            SOV = {
+                country_event = { id = change_eng.3 }
+            }
+            USA = {
+                country_event = { id = change_eng.3 }
+            }
+        }
+
+		remove_effect = {
+			
+		}
+		
+		ai_will_do = {
+			factor = 0
+		}
+
+    }
+
+    GER_the_test_categories_3 = { #引爆二战
+        icon = ger_military_buildup
+
+        allowed = {
+			
+		}
+
+        visible = {
+           is_debug = yes
+           is_ai = no
+        }
+
+        available = {
+            ENG = {
+                has_country_flag = ENG_the_third_empire_flag
+            }
+            GER = {
+                has_country_flag = third_empire_has_become_flag
+            }
+        }
+
+        fire_only_once = yes
+
+		cost = 0
+		days_remove = 0
+
+        complete_effect = {
+            FRA = {
+                country_event = { id = change_france.25 }
+            }
+			hidden_effect = {
+				news_event = { id = change_news.33 hours = 1}
+			}
+        }
+
+		remove_effect = {
+			
+		}
+		
+		ai_will_do = {
+			factor = 0
+		}
+
+    }
+
+    GER_the_test_categories_4 = { #
+        icon = ger_military_buildup
+
+        allowed = {
+			
+		}
+
+        visible = {
+           is_debug = yes
+           is_ai = no
+        }
+
+        available = {
+            
+        }
+
+        fire_only_once = yes
+
+		cost = 0
+		days_remove = 0
+
+        complete_effect = {
+            set_global_flag = the_world_war_tow_flag
+            
+        }
+
+		remove_effect = {
+			
+		}
+		
+		ai_will_do = {
+			factor = 0
+		}
+
+    }
+
+    GER_the_test_categories_5 = { #
+        icon = ger_military_buildup
+
+        allowed = {
+			
+		}
+
+        visible = {
+           is_debug = yes
+           is_ai = no
+        }
+
+        available = {
+            has_global_flag = the_world_war_tow_flag
+        }
+
+        fire_only_once = yes
+
+		cost = 0
+		days_remove = 0
+
+        complete_effect = {
+            country_event = { id = change_germany.41 }
+            country_event = { id = change_germany.42 }
+            
+        }
+
+		remove_effect = {
+			
+		}
+		
+		ai_will_do = {
+			factor = 0
+		}
+
+    }
+
+    GER_the_test_categories_6 = { #
+        icon = ger_military_buildup
+
+        allowed = {
+			
+		}
+
+        visible = {
+           is_debug = yes
+           is_ai = no
+        }
+
+        available = {
+            AND = {
+                has_war = yes
+                GER = {
+                    has_country_flag = third_empire_has_become_flag
+                }
+                ENG = {
+                    has_country_flag = the_triple_entente_flag
+                }
+                OR = {
+                    is_in_faction_with = GER
+                    is_in_faction_with = ENG
+                }
+                NOT = {
+                    has_country_flag = has_find_you_flag
+                }
+                OR = {
+                    has_idea = GER_unprepare_war
+                    has_idea = GER_prepare_war_1
+                }
+                has_global_flag = the_world_war_tow_flag
+            }
+        }
+
+        fire_only_once = yes
+
+		cost = 0
+		days_remove = 0
+
+        complete_effect = {
+            
+            
+        }
+
+		remove_effect = {
+			
+		}
+		
+		ai_will_do = {
+			factor = 0
+		}
+
+    }
+	
+
+
+}

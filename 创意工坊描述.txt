@@ -1,8 +1,5 @@
 [h1]三皇同盟 Three Emperors' Alliance[/h1]
 
-[b]GitHub 仓库[/b]：[url=https://github.com/CupOfChino/hearts_of_iron_mod]https://github.com/CupOfChino/hearts_of_iron_mod[/url]
-模组完整源码已上传至 GitHub，欢迎查看、下载与反馈。
-
 ==============================================================================
 
 [h1]世界线简介[/h1]
@@ -12,6 +9,9 @@
 表面团结的各国均暗怀鬼胎，一旦共同的威胁消失，那么他们互相就会成为彼此最大的威胁。最后的赢家永远只会有一个……
 
 该模组目前只是个人制作的半成品，各方面内容都等待补充和打磨。
+
+[b]GitHub 仓库[/b]：[url=https://github.com/CupOfChino/hearts_of_iron_mod]https://github.com/CupOfChino/hearts_of_iron_mod[/url]
+模组完整源码已上传至 GitHub
 
 ==============================================================================
 
@@ -29,7 +29,32 @@
 [/list]
 
 [h2]新世界线玩法 [/h2]
-德国复辟帝制、匈牙利重建奥匈、法国波拿马王朝后，德法奥匈组成《三皇同盟》，英美苏组成《三国协约》，两大集团约在 1941 年开战，战场将涉及整个欧、非、亚、美洲，双方各出动近千师。推荐按德→重建帝制、匈→奥匈、法→波拿马、苏→史实、英→非红中立、美→史实来游玩。
+德国复辟帝制、匈牙利重建奥匈、法国波拿马王朝后，德法奥匈组成《三皇同盟》，英美苏组成《三国协约》，两大集团约在 1941 年开战，战场将涉及整个欧、非、亚、美洲，双方各出动近千师。
+
+[h3]预设设置说明 [/h3]
+进入游戏前请在「游戏规则」中按以下内容设置各国 AI 行为，以免出现不符合本模组世界线的走向：
+
+[list]
+[*][b]德国 → 重建帝制[/b]
+[*][b]匈牙利 → 奥匈[/b]
+[*][b]法国 → 波拿巴[/b]
+[*][b]苏联 → 史实[/b]
+[*][b]英国 → 非红中立[/b]
+[*][b]美国 → 史实[/b]
+[*][b]意大利 → 史实[/b]
+[*][b]中国 → 史实[/b]
+[*][b]保加利亚 → 史实[/b]
+[/list]
+
+[b]免手动设置方法（直接使用现成预设文件 third.txt）：[/b]
+
+先从创意工坊的模组下载目录中复制该文件：
+[b]xx:\SteamLibrary\steamapps\workshop\content\394360\3297119526\third.txt[/b]
+
+再将其放入以下目录：
+[b]xx:\Documents\Paradox Interactive\Hearts of Iron IV\game rules[/b]
+
+最后进入游戏，开始新一局时在「游戏规则」界面选择该预设并加载即可直接使用。
 
 [h3]难度提示 [/h3]
 同盟侧较易但吃海军；协约侧较难，陆战压力大（苏联极难被击败）。整体难度偏高，个人测试可能存在 bug，请见谅。
@@ -37,7 +62,7 @@
 [h2]兼容性与后续计划 [/h2]
 [list]
 [*]本模组可作为基底游玩，若其他模组国策 / 决议出现 bug，将其移动到本模组上方即可解决
-[*]后续计划：新增炼狱难度、二战任务链
+[*]后续计划：二战任务链、新增炼狱难度
 [/list]
 
 ==============================================================================
@@ -55,9 +80,6 @@ English:
 
 [h1]Three Emperors' Alliance[/h1]
 
-[b]GitHub Repository[/b]: [url=https://github.com/CupOfChino/hearts_of_iron_mod]https://github.com/CupOfChino/hearts_of_iron_mod[/url]
-The full source of this mod is uploaded to GitHub for viewing, downloading and feedback.
-
 ==============================================================================
 
 [h1]Worldline Overview[/h1]
@@ -68,6 +90,7 @@ Despite their apparent unity, every nation harbours its own agenda. Once the com
 
 This mod is currently an unfinished work made by a single person; much content still awaits completion and polish.
 
+[b]GitHub Repository[/b]: [url=https://github.com/CupOfChino/hearts_of_iron_mod]https://github.com/CupOfChino/hearts_of_iron_mod[/url]
 ==============================================================================
 
 [h1]Mod Introduction[/h1]
@@ -84,7 +107,32 @@ Built on the vanilla game, this mod revamps and enhances some of the more humoro
 [/list]
 
 [h2]New Timeline [/h2]
-With Germany restoring the monarchy, Hungary rebuilding Austria-Hungary, and France restoring the Bonapartes, the three form the "Three Emperors' Alliance" against the "Triple Entente" (UK/USA/USSR). The clash begins around 1941 across Europe, Africa, Asia and the Americas, with nearly a thousand divisions per side. Recommended setup: Germany → monarchy, Hungary → Austria-Hungary, France → Bonaparte, USSR → historical, UK → neutral non-communist, USA → historical.
+With Germany restoring the monarchy, Hungary rebuilding Austria-Hungary, and France restoring the Bonapartes, the three form the "Three Emperors' Alliance" against the "Triple Entente" (UK/USA/USSR). The clash begins around 1941 across Europe, Africa, Asia and the Americas, with nearly a thousand divisions per side.
+
+[h3]Preset Setup Guide [/h3]
+Before starting a game, please set each country's AI behaviour in the "Game Rules" as follows, so that the worldline fits the mod:
+
+[list]
+[*][b]Germany → Monarchy[/b]
+[*][b]Hungary → Austria-Hungary[/b]
+[*][b]France → Bonaparte[/b]
+[*][b]USSR → Historical[/b]
+[*][b]UK → Neutral[/b]
+[*][b]USA → Historical (Democratic)[/b]
+[*][b]Italy → Historical (Fascist)[/b]
+[*][b]China → Historical[/b]
+[*][b]Bulgaria → Historical[/b]
+[/list]
+
+[b]No-hassle setup (use the ready-made preset file third.txt):[/b]
+
+First, copy the file from the mod's Steam Workshop download folder:
+[b]xx:\SteamLibrary\steamapps\workshop\content\394360\3297119526\third.txt[/b]
+
+Then place it in the following folder:
+[b]xx:\Documents\Paradox Interactive\Hearts of Iron IV\game rules[/b]
+
+Finally launch the game, start a new run, and load that preset in the "Game Rules" screen to use it directly.
 
 [h3]Difficulty [/h3]
 The Alliance side is easier but requires naval skill; the Entente side is harder with heavy land pressure (the USSR is extremely hard to capitulate). Overall difficulty is on the high side and, being single-tester, may contain bugs.

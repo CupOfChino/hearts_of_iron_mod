@@ -922,6 +922,10 @@ country_event = { #开片！！！
 
     is_triggered_only = yes
 
+    immediate = {
+		set_global_flag = the_world_war_tow_flag
+	}
+
     option = {
         name = change_france.25.a
         ai_chance = {
@@ -979,7 +983,11 @@ country_event = { #法国军队跨越边境！！！（同盟国）
         add_war_support = 0.2
         if = {
             limit = {
-                tag = GER
+                OR = {
+                    is_major = yes
+                    is_ai = no
+                }
+                
             }
             declare_war_on = {
 				type = annex_everything
@@ -1019,5 +1027,27 @@ country_event = { #法国军队跨越边境！！！（协约国）
 			idea = HUN_unprepared
 			days = 60
 		}
+        if = {
+            limit = {
+                OR = {
+                    is_major = yes
+                    is_ai = no
+                }
+                
+            }
+            declare_war_on = {
+                type = annex_everything
+                target = FRA
+            }
+            declare_war_on = {
+                type = annex_everything
+                target = HUN
+            }
+            declare_war_on = {
+                type = annex_everything
+                target = GER
+            }
+        }
+        
     }
 }

@@ -2114,7 +2114,6 @@ GER_third_empire_categories = {
 			}
 			BLR = {
 				add_ideas = GER_help_blr
-				add_ideas = 
 				add_manpower = 500000
 				add_political_power = 500
 				army_experience = 300
@@ -3086,6 +3085,7 @@ GER_third_empire_categories = {
 		visible = {
 			tag = GER
 			has_country_flag = ger_will_better_flag
+			has_idea = GER_oil_prepare
 		}
 
 		icon = hol_attract_foreign_investors
@@ -3161,6 +3161,7 @@ GER_third_empire_categories = {
 		visible = {
 			tag = GER
 			has_country_flag = ger_will_better_flag
+			has_idea = GER_oil_prepare
 		}
 
 		icon = hol_attract_foreign_investors
@@ -3234,6 +3235,7 @@ GER_third_empire_categories = {
 		visible = {
 			tag = GER
 			has_country_flag = ger_will_better_flag
+			has_idea = GER_oil_prepare
 		}
 
 		icon = hol_attract_foreign_investors
@@ -3391,6 +3393,7 @@ GER_third_empire_categories = {
 			GER = {
 				has_country_flag = ger_will_better_flag
 			}
+			has_idea = GER_oil_prepare
 		}
 
 		icon = hol_attract_foreign_investors
@@ -4134,6 +4137,8 @@ GER_third_empire_categories = {
 					has_government = communism
 				}
 			}
+			has_war_with = ENG
+			has_war_with = USA
 		}
 
 		icon = generic_operation
@@ -5885,6 +5890,9 @@ GER_third_empire_prepare_war_categories = {
 					has_idea = GER_unprepare_war
 					has_idea = GER_prepare_war_1
 				}
+				NOT = {
+					has_country_flag = choose_prepare_war_02
+				}
 			}
 		}    
 		
@@ -6580,7 +6588,7 @@ GER_third_empire_prepare_war_categories = {
 			
         }
 
-        fire_only_once = yes
+        fire_only_once = no
 
 		cost = 50
 
@@ -6590,7 +6598,7 @@ GER_third_empire_prepare_war_categories = {
 		#}
 
 		days_remove = 30
-		#days_re_enable = 90
+		days_re_enable = 90
 
 		modifier = {
 			war_support_weekly = 0.01
@@ -6658,12 +6666,12 @@ GER_third_empire_prepare_war_categories = {
 			
         }
 
-        fire_only_once = yes
+        fire_only_once = no
 
 		cost = 30
 
 		days_remove = 30
-		#days_re_enable = 90
+		days_re_enable = 90
 
 		modifier = {
 			war_support_weekly = 0.01

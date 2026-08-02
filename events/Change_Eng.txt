@@ -282,12 +282,6 @@ country_event = { #三国协约
 		
 
         hidden_effect = {
-			add_ideas = mod_the_buff_1
-			add_ideas = mod_the_buff_2
-			add_ideas = mod_the_buff_3
-			add_ideas = mod_the_buff_4
-			add_ideas = mod_the_buff_5
-			add_ideas = mod_the_buff_6
 			news_event = { id = change_news.2 days = 2 }
             SOV = {
                 set_country_flag = join_eng_factions
@@ -508,13 +502,6 @@ country_event = { #苏美回应
 			add_ideas = GER_unprepare_war
 			add_war_support = 0.2
 		}
-
-		add_ideas = mod_the_buff_1
-		add_ideas = mod_the_buff_2
-		add_ideas = mod_the_buff_3
-		add_ideas = mod_the_buff_4
-		add_ideas = mod_the_buff_5
-		add_ideas = mod_the_buff_6
 
 		if = {
 			limit = {
@@ -1133,6 +1120,443 @@ country_event = { #协约国军队异常调动
 
 }
 
+country_event = { #完成经济合作倡议
+    id = change_eng.15
+	title = change_eng.15.t
+	desc = change_eng.15.d
+
+	picture = GFX_news_event_canada_patriation
+
+
+    is_triggered_only = yes
+
+    option = {
+        name = change_eng.15.a
+        ai_chance = {
+            modifier = {
+                factor = 100
+            }
+        }
+		every_other_country = {
+			limit = {
+				is_in_faction_with = ROOT
+			}
+			country_event = { id = change_eng.16 hours = 12 }
+		}
+		add_tech_bonus = {
+			ahead_reduction = 1
+			bonus = 1
+			name = chouka_gongye
+			uses = 1
+			category = industry
+		}
+		
+
+    }
+
+}
+
+country_event = { #某国家完成经济合作倡议
+    id = change_eng.16
+	title = change_eng.16.t
+	desc = change_eng.16.d
+
+	picture = GFX_news_event_canada_patriation
+
+
+    is_triggered_only = yes
+
+    option = {
+        name = change_eng.16.a
+        ai_chance = {
+            modifier = {
+                factor = 100
+            }
+        }
+		
+		add_ideas = mod_the_buff_1
+		add_tech_bonus = {
+			ahead_reduction = 1
+			bonus = 1
+			name = chouka_gongye
+			uses = 1
+			category = industry
+		}
+
+    }
+
+}
+
+
+country_event = { #完成科研合作协议
+    id = change_eng.17
+	title = change_eng.17.t
+	desc = change_eng.17.d
+
+	picture = GFX_news_event_canada_patriation
+
+
+    is_triggered_only = yes
+
+    option = {
+        name = change_eng.17.a
+        ai_chance = {
+            modifier = {
+                factor = 100
+            }
+        }
+		every_other_country = {
+			limit = {
+				is_in_faction_with = ROOT
+			}
+			country_event = { id = change_eng.18 hours = 12 }
+		}
+		add_tech_bonus = {
+			ahead_reduction = 1
+			bonus = 1
+			name = chouka_dianzi
+			uses = 1
+			category = electronics
+		}
+		
+
+    }
+
+}
+
+country_event = { #某国家完成科研合作协议
+    id = change_eng.18
+	title = change_eng.18.t
+	desc = change_eng.18.d
+
+	picture = GFX_news_event_canada_patriation
+
+
+    is_triggered_only = yes
+
+    option = {
+        name = change_eng.18.a
+        ai_chance = {
+            modifier = {
+                factor = 100
+            }
+        }
+		
+		add_ideas = mod_the_buff_2
+		add_tech_bonus = {
+			ahead_reduction = 1
+			bonus = 1
+			name = chouka_dianzi
+			uses = 1
+			category = electronics
+		}
+
+    }
+
+}
+
+country_event = { #完成军事合作倡议
+    id = change_eng.19
+	title = change_eng.19.t
+	desc = change_eng.19.d
+
+	picture = GFX_news_event_canada_patriation
+
+
+    is_triggered_only = yes
+
+    option = {
+        name = change_eng.19.a
+        ai_chance = {
+            modifier = {
+                factor = 100
+            }
+        }
+		army_experience = 100
+		every_other_country = {
+			limit = {
+				is_in_faction_with = ROOT
+			}
+			country_event = { id = change_eng.20 hours = 12 }
+		}
+		add_daily_mastery = {
+			amount = 0.5
+			days = 100
+			name =  chouka_lujun
+			folder = land			
+		}
+		add_tech_bonus = {
+			ahead_reduction = 1
+			bonus = 1
+			name = chouka_buqiang
+			uses = 1 
+			category = infantry_weapons
+		}
+		
+
+    }
+
+}
+
+country_event = { #某国家完成军事合作倡议
+    id = change_eng.20
+	title = change_eng.20.t
+	desc = change_eng.20.d
+
+	picture = GFX_news_event_canada_patriation
+
+
+    is_triggered_only = yes
+
+    option = {
+        name = change_eng.20.a
+        ai_chance = {
+            modifier = {
+                factor = 100
+            }
+        }
+		
+		add_ideas = mod_the_buff_3
+		add_daily_mastery = {
+			amount = 0.5
+			days = 100
+			name =  chouka_lujun
+			folder = land			
+		}
+		add_tech_bonus = {
+			ahead_reduction = 1
+			bonus = 1
+			name = chouka_buqiang
+			uses = 1 
+			category = infantry_weapons
+		}
+    }
+
+}
+
+country_event = { #完成空军合作倡议
+    id = change_eng.21
+	title = change_eng.21.t
+	desc = change_eng.21.d
+
+	picture = GFX_news_event_canada_patriation
+
+
+    is_triggered_only = yes
+
+    option = {
+        name = change_eng.21.a
+        ai_chance = {
+            modifier = {
+                factor = 100
+            }
+        }
+		air_experience = 100
+		every_other_country = {
+			limit = {
+				is_in_faction_with = ROOT
+			}
+			country_event = { id = change_eng.22 hours = 12 }
+		}
+		add_daily_mastery = {
+			amount = 0.5
+			days = 100
+			name =  chouka_kongjun
+			folder = air		
+		}
+		add_tech_bonus = {
+			ahead_reduction = 1
+			bonus = 1
+			name = chouka_feiji
+			uses = 1
+			category = air_equipment
+		}
+
+    }
+
+}
+
+country_event = { #某国家完成空军合作倡议
+    id = change_eng.22
+	title = change_eng.22.t
+	desc = change_eng.22.d
+
+	picture = GFX_news_event_canada_patriation
+
+
+    is_triggered_only = yes
+
+    option = {
+        name = change_eng.22.a
+        ai_chance = {
+            modifier = {
+                factor = 100
+            }
+        }
+		
+		add_ideas = mod_the_buff_4
+		add_daily_mastery = {
+			amount = 0.5
+			days = 100
+			name =  chouka_kongjun
+			folder = air		
+		}
+		add_tech_bonus = {
+			ahead_reduction = 1
+			bonus = 1
+			name = chouka_feiji
+			uses = 1
+			category = air_equipment
+		}
+    }
+
+}
+
+country_event = { #完成海军合作倡议
+    id = change_eng.23
+	title = change_eng.23.t
+	desc = change_eng.23.d
+
+	picture = GFX_news_event_canada_patriation
+
+
+    is_triggered_only = yes
+
+    option = {
+        name = change_eng.23.a
+        ai_chance = {
+            modifier = {
+                factor = 100
+            }
+        }
+		air_experience = 100
+		every_other_country = {
+			limit = {
+				is_in_faction_with = ROOT
+			}
+			country_event = { id = change_eng.24 hours = 12 }
+		}
+		add_daily_mastery = {
+			amount = 0.5
+			days = 100
+			name =  chouka_kongjun
+			folder = naval		
+		}
+		add_tech_bonus = {
+			ahead_reduction = 1
+			bonus = 1
+			name = chouka_feiji
+			uses = 1
+			category = naval_equipment
+		}
+
+    }
+
+}
+
+country_event = { #某国家完成海军合作倡议
+    id = change_eng.24
+	title = change_eng.24.t
+	desc = change_eng.24.d
+
+	picture = GFX_news_event_canada_patriation
+
+
+    is_triggered_only = yes
+
+    option = {
+        name = change_eng.24.a
+        ai_chance = {
+            modifier = {
+                factor = 100
+            }
+        }
+		
+		add_ideas = mod_the_buff_5
+		add_daily_mastery = {
+			amount = 0.5
+			days = 100
+			name =  chouka_kongjun
+			folder = naval		
+		}
+		add_tech_bonus = {
+			ahead_reduction = 1
+			bonus = 1
+			name = chouka_feiji
+			uses = 1
+			category = naval_equipment
+		}
+    }
+
+}
+
+country_event = { #完成工业合作倡议
+    id = change_eng.25
+	title = change_eng.25.t
+	desc = change_eng.25.d
+
+	picture = GFX_news_event_canada_patriation
+
+
+    is_triggered_only = yes
+
+    option = {
+        name = change_eng.25.a
+        ai_chance = {
+            modifier = {
+                factor = 100
+            }
+        }
+		air_experience = 100
+		every_other_country = {
+			limit = {
+				is_in_faction_with = ROOT
+			}
+			country_event = { id = change_eng.26 hours = 12 }
+		}
+		add_tech_bonus = {
+			ahead_reduction = 1
+			bonus = 1
+			name = chouka_gongye
+			uses = 1
+			category = industry
+		}
+		
+
+    }
+
+}
+
+country_event = { #某国家完成工业合作倡议
+    id = change_eng.26
+	title = change_eng.26.t
+	desc = change_eng.26.d
+
+	picture = GFX_news_event_canada_patriation
+
+
+    is_triggered_only = yes
+
+    option = {
+        name = change_eng.26.a
+        ai_chance = {
+            modifier = {
+                factor = 100
+            }
+        }
+		
+		add_ideas = mod_the_buff_6
+		add_tech_bonus = {
+			ahead_reduction = 1
+			bonus = 1
+			name = chouka_gongye
+			uses = 1
+			category = industry
+		}
+		
+    }
+
+}
 
 
 

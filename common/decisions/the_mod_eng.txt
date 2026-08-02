@@ -132,22 +132,6 @@ ENG_the_third_empire_categories = {
             	add_to_faction = USA
             	add_to_faction = SOV
         	}
-			USA = {
-				add_ideas = mod_the_buff_1
-				add_ideas = mod_the_buff_2
-				add_ideas = mod_the_buff_3
-				add_ideas = mod_the_buff_4
-				add_ideas = mod_the_buff_5
-				add_ideas = mod_the_buff_6
-			}
-			SOV = {
-				add_ideas = mod_the_buff_1
-				add_ideas = mod_the_buff_2
-				add_ideas = mod_the_buff_3
-				add_ideas = mod_the_buff_4
-				add_ideas = mod_the_buff_5
-				add_ideas = mod_the_buff_6
-			}
 			news_event = { id = change_news.15 days = 1 }
 
 		}
@@ -1232,6 +1216,7 @@ ENG_the_third_empire_categories = {
 			ENG = {
 				has_country_flag = ENG_the_third_empire_flag
 			}
+			is_debug = yes
 		}
 
 		#icon = GFX_decision_generic_factory
@@ -3811,4 +3796,618 @@ ENG_ai_categories = {
 
         }
     }
+}
+
+
+ENG_the_third_empire_cooperation_categories = { #协约国合作体系
+
+	ENG_the_third_empire_cooperation_categories_1 = { #经济合作倡议
+
+        allowed = {
+			
+		}
+
+        visible = {
+            is_in_faction_with = ENG
+			NOT = {
+				has_global_flag = mod_the_buff_1_flag 
+			}
+        }
+
+        available = {
+           GER = {
+                has_country_flag = third_empire_has_become_flag
+            }
+            FRA = {
+                has_country_flag = cjg_open_the_third_empire
+            }
+			NOT = {
+				has_global_flag = now_do_mod_the_buff_1_flag 
+			}
+        }
+
+		icon = ger_mefo_bills
+
+        fire_only_once = yes
+
+		cost = 100
+		days_remove = 120
+
+        complete_effect = {
+            set_global_flag = now_do_mod_the_buff_1_flag
+        }
+
+		remove_effect = {
+			set_global_flag = mod_the_buff_1_flag
+			clr_global_flag = now_do_mod_the_buff_1_flag
+			add_faction_influence_ratio = 0.05
+			country_event ={ id = change_eng.15 }
+			add_ideas = mod_the_buff_1
+
+		}
+		
+		
+		ai_will_do = {
+			factor = 1000
+		}
+
+    }
+
+	ENG_the_third_empire_cooperation_categories_11 = { #加入经济合作倡议
+
+        allowed = {
+			
+		}
+
+        visible = {
+            is_in_faction_with = ENG
+			has_global_flag = mod_the_buff_1_flag 
+			NOT = {
+				has_idea = mod_the_buff_1
+			}
+        }
+
+        available = {
+            GER = {
+                has_country_flag = third_empire_has_become_flag
+            }
+            FRA = {
+                has_country_flag = cjg_open_the_third_empire
+            }
+			has_global_flag = mod_the_buff_1_flag 
+			NOT = {
+				has_idea = mod_the_buff_1
+			}
+        }
+
+		icon = ger_mefo_bills
+
+        fire_only_once = yes
+
+		cost = 10
+		days_remove = 10
+
+        complete_effect = {
+            
+        }
+
+		remove_effect = {
+			add_ideas = mod_the_buff_1
+
+		}
+		
+		ai_will_do = {
+			factor = 1000
+		}
+
+    }
+
+	ENG_the_third_empire_cooperation_categories_2 = { #科研合作倡议
+
+        allowed = {
+			
+		}
+
+        visible = {
+            is_in_faction_with = ENG
+			NOT = {
+				has_global_flag = mod_the_buff_2_flag 
+			}
+			
+        }
+
+        available = {
+           GER = {
+                has_country_flag = third_empire_has_become_flag
+            }
+            FRA = {
+                has_country_flag = cjg_open_the_third_empire
+            }
+			NOT = {
+				has_global_flag = now_do_mod_the_buff_2_flag 
+			}
+        }
+
+		icon = ger_mefo_bills
+
+        fire_only_once = yes
+
+		cost = 100
+		days_remove = 365
+
+        complete_effect = {
+            set_global_flag = now_do_mod_the_buff_2_flag
+        }
+
+		remove_effect = {
+			set_global_flag = mod_the_buff_2_flag
+			clr_global_flag = now_do_mod_the_buff_2_flag
+			add_faction_influence_ratio = 0.05
+			country_event ={ id = change_eng.17 }
+			add_research_slot = 1
+			add_ideas = mod_the_buff_2
+
+		}
+		
+		ai_will_do = {
+			factor = 1000
+		}
+
+    }
+
+	ENG_the_third_empire_cooperation_categories_22 = { #加入经济合作倡议
+
+        allowed = {
+			
+		}
+
+        visible = {
+            is_in_faction_with = ENG
+			has_global_flag = mod_the_buff_2_flag 
+			NOT = {
+				has_idea = mod_the_buff_2
+			}
+        }
+
+        available = {
+            GER = {
+                has_country_flag = third_empire_has_become_flag
+            }
+            FRA = {
+                has_country_flag = cjg_open_the_third_empire
+            }
+			has_global_flag = mod_the_buff_2_flag 
+			NOT = {
+				has_idea = mod_the_buff_2
+			}
+        }
+
+		icon = generic_speech
+
+        fire_only_once = yes
+
+		cost = 10
+		days_remove = 10
+
+        complete_effect = {
+            
+        }
+
+		remove_effect = {
+			add_ideas = mod_the_buff_2
+
+		}
+		
+		ai_will_do = {
+			factor = 1000
+		}
+
+    }
+
+	ENG_the_third_empire_cooperation_categories_3 = { #军事合作倡议
+
+        allowed = {
+			
+		}
+
+        visible = {
+            is_in_faction_with = ENG
+			NOT = {
+				has_global_flag = mod_the_buff_3_flag 
+			}
+			
+        }
+
+        available = {
+           GER = {
+                has_country_flag = third_empire_has_become_flag
+            }
+            FRA = {
+                has_country_flag = cjg_open_the_third_empire
+            }
+			NOT = {
+				has_global_flag = now_do_mod_the_buff_3_flag 
+			}
+        }
+
+		icon = ger_mefo_bills
+
+        fire_only_once = yes
+
+		cost = 100
+		days_remove = 365
+
+        complete_effect = {
+            set_global_flag = now_do_mod_the_buff_3_flag
+        }
+
+		remove_effect = {
+			set_global_flag = mod_the_buff_3_flag
+			clr_global_flag = now_do_mod_the_buff_3_flag
+			add_faction_influence_ratio = 0.05
+			country_event ={ id = change_eng.19 }
+			add_ideas = mod_the_buff_3
+
+		}
+		
+		ai_will_do = {
+			factor = 1000
+		}
+
+    }
+
+	ENG_the_third_empire_cooperation_categories_33 = { #加入军事合作倡议
+
+        allowed = {
+			
+		}
+
+        visible = {
+            is_in_faction_with = ENG
+			has_global_flag = mod_the_buff_3_flag 
+			NOT = {
+				has_idea = mod_the_buff_3
+			}
+        }
+
+        available = {
+            GER = {
+                has_country_flag = third_empire_has_become_flag
+            }
+            FRA = {
+                has_country_flag = cjg_open_the_third_empire
+            }
+			has_global_flag = mod_the_buff_3_flag 
+			NOT = {
+				has_idea = mod_the_buff_3
+			}
+        }
+
+		icon = generic_speech
+
+        fire_only_once = yes
+
+		cost = 10
+		days_remove = 10
+
+        complete_effect = {
+            
+        }
+
+		remove_effect = {
+			add_ideas = mod_the_buff_3
+
+		}
+		
+		ai_will_do = {
+			factor = 1000
+		}
+
+    }
+
+	ENG_the_third_empire_cooperation_categories_4 = { #空军合作倡议
+
+        allowed = {
+			
+		}
+
+        visible = {
+            is_in_faction_with = ENG
+			NOT = {
+				has_global_flag = mod_the_buff_4_flag 
+			}
+			
+        }
+
+        available = {
+           GER = {
+                has_country_flag = third_empire_has_become_flag
+            }
+            FRA = {
+                has_country_flag = cjg_open_the_third_empire
+            }
+			NOT = {
+				has_global_flag = now_do_mod_the_buff_4_flag 
+			}
+        }
+
+		icon = ger_mefo_bills
+
+        fire_only_once = yes
+
+		cost = 100
+		days_remove = 365
+
+        complete_effect = {
+            set_global_flag = now_do_mod_the_buff_4_flag
+        }
+
+		remove_effect = {
+			set_global_flag = mod_the_buff_4_flag
+			clr_global_flag = now_do_mod_the_buff_4_flag
+			add_faction_influence_ratio = 0.05
+			country_event ={ id = change_eng.21 }
+			add_ideas = mod_the_buff_4
+
+		}
+		
+		ai_will_do = {
+			factor = 1000
+		}
+
+    }
+
+	ENG_the_third_empire_cooperation_categories_44 = { #加入空军合作倡议
+
+        allowed = {
+			
+		}
+
+        visible = {
+            is_in_faction_with = ENG
+			has_global_flag = mod_the_buff_4_flag 
+			NOT = {
+				has_idea = mod_the_buff_4
+			}
+        }
+
+        available = {
+            GER = {
+                has_country_flag = third_empire_has_become_flag
+            }
+            FRA = {
+                has_country_flag = cjg_open_the_third_empire
+            }
+			has_global_flag = mod_the_buff_4_flag 
+			NOT = {
+				has_idea = mod_the_buff_4
+			}
+        }
+
+		icon = generic_speech
+
+        fire_only_once = yes
+
+		cost = 10
+		days_remove = 10
+
+        complete_effect = {
+            
+        }
+
+		remove_effect = {
+			add_ideas = mod_the_buff_4
+
+		}
+		
+		ai_will_do = {
+			factor = 1000
+		}
+
+    }
+
+	ENG_the_third_empire_cooperation_categories_5 = { #海军合作倡议
+
+        allowed = {
+			
+		}
+
+        visible = {
+            is_in_faction_with = ENG
+			NOT = {
+				has_global_flag = mod_the_buff_5_flag 
+			}
+			
+        }
+
+        available = {
+           GER = {
+                has_country_flag = third_empire_has_become_flag
+            }
+            FRA = {
+                has_country_flag = cjg_open_the_third_empire
+            }
+			NOT = {
+				has_global_flag = now_do_mod_the_buff_5_flag 
+			}
+        }
+
+		icon = ger_mefo_bills
+
+        fire_only_once = yes
+
+		cost = 100
+		days_remove = 365
+
+        complete_effect = {
+            set_global_flag = now_do_mod_the_buff_5_flag
+        }
+
+		remove_effect = {
+			set_global_flag = mod_the_buff_5_flag
+			clr_global_flag = now_do_mod_the_buff_5_flag
+			add_faction_influence_ratio = 0.05
+			country_event ={ id = change_eng.23 }
+			add_ideas = mod_the_buff_5
+
+		}
+		
+		ai_will_do = {
+			factor = 1000
+		}
+
+    }
+
+	ENG_the_third_empire_cooperation_categories_55 = { #加入海军合作倡议
+
+        allowed = {
+			
+		}
+
+        visible = {
+            is_in_faction_with = ENG
+			has_global_flag = mod_the_buff_5_flag 
+			NOT = {
+				has_idea = mod_the_buff_5
+			}
+        }
+
+        available = {
+            GER = {
+                has_country_flag = third_empire_has_become_flag
+            }
+            FRA = {
+                has_country_flag = cjg_open_the_third_empire
+            }
+			has_global_flag = mod_the_buff_5_flag 
+			NOT = {
+				has_idea = mod_the_buff_5
+			}
+        }
+
+		icon = generic_speech
+
+        fire_only_once = yes
+
+		cost = 10
+		days_remove = 10
+
+        complete_effect = {
+            
+        }
+
+		remove_effect = {
+			add_ideas = mod_the_buff_5
+
+		}
+		
+		ai_will_do = {
+			factor = 1000
+		}
+
+    }
+
+	ENG_the_third_empire_cooperation_categories_6 = { #工业合作倡议
+
+        allowed = {
+			
+		}
+
+        visible = {
+            is_in_faction_with = ENG
+			NOT = {
+				has_global_flag = mod_the_buff_6_flag 
+			}
+			
+			
+			
+        }
+
+        available = {
+           GER = {
+                has_country_flag = third_empire_has_become_flag
+            }
+            FRA = {
+                has_country_flag = cjg_open_the_third_empire
+            }
+			NOT = {
+				has_global_flag = now_do_mod_the_buff_6_flag 
+			}
+        }
+
+		icon = ger_mefo_bills
+
+        fire_only_once = yes
+
+		cost = 100
+		days_remove = 180
+
+        complete_effect = {
+            set_global_flag = now_do_mod_the_buff_6_flag
+        }
+
+		remove_effect = {
+			set_global_flag = mod_the_buff_6_flag
+			clr_global_flag = now_do_mod_the_buff_6_flag
+			add_faction_influence_ratio = 0.05
+			country_event ={ id = change_eng.25 }
+			add_ideas = mod_the_buff_6
+
+		}
+		
+		ai_will_do = {
+			factor = 1000
+		}
+
+    }
+
+	ENG_the_third_empire_cooperation_categories_66 = { #加入工业合作倡议
+
+        allowed = {
+			
+		}
+
+        visible = {
+            is_in_faction_with = ENG
+			has_global_flag = mod_the_buff_6_flag 
+			NOT = {
+				has_idea = mod_the_buff_6
+			}
+        }
+
+        available = {
+            GER = {
+                has_country_flag = third_empire_has_become_flag
+            }
+            FRA = {
+                has_country_flag = cjg_open_the_third_empire
+            }
+			has_global_flag = mod_the_buff_6_flag 
+			NOT = {
+				has_idea = mod_the_buff_6
+			}
+        }
+
+		icon = generic_speech
+
+        fire_only_once = yes
+
+		cost = 10
+		days_remove = 10
+
+        complete_effect = {
+            
+        }
+
+		remove_effect = {
+			add_ideas = mod_the_buff_6	
+
+		}
+		
+		ai_will_do = {
+			factor = 1000
+		}
+
+    }
+
 }

@@ -29,7 +29,7 @@ ENG_the_third_empire_categories = {
             has_country_flag = cjg_open_the_third_empire
         }
     }
-    picture = GFX_decision_cat_naval_treaty
+    picture = GFX_decision_cat_generic_mefo_bills
     icon = GFX_decision_third_empire_2
     priority = 100
 }
@@ -43,8 +43,28 @@ ENG_the_third_empire_war_categories = {
             has_country_flag = cjg_open_the_third_empire
         }
         has_war = yes
+        ENG = {
+            has_country_flag = ENG_the_third_empire_flag
+        }
     }
     picture = GFX_decision_cat_picture_chi_infiltration
     icon = GFX_decision_category_saf_anti_colonialist_crusade
     priority = 100
+}
+
+ENG_the_third_empire_cooperation_categories = {
+    allowed = {
+        original_tag = ENG
+    }
+    visible = {
+        FRA = {
+            has_country_flag = cjg_open_the_third_empire
+        }
+        ENG = {
+            has_country_flag = ENG_the_third_empire_flag
+        }
+    }
+    picture = GFX_decision_cat_generic_mefo_bills
+    icon = GFX_decision_third_empire_2
+    priority = 200
 }

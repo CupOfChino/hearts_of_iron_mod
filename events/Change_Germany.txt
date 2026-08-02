@@ -1553,7 +1553,7 @@ country_event = { #战争动员
 	option = { #总动员
 		name = change_germany.24.a
 		ai_chance = {
-			factor = 50
+			factor = 100
 		}
 		set_country_flag = choose_prepare_war_02
 		activate_mission = we_must_prepare_war_02
@@ -1562,7 +1562,7 @@ country_event = { #战争动员
 	option = { #紧急动员
 		name = change_germany.24.b
 		ai_chance = {
-			factor = 50
+			factor = 0
 		}
 		set_country_flag = choose_prepare_war_03
 		activate_decision = we_must_prepare_war_03
@@ -1974,7 +1974,7 @@ country_event = { #德国支持统一中国
 			}
 		}
 
-		set_gobal_flag = china_join_ger_flag
+		set_global_flag = china_join_ger_flag
 
 		add_to_variable = { mod_with_chi_army_attack_factor = 0.025 }
 		add_to_variable = { mod_with_chi_army_defence_factor = 0.025 }
@@ -2972,6 +2972,72 @@ country_event = { #中美洲拒绝
 }
 
 
+country_event = { #未做好战争动员
+	id = change_germany.41
+	title = change_germany.41.t
+	desc = change_germany.41.d
+
+	picture = GFX_report_event_british_inspect_troops
+
+	is_triggered_only = yes
+
+	immediate = {
+		set_country_flag = has_find_you_flag
+	}
+
+	option = { 
+		name = change_germany.41.a
+		ai_chance = {
+			factor = 1000
+		}
+		add_political_power = -100
+		add_war_support = -0.1
+		set_country_flag = has_find_you_flag
+		if = {
+			limit = {
+				has_idea = GER_unprepare_war
+			}
+			add_ideas = GER_dongyuan_defeat_1
+		}
+		else_if = {
+			limit = {
+				has_idea = GER_prepare_war_1
+			}
+			add_ideas = GER_dongyuan_defeat_2
+		}
+		
+	}
+
+
+}
+
+country_event = { #做好战争动员
+	id = change_germany.42
+	title = change_germany.42.t
+	desc = change_germany.42.d
+
+	picture = GFX_report_event_british_inspect_troops
+
+	is_triggered_only = yes
+
+	immediate = {
+		set_country_flag = has_find_you_flag
+	}
+
+	option = { 
+		name = change_germany.42.a
+		ai_chance = {
+			factor = 1000
+		}
+		set_country_flag = has_find_you_flag
+		add_political_power = 100
+		add_war_support = 0.1
+		add_ideas = GER_dongyuan_defeat_3
+		
+	}
+
+
+}
 
 
 

@@ -1,0 +1,20 @@
+save_version=33
+minor_save_version=0
+difficulty_settings={
+}
+game_rules={
+	GER_ai_behavior="KAISER"
+	SOV_ai_behavior="historical"
+	ITA_ai_behavior="FASCIST_HISTORICAL"
+	FRA_ai_behavior="BONAPARTIST"
+	HUN_ai_behavior="AUSTRIA_HUNGARY"
+	PRC_ai_behavior="historical"
+	CHI_ai_behavior="historical"
+	ENG_ai_behavior="neutrality"
+	USA_ai_behavior="DEMOCRATIC_HISTORICAL"
+	BUL_ai_behavior="historical"
+	The_third_empire_family="the_third_empire_flag"
+	The_air_game_rule="The_air_game_rule_open"
+	The_USA_game_rule="the_USA_factory_more_open"
+	The_lamei_game_rule="The_lamei_game_rule_open"
+}

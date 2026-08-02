@@ -459,9 +459,9 @@
  GER_add_more_resource: "Divert Resources to the Navy"
 
  GER_third_empire_prepare_war_categories_1: "Initial War Mobilization"
- GER_third_empire_prepare_war_categories_1_desc: "§RFor allied nations, this resolution determines whether they can declare war in time—please complete it quickly§!"
+ GER_third_empire_prepare_war_categories_1_desc: "§RFor allied nations, this resolution determines whether they can declare war in time—please complete it quickly§!\nIf mobilization is not completed when the world war erupts, you will receive a §Rsevere penalty§!"
  GER_third_empire_prepare_war_categories_2: "War Mobilization"
- GER_third_empire_prepare_war_categories_2_desc: "§RFor allied nations, this resolution determines whether they can declare war in time—please complete it quickly§!"
+ GER_third_empire_prepare_war_categories_2_desc: "§RFor allied nations, this resolution determines whether they can declare war in time—please complete it quickly§!\nIf mobilization is not completed when the world war erupts, you will receive a §Rsevere penalty§!"
  GER_third_empire_prepare_war_categories_3: "General War Mobilization"
  GER_third_empire_prepare_war_categories_4: "Emergency War Mobilization"
  GER_third_empire_prepare_war_categories_5: "Join Collective Treaty / Demand Ally Mobilization"
@@ -707,15 +707,15 @@
  GER_get_blr: "Utilize Belarus"
  GER_get_blr_desc: "Belarus, as our satellite state, possesses ample manpower. By investing and establishing bilateral agreements, we can increase our factory output"
  GER_unprepare_war: " §RNo War Mobilization§! "
- GER_unprepare_war_desc: "What is war? Can you eat it?"
+ GER_unprepare_war_desc: "§RIf we are dragged into a world war, we will be extremely passive!!!§!\n\n"What is war? Can you eat it?""
  GER_prepare_war_1: " §RInitial War Mobilization§! "
- GER_prepare_war_1_desc: "Have you heard? Those scoundrels across the Channel already have several million troops!"
+ GER_prepare_war_1_desc: "§RIf we are dragged into a world war, we will be extremely passive!!!§!\n\n"Have you heard? Those scoundrels across the Channel already have several million troops!""
  GER_prepare_war_2: "War Mobilization"
- GER_prepare_war_2_desc: "The enemy's war machine has fully activated! Even household plumbing pipes can be used as cannon or rifle barrels in wartime!"
+ GER_prepare_war_2_desc: "§GWhen war breaks out, we will gain the initiative§!\n\nThe enemy's war machine has fully activated! Even household plumbing pipes can be used as cannon or rifle barrels in wartime!"
  GER_prepare_war_3: "General War Mobilization"
- GER_prepare_war_3_desc: "As your Führer, I have led the nation to expand our territories and economy. We will continue to grow, responding with action to those naysayers who only utter criticism and refuse to move forward with us. The radicals and dissenters hope you will abandon years of peace and prosperity at the first sound of gunfire. They lack the courage and ability to lead our homeland through this dangerous era. The rule of law is our lifeline, yet it faces unprecedented challenges. I will restore the glory of our homeland and never bow to any foreign power. The countless outstanding sons of the Imperial Armed Forces are constantly guarding the gates of our homeland, but they cannot stand alone. All who enlist today will have their criminal sentences halved. Do not believe the slander—I am not some clone!"
+ GER_prepare_war_3_desc: "§GWhen war breaks out, we will gain the initiative§!\n\nAs your Führer, I have led the nation to expand our territories and economy. We will continue to grow, responding with action to those naysayers who only utter criticism and refuse to move forward with us. The radicals and dissenters hope you will abandon years of peace and prosperity at the first sound of gunfire. They lack the courage and ability to lead our homeland through this dangerous era. The rule of law is our lifeline, yet it faces unprecedented challenges. I will restore the glory of our homeland and never bow to any foreign power. The countless outstanding sons of the Imperial Armed Forces are constantly guarding the gates of our homeland, but they cannot stand alone. All who enlist today will have their criminal sentences halved. Do not believe the slander—I am not some clone!"
  GER_prepare_war_4: "Emergency War Mobilization"
- GER_prepare_war_4_desc: "Reinforce the front lines immediately!"
+ GER_prepare_war_4_desc: "§GBetter late than never§!\n\nReinforce the front lines immediately!"
  GER_navy_competition: "Second Naval Arms Race"
  GER_mechanical_engineering: "Mechanical Design Bureau"
  GER_pulu_artillery: "Prussian Artillery"
@@ -736,6 +736,12 @@
  GER_help_china_desc: "The current situation in East Asia is like a barely stable lever; only a slight push is needed to steer the overall balance in East Asia in a direction favorable to us..."
  GER_chi_other_help: "Aid to China"
  GER_chi_other_help_desc: "China's vast land will provide us with assistance"
+ GER_dongyuan_defeat_1: "§RFailed to Mobilize in Time§!"
+ GER_dongyuan_defeat_1_desc: "§RThis national spirit will be removed once the mobilization is raised to a certain level§!\n\nHaving failed to conduct war mobilization in time, we find ourselves in an extremely passive position in this war."
+ GER_dongyuan_defeat_2: "§RInsufficient War Mobilization§!"
+ GER_dongyuan_defeat_2_desc: "§RThis national spirit will be removed once the mobilization is raised to a certain level§!\n\nHaving failed to conduct sufficient war mobilization in time, we are in an extremely passive position in this war."
+ GER_dongyuan_defeat_3: "§GWar Preparedness§!"
+ GER_dongyuan_defeat_3_desc: "§GThis national spirit will be removed once the war ends§!\n\nHaving made thorough war preparations, we hold the initiative in this war."
 
  mod_help_player_0: "En↗joy↘ th↗e↘ Ga↘me~"
  mod_help_player_0_desc: "§YThis is the true game!§!"
@@ -1351,6 +1357,19 @@
  FRA_extra_research_slot_2_doing_flag:0 "§RConstructing National Research Institute§!"
  GER_third_empire_categories_19_flag:0 "§YAid Received§!"
 
+ mod_the_buff_1_flag:0 "§YThe Economic Cooperation Initiative has been completed§!"
+ now_do_mod_the_buff_1_flag:0 "§RA nation is currently undertaking the Economic Cooperation Initiative§!"
+ mod_the_buff_2_flag:0 "§YThe Research Cooperation Initiative has been completed§!"
+ now_do_mod_the_buff_2_flag:0 "§RA nation is currently undertaking the Research Cooperation Initiative§!"
+ mod_the_buff_3_flag:0 "§YThe Military Cooperation Initiative has been completed§!"
+ now_do_mod_the_buff_3_flag:0 "§RA nation is currently undertaking the Military Cooperation Initiative§!"
+ mod_the_buff_4_flag:0 "§YThe Air Force Cooperation Initiative has been completed§!"
+ now_do_mod_the_buff_4_flag:0 "§RA nation is currently undertaking the Air Force Cooperation Initiative§!"
+ mod_the_buff_5_flag:0 "§YThe Naval Cooperation Initiative has been completed§!"
+ now_do_mod_the_buff_5_flag:0 "§RA nation is currently undertaking the Naval Cooperation Initiative§!"
+ mod_the_buff_6_flag:0 "§YThe Industrial Cooperation Initiative has been completed§!"
+ now_do_mod_the_buff_6_flag:0 "§RA nation is currently undertaking the Industrial Cooperation Initiative§!"
+
  the_eastern:0 "East Asian Powers (Full experience requires enabling the Three Emperors' Alliance)"
  RLUE_GROUP_EASTERN_OPTION_DEFAULT:0 "East Asia Default"
  the_eastern_desc:0 "The East Asian powers receive no buffs and remain unchanged from vanilla. Who wins in the end is purely up to fate."
@@ -1446,7 +1465,7 @@
  #####event######
  change_germany.0:0 "Changelog"
  change_germany.0.t:0 "Changelog"
- change_germany.0.d:0 "§R2026/07/03§! \n1. Completed adaptation for the new version and fixed some long-standing issues. \nPS: The author hasn't been motivated to play this game recently, so new content won't be added for now. Please bear with us. \n  Finally, if you have any §Rgood ideas§! or are §Rwilling to help§!, feel free to leave a message in the §RWorkshop comments§!."
+ change_germany.0.d:0 "§R2026/08/02§! \n1. Rewrote the Entente mechanics: no longer directly receive the joint national spirit; must spend political power to gradually obtain it. \n2. Completed the penalty mechanics for war mobilization. \n3. Fixed the bug where decisions flickered during war mobilization. \n4. Optimized the display conditions of some decisions to prevent a large pile-up from appearing at once. \n \n Finally, if you have any §Rgood ideas§! or are §Rwilling to help§!, feel free to leave a message in the §RWorkshop comments§!."
  change_germany.0.a:0 "Acknowledged"
 
  change_germany.1:0 "German Imperial Succession Candidate"
@@ -1667,6 +1686,16 @@
  change_germany.40.t:0 "Central America Refuses"
  change_germany.40.d:0 "In the end, Central America turned down our proposal and chose to remain neutral in this global war."
  change_germany.40.a:0 "Fine..."
+
+ change_germany.41:0 "Caught Off Guard by War"
+ change_germany.41.t:0 "Caught Off Guard by War"
+ change_germany.41.d:0 "We were caught unprepared and suddenly dragged into this global war."
+ change_germany.41.a:0 "This is bad..."
+
+ change_germany.42:0 "Caught Off Guard by War"
+ change_germany.42.t:0 "Caught Off Guard by War"
+ change_germany.42.d:0 "The world war has erupted. Fortunately, we have made thorough preparations."
+ change_germany.42.a:0 "Good."
 
 
  change_france.0:0 "Welcome to Back to Optimization, meow!"
@@ -1891,6 +1920,66 @@
  change_eng.14.t:0 "Enemy abnormal troop movements"
  change_eng.14.d:0 "Intelligence indicates that enemy forces are abnormally gathering at various ports, seemingly foreshadowing a massive amphibious operation about to unfold..."
  change_eng.14.a:0 "Don't get distracted"
+ 
+ change_eng.15:0 "Economic Cooperation Initiative Completed"
+ change_eng.15.t:0 "Economic Cooperation Initiative Completed"
+ change_eng.15.d:0 "Our Economic Cooperation Initiative has been successfully completed! The sharing of industrial capacity and joint efforts have breathed new life into our faction's war machine."
+ change_eng.15.a:0 "Mutual prosperity!"
+ 
+ change_eng.16:0 "Ally Completes Economic Cooperation Initiative"
+ change_eng.16.t:0 "Ally Completes Economic Cooperation Initiative"
+ change_eng.16.d:0 "§Y[FROM.GetName]§! has just completed the faction's Economic Cooperation Initiative, making an outstanding contribution to our shared industrial base."
+ change_eng.16.a:0 "Well done!"
+ 
+ change_eng.17:0 "Research Cooperation Agreement Completed"
+ change_eng.17.t:0 "Research Cooperation Agreement Completed"
+ change_eng.17.d:0 "Our Research Cooperation Agreement has been successfully completed! Cutting-edge technological achievements are now widely shared within the alliance, greatly advancing our scientific progress."
+ change_eng.17.a:0 "Progress through science!"
+ 
+ change_eng.18:0 "Ally Completes Research Cooperation Agreement"
+ change_eng.18.t:0 "Ally Completes Research Cooperation Agreement"
+ change_eng.18.d:0 "§Y[FROM.GetName]§! has just completed the faction's Research Cooperation Agreement, significantly boosting our technological capabilities."
+ change_eng.18.a:0 "Science is the driving force!"
+ 
+ change_eng.19:0 "Military Cooperation Initiative Completed"
+ change_eng.19.t:0 "Military Cooperation Initiative Completed"
+ change_eng.19.d:0 "Our Military Cooperation Initiative has been successfully completed! Valuable combat experience and doctrines are now being shared across the faction."
+ change_eng.19.a:0 "A well-trained army!"
+ 
+ change_eng.20:0 "Ally Completes Military Cooperation Initiative"
+ change_eng.20.t:0 "Ally Completes Military Cooperation Initiative"
+ change_eng.20.d:0 "§Y[FROM.GetName]§! has just completed the faction's Military Cooperation Initiative, greatly benefiting our armed forces."
+ change_eng.20.a:0 "A fine example to learn from!"
+ 
+ change_eng.21:0 "Air Force Cooperation Initiative Completed"
+ change_eng.21.t:0 "Air Force Cooperation Initiative Completed"
+ change_eng.21.d:0 "Our Air Force Cooperation Initiative has been successfully completed! The exchange of tactical knowledge has significantly improved our air combat capabilities."
+ change_eng.21.a:0 "Air supremacy is ours!"
+ 
+ change_eng.22:0 "Ally Completes Air Force Cooperation Initiative"
+ change_eng.22.t:0 "Ally Completes Air Force Cooperation Initiative"
+ change_eng.22.d:0 "§Y[FROM.GetName]§! has just completed the faction's Air Force Cooperation Initiative, bringing valuable experience to our air power."
+ change_eng.22.a:0 "The sky is our battlefield!"
+ 
+ change_eng.23:0 "Naval Cooperation Initiative Completed"
+ change_eng.23.t:0 "Naval Cooperation Initiative Completed"
+ change_eng.23.d:0 "Our Naval Cooperation Initiative has been successfully completed! The exchange of naval tactics and experience has made our fleet stronger than ever."
+ change_eng.23.a:0 "Rule the waves!"
+ 
+ change_eng.24:0 "Ally Completes Naval Cooperation Initiative"
+ change_eng.24.t:0 "Ally Completes Naval Cooperation Initiative"
+ change_eng.24.d:0 "§Y[FROM.GetName]§! has just completed the faction's Naval Cooperation Initiative, injecting new vigor into our blue-water navy."
+ change_eng.24.a:0 "Hoist the ensign!"
+ 
+ change_eng.25:0 "Industrial Cooperation Initiative Completed"
+ change_eng.25.t:0 "Industrial Cooperation Initiative Completed"
+ change_eng.25.d:0 "Our Industrial Cooperation Initiative has been successfully completed! The sharing of production lines and construction experience has greatly accelerated the faction's industrialization."
+ change_eng.25.a:0 "Industry is national strength!"
+ 
+ change_eng.26:0 "Ally Completes Industrial Cooperation Initiative"
+ change_eng.26.t:0 "Ally Completes Industrial Cooperation Initiative"
+ change_eng.26.d:0 "§Y[FROM.GetName]§! has just completed the faction's Industrial Cooperation Initiative, adding powerful momentum to our industrial development."
+ change_eng.26.a:0 "Shared development!"
 
 
 
@@ -2439,7 +2528,7 @@
  # ———— MEX EVENTS ————
  change_mex.0:0 "Changelog"
  change_mex.0.t:0 "Changelog"
- change_mex.0.d:0 "§R2026/07/03§! \n1. Completed adaptation for the new version and fixed some long-standing issues. \nPS: The author hasn't been motivated to play this game recently, so new content won't be added for now. Please bear with us. \n  Finally, if you have any §Rgood ideas§! or are §Rwilling to help§!, feel free to leave a message in the §RWorkshop comments§!."
+ change_mex.0.d:0 "§R2026/08/02§! \n1. Rewrote the Entente mechanics: no longer directly receive the joint national spirit; must spend political power to gradually obtain it. \n2. Completed the penalty mechanics for war mobilization. \n3. Fixed the bug where decisions flickered during war mobilization. \n4. Optimized the display conditions of some decisions to prevent a large pile-up from appearing at once. \n \n Finally, if you have any §Rgood ideas§! or are §Rwilling to help§!, feel free to leave a message in the §RWorkshop comments§!."
  change_mex.0.a:0 "Read"
  
 

@@ -118,6 +118,7 @@
  GER_new_third_empire_has_war_categories: "第二次世界大战"
  GER_new_third_empire_has_war_categories_desc: " 你知道的，战争已经开始了。。。 \n 它现在与我们每个人息息相关。 \n §R这场战争的收尾只会以某一方彻底死亡才会宣告结束。。。吗？§!"
  GER_the_new_technologies_categories:0 "特殊科技"
+ GER_the_test_categories:0 "测试决议"
  
  
 
@@ -141,6 +142,8 @@
  ENG_the_third_empire_categories_desc: "当普鲁士军靴的轰鸣震碎凡尔赛的和平，当波拿巴的野心撕下共和面具，当哈布斯堡的腐朽幽灵吞噬中欧——自由世界已无退路！无论意识形态的分歧，无论大洋与铁幕的阻隔，此刻我们必须并肩！伦敦的议会传统、华盛顿的民主火炬与莫斯科的工农红旗，将在三皇的黑暗狂想前筑成不可逾越的长城！\n --D指导"
  ENG_the_third_empire_war_categories:0 "协约国战争策略"
  ENG_the_third_empire_war_categories_desc: "战争已然爆发，历史早已经向我们证明：由他人施舍而来的和平能称的上是和平吗？和平，只能是靠我们自己争取而来的！"
+ ENG_the_third_empire_cooperation_categories:0 "协约国合作"
+ ENG_the_third_empire_cooperation_categories_desc: "无可奈何，但确实得合作才能走向胜利。"
 
  SOV_ai_categories:0 "苏联ai强化"
  SOV_the_third_empire_categories:0 "三国协约"
@@ -318,6 +321,19 @@
  ENG_attack_prc_plan: "东方战争计划"
  ENG_god_bless_our_king: "天佑吾王"
 
+ ENG_the_third_empire_cooperation_categories_1: "经济合作倡议"
+ ENG_the_third_empire_cooperation_categories_11: "加入经济合作圈"
+ ENG_the_third_empire_cooperation_categories_2: "科研合作倡议"
+ ENG_the_third_empire_cooperation_categories_22: "加入科研合作圈"
+ ENG_the_third_empire_cooperation_categories_3: "军事合作倡议"
+ ENG_the_third_empire_cooperation_categories_33: "加入军事合作圈"
+ ENG_the_third_empire_cooperation_categories_4: "空军合作倡议"
+ ENG_the_third_empire_cooperation_categories_44: "加入空军合作圈"
+ ENG_the_third_empire_cooperation_categories_5: "海军合作倡议"
+ ENG_the_third_empire_cooperation_categories_55: "加入海军合作圈"
+ ENG_the_third_empire_cooperation_categories_6: "工业合作倡议"
+ ENG_the_third_empire_cooperation_categories_66: "加入工业合作圈"
+
 
 
 
@@ -468,9 +484,9 @@
 
 
  GER_third_empire_prepare_war_categories_1: "初步战争动员"
- GER_third_empire_prepare_war_categories_1_desc: "§R对同盟国来说，该决议决定了是否能及时宣战，请尽快完成§!"
+ GER_third_empire_prepare_war_categories_1_desc: "§R对同盟国来说，该决议决定了是否能及时宣战，请尽快完成§!\n如果在世界大战爆发时依然没有完成动员，你将会得到一个§R比较严重的惩罚§!"
  GER_third_empire_prepare_war_categories_2: "战争动员"
- GER_third_empire_prepare_war_categories_2_desc: "§R对同盟国来说，该决议决定了是否能及时宣战，请尽快完成§!"
+ GER_third_empire_prepare_war_categories_2_desc: "§R对同盟国来说，该决议决定了是否能及时宣战，请尽快完成§!\n如果在世界大战爆发时依然没有完成动员，你将会得到一个§R比较严重的惩罚§!"
  GER_third_empire_prepare_war_categories_3: "战争总动员"
  GER_third_empire_prepare_war_categories_4: "紧急战争动员"
  GER_third_empire_prepare_war_categories_5: "加入共同条约/要求盟友动员"
@@ -714,15 +730,15 @@
  GER_get_blr: "利用白俄罗斯"
  GER_get_blr_desc: "白俄罗斯作为我们的附属国有着充足的人力资源，我们可以通过投资与他们达成双边协议来提高我国的工厂产出"
  GER_unprepare_war: " §R未进行战争动员§! "
- GER_unprepare_war_desc: "“什么是战争？能吃吗？”"
+ GER_unprepare_war_desc: "§R一旦我们陷入世界大战，我们将极其被动！！！§!\n\n“什么是战争？能吃吗？”"
  GER_prepare_war_1: " §R初步战争动员§! "
- GER_prepare_war_1_desc: "“听说了吗？海峡对面那些坏蛋已经有了几百万军队！”"
+ GER_prepare_war_1_desc: "§R一旦我们陷入世界大战，我们将极其被动！！！§!\n\n“听说了吗？海峡对面那些坏蛋已经有了几百万军队！”"
  GER_prepare_war_2: "战争动员"
- GER_prepare_war_2_desc: "“敌人的战争机器已经全面开动！即使是家用的下水管管道，在战时也可以用作大炮、枪械的炮管枪管！”"
+ GER_prepare_war_2_desc: "§G当陷入战争时，我们将获得主动权§!\n\n“敌人的战争机器已经全面开动！即使是家用的下水管管道，在战时也可以用作大炮、枪械的炮管枪管！”"
  GER_prepare_war_3: "战争总动员"
- GER_prepare_war_3_desc: "“身为你们的元首，我带领国家实现了统治领地和经济的扩张。我们将继续成长,用行动回击那些只会说风凉话，不愿意和我们相向而行的害群之马。激进分子和异见者希望你们一听见枪声就背弃多年的和平与繁荣。他们没有勇气和能力带领祖国穿越一个充满危险的时代。法治是我们的命脉，然而它却受到前所未有的挑战。我将恢复我们祖国的荣光，绝不会向任何境外势力低头。帝国武装力量无数的优秀儿女正时刻守卫看我们的家园大门，但是他们孤木难支。凡是今天应征入伍者，所获的所有刑罚罪责减半。不要听信谗言，我不是什么克隆人！”"
+ GER_prepare_war_3_desc: "§G当陷入战争时，我们将获得主动权§!\n\n“身为你们的元首，我带领国家实现了统治领地和经济的扩张。我们将继续成长,用行动回击那些只会说风凉话，不愿意和我们相向而行的害群之马。激进分子和异见者希望你们一听见枪声就背弃多年的和平与繁荣。他们没有勇气和能力带领祖国穿越一个充满危险的时代。法治是我们的命脉，然而它却受到前所未有的挑战。我将恢复我们祖国的荣光，绝不会向任何境外势力低头。帝国武装力量无数的优秀儿女正时刻守卫看我们的家园大门，但是他们孤木难支。凡是今天应征入伍者，所获的所有刑罚罪责减半。不要听信谗言，我不是什么克隆人！”"
  GER_prepare_war_4: "紧急战争动员"
- GER_prepare_war_4_desc: "“立即增援前线！”"
+ GER_prepare_war_4_desc: "§G亡羊补牢§!\n\n“立即增援前线！”"
  GER_navy_competition: "第二次海军竞赛"
  GER_mechanical_engineering: "机械设计局"
  GER_pulu_artillery: "普鲁士炮兵"
@@ -743,6 +759,12 @@
  GER_help_china_desc: "东亚现在的局势好比一个勉强稳定的杠杆，只需要些许推力，便能让东亚的大局向着我们有利的方向发展......"
  GER_chi_other_help: "中国的援助"
  GER_chi_other_help_desc: "中国的广袤土地将为我们提供援助"
+ GER_dongyuan_defeat_1: "§R未能及时动员§!"
+ GER_dongyuan_defeat_1_desc: "§R当动员程度提高到一定等级后，该民族精神将被移除§!\n\n由于未能及时进行战争动员，我们在战争中处于极为被动的地位"
+ GER_dongyuan_defeat_2: "§R战争动员不足§!"
+ GER_dongyuan_defeat_2_desc: "§R当动员程度提高到一定等级后，该民族精神将被移除§!\n\n由于未能及时进行充足战争动员，我们在战争中处于极为被动的地位"
+ GER_dongyuan_defeat_3: "§G战争准备§!"
+ GER_dongyuan_defeat_3_desc: "§G战争结束时，该民族精神将被移除§!\n\n由于已经进行了充分的战争准备，我们在战争中处于较为主动的地位"
 
  mod_help_player_0: "享↗受↘游↗戏↘~"
  mod_help_player_0_desc: "§YThis is the true game!§!"
@@ -1343,6 +1365,26 @@
  FRA_extra_research_slot_doing_flag:0 "§R正在建设大学§!"
  FRA_extra_research_slot_2_doing_flag:0 "§R正在建设国家研究院§!"
  GER_third_empire_categories_19_flag:0 "§Y已收到援助§!"
+ third_empire_has_become_flag:0 "§Y三皇同盟已成立§!"
+ the_ger_win_flag:0 "§R同盟国获胜§!"
+ the_eng_win_flag:0 "§R协约国获胜§!"
+ the_nuclear_ger_flag:0 "§R同盟国拥有核武器§!"
+ the_nuclear_eng_flag:0 "§R协约国拥有核武器§!"
+
+ mod_the_buff_1_flag:0 "§Y经济合作倡议已经完成§!"
+ now_do_mod_the_buff_1_flag:0 "§R有国家正在进行经济合作倡议§!"
+ mod_the_buff_2_flag:0 "§Y科研合作倡议已经完成§!"
+ now_do_mod_the_buff_2_flag:0 "§R有国家正在进行科研合作倡议§!"
+ mod_the_buff_3_flag:0 "§Y军事合作倡议已经完成§!"
+ now_do_mod_the_buff_3_flag:0 "§R有国家正在进行军事合作倡议§!"
+ mod_the_buff_4_flag:0 "§Y空军合作倡议已经完成§!"
+ now_do_mod_the_buff_4_flag:0 "§R有国家正在进行空军合作倡议§!"
+ mod_the_buff_5_flag:0 "§Y海军合作倡议已经完成§!"
+ now_do_mod_the_buff_5_flag:0 "§R有国家正在进行海军合作倡议§!"
+ mod_the_buff_6_flag:0 "§Y工业合作倡议已经完成§!"
+ now_do_mod_the_buff_6_flag:0 "§R有国家正在进行工业合作倡议§!"
+
+
 
  the_eastern:0 "东亚势力（需要开启三皇同盟来获得完全体验）"
  RLUE_GROUP_EASTERN_OPTION_DEFAULT:0 "东亚默认"
@@ -1439,7 +1481,7 @@
  #####event######
  change_germany.0:0 "更新日志"
  change_germany.0.t:0 "更新日志"
- change_germany.0.d:0 "§R2026/07/03§! \n1.完成了新版本的适配，修复了一些历史遗留问题 \nPS:作者最近没动力玩这游戏，所以新内容暂时不会添加，还请见谅。  \n 在最后，如果有什么§R好点子§!或者§R愿意帮忙§!都可以在§R创意工坊留言§! "
+ change_germany.0.d:0 "§R2026/08/02§! \n1.重写了协约国机制：不再直接获取联合民族精神，需消耗政治点数逐步获取 \n2.补全了战争动员的惩罚机制 \n3.修复了战争动员中决议闪烁的 bug \n4.优化了一些决议的展示条件，避免同一时间大量堆积不美观 \n \n 在最后，如果有什么§R好点子§!或者§R愿意帮忙§!都可以在§R创意工坊留言§! "
  change_germany.0.a:0 "已阅"
 
  change_germany.1:0 "德国皇位候选者"
@@ -1663,9 +1705,15 @@
  change_germany.40.d:0 "中美洲最终还是放弃了我们的提案，选择在这场世界大战中保持中立。"
  change_germany.40.a:0 "行吧。。。"
 
+ change_germany.41:0 "猝不及防的战争"
+ change_germany.41.t:0 "猝不及防的战争"
+ change_germany.41.d:0 "我们没有做好充分的准备，突然卷入了这场世界大战。"
+ change_germany.41.a:0 "这下麻烦了"
 
-
-
+ change_germany.42:0 "猝不及防的战争"
+ change_germany.42.t:0 "猝不及防的战争"
+ change_germany.42.d:0 "世界大战已经爆发，万幸的是，我们已经做足了准备。"
+ change_germany.42.a:0 "很好。"
 
 
  change_france.1:0 "对德皇示好"
@@ -1886,6 +1934,66 @@
  change_eng.14.t:0 "敌军异常调动"
  change_eng.14.d:0 "据情报显示，敌国军队在各个港口异常集结，这似乎预示着一场规模庞大的登录作战即将展开。。。"
  change_eng.14.a:0 "切勿分心"
+ 
+ change_eng.15:0 "经济合作倡议完成"
+ change_eng.15.t:0 "经济合作倡议完成"
+ change_eng.15.d:0 "我们的经济合作倡议已圆满完成！工业产能的共享与协作，为整个阵营的战争机器注入了新的活力。"
+ change_eng.15.a:0 "合作共赢！"
+ 
+ change_eng.16:0 "盟友完成经济合作倡议"
+ change_eng.16.t:0 "盟友完成经济合作倡议"
+ change_eng.16.d:0 "§Y[FROM.GetName]§! 刚刚完成了阵营内的经济合作倡议，为我们的共同工业基础做出了卓越贡献。"
+ change_eng.16.a:0 "干得漂亮！"
+ 
+ change_eng.17:0 "科研合作协议完成"
+ change_eng.17.t:0 "科研合作协议完成"
+ change_eng.17.d:0 "我们的科研合作协议已圆满完成！前沿技术成果在联盟内部广泛共享，极大地推动了我们的科技发展。"
+ change_eng.17.a:0 "科技兴国！"
+ 
+ change_eng.18:0 "盟友完成科研合作协议"
+ change_eng.18.t:0 "盟友完成科研合作协议"
+ change_eng.18.d:0 "§Y[FROM.GetName]§! 刚刚完成了阵营内的科研合作协议，为我们的科技水平带来了显著的提升。"
+ change_eng.18.a:0 "科技是第一生产力！"
+ 
+ change_eng.19:0 "军事合作倡议完成"
+ change_eng.19.t:0 "军事合作倡议完成"
+ change_eng.19.d:0 "我们的军事合作倡议已圆满完成！部队的协同作战经验在阵营内部得到了广泛的交流与传播。"
+ change_eng.19.a:0 "训练有素的部队！"
+ 
+ change_eng.20:0 "盟友完成军事合作倡议"
+ change_eng.20.t:0 "盟友完成军事合作倡议"
+ change_eng.20.d:0 "§Y[FROM.GetName]§! 刚刚完成了阵营内的军事合作倡议，使我们的军队受益匪浅。"
+ change_eng.20.a:0 "值得学习的榜样！"
+ 
+ change_eng.21:0 "空军合作倡议完成"
+ change_eng.21.t:0 "空军合作倡议完成"
+ change_eng.21.d:0 "我们的空军合作倡议已圆满完成！空中力量的战术交流让我们的空军战术水平大幅提升。"
+ change_eng.21.a:0 "制空权是属于我们的！"
+ 
+ change_eng.22:0 "盟友完成空军合作倡议"
+ change_eng.22.t:0 "盟友完成空军合作倡议"
+ change_eng.22.d:0 "§Y[FROM.GetName]§! 刚刚完成了阵营内的空军合作倡议，为我们的空中力量带来了宝贵经验。"
+ change_eng.22.a:0 "天空是我们的疆场！"
+ 
+ change_eng.23:0 "海军合作倡议完成"
+ change_eng.23.t:0 "海军合作倡议完成"
+ change_eng.23.d:0 "我们的海军合作倡议已圆满完成！海军战术与经验的交流让我们的舰队更加强大。"
+ change_eng.23.a:0 "统治海洋！"
+ 
+ change_eng.24:0 "盟友完成海军合作倡议"
+ change_eng.24.t:0 "盟友完成海军合作倡议"
+ change_eng.24.d:0 "§Y[FROM.GetName]§! 刚刚完成了阵营内的海军合作倡议，为我们的蓝色海军注入了新的活力。"
+ change_eng.24.a:0 "深蓝的旗帜！"
+ 
+ change_eng.25:0 "工业合作倡议完成"
+ change_eng.25.t:0 "工业合作倡议完成"
+ change_eng.25.d:0 "我们的工业合作倡议已圆满完成！生产线与建设经验的共享极大促进了阵营的工业化进程。"
+ change_eng.25.a:0 "工业即国力！"
+ 
+ change_eng.26:0 "盟友完成工业合作倡议"
+ change_eng.26.t:0 "盟友完成工业合作倡议"
+ change_eng.26.d:0 "§Y[FROM.GetName]§! 刚刚完成了阵营内的工业合作倡议，为我们的工业建设增添了强大的动力。"
+ change_eng.26.a:0 "共同发展！"
 
 
 
@@ -2434,7 +2542,7 @@
 
  change_mex.0:0 "更新日志"
  change_mex.0.t:0 "更新日志"
- change_mex.0.d:0 "§R2026/07/03§! \n1.完成了新版本的适配，修复了一些历史遗留问题 \nPS:作者最近没动力玩这游戏，所以新内容暂时不会添加，还请见谅。  \n 在最后，如果有什么§R好点子§!或者§R愿意帮忙§!都可以在§R创意工坊留言§! "
+ change_mex.0.d:0 "§R2026/08/02§! \n1.重写了协约国机制：不再直接获取联合民族精神，需消耗政治点数逐步获取 \n2.补全了战争动员的惩罚机制 \n3.修复了战争动员中决议闪烁的 bug \n4.优化了一些决议的展示条件，避免同一时间大量堆积不美观 \n \n 在最后，如果有什么§R好点子§!或者§R愿意帮忙§!都可以在§R创意工坊留言§! "
  change_mex.0.a:0 "已阅"
 
  change_mex.1:0 "希望我们加入拉丁同盟"
