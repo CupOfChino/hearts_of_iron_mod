@@ -223,6 +223,7 @@ news_event = { #世界大战
 
 	immediate = {
 		set_global_flag = wordl_war_two_begin_flag
+		set_global_flag = the_world_war_tow_flag
 	}
 
     option = {

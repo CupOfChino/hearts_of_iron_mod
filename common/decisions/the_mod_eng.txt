@@ -325,7 +325,10 @@ ENG_the_third_empire_categories = {
         }
 
         available = {
-            date > 1941.10.1
+            date > 1941.11.1
+			NOT = {
+				has_global_flag = the_world_war_tow_flag
+			}
 			AND = {
 				country_exists = GER
 				NOT = {

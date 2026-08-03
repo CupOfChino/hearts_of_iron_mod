@@ -640,6 +640,9 @@ mod_with_chi = { #万众一心
     industrial_capacity_factory = mod_with_chi_industrial_capacity_factory
     land_reinforce_rate = mod_with_chi_land_reinforce_rate
     army_morale_factor = mod_with_chi_army_morale_factor
+    supply_consumption_factor = mod_with_chi_supply_consumption_factor
+    supply_node_range = mod_with_chi_supply_node_range
+    no_supply_grace = mod_with_chi_no_supply_grace
 
 }
 

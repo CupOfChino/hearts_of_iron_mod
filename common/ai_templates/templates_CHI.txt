@@ -95,9 +95,14 @@ infantry_CHI = {
 				factor = 0
 				num_of_factories < 100
 			}
+			modifier = {
+				factor = 200
+				is_in_faction_with = GER
+				surrender_progress > 0.1
+			}
 		}
 
-		target_width = 35.0
+		target_width = 36.0
 		width_weight = 1.0
 		column_swap_factor = 0.5
 		
@@ -114,11 +119,10 @@ infantry_CHI = {
 			}
 			
 			regiments = { #
-				infantry = 10
+				infantry = 12
 				artillery_brigade = 4
 				anti_air_brigade = 1
 				anti_tank_brigade = 2
-				medium_armor = 2
 			}
 
 			regimental_support = {
@@ -146,7 +150,7 @@ infantry_CHI = {
 		}
 
 		replace_at_match = 0.4
-		replace_with = infantry_4_CHI
+		#replace_with = infantry_4_CHI
 		target_min_match = 0.5
 	}
 
@@ -154,6 +158,7 @@ infantry_CHI = {
 	
 		enable = {                      
 			num_of_factories > 300
+			has_tech = mechanised_infantry
 		}
 
 		upgrade_prio = {

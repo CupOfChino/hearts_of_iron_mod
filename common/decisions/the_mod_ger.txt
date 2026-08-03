@@ -3902,6 +3902,9 @@ GER_third_empire_categories = {
 				is_in_faction_with = GER
 				has_country_flag = GER_third_empire_categories_19_flag
 			}
+			PRC = {
+				is_ai = yes
+			}
 		}
 
 		visible = {

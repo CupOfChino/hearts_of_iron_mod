@@ -193,7 +193,9 @@ set_variable = { var = mod_with_chi_army_strength_factor value = 0 }
 set_variable = { var = mod_with_chi_industrial_capacity_factory value = 0 }
 set_variable = { var = mod_with_chi_land_reinforce_rate value = 0 }
 set_variable = { var = mod_with_chi_army_morale_factor value = 0 }
-
+set_variable = { var = mod_with_chi_supply_consumption_factor value = 0 }
+set_variable = { var = mod_with_chi_supply_node_range value = 0 }
+set_variable = { var = mod_with_chi_no_supply_grace value = 0 }
 
 set_variable = { var = mod_with_friend_ger_army_strength_factor value = 0.01 }
 set_variable = { var = mod_with_friend_ger_org_loss_when_moving_factor value = 0.01 }

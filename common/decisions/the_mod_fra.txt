@@ -85,6 +85,9 @@ FRA_third_empire_categories = { #三皇同盟
 		}
 
 		available = {
+			NOT = {
+				has_global_flag = the_world_war_tow_flag
+			}
             original_tag = FRA
 			FRA = {
 				has_country_flag = will_make_the_world_war
@@ -206,6 +209,9 @@ FRA_third_empire_categories = { #三皇同盟
             original_tag = FRA
 			FRA = {
 				has_country_flag = will_make_the_world_war
+			}
+			NOT = {
+				has_global_flag = the_world_war_tow_flag
 			}
             
             AND = {

@@ -1836,8 +1836,8 @@ country_event = { #同盟国的援助
 				amount = 2
 			}
 		}
-		add_to_variable = { mod_with_chi_army_attack_factor = 0.025 }
-		add_to_variable = { mod_with_chi_army_defence_factor = 0.025 }
+		add_to_variable = { mod_with_chi_army_attack_factor = 0.03 }
+		add_to_variable = { mod_with_chi_army_defence_factor = 0.03 }
 		add_to_variable = { mod_with_chi_breakthrough_factor = 0.05 }
 		add_to_variable = { mod_with_chi_army_core_attack_factor = 0.05 }
 		add_to_variable = { mod_with_chi_army_core_defence_factor = 0.05 }
@@ -1846,7 +1846,9 @@ country_event = { #同盟国的援助
 		add_to_variable = { mod_with_chi_industrial_capacity_factory = 0.05 }
 		add_to_variable = { mod_with_chi_land_reinforce_rate = 0.01 }
 		add_to_variable = { mod_with_chi_army_morale_factor = 0.05 }
-
+		add_to_variable = { mod_with_chi_supply_consumption_factor = -0.03 }
+		add_to_variable = { mod_with_chi_supply_node_range = 0.03 }
+		add_to_variable = { mod_with_chi_no_supply_grace = 6 }
 		effect_tooltip = {
 			swap_ideas = {
 				remove_idea = help_chi_idea_0
@@ -1976,17 +1978,19 @@ country_event = { #德国支持统一中国
 
 		set_global_flag = china_join_ger_flag
 
-		add_to_variable = { mod_with_chi_army_attack_factor = 0.025 }
-		add_to_variable = { mod_with_chi_army_defence_factor = 0.025 }
+		add_to_variable = { mod_with_chi_army_attack_factor = 0.05 }
+		add_to_variable = { mod_with_chi_army_defence_factor = 0.05 }
 		add_to_variable = { mod_with_chi_breakthrough_factor = 0.05 }
-		add_to_variable = { mod_with_chi_army_core_attack_factor = 0.05 }
-		add_to_variable = { mod_with_chi_army_core_defence_factor = 0.05 }
+		add_to_variable = { mod_with_chi_army_core_attack_factor = 0.1 }
+		add_to_variable = { mod_with_chi_army_core_defence_factor = 0.1 }
 		add_to_variable = { mod_with_chi_army_org_factor = 0.05 }
 		add_to_variable = { mod_with_chi_army_strength_factor = 0.05 }
 		add_to_variable = { mod_with_chi_industrial_capacity_factory = 0.05 }
 		add_to_variable = { mod_with_chi_land_reinforce_rate = 0.01 }
 		add_to_variable = { mod_with_chi_army_morale_factor = 0.05 }
-
+		add_to_variable = { mod_with_chi_supply_consumption_factor = -0.05 }
+		add_to_variable = { mod_with_chi_supply_node_range = 0.05 }
+		add_to_variable = { mod_with_chi_no_supply_grace = 6 }
 		effect_tooltip = {
 			swap_ideas = {
 				remove_idea = help_chi_idea_0

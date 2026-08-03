@@ -45,7 +45,9 @@ USA_the_third_empire_categories = {
 		icon = eng_trade_unions_demand
 
         visible = {
-            
+            ENG = {
+				has_country_flag = the_triple_entente_flag
+			}
         }
 
         available = {
@@ -81,7 +83,9 @@ USA_the_third_empire_categories = {
 		icon = generic_confiscation
 
         visible = {
-            
+            ENG = {
+				has_country_flag = the_triple_entente_flag
+			}
         }
 
         available = {
@@ -123,7 +127,9 @@ USA_the_third_empire_categories = {
 		icon = generic_confiscation
 
         visible = {
-            
+            ENG = {
+				has_country_flag = the_triple_entente_flag
+			}
         }
 
         available = {
@@ -220,7 +226,9 @@ USA_the_third_empire_categories = {
 		icon = generic_speech
 
         visible = {
-            
+            ENG = {
+				has_country_flag = the_triple_entente_flag
+			}
         }
 
         available = {
@@ -323,7 +331,9 @@ USA_the_third_empire_categories = {
 		icon = generic_speech
 
         visible = {
-            
+            ENG = {
+				has_country_flag = the_triple_entente_flag
+			}
         }
 
         available = {

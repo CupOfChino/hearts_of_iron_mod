@@ -54,9 +54,11 @@ ENG_the_third_empire_war_categories = {
 
 ENG_the_third_empire_cooperation_categories = {
     allowed = {
-        original_tag = ENG
+        
     }
     visible = {
+        is_in_faction_with = ENG
+        is_subject = no
         FRA = {
             has_country_flag = cjg_open_the_third_empire
         }

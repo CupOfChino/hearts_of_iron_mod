@@ -76,6 +76,9 @@ SOV_the_third_empire_categories = { #苏联扩张线
             FRA = {
 				has_country_flag = cjg_open_the_third_empire
 			}
+			ENG = {
+				has_country_flag = the_triple_entente_flag
+			}
         }
 
         available = {
@@ -1254,7 +1257,9 @@ SOV_the_third_empire_categories = { #苏联扩张线
 		icon = generic_confiscation
 
         visible = {
-            
+            ENG = {
+				has_country_flag = the_triple_entente_flag
+			}
         }
 
         available = {
@@ -1355,6 +1360,9 @@ SOV_the_third_empire_categories = { #苏联扩张线
             FRA = {
 				has_country_flag = cjg_open_the_third_empire
 			}
+			ENG = {
+				has_country_flag = the_triple_entente_flag
+			}
         }
 
         available = {
@@ -1408,6 +1416,9 @@ SOV_the_third_empire_categories = { #苏联扩张线
             FRA = {
 				has_country_flag = cjg_open_the_third_empire
 			}
+			ENG = {
+				has_country_flag = the_triple_entente_flag
+			}
         }
 
         available = {
@@ -1451,6 +1462,9 @@ SOV_the_third_empire_categories = { #苏联扩张线
             FRA = {
 				has_country_flag = cjg_open_the_third_empire
 			}
+			ENG = {
+				has_country_flag = the_triple_entente_flag
+			}
         }
 
         available = {
@@ -1490,6 +1504,9 @@ SOV_the_third_empire_categories = { #苏联扩张线
         visible = {
             FRA = {
 				has_country_flag = cjg_open_the_third_empire
+			}
+			ENG = {
+				has_country_flag = the_triple_entente_flag
 			}
         }
 
@@ -1562,6 +1579,9 @@ SOV_the_third_empire_categories = { #苏联扩张线
         visible = {
             FRA = {
 				has_country_flag = cjg_open_the_third_empire
+			}
+			ENG = {
+				has_country_flag = the_triple_entente_flag
 			}
         }
 
@@ -1642,6 +1662,9 @@ SOV_the_third_empire_categories = { #苏联扩张线
             FRA = {
 				has_country_flag = cjg_open_the_third_empire
 			}
+			ENG = {
+				has_country_flag = the_triple_entente_flag
+			}
         }
 
         available = {
@@ -1687,6 +1710,9 @@ SOV_the_third_empire_categories = { #苏联扩张线
         visible = {
             FRA = {
 				has_country_flag = cjg_open_the_third_empire
+			}
+			ENG = {
+				has_country_flag = the_triple_entente_flag
 			}
         }
 
