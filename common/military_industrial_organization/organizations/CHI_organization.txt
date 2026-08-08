@@ -9,6 +9,11 @@
  #################### 
 
 
+@tank_hoesch_X = 9
+@tank_hoesch_Y = 0
+@aircraft_hamburger_X = 9
+@aircraft_hamburger_Y = 0
+
 CHI_sino_german_technical_mission_organization = {
 	include = generic_heavy_tank_organization
 	icon = GFX_idea_porsche
@@ -1121,7 +1126,7 @@ CHI_GER_porsche_organization = {
 	}
 
 	available = {
-		has_country_flag = CHI_third_empire_german_designers_flag
+		owner = { has_country_flag = CHI_third_empire_german_designers_flag }
 	}
 
 	tree_header_text = {
@@ -1172,7 +1177,7 @@ CHI_GER_porsche_organization = {
 		position = { x=@tank_hoesch_X y=@tank_hoesch_Y }
 
 		visible = {
-			FROM = { original_tag = GER }
+			FROM = { original_tag = CHI }
 		}
 
 		available = {
@@ -1207,7 +1212,7 @@ CHI_GER_porsche_organization = {
 		relative_position_id = GER_mio_trait_hoesch_facilities
 
 		visible = {
-			FROM = { original_tag = GER }
+			FROM = { original_tag = CHI }
 		}
 
 		available = {
@@ -1240,7 +1245,7 @@ CHI_GER_porsche_organization = {
 		relative_position_id = generic_mio_trait_one_piece_hull_side_coverings
 
 		visible = {
-			FROM = { original_tag = GER }
+			FROM = { original_tag = CHI }
 		}
 
 		available = {
@@ -1271,7 +1276,7 @@ CHI_GER_porsche_organization = {
 		relative_position_id = generic_mio_trait_one_piece_hull_side_coverings
 
 		visible = {
-			FROM = { original_tag = GER }
+			FROM = { original_tag = CHI }
 		}
 
 		available = {
@@ -1301,7 +1306,7 @@ CHI_GER_porsche_organization = {
 		relative_position_id = generic_mio_trait_simplified_transmission_system
 
 		visible = {
-			FROM = { original_tag = GER }
+			FROM = { original_tag = CHI }
 		}
 
 		available = {
@@ -1332,7 +1337,7 @@ CHI_GER_henschel_organization = {
 	}
 
 	available = {
-		has_country_flag = CHI_third_empire_german_designers_flag
+		owner = { has_country_flag = CHI_third_empire_german_designers_flag }
 	}
 
 	override_trait = {
@@ -1368,7 +1373,7 @@ CHI_GER_henschel_organization = {
 		position = { x=@tank_hoesch_X y=@tank_hoesch_Y }  
 		
 		visible = {
-			FROM = { original_tag = GER }
+			FROM = { original_tag = CHI }
 		}
 
 		available = {
@@ -1402,7 +1407,7 @@ CHI_GER_henschel_organization = {
 		position = { x=8 y=0 }
 
 		visible = {
-			FROM = { original_tag = GER }
+			FROM = { original_tag = CHI }
 		}
 
 		available = {
@@ -1439,7 +1444,7 @@ CHI_GER_henschel_organization = {
 		any_parent = { generic_mio_trait_interleaved_track_wheels generic_mio_trait_overlapped_track_wheels }
 
 		visible = {
-			FROM = { original_tag = GER }
+			FROM = { original_tag = CHI }
 		}
 
 		equipment_bonus = {
@@ -1468,7 +1473,7 @@ CHI_GER_henschel_organization = {
 		any_parent = { GER_mio_trait_steel_wheel_design }
 
 		visible = {
-			FROM = { original_tag = GER }
+			FROM = { original_tag = CHI }
 		}
 
 		equipment_bonus = {
@@ -1495,7 +1500,7 @@ CHI_GER_henschel_organization = {
 		any_parent = { GER_mio_trait_steel_wheel_design }
 
 		visible = {
-			FROM = { original_tag = GER }
+			FROM = { original_tag = CHI }
 		}
 
 		equipment_bonus = {
@@ -1526,7 +1531,7 @@ CHI_GER_henschel_organization = {
 		any_parent = { generic_mio_trait_turret_sights }
 
 		visible = {
-			FROM = { original_tag = GER }
+			FROM = { original_tag = CHI }
 		}
 
 		equipment_bonus = {
@@ -1555,7 +1560,7 @@ CHI_GER_henschel_organization = {
 		any_parent = { GER_mio_trait_telescopic_sight }
 
 		visible = {
-			FROM = { original_tag = GER }
+			FROM = { original_tag = CHI }
 		}
 
 		equipment_bonus = {
@@ -1582,7 +1587,7 @@ CHI_GER_henschel_organization = {
 		any_parent = { generic_mio_trait_adaptable_chassis }
 
 		visible = {
-			FROM = { original_tag = GER }
+			FROM = { original_tag = CHI }
 		}
 
 		equipment_bonus = {
@@ -1608,7 +1613,7 @@ CHI_GER_man_organization = {
 	}
 
 	available = {
-		has_country_flag = CHI_third_empire_german_designers_flag
+		owner = { has_country_flag = CHI_third_empire_german_designers_flag }
 	}
 
 	tree_header_text = {
@@ -1641,7 +1646,7 @@ CHI_GER_man_organization = {
 		position = { x=@tank_hoesch_X y=@tank_hoesch_Y }  
 		
 		visible = {
-			FROM = { original_tag = GER }
+			FROM = { original_tag = CHI }
 		}
 
 		available = {
@@ -1752,7 +1757,7 @@ CHI_GER_alkett_organization = {
 	}
 
 	available = {
-		has_country_flag = CHI_third_empire_german_designers_flag
+		owner = { has_country_flag = CHI_third_empire_german_designers_flag }
 	}
 
 	tree_header_text = {
@@ -1785,7 +1790,7 @@ CHI_GER_alkett_organization = {
 		position = { x=@tank_hoesch_X y=@tank_hoesch_Y }  
 
 		visible = {
-			FROM = { original_tag = GER }
+			FROM = { original_tag = CHI }
 		}
 
 		available = {
@@ -1822,7 +1827,7 @@ CHI_GER_alkett_organization = {
 		all_parents = { generic_mio_medium_assault_gun_75_mm_43M_tank_gun }
 
 		visible = {
-			FROM = { original_tag = GER }
+			FROM = { original_tag = CHI }
 		}
 
 		available = {
@@ -1855,7 +1860,7 @@ CHI_GER_alkett_organization = {
 		position = { x = 9 y = 1 }
 
 		visible = {
-			FROM = { original_tag = GER }
+			FROM = { original_tag = CHI }
 		}
 
 		available = {
@@ -1880,7 +1885,7 @@ CHI_GER_alkett_organization = {
 		position = { x = 9 y = 2 }
 		
 		visible = {
-			FROM = { original_tag = GER }
+			FROM = { original_tag = CHI }
 		}
 
 		available = {
@@ -1919,7 +1924,7 @@ CHI_GER_daimler_benz_organization = {
 	}
 
 	available = {
-		has_country_flag = CHI_third_empire_german_designers_flag
+		owner = { has_country_flag = CHI_third_empire_german_designers_flag }
 	}
 
 	tree_header_text = {
@@ -2025,7 +2030,7 @@ CHI_GER_daimler_benz_organization = {
 		position = { x=@tank_hoesch_X y=@tank_hoesch_Y }  
 		
 		visible = {
-			FROM = { original_tag = GER }
+			FROM = { original_tag = CHI }
 		}
 
 		available = {
@@ -2129,7 +2134,7 @@ CHI_GER_deschimag_organization = {
 	}
 
 	available = {
-		has_country_flag = CHI_third_empire_german_designers_flag
+		owner = { has_country_flag = CHI_third_empire_german_designers_flag }
 	}
 
 	add_trait = {  
@@ -2240,7 +2245,7 @@ CHI_GER_germaniawerft_organization = {
 	}
 
 	available = {
-		has_country_flag = CHI_third_empire_german_designers_flag
+		owner = { has_country_flag = CHI_third_empire_german_designers_flag }
 	}
 
 	add_trait = {  
@@ -2350,7 +2355,7 @@ CHI_GER_blohm_und_voss_organization = {
 	}
 
 	available = {
-		has_country_flag = CHI_third_empire_german_designers_flag
+		owner = { has_country_flag = CHI_third_empire_german_designers_flag }
 	}
 
 	add_trait = {  
@@ -2477,7 +2482,7 @@ CHI_GER_hdw_organization = {
 	}
 
 	available = {
-		has_country_flag = CHI_third_empire_german_designers_flag
+		owner = { has_country_flag = CHI_third_empire_german_designers_flag }
 	}
 
 	add_trait = {  
@@ -2639,7 +2644,7 @@ CHI_GER_deutsche_werke_organization = {
 	}
 
 	available = {
-		has_country_flag = CHI_third_empire_german_designers_flag
+		owner = { has_country_flag = CHI_third_empire_german_designers_flag }
 	}
 	add_trait = {  
 		token = GER_mio_trait_foreign_influences
@@ -2766,7 +2771,7 @@ CHI_GER_kriegsmarinewerft_wilhelmshaven_organization = {
 	}
 
 	available = {
-		has_country_flag = CHI_third_empire_german_designers_flag
+		owner = { has_country_flag = CHI_third_empire_german_designers_flag }
 	}
 
 	add_trait = {  
@@ -2869,7 +2874,7 @@ CHI_GER_messerschmitt_organization = {
 	}
 
 	available = {
-		has_country_flag = CHI_third_empire_german_designers_flag
+		owner = { has_country_flag = CHI_third_empire_german_designers_flag }
 	}
 
 	add_trait = {
@@ -2920,12 +2925,12 @@ CHI_GER_messerschmitt_organization = {
 		position = { x=@aircraft_hamburger_X y=@aircraft_hamburger_Y }  
 		
 		visible = {
-			FROM = { original_tag = GER }
+			FROM = { original_tag = CHI }
 		}
 
 		available = {
 			FROM = {
-				mio:GER_blohm_und_voss_organization = {
+				mio:CHI_GER_blohm_und_voss_organization = {
 					has_mio_size > 4
 				}
 				NOT = { has_country_flag = GER_hamburger_flugzeugbau_trait_taken_flag }
@@ -2959,7 +2964,7 @@ CHI_GER_messerschmitt_organization = {
 		position = { x = 2 y = 0 }  
 		
 		visible = {
-			FROM = { original_tag = GER }
+			FROM = { original_tag = CHI }
 		}
 
 		available = {
@@ -2997,7 +3002,7 @@ CHI_GER_messerschmitt_organization = {
 
 		visible = {
 				has_dlc = "Gotterdammerung"
-				FROM = { original_tag = GER }
+				FROM = { original_tag = CHI }
 		}
 
 		available = {
@@ -3024,7 +3029,7 @@ CHI_GER_junkers_organization = {
 	}
 
 	available = {
-		has_country_flag = CHI_third_empire_german_designers_flag
+		owner = { has_country_flag = CHI_third_empire_german_designers_flag }
 	}
 
 	add_trait = {
@@ -3067,12 +3072,12 @@ CHI_GER_junkers_organization = {
 		position = { x=@aircraft_hamburger_X y=@aircraft_hamburger_Y }  
 		
 		visible = {
-			FROM = { original_tag = GER }
+			FROM = { original_tag = CHI }
 		}
 
 		available = {
 			FROM = {
-				mio:GER_blohm_und_voss_organization = {
+				mio:CHI_GER_blohm_und_voss_organization = {
 					has_mio_size > 4
 				}
 				NOT = { has_country_flag = GER_hamburger_flugzeugbau_trait_taken_flag }
@@ -3106,7 +3111,7 @@ CHI_GER_junkers_organization = {
 		position = { x = 2 y = 1 }  
 		
 		visible = {
-			FROM = { original_tag = GER }
+			FROM = { original_tag = CHI }
 		}
 
 		available = {
@@ -3144,7 +3149,7 @@ CHI_GER_junkers_organization = {
 
 		visible = {
 				has_dlc = "Gotterdammerung"
-				FROM = { original_tag = GER }
+				FROM = { original_tag = CHI }
 		}
 
 		available = {
@@ -3172,7 +3177,7 @@ CHI_GER_focke_wulf_organization = {
 	}
 
 	available = {
-		has_country_flag = CHI_third_empire_german_designers_flag
+		owner = { has_country_flag = CHI_third_empire_german_designers_flag }
 	}
 
 	override_trait = {
@@ -3210,7 +3215,7 @@ CHI_GER_focke_wulf_organization = {
 		position = { x = 0 y = 1 }  
 		
 		visible = {
-			FROM = { original_tag = GER }
+			FROM = { original_tag = CHI }
 		}
 
 		available = {
@@ -3302,12 +3307,12 @@ CHI_GER_focke_wulf_organization = {
 		position = { x=@aircraft_hamburger_X y=@aircraft_hamburger_Y }  
 		
 		visible = {
-			FROM = { original_tag = GER }
+			FROM = { original_tag = CHI }
 		}
 
 		available = {
 			FROM = {
-				mio:GER_blohm_und_voss_organization = {
+				mio:CHI_GER_blohm_und_voss_organization = {
 					has_mio_size > 4
 				}
 				NOT = { has_country_flag = GER_hamburger_flugzeugbau_trait_taken_flag }
@@ -3342,7 +3347,7 @@ CHI_GER_focke_wulf_organization = {
 
 		visible = {
 				has_dlc = "Gotterdammerung"
-				FROM = { original_tag = GER }
+				FROM = { original_tag = CHI }
 		}
 		available = {
 			owner = {
@@ -3368,7 +3373,7 @@ CHI_GER_heinkel_organization = {
 	}
 
 	available = {
-		has_country_flag = CHI_third_empire_german_designers_flag
+		owner = { has_country_flag = CHI_third_empire_german_designers_flag }
 	}
 
 	tree_header_text = {
@@ -3454,12 +3459,12 @@ CHI_GER_heinkel_organization = {
 		position = { x=@aircraft_hamburger_X y=@aircraft_hamburger_Y }  
 
 		visible = {
-			FROM = { original_tag = GER }
+			FROM = { original_tag = CHI }
 		}
 
 		available = {
 			FROM = {
-				mio:GER_blohm_und_voss_organization = {
+				mio:CHI_GER_blohm_und_voss_organization = {
 					has_mio_size > 4
 				}
 				NOT = { has_country_flag = GER_hamburger_flugzeugbau_trait_taken_flag }
@@ -3493,7 +3498,7 @@ CHI_GER_heinkel_organization = {
 		position = { x = 1 y = 0 }  
 		
 		visible = {
-			FROM = { original_tag = GER }
+			FROM = { original_tag = CHI }
 		}
 
 		available = {
@@ -3531,7 +3536,7 @@ CHI_GER_heinkel_organization = {
 
 		visible = {
 				has_dlc = "Gotterdammerung"
-				FROM = { original_tag = GER }
+				FROM = { original_tag = CHI }
 		}
 
 		available = {
@@ -3559,7 +3564,7 @@ CHI_GER_dornier_organization = {
 	}
 
 	available = {
-		has_country_flag = CHI_third_empire_german_designers_flag
+		owner = { has_country_flag = CHI_third_empire_german_designers_flag }
 	}
 
 	add_trait = {
@@ -3606,12 +3611,12 @@ CHI_GER_dornier_organization = {
 		position = { x=@aircraft_hamburger_X y=@aircraft_hamburger_Y }  
 		
 		visible = {
-			FROM = { original_tag = GER }
+			FROM = { original_tag = CHI }
 		}
 
 		available = {
 			FROM = {
-				mio:GER_blohm_und_voss_organization = {
+				mio:CHI_GER_blohm_und_voss_organization = {
 					has_mio_size > 4
 				}
 				NOT = { has_country_flag = GER_hamburger_flugzeugbau_trait_taken_flag }
@@ -3645,7 +3650,7 @@ CHI_GER_dornier_organization = {
 		position = { x = 2 y = 0 }  
 		
 		visible = {
-			FROM = { original_tag = GER }
+			FROM = { original_tag = CHI }
 		}
 
 		available = {
@@ -3681,7 +3686,7 @@ CHI_GER_arado_flugzeugwerke_organization = {
 	}
 
 	available = {
-		has_country_flag = CHI_third_empire_german_designers_flag
+		owner = { has_country_flag = CHI_third_empire_german_designers_flag }
 	}
 
 	add_trait = {
@@ -3715,12 +3720,12 @@ CHI_GER_arado_flugzeugwerke_organization = {
 		position = { x=@aircraft_hamburger_X y=@aircraft_hamburger_Y }  
 
 		visible = {
-			FROM = { original_tag = GER }
+			FROM = { original_tag = CHI }
 		}
 
 		available = {
 			FROM = {
-				mio:GER_blohm_und_voss_organization = {
+				mio:CHI_GER_blohm_und_voss_organization = {
 					has_mio_size > 4
 				}
 				NOT = { has_country_flag = GER_hamburger_flugzeugbau_trait_taken_flag }
@@ -3754,7 +3759,7 @@ CHI_GER_arado_flugzeugwerke_organization = {
 		position = { x = -1 y = 0 }  
 		
 		visible = {
-			FROM = { original_tag = GER }
+			FROM = { original_tag = CHI }
 		}
 
 		available = {
@@ -3790,7 +3795,7 @@ CHI_GER_fieseler_organization = {
 	}
 
 	available = {
-		has_country_flag = CHI_third_empire_german_designers_flag
+		owner = { has_country_flag = CHI_third_empire_german_designers_flag }
 	}
 
 	add_trait = {
@@ -3802,12 +3807,12 @@ CHI_GER_fieseler_organization = {
 		position = { x=@aircraft_hamburger_X y=@aircraft_hamburger_Y }  
 		
 		visible = {
-			FROM = { original_tag = GER }
+			FROM = { original_tag = CHI }
 		}
 
 		available = {
 			FROM = {
-				mio:GER_blohm_und_voss_organization = {
+				mio:CHI_GER_blohm_und_voss_organization = {
 					has_mio_size > 4
 				}
 				NOT = { has_country_flag = GER_hamburger_flugzeugbau_trait_taken_flag }
@@ -3841,7 +3846,7 @@ CHI_GER_fieseler_organization = {
 		position = { x = 0 y = 1 }  
 		
 		visible = {
-			FROM = { original_tag = GER }
+			FROM = { original_tag = CHI }
 		}
 
 		available = {
@@ -3878,7 +3883,7 @@ CHI_GER_focke_achgelis_organization = {
 	}
 
 	available = {
-		has_country_flag = CHI_third_empire_german_designers_flag
+		owner = { has_country_flag = CHI_third_empire_german_designers_flag }
 	}
 
 	add_trait = {
@@ -3890,12 +3895,12 @@ CHI_GER_focke_achgelis_organization = {
 		position = { x=@aircraft_hamburger_X y=@aircraft_hamburger_Y }  
 		
 		visible = {
-			FROM = { original_tag = GER }
+			FROM = { original_tag = CHI }
 		}
 
 		available = {
 			FROM = {
-				mio:GER_blohm_und_voss_organization = {
+				mio:CHI_GER_blohm_und_voss_organization = {
 					has_mio_size > 4
 				}
 				NOT = { has_country_flag = GER_hamburger_flugzeugbau_trait_taken_flag }
@@ -3929,7 +3934,7 @@ CHI_GER_focke_achgelis_organization = {
 		position = { x = 0 y = 1 }  
 		
 		visible = {
-			FROM = { original_tag = GER }
+			FROM = { original_tag = CHI }
 		}
 
 		available = {

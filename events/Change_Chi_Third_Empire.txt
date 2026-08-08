@@ -528,7 +528,8 @@ country_event = { #法国的回应
 		ai_chance = {
 			factor = 80
 		}
-		add_political_power = 50
+		add_political_power = 200
+		add_stability = 0.1
 		CHI = {
 			country_event = { id = change_chi_third_empire.14 days = 2 }
 		}
@@ -541,7 +542,6 @@ country_event = { #法国的回应
 		ai_chance = {
 			factor = 20
 		}
-		add_stability = -0.05
 		CHI = {
 			country_event = { id = change_chi_third_empire.15 days = 2 }
 		}

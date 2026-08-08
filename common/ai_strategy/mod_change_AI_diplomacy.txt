@@ -1,4 +1,4 @@
-﻿# AI strategy split from mod_change_AI.txt - diplomacy
+# AI strategy split from mod_change_AI.txt - diplomacy
 #----------------------------------
 #已经修改的国家强化
 #感谢百度贴吧：法兰西社长的教程
