@@ -31,6 +31,7 @@ GER_porsche_organization = {
 				has_dlc = "Graveyard of Empires"
 			}
 			NOR_AAT = yes
+			
 		}
 	}
 
@@ -94,10 +95,6 @@ GER_porsche_organization = {
 		token = generic_mio_trait_fully_cast_turret
 
 		position = { x=4 y=0 }
-	}
-
-	production_bonus = {
-		production_capacity_factor = 0.05
 	}
 
 	add_trait = {

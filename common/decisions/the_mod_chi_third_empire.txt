@@ -1,0 +1,939 @@
+﻿CHI_third_empire_categories = {
+
+    CHI_third_empire_oil_development = { #油田开发（仅一次；参考现实油田：玉门756、新疆独山子617）
+        allowed = {
+            original_tag = CHI
+        }
+        visible = {
+        }
+        available = {
+            OR = {
+                AND = {
+                    has_tech = excavation1
+                    has_tech = excavation2
+                }
+                has_tech = excavation3
+            }
+            num_of_civilian_factories_available_for_projects > 19
+        }
+
+        icon = GFX_decision_oil
+
+        fire_only_once = yes
+
+        cost = 100
+        days_remove = 120
+
+        modifier = {
+            civilian_factory_use = 20
+        }
+
+        ai_will_do = {
+            factor = 1000
+        }
+
+        complete_effect = {
+        }
+
+        remove_effect = {
+            country_event = { id = change_chi_third_empire.1 }
+            hidden_effect = {
+                set_country_flag = CHI_focus_categories_07_done_flag
+            }
+        }
+    }
+
+    CHI_invade_nepal = { #入侵尼泊尔
+        allowed = {
+            original_tag = CHI
+        }
+        visible = {
+            country_exists = NEP
+        }
+        available = {
+            country_exists = NEP
+            OR = {
+                323 = {
+                    any_neighbor_state = {
+                        is_controlled_by = ROOT
+                    }
+                }
+                324 = {
+                    any_neighbor_state = {
+                        is_controlled_by = ROOT
+                    }
+                }
+            }
+            NOT = {
+                has_war_with = NEP
+            }
+        }
+
+        icon = generic_operation
+
+        fire_only_once = yes
+
+        cost = 10
+        days_remove = 50
+
+        modifier = {
+
+        }
+
+        ai_will_do = {
+            factor = 1000
+        }
+
+        complete_effect = {
+        }
+
+        remove_effect = {
+            country_event = { id = change_chi_third_empire.3 }
+        }
+    }
+
+    CHI_invade_bhutan = { #入侵不丹
+        allowed = {
+            original_tag = CHI
+        }
+        visible = {
+            country_exists = BHU
+        }
+        available = {
+            country_exists = BHU
+            OR = {
+                323 = {
+                    any_neighbor_state = {
+                        is_controlled_by = ROOT
+                    }
+                }
+                324 = {
+                    any_neighbor_state = {
+                        is_controlled_by = ROOT
+                    }
+                }
+            }
+            NOT = {
+                has_war_with = BHU
+            }
+        }
+
+        icon = generic_operation
+
+        fire_only_once = yes
+
+        cost = 10
+        days_remove = 35
+
+        modifier = {
+
+        }
+
+        ai_will_do = {
+            factor = 1000
+        }
+
+        complete_effect = {
+        }
+
+        remove_effect = {
+            country_event = { id = change_chi_third_empire.5 }
+        }
+    }
+
+    CHI_third_empire_border_defense = { #边疆备战：补给站与铁路
+        allowed = {
+            original_tag = CHI
+        }
+        visible = {
+        }
+        available = {
+            # 需控制新疆、东北与蒙古地块（蒙古地块参考蒙古投降决议）
+            controls_state = 617
+            controls_state = 618
+            controls_state = 619
+            controls_state = 714
+            controls_state = 715
+            controls_state = 716
+            controls_state = 717
+            controls_state = 817
+            controls_state = 818
+            controls_state = 819
+            num_of_civilian_factories_available_for_projects > 19
+        }
+
+        icon = generic_construction
+
+        fire_only_once = yes
+
+        cost = 100
+        days_remove = 240
+
+        modifier = {
+            civilian_factory_use = 20
+        }
+
+        ai_will_do = {
+            factor = 1000
+        }
+
+        complete_effect = {
+        }
+
+        remove_effect = {
+            custom_effect_tooltip = CHI_third_empire_border_defense_tt
+            country_event = { id = change_chi_third_empire.7 }
+        }
+    }
+
+    CHI_third_empire_take_back_guangzhouwan_macau = { #收回广州湾与澳门
+        allowed = {
+            original_tag = CHI
+        }
+        visible = {
+            NOT = {
+                728 = {
+                    is_owned_by = CHI
+                }
+                729 = {
+                    is_owned_by = CHI
+                }
+            }
+        }
+        available = {
+            OR = {
+                728 = {
+                    is_owned_by = FRA
+                }
+                729 = {
+                    is_owned_by = FRA
+                }
+                729 = {
+                    is_owned_by = POR
+                }
+            }
+        }
+
+        icon = hol_attract_foreign_investors
+
+        fire_only_once = yes
+
+        cost = 100
+        days_remove = 45
+
+        modifier = {
+            political_power_cost = 0.1
+        }
+
+        ai_will_do = {
+            factor = 1000
+        }
+
+        complete_effect = {
+        }
+
+        remove_effect = {
+            country_event = { id = change_chi_third_empire.8 }
+        }
+    }
+
+    CHI_third_empire_gain_indochina = { #接管法属印度支那
+        allowed = {
+            original_tag = CHI
+        }
+        visible = {
+            NOT = {
+                286 = {
+                    is_owned_by = CHI
+                }
+                670 = {
+                    is_owned_by = CHI
+                }
+                671 = {
+                    is_owned_by = CHI
+                }
+                741 = {
+                    is_owned_by = CHI
+                }
+                1017 = {
+                    is_owned_by = CHI
+                }
+                1066 = {
+                    is_owned_by = CHI
+                }
+                1067 = {
+                    is_owned_by = CHI
+                }
+                1068 = {
+                    is_owned_by = CHI
+                }
+                1069 = {
+                    is_owned_by = CHI
+                }
+            }
+        }
+        available = {
+            FRA = {
+                exists = yes
+            }
+            OR = {
+                286 = {
+                    is_owned_by = FRA
+                }
+                670 = {
+                    is_owned_by = FRA
+                }
+                671 = {
+                    is_owned_by = FRA
+                }
+                741 = {
+                    is_owned_by = FRA
+                }
+                1017 = {
+                    is_owned_by = FRA
+                }
+                1066 = {
+                    is_owned_by = FRA
+                }
+                1067 = {
+                    is_owned_by = FRA
+                }
+                1068 = {
+                    is_owned_by = FRA
+                }
+                1069 = {
+                    is_owned_by = FRA
+                }
+                VIN = {
+                    exists = yes
+                    is_subject_of = FRA
+                }
+                LAO = {
+                    exists = yes
+                    is_subject_of = FRA
+                }
+                CAM = {
+                    exists = yes
+                    is_subject_of = FRA
+                }
+            }
+        }
+
+        icon = generic_operation
+
+        fire_only_once = yes
+
+        cost = 150
+        days_remove = 60
+
+        modifier = {
+            political_power_cost = 0.15
+        }
+
+        ai_will_do = {
+            factor = 1000
+        }
+
+        complete_effect = {
+        }
+
+        remove_effect = {
+            country_event = { id = change_chi_third_empire.10 }
+        }
+    }
+
+    CHI_focus_categories_07 = { #继续资源勘探
+        allowed = {
+            original_tag = CHI
+        }
+        visible = {
+            is_in_faction_with = GER
+            has_country_flag = CHI_focus_categories_07_done_flag
+        }
+        available = {
+            is_in_faction_with = GER
+            has_country_flag = CHI_focus_categories_07_done_flag
+        }
+
+        fire_only_once = no
+
+        cost = 50
+        days_remove = 70
+
+        modifier = {
+            political_power_gain = -0.25
+        }
+
+        remove_effect = {
+            custom_effect_tooltip = CHI_focus_categories_07_tt
+            set_country_flag = CHI_focus_categories_07_done_flag
+            country_event = { id = change_chi_third_empire.25 }
+        }
+        ai_will_do = {
+            factor = 500
+        }
+    }
+
+    CHI_focus_categories_08 = { #继续工业化
+        allowed = {
+            original_tag = CHI
+        }
+        visible = {
+            is_in_faction_with = GER
+        }
+        available = {
+            is_in_faction_with = GER
+        }
+
+        fire_only_once = no
+
+        cost = 100
+        days_remove = 70
+
+        modifier = {
+            political_power_gain = -0.25
+        }
+
+        remove_effect = {
+            random_owned_state = {
+                limit = {
+                    is_core_of = ROOT
+                }
+                add_extra_state_shared_building_slots = 2
+                add_building_construction = {
+                    type = industrial_complex
+                    level = 2
+                    instant_build = yes
+                }
+                add_extra_state_shared_building_slots = 2
+                add_building_construction = {
+                    type = arms_factory
+                    level = 2
+                    instant_build = yes
+                }
+            }
+        }
+        ai_will_do = {
+            factor = 100
+        }
+    }
+
+    CHI_third_empire_eternal_revolution = { #永恒的中华革命
+        allowed = {
+            original_tag = CHI
+        }
+        visible = {
+        }
+        available = {
+        }
+
+        icon = generic_nationalism
+
+        fire_only_once = yes
+
+        cost = 50
+        days_remove = 70
+
+        modifier = {
+        }
+
+        ai_will_do = {
+            factor = 1000
+        }
+
+        complete_effect = {
+        }
+
+        remove_effect = {
+            complete_national_focus = CHI_eternal_revolution
+            custom_effect_tooltip = CHI_modify_corruption_in_the_armed_forces_tt
+            IF = {
+                limit = {
+                    NOT = {
+                        has_dynamic_modifier = CHI_corruption_in_the_armed_forces
+                    }
+                }
+                add_dynamic_modifier = { modifier = CHI_corruption_in_the_armed_forces }
+            }
+            add_to_variable = {
+                CHI_corruption_in_the_armed_forces_army_attack_factor = 0.05
+                tooltip = army_attack_factor_tt
+            }
+            add_to_variable = {
+                CHI_corruption_in_the_armed_forces_army_defence_factor = 0.05
+                tooltip = army_defence_factor_tt
+            }
+            add_to_variable = {
+                CHI_corruption_in_the_armed_forces_army_org_factor = 0.05
+                tooltip = army_org_factor_tt
+            }
+            add_to_variable = {
+                CHI_corruption_in_the_armed_forces_army_morale_factor = 0.05
+                tooltip = army_morale_factor_tt
+            }
+        }
+    }
+
+    CHI_third_empire_reclaim_lost = { #收复失地与收服浪子（无战争借口）
+        allowed = {
+            original_tag = CHI
+        }
+        visible = {
+        }
+        available = {
+        }
+
+        icon = generic_operation
+
+        fire_only_once = yes
+
+        cost = 50
+        days_remove = 70
+
+        modifier = {
+        }
+
+        ai_will_do = {
+            factor = 1000
+        }
+
+        complete_effect = {
+        }
+
+        remove_effect = {
+            if = {
+				limit = {
+					has_active_mission = we_must_prepare_war_02
+				}
+				add_days_mission_timeout = {
+			    	mission = we_must_prepare_war_02
+			    	days = -30
+				}
+			}
+			if = {
+				limit = {
+					has_active_mission = we_must_prepare_war_03
+				}
+				add_days_mission_timeout = {
+			    	mission = we_must_prepare_war_03
+			    	days = -20
+				}
+			}
+            #收复失地：西伯利亚与外蒙古方向
+            every_state = {
+                limit = {
+                    OR = {
+                        region = 149 #Eastern Siberia
+                        region = 152 #Outer Mongolia
+                        region = 256 #Transbaikal
+                        region = 255 #Amur
+                        region = 148 #Russian Far east
+                        region = 266 #uriankhai
+                        region = 260 #Western Sakha
+                        region = 259 #Eastern Sakha
+                        region = 258 #Okhotsk
+                        region = 257 #Northern Far east
+                        region = 147 #Northern Siberia
+                    }
+                }
+                add_claim_by = ROOT
+            }
+            #收服浪子：蒙古、西藏、唐努乌梁海核心州
+            IF = {
+                limit = {
+                    MON = {
+                        exists = yes
+                        NOT = {
+                            is_ally_with = ROOT
+                        }
+                    }
+                }
+                MON = {
+                    every_core_state = {
+                        add_claim_by = ROOT
+                    }
+                }
+            }
+            IF = {
+                limit = {
+                    TIB = {
+                        exists = yes
+                        NOT = {
+                            is_ally_with = ROOT
+                        }
+                    }
+                }
+                TIB = {
+                    every_core_state = {
+                        add_claim_by = ROOT
+                    }
+                }
+            }
+            IF = {
+                limit = {
+                    TAN = {
+                        exists = yes
+                        NOT = {
+                            is_ally_with = ROOT
+                        }
+                    }
+                }
+                TAN = {
+                    every_core_state = {
+                        add_claim_by = ROOT
+                    }
+                }
+            }
+            CHI_update_claimed_and_core_states = yes
+        }
+    }
+
+    CHI_third_empire_new_middle_kingdom = { #新天朝（完成国策并给予军队腐败修正）
+        allowed = {
+            original_tag = CHI
+        }
+        visible = {
+        }
+        available = {
+        }
+
+        icon = generic_construction
+
+        fire_only_once = yes
+
+        cost = 100
+        days_remove = 70
+
+        modifier = {
+        }
+
+        ai_will_do = {
+            factor = 1000
+        }
+
+        complete_effect = {
+        }
+
+        remove_effect = {
+            complete_national_focus = CHI_a_new_middle_kingdom
+            custom_effect_tooltip = CHI_modify_corruption_in_the_armed_forces_tt
+            IF = {
+                limit = {
+                    NOT = {
+                        has_dynamic_modifier = CHI_corruption_in_the_armed_forces
+                    }
+                }
+                add_dynamic_modifier = { modifier = CHI_corruption_in_the_armed_forces }
+            }
+            add_to_variable = {
+                CHI_corruption_in_the_armed_forces_army_attack_factor = 0.1
+                tooltip = army_attack_factor_tt
+            }
+            add_to_variable = {
+                CHI_corruption_in_the_armed_forces_army_defence_factor = 0.1
+                tooltip = army_defence_factor_tt
+            }
+            add_to_variable = {
+                CHI_corruption_in_the_armed_forces_army_org_factor = 0.1
+                tooltip = army_org_factor_tt
+            }
+            add_to_variable = {
+                CHI_corruption_in_the_armed_forces_army_morale_factor = 0.1
+                tooltip = army_morale_factor_tt
+            }
+            hidden_effect = {
+                set_country_flag = CHI_new_middle_kingdom_done_flag
+            }
+        }
+    }
+
+    CHI_third_empire_northern_mandate = { #北方天命（无战争借口）
+        allowed = {
+            original_tag = CHI
+        }
+        visible = {
+            has_country_flag = CHI_new_middle_kingdom_done_flag
+        }
+        available = {
+            has_country_flag = CHI_new_middle_kingdom_done_flag
+            num_divisions > 300
+            num_of_factories > 500
+        }
+
+        icon = generic_operation
+
+        fire_only_once = yes
+
+        cost = 50
+        days_remove = 50
+
+        modifier = {
+        }
+
+        ai_will_do = {
+            factor = 1000
+        }
+
+        complete_effect = {
+        }
+
+        remove_effect = {
+            every_state = {
+                limit = {
+                    CHI_northern_mandate_states = yes
+                }
+                add_claim_by = ROOT
+            }
+            IF = {
+                limit = {
+                    NOT = {
+                        has_completed_focus = CHI_the_southern_mandate
+                        has_completed_focus = CHI_the_greater_game
+                    }
+                }
+                add_faction_goal = faction_goal_the_northern_mandate
+                hidden_effect = {
+                    add_faction_goal_slot = {
+                        category = medium_term
+                        value = 1
+                    }
+                }
+            }
+            ELSE = {
+                custom_effect_tooltip = {
+                    localization_key = unlock_faction_goal_effect_tt
+                    GOALNAME = faction_goal_the_northern_mandate_name
+                }
+            }
+            CHI_update_claimed_and_core_states = yes
+        }
+    }
+
+    CHI_third_empire_greater_game = { #西域博弈（无战争借口）
+        allowed = {
+            original_tag = CHI
+        }
+        visible = {
+            has_country_flag = CHI_new_middle_kingdom_done_flag
+        }
+        available = {
+            has_country_flag = CHI_new_middle_kingdom_done_flag
+            num_divisions > 300
+            num_of_factories > 500
+        }
+
+        icon = generic_operation
+
+        fire_only_once = yes
+
+        cost = 50
+        days_remove = 50
+
+        modifier = {
+        }
+
+        ai_will_do = {
+            factor = 1000
+        }
+
+        complete_effect = {
+        }
+
+        remove_effect = {
+            every_state = {
+                limit = {
+                    CHI_greater_game_states = yes
+                }
+                add_claim_by = ROOT
+            }
+            IF = {
+                limit = {
+                    NOT = {
+                        has_completed_focus = CHI_the_northern_mandate
+                        has_completed_focus = CHI_the_southern_mandate
+                    }
+                }
+                add_faction_goal = faction_goal_the_greater_game
+                hidden_effect = {
+                    add_faction_goal_slot = {
+                        category = medium_term
+                        value = 1
+                    }
+                }
+            }
+            ELSE = {
+                custom_effect_tooltip = {
+                    localization_key = unlock_faction_goal_effect_tt
+                    GOALNAME = faction_goal_the_greater_game_name
+                }
+            }
+            CHI_update_claimed_and_core_states = yes
+        }
+    }
+
+    CHI_third_empire_southern_mandate = { #南方天命（无战争借口）
+        allowed = {
+            original_tag = CHI
+        }
+        visible = {
+            has_country_flag = CHI_new_middle_kingdom_done_flag
+        }
+        available = {
+            has_country_flag = CHI_new_middle_kingdom_done_flag
+            num_divisions > 300
+            num_of_factories > 500
+        }
+
+        icon = generic_operation
+
+        fire_only_once = yes
+
+        cost = 50
+        days_remove = 50
+
+        modifier = {
+        }
+
+        ai_will_do = {
+            factor = 1000
+        }
+
+        complete_effect = {
+        }
+
+        remove_effect = {
+            every_state = {
+                limit = {
+                    CHI_southern_mandate_states = yes
+                }
+                add_claim_by = ROOT
+            }
+            IF = {
+                limit = {
+                    NOT = {
+                        has_completed_focus = CHI_the_northern_mandate
+                        has_completed_focus = CHI_the_greater_game
+                    }
+                }
+                add_faction_goal = faction_goal_the_southern_mandate
+                hidden_effect = {
+                    add_faction_goal_slot = {
+                        category = medium_term
+                        value = 1
+                    }
+                }
+            }
+            ELSE = {
+                custom_effect_tooltip = {
+                    localization_key = unlock_faction_goal_effect_tt
+                    GOALNAME = faction_goal_the_southern_mandate_name
+                }
+            }
+            CHI_update_claimed_and_core_states = yes
+        }
+    }
+
+    CHI_third_empire_cradle_of_civilization = { #文明的摇篮（获得三天命地区核心）
+        allowed = {
+            original_tag = CHI
+        }
+        visible = {
+            has_country_flag = CHI_new_middle_kingdom_done_flag
+        }
+        available = {
+            num_divisions > 500
+            num_of_factories > 800
+            OR = {
+                has_completed_faction_goal = faction_goal_the_northern_mandate
+                has_completed_faction_goal = faction_goal_the_southern_mandate
+                has_completed_faction_goal = faction_goal_the_greater_game
+            }
+        }
+
+        icon = hol_attract_foreign_investors
+
+        fire_only_once = yes
+
+        cost = 100
+        days_remove = 70
+
+        modifier = {
+        }
+
+        ai_will_do = {
+            factor = 1000
+        }
+
+        complete_effect = {
+        }
+
+        remove_effect = {
+            complete_national_focus = CHI_cradle_of_civilization
+            every_state = {
+                limit = {
+                    OR = {
+                        CHI_northern_mandate_states = yes
+                        CHI_greater_game_states = yes
+                        CHI_southern_mandate_states = yes
+                    }
+                }
+                add_core_of = ROOT
+            }
+        }
+    }
+
+    CHI_third_empire_import_german_designers = { #引入德国设计商
+        allowed = {
+            original_tag = CHI
+        }
+        visible = {
+        }
+        available = {
+        }
+
+        icon = generic_operation
+
+        fire_only_once = yes
+
+        cost = 10
+        days_remove = 0
+
+        modifier = {
+        }
+
+        ai_will_do = {
+            factor = 1000
+        }
+
+        complete_effect = {
+            GER = {
+                country_event = { id = change_chi_third_empire.19 }
+            }
+            custom_effect_tooltip = CHI_third_empire_german_designers_tt
+            custom_effect_tooltip = available_mio_tt
+            show_mio_tooltip = CHI_GER_porsche_organization
+            show_mio_tooltip = CHI_GER_henschel_organization
+            show_mio_tooltip = CHI_GER_man_organization
+            show_mio_tooltip = CHI_GER_alkett_organization
+            show_mio_tooltip = CHI_GER_daimler_benz_organization
+            show_mio_tooltip = CHI_GER_deschimag_organization
+            show_mio_tooltip = CHI_GER_germaniawerft_organization
+            show_mio_tooltip = CHI_GER_blohm_und_voss_organization
+            show_mio_tooltip = CHI_GER_hdw_organization
+            show_mio_tooltip = CHI_GER_deutsche_werke_organization
+            show_mio_tooltip = CHI_GER_kriegsmarinewerft_wilhelmshaven_organization
+            show_mio_tooltip = CHI_GER_messerschmitt_organization
+            show_mio_tooltip = CHI_GER_junkers_organization
+            show_mio_tooltip = CHI_GER_focke_wulf_organization
+            show_mio_tooltip = CHI_GER_heinkel_organization
+            show_mio_tooltip = CHI_GER_dornier_organization
+            show_mio_tooltip = CHI_GER_arado_flugzeugwerke_organization
+            show_mio_tooltip = CHI_GER_fieseler_organization
+            show_mio_tooltip = CHI_GER_focke_achgelis_organization
+        }
+
+        remove_effect = {
+        }
+    }
+
+}

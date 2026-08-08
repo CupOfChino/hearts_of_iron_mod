@@ -1,0 +1,30 @@
+﻿l_simp_chinese:
+ ######阵营#######
+ GER_the_kaiserreich: "帝国公约"
+ GER_the_third_empire_faction: "三皇同盟"
+
+ ENG_old_friend_faction: "西欧同盟"
+ ENG_the_third_empire_faction: "三国协约"
+
+ HUN_with_BUL_faction: "多瑙河条约"
+
+ Popular_Liberation_Front_faction: "人民解放阵线"
+ National_Liberation_Front_faction: "民族解放阵线"
+ Chinese_United_Front_faction: "中华统一战线"
+
+ the_LatinAmerica_faction: "拉丁同盟"
+
+ MEX_the_LatinAmerica: "拉丁同盟"
+ MEX_the_LatinAmerica_DEF: "拉丁同盟"
+ #######研究合作#####
+ FRA_development_with_ger: "科技互助委员会"
+ FRA_development_with_ger_name: "科技互助委员会"
+
+ #####阵营主题###
+ the_world_hegemony: "§R世界霸权§!"
+ the_world_hegemony_desc: "我们将确立联盟在世界的霸主地位！"
+
+ #####collections#####
+ COLLECTION_FACTION_OWNED_STATES: "阵营控制的土地"
+
+

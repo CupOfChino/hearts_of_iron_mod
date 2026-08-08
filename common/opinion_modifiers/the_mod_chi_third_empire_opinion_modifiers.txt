@@ -1,0 +1,14 @@
+opinion_modifiers = {
+    mod_chi_ger_opinion_25 = {
+        value = 25
+    }
+    mod_chi_fra_opinion_30 = {
+        value = 30
+    }
+    mod_chi_fra_opinion_40 = {
+        value = -40
+    }
+    mod_chi_fra_opinion_25 = {
+        value = -25
+    }
+}

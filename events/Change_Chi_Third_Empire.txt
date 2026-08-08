@@ -1,0 +1,1328 @@
+﻿add_namespace = change_chi_third_empire
+
+country_event = { #发现大油田
+	id = change_chi_third_empire.1
+	title = change_chi_third_empire.1.t
+	desc = change_chi_third_empire.1.d
+
+	picture = GFX_report_event_generic_read_write
+
+	is_triggered_only = yes
+
+	option = { #举国欢腾
+		name = change_chi_third_empire.1.a
+		ai_chance = {
+			factor = 100
+		}
+		756 = {
+			add_resource = {
+				type = oil
+				amount = 36
+			}
+		}
+		617 = {
+			add_resource = {
+				type = oil
+				amount = 30
+			}
+		}
+		618 = {
+			add_resource = {
+				type = oil
+				amount = 29
+			}
+		}
+		622 = {
+			add_resource = {
+				type = oil
+				amount = 21
+			}
+		}
+		605 = {
+			add_resource = {
+				type = oil
+				amount = 15
+			}
+		}
+		716 = {
+			add_resource = {
+				type = oil
+				amount = 15
+			}
+		}
+		add_war_support = 0.15
+		add_stability = 0.1
+		add_political_power = 200
+		news_event = { id = change_news.72 days = 1 }
+		GER = {
+			country_event = { id = change_chi_third_empire.2 days = 2 }
+		}
+	}
+}
+
+country_event = { #德国：贺电与共同开采提议
+	id = change_chi_third_empire.2
+	title = change_chi_third_empire.2.t
+	desc = change_chi_third_empire.2.d
+
+	picture = GFX_report_event_generic_read_write
+
+	is_triggered_only = yes
+
+	option = { #祝贺并提议共同开采
+		name = change_chi_third_empire.2.a
+		ai_chance = {
+			factor = 100
+		}
+		CHI = {
+			country_event = { id = change_chi_third_empire.21 days = 2 }
+		}
+	}
+}
+
+country_event = { #出征尼泊尔
+	id = change_chi_third_empire.3
+	title = change_chi_third_empire.3.t
+	desc = change_chi_third_empire.3.d
+
+	picture = GFX_report_event_generic_panzer_attack
+
+	is_triggered_only = yes
+
+	option = { #发出最后通牒
+		name = change_chi_third_empire.3.a
+		ai_chance = {
+			factor = 100
+		}
+		NEP = {
+			country_event = { id = change_chi_third_empire.4 days = 2 }
+		}
+	}
+
+	option = { #暂缓行动
+		name = change_chi_third_empire.3.b
+		ai_chance = {
+			factor = 0
+		}
+		add_war_support = -0.05
+	}
+}
+
+country_event = { #尼泊尔：中国入侵！
+	id = change_chi_third_empire.4
+	title = change_chi_third_empire.4.t
+	desc = change_chi_third_empire.4.d
+
+	picture = GFX_report_event_generic_troops_at_rivier_in_iraq
+
+	is_triggered_only = yes
+
+	option = { #拒绝！
+		name = change_chi_third_empire.4.a
+		ai_chance = {
+			factor = 100
+		}
+		add_war_support = 0.2
+		add_stability = 0.1
+		add_equipment_to_stockpile = {
+			type = infantry_equipment
+			amount = 3000
+		}
+		CHI = {
+			country_event = { id = change_chi_third_empire.26 days = 1 }
+		}
+	}
+}
+
+country_event = { #出征不丹
+	id = change_chi_third_empire.5
+	title = change_chi_third_empire.5.t
+	desc = change_chi_third_empire.5.d
+
+	picture = GFX_report_event_generic_panzer_attack
+
+	is_triggered_only = yes
+
+	option = { #发出最后通牒
+		name = change_chi_third_empire.5.a
+		ai_chance = {
+			factor = 100
+		}
+		BHU = {
+			country_event = { id = change_chi_third_empire.6 days = 2 }
+		}
+	}
+
+	option = { #暂缓行动
+		name = change_chi_third_empire.5.b
+		ai_chance = {
+			factor = 0
+		}
+		add_war_support = -0.05
+	}
+}
+
+country_event = { #不丹：中国入侵！
+	id = change_chi_third_empire.6
+	title = change_chi_third_empire.6.t
+	desc = change_chi_third_empire.6.d
+
+	picture = GFX_report_event_generic_troops_at_rivier_in_iraq
+
+	is_triggered_only = yes
+
+	option = { #拒绝！
+		name = change_chi_third_empire.6.a
+		ai_chance = {
+			factor = 100
+		}
+		add_war_support = 0.2
+		add_stability = 0.1
+		add_equipment_to_stockpile = {
+			type = infantry_equipment
+			amount = 2000
+		}
+		CHI = {
+			country_event = { id = change_chi_third_empire.26 days = 1 }
+		}
+	}
+}
+
+country_event = { #边疆补给线建成
+	id = change_chi_third_empire.7
+	title = change_chi_third_empire.7.t
+	desc = change_chi_third_empire.7.d
+
+	picture = GFX_report_event_generic_read_write
+
+	is_triggered_only = yes
+
+	option = { #补给线畅通
+		name = change_chi_third_empire.7.a
+		ai_chance = {
+			factor = 100
+		}
+		if = {
+			limit = {
+				has_active_mission = we_must_prepare_war_02
+			}
+			add_days_mission_timeout = {
+				mission = we_must_prepare_war_02
+				days = -60
+			}
+		}
+		if = {
+			limit = {
+				has_active_mission = we_must_prepare_war_03
+			}
+			add_days_mission_timeout = {
+				mission = we_must_prepare_war_03
+				days = -50
+			}
+		}
+		#西部边境补给站
+		818 = { #
+			add_building_construction = {
+				type = supply_node
+				level = 1
+				province = 12520
+				instant_build = yes
+			}
+		}
+		618 = { 
+			add_building_construction = {
+				type = supply_node
+				level = 1
+				province = 12737
+				instant_build = yes
+			}
+		}
+		617 = { #
+			add_building_construction = {
+				type = supply_node
+				level = 1
+				province = 1703
+				instant_build = yes
+			}
+		}
+
+		817 = { 
+			add_building_construction = {
+				type = supply_node
+				level = 1
+				province = 4786
+				instant_build = yes
+			}
+		}
+		817 = { 
+			add_building_construction = {
+				type = supply_node
+				level = 1
+				province = 1787
+				instant_build = yes
+			}
+		}
+		819 = { 
+			add_building_construction = {
+				type = supply_node
+				level = 1
+				province = 12629
+				instant_build = yes
+			}
+		}
+		761 = { 
+			add_building_construction = {
+				type = supply_node
+				level = 1
+				province = 12537
+				instant_build = yes
+			}
+		}
+		714 = { 
+			add_building_construction = {
+				type = supply_node
+				level = 1
+				province = 1545
+				instant_build = yes
+			}
+		}
+		328 = { 
+			add_building_construction = {
+				type = supply_node
+				level = 1
+				province = 9803
+				instant_build = yes
+			}
+		}
+		601 = { 
+			add_building_construction = {
+				type = supply_node
+				level = 1
+				province = 5102
+				instant_build = yes
+			}
+		}
+		325 = { 
+			add_building_construction = {
+				type = supply_node
+				level = 1
+				province = 1522
+				instant_build = yes
+			}
+		}
+		
+		build_railway = {
+			level = 2
+			start_province = 1319
+			target_province = 5102
+		}
+		build_railway = {
+			level = 2
+			start_province = 5102
+			target_province = 5080
+		}
+		build_railway = {
+			level = 2
+			start_province = 2015
+			target_province = 1703
+		}
+		build_railway = {
+			level = 2
+			start_province = 2015
+			target_province = 1459
+		}
+		build_railway = {
+			level = 2
+			start_province = 1970
+			target_province = 12763
+		}
+		build_railway = {
+			level = 2
+			start_province = 1703
+			target_province = 4709
+		}
+		build_railway = {
+			level = 2
+			start_province = 12737
+			target_province = 4709
+		}
+		build_railway = {
+			level = 2
+			start_province = 12737
+			target_province = 12520
+		}
+		build_railway = {
+			level = 2
+			start_province = 4786
+			target_province = 12520
+		}
+		build_railway = {
+			level = 2
+			start_province = 10627
+			target_province = 12520
+		}
+		build_railway = {
+			level = 2
+			start_province = 4786
+			target_province = 2028
+		}
+		build_railway = {
+			level = 2
+			start_province = 4786
+			target_province = 1787
+		}
+		build_railway = {
+			level = 2
+			start_province = 12331
+			target_province = 1787
+		}
+		build_railway = {
+			level = 2
+			start_province = 12331
+			target_province = 12356
+		}
+		build_railway = {
+			level = 2
+			start_province = 12629
+			target_province = 1787
+		}
+		build_railway = {
+			level = 2
+			start_province = 12629
+			target_province = 7674
+		}
+		build_railway = {
+			level = 2
+			start_province = 12629
+			target_province = 7743
+		}
+		build_railway = {
+			level = 2
+			start_province = 13379
+			target_province = 4506
+		}
+		build_railway = {
+			level = 2
+			start_province = 12537
+			target_province = 4506
+		}
+		build_railway = {
+			level = 2
+			start_province = 10433
+			target_province = 1545
+		}
+		build_railway = {
+			level = 4
+			start_province = 11771
+			target_province = 1545
+		}
+		add_war_support = 0.05
+		add_political_power = 50
+	}
+}
+
+country_event = { #向法国提出归还租借地
+	id = change_chi_third_empire.8
+	title = change_chi_third_empire.8.t
+	desc = change_chi_third_empire.8.d
+
+	picture = GFX_report_event_generic_read_write
+
+	is_triggered_only = yes
+
+	option = { #发出外交照会
+		name = change_chi_third_empire.8.a
+		ai_chance = {
+			factor = 100
+		}
+		FRA = {
+			country_event = { id = change_chi_third_empire.9 days = 2 }
+		}
+	}
+
+	option = { #暂缓
+		name = change_chi_third_empire.8.b
+		ai_chance = {
+			factor = 0
+		}
+		add_political_power = -30
+	}
+}
+
+country_event = { #法国的回应
+	id = change_chi_third_empire.9
+	title = change_chi_third_empire.9.t
+	desc = change_chi_third_empire.9.d
+
+	picture = GFX_report_event_generic_read_write
+
+	is_triggered_only = yes
+
+	option = { #归还租借地
+		name = change_chi_third_empire.9.a
+		ai_chance = {
+			factor = 75
+		}
+		add_political_power = 25
+		add_opinion_modifier = {
+			modifier = mod_chi_fra_opinion_30
+			target = CHI
+		}
+		news_event = { id = change_news.75 days = 1 }
+		CHI = {
+			country_event = { id = change_chi_third_empire.12 days = 2 }
+		}
+	}
+
+	option = { #拒绝
+		name = change_chi_third_empire.9.b
+		ai_chance = {
+			factor = 25
+		}
+		add_stability = -0.05
+		CHI = {
+			country_event = { id = change_chi_third_empire.13 days = 2 }
+		}
+	}
+}
+
+country_event = { #法属印度支那
+	id = change_chi_third_empire.10
+	title = change_chi_third_empire.10.t
+	desc = change_chi_third_empire.10.d
+
+	picture = GFX_report_event_generic_read_write
+
+	is_triggered_only = yes
+
+	option = { #提议接管
+		name = change_chi_third_empire.10.a
+		ai_chance = {
+			factor = 100
+		}
+		FRA = {
+			country_event = { id = change_chi_third_empire.11 days = 2 }
+		}
+	}
+
+	option = { #暂缓
+		name = change_chi_third_empire.10.b
+		ai_chance = {
+			factor = 0
+		}
+		add_political_power = -30
+	}
+}
+
+country_event = { #法国的回应
+	id = change_chi_third_empire.11
+	title = change_chi_third_empire.11.t
+	desc = change_chi_third_empire.11.d
+
+	picture = GFX_report_event_generic_read_write
+
+	is_triggered_only = yes
+
+	option = { #同意：移交治权，保留资源开采权
+		name = change_chi_third_empire.11.a
+		ai_chance = {
+			factor = 80
+		}
+		add_political_power = 50
+		CHI = {
+			country_event = { id = change_chi_third_empire.14 days = 2 }
+		}
+		add_ideas = FRA_far_east_compensation
+		news_event = { id = change_news.76 days = 1 }
+	}
+
+	option = { #拒绝
+		name = change_chi_third_empire.11.b
+		ai_chance = {
+			factor = 20
+		}
+		add_stability = -0.05
+		CHI = {
+			country_event = { id = change_chi_third_empire.15 days = 2 }
+		}
+	}
+}
+
+country_event = { #租借地回家了
+	id = change_chi_third_empire.12
+	title = change_chi_third_empire.12.t
+	desc = change_chi_third_empire.12.d
+
+	picture = GFX_report_event_generic_read_write
+
+	is_triggered_only = yes
+
+	option = { #欢迎回家
+		name = change_chi_third_empire.12.a
+		ai_chance = {
+			factor = 100
+		}
+		transfer_state = 728
+		transfer_state = 729
+		add_stability = 0.1
+		add_political_power = 100
+		add_war_support = 0.05
+	}
+}
+
+country_event = { #巴黎的拒绝
+	id = change_chi_third_empire.13
+	title = change_chi_third_empire.13.t
+	desc = change_chi_third_empire.13.d
+
+	picture = GFX_report_event_generic_read_write
+
+	is_triggered_only = yes
+
+	option = { #强烈抗议
+		name = change_chi_third_empire.13.a
+		ai_chance = {
+			factor = 90
+		}
+		add_war_support = 0.05
+		add_political_power = -25
+		add_opinion_modifier = {
+			modifier = mod_chi_fra_opinion_40
+			target = FRA
+		}
+		add_state_claim = 728
+		add_state_claim = 729
+		FRA = {
+			add_opinion_modifier = {
+				modifier = mod_chi_fra_opinion_25
+				target = CHI
+			}
+		}
+	}
+
+	option = { #暂时隐忍
+		name = change_chi_third_empire.13.b
+		ai_chance = {
+			factor = 10
+		}
+		add_political_power = -50
+	}
+}
+
+country_event = { #印度支那易主
+	id = change_chi_third_empire.14
+	title = change_chi_third_empire.14.t
+	desc = change_chi_third_empire.14.d
+
+	picture = GFX_report_event_generic_read_write
+
+	is_triggered_only = yes
+
+	option = { #欢迎新领土
+		name = change_chi_third_empire.14.a
+		ai_chance = {
+			factor = 100
+		}
+		670 = { 
+			add_building_construction = {
+				type = supply_node
+				level = 1
+				province = 10496
+				instant_build = yes
+			}
+		}
+		670 = { 
+			add_building_construction = {
+				type = supply_node
+				level = 1
+				province = 4539
+				instant_build = yes
+			}
+		}
+		1067 = { 
+			add_building_construction = {
+				type = supply_node
+				level = 1
+				province = 12447
+				instant_build = yes
+			}
+		}
+		741 = { 
+			add_building_construction = {
+				type = supply_node
+				level = 1
+				province = 4539
+				instant_build = yes
+			}
+		}
+		
+		build_railway = {
+			level = 2
+			start_province = 1522
+			target_province = 10496
+		}
+		build_railway = {
+			level = 2
+			start_province = 4075
+			target_province = 10496
+		}
+		build_railway = {
+			level = 2
+			start_province = 4075
+			target_province = 10496
+		}
+		build_railway = {
+			level = 2
+			start_province = 4397
+			target_province = 12447
+		}
+		build_railway = {
+			level = 2
+			start_province = 4397
+			target_province = 4539
+		}
+		build_railway = {
+			level = 2
+			start_province = 4379
+			target_province = 4539
+		}
+		build_railway = {
+			level = 2
+			start_province = 10309
+			target_province = 12447
+		}
+		build_railway = {
+			level = 2
+			start_province = 10309
+			target_province = 10162
+		}
+		build_railway = {
+			level = 2
+			start_province = 12447
+			target_province = 4359
+		}
+		build_railway = {
+			level = 2
+			start_province = 12447
+			target_province = 4301
+		}
+		build_railway = {
+			level = 2
+			start_province = 7408
+			target_province = 4359
+		}
+		IF = {
+			limit = {
+				VIN = {
+					exists = yes
+				}
+			}
+			CHI = {
+				annex_country = {
+					target = VIN
+					transfer_troops = yes
+				}
+			}
+		}
+		IF = {
+			limit = {
+				LAO = {
+					exists = yes
+				}
+			}
+			CHI = {
+				annex_country = {
+					target = LAO
+					transfer_troops = yes
+				}
+			}
+		}
+		IF = {
+			limit = {
+				CAM = {
+					exists = yes
+				}
+			}
+			CHI = {
+				annex_country = {
+					target = CAM
+					transfer_troops = yes
+				}
+			}
+		}
+		every_state = {
+			limit = {
+				OR = {
+					is_core_of = VIN
+					is_core_of = LAO
+					is_core_of = CAM
+				}
+			}
+			CHI = {
+				transfer_state = PREV
+			}
+		}
+		every_state = {
+			limit = {
+				OR = {
+					is_core_of = VIN
+					is_core_of = LAO
+					is_core_of = CAM
+				}
+			}
+			ROOT = {
+				give_resource_rights = {
+					receiver = FRA
+					state = PREV
+				}
+			}
+		}
+		add_stability = 0.1
+		add_political_power = 100
+		add_war_support = 0.05
+	}
+}
+
+country_event = { #巴黎的拒绝
+	id = change_chi_third_empire.15
+	title = change_chi_third_empire.15.t
+	desc = change_chi_third_empire.15.d
+
+	picture = GFX_report_event_generic_read_write
+
+	is_triggered_only = yes
+
+	option = { #记下这笔账
+		name = change_chi_third_empire.15.a
+		ai_chance = {
+			factor = 90
+		}
+		add_war_support = 0.05
+		add_political_power = -25
+		add_opinion_modifier = {
+			modifier = mod_chi_fra_opinion_40
+			target = FRA
+		}
+		every_state = {
+			limit = {
+				OR = {
+					is_core_of = VIN
+					is_core_of = LAO
+					is_core_of = CAM
+				}
+			}
+			add_claim_by = ROOT
+		}
+	}
+
+	option = { #暂时隐忍
+		name = change_chi_third_empire.15.b
+		ai_chance = {
+			factor = 10
+		}
+		add_political_power = -50
+	}
+}
+
+country_event = { #[From.GetName]誓死抵抗
+	id = change_chi_third_empire.16
+	title = change_chi_third_empire.16.t
+	desc = change_chi_third_empire.16.d
+
+	picture = GFX_report_event_generic_panzer_attack
+
+	is_triggered_only = yes
+
+	option = { #让战争说话
+		name = change_chi_third_empire.16.a
+		ai_chance = {
+			factor = 100
+		}
+		add_war_support = 0.05
+		army_experience = 5
+	}
+}
+
+country_event = { #柏林提议共同开采
+	id = change_chi_third_empire.21
+	title = change_chi_third_empire.21.t
+	desc = change_chi_third_empire.21.d
+
+	picture = GFX_report_event_generic_read_write
+
+	is_triggered_only = yes
+
+	option = { #接受共同开采
+		name = change_chi_third_empire.21.a
+		ai_chance = {
+			factor = 100
+		}
+		random_owned_state = {
+			limit = {
+				OR = {
+					state = 756
+					state = 617
+					state = 618
+					state = 622
+					state = 605
+					state = 716
+				}
+			}
+			ROOT = {
+				set_variable = { concession_state = PREV }
+			}
+		}
+		756 = {
+			set_building_level = {
+				type = infrastructure
+				level = 5
+			}
+			add_extra_state_shared_building_slots = 4
+			add_building_construction = {
+				type = industrial_complex
+				level = 2
+				instant_build = yes
+			}
+		}
+		617 = {
+			set_building_level = {
+				type = infrastructure
+				level = 5
+			}
+			add_extra_state_shared_building_slots = 4
+			add_building_construction = {
+				type = industrial_complex
+				level = 2
+				instant_build = yes
+			}
+		}
+		618 = {
+			set_building_level = {
+				type = infrastructure
+				level = 5
+			}
+			add_extra_state_shared_building_slots = 4
+			add_building_construction = {
+				type = industrial_complex
+				level = 2
+				instant_build = yes
+			}
+		}
+		622 = {
+			set_building_level = {
+				type = infrastructure
+				level = 5
+			}
+			add_extra_state_shared_building_slots = 4
+			add_building_construction = {
+				type = industrial_complex
+				level = 2
+				instant_build = yes
+			}
+		}
+		605 = {
+			set_building_level = {
+				type = infrastructure
+				level = 5
+			}
+			add_extra_state_shared_building_slots = 4
+			add_building_construction = {
+				type = industrial_complex
+				level = 2
+				instant_build = yes
+			}
+		}
+		716 = {
+			set_building_level = {
+				type = infrastructure
+				level = 5
+			}
+			add_extra_state_shared_building_slots = 4
+			add_building_construction = {
+				type = industrial_complex
+				level = 2
+				instant_build = yes
+			}
+		}
+		756 = {
+			add_resource = {
+				type = oil
+				amount = 15
+			}
+		}
+		617 = {
+			add_resource = {
+				type = oil
+				amount = 15
+			}
+		}
+		618 = {
+			add_resource = {
+				type = oil
+				amount = 15
+			}
+		}
+		622 = {
+			add_resource = {
+				type = oil
+				amount = 15
+			}
+		}
+		605 = {
+			add_resource = {
+				type = oil
+				amount = 15
+			}
+		}
+		716 = {
+			add_resource = {
+				type = oil
+				amount = 15
+			}
+		}
+		set_technology = excavation4
+		GER = {
+			set_technology = excavation4
+		}
+		GER = {
+			country_event = { id = change_chi_third_empire.22 days = 2 }
+		}
+	}
+
+	option = { #拒绝
+		name = change_chi_third_empire.21.b
+		ai_chance = {
+			factor = 0
+		}
+		add_political_power = 10
+		GER = {
+			add_political_power = 10
+			country_event = { id = change_chi_third_empire.23 days = 2 }
+		}
+	}
+}
+
+country_event = { #中国同意共同开采
+	id = change_chi_third_empire.22
+	title = change_chi_third_empire.22.t
+	desc = change_chi_third_empire.22.d
+
+	picture = GFX_report_event_generic_read_write
+
+	is_triggered_only = yes
+
+	option = { #合作愉快
+		name = change_chi_third_empire.22.a
+		ai_chance = {
+			factor = 100
+		}
+		FROM = {
+			give_resource_rights = {
+				receiver = GER
+				state = var:concession_state
+			}
+		}
+	}
+}
+
+country_event = { #中国拒绝共同开采
+	id = change_chi_third_empire.23
+	title = change_chi_third_empire.23.t
+	desc = change_chi_third_empire.23.d
+
+	picture = GFX_report_event_generic_read_write
+
+	is_triggered_only = yes
+
+	option = { #尊重中国的选择
+		name = change_chi_third_empire.23.a
+		ai_chance = {
+			factor = 100
+		}
+	}
+}
+
+country_event = { #[From.GetName]不战而降
+	id = change_chi_third_empire.24
+	title = change_chi_third_empire.24.t
+	desc = change_chi_third_empire.24.d
+
+	picture = GFX_report_event_generic_read_write
+
+	is_triggered_only = yes
+
+	option = { #兵不血刃
+		name = change_chi_third_empire.24.a
+		ai_chance = {
+			factor = 100
+		}
+		annex_country = {
+			target = FROM
+			transfer_troops = yes
+		}
+	}
+}
+
+# 以下两个事件为旧油田链遗留（原 .2 的援助/口头祝贺分支），当前不再被调用，保留定义以防其他引用
+country_event = { #柏林援助抵达
+	id = change_chi_third_empire.17
+	title = change_chi_third_empire.17.t
+	desc = change_chi_third_empire.17.d
+
+	picture = GFX_report_event_generic_read_write
+
+	is_triggered_only = yes
+
+	option = { #感谢盟友
+		name = change_chi_third_empire.17.a
+		ai_chance = {
+			factor = 100
+		}
+		add_political_power = 25
+	}
+}
+
+country_event = { #来自柏林的祝贺
+	id = change_chi_third_empire.18
+	title = change_chi_third_empire.18.t
+	desc = change_chi_third_empire.18.d
+
+	picture = GFX_report_event_generic_read_write
+
+	is_triggered_only = yes
+
+	option = { #礼尚往来
+		name = change_chi_third_empire.18.a
+		ai_chance = {
+			factor = 100
+		}
+		add_political_power = 10
+	}
+}
+
+country_event = { #中国引入德国设计商
+	id = change_chi_third_empire.19
+	title = change_chi_third_empire.19.t
+	desc = change_chi_third_empire.19.d
+
+	picture = GFX_report_event_generic_read_write
+
+	is_triggered_only = yes
+
+	option = { #同意
+		name = change_chi_third_empire.19.a
+		ai_chance = {
+			factor = 100
+		}
+		add_political_power = 100
+		add_tech_bonus = {
+			ahead_reduction = 1
+			bonus = 1
+			name = chouka_gongye
+			uses = 1
+			category = industry
+		}
+		CHI = {
+			country_event = { id = change_chi_third_empire.20 days = 1 }
+		}
+	}
+}
+
+country_event = { #德国同意引入设计商
+	id = change_chi_third_empire.20
+	title = change_chi_third_empire.20.t
+	desc = change_chi_third_empire.20.d
+
+	picture = GFX_report_event_generic_read_write
+
+	is_triggered_only = yes
+
+	option = { #启用德国设计商
+		name = change_chi_third_empire.20.a
+		ai_chance = {
+			factor = 100
+		}
+		set_country_flag = CHI_third_empire_german_designers_flag
+		custom_effect_tooltip = CHI_third_empire_german_designers_tt
+		custom_effect_tooltip = available_mio_tt
+		show_mio_tooltip = CHI_GER_porsche_organization
+		show_mio_tooltip = CHI_GER_henschel_organization
+		show_mio_tooltip = CHI_GER_man_organization
+		show_mio_tooltip = CHI_GER_alkett_organization
+		show_mio_tooltip = CHI_GER_daimler_benz_organization
+		show_mio_tooltip = CHI_GER_deschimag_organization
+		show_mio_tooltip = CHI_GER_germaniawerft_organization
+		show_mio_tooltip = CHI_GER_blohm_und_voss_organization
+		show_mio_tooltip = CHI_GER_hdw_organization
+		show_mio_tooltip = CHI_GER_deutsche_werke_organization
+		show_mio_tooltip = CHI_GER_kriegsmarinewerft_wilhelmshaven_organization
+		show_mio_tooltip = CHI_GER_messerschmitt_organization
+		show_mio_tooltip = CHI_GER_junkers_organization
+		show_mio_tooltip = CHI_GER_focke_wulf_organization
+		show_mio_tooltip = CHI_GER_heinkel_organization
+		show_mio_tooltip = CHI_GER_dornier_organization
+		show_mio_tooltip = CHI_GER_arado_flugzeugwerke_organization
+		show_mio_tooltip = CHI_GER_fieseler_organization
+		show_mio_tooltip = CHI_GER_focke_achgelis_organization
+		mio:CHI_GER_porsche_organization = {
+			add_mio_size = 1
+			add_mio_funds = 10000
+		}
+		mio:CHI_GER_henschel_organization = {
+			add_mio_size = 1
+			add_mio_funds = 10000
+		}
+		mio:CHI_GER_man_organization = {
+			add_mio_size = 1
+			add_mio_funds = 10000
+		}
+		mio:CHI_GER_alkett_organization = {
+			add_mio_size = 1
+			add_mio_funds = 10000
+		}
+		mio:CHI_GER_daimler_benz_organization = {
+			add_mio_size = 1
+			add_mio_funds = 10000
+		}
+		mio:CHI_GER_deschimag_organization = {
+			add_mio_size = 1
+			add_mio_funds = 10000
+		}
+		mio:CHI_GER_blohm_und_voss_organization = {
+			add_mio_size = 1
+			add_mio_funds = 10000
+		}
+		mio:CHI_GER_hdw_organization = {
+			add_mio_size = 1
+			add_mio_funds = 10000
+		}
+		mio:CHI_GER_deutsche_werke_organization = {
+			add_mio_size = 1
+			add_mio_funds = 10000
+		}
+		mio:CHI_GER_kriegsmarinewerft_wilhelmshaven_organization = {
+			add_mio_size = 1
+			add_mio_funds = 10000
+		}
+		mio:CHI_GER_messerschmitt_organization = {
+			add_mio_size = 1
+			add_mio_funds = 10000
+		}
+		mio:CHI_GER_junkers_organization = {
+			add_mio_size = 1
+			add_mio_funds = 10000
+		}
+		mio:CHI_GER_focke_wulf_organization = {
+			add_mio_size = 1
+			add_mio_funds = 10000
+		}
+		mio:CHI_GER_heinkel_organization = {
+			add_mio_size = 1
+			add_mio_funds = 10000
+		}
+		mio:CHI_GER_dornier_organization = {
+			add_mio_size = 1
+			add_mio_funds = 10000
+		}
+		mio:CHI_GER_arado_flugzeugwerke_organization = {
+			add_mio_size = 1
+			add_mio_funds = 10000
+		}
+		mio:CHI_GER_fieseler_organization = {
+			add_mio_size = 1
+			add_mio_funds = 10000
+		}
+		mio:CHI_GER_focke_achgelis_organization = {
+			add_mio_size = 1
+			add_mio_funds = 10000
+		}
+		mio:CHI_GER_germaniawerft_organization = {
+			add_mio_size = 1
+			add_mio_funds = 10000
+		}
+	}
+}
+
+country_event = { #[From.GetName]拒绝最后通牒
+	id = change_chi_third_empire.26
+	title = change_chi_third_empire.26.t
+	desc = change_chi_third_empire.26.d
+
+	picture = GFX_report_event_generic_panzer_attack
+
+	is_triggered_only = yes
+
+	option = { #那就开战！
+		name = change_chi_third_empire.26.a
+		ai_chance = {
+			factor = 100
+		}
+		add_war_support = 0.1
+		declare_war_on = {
+			type = annex_everything
+			target = FROM
+		}
+		add_named_threat = { threat = 5 name = change_chi_third_empire.26.t }
+		IF = {
+			limit = {
+				FROM = {
+					original_tag = NEP
+				}
+			}
+			news_event = { id = change_news.73 days = 1 }
+		}
+		ELSE_IF = {
+			limit = {
+				FROM = {
+					original_tag = BHU
+				}
+			}
+			news_event = { id = change_news.74 days = 1 }
+		}
+	}
+}
+
+country_event = { #资源勘探完成
+	id = change_chi_third_empire.25
+	title = change_chi_third_empire.25.t
+	desc = change_chi_third_empire.25.d
+
+	picture = GFX_report_event_generic_read_write
+
+	is_triggered_only = yes
+
+	option = { #继续勘探
+		name = change_chi_third_empire.25.a
+		ai_chance = {
+			factor = 100
+		}
+		random_owned_controlled_state = {
+			add_resource = {
+				type = steel
+				amount = 16
+			}
+			add_resource = {
+				type = aluminium
+				amount = 8
+			}
+			add_resource = {
+				type = chromium
+				amount = 8
+			}
+		}
+		random_owned_controlled_state = {
+			add_resource = {
+				type = steel
+				amount = 8
+			}
+			add_resource = {
+				type = oil
+				amount = 4
+			}
+			add_resource = {
+				type = coal
+				amount = 4
+			}
+		}
+	}
+}

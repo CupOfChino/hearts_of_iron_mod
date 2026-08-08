@@ -1,0 +1,31 @@
+﻿l_english:
+  ######General Skills#######
+ super_makeshift_bridges: "§YSuper River Crossing§!"
+ super_makeshift_bridges_name: "§YSuper River Crossing§!"
+ super_makeshift_bridges_desc: "§RLike defending rivers, huh?§! §RStab you, stab you, stab you!!!!§!"
+
+  ######Boost Cards#######
+ chouka_buqiang: "§YDraw Bonus Card: Rifles§!"
+ chouka_tank: "§YDraw Bonus Card: Tanks§!"
+ chouka_pao: "§YDraw Bonus Card: Artillery§!"
+ chouka_gongye: "§YDraw Bonus Card: Industry§!"
+ chouka_dianzi: "§YDraw Bonus Card: Electronics§!"
+ chouka_jixiehua: "§YDraw Bonus Card: Mechanized§!"
+ chouka_zhiyuan: "§YDraw Bonus Card: Support Companies§!"
+ chouka_feiji: "§YDraw Bonus Card: Aircraft§!"
+ chouka_hedan: "§YDraw Bonus Card: Nuclear Bombs§!"
+ chouka_chuan: "§YDraw Bonus Card: Ships§!"
+
+ chouka_kongjun: "§YDraw Card: Army Cards§!"
+ chouka_haijun: "§YDraw Card: Navy Cards§!"
+ chouka_kongjun: "§YDraw Card: Air Force Cards§!"
+ chouka_tezhong: "§YDraw Card: Special Cards§!"
+
+  ######cost_text######
+ decision_cost_CP_15_pp_15: "£political_power §Y15§! £command_power §Y15§!"
+ decision_cost_CP_15_pp_15_blocked: "£political_power §Y15§! £command_power §Y15§!"
+ decision_cost_CP_15_pp_15_tooltip: "This decision will cost £political_power §Y15§! £command_power §Y15§!"
+ decision_cost_CP_25_pp_25: "£political_power §Y25§! £command_power §Y25§!"
+ decision_cost_CP_25_pp_25_blocked: "£political_power §Y25§! £command_power §Y25§!"
+ decision_cost_CP_25_pp_25_tooltip: "This decision will cost £political_power §Y25§! £command_power §Y25§!"
+  

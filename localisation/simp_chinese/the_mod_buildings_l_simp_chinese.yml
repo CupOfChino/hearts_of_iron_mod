@@ -1,0 +1,33 @@
+﻿l_simp_chinese:
+ ######建筑#######
+ steelworks:0 "炼钢厂"
+ steelworks_plural:0 "炼钢厂"
+ steelworks_desc:0 "此建筑可为所属地区提供"
+ steelworks_amount:0 "$VALUE|Y0=$"
+ steelworks_resource:0 "£resources_strip|$FRAME$"
+ aluminum_smelter:0 "炼铝厂"
+ aluminum_smelter_plural:0 "炼铝厂"
+ aluminum_smelter_desc:0 "此建筑可为所属地区提供"
+ aluminum_smelter_amount:0 "$VALUE|Y0=$"
+ aluminum_smelter_resource:0 "£resources_strip|2"
+ tungsten_smelter:0 "炼钨厂"
+ tungsten_smelter_plural:0 "炼钨厂"
+ tungsten_smelter_desc:0 "此建筑可为所属地区提供"
+ tungsten_smelter_amount:0 "$VALUE|Y0=$"
+ tungsten_smelter_resource:0 "£resources_strip|4"
+ chromium_smelter:0 "炼铬厂"
+ chromium_smelter_plural:0 "炼铬厂"
+ chromium_smelter_desc:0 "此建筑可为所属地区提供"
+ chromium_smelter_amount:0 "$VALUE|Y0=$"
+ chromium_smelter_resource:0 "£resources_strip|6"
+ BEX_SLOTS_dynamic_modifier:0 "£infrastructure_texticon 基础设施"
+ coal_smelter:0 "煤炭工业基地"
+ coal_smelter_plural:0 "煤炭工业基地"
+ coal_smelter_desc:0 "此建筑可为所属地区提供"
+ coal_smelter_amount:0 "$VALUE|Y0=$"
+ coal_smelter_resource:0 "￡resources_strip|7"
+
+
+
+
+ 

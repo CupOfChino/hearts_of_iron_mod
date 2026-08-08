@@ -1,0 +1,138 @@
+﻿l_english:
+ #####Policies########
+ HUN_nation_unity_movement_focus: "National Unity Movement"
+ HUN_nation_unity_movement_focus_desc: "Ethnic divisions have long been the root of the Empire's collapse. We must integrate and unify all ethnic groups within the nation, standing together under the banner of the Empire."
+
+ HUN_reviving_austria: "Reviving the Austrian Industrial Heartland"
+ HUN_reviving_austria_desc: "Placeholder text"
+
+ HUN_develop_transylvania: "Develop Transylvania"
+ HUN_develop_transylvania_desc: "Placeholder text"
+
+ HUN_invest_in_galicia: "Invest in Galicia"
+ HUN_invest_in_galicia_desc: "Placeholder text"
+
+ HUN_enhance_bohemia: "Strengthen Bohemia"
+ HUN_enhance_bohemia_desc: "This mod is pretty cool, please leave a like!"
+
+ HUN_capital_injection_coastal_trade: "Capital Injection for Coastal Trade"
+ HUN_capital_injection_coastal_trade_desc: "Ciallo～(∠・ω< )⌒★"
+
+ HUN_railway_junction: "Austro-Hungarian Railway Hub"
+ HUN_railway_junction_desc: "You know, I've always been too lazy to build railways. Using a national focus to do it feels so satisfying!"
+
+ GER_the_imperial_air_focus: "Eagles Soaring the Skies"
+ GER_the_imperial_air_focus_desc: "Air force reforms are complete. The Empire's eagles shall now defend the skies above the Fatherland."
+
+ GER_the_prussian_army_focus: "Imperial Army"
+ GER_the_prussian_army_focus_desc: "The Imperial Army shall crush all enemies obstructing the revival of the German nation."
+
+ GER_support_the_china: "Support China"
+ GER_support_the_china_desc: "East Asia is vast and rich in resources, and lies close to rubber sources. By extending our support to East Asia, they may be inclined to aid us in future campaigns."
+
+ GER_develop_army_factories: "Re-armament"
+ GER_the_super_power: "Demonic Weapon"
+ GER_the_super_power_desc: "Placeholder"
+
+ GER_anti_tank_research: "The Sharp Spear and the Solid Shield"
+ GER_anti_tank_research_desc: "Placeholder"
+
+ GER_the_mountain_army: "Special Combat Units"
+ GER_the_mountain_army_desc: "Placeholder"
+
+ GER_all_terrain_adaptation: "Superior Adaptability"
+ GER_all_terrain_adaptation_desc: "Placeholder"
+
+ GER_the_special_weapon: "Special Weapons Research"
+ GER_the_heavy_tank: "Heavy Decisive Battle Weapon"
+ GER_the_normal_infantry_equipment: "Excellent Infantry Equipment"
+
+ FRA_straighten_out_house_affairs: "Straighten Out Internal Affairs"
+ FRA_straighten_out_house_affairs_desc: "The Emperor of France has returned to his loyal Paris. It is time to reorganize the chaotic domestic politics."
+
+ FRA_improve_people_livelihood: "Improve People's Livelihood"
+ FRA_improve_people_livelihood_desc: "The domestic economic situation is grim. The government will prioritize building civilian infrastructure to secure the people's livelihood."
+
+ FRA_improve_engage_in_production: "Boost Production"
+ FRA_improve_engage_in_production_desc: "Next, we must stimulate production and restore the nation's productive capacity."
+
+ FRA_plant_site_expansion: "Factory Site Expansion"
+ FRA_plant_site_expansion_desc: "Change land use in certain areas to meet the requirements for factory construction."
+
+ FRA_improve_army: "Develop the Military"
+ FRA_improve_army_desc: "While neighbors stockpile grain, I stockpile guns. My neighbor is my granary."
+
+ FRA_improve_military_reform: "Military Reform"
+ FRA_improve_military_reform_desc: "Some old guard remain obsessed with the victories of the last war. If we face a new great war with such a stagnant mindset, we will be buried by it."
+
+ FRA_building_high_military_command: "Establish Supreme Military Command"
+ FRA_building_high_military_command_desc: "The German General Staff is indeed effective. We should establish our own Supreme Military Command."
+
+ FRA_defence_unsafe_neighboor: "Defend Against Unfriendly Neighbors"
+ FRA_defence_unsafe_neighboor_desc: "Our neighboring countries are not friendly. France must prepare for potential invasions at any moment."
+
+ FRA_organize_militia: "Organize Irregular Forces"
+ FRA_organize_militia_desc: "Training irregular forces can ease our defense burden and save military expenditures during peacetime."
+
+ FRA_enlargement_citizenship: "Expansion of Citizenship"
+ FRA_enlargement_citizenship_desc: "If we heavily promote that joining the French Army grants full citizenship, many cannon fodder recruits will swell our manpower pool."
+
+ FRA_attach_hol: "Attack the Low Countries"
+ FRA_attach_hol_desc: "The time has come. March forth today!"
+
+ FRA_allied_with_ger: "Alliance with the German Emperor"
+ FRA_allied_with_ger_desc: "The German Emperor has reclaimed his throne and established his sphere of influence. Perhaps we should attempt an alliance?"
+
+ FRA_attack_spr: "March Southward"
+ FRA_attack_spr_desc: "The Iberian Peninsula to the south poses a threat to the Empire's rear. We must eliminate this threat completely."
+
+ FRA_attack_ita: "March on Rome"
+ FRA_attack_ita_desc: "All roads lead to Rome."
+
+ FRA_the_france_empire: "Restore the Empire's Glory"
+ FRA_the_france_empire_desc: "Sweep across the continent. Return to our rightful place."
+
+ FRA_the_empire_army: "Imperial Army"
+ FRA_the_empire_army_desc: "Don't feel like writing a description, meow."
+
+ FRA_the_empire_navy: "Imperial Navy"
+ FRA_the_empire_navy_desc: "Still don't feel like writing a description, meow."
+
+ FRA_the_empire_air: "Imperial Air Force"
+ FRA_the_empire_air_desc: "Still not writing a description, meow."
+
+ FRA_start_industry: "Industrial Revitalization"
+ FRA_start_industry_desc: "Despite a long industrial tradition, France's industrial system showed signs of fatigue by the 1930s. Fragmented small enterprises, outdated production techniques, frequent strikes, and political instability severely constrained output. Steel plants were inefficient, military factories underutilized, and there was little coordination between civilian and military production. The nation was unprepared for the industrial demands of modern warfare."
+
+ FRA_metropolitan_france: "Invest in Metropolitan Resources"
+ FRA_metropolitan_france_desc: "Placeholder text, but just know this policy unlocks investment decisions."
+
+ FRA_the_market_france: "Invest in Metropolitan Markets"
+ FRA_the_market_france_desc: "Too lazy to write, just know this policy accepts resource investment decisions."
+
+ FRA_the_invest_colonies: "Invest in Colonies"
+ FRA_the_invest_colonies_desc: "Policy - unlocks - investment - decisions"
+
+ FRA_invest_in_market: "Invest in Colonial Markets"
+ FRA_invest_in_market_desc: "Symbolically adds a few civilian workers, meow."
+
+ FRA_invest_in_resource: "Invest in Colonial Resources"
+ FRA_invest_in_resource_desc: "Policy - unlocks - resource - decisions"
+
+ FRA_invest_the_armys: "Invest in Colonial Arms Industry"
+ FRA_invest_the_armys_desc: "Symbolically adds a few arms industry slots, meow."
+
+ FRA_cooperation_ger: "Enhance Cooperation with Germany"
+ FRA_cooperation_ger_desc: "Unlocks one or two new decisions, meow."
+
+ FRA_unite_the_spr: "Unite with Iberia"
+ FRA_unite_the_spr_desc: "On the Iberian Peninsula, nations have only two choices: merge willingly or be merged."
+ FRA_complete_defensive_focus: "Complete the Defensive Plan"
+ FRA_complete_defensive_focus_desc: "Through our unrelenting efforts, preparations for defensive operations are now complete."
+ FRA_complete_aggressive_focus: "Complete the Offensive Plan"
+ FRA_complete_aggressive_focus_desc: "Through our unrelenting efforts, preparations for offensive operations are now complete."
+ FRA_complete_army_reform: "Complete the Army Reforms"
+ FRA_complete_army_reform_desc: "The army reforms have been completed. Our military is now a modern fighting force!"
+ FRA_start_army_rearmament: "Begin Army Reforms"
+ FRA_start_army_rearmament_desc: "\"The Somme,\" \"Verdun\"... these names are medals of honor, yet also nightmares deeply embedded in the soul of our army. The pyrrhic victory of the Great War, bought with the blood of a generation, has crippled the offensive spirit of this once 'Foremost Army in Europe.' The rigid doctrine of 'Methodical Battle' has become dogma; the high command is steeped in conservatism and pessimism; troops are equipped with outdated arms, and their morale relies on static defense lines rather than mobile assault. The army's soul seems forever trapped in the muddy trenches of 1916.\n\nComplacency only leads to ruin! The bitter lessons have taught us resilience, not cowardice. The experience of the Great War shall become the bedrock of our caution and fortitude, a wellspring of vigilance and strength! Through a thorough overhaul of our doctrine and command structure, we will fully internalize the lessons of the last war. The legacy of Verdun shall ultimately forge an armed force that is more prudent, resilient, and deadly!"
+

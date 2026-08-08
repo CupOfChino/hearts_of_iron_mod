@@ -2580,6 +2580,187 @@ news_event = { #中美洲加入德国
 
 
 
+news_event = { #中国发现大油田
+	id = change_news.72
+	title = change_news.72.t
+	desc = change_news.72.d
+	picture = GFX_news_event_generic_research_lab
+
+	major = yes
+
+	is_triggered_only = yes
+
+	option = {
+		name = change_news.72.a
+		trigger = {
+			TAG = CHI
+		}
+	}
+
+	option = {
+		name = change_news.72.b
+		trigger = {
+			is_in_faction_with = GER
+		}
+	}
+
+	option = {
+		name = change_news.72.c
+		trigger = {
+			NOT = {
+				TAG = CHI
+				is_in_faction_with = GER
+			}
+		}
+	}
+}
+
+
+news_event = { #中国入侵尼泊尔
+	id = change_news.73
+	title = change_news.73.t
+	desc = change_news.73.d
+	picture = GFX_news_event_chinese_soldiers_city_ruin
+
+	major = yes
+
+	is_triggered_only = yes
+
+	option = {
+		name = change_news.73.a
+		trigger = {
+			TAG = CHI
+		}
+	}
+
+	option = {
+		name = change_news.73.b
+		trigger = {
+			is_in_faction_with = GER
+		}
+	}
+
+	option = {
+		name = change_news.73.c
+		trigger = {
+			NOT = {
+				TAG = CHI
+				is_in_faction_with = GER
+			}
+		}
+	}
+}
+
+
+news_event = { #中国入侵不丹
+	id = change_news.74
+	title = change_news.74.t
+	desc = change_news.74.d
+	picture = GFX_news_event_chinese_soldiers_city_ruin
+
+	major = yes
+
+	is_triggered_only = yes
+
+	option = {
+		name = change_news.74.a
+		trigger = {
+			TAG = CHI
+		}
+	}
+
+	option = {
+		name = change_news.74.b
+		trigger = {
+			is_in_faction_with = GER
+		}
+	}
+
+	option = {
+		name = change_news.74.c
+		trigger = {
+			NOT = {
+				TAG = CHI
+				is_in_faction_with = GER
+			}
+		}
+	}
+}
+
+
+news_event = { #中国收回广州湾与澳门
+	id = change_news.75
+	title = change_news.75.t
+	desc = change_news.75.d
+	picture = GFX_news_event_generic_handshake
+
+	major = yes
+
+	is_triggered_only = yes
+
+	option = {
+		name = change_news.75.a
+		trigger = {
+			TAG = CHI
+		}
+	}
+
+	option = {
+		name = change_news.75.b
+		trigger = {
+			is_in_faction_with = GER
+		}
+	}
+
+	option = {
+		name = change_news.75.c
+		trigger = {
+			NOT = {
+				TAG = CHI
+				is_in_faction_with = GER
+			}
+		}
+	}
+}
+
+
+news_event = { #中国接管法属印度支那
+	id = change_news.76
+	title = change_news.76.t
+	desc = change_news.76.d
+	picture = GFX_news_event_SOV_invasion_iran
+
+	major = yes
+
+	is_triggered_only = yes
+
+	option = {
+		name = change_news.76.a
+		trigger = {
+			TAG = CHI
+		}
+	}
+
+	option = {
+		name = change_news.76.b
+		trigger = {
+			is_in_faction_with = GER
+		}
+	}
+
+	option = {
+		name = change_news.76.c
+		trigger = {
+			NOT = {
+				TAG = CHI
+				is_in_faction_with = GER
+			}
+		}
+	}
+}
+
+
+
 
 
 

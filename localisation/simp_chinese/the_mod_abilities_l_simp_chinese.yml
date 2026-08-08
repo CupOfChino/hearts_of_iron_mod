@@ -1,0 +1,31 @@
+﻿l_simp_chinese:
+ ######将领技能#######
+ super_makeshift_bridges: "§Y超级跨河§!"
+ super_makeshift_bridges_name: "§Y超级跨河§!"
+ super_makeshift_bridges_desc: "§R喜欢守大河是吧§!，§R捅死你捅死你捅死你！！！！§!"
+
+ ######加成卡#######
+ chouka_buqiang: "§Y抽卡加成卡：步枪§!"
+ chouka_tank: "§Y抽卡加成卡：坦克§!"
+ chouka_pao: "§Y抽卡加成卡：火炮§!"
+ chouka_gongye: "§Y抽卡加成卡：工业§!"
+ chouka_dianzi: "§Y抽卡加成卡：电子§!"
+ chouka_jixiehua: "§Y抽卡加成卡：机械化§!"
+ chouka_zhiyuan: "§Y抽卡加成卡：支援连§!"
+ chouka_feiji: "§Y抽卡加成卡：飞机§!"
+ chouka_hedan: "§Y抽卡加成卡：核弹§!"
+ chouka_chuan: "§Y抽卡加成卡：舰船§!"
+
+ chouka_kongjun: "§Y抽卡：陆军卡§!"
+ chouka_haijun: "§Y抽卡：海军卡§!"
+ chouka_kongjun: "§Y抽卡：空军卡§!"
+ chouka_tezhong: "§Y抽卡：特种卡§!"
+
+
+ ######cost_text######
+ decision_cost_CP_15_pp_15: "£political_power  §Y15§! £command_power  §Y15§!"
+ decision_cost_CP_15_pp_15_blocked: "£political_power  §Y15§! £command_power  §Y15§!"
+ decision_cost_CP_15_pp_15_tooltip: "这个决议将花费 £political_power  §Y15§! £command_power  §Y15§!"
+ decision_cost_CP_25_pp_25: "£political_power  §Y25§! £command_power  §Y25§!"
+ decision_cost_CP_25_pp_25_blocked: "£political_power  §Y25§! £command_power  §Y25§!"
+ decision_cost_CP_25_pp_25_tooltip: "这个决议将花费 £political_power  §Y25§! £command_power  §Y25§!"

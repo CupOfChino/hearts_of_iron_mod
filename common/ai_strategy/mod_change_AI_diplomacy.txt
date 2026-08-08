@@ -1,0 +1,460 @@
+﻿# AI strategy split from mod_change_AI.txt - diplomacy
+#----------------------------------
+#已经修改的国家强化
+#感谢百度贴吧：法兰西社长的教程
+#----------------------------------
+#----------------------ai种地-------
+#-----------------------------------
+
+default_hun_ai_not_fight_eng_early = { #不要提前宣战英国
+    allowed = {
+        original_tag = HUN
+        original_tag = FRA
+        original_tag = GER
+    }
+
+    enable = {
+        country_exists = ENG
+        NOT = {
+            has_war_with = ENG
+        }
+        FRA = {
+            has_country_flag = cjg_open_the_third_empire
+        }
+        date < 1940.10.1
+    }
+
+    abort = {
+        has_war_with = ENG
+    }
+
+    ai_strategy = {
+        type = declare_war
+        id = "ENG"
+        value = -200
+    }
+
+    ai_strategy = {
+        type = conquer
+        id = "ENG"
+        value = -200
+    }
+
+    ai_strategy = {
+        type = declare_war
+        id = "USA"
+        value = -200
+    }
+
+    ai_strategy = {
+        type = conquer
+        id = "USA"
+        value = -200
+    }
+
+    ai_strategy = {
+        type = declare_war
+        id = "SOV"
+        value = -200
+    }
+
+    ai_strategy = {
+        type = conquer
+        id = "SOV"
+        value = -200
+    }
+
+}
+
+default_eng_ai_not_fight_ger_early = { #不要提前和德国干起来
+    allowed = {
+        original_tag = ENG
+        original_tag = SOV
+        original_tag = USA
+    }
+
+    enable = {
+        country_exists = GER
+        NOT = {
+            has_war_with = GER
+        }
+        FRA = {
+            has_country_flag = cjg_open_the_third_empire
+        }
+        date < 1940.10.1
+    }
+
+    abort = {
+        has_war_with = GER
+    }
+
+    ai_strategy = {
+        type = declare_war
+        id = "GER"
+        value = -200
+    }
+
+    ai_strategy = {
+        type = conquer
+        id = "GER"
+        value = -200
+    }
+
+    ai_strategy = {
+        type = declare_war
+        id = "FRA"
+        value = -200
+    }
+
+    ai_strategy = {
+        type = conquer
+        id = "FRA"
+        value = -200
+    }
+
+    ai_strategy = {
+        type = declare_war
+        id = "HUN"
+        value = -200
+    }
+
+    ai_strategy = {
+        type = conquer
+        id = "HUN"
+        value = -200
+    }
+
+}
+
+default_BUL_defensive_friend = { #保加利亚帮忙守家
+    allowed = {
+		original_tag = BUL
+	}
+	enable = {
+		date > 1940.1.1
+        is_in_faction_with = GER
+        FRA = {
+            has_country_flag = cjg_open_the_third_empire
+        }
+	}
+	abort_when_not_enabled = yes
+
+    ai_strategy = {
+		type = spare_unit_factor
+		id = "GER"
+		value = 50
+	}
+
+    ai_strategy = {
+		type = spare_unit_factor
+		id = "HUN"
+		value = 50
+	}
+
+    ai_strategy = {
+		type = spare_unit_factor
+		id = "FRA"
+		value = 50
+	}
+
+    ai_strategy = {
+		type = force_defend_ally_borders
+		id = "FRA"
+		value = 80
+	}
+
+}
+
+default_prc_help_chi_ok = { #中共别看戏了
+	allowed = {
+		original_tag = PRC
+	}
+	enable = {
+		is_in_faction_with = CHI
+        has_war_with = JAP
+	}
+	abort_when_not_enabled = yes
+    
+	ai_strategy = {
+		type = garrison
+		value = -25
+	}
+}
+
+default_prc_help_chi_ttk = { #队友救一下
+	allowed = {
+		original_tag = PRC
+	}
+	enable = {
+		is_in_faction_with = CHI
+        has_war_with = JAP
+        surrender_progress < 0.01
+	}
+	abort_when_not_enabled = yes
+    
+	ai_strategy = {
+		type = garrison
+		value = -25
+	}
+
+    ai_strategy = {
+		type = force_defend_ally_borders
+		id = "CHI"
+		value = 100
+	}
+    ai_strategy = {
+		type = force_defend_ally_borders
+		id = "SHX"
+		value = 20
+	}
+
+    ai_strategy = {
+		type = front_unit_request
+		tag = JAP
+		value = 1000
+	}
+}
+
+default_help_friend_ok = { #你们仨家里都挺安全的宝贝
+	allowed = {
+		OR = {
+            original_tag = HUN
+            original_tag = USA
+            #original_tag = ENG
+        }
+	}
+	enable = {
+		date > 1940.1.1
+        FRA = {
+            has_country_flag = cjg_open_the_third_empire
+        }
+        AND = {
+            HUN = {
+                is_in_faction_with = GER
+            }
+            FRA = {
+                is_in_faction_with = GER
+            }
+            USA = {
+                is_in_faction_with = ENG
+            }
+            ENG = {
+                is_in_faction_with = USA
+            }
+        }
+	}
+	abort_when_not_enabled = yes
+    
+	ai_strategy = {
+		type = garrison
+		value = -15
+	}
+}
+
+default_usa_sov_attack_ger = { #美国和苏联一起对抗德佬
+	allowed = {
+		OR = {
+            original_tag = USA
+            original_tag = SOV
+        }
+	}
+	enable = {
+		date > 1940.1.1
+        is_in_faction_with = ENG
+        country_exists = GER
+        FRA = {
+            has_country_flag = cjg_open_the_third_empire
+        }
+	}
+	abort_when_not_enabled = yes
+	
+	ai_strategy = {
+		type = area_priority
+		id = africa
+		value = -50
+	}
+
+    ai_strategy = {
+		type = area_priority
+		id = europe
+		value = 100
+	}
+
+    ai_strategy = {
+		type = front_unit_request
+		area = mainland_europe
+		value = 30
+	}
+
+    ai_strategy = {
+		type = front_unit_request
+		tag = GER
+		value = 100
+	}
+
+    ai_strategy = {
+		type = front_armor_score
+		id = "GER"
+		value = 100
+	}
+
+    ai_strategy = {
+		type = front_armor_score
+		id = "BLR"
+		value = 100
+	}
+
+    ai_strategy = {
+		type = front_armor_score
+		id = "CHI"
+		value = 20
+	}
+
+
+}
+
+default_eng_help_defensive = { #带英帮忙守一下
+	allowed = {
+		original_tag = ENG
+	}
+	enable = {
+		date > 1940.1.1
+        is_in_faction_with = ENG
+        country_exists = GER
+        FRA = {
+            has_country_flag = cjg_open_the_third_empire
+        }
+	}
+	abort_when_not_enabled = yes
+	
+	ai_strategy = {
+		type = area_priority
+		id = africa
+		value = 30
+	}
+
+    ai_strategy = {
+		type = area_priority
+		id = FRA_invasion_unit_request_target
+		value = 100
+	}
+
+    ai_strategy = {
+		type = area_priority
+		id = asia
+		value = 20
+	}
+
+    ai_strategy = {
+		type = area_priority
+		id = north_america
+		value = -50
+	}
+
+    ai_strategy = {
+		type = area_priority
+		id = europe
+		value = 30
+	}
+
+    ai_strategy = {
+		type = force_defend_ally_borders
+		id = "SOV"
+		value = 25
+	}
+
+    ai_strategy = {
+		type = front_unit_request
+		area = mainland_europe
+		value = 20
+	}
+
+    ai_strategy = {
+		type = force_defend_ally_borders
+		id = "NOR"
+		value = 10
+	}
+
+    ai_strategy = {
+		type = force_defend_ally_borders
+		id = "SWE"
+		value = 10
+	}
+
+    ai_strategy = {
+		type = force_defend_ally_borders
+		id = "ENG"
+		value = 50
+	}
+
+    ai_strategy = {
+		type = force_defend_ally_borders
+		id = "TUR"
+		value = 15
+	}
+
+    ai_strategy = {
+		type = force_defend_ally_borders
+		id = "GRE"
+		value = 10
+	}
+
+    ai_strategy = {
+		type = front_unit_request
+		tag = FRA
+		value = 100
+	}
+
+
+}
+
+default_help_bul_defensive = { #帮保加利亚守一下打土耳其和希腊
+    allowed = { 
+        OR = {
+            original_tag = FRA
+            original_tag = HUN
+            original_tag = GER
+            original_tag = BUL
+        }
+    }
+
+	enable = {
+		date > 1940.1.1
+        is_in_faction_with = GER
+        GRE = {
+            is_in_faction_with = ENG
+        }
+        FRA = {
+            has_country_flag = cjg_open_the_third_empire
+        }
+	}
+
+    abort = {
+        GRE = {
+            surrender_progress > 0.5
+        }
+    }
+
+	ai_strategy = {
+		type = force_defend_ally_borders
+		id = "BUL"
+		value = 10
+	}
+
+    ai_strategy = {
+		type = consider_weak
+		id = "GRE"
+		value = 50
+	}
+
+	ai_strategy = {
+		type = front_control
+		tag = GRE
+		ratio = 0.1
+		priority = 100
+		ordertype = front
+		execution_type = rush
+		execute_order = yes
+	}
+}
+

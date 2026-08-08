@@ -1,0 +1,29 @@
+﻿l_english:
+  ######Factions#######
+ GER_the_kaiserreich: "Imperial Pact"
+ GER_the_third_empire_faction: "Three Emperors' Alliance"
+
+ ENG_old_friend_faction: "Western European Alliance"
+ ENG_the_third_empire_faction: "Triple Entente"
+
+ HUN_with_BUL_faction: "Danube Pact"
+
+ Popular_Liberation_Front_faction: "People's Liberation Front"
+ National_Liberation_Front_faction: "National Liberation Front"
+ Chinese_United_Front_faction: "Chinese United Front"
+
+ the_LatinAmerica_faction: "Latin Alliance"
+
+ MEX_the_LatinAmerica: "Latin Alliance"
+ MEX_the_LatinAmerica_DEF: "Latin Alliance"
+  #######Research Cooperation#####
+ FRA_development_with_ger: "Technology Mutual Aid Committee"
+ FRA_development_with_ger_name: "Technology Mutual Aid Committee"
+
+ #####阵营主题###
+ the_world_hegemony: "§RWorld Hegemony§!"
+ the_world_hegemony_desc: "We will establish the alliance's dominance in the world!"
+
+ #####collections#####
+ COLLECTION_FACTION_OWNED_STATES: "Faction-controlled land"
+
