@@ -467,3 +467,7 @@
  CHI_mission_to_germany:0 "友好外交"
  FRA_far_east_compensation: "Far Eastern Compensation"
  FRA_far_east_compensation_desc: "Though the French Empire has handed over the administration of Indochina to China, the mining rights and commercial interests of the Far East still flow steadily into the treasury. The Empire will benefit from this deal for a long time."
+ SOV_red_army_navy_modifier_tooltip: "Red Navy"
+ SOV_red_army_navy_modifier_tooltip_1: "Red Navy"
+ SOV_red_army_navy_modifier_tooltip_2: "Red Navy"
+ SOV_the_red_navy_dynamic_modifier: "Red Navy"

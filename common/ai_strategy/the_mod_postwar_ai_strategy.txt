@@ -1,0 +1,170 @@
+#============== 战后核心国互相防备：三皇同盟凯旋线 ==============
+# 德/法/匈/中 各自建立新阵营后，互相视为威胁、敌视并备战
+# 注：策略会对匹配国（含自身）统一生效，对自身无效无害（原版同款写法）
+default_postwar_axis_mutual_wariness = {
+    allowed = {
+        OR = {
+            original_tag = GER
+            original_tag = FRA
+            original_tag = HUN
+            original_tag = CHI
+        }
+    }
+
+    enable = {
+        has_country_flag = postwar_core_flag
+        has_global_flag = three_empires_ww2_victory_flag
+    }
+
+    abort = {
+        has_global_flag = ww3_started_flag
+    }
+
+    abort_when_not_enabled = yes
+
+    ai_strategy = {
+        type = antagonize
+        id = GER
+        value = 300
+    }
+    ai_strategy = {
+        type = antagonize
+        id = FRA
+        value = 300
+    }
+    ai_strategy = {
+        type = antagonize
+        id = HUN
+        value = 300
+    }
+    ai_strategy = {
+        type = antagonize
+        id = CHI
+        value = 300
+    }
+    ai_strategy = {
+        type = contain
+        id = GER
+        value = 200
+    }
+    ai_strategy = {
+        type = contain
+        id = FRA
+        value = 200
+    }
+    ai_strategy = {
+        type = contain
+        id = HUN
+        value = 200
+    }
+    ai_strategy = {
+        type = contain
+        id = CHI
+        value = 200
+    }
+    ai_strategy = {
+        type = prepare_for_war
+        id = GER
+        value = 200
+    }
+    ai_strategy = {
+        type = prepare_for_war
+        id = FRA
+        value = 200
+    }
+    ai_strategy = {
+        type = prepare_for_war
+        id = HUN
+        value = 200
+    }
+    ai_strategy = {
+        type = prepare_for_war
+        id = CHI
+        value = 200
+    }
+}
+
+#============== 战后核心国互相防备：三国协约凯旋线 ==============
+# 英/美/苏/日 各自建立新阵营后，互相视为威胁、敌视并备战
+default_postwar_entente_mutual_wariness = {
+    allowed = {
+        OR = {
+            original_tag = ENG
+            original_tag = USA
+            original_tag = SOV
+            original_tag = JAP
+        }
+    }
+
+    enable = {
+        has_country_flag = postwar_core_flag
+        has_global_flag = triple_entente_ww2_victory_flag
+    }
+
+    abort = {
+        has_global_flag = ww3_started_flag
+    }
+
+    abort_when_not_enabled = yes
+
+    ai_strategy = {
+        type = antagonize
+        id = ENG
+        value = 300
+    }
+    ai_strategy = {
+        type = antagonize
+        id = USA
+        value = 300
+    }
+    ai_strategy = {
+        type = antagonize
+        id = SOV
+        value = 300
+    }
+    ai_strategy = {
+        type = antagonize
+        id = JAP
+        value = 300
+    }
+    ai_strategy = {
+        type = contain
+        id = ENG
+        value = 200
+    }
+    ai_strategy = {
+        type = contain
+        id = USA
+        value = 200
+    }
+    ai_strategy = {
+        type = contain
+        id = SOV
+        value = 200
+    }
+    ai_strategy = {
+        type = contain
+        id = JAP
+        value = 200
+    }
+    ai_strategy = {
+        type = prepare_for_war
+        id = ENG
+        value = 200
+    }
+    ai_strategy = {
+        type = prepare_for_war
+        id = USA
+        value = 200
+    }
+    ai_strategy = {
+        type = prepare_for_war
+        id = SOV
+        value = 200
+    }
+    ai_strategy = {
+        type = prepare_for_war
+        id = JAP
+        value = 200
+    }
+}

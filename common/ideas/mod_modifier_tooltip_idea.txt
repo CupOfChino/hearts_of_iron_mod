@@ -1304,6 +1304,101 @@ ideas = { #用于动态修正的显示idea
             }
         }
 
+        SOV_red_army_navy_modifier_tooltip = { 
+            allowed = {
+                
+            }
+
+            allowed_civil_war = {
+                always = yes
+            }
+                 
+            removal_cost = -1
+
+            modifier = {
+            }
+        }
+
+        SOV_red_army_navy_modifier_tooltip_1 = { 
+            allowed = {
+                
+            }
+
+            allowed_civil_war = {
+                always = yes
+            }
+                 
+            removal_cost = -1
+
+            modifier = {
+                NAVAL_SPEED_FACTOR = 0.03
+                TRAINING_TIME_NAVY_FACTOR = -0.05
+                NAVY_ORG_FACTOR = 0.05
+                NAVAL_MORALE_FACTOR = 0.05
+                NAVY_ANTI_AIR_ATTACK_FACTOR = 0.05
+                NAVAL_DAMAGE_FACTOR = 0.03
+                NAVAL_DEFENSE_FACTOR = 0.03
+                NAVAL_TORPEDO_COOLDOWN_FACTOR = -0.05
+                NAVAL_TORPEDO_HIT_CHANCE_FACTOR = 0.05
+                NAVAL_TORPEDO_REVEAL_CHANCE_FACTOR = -0.05
+                NAVAL_MINES_DAMAGE_FACTOR = 0.05
+                MINES_SWEEPING_BY_FLEETS_FACTOR = 0.05
+                NAVY_CAPITAL_SHIP_ATTACK_FACTOR = 0.03
+                NAVY_CAPITAL_SHIP_DEFENCE_FACTOR = 0.03
+                NAVY_SCREEN_ATTACK_FACTOR = 0.03
+                NAVY_SCREEN_DEFENCE_FACTOR = 0.03
+                CARRIER_SORTIE_EFFICIENCY_FACTOR = 0.05
+                CARRIER_CAPACITY_PENALTY_REDUCTION = 0.05
+                CARRIER_FIGHTER_SORTIE_EFFICIENCY_FACTOR = 0.05
+                NAVAL_STRIKE_TARGETTING_FACTOR = 0.05
+                NAVAL_STRIKE_ATTACK_FACTOR = 0.05
+                naval_invasion_capacity = 2
+                invasion_preparation = -0.05
+                naval_invasion_penalty = -0.05
+                amphibious_invasion_defence = 0.05
+            }
+        }
+
+        SOV_red_army_navy_modifier_tooltip_2 = { 
+            allowed = {
+                
+            }
+
+            allowed_civil_war = {
+                always = yes
+            }
+                 
+            removal_cost = -1
+
+            modifier = {
+                NAVAL_SPEED_FACTOR = 0.08
+                TRAINING_TIME_NAVY_FACTOR = -0.125
+                NAVY_ORG_FACTOR = 0.125
+                NAVAL_MORALE_FACTOR = 0.125
+                NAVY_ANTI_AIR_ATTACK_FACTOR = 0.125
+                NAVAL_DAMAGE_FACTOR = 0.08
+                NAVAL_DEFENSE_FACTOR = 0.08
+                NAVAL_TORPEDO_COOLDOWN_FACTOR = -0.125
+                NAVAL_TORPEDO_HIT_CHANCE_FACTOR = 0.125
+                NAVAL_TORPEDO_REVEAL_CHANCE_FACTOR = -0.125
+                NAVAL_MINES_DAMAGE_FACTOR = 0.125
+                MINES_SWEEPING_BY_FLEETS_FACTOR = 0.125
+                NAVY_CAPITAL_SHIP_ATTACK_FACTOR = 0.08
+                NAVY_CAPITAL_SHIP_DEFENCE_FACTOR = 0.08
+                NAVY_SCREEN_ATTACK_FACTOR = 0.08
+                NAVY_SCREEN_DEFENCE_FACTOR = 0.08
+                CARRIER_SORTIE_EFFICIENCY_FACTOR = 0.125
+                CARRIER_CAPACITY_PENALTY_REDUCTION = 0.125
+                CARRIER_FIGHTER_SORTIE_EFFICIENCY_FACTOR = 0.125
+                NAVAL_STRIKE_TARGETTING_FACTOR = 0.125
+                NAVAL_STRIKE_ATTACK_FACTOR = 0.125
+                naval_invasion_capacity = 5
+                invasion_preparation = -0.125
+                naval_invasion_penalty = -0.125
+                amphibious_invasion_defence = 0.125
+            }
+        }
+
         #英美
         USA_army_modifier_tooltip = { 
             allowed = {

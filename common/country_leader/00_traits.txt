@@ -2287,7 +2287,7 @@ leader_traits = {
 		}
 	}
 
-	revolutionary_general = { #Francisco Jos闂?Mugica
+	revolutionary_general = { #Francisco José Mugica
 		random = no
 		resistance_growth_on_our_occupied_states = 0.25
 		mobilization_laws_cost_factor = -0.25
@@ -2299,7 +2299,7 @@ leader_traits = {
 		}
 	}
 
-	fascist_militia_leader = { #Nicol闂傚倸鍊搁崐鎼佸磹閹间礁纾归柟闂寸绾惧湱鈧懓瀚崳纾嬨亹閹烘垹鍊為悷婊冪箻瀵娊鏁冮崒娑氬幈濡炪値鍘介崹鍨濠靛鐓曟繛鍡楃箳缁犲鏌″畝鈧崰鎾舵閹烘顫呴柣妯虹－瑜邦垶姊绘担鑺ャ€冪紒鈧担琛″亾濮橆偄宓嗙€殿喖顭烽幃銏㈡偘閳ュ厖澹曢梺姹囧灪椤旀牠鎮炴ィ鍐ㄧ柈闁告稑锕︾粻?Rodr闂傚倸鍊搁崐鎼佸磹閹间礁纾归柟闂寸绾惧綊鏌熼梻瀵割槮缁炬儳缍婇弻鐔兼⒒鐎靛壊妲紒鐐劤缂嶅﹪寮婚敐澶婄闁挎繂鎲涢幘缁樼厱濠电姴鍊归崑銉╂煛鐏炶濮傜€殿喗鎸抽幃娆徝圭€ｎ亙澹曢梺鍛婄缚閸庨亶藟濮樿埖鐓曠憸搴ㄣ€冮崱娑欏亗婵炲棙鎸婚悡娆愩亜閺嶃劎鐭婃い锝呭悑閵囧嫰濡烽妷顔叫ㄧ紓浣介哺閹稿骞忛崨鏉戠煑濠㈣泛顑囪ぐ鍡涙⒒娓氣偓濞佳兠洪妶鍥ｅ亾濮橆偄宓嗙€规洘妞介弫鎾绘偐閼碱剨绱叉繝鐢靛Т閿曘倝骞婃惔銊у祦鐎?Carrasco, probably others too could be used for random fascist leaders
+	fascist_militia_leader = { #Nicolás Rodríguez Carrasco, probably others too could be used for random fascist leaders
 		random = no
 		war_support_factor = 0.05
 		ai_will_do = {
@@ -2307,7 +2307,7 @@ leader_traits = {
 		}
 	}
 
-	cristero_general = { #Jes闂傚倸鍊搁崐鎼佸磹閹间礁纾归柟闂寸绾惧綊鏌熼梻瀵割槮缁炬儳缍婇弻锝夊箣閿濆憛鎾绘煕閵堝懎顏柡灞剧洴楠炴﹢鎳犻澶嬓滈梻浣规偠閸斿秶鎹㈤崘顔嘉﹂柛鏇ㄥ灠閸愨偓濡炪倖鍔﹀鈧紒顔煎缁辨挻鎷呴崫鍕戙垻绱撳鍜冭含鐎殿喛顕ч濂稿幢濡警娼梻浣筋潐椤旀牠宕伴弽顓ф晪?Degollado Gu闂傚倸鍊搁崐鎼佸磹閹间礁纾归柟闂寸绾惧綊鏌熼梻瀵割槮缁炬儳缍婇弻鐔兼⒒鐎靛壊妲紒鐐劤缂嶅﹪寮婚敐澶婄闁挎繂鎲涢幘缁樼厱濠电姴鍊归崑銉╂煛鐏炶濮傜€殿喗鎸抽幃娆徝圭€ｎ亙澹曢梺鍛婄缚閸庨亶藟濮樿埖鐓曠憸搴ㄣ€冮崱娑欏亗婵炲棙鎸婚悡娆愩亜閺嶃劎鐭婃い锝呭悑閵囧嫰濡烽妷顔解枅闂佸搫鐭夌槐鏇㈠焵椤掑﹦宀涢柡鍛箘缁綁寮崼鐔哄幐閻庡厜鍋撻柍褜鍓熷畷浼村箻鐠囪尙顔夐梺鍛婃处閸ㄩ亶骞嗛悙鐑樼厽闁绘梻顭堥ˉ瀣煏?
+	cristero_general = { #Jesús Degollado Guízar
 		random = no
 		conscription = 0.01
 		ai_will_do = {
@@ -2315,7 +2315,7 @@ leader_traits = {
 		}
 	}
 
-	primate_of_mexico = { # Luis Mar闂傚倸鍊搁崐鎼佸磹閹间礁纾归柟闂寸绾惧綊鏌熼梻瀵割槮缁炬儳缍婇弻鐔兼⒒鐎靛壊妲紒鐐劤缂嶅﹪寮婚敐澶婄闁挎繂鎲涢幘缁樼厱濠电姴鍊归崑銉╂煛鐏炶濮傜€殿喗鎸抽幃娆徝圭€ｎ亙澹曢梺鍛婄缚閸庨亶藟濮樿埖鐓曠憸搴ㄣ€冮崱娑欏亗婵炲棙鎸婚悡娆愩亜閺嶃劎鐭婃い锝呭悑閵囧嫰濡烽妷顔叫ㄧ紓?Mart闂傚倸鍊搁崐鎼佸磹閹间礁纾归柟闂寸绾惧綊鏌熼梻瀵割槮缁炬儳缍婇弻鐔兼⒒鐎靛壊妲紒鐐劤缂嶅﹪寮婚敐澶婄闁挎繂鎲涢幘缁樼厱濠电姴鍊归崑銉╂煛鐏炶濮傜€殿喗鎸抽幃娆徝圭€ｎ亙澹曢梺鍛婄缚閸庨亶藟濮樿埖鐓曠憸搴ㄣ€冮崱娑欏亗婵炲棙鎸婚悡娆愩亜閺嶃劎鐭婃い锝呭悑閵囧嫰濡烽妷顔叫ㄧ紓浣介哺閹稿骞忛崨鏉戠煑濠㈣泛顑囪ぐ瀣⒒娴ｅ憡鎯堥柣顓烆槺缁辩偞绗熼埀顒勫Υ娴ｇ硶鏋庨柟鐐綑閳ь剟鏀遍妵鍕箳瀹ュ洩绐楁繛?
+	primate_of_mexico = { # Luis María Martínez
 		random = no
 		stability_factor = 0.05
 		ai_will_do = {
@@ -3176,7 +3176,7 @@ leader_traits = {
 		mobilization_speed = 0.25
 	}
 
-	sultana = { #D闂傚倸鍊搁崐鎼佸磹閹间礁纾归柟闂寸绾惧綊鏌熼梻瀵割槮缁炬儳缍婇弻锝夊箣閿濆憛鎾绘煕婵犲倹鍋ラ柡灞诲姂瀵潙螖閳ь剚绂嶉幆褜娓婚柕鍫濈凹缁ㄥ鏌涢悢鍛婂唉闁绘侗鍣ｉ獮鍥敇閻斿嘲濡抽梻浣瑰缁诲倻鈧稈鏅犻弻銊╁Χ閸℃瑧鐦堥梺姹囧灲濞佳冪摥闂備焦瀵уú蹇涘磹濠靛绠栫憸鏂跨暦閸楃儐娼╅弶鍫氭櫓閸熷秹姊婚崒娆愮グ妞ゆ泦鍏犲綊鎮滈挊澶岀枃闂佽宕橀褏绮婚悢鍏肩叆闁绘柨鎼牎闂佺顑呴澶愬蓟閿濆憘鐔兼倻濡攱鐏嗘繝鐢靛仜閸氬鎮ч悩璇茶摕婵炴垶菤閺€浠嬫煕閳╁啨浠滈柡瀣懇濮婃椽骞嗚缁犵儤銇勯銏╂Ч闁告帒锕幊鏍煘閹傚闁荤喐鐟ョ€氼厾绮堥埀顒€鈹戦悙鑼勾闁告柨鐭傞崺銏ゅ籍閸繄顔囬柟鐓庣摠缁诲嫮绮诲鑸碘拺缂備焦锚婵箑霉濠婂嫮鐭掗柛鈹惧亾濡炪倖鍩堥崜娆撳箠閹邦厾鈻旂€广儱顦伴悡娆撴煟閹寸伝顏堟倶瀹ュ鐓涢悗锝庝簽鏁堥梺鍝勭焿缁绘繂鐣烽崼鏇炍ㄩ柕澹倹鍋呴梻鍌欑劍閻綊宕愬┑鍫笉闁哄稁鍘奸拑鐔哥箾閹存瑥鐏╃紒鐘差煼閺屻倗鍠婇崡鐐测拻濠碘€虫▕閸犳氨妲愰幘瀛樺闁伙絽鑻悧姘舵⒑缁嬪尅鏀婚柣妤佺矒楠炴垿濮€閻橆偅顫嶉梺闈涚箳婵兘顢欓幒妤佲拺缂備焦锚婵瞼鎮▎鎾寸厱閻庯綆鍋呭畷灞绢殽閻愯尙澧㈡繛?
+	sultana = { #Dürrüşehvar
 		random = no
 		stability_factor = 0.15
 		war_support_factor = 0.1
@@ -9081,7 +9081,7 @@ leader_traits = {
 		}
 	}
 
-	gran_carabinero = { # Hundred Thousand Sons of Negr闂傚倸鍊搁崐鎼佸磹閹间礁纾归柟闂寸绾惧綊鏌熼梻瀵割槮缁炬儳缍婇弻鐔兼⒒鐎靛壊妲紒鐐劤缂嶅﹪寮婚敐澶婄闁挎繂鎲涢幘缁樼厱濠电姴鍊归崑銉╂煛鐏炶濮傜€殿喗鎸抽幃娆徝圭€ｎ亙澹曢梺鍛婄缚閸庨亶藟濮樿埖鐓曠憸搴ㄣ€冮崱娑欏亗婵炲棙鎸婚悡娆愩亜閺嶃劎鐭婃い锝呭悑閵囧嫰濡烽妷顔叫ㄧ紓?
+	gran_carabinero = { # Hundred Thousand Sons of Negrín!
 		random = no
 		sprite = 13
 
@@ -12647,7 +12647,7 @@ leader_traits = {
 	}
 
 	AUS_king_of_austria = {
-		random = no #given to either Otto or Ernst R闂傚倸鍊搁崐鎼佸磹閹间礁纾归柟闂寸绾惧綊鏌熼梻瀵割槮缁炬儳缍婇弻锝夊箣閿濆憛鎾绘煕婵犲倹鍋ラ柡灞诲姂瀵潙螖閳ь剚绂嶉幆褜娓婚柕鍫濈凹缁ㄥ鏌涢悢鍛婂唉闁绘侗鍣ｉ獮鍥敇閻斿嘲濡抽梻浣瑰缁诲倻鈧稈鏅犻弻銊╁Χ閸℃瑧鐦堥梺姹囧灲濞佳冪摥闂備焦瀵уú蹇涘磹濠靛绠栫憸鏂跨暦閸楃偐妲堟繛鍡楃箚閸嬫捇宕奸弴鐔哄幍闂佽鍨卞妯款暱闂備胶绮幐濠氭儎椤栫偛钃熺€广儱鐗滃銊╂⒑閸涘﹥灏版慨妯稿妿缁辨捇骞樼紒妯轰患闁诲繒鍋犲Λ鍕敋瑜忕槐?Starhemberg in AUS_bring_back_the_habsburg_rule
+		random = no #given to either Otto or Ernst Rüdiger Starhemberg in AUS_bring_back_the_habsburg_rule
 
 		political_power_factor = 0.1
 		neutrality_drift = 0.03
@@ -13232,7 +13232,7 @@ leader_traits = {
 
 	#################################
 	#################################
-	#### GERMANY G闂傚倸鍊搁崐鎼佸磹閹间礁纾归柟闂寸绾惧綊鏌熼梻瀵割槮缁炬儳缍婇弻锝夊箣閿濆憛鎾绘煕閵堝懎顏柡灞剧洴椤㈡洟鏁愰崱娆樻К闂備胶顭堢悮顐﹀礉鎼淬劌绠熼柟闂寸缁秹鏌涢锝団枔闁稿鎸婚幏鍛村礈閸欏鍏婂┑鈽嗗亞婢ф鎹㈤崘顔肩柧闁挎繂顦伴埛鎴犵磽娴ｅ顏呮叏閳ь剟姊洪崫鍕櫤缂侇喗鎹囬獮鍐ㄎ旈崨顔尖偓缁樹繆椤栨繂浜归柣锕€鐗撳濠氬磼濮樺崬顤€婵炴挻纰嶉〃鍛祫閻熸粎澧楃敮妤呮偂閸愵喗鐓忓鑸电洴濡绢喚鈧懓澹婂鎾⒒閸屾艾鈧悂宕愰幖浣哥９闁归棿绀佺壕褰掓煙闂傚顦︾痪鎯х秺閺岋綁骞嬮敐鍛呮捇鏌涢妶鍛伃闁哄本鐩、鏇㈡晲閸℃瑯妲梻浣侯焾鐞氼偊宕濇惔銊ョ疅闁归棿绀佺猾宥夋煕椤愶絿绠橀柣锝呮惈閳规垿鎮欓崣澶嗘灆婵炲瓨绮嶇划宥夊磿椤愶附鈷掑ù锝囶焾閺嗛亶鏌熺喊鍗炰喊鐎规洘鍔楃划娆愭償閹惧浜栭梻浣侯攰閹活亪姊介崟顖涘亗闁绘梻鍘х粻褰掓煙绾板崬骞楃紒鑸垫皑缁辨帡骞嗘导鏉戞懙缂備胶绮换鍫ュ春閳ь剚銇勯幒鎴濐仼缂佲偓瀹€鍕厽闁靛牆姣熼惌?####
+	#### GERMANY GÖTTERDÄMMERUNG ####
 	#################################
 	#################################
 
@@ -13448,7 +13448,7 @@ leader_traits = {
 		production_speed_dockyard_factor = 0.1
 	}
 
-	GER_overseer_four_year_plan  = { #G闂傚倸鍊搁崐鎼佸磹閹间礁纾归柟闂寸绾惧綊鏌熼梻瀵割槮缁惧墽鎳撻—鍐偓锝庝簼閹癸綁鏌ｉ鐐搭棞闁靛棙甯掗～婵嬫晲閸涱剙顥氬┑掳鍊楁慨鐑藉磻閻愮儤鍋嬮柣妯荤湽閳ь兛绶氬鎾閳╁啯鐝曠紓鍌氬€烽悞锕佹懌濠电偛鎳庨悧鎾愁潖缂佹ɑ濯撮柧蹇撶畭閳ь剙锕弻娑㈠箻鐎靛摜鐣虹紓浣诡殘閸犲氦鐏冮梺鍛婁緱閸樹粙鎮楅鍕拺缂侇垱娲栨晶鑼磼鐎ｎ偄娴柟顕嗙節閹垽宕楅懖鈺佸箺闂備礁缍婇崑濠囧窗濡ゅ懎姹查柍杞版€ラ悷閭︾叆闁告粈绀佹俊?
+	GER_overseer_four_year_plan  = { #Göring 
 		sprite = 10
 		random = no
 		local_resources_factor = 0.05
@@ -13457,7 +13457,7 @@ leader_traits = {
 		#industry_free_repair_factor = 0.15?
 	}
 
-	GER_four_year_plan_plenipotentiary = { #G闂傚倸鍊搁崐鎼佸磹閹间礁纾归柟闂寸绾惧綊鏌熼梻瀵割槮缁惧墽鎳撻—鍐偓锝庝簼閹癸綁鏌ｉ鐐搭棞闁靛棙甯掗～婵嬫晲閸涱剙顥氬┑掳鍊楁慨鐑藉磻閻愮儤鍋嬮柣妯荤湽閳ь兛绶氬鎾閳╁啯鐝曠紓鍌氬€烽悞锕佹懌濠电偛鎳庨悧鎾愁潖缂佹ɑ濯撮柧蹇撶畭閳ь剙锕弻娑㈠箻鐎靛摜鐣虹紓浣诡殘閸犲氦鐏冮梺鍛婁緱閸樹粙鎮楅鍕拺缂侇垱娲栨晶鑼磼鐎ｎ偄娴柟顕嗙節閹垽宕楅懖鈺佸箺闂備礁缍婇崑濠囧窗濡ゅ懎姹查柍杞版€ラ悷閭︾叆闁告粈绀佹俊?
+	GER_four_year_plan_plenipotentiary = { #Göring 
 		sprite = 10
 		random = no
 		local_resources_factor = 0.05
@@ -13470,7 +13470,7 @@ leader_traits = {
 		line_change_production_efficiency_factor = 0.05
 	}
 	
-	GER_reich_marshal = { #G闂傚倸鍊搁崐鎼佸磹閹间礁纾归柟闂寸绾惧綊鏌熼梻瀵割槮缁惧墽鎳撻—鍐偓锝庝簼閹癸綁鏌ｉ鐐搭棞闁靛棙甯掗～婵嬫晲閸涱剙顥氬┑掳鍊楁慨鐑藉磻閻愮儤鍋嬮柣妯荤湽閳ь兛绶氬鎾閳╁啯鐝曠紓鍌氬€烽悞锕佹懌濠电偛鎳庨悧鎾愁潖缂佹ɑ濯撮柧蹇撶畭閳ь剙锕弻娑㈠箻鐎靛摜鐣虹紓浣诡殘閸犲氦鐏冮梺鍛婁緱閸樹粙鎮楅鍕拺缂侇垱娲栨晶鑼磼鐎ｎ偄娴柟顕嗙節閹垽宕楅懖鈺佸箺闂備礁缍婇崑濠囧窗濡ゅ懎姹查柍杞版€ラ悷閭︾叆闁告粈绀佹俊?- as Chief of Air
+	GER_reich_marshal = { #Göring - as Chief of Air
 		random = no
 		sprite = 2
 		#air_chief_ground_support_1
@@ -13644,7 +13644,7 @@ leader_traits = {
 		consumer_goods_factor = -0.1
 	}
 
-	GER_seasoned_socialist_resistance_fighter = { #Bernhard B闂傚倸鍊搁崐鎼佸磹閹间礁纾归柟闂寸绾惧綊鏌熼梻瀵割槮缁炬儳缍婇弻锝夊箣閿濆憛鎾绘煕閵堝懎顏柡灞剧洴椤㈡洟鏁愰崱娆樻К缂備胶鍋撻崕鍐差焽閿熺姴钃熼柨婵嗩槸椤懘鏌曡箛濠冩珖闁告梹鎮傚鍝勑ч崶褉鍋撳Δ鍛；闁规崘鍩栧畷鍙夌節闂堟侗鍎愭い銉ョ墛缁绘盯骞嬪┑鍡氬煘闂佸憡鎹囨禍璺侯潖閾忓湱鐭欓柛鏍电節缁舵挳姊虹化鏇熸珕闁绘濞€閻涱噣宕奸妷銉庘晠鏌曟径鍫濈仾闁哄倵鍋撻梻鍌欑婢瑰﹪宕戦幒妤€纾婚柛娑樼摠閸嬧晝绱掗婊庢n
+	GER_seasoned_socialist_resistance_fighter = { #Bernhard Bästlein
 		random = no
 		sprite = 13
 		army_core_defence_factor = 0.05
@@ -13689,7 +13689,7 @@ leader_traits = {
 		production_factory_efficiency_gain_factor = -0.05
 	}
 
-	GER_proletarian_leader = { #Th闂傚倸鍊搁崐鎼佸磹閹间礁纾归柟闂寸绾惧綊鏌熼梻瀵割槮缁炬儳缍婇弻锝夊箣閿濆憛鎾绘煕閵堝懎顏柡灞剧洴椤㈡洟鏁愰崱娆樻К缂備胶鍋撻崕鍐差焽閿熺姴钃熼柨婵嗩槸椤懘鏌曡箛濠冩珖闁告梹鎮傚鍝勑ч崶褉鍋撳Δ鍛；闁规崘鍩栧畷鍙夌節闂堟侗鍎愭い銉ョ墛缁绘盯骞嬪┑鍡氬煘闂佸憡鎹囨禍璺侯潖閾忓湱鐭欓柛鏍电節缁舵潙鈹戦悙宸Ч闁烩晩鍨跺畷娲倷閸濆嫮顓洪梺鎸庢磵閸嬫捇鏌ｈ箛鎾讹紞闁逞屽墲椤煤閺嶎灐娲Χ婢跺﹦锛滈梺瀹犳鐏?
+	GER_proletarian_leader = { #Thälmann
 		random = no
 		sprite = 13 
 
@@ -13697,7 +13697,7 @@ leader_traits = {
 		political_power_factor = 0.05
 	}
 
-	GER_militant_communist = { #Th闂傚倸鍊搁崐鎼佸磹閹间礁纾归柟闂寸绾惧綊鏌熼梻瀵割槮缁炬儳缍婇弻锝夊箣閿濆憛鎾绘煕閵堝懎顏柡灞剧洴椤㈡洟鏁愰崱娆樻К缂備胶鍋撻崕鍐差焽閿熺姴钃熼柨婵嗩槸椤懘鏌曡箛濠冩珖闁告梹鎮傚鍝勑ч崶褉鍋撳Δ鍛；闁规崘鍩栧畷鍙夌節闂堟侗鍎愭い銉ョ墛缁绘盯骞嬪┑鍡氬煘闂佸憡鎹囨禍璺侯潖閾忓湱鐭欓柛鏍电節缁舵潙鈹戦悙宸Ч闁烩晩鍨跺畷娲倷閸濆嫮顓洪梺鎸庢磵閸嬫捇鏌ｈ箛鎾讹紞闁逞屽墲椤煤閺嶎灐娲Χ婢跺﹦锛滈梺瀹犳鐏?upgrade
+	GER_militant_communist = { #Thälmann upgrade
 		random = no
 		sprite = 13
 
@@ -13990,7 +13990,7 @@ leader_traits = {
 		industrial_capacity_dockyard = 0.1
 	}
 
-	GER_goring_fuhrer = { # G闂傚倸鍊搁崐鎼佸磹閹间礁纾归柟闂寸绾惧綊鏌熼梻瀵割槮缁惧墽鎳撻—鍐偓锝庝簼閹癸綁鏌ｉ鐐搭棞闁靛棙甯掗～婵嬫晲閸涱剙顥氬┑掳鍊楁慨鐑藉磻閻愮儤鍋嬮柣妯荤湽閳ь兛绶氬鎾閳╁啯鐝曠紓鍌氬€烽悞锕佹懌濠电偛鎳庨悧鎾愁潖缂佹ɑ濯撮柧蹇撶畭閳ь剙锕弻娑㈠箻鐎靛摜鐣虹紓浣诡殘閸犲氦鐏冮梺鍛婁緱閸樹粙鎮楅鍕拺缂侇垱娲栨晶鑼磼鐎ｎ偄娴柟顕嗙節閹垽宕楅懖鈺佸箺闂備礁缍婇崑濠囧窗濡ゅ懎姹查柍杞版€ラ悷閭︾叆闁告粈绀佹俊?Fuhrer - Shoud match idea GER_goring_four_year_plan_plenipotentiary
+	GER_goring_fuhrer = { # Göring Fuhrer - Shoud match idea GER_goring_four_year_plan_plenipotentiary
 		random = no
 		
 		political_power_gain = 0.25 #Common for all fuhrers (inlcuding Hitler after Fuhrerprinzip)
@@ -14165,7 +14165,7 @@ leader_traits = {
 		navy_chief_cost_factor = -0.25
 	}
 
-	GER_stern_communist = { #Th闂傚倸鍊搁崐鎼佸磹閹间礁纾归柟闂寸绾惧綊鏌熼梻瀵割槮缁炬儳缍婇弻锝夊箣閿濆憛鎾绘煕閵堝懎顏柡灞剧洴椤㈡洟鏁愰崱娆樻К缂備胶鍋撻崕鍐差焽閿熺姴钃熼柨婵嗩槸椤懘鏌曡箛濠冩珖闁告梹鎮傚鍝勑ч崶褉鍋撳Δ鍛；闁规崘鍩栧畷鍙夌節闂堟侗鍎愭い銉ョ墛缁绘盯骞嬪┑鍡氬煘闂佸憡鎹囨禍璺侯潖閾忓湱鐭欓柛鏍电節缁舵潙鈹戦悙宸Ч闁烩晩鍨跺畷娲倷閸濆嫮顓洪梺鎸庢磵閸嬫捇鏌ｈ箛鎾讹紞闁逞屽墲椤煤閺嶎灐娲Χ婢跺﹦锛滈梺瀹犳鐏?leader trait upgrade
+	GER_stern_communist = { #Thälmann leader trait upgrade
 		random = no
 		sprite = 13 
 		communism_drift = 0.1
@@ -18627,7 +18627,7 @@ leader_traits = {
 		fascism_acceptance = 25
 	}
 
-	CZE_minister_of_foreign_affairs = { #Bene闂?s Foreign Affairs Minister
+	CZE_minister_of_foreign_affairs = { #Beneš's Foreign Affairs Minister
 		random = no
 		sprite = 13
 

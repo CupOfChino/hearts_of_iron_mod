@@ -1,0 +1,312 @@
+#============== 战后分裂效果：三皇同盟凯旋线 ==============
+# 强制解散旧阵营，各国单独组建新阵营（章程：世界霸权）
+postwar_axis_split_effect = {
+	# 点击后立即退出旧阵营，自立门户
+	leave_faction = yes
+	set_country_flag = postwar_core_flag
+	set_global_flag = third_empire_era_over_flag
+
+	# 标记所有前盟友，并建立"触发国与每个前盟友"的双向敌视
+	every_country = {
+		limit = {
+			OR = {
+				is_in_faction_with = GER
+				is_in_faction_with = FRA
+				is_in_faction_with = HUN
+				has_country_flag = the_eastern_chi_flag
+			}
+			NOT = { tag = ROOT }
+		}
+		set_country_flag = postwar_former_ally_flag
+		add_opinion_modifier = {
+			modifier = mod_postwar_hatred
+			target = ROOT
+		}
+		ROOT = {
+			add_opinion_modifier = {
+				modifier = mod_postwar_hatred
+				target = PREV
+			}
+		}
+	}
+
+	# 所有前盟友两两互相敌视（A-B、A-C、B-C 均为双向）
+	every_country = {
+		limit = { has_country_flag = postwar_former_ally_flag }
+		every_country = {
+			limit = {
+				has_country_flag = postwar_former_ally_flag
+				NOT = { tag = PREV }
+			}
+			add_opinion_modifier = {
+				modifier = mod_postwar_hatred
+				target = PREV
+			}
+		}
+	}
+
+	# 强制解散双方旧阵营
+	every_country = {
+		limit = {
+			OR = {
+				is_in_faction_with = GER
+				is_in_faction_with = FRA
+				is_in_faction_with = HUN
+				is_in_faction_with = ENG
+				is_in_faction_with = USA
+				is_in_faction_with = SOV
+			}
+		}
+		leave_faction = yes
+	}
+
+	# 抵消开局/三国协约创建时添加的 AI 友好策略（同款写法，负值对冲）
+	# 分裂后核心国之间不再想结盟、保护或支援
+	add_ai_strategy = {
+		type = alliance
+		id = GER
+		value = -3000
+	}
+	add_ai_strategy = {
+		type = protect
+		id = GER
+		value = -3000
+	}
+	add_ai_strategy = {
+		type = send_volunteers_desire
+		id = GER
+		value = -3000
+	}
+	add_ai_strategy = {
+		type = support
+		id = GER
+		value = -3000
+	}
+	add_ai_strategy = {
+		type = alliance
+		id = FRA
+		value = -3000
+	}
+	add_ai_strategy = {
+		type = protect
+		id = FRA
+		value = -3000
+	}
+	add_ai_strategy = {
+		type = send_volunteers_desire
+		id = FRA
+		value = -3000
+	}
+	add_ai_strategy = {
+		type = support
+		id = FRA
+		value = -3000
+	}
+	add_ai_strategy = {
+		type = alliance
+		id = HUN
+		value = -3000
+	}
+	add_ai_strategy = {
+		type = protect
+		id = HUN
+		value = -3000
+	}
+	add_ai_strategy = {
+		type = send_volunteers_desire
+		id = HUN
+		value = -3000
+	}
+	add_ai_strategy = {
+		type = support
+		id = HUN
+		value = -3000
+	}
+	add_ai_strategy = {
+		type = alliance
+		id = CHI
+		value = -3000
+	}
+	add_ai_strategy = {
+		type = protect
+		id = CHI
+		value = -3000
+	}
+	add_ai_strategy = {
+		type = send_volunteers_desire
+		id = CHI
+		value = -3000
+	}
+	add_ai_strategy = {
+		type = support
+		id = CHI
+		value = -3000
+	}
+
+	# 移除协约合作类民族精神（合作共赢）
+	remove_ideas = mod_the_buff_1
+	remove_ideas = mod_the_buff_2
+	remove_ideas = mod_the_buff_3
+	remove_ideas = mod_the_buff_4
+	remove_ideas = mod_the_buff_5
+	remove_ideas = mod_the_buff_6
+
+	# 以上效果全部执行完毕后，再立刻触发组阵营事件（独立事件统一创建阵营）
+	country_event = { id = postwar.4 }
+}
+
+#============== 战后分裂效果：三国协约凯旋线 ==============
+postwar_entente_split_effect = {
+	# 点击后立即退出旧阵营，自立门户
+	leave_faction = yes
+	set_country_flag = postwar_core_flag
+	set_global_flag = third_empire_era_over_flag
+
+	# 标记所有前盟友，并建立"触发国与每个前盟友"的双向敌视
+	every_country = {
+		limit = {
+			OR = {
+				is_in_faction_with = ENG
+				is_in_faction_with = USA
+				is_in_faction_with = SOV
+				has_country_flag = the_eastern_jap_flag
+			}
+			NOT = { tag = ROOT }
+		}
+		set_country_flag = postwar_former_ally_flag
+		add_opinion_modifier = {
+			modifier = mod_postwar_hatred
+			target = ROOT
+		}
+		ROOT = {
+			add_opinion_modifier = {
+				modifier = mod_postwar_hatred
+				target = PREV
+			}
+		}
+	}
+
+	# 所有前盟友两两互相敌视（A-B、A-C、B-C 均为双向）
+	every_country = {
+		limit = { has_country_flag = postwar_former_ally_flag }
+		every_country = {
+			limit = {
+				has_country_flag = postwar_former_ally_flag
+				NOT = { tag = PREV }
+			}
+			add_opinion_modifier = {
+				modifier = mod_postwar_hatred
+				target = PREV
+			}
+		}
+	}
+
+	# 强制解散双方旧阵营
+	every_country = {
+		limit = {
+			OR = {
+				is_in_faction_with = GER
+				is_in_faction_with = FRA
+				is_in_faction_with = HUN
+				is_in_faction_with = ENG
+				is_in_faction_with = USA
+				is_in_faction_with = SOV
+			}
+		}
+		leave_faction = yes
+	}
+
+	# 抵消开局/三国协约创建时添加的 AI 友好策略（同款写法，负值对冲）
+	# 分裂后核心国之间不再想结盟、保护或支援
+	add_ai_strategy = {
+		type = alliance
+		id = ENG
+		value = -3000
+	}
+	add_ai_strategy = {
+		type = protect
+		id = ENG
+		value = -3000
+	}
+	add_ai_strategy = {
+		type = send_volunteers_desire
+		id = ENG
+		value = -3000
+	}
+	add_ai_strategy = {
+		type = support
+		id = ENG
+		value = -3000
+	}
+	add_ai_strategy = {
+		type = alliance
+		id = USA
+		value = -3000
+	}
+	add_ai_strategy = {
+		type = protect
+		id = USA
+		value = -3000
+	}
+	add_ai_strategy = {
+		type = send_volunteers_desire
+		id = USA
+		value = -3000
+	}
+	add_ai_strategy = {
+		type = support
+		id = USA
+		value = -3000
+	}
+	add_ai_strategy = {
+		type = alliance
+		id = SOV
+		value = -3000
+	}
+	add_ai_strategy = {
+		type = protect
+		id = SOV
+		value = -3000
+	}
+	add_ai_strategy = {
+		type = send_volunteers_desire
+		id = SOV
+		value = -3000
+	}
+	add_ai_strategy = {
+		type = support
+		id = SOV
+		value = -3000
+	}
+	add_ai_strategy = {
+		type = alliance
+		id = JAP
+		value = -3000
+	}
+	add_ai_strategy = {
+		type = protect
+		id = JAP
+		value = -3000
+	}
+	add_ai_strategy = {
+		type = send_volunteers_desire
+		id = JAP
+		value = -3000
+	}
+	add_ai_strategy = {
+		type = support
+		id = JAP
+		value = -3000
+	}
+
+	# 移除协约合作类民族精神（合作共赢）
+	remove_ideas = mod_the_buff_1
+	remove_ideas = mod_the_buff_2
+	remove_ideas = mod_the_buff_3
+	remove_ideas = mod_the_buff_4
+	remove_ideas = mod_the_buff_5
+	remove_ideas = mod_the_buff_6
+
+	# 以上效果全部执行完毕后，再立刻触发组阵营事件（独立事件统一创建阵营）
+	country_event = { id = postwar.5 }
+}

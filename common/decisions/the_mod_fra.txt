@@ -67,6 +67,7 @@ FRA_third_empire_categories = { #三皇同盟
 
         remove_effect = {
             set_country_flag = has_factions_with_ger_flag
+            set_global_flag = tse_three_emperors_global_flag
             GER = {
                 set_country_flag = third_empire_has_become_flag
                 country_event = { id = change_germany.4 days = 1 }
@@ -191,6 +192,8 @@ FRA_third_empire_categories = { #三皇同盟
         remove_effect = {
 			country_event = { id = change_france.25 }
 			hidden_effect = {
+				set_global_flag = ww2_broke_out_flag
+				play_song = mod_ww2_boss
 				news_event = { id = change_news.33 hours = 1}
 			}
         }
@@ -2567,10 +2570,6 @@ FRA_the_army_rearmament_categories = {
 					has_completed_focus = FRA_proclaim_the_third_empire
 				}
 			}
-			OR = {
-				is_ai = yes
-				has_army_experience > 29.9
-			}
 		}
 
         visible = {
@@ -2582,6 +2581,10 @@ FRA_the_army_rearmament_categories = {
         fire_only_once = yes
 
 		cost = 20
+		custom_cost_trigger = {
+			has_army_experience > 29.9
+		}
+		custom_cost_text = the_mod_decision_cost_ArmXP_30
 		days_remove = 120
 
 		modifier = {
@@ -2641,10 +2644,6 @@ FRA_the_army_rearmament_categories = {
 					has_completed_focus = FRA_proclaim_the_third_empire
 				}
 			}
-			OR = {
-				is_ai = yes
-				has_army_experience > 29.9
-			}
 		}
 
         visible = {
@@ -2656,6 +2655,10 @@ FRA_the_army_rearmament_categories = {
         fire_only_once = yes
 
 		cost = 20
+		custom_cost_trigger = {
+			has_army_experience > 29.9
+		}
+		custom_cost_text = the_mod_decision_cost_ArmXP_30
 		days_remove = 120
 
 		modifier = {
@@ -2724,10 +2727,6 @@ FRA_the_army_rearmament_categories = {
 					has_completed_focus = FRA_proclaim_the_third_empire
 				}
 			}
-			OR = {
-				is_ai = yes
-				has_army_experience > 29.9
-			}
 		}
 
         visible = {
@@ -2739,6 +2738,10 @@ FRA_the_army_rearmament_categories = {
         fire_only_once = yes
 
 		cost = 20
+		custom_cost_trigger = {
+			has_army_experience > 29.9
+		}
+		custom_cost_text = the_mod_decision_cost_ArmXP_30
 		days_remove = 120
 
 		modifier = {
@@ -2805,10 +2808,6 @@ FRA_the_army_rearmament_categories = {
 					has_completed_focus = FRA_proclaim_the_third_empire
 				}
 			}
-			OR = {
-				is_ai = yes
-				has_army_experience > 29.9
-			}
 		}
 
         visible = {
@@ -2820,6 +2819,10 @@ FRA_the_army_rearmament_categories = {
         fire_only_once = yes
 
 		cost = 20
+		custom_cost_trigger = {
+			has_army_experience > 29.9
+		}
+		custom_cost_text = the_mod_decision_cost_ArmXP_30
 		days_remove = 60
 
 		modifier = {
@@ -2957,10 +2960,6 @@ FRA_the_army_rearmament_categories = {
 				has_completed_focus = FRA_flying_artillery
 			}
 
-			OR = {
-				is_ai = yes
-				has_army_experience > 29.9
-			}
 		}
 
         visible = {
@@ -2972,6 +2971,10 @@ FRA_the_army_rearmament_categories = {
         fire_only_once = yes
 
 		cost = 20
+		custom_cost_trigger = {
+			has_army_experience > 29.9
+		}
+		custom_cost_text = the_mod_decision_cost_ArmXP_30
 		days_remove = 120
 
 		modifier = {
@@ -3022,10 +3025,6 @@ FRA_the_army_rearmament_categories = {
 				has_completed_focus = FRA_methodical_battle
 			}
 
-			OR = {
-				is_ai = yes
-				has_army_experience > 29.9
-			}
 		}
 
         visible = {
@@ -3037,6 +3036,10 @@ FRA_the_army_rearmament_categories = {
         fire_only_once = yes
 
 		cost = 20
+		custom_cost_trigger = {
+			has_army_experience > 29.9
+		}
+		custom_cost_text = the_mod_decision_cost_ArmXP_30
 		days_remove = 120
 
 		modifier = {
@@ -3084,10 +3087,6 @@ FRA_the_army_rearmament_categories = {
 				has_completed_focus = FRA_artillery_focus
 			}
 
-			OR = {
-				is_ai = yes
-				has_army_experience > 29.9
-			}
 		}
 
         visible = {
@@ -3099,6 +3098,10 @@ FRA_the_army_rearmament_categories = {
         fire_only_once = yes
 
 		cost = 20
+		custom_cost_trigger = {
+			has_army_experience > 29.9
+		}
+		custom_cost_text = the_mod_decision_cost_ArmXP_30
 		days_remove = 120
 
 		modifier = {
@@ -3151,10 +3154,6 @@ FRA_the_army_rearmament_categories = {
 				has_completed_focus = FRA_mechanized_focus
 			}
 
-			OR = {
-				is_ai = yes
-				has_army_experience > 29.9
-			}
 		}
 
         visible = {
@@ -3166,6 +3165,10 @@ FRA_the_army_rearmament_categories = {
         fire_only_once = yes
 
 		cost = 20
+		custom_cost_trigger = {
+			has_army_experience > 29.9
+		}
+		custom_cost_text = the_mod_decision_cost_ArmXP_30
 		days_remove = 120
 
 		modifier = {
@@ -3224,10 +3227,6 @@ FRA_the_army_rearmament_categories = {
 					has_completed_focus = FRA_proclaim_the_third_empire
 				}
 			}
-			OR = {
-				is_ai = yes
-				has_army_experience > 29.9
-			}
 		}
 
         visible = {
@@ -3239,6 +3238,10 @@ FRA_the_army_rearmament_categories = {
         fire_only_once = yes
 
 		cost = 20
+		custom_cost_trigger = {
+			has_army_experience > 29.9
+		}
+		custom_cost_text = the_mod_decision_cost_ArmXP_30
 		days_remove = 120
 
 		modifier = {
@@ -3299,10 +3302,6 @@ FRA_the_army_rearmament_categories = {
 					has_completed_focus = FRA_proclaim_the_third_empire
 				}
 			}
-			OR = {
-				is_ai = yes
-				has_army_experience > 29.9
-			}
 		}
 
         visible = {
@@ -3314,6 +3313,10 @@ FRA_the_army_rearmament_categories = {
         fire_only_once = yes
 
 		cost = 20
+		custom_cost_trigger = {
+			has_army_experience > 29.9
+		}
+		custom_cost_text = the_mod_decision_cost_ArmXP_30
 		days_remove = 120
 
 		modifier = {
@@ -3383,10 +3386,6 @@ FRA_the_army_rearmament_categories = {
 					has_completed_focus = FRA_proclaim_the_third_empire
 				}
 			}
-			OR = {
-				is_ai = yes
-				has_army_experience > 29.9
-			}
 		}
 
         visible = {
@@ -3398,6 +3397,10 @@ FRA_the_army_rearmament_categories = {
         fire_only_once = yes
 
 		cost = 20
+		custom_cost_trigger = {
+			has_army_experience > 29.9
+		}
+		custom_cost_text = the_mod_decision_cost_ArmXP_30
 		days_remove = 120
 
 		modifier = {
@@ -3464,10 +3467,6 @@ FRA_the_army_rearmament_categories = {
 					has_completed_focus = FRA_proclaim_the_third_empire
 				}
 			}
-			OR = {
-				is_ai = yes
-				has_army_experience > 29.9
-			}
 		}
 
         visible = {
@@ -3479,6 +3478,10 @@ FRA_the_army_rearmament_categories = {
         fire_only_once = yes
 
 		cost = 20
+		custom_cost_trigger = {
+			has_army_experience > 29.9
+		}
+		custom_cost_text = the_mod_decision_cost_ArmXP_30
 		days_remove = 120
 
 		modifier = {
@@ -3616,10 +3619,6 @@ FRA_the_army_rearmament_categories = {
 					has_completed_focus = FRA_proclaim_the_third_empire
 				}
 			}
-			OR = {
-				is_ai = yes
-				has_army_experience > 29.9
-			}
 		}
 
         visible = {
@@ -3631,6 +3630,10 @@ FRA_the_army_rearmament_categories = {
         fire_only_once = yes
 
 		cost = 20
+		custom_cost_trigger = {
+			has_army_experience > 29.9
+		}
+		custom_cost_text = the_mod_decision_cost_ArmXP_30
 		days_remove = 90
 
 		modifier = {
@@ -3691,10 +3694,6 @@ FRA_the_army_rearmament_categories = {
 					has_completed_focus = FRA_proclaim_the_third_empire
 				}
 			}
-			OR = {
-				is_ai = yes
-				has_army_experience > 29.9
-			}
 		}
 
         visible = {
@@ -3706,6 +3705,10 @@ FRA_the_army_rearmament_categories = {
         fire_only_once = yes
 
 		cost = 20
+		custom_cost_trigger = {
+			has_army_experience > 29.9
+		}
+		custom_cost_text = the_mod_decision_cost_ArmXP_30
 		days_remove = 90
 
 		modifier = {
@@ -3776,10 +3779,6 @@ FRA_the_army_rearmament_categories = {
 					has_completed_focus = FRA_proclaim_the_third_empire
 				}
 			}
-			OR = {
-				is_ai = yes
-				has_army_experience > 29.9
-			}
 		}
 
         visible = {
@@ -3791,6 +3790,10 @@ FRA_the_army_rearmament_categories = {
         fire_only_once = yes
 
 		cost = 20
+		custom_cost_trigger = {
+			has_army_experience > 29.9
+		}
+		custom_cost_text = the_mod_decision_cost_ArmXP_30
 		days_remove = 90
 
 		modifier = {
@@ -3857,10 +3860,6 @@ FRA_the_army_rearmament_categories = {
 					has_completed_focus = FRA_proclaim_the_third_empire
 				}
 			}
-			OR = {
-				is_ai = yes
-				has_army_experience > 29.9
-			}
 		}
 
         visible = {
@@ -3872,6 +3871,10 @@ FRA_the_army_rearmament_categories = {
         fire_only_once = yes
 
 		cost = 20
+		custom_cost_trigger = {
+			has_army_experience > 29.9
+		}
+		custom_cost_text = the_mod_decision_cost_ArmXP_30
 		days_remove = 90
 
 		modifier = {

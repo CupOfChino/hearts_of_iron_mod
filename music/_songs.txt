@@ -1,0 +1,10 @@
+music_station = "base_music"
+
+# 二战爆发 BGM：权重为 0，平时绝不自动播放；
+# 仅在二战爆发新闻触发时通过 play_song = mod_ww2_boss 主动播放一次（完整播放后自然停止）
+music = {
+	song = "mod_ww2_boss"
+	chance = {
+		factor = 0
+	}
+}

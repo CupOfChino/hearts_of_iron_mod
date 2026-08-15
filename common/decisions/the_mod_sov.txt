@@ -116,15 +116,15 @@ SOV_the_third_empire_categories = { #苏联扩张线
         available = {
 			has_government = communism
 			date > 1939.1.1
-			OR = {
-				has_army_experience > 199.99
-				is_ai = yes
-			}
         }
 
         fire_only_once = yes
 
 		cost = 50
+		custom_cost_trigger = {
+			has_army_experience > 199.99
+		}
+		custom_cost_text = the_mod_decision_cost_ArmXP_200
 		days_remove = 150
 
 		complete_effect = {
@@ -242,10 +242,6 @@ SOV_the_third_empire_categories = { #苏联扩张线
 			AND = {
 				has_government = communism
 				date > 1940.1.1
-				OR = {
-					has_army_experience > 199.99
-					is_ai = yes
-				}
 				has_country_flag = SOV_the_third_empire_categories_001_flag
 				FRA = {
 					has_country_flag = cjg_open_the_third_empire
@@ -256,6 +252,10 @@ SOV_the_third_empire_categories = { #苏联扩张线
         fire_only_once = yes
 
 		cost = 50
+		custom_cost_trigger = {
+			has_army_experience > 199.99
+		}
+		custom_cost_text = the_mod_decision_cost_ArmXP_200
 		days_remove = 150
 
 		complete_effect = {
@@ -377,10 +377,6 @@ SOV_the_third_empire_categories = { #苏联扩张线
         available = {
 			has_government = communism
 			date > 1939.1.1
-			OR = {
-				has_army_experience > 199.99
-				is_ai = yes
-			}
 			any_enemy_country = {
 				is_major = yes
 			}
@@ -389,6 +385,10 @@ SOV_the_third_empire_categories = { #苏联扩张线
         fire_only_once = yes
 
 		cost = 50
+		custom_cost_trigger = {
+			has_army_experience > 199.99
+		}
+		custom_cost_text = the_mod_decision_cost_ArmXP_200
 		days_remove = 180
 
 		complete_effect = {
@@ -509,16 +509,16 @@ SOV_the_third_empire_categories = { #苏联扩张线
         available = {
 			has_government = communism
 			date > 1939.1.1
-			OR = {
-				has_air_experience > 199.99
-				is_ai = yes
-			}
 			#has_country_flag = SOV_the_third_empire_categories_001_flag
         }
 
         fire_only_once = yes
 
 		cost = 50
+		custom_cost_trigger = {
+			has_air_experience > 199.99
+		}
+		custom_cost_text = the_mod_decision_cost_AirXP_200
 		days_remove = 180
 
 		complete_effect = {
@@ -621,16 +621,16 @@ SOV_the_third_empire_categories = { #苏联扩张线
         available = {
 			has_government = communism
 			date > 1939.1.1
-			OR = {
-				has_air_experience > 199.99
-				is_ai = yes
-			}
 			#has_country_flag = SOV_the_third_empire_categories_001_flag
         }
 
         fire_only_once = yes
 
 		cost = 50
+		custom_cost_trigger = {
+			has_air_experience > 199.99
+		}
+		custom_cost_text = the_mod_decision_cost_AirXP_200
 		days_remove = 180
 
 		complete_effect = {
@@ -721,10 +721,6 @@ SOV_the_third_empire_categories = { #苏联扩张线
         available = {
 			has_government = communism
 			date > 1939.1.1
-			OR = {
-				has_air_experience > 199.99
-				is_ai = yes
-			}
 			has_country_flag = SOV_the_third_empire_categories_004
 			any_enemy_country = {
 				is_major = yes
@@ -734,6 +730,10 @@ SOV_the_third_empire_categories = { #苏联扩张线
         fire_only_once = yes
 
 		cost = 50
+		custom_cost_trigger = {
+			has_air_experience > 199.99
+		}
+		custom_cost_text = the_mod_decision_cost_AirXP_200
 		days_remove = 180
 
 		complete_effect = {
@@ -925,6 +925,287 @@ SOV_the_third_empire_categories = { #苏联扩张线
         }
 	}
 
+	SOV_the_third_empire_categories_008 = { #重建红海军
+		allowed = {
+			original_tag = SOV
+		}
+
+		icon = generic_naval
+
+		visible = {
+			
+		}
+
+		available = {
+			has_government = communism
+			date > 1939.1.1
+		}
+
+		fire_only_once = yes
+
+		cost = 50
+		custom_cost_trigger = {
+			has_navy_experience > 199.99
+		}
+		custom_cost_text = the_mod_decision_cost_NavXP_200
+		days_remove = 150
+
+		complete_effect = {
+			navy_experience = -200
+		}
+
+		remove_effect = {
+			set_country_flag = SOV_the_third_empire_categories_008_flag
+			hidden_effect = {
+				set_variable = { var = SOV_the_red_navy_NAVAL_SPEED_FACTOR value = 0 }
+				set_variable = { var = SOV_the_red_navy_TRAINING_TIME_NAVY_FACTOR value = 0 }
+				set_variable = { var = SOV_the_red_navy_NAVY_ORG_FACTOR value = 0 }
+				set_variable = { var = SOV_the_red_navy_NAVAL_MORALE_FACTOR value = 0 }
+				set_variable = { var = SOV_the_red_navy_NAVY_ANTI_AIR_ATTACK_FACTOR value = 0 }
+				set_variable = { var = SOV_the_red_navy_NAVAL_DAMAGE_FACTOR value = 0 }
+				set_variable = { var = SOV_the_red_navy_NAVAL_DEFENSE_FACTOR value = 0 }
+				set_variable = { var = SOV_the_red_navy_NAVAL_TORPEDO_COOLDOWN_FACTOR value = 0 }
+				set_variable = { var = SOV_the_red_navy_NAVAL_TORPEDO_HIT_CHANCE_FACTOR value = 0 }
+				set_variable = { var = SOV_the_red_navy_NAVAL_TORPEDO_REVEAL_CHANCE_FACTOR value = 0 }
+				set_variable = { var = SOV_the_red_navy_NAVAL_MINES_DAMAGE_FACTOR value = 0 }
+				set_variable = { var = SOV_the_red_navy_MINES_SWEEPING_BY_FLEETS_FACTOR value = 0 }
+				set_variable = { var = SOV_the_red_navy_NAVY_CAPITAL_SHIP_ATTACK_FACTOR value = 0 }
+				set_variable = { var = SOV_the_red_navy_NAVY_CAPITAL_SHIP_DEFENCE_FACTOR value = 0 }
+				set_variable = { var = SOV_the_red_navy_NAVY_SCREEN_ATTACK_FACTOR value = 0 }
+				set_variable = { var = SOV_the_red_navy_NAVY_SCREEN_DEFENCE_FACTOR value = 0 }
+				set_variable = { var = SOV_the_red_navy_CARRIER_SORTIE_EFFICIENCY_FACTOR value = 0 }
+				set_variable = { var = SOV_the_red_navy_CARRIER_CAPACITY_PENALTY_REDUCTION value = 0 }
+				set_variable = { var = SOV_the_red_navy_CARRIER_FIGHTER_SORTIE_EFFICIENCY_FACTOR value = 0 }
+				set_variable = { var = SOV_the_red_navy_NAVAL_STRIKE_TARGETTING_FACTOR value = 0 }
+				set_variable = { var = SOV_the_red_navy_NAVAL_STRIKE_ATTACK_FACTOR value = 0 }
+				set_variable = { var = SOV_the_red_navy_naval_invasion_capacity value = 0 }
+				set_variable = { var = SOV_the_red_navy_invasion_preparation value = 0 }
+				set_variable = { var = SOV_the_red_navy_naval_invasion_penalty value = 0 }
+				set_variable = { var = SOV_the_red_navy_amphibious_invasion_defence value = 0 }
+			}
+			if = {
+				limit = {
+					NOT = {
+						has_dynamic_modifier = SOV_the_red_navy_dynamic_modifier
+					}
+				}
+				add_dynamic_modifier = {
+					modifier = SOV_the_red_navy_dynamic_modifier
+				}
+			}
+			add_to_variable = { 
+				SOV_the_red_navy_NAVAL_SPEED_FACTOR = 0.03
+			}
+			add_to_variable = { 
+				SOV_the_red_navy_TRAINING_TIME_NAVY_FACTOR = -0.05
+			}
+			add_to_variable = { 
+				SOV_the_red_navy_NAVY_ORG_FACTOR = 0.05
+			}
+			add_to_variable = { 
+				SOV_the_red_navy_NAVAL_MORALE_FACTOR = 0.05
+			}
+			add_to_variable = { 
+				SOV_the_red_navy_NAVY_ANTI_AIR_ATTACK_FACTOR = 0.05
+			}
+			add_to_variable = { 
+				SOV_the_red_navy_NAVAL_DAMAGE_FACTOR = 0.03
+			}
+			add_to_variable = { 
+				SOV_the_red_navy_NAVAL_DEFENSE_FACTOR = 0.03
+			}
+			add_to_variable = { 
+				SOV_the_red_navy_NAVAL_TORPEDO_COOLDOWN_FACTOR = -0.05
+			}
+			add_to_variable = { 
+				SOV_the_red_navy_NAVAL_TORPEDO_HIT_CHANCE_FACTOR = 0.05
+			}
+			add_to_variable = { 
+				SOV_the_red_navy_NAVAL_TORPEDO_REVEAL_CHANCE_FACTOR = -0.05
+			}
+			add_to_variable = { 
+				SOV_the_red_navy_NAVAL_MINES_DAMAGE_FACTOR = 0.05
+			}
+			add_to_variable = { 
+				SOV_the_red_navy_MINES_SWEEPING_BY_FLEETS_FACTOR = 0.05
+			}
+			add_to_variable = { 
+				SOV_the_red_navy_NAVY_CAPITAL_SHIP_ATTACK_FACTOR = 0.03
+			}
+			add_to_variable = { 
+				SOV_the_red_navy_NAVY_CAPITAL_SHIP_DEFENCE_FACTOR = 0.03
+			}
+			add_to_variable = { 
+				SOV_the_red_navy_NAVY_SCREEN_ATTACK_FACTOR = 0.03
+			}
+			add_to_variable = { 
+				SOV_the_red_navy_NAVY_SCREEN_DEFENCE_FACTOR = 0.03
+			}
+			add_to_variable = { 
+				SOV_the_red_navy_CARRIER_SORTIE_EFFICIENCY_FACTOR = 0.05
+			}
+			add_to_variable = { 
+				SOV_the_red_navy_CARRIER_CAPACITY_PENALTY_REDUCTION = 0.05
+			}
+			add_to_variable = { 
+				SOV_the_red_navy_CARRIER_FIGHTER_SORTIE_EFFICIENCY_FACTOR = 0.05
+			}
+			add_to_variable = { 
+				SOV_the_red_navy_NAVAL_STRIKE_TARGETTING_FACTOR = 0.05
+			}
+			add_to_variable = { 
+				SOV_the_red_navy_NAVAL_STRIKE_ATTACK_FACTOR = 0.05
+			}
+			add_to_variable = { 
+				SOV_the_red_navy_naval_invasion_capacity = 2
+			}
+			add_to_variable = { 
+				SOV_the_red_navy_invasion_preparation = -0.05
+			}
+			add_to_variable = { 
+				SOV_the_red_navy_naval_invasion_penalty = -0.05
+			}
+			add_to_variable = { 
+				SOV_the_red_navy_amphibious_invasion_defence = 0.05
+			}
+			effect_tooltip = {
+				swap_ideas = {
+					add_idea = SOV_red_army_navy_modifier_tooltip_1
+					remove_idea = SOV_red_army_navy_modifier_tooltip
+				}
+			}
+		}
+
+		ai_will_do = {
+			factor = 1000
+		}
+	}
+
+	SOV_the_third_empire_categories_009 = { #红海军无敌
+		allowed = {
+			original_tag = SOV
+		}
+
+		icon = generic_naval
+
+		visible = {
+			has_country_flag = SOV_the_third_empire_categories_008_flag
+			FRA = {
+				has_country_flag = cjg_open_the_third_empire
+			}
+		}
+
+		available = {
+			has_government = communism
+			date > 1940.1.1
+			has_country_flag = SOV_the_third_empire_categories_008_flag
+			FRA = {
+				has_country_flag = cjg_open_the_third_empire
+			}
+		}
+
+		fire_only_once = yes
+
+		cost = 50
+		custom_cost_trigger = {
+			has_navy_experience > 199.99
+		}
+		custom_cost_text = the_mod_decision_cost_NavXP_200
+		days_remove = 150
+
+		complete_effect = {
+			navy_experience = -200
+		}
+
+		remove_effect = {
+			set_country_flag = SOV_the_third_empire_categories_009_flag
+			add_to_variable = { 
+				SOV_the_red_navy_NAVAL_SPEED_FACTOR = 0.05
+			}
+			add_to_variable = { 
+				SOV_the_red_navy_TRAINING_TIME_NAVY_FACTOR = -0.075
+			}
+			add_to_variable = { 
+				SOV_the_red_navy_NAVY_ORG_FACTOR = 0.075
+			}
+			add_to_variable = { 
+				SOV_the_red_navy_NAVAL_MORALE_FACTOR = 0.075
+			}
+			add_to_variable = { 
+				SOV_the_red_navy_NAVY_ANTI_AIR_ATTACK_FACTOR = 0.075
+			}
+			add_to_variable = { 
+				SOV_the_red_navy_NAVAL_DAMAGE_FACTOR = 0.05
+			}
+			add_to_variable = { 
+				SOV_the_red_navy_NAVAL_DEFENSE_FACTOR = 0.05
+			}
+			add_to_variable = { 
+				SOV_the_red_navy_NAVAL_TORPEDO_COOLDOWN_FACTOR = -0.075
+			}
+			add_to_variable = { 
+				SOV_the_red_navy_NAVAL_TORPEDO_HIT_CHANCE_FACTOR = 0.075
+			}
+			add_to_variable = { 
+				SOV_the_red_navy_NAVAL_TORPEDO_REVEAL_CHANCE_FACTOR = -0.075
+			}
+			add_to_variable = { 
+				SOV_the_red_navy_NAVAL_MINES_DAMAGE_FACTOR = 0.075
+			}
+			add_to_variable = { 
+				SOV_the_red_navy_MINES_SWEEPING_BY_FLEETS_FACTOR = 0.075
+			}
+			add_to_variable = { 
+				SOV_the_red_navy_NAVY_CAPITAL_SHIP_ATTACK_FACTOR = 0.05
+			}
+			add_to_variable = { 
+				SOV_the_red_navy_NAVY_CAPITAL_SHIP_DEFENCE_FACTOR = 0.05
+			}
+			add_to_variable = { 
+				SOV_the_red_navy_NAVY_SCREEN_ATTACK_FACTOR = 0.05
+			}
+			add_to_variable = { 
+				SOV_the_red_navy_NAVY_SCREEN_DEFENCE_FACTOR = 0.05
+			}
+			add_to_variable = { 
+				SOV_the_red_navy_CARRIER_SORTIE_EFFICIENCY_FACTOR = 0.075
+			}
+			add_to_variable = { 
+				SOV_the_red_navy_CARRIER_CAPACITY_PENALTY_REDUCTION = 0.075
+			}
+			add_to_variable = { 
+				SOV_the_red_navy_CARRIER_FIGHTER_SORTIE_EFFICIENCY_FACTOR = 0.075
+			}
+			add_to_variable = { 
+				SOV_the_red_navy_NAVAL_STRIKE_TARGETTING_FACTOR = 0.075
+			}
+			add_to_variable = { 
+				SOV_the_red_navy_NAVAL_STRIKE_ATTACK_FACTOR = 0.075
+			}
+			add_to_variable = { 
+				SOV_the_red_navy_naval_invasion_capacity = 3
+			}
+			add_to_variable = { 
+				SOV_the_red_navy_invasion_preparation = -0.075
+			}
+			add_to_variable = { 
+				SOV_the_red_navy_naval_invasion_penalty = -0.075
+			}
+			add_to_variable = { 
+				SOV_the_red_navy_amphibious_invasion_defence = 0.075
+			}
+			effect_tooltip = {
+				swap_ideas = {
+					add_idea = SOV_red_army_navy_modifier_tooltip_2
+					remove_idea = SOV_red_army_navy_modifier_tooltip_1
+				}
+			}
+		}
+
+		ai_will_do = {
+			factor = 1000
+		}
+	}
 	SOV_xiboliya_buliding_0 = { #西伯利亚扩建
 		allowed = {
 			original_tag = SOV

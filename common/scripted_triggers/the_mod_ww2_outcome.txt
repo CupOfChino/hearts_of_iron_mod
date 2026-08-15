@@ -1,0 +1,42 @@
+#============== 二战结局判定：三皇同盟 vs 三国协约 ==============
+# 供 on_actions、决议、事件、国策复用的触发器
+# 三皇同盟核心：德/法/奥匈（GER_the_third_empire_faction）
+# 三国协约核心：英/美/苏（ENG_the_third_empire_faction）
+
+# 判断当前国家是否属于三皇同盟一方（与任一核心同阵营即视为我方）
+is_in_three_empires_side_trigger = {
+	AND = {
+		is_in_faction_with = GER
+		is_in_faction_with = FRA
+		is_in_faction_with = HUN
+	}
+}
+
+# 判断当前国家是否属于三国协约一方（与任一核心同阵营即视为敌方）
+is_in_triple_entente_side_trigger = {
+	AND = {
+		is_in_faction_with = ENG
+		is_in_faction_with = USA
+		is_in_faction_with = SOV
+	}
+}
+
+# 三皇同盟赢得二战
+three_empires_ww2_victory_trigger = {
+	has_global_flag = three_empires_ww2_victory_flag
+}
+
+# 三国协约赢得二战
+triple_entente_ww2_victory_trigger = {
+	has_global_flag = triple_entente_ww2_victory_flag
+}
+
+# 三皇同盟在二战中战败
+three_empires_defeated_in_ww2_trigger = {
+	has_global_flag = three_empires_defeated_in_ww2_flag
+}
+
+# 三国协约在二战中战败
+triple_entente_defeated_in_ww2_trigger = {
+	has_global_flag = triple_entente_defeated_in_ww2_flag
+}

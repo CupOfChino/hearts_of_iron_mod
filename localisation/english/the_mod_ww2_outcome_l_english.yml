@@ -1,0 +1,11 @@
+﻿l_english:
+ three_empires_ww2_victory_flag: "§YThe Three Emperors' Alliance Won the Second World War§!"
+ triple_entente_ww2_victory_flag: "§YThe Triple Entente Won the Second World War§!"
+ three_empires_defeated_in_ww2_flag: "§RThe Three Emperors' Alliance Was Defeated in the Second World War§!"
+ triple_entente_defeated_in_ww2_flag: "§RThe Triple Entente Was Defeated in the Second World War§!"
+ is_in_three_empires_side_trigger: "On the side of the Three Emperors' Alliance"
+ is_in_triple_entente_side_trigger: "On the side of the Triple Entente"
+ three_empires_ww2_victory_trigger: "The Three Emperors' Alliance won the Second World War"
+ triple_entente_ww2_victory_trigger: "The Triple Entente won the Second World War"
+ three_empires_defeated_in_ww2_trigger: "The Three Emperors' Alliance was defeated in the Second World War"
+ triple_entente_defeated_in_ww2_trigger: "The Triple Entente was defeated in the Second World War"

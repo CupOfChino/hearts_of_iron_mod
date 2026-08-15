@@ -1,0 +1,38 @@
+defined_text = {
+	name = get_tse_title
+	text = {
+		trigger = {
+			has_global_flag = tse_three_emperors_global_flag
+		}
+		localization_key = "TSE_three_emperors_title"
+	}
+	text = {
+		localization_key = "-"
+	}
+}
+
+defined_text = {
+	name = get_tse_quote
+	text = {
+		trigger = {
+			has_global_flag = tse_three_emperors_global_flag
+		}
+		localization_key = "TSE_three_emperors_quote"
+	}
+	text = {
+		localization_key = "-"
+	}
+}
+
+defined_text = {
+	name = get_tse_button
+	text = {
+		trigger = {
+			has_global_flag = tse_three_emperors_global_flag
+		}
+		localization_key = "TSE_three_emperors_button"
+	}
+	text = {
+		localization_key = "-"
+	}
+}

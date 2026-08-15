@@ -1,0 +1,9 @@
+spriteTypes = {
+
+	spriteType = {
+		name = "GFX_TSE_three_emperors"
+		texturefile = "gfx/super_events/TSE_three_emperors.png"
+		legacy_lazy_load = no
+	}
+
+}

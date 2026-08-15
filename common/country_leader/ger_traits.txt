@@ -1,5 +1,5 @@
 leader_traits = {
-    GER_prince_of_ger = { #寰风殗
+    GER_prince_of_ger = { #德皇
         ARMY_ATTACK_AGAINST_MAJOR_FACTOR = 0.05
         ARMY_DEFENCE_AGAINST_MAJOR_FACTOR = 0.05
         ARMY_BREAKTHROUGH_AGAINST_MAJOR_FACTOR = 0.05
@@ -14,7 +14,7 @@ leader_traits = {
         command_power_gain = 0.5
     }
 
-    GER_empire_builder = { #甯濆浗缂旈€犺€?
+    GER_empire_builder = { #帝国缔造者
         consumer_goods_factor = -0.2
         neutrality_drift = 0.1
         industrial_capacity_factory = 0.1
@@ -29,7 +29,7 @@ leader_traits = {
         command_power_gain = 0.5
     }
 
-    GER_genius_diplomat = { #"澶╂墠"澶栦氦瀹?
+    GER_genius_diplomat = { #"天才"外交官
         opinion_gain_monthly_factor = -0.2
 		request_lease_tension = 0.25
 		trade_opinion_factor = -0.2
@@ -39,7 +39,7 @@ leader_traits = {
 		communism_acceptance = -25
     }
 
-    GER_love_naval = { #娴峰啗鐖卞ソ鑰?
+    GER_love_naval = { #海军爱好者
         industrial_capacity_dockyard = 0.1
         industrial_capacity_factory = -0.1
         production_speed_arms_factory_factor = -0.1
@@ -47,7 +47,7 @@ leader_traits = {
     }
 
 
-    UNI_chino_trait = { #棣欓鏅轰箖
+    UNI_chino_trait = { #香风智乃
         experience_gain_army = 0.5
         army_attack_factor = 0.25
         army_defence_factor = 0.25
@@ -86,7 +86,7 @@ leader_traits = {
 
     }
 
-    UNI_rize_trait = { #澶╁ぉ搴х悊涓?
+    UNI_rize_trait = { #天天座理世
         army_attack_factor = 0.1
         army_defence_factor = 0.1
         special_forces_attack_factor = 0.3
@@ -108,7 +108,7 @@ leader_traits = {
 
     }
 
-    UNI_cocoa_trait = { #淇濈櫥蹇冪埍
+    UNI_cocoa_trait = { #保登心爱
         army_armor_attack_factor = 0.25
         army_armor_defence_factor = 0.25
         breakthrough_factor = 0.1
@@ -186,7 +186,7 @@ leader_traits = {
     }
 
 
-    UNI_chiya_trait = { #鍗冨彾
+    UNI_chiya_trait = { #千叶
         army_attack_factor = 0.2
         army_defence_factor = 0.2
         experience_gain_army = 0.15
@@ -209,7 +209,7 @@ leader_traits = {
 
     }
 
-    UNI_sharo_trait = { #绾遍湶
+    UNI_sharo_trait = { #纱露
         research_speed_factor = 0.2
 		army_speed_factor = 0.1
 		supply_consumption_factor = -0.1
@@ -229,7 +229,7 @@ leader_traits = {
 
     }
 
-    UNI_maya_trait = { #楹昏€?
+    UNI_maya_trait = { #麻耶
         army_attack_factor = 0.1
         army_defence_factor = 0.1
         army_artillery_attack_factor = 0.25
@@ -329,7 +329,7 @@ leader_traits = {
     }
 
 
-    UNI_megu_trait = { #濂堟辰鎯?
+    UNI_megu_trait = { #奈泽惠
         experience_gain_navy = 0.5
         experience_gain_navy_unit_factor = 0.2
         TRAINING_TIME_NAVY_FACTOR = -0.1
@@ -434,7 +434,7 @@ leader_traits = {
     }
 
 
-    UNI_mountain_trait = { #闈掑北钃濆北
+    UNI_mountain_trait = { #青山蓝山
         experience_gain_air = 0.5
         air_maximum_speed_factor = 0.25
         air_defence_factor = 0.25
@@ -524,7 +524,7 @@ leader_traits = {
 
     }
 
-    UNI_moka_trait = { #淇濈櫥鎽╁崱
+    UNI_moka_trait = { #保登摩卡
         political_power_factor = 0.25
         political_power_gain = 0.25
         production_factory_efficiency_gain_factor = 0.5

@@ -1,0 +1,253 @@
+add_namespace = postwar
+
+#============== 战后分裂事件：三皇同盟凯旋线 ==============
+# 强制解散旧阵营，各国单独组建新阵营（不可逆）
+country_event = { #同盟分裂：三皇同盟凯旋
+	id = postwar.1
+	title = postwar.1.t
+	desc = postwar.1.d
+
+	picture = GFX_report_event_generic_political
+
+	is_triggered_only = yes
+
+	option = { #主动拥抱新时代
+		name = postwar.1.a
+		ai_chance = {
+			factor = 100
+		}
+		custom_effect_tooltip = postwar.1.a_tt
+		add_political_power = 25
+		hidden_effect = {
+			postwar_axis_split_effect = yes
+		}
+	}
+}
+
+#============== 战后分裂事件：三国协约凯旋线 ==============
+country_event = { #协约分裂：三国协约凯旋
+	id = postwar.2
+	title = postwar.2.t
+	desc = postwar.2.d
+
+	picture = GFX_report_event_generic_political
+
+	is_triggered_only = yes
+
+	option = { #主动拥抱新时代
+		name = postwar.2.a
+		ai_chance = {
+			factor = 100
+		}
+		custom_effect_tooltip = postwar.2.a_tt
+		add_political_power = 25
+		hidden_effect = {
+			postwar_entente_split_effect = yes
+		}
+	}
+}
+
+#============== 宣战事件：清算旧盟 ==============
+country_event = { #宣战旧盟友
+	id = postwar.3
+	title = postwar.3.t
+	desc = postwar.3.d
+
+	picture = GFX_report_event_generic_political
+
+	is_triggered_only = yes
+
+	option = { #宣战旧盟友，成为世界霸主
+		name = postwar.3.a
+		ai_chance = {
+			factor = 100
+		}
+		every_country = {
+			limit = {
+				has_country_flag = postwar_former_ally_flag
+				NOT = { tag = ROOT }
+				NOT = { is_in_faction_with = ROOT }
+				NOT = { has_war_with = ROOT }
+			}
+			ROOT = {
+				declare_war_on = { 
+					type = annex_everything
+					target = PREV 
+				}
+			}
+		}
+	}
+}
+
+#============== 组阵营事件：三皇同盟凯旋线 ==============
+# 由分裂效果（postwar_axis_split_effect）末尾立即触发，
+# 统一为德、法、匈、中创建战后阵营并依次播报新闻（全局 flag 防重复，只执行一次）
+country_event = { #组阵营：三皇同盟凯旋线
+	id = postwar.4
+	title = postwar.4.t
+	desc = postwar.4.d
+
+	picture = GFX_report_event_generic_political
+
+	is_triggered_only = yes
+
+	option = { #各霸一方，问鼎世界！
+		name = postwar.4.a
+		ai_chance = {
+			factor = 100
+		}
+		if = {
+			limit = {
+				country_exists = GER
+				GER = {
+					is_subject = no
+				}
+			}
+			GER = {
+				set_rule = { can_create_factions = yes }
+				create_faction_from_template = the_mod_faction_GER_kaiserbund_faction
+				set_country_flag = postwar_debug_faction_created_flag
+				set_country_flag = now_has_a_faction_flag
+			}
+			news_event = { id = change_news.80 days = 1 }
+		}
+
+		if = {
+			limit = {
+				country_exists = FRA
+				FRA = {
+					is_subject = no
+				}
+			}
+			FRA = {
+				set_rule = { can_create_factions = yes }
+				create_faction_from_template = the_mod_faction_FRA_continental_system_faction
+				set_country_flag = postwar_debug_faction_created_flag
+				set_country_flag = now_has_a_faction_flag
+			}
+			news_event = { id = change_news.81 days = 1 }
+		}
+
+		if = {
+			limit = {
+				country_exists = HUN
+				HUN = {
+					is_subject = no
+				}
+			}
+			HUN = {
+				set_rule = { can_create_factions = yes }
+				create_faction_from_template = the_mod_faction_HUN_habsburg_alliance_faction
+				set_country_flag = postwar_debug_faction_created_flag
+				set_country_flag = now_has_a_faction_flag
+				
+			}
+			news_event = { id = change_news.82 days = 1 }
+		}
+
+		if = {
+			limit = {
+				country_exists = CHI
+				CHI = {
+					is_subject = no
+				}
+			}
+			CHI = {
+				set_rule = { can_create_factions = yes }
+				create_faction_from_template = the_mod_faction_CHI_celestial_empire_faction
+				set_country_flag = postwar_debug_faction_created_flag
+				set_country_flag = now_has_a_faction_flag
+				
+			}
+			news_event = { id = change_news.83 days = 1 }
+		}
+		set_global_flag = axis_split_created_flag
+	}
+}
+
+#============== 组阵营事件：三国协约凯旋线 ==============
+# 由分裂效果（postwar_entente_split_effect）末尾立即触发，
+# 统一为英、美、苏、日创建战后阵营并依次播报新闻（全局 flag 防重复，只执行一次）
+country_event = { #组阵营：三国协约凯旋线
+	id = postwar.5
+	title = postwar.5.t
+	desc = postwar.5.d
+
+	picture = GFX_report_event_generic_political
+
+	is_triggered_only = yes
+
+	option = { #各霸一方，问鼎世界！
+		name = postwar.5.a
+		ai_chance = {
+			factor = 100
+		}
+		if = {
+			limit = {
+				country_exists = ENG
+				ENG = {
+					is_subject = no
+				}
+			}
+			ENG = {
+				set_rule = { can_create_factions = yes }
+				create_faction_from_template = the_mod_faction_ENG_sun_never_sets_faction
+				set_country_flag = postwar_debug_faction_created_flag
+				set_country_flag = now_has_a_faction_flag
+				
+			}
+			news_event = { id = change_news.84 days = 1 }
+		}
+
+		if = {
+			limit = {
+				country_exists = USA
+				USA = {
+					is_subject = no
+				}
+			}
+			USA = {
+				set_rule = { can_create_factions = yes }
+				create_faction_from_template = the_mod_faction_USA_free_nations_faction
+				set_country_flag = postwar_debug_faction_created_flag
+				set_country_flag = now_has_a_faction_flag
+				
+			}
+			news_event = { id = change_news.85 days = 1 }
+		}
+
+		if = {
+			limit = {
+				country_exists = SOV
+				SOV = {
+					is_subject = no
+				}
+			}
+			SOV = {
+				set_rule = { can_create_factions = yes }
+				create_faction_from_template = the_mod_faction_SOV_world_revolution_faction
+				set_country_flag = postwar_debug_faction_created_flag
+				set_country_flag = now_has_a_faction_flag
+				
+			}
+			news_event = { id = change_news.86 days = 1 }
+		}
+		if = {
+			limit = {
+				country_exists = JAP
+				JAP = {
+					is_subject = no
+				}
+			}
+			JAP = {
+				set_rule = { can_create_factions = yes }
+				create_faction_from_template = the_mod_faction_JAP_co_prosperity_sphere_faction
+				set_country_flag = postwar_debug_faction_created_flag
+				set_country_flag = now_has_a_faction_flag
+				
+			}
+			news_event = { id = change_news.87 days = 1 }
+		}
+		set_global_flag = entente_split_created_flag
+	}
+}

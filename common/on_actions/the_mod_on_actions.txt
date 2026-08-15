@@ -1100,6 +1100,35 @@ on_actions = {
                 
             }
             
+            USA = {
+                #美国工业：按大萧条级别检测（笨办法：逐级打flag，检测到新级别就触发同步事件 change_usa.26）
+                if = {
+                    limit = {
+                        has_idea = great_depression_2
+                        NOT = { has_country_flag = USA_american_industry_level_2_detected }
+                    }
+                    set_country_flag = USA_american_industry_level_2_detected
+                    country_event = { id = change_usa.20 }
+                }
+                if = {
+                    limit = {
+                        has_idea = great_depression_3
+                        NOT = { has_country_flag = USA_american_industry_level_3_detected }
+                    }
+                    set_country_flag = USA_american_industry_level_3_detected
+                    country_event = { id = change_usa.20 }
+                }
+                if = {
+                    limit = {
+                        NOT = { has_idea = great_depression }
+                        NOT = { has_idea = great_depression_2 }
+                        NOT = { has_idea = great_depression_3 }
+                        NOT = { has_country_flag = USA_american_industry_level_4_detected }
+                    }
+                    set_country_flag = USA_american_industry_level_4_detected
+                    country_event = { id = change_usa.20 }
+                }
+            }
         }
     }
 
@@ -1221,6 +1250,20 @@ on_actions = {
                 }
             }
 
+
+            USA = {
+                if = {
+                    limit = {
+                        has_country_leader = {
+                            ruling_only = yes
+                            character = USA_franklin_delano_roosevelt
+                        }
+                    }
+                    country_event = { id = change_usa.22 days = 3 }
+                }
+                activate_mission = USA_gd_deterrent_mission
+            }
+
         }
     }
 
@@ -1258,4 +1301,120 @@ on_actions = {
     }
 
     
+
+    #============== 二战结局判定：三皇同盟凯旋 / 三国协约凯旋 ==============
+    # ROOT=胜方，FROM=败方（对每一对胜负方调用一次）
+    on_before_peace_conference_start = {
+        effect = {
+            FROM = {
+                if = {
+                    limit = {
+                        is_in_three_empires_side_trigger = yes
+                        has_global_flag = wordl_war_two_begin_flag
+                        ROOT = { is_in_triple_entente_side_trigger = yes }
+                        NOT = { has_global_flag = three_empires_defeated_in_ww2_flag }
+                    }
+                    set_global_flag = three_empires_defeated_in_ww2_flag
+                    set_global_flag = triple_entente_ww2_victory_flag
+                    news_event = { id = change_news.78 days = 1 }
+                    ENG = { country_event = { id = postwar.2 days = 7 } }
+                    USA = { country_event = { id = postwar.2 days = 7 } }
+                    SOV = { country_event = { id = postwar.2 days = 7 } }
+                    JAP = { country_event = { id = postwar.2 days = 7 } }
+                }
+                if = {
+                    limit = {
+                        is_in_triple_entente_side_trigger = yes
+                        ROOT = { is_in_three_empires_side_trigger = yes }
+                        has_global_flag = wordl_war_two_begin_flag
+                        NOT = { has_global_flag = triple_entente_defeated_in_ww2_flag }
+                    }
+                    set_global_flag = triple_entente_defeated_in_ww2_flag
+                    set_global_flag = three_empires_ww2_victory_flag
+                    news_event = { id = change_news.77 days = 1 }
+                    GER = { country_event = { id = postwar.1 days = 7 } }
+                    FRA = { country_event = { id = postwar.1 days = 7 } }
+                    HUN = { country_event = { id = postwar.1 days = 7 } }
+                    CHI = { country_event = { id = postwar.1 days = 7 } }
+                }
+            }
+        }
+    }
+
+    # 兜底：未召开和平会议时（吞并/傀儡路径），以核心领袖投降判定战败
+    # ROOT=投降国，FROM=战胜方
+    #on_capitulation = {
+    #    effect = {
+    #        ROOT = {
+    #            if = {
+    #                limit = {
+    #                    OR = {
+    #                        original_tag = GER
+    #                        original_tag = FRA
+    #                        original_tag = HUN
+    #                    }
+    #                    is_in_three_empires_side_trigger = yes
+    #                    FROM = { is_in_triple_entente_side_trigger = yes }
+    #                    NOT = { has_global_flag = three_empires_defeated_in_ww2_flag }
+    #                }
+    #                set_global_flag = three_empires_defeated_in_ww2_flag
+    #                set_global_flag = triple_entente_ww2_victory_flag
+    #                news_event = { id = change_news.78 days = 1 }
+    #                ENG = { country_event = { id = postwar.2 days = 7 } }
+    #                USA = { country_event = { id = postwar.2 days = 7 } }
+    #                SOV = { country_event = { id = postwar.2 days = 7 } }
+    #                JAP = { country_event = { id = postwar.2 days = 7 } }
+    #            }
+    #            if = {
+    #                limit = {
+    #                    OR = {
+    #                        original_tag = ENG
+    #                        original_tag = USA
+    #                        original_tag = SOV
+    #                    }
+    #                    is_in_triple_entente_side_trigger = yes
+    #                    FROM = { is_in_three_empires_side_trigger = yes }
+    #                    NOT = { has_global_flag = triple_entente_defeated_in_ww2_flag }
+    #                }
+    #                set_global_flag = triple_entente_defeated_in_ww2_flag
+    #                set_global_flag = three_empires_ww2_victory_flag
+    #                news_event = { id = change_news.77 days = 1 }
+    #                GER = { country_event = { id = postwar.1 days = 7 } }
+    #                FRA = { country_event = { id = postwar.1 days = 7 } }
+    #                HUN = { country_event = { id = postwar.1 days = 7 } }
+    #                CHI = { country_event = { id = postwar.1 days = 7 } }
+    #            }
+    #        }
+    #    }
+    #}
+
+    # 第三次世界大战新闻：3个及以上主要国家处于战争，且有2个主要国家互相交战
+    on_war = {
+        effect = {
+            set_variable = { global.ww3_majors_at_war = 0 }
+            every_country = {
+                limit = {
+                    is_major = yes
+                    has_war = yes
+                }
+                add_to_variable = { global.ww3_majors_at_war = 1 }
+            }
+            if = {
+                limit = {
+                    NOT = { has_global_flag = ww3_started_flag }
+                    has_global_flag = third_empire_era_over_flag
+                    check_variable = { global.ww3_majors_at_war > 2 }
+                    any_country = {
+                        is_major = yes
+                        any_country = {
+                            is_major = yes
+                            has_war_with = PREV
+                        }
+                    }
+                }
+                set_global_flag = ww3_started_flag
+                news_event = { id = change_news.79 days = 1 }
+            }
+        }
+    }
 }

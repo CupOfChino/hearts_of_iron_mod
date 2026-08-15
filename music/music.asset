@@ -1,0 +1,6 @@
+# 二战爆发 BGM：Setrailiess - [经验记忆] Boss战（转码自 mp3）
+music = {
+	name = "mod_ww2_boss"
+	file = "ww2_boss.ogg"
+	volume = 0.65
+}

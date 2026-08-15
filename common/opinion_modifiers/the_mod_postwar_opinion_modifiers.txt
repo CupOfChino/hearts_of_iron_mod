@@ -1,0 +1,6 @@
+opinion_modifiers = {
+	# 战后前盟友之间的敌视修正（数值远大于模组现有的友好修正）
+	mod_postwar_hatred = {
+		value = -1000
+	}
+}

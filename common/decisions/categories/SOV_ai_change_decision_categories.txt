@@ -40,6 +40,7 @@ SOV_the_third_empire_categories = {
     visible = {
 	    is_subject = no
     
+        NOT = { has_global_flag = third_empire_era_over_flag }
     }
     picture = GFX_decision_cat_naval_treaty
     icon = GFX_decision_third_empire_2

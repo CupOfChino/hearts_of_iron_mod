@@ -1,0 +1,578 @@
+USA_great_depression_categories = {
+
+	#============== 循环任务：大萧条威慑降低 ==============
+	USA_gd_deterrent_mission = { #大萧条威慑降低
+		allowed = {
+			original_tag = USA
+		}
+
+		visible = {
+			OR = {
+				has_idea = great_depression
+				has_idea = great_depression_2
+				has_idea = great_depression_3
+			}
+		}
+
+		available = {
+			NOT = { has_idea = great_depression }
+			NOT = { has_idea = great_depression_2 }
+			NOT = { has_idea = great_depression_3 }
+		}
+
+		activation = {
+			OR = {
+				has_idea = great_depression
+				has_idea = great_depression_2
+				has_idea = great_depression_3
+			}
+		}
+
+		cancel_if_not_visible = no
+
+		selectable_mission = no
+
+		icon = generic_construction
+
+		days_mission_timeout = 365
+
+		is_good = yes
+
+		timeout_effect = {
+			if = {
+				limit = { has_idea = great_depression_3 }
+				remove_ideas = great_depression_3
+			}
+			else_if = {
+				limit = { has_idea = great_depression_2 }
+				swap_ideas = {
+					remove_idea = great_depression_2
+					add_idea = great_depression_3
+				}
+			}
+			else_if = {
+				limit = { has_idea = great_depression }
+				swap_ideas = {
+					remove_idea = great_depression
+					add_idea = great_depression_2
+				}
+			}
+			
+			if = {
+				limit = {
+					OR = {
+						has_idea = great_depression
+						has_idea = great_depression_2
+						has_idea = great_depression_3
+					}
+				}
+				activate_mission = USA_gd_deterrent_mission
+			}
+		}
+
+		complete_effect = {
+			country_event = { id = change_usa.21 days = 15 }
+		}
+	}
+
+	#============== 以工代赈 ==============
+	USA_gd_work_relief = { #以工代赈
+		allowed = {
+			original_tag = USA
+		}
+
+		visible = {
+			has_country_flag = USA_new_deal_underway_flag
+			NOT = {
+				has_country_flag = USA_gd_public_works_flag
+			}
+		}
+
+		available = {
+			has_country_flag = USA_new_deal_underway_flag
+			NOT = {
+				has_country_flag = USA_gd_public_works_flag
+			}
+		}
+
+		icon = generic_construction
+
+		fire_only_once = no
+
+		cost = 15
+
+		complete_effect = {
+			custom_effect_tooltip = USA_gd_work_relief_effect_tt
+			set_country_flag = USA_gd_public_works_flag
+		}
+
+		ai_will_do = {
+			factor = 1000
+		}
+	}
+
+	USA_gd_public_works_mission = { #国家项目建设中
+		allowed = {
+			original_tag = USA
+		}
+
+		visible = {
+			has_country_flag = USA_gd_public_works_flag
+		}
+
+		available = {
+			always = no
+		}
+
+		activation = {
+			has_country_flag = USA_gd_public_works_flag
+		}
+
+		cancel_if_not_visible = no
+
+		selectable_mission = no
+
+		icon = generic_construction
+
+		days_mission_timeout = 30
+
+		is_good = yes
+
+		timeout_effect = {
+			clr_country_flag = USA_gd_public_works_flag
+			country_event = { id = change_usa.23 }
+		}
+	}
+
+	#============== 特殊决议：否定罗斯福新政 ==============
+	USA_gd_reject_new_deal = { #否定罗斯福新政
+		allowed = {
+			original_tag = USA
+		}
+
+		visible = {
+			NOT = {
+				has_country_leader = { character = USA_franklin_delano_roosevelt }
+			}
+			OR = {
+				has_idea = great_depression
+				has_idea = great_depression_2
+				has_idea = great_depression_3
+			}
+		}
+
+		available = {
+			NOT = {
+				has_country_leader = { character = USA_franklin_delano_roosevelt }
+			}
+			OR = {
+				has_idea = great_depression
+				has_idea = great_depression_2
+				has_idea = great_depression_3
+			}
+		}
+
+		icon = generic_confiscation
+
+		fire_only_once = yes
+
+		cost = 0
+
+		complete_effect = {
+			custom_effect_tooltip = USA_gd_reject_new_deal_effect_tt
+			add_days_mission_timeout = { mission = USA_gd_deterrent_mission days = -270 }
+			clr_country_flag = USA_new_deal_underway_flag
+		}
+
+		ai_will_do = {
+			factor = 0
+		}
+	}
+
+	#============== 紧急银行法 ==============
+	USA_gd_emergency_banking = { #紧急银行法
+		allowed = {
+			original_tag = USA
+		}
+
+		visible = {
+			has_country_flag = USA_new_deal_underway_flag
+		}
+
+		available = {
+			has_country_flag = USA_new_deal_underway_flag
+		}
+
+		icon = hol_attract_foreign_investors
+
+		fire_only_once = yes
+
+		cost = 25
+
+		days_remove = 60
+
+		remove_effect = {
+			add_stability = 0.05
+			add_political_power = 50
+			add_days_mission_timeout = { mission = USA_gd_deterrent_mission days = -30 }
+		}
+
+		ai_will_do = {
+			factor = 1000
+		}
+	}
+
+	#============== 农业调整法案 ==============
+	USA_gd_agricultural_adjustment = { #农业调整法案
+		allowed = {
+			original_tag = USA
+		}
+
+		visible = {
+			has_country_flag = USA_new_deal_underway_flag
+		}
+
+		available = {
+			has_country_flag = USA_new_deal_underway_flag
+		}
+
+		icon = generic_construction
+
+		fire_only_once = no
+
+		days_re_enable = 60
+
+		cost = 30
+		days_remove = 90
+
+		modifier = {
+			consumer_goods_factor = -0.05
+		}
+
+		remove_effect = {
+			add_stability = 0.02
+			add_days_mission_timeout = { mission = USA_gd_deterrent_mission days = -10 }
+		}
+
+		ai_will_do = {
+			factor = 1000
+		}
+	}
+
+	#============== 全国工业复兴法 ==============
+	USA_gd_national_recovery = { #全国工业复兴法
+		allowed = {
+			original_tag = USA
+		}
+
+		visible = {
+			has_country_flag = USA_new_deal_underway_flag
+		}
+
+		available = {
+			has_country_flag = USA_new_deal_underway_flag
+		}
+
+		icon = generic_construction
+
+		fire_only_once = no
+
+		cost = 40
+		days_remove = 120
+
+		days_re_enable = 60
+
+		modifier = {
+			production_speed_industrial_complex_factor = 0.1
+			production_factory_efficiency_gain_factor = 0.1
+		}
+
+		remove_effect = {
+			add_stability = 0.02
+			add_days_mission_timeout = { mission = USA_gd_deterrent_mission days = -15 }
+		}
+
+		ai_will_do = {
+			factor = 1000
+		}
+	}
+
+	#============== 公共事业振兴署 ==============
+	USA_gd_wpa = { #公共事业振兴署
+		allowed = {
+			original_tag = USA
+		}
+
+		visible = {
+			has_country_flag = USA_new_deal_underway_flag
+		}
+
+		available = {
+			has_country_flag = USA_new_deal_underway_flag
+		}
+
+		icon = generic_construction
+
+		fire_only_once = no
+
+		cost = 30
+		days_remove = 90
+
+		days_re_enable = 30
+
+		modifier = {
+			production_speed_buildings_factor = 0.10
+		}
+
+		remove_effect = {
+			add_stability = 0.02
+			add_war_support = 0.02
+			add_days_mission_timeout = { mission = USA_gd_deterrent_mission days = -10 }
+		}
+
+		ai_will_do = {
+			factor = 1000
+		}
+	}
+
+	#============== 田纳西河谷工程 ==============
+	USA_gd_tva = { #田纳西河谷工程
+		allowed = {
+			original_tag = USA
+		}
+
+		visible = {
+			has_country_flag = USA_new_deal_underway_flag
+		}
+
+		available = {
+			has_country_flag = USA_new_deal_underway_flag
+		}
+
+		icon = generic_construction
+
+		fire_only_once = yes
+
+		cost = 50
+		days_remove = 180
+
+		modifier = {
+			civilian_factory_use = 15
+		}
+
+		complete_effect = {
+			custom_effect_tooltip = USA_gd_tva_effect_tt
+		}
+
+		remove_effect = {
+			country_event = { id = change_usa.24 }
+		}
+
+		ai_will_do = {
+			factor = 1000
+		}
+	}
+
+	#============== 密西西比河谷工程 ==============
+	USA_gd_mississippi_valley = { #密西西比河谷工程
+		allowed = {
+			original_tag = USA
+		}
+
+		visible = {
+			has_country_flag = USA_new_deal_underway_flag
+		}
+
+		available = {
+			has_country_flag = USA_new_deal_underway_flag
+		}
+
+		icon = generic_construction
+
+		fire_only_once = yes
+
+		cost = 50
+		days_remove = 180
+
+		modifier = {
+			civilian_factory_use = 15
+		}
+
+		complete_effect = {
+			custom_effect_tooltip = USA_gd_mississippi_valley_effect_tt
+		}
+
+		remove_effect = {
+			country_event = { id = change_usa.25 }
+		}
+
+		ai_will_do = {
+			factor = 1000
+		}
+	}
+
+	#============== 暂时科研激励 ==============
+	USA_gd_research_boost = { #暂时科研激励
+		allowed = {
+			original_tag = USA
+		}
+
+		visible = {
+			has_country_flag = USA_new_deal_underway_flag
+		}
+
+		available = {
+			has_country_flag = USA_new_deal_underway_flag
+		}
+
+		icon = generic_construction
+
+		fire_only_once = no
+
+		cost = 25
+		days_remove = 120
+
+		days_re_enable = 60
+
+		modifier = {
+			research_speed_factor = 0.15
+		}
+
+		remove_effect = {
+			add_days_mission_timeout = { mission = USA_gd_deterrent_mission days = -5 }
+		}
+
+		ai_will_do = {
+			factor = 1000
+		}
+	}
+
+	#============== 全国青年署 ==============
+	USA_gd_nya = { #全国青年署
+		allowed = {
+			original_tag = USA
+		}
+
+		visible = {
+			has_country_flag = USA_new_deal_underway_flag
+		}
+
+		available = {
+			has_country_flag = USA_new_deal_underway_flag
+		}
+
+		icon = generic_construction
+
+		fire_only_once = no
+
+		cost = 20
+		days_remove = 60
+		days_re_enable = 60
+
+		modifier = {
+			conscription_factor = 0.05
+		}
+
+		remove_effect = {
+			add_manpower = 1000
+			add_days_mission_timeout = { mission = USA_gd_deterrent_mission days = -5 }
+		}
+
+		ai_will_do = {
+			factor = 1000
+		}
+	}
+
+	#============== 军工采购订单 ==============
+	USA_gd_rearmament_orders = { #军工采购订单
+		allowed = {
+			original_tag = USA
+		}
+
+		visible = {
+			has_country_flag = USA_new_deal_underway_flag
+			NOT = {
+				has_country_flag = USA_gd_rearmament_flag
+			}
+		}
+
+		available = {
+			has_country_flag = USA_new_deal_underway_flag
+			NOT = {
+				has_country_flag = USA_gd_rearmament_flag
+			}
+		}
+
+		icon = eng_puppet_usa
+
+		fire_only_once = no
+
+		cost = 25
+
+		complete_effect = {
+			custom_effect_tooltip = USA_gd_rearmament_orders_effect_tt
+			set_country_flag = USA_gd_rearmament_flag
+		}
+
+		ai_will_do = {
+			factor = 1000
+		}
+	}
+
+	USA_gd_rearmament_mission = { #军工采购中
+		allowed = {
+			original_tag = USA
+		}
+
+		visible = {
+			has_country_flag = USA_gd_rearmament_flag
+		}
+
+		available = {
+			always = no
+		}
+
+		activation = {
+			has_country_flag = USA_gd_rearmament_flag
+		}
+
+		cancel_if_not_visible = no
+
+		selectable_mission = no
+
+		icon = eng_puppet_usa
+
+		days_mission_timeout = 90
+
+		is_good = yes
+
+		timeout_effect = {
+			clr_country_flag = USA_gd_rearmament_flag
+			random_owned_state = {
+				limit = {
+					is_core_of = USA
+				}
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}
+			}
+			random_owned_state = {
+				limit = {
+					is_core_of = USA
+				}
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}
+			}
+			army_experience = 15
+			navy_experience = 15
+			air_experience = 15
+			add_days_mission_timeout = { mission = USA_gd_deterrent_mission days = -5 }
+		}
+	}
+
+}

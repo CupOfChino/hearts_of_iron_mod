@@ -1,0 +1,376 @@
+ideas = {
+
+	country = {
+
+		with_firend_idea = { #
+			picture = CHL_armada_de_chile
+			allowed = {
+				always = no
+			}
+
+            cancel = {
+                has_global_flag = third_empire_era_over_flag
+
+            }
+			
+			modifier = {
+
+			}
+		}
+
+		with_firend_idea_01 = { #
+			picture = CHL_armada_de_chile
+			allowed = {
+				always = no
+			}
+
+            cancel = {
+                has_global_flag = third_empire_era_over_flag
+
+            }
+			
+			modifier = {
+				army_attack_factor = 0.005
+				army_defence_factor = 0.005
+				army_core_attack_factor = -0.005
+				army_core_defence_factor = -0.005
+			}
+		}
+
+		with_firend_idea_02 = { #
+			picture = CHL_armada_de_chile
+			allowed = {
+				always = no
+			}
+
+            cancel = {
+                has_global_flag = third_empire_era_over_flag
+
+            }
+			
+			modifier = {
+				army_attack_factor = -0.002
+				army_defence_factor = -0.002
+				army_core_attack_factor = 0.01
+				army_core_defence_factor = 0.01
+			}
+		}
+
+		with_firend_idea_03 = { #
+			picture = CHL_armada_de_chile
+			allowed = {
+				always = no
+			}
+
+            cancel = {
+                has_global_flag = third_empire_era_over_flag
+
+            }
+			
+			modifier = {
+				army_strength_factor = 0.01
+				org_loss_when_moving = 0.01
+				land_reinforce_rate = 0.01
+				dig_in_speed_factor = 0.005
+			}
+		}
+
+		with_firend_idea_04 = { #
+			picture = CHL_armada_de_chile
+			allowed = {
+				always = no
+			}
+
+            cancel = {
+                has_global_flag = third_empire_era_over_flag
+
+            }
+			
+			modifier = {
+				INITIATIVE_FACTOR = 0.005
+				TERRAIN_PENALTY_REDUCTION = 0.005
+				ACCLIMATIZATION_COLD_CLIMATE_GAIN_FACTOR = 0.01
+				ACCLIMATIZATION_HOT_CLIMATE_GAIN_FACTOR = 0.01
+			}
+		}
+
+		with_firend_idea_05 = { #
+			picture = CHL_armada_de_chile
+			allowed = {
+				always = no
+			}
+
+            cancel = {
+                has_global_flag = third_empire_era_over_flag
+
+            }
+			
+			modifier = {
+				SPECIAL_FORCES_ATTACK_FACTOR = 0.005
+				SPECIAL_FORCES_DEFENCE_FACTOR = 0.005
+				SPECIAL_FORCES_MIN = 1
+				EQUIPMENT_CAPTURE_FACTOR = 0.005
+				EXPERIENCE_LOSS_FACTOR = -0.005
+			}
+		}
+
+		with_firend_idea_06 = { #
+			picture = CHL_armada_de_chile
+			allowed = {
+				always = no
+			}
+
+            cancel = {
+                has_global_flag = third_empire_era_over_flag
+
+            }
+			
+			modifier = {
+				AIR_ATTACK_FACTOR = 0.01
+				AIR_DEFENCE_FACTOR = 0.01
+				AIR_AGILITY_FACTOR = 0.01
+				
+			}
+		}
+
+		with_firend_idea_07 = { #
+			picture = CHL_armada_de_chile
+			allowed = {
+				always = no
+			}
+
+            cancel = {
+                has_global_flag = third_empire_era_over_flag
+
+            }
+			
+			modifier = {
+				AIR_ACE_GENERATION_CHANCE_FACTOR = 0.015
+				AIR_TRAINING_XP_FACTOR = 0.01
+				AIR_WING_XP_LOSS_WHEN_KILLED_FACTOR  = -0.01
+				AIR_ACCIDENTS_FACTOR  = -0.005
+			}
+		}
+
+		with_firend_idea_08 = { #
+			picture = CHL_armada_de_chile
+			allowed = {
+				always = no
+			}
+
+            cancel = {
+                has_global_flag = third_empire_era_over_flag
+
+            }
+			
+			modifier = {
+				AIR_MAX_SPEED_FACTOR = 0.01
+				AIR_RANGE_FACTOR = 0.02
+				AIR_MISSION_XP_FACTOR = 0.02
+				ARMY_BONUS_AIR_SUPERIORITY_FACTOR  = 0.01
+			}
+		}
+
+		with_firend_idea_09 = { #
+			picture = CHL_armada_de_chile
+			allowed = {
+				always = no
+			}
+
+            cancel = {
+                has_global_flag = third_empire_era_over_flag
+
+            }
+			
+			modifier = {
+				NAVAL_DAMAGE_FACTOR = 0.02
+				NAVAL_DEFENSE_FACTOR = 0.02
+				NAVY_ANTI_AIR_ATTACK_FACTOR  = 0.02
+			}
+		}
+
+		with_firend_idea_10 = { #
+			picture = CHL_armada_de_chile
+			allowed = {
+				always = no
+			}
+
+            cancel = {
+                has_global_flag = third_empire_era_over_flag
+
+            }
+			
+			modifier = {
+				NAVY_CAPITAL_SHIP_ATTACK_FACTOR = 0.02
+				NAVY_CAPITAL_SHIP_DEFENCE_FACTOR = 0.02
+			}
+		}
+
+		with_firend_idea_11 = { #
+			picture = CHL_armada_de_chile
+			allowed = {
+				always = no
+			}
+
+            cancel = {
+                has_global_flag = third_empire_era_over_flag
+
+            }
+			
+			modifier = {
+				NAVY_SCREEN_ATTACK_FACTOR = 0.02
+				NAVY_SCREEN_DEFENCE_FACTOR = 0.02
+			}
+		}
+
+		with_firend_idea_12 = { #
+			picture = CHL_armada_de_chile
+			allowed = {
+				always = no
+			}
+
+            cancel = {
+                has_global_flag = third_empire_era_over_flag
+
+            }
+			
+			modifier = {
+				CARRIER_SORTIE_EFFICIENCY_FACTOR = 0.02
+				CARRIER_CAPACITY_PENALTY_REDUCTION = -0.025
+				CARRIER_FIGHTER_SORTIE_EFFICIENCY_FACTOR = 0.02
+				NAVAL_STRIKE_TARGETTING_FACTOR = 0.01
+				NAVAL_STRIKE_ATTACK_FACTOR = 0.01
+			}
+		}
+
+		with_firend_idea_13 = { #
+			picture = CHL_armada_de_chile
+			allowed = {
+				always = no
+			}
+
+            cancel = {
+                has_global_flag = third_empire_era_over_flag
+
+            }
+			
+			modifier = {
+				NAVAL_SPEED_FACTOR = 0.01
+				TRAINING_TIME_NAVY_FACTOR = -0.015
+				NAVY_ORG_FACTOR = 0.005
+				NAVAL_MORALE_FACTOR = 0.01
+			}
+		}
+
+		with_firend_idea_14 = { #
+			picture = CHL_armada_de_chile
+			allowed = {
+				always = no
+			}
+
+            cancel = {
+                has_global_flag = third_empire_era_over_flag
+
+            }
+			
+			modifier = {
+				NAVAL_TORPEDO_COOLDOWN_FACTOR = -0.01
+				NAVAL_TORPEDO_HIT_CHANCE_FACTOR = 0.005
+				NAVAL_TORPEDO_REVEAL_CHANCE_FACTOR = -0.005
+				NAVAL_MORALE_FACTOR = -0.005
+			}
+		}
+
+		with_firend_idea_15 = { #
+			picture = CHL_armada_de_chile
+			allowed = {
+				always = no
+			}
+
+            cancel = {
+                has_global_flag = third_empire_era_over_flag
+
+            }
+			
+			modifier = {
+				NAVAL_MINES_DAMAGE_FACTOR = 0.01
+				MINES_SWEEPING_BY_FLEETS_FACTOR = 0.01
+			}
+		}
+
+		with_firend_idea_16 = { #
+			picture = CHL_armada_de_chile
+			allowed = {
+				always = no
+			}
+
+            cancel = {
+                has_global_flag = third_empire_era_over_flag
+
+            }
+			
+			modifier = {
+				conscription = 0.001
+				training_time_army_factor = -0.005
+				max_planning = 0.005
+			}
+		}
+
+		with_firend_idea_17 = { #
+			picture = CHL_armada_de_chile
+			allowed = {
+				always = no
+			}
+
+            cancel = {
+                has_global_flag = third_empire_era_over_flag
+
+            }
+			
+			modifier = {
+				industrial_capacity_factory = 0.015
+				industrial_capacity_dockyard = 0.015
+				production_factory_max_efficiency_factor = 0.005
+				production_factory_efficiency_gain_factor = 0.01
+			}
+		}
+
+		with_firend_idea_18 = { #
+			picture = CHL_armada_de_chile
+			allowed = {
+				always = no
+			}
+
+            cancel = {
+                has_global_flag = third_empire_era_over_flag
+
+            }
+			
+			modifier = {
+				production_speed_arms_factory_factor = 0.01
+				production_speed_dockyard_factor = 0.01
+				production_speed_industrial_complex_factor = 0.01
+			}
+		}
+
+		with_firend_idea_19 = { #
+			picture = CHL_armada_de_chile
+			allowed = {
+				always = no
+			}
+
+            cancel = {
+                has_global_flag = third_empire_era_over_flag
+
+            }
+			
+			modifier = {
+				ARMY_FUEL_CONSUMPTION_FACTOR = -0.005
+				AIR_FUEL_CONSUMPTION_FACTOR = -0.005
+				NAVY_FUEL_CONSUMPTION_FACTOR = -0.005
+			}
+		}
+
+	}
+
+}

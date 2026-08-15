@@ -28,7 +28,7 @@
 
 mod_with_friend_ger = { #同盟国
     enable = {
-        always = yes
+        NOT = { has_global_flag = third_empire_era_over_flag }
     }
 
     icon = GFX_idea_AUS_habsburg_monarchy_restored
@@ -103,7 +103,7 @@ mod_with_friend_ger = { #同盟国
 
 mod_with_friend_eng = { #协约国
     enable = {
-        always = yes
+        NOT = { has_global_flag = third_empire_era_over_flag }
     }
 
     icon = GFX_idea_AUS_habsburg_monarchy_restored
@@ -622,6 +622,63 @@ mod_with_usa_navy = { #美利坚海军
 
 }
 
+SOV_the_red_navy_dynamic_modifier = { #苏联红海军（三皇海军改革决议）
+    enable = {
+        always = yes
+    }
+
+    icon = GFX_idea_SOV_red_navy_ccp_2d_sov_compatibility
+
+    NAVAL_SPEED_FACTOR = SOV_the_red_navy_NAVAL_SPEED_FACTOR
+    TRAINING_TIME_NAVY_FACTOR = SOV_the_red_navy_TRAINING_TIME_NAVY_FACTOR
+    NAVY_ORG_FACTOR = SOV_the_red_navy_NAVY_ORG_FACTOR
+    NAVAL_MORALE_FACTOR = SOV_the_red_navy_NAVAL_MORALE_FACTOR
+    NAVY_ANTI_AIR_ATTACK_FACTOR = SOV_the_red_navy_NAVY_ANTI_AIR_ATTACK_FACTOR
+    NAVAL_DAMAGE_FACTOR = SOV_the_red_navy_NAVAL_DAMAGE_FACTOR
+    NAVAL_DEFENSE_FACTOR = SOV_the_red_navy_NAVAL_DEFENSE_FACTOR
+    NAVAL_TORPEDO_COOLDOWN_FACTOR = SOV_the_red_navy_NAVAL_TORPEDO_COOLDOWN_FACTOR
+    NAVAL_TORPEDO_HIT_CHANCE_FACTOR = SOV_the_red_navy_NAVAL_TORPEDO_HIT_CHANCE_FACTOR
+    NAVAL_TORPEDO_REVEAL_CHANCE_FACTOR = SOV_the_red_navy_NAVAL_TORPEDO_REVEAL_CHANCE_FACTOR
+    NAVAL_MINES_DAMAGE_FACTOR = SOV_the_red_navy_NAVAL_MINES_DAMAGE_FACTOR
+    MINES_SWEEPING_BY_FLEETS_FACTOR = SOV_the_red_navy_MINES_SWEEPING_BY_FLEETS_FACTOR
+    NAVY_CAPITAL_SHIP_ATTACK_FACTOR = SOV_the_red_navy_NAVY_CAPITAL_SHIP_ATTACK_FACTOR
+    NAVY_CAPITAL_SHIP_DEFENCE_FACTOR = SOV_the_red_navy_NAVY_CAPITAL_SHIP_DEFENCE_FACTOR
+    NAVY_SCREEN_ATTACK_FACTOR = SOV_the_red_navy_NAVY_SCREEN_ATTACK_FACTOR
+    NAVY_SCREEN_DEFENCE_FACTOR = SOV_the_red_navy_NAVY_SCREEN_DEFENCE_FACTOR
+    CARRIER_SORTIE_EFFICIENCY_FACTOR = SOV_the_red_navy_CARRIER_SORTIE_EFFICIENCY_FACTOR
+    CARRIER_CAPACITY_PENALTY_REDUCTION = SOV_the_red_navy_CARRIER_CAPACITY_PENALTY_REDUCTION
+    CARRIER_FIGHTER_SORTIE_EFFICIENCY_FACTOR = SOV_the_red_navy_CARRIER_FIGHTER_SORTIE_EFFICIENCY_FACTOR
+    NAVAL_STRIKE_TARGETTING_FACTOR = SOV_the_red_navy_NAVAL_STRIKE_TARGETTING_FACTOR
+    NAVAL_STRIKE_ATTACK_FACTOR = SOV_the_red_navy_NAVAL_STRIKE_ATTACK_FACTOR
+    naval_invasion_capacity = SOV_the_red_navy_naval_invasion_capacity
+    invasion_preparation = SOV_the_red_navy_invasion_preparation
+    naval_invasion_penalty = SOV_the_red_navy_naval_invasion_penalty
+    amphibious_invasion_defence = SOV_the_red_navy_amphibious_invasion_defence
+}
+
+USA_american_industry_dynamic_modifier = { #美国工业（随大萧条阶段变化）
+    enable = {
+        always = yes
+    }
+
+    icon = GFX_idea_usa_general_motors
+
+    #custom_modifier_tooltip = USA_american_industry_tt
+
+    production_speed_industrial_complex_factor = USA_american_industry_production_speed_industrial_complex_factor
+    production_speed_arms_factory_factor = USA_american_industry_production_speed_arms_factory_factor
+    production_speed_infrastructure_factor = USA_american_industry_production_speed_infrastructure_factor
+    production_speed_rail_way_factor = USA_american_industry_production_speed_rail_way_factor
+    industrial_capacity_factory = USA_american_industry_industrial_capacity_factory
+    industrial_capacity_dockyard = USA_american_industry_industrial_capacity_dockyard
+    production_factory_efficiency_gain_factor = USA_american_industry_production_factory_efficiency_gain_factor
+    production_factory_max_efficiency_factor = USA_american_industry_production_factory_max_efficiency_factor
+    production_factory_start_efficiency_factor = USA_american_industry_production_factory_start_efficiency_factor
+    line_change_production_efficiency_factor = USA_american_industry_line_change_production_efficiency_factor
+    local_resources_factor = USA_american_industry_local_resources_factor
+    production_lack_of_resource_penalty_factor = USA_american_industry_production_lack_of_resource_penalty_factor
+}
+
 mod_with_chi = { #万众一心
     enable = {
         always = yes
@@ -645,6 +702,4 @@ mod_with_chi = { #万众一心
     no_supply_grace = mod_with_chi_no_supply_grace
 
 }
-
-
 

@@ -468,7 +468,6 @@ country_event = { #法国的回应
 			modifier = mod_chi_fra_opinion_30
 			target = CHI
 		}
-		news_event = { id = change_news.75 days = 1 }
 		CHI = {
 			country_event = { id = change_chi_third_empire.12 days = 2 }
 		}
@@ -534,7 +533,6 @@ country_event = { #法国的回应
 			country_event = { id = change_chi_third_empire.14 days = 2 }
 		}
 		add_ideas = FRA_far_east_compensation
-		news_event = { id = change_news.76 days = 1 }
 	}
 
 	option = { #拒绝
@@ -567,6 +565,7 @@ country_event = { #租借地回家了
 		add_stability = 0.1
 		add_political_power = 100
 		add_war_support = 0.05
+		news_event = { id = change_news.75 days = 1 }
 	}
 }
 
@@ -780,6 +779,7 @@ country_event = { #印度支那易主
 		add_stability = 0.1
 		add_political_power = 100
 		add_war_support = 0.05
+		news_event = { id = change_news.76 days = 1 }
 	}
 }
 

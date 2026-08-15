@@ -445,6 +445,64 @@ USA_the_third_empire_categories = {
         }
 	}
 
+
+	USA_the_third_empire_categories_07 = { #军工复合体
+		allowed = {
+			original_tag = USA
+		}
+
+		icon = eng_puppet_usa
+
+		visible = {
+			ENG = {
+				has_country_flag = the_triple_entente_flag
+			}
+			has_game_rule = {
+				rule = The_USA_game_rule
+				option = the_USA_factory_more_open
+			}
+		}
+
+		available = {
+			ENG = {
+				has_country_flag = the_triple_entente_flag
+			}
+			has_game_rule = {
+				rule = The_USA_game_rule
+				option = the_USA_factory_more_open
+			}
+			OR = {
+				has_completed_focus = USA_the_giant_awake
+				has_idea = usa_has_awakening_buff
+			}
+		}
+
+		fire_only_once = yes
+
+		cost = 0
+
+		complete_effect = {
+			add_ideas = USA_military_industrial_complex
+			hidden_effect = {
+				every_state = {
+					limit = {
+						is_core_of = USA
+					}
+					add_extra_state_shared_building_slots = 1
+					add_building_construction = {
+						type = arms_factory
+						level = 1
+						instant_build = yes
+					}
+				}
+			}
+		}
+
+		ai_will_do = {
+			factor = 1000
+		}
+	}
+
 }
 
 USA_ai_categories = {
@@ -1234,13 +1292,6 @@ USA_army_train_categories = {
 		icon = CHL_carabineros
 
         available = {
-			OR = {
-				has_army_experience > 249.9
-				AND = {
-					is_ai = yes
-					has_army_experience > 49
-				}
-			}
 			NOT = {
 				has_country_flag = USA_army_train_categories_army_3
 			}
@@ -1250,13 +1301,17 @@ USA_army_train_categories = {
         fire_only_once = no
 
 		cost = 50
+		custom_cost_trigger = {
+			has_army_experience > 199.9
+		}
+		custom_cost_text = the_mod_decision_cost_ArmXP_200
 		days_remove = 300
 		modifier = {
 			experience_gain_army_factor = -0.1
 		}
 
 		complete_effect = {
-			army_experience = -250
+			army_experience = -200
 			if = {
 				limit = {
 					has_country_flag = USA_army_train_categories_army_1
@@ -1409,13 +1464,6 @@ USA_army_train_categories = {
 		icon = CHL_carabineros
 
         available = {
-			OR = {
-				has_army_experience > 249.9
-				AND = {
-					is_ai = yes
-					has_army_experience > 49
-				}
-			}
 			NOT = {
 				has_country_flag = USA_army_train_categories_army_3
 			}
@@ -1425,6 +1473,10 @@ USA_army_train_categories = {
         fire_only_once = no
 
 		cost = 50
+		custom_cost_trigger = {
+			has_army_experience > 199.9
+		}
+		custom_cost_text = the_mod_decision_cost_ArmXP_200
 		days_remove = 300
 
 		modifier = {
@@ -1432,7 +1484,7 @@ USA_army_train_categories = {
 		}
 
 		complete_effect = {
-			army_experience = -250
+			army_experience = -200
 			if = {
 				limit = {
 					has_country_flag = USA_army_train_categories_army_1
@@ -1586,13 +1638,6 @@ USA_army_train_categories = {
 		icon = CHL_carabineros
 
         available = {
-			OR = {
-				has_air_experience > 249.9
-				AND = {
-					is_ai = yes
-					has_air_experience > 49
-				}
-			}
 			NOT = {
 				has_country_flag = USA_army_train_categories_air_3
 			}
@@ -1602,6 +1647,10 @@ USA_army_train_categories = {
         fire_only_once = no
 
 		cost = 50
+		custom_cost_trigger = {
+			has_air_experience > 199.9
+		}
+		custom_cost_text = the_mod_decision_cost_AirXP_200
 		days_remove = 300
 
 		modifier = {
@@ -1609,7 +1658,7 @@ USA_army_train_categories = {
 		}
 
 		complete_effect = {
-			air_experience = -250
+			air_experience = -200
 			if = {
 				limit = {
 					has_country_flag = USA_army_train_categories_air_1
@@ -1727,13 +1776,6 @@ USA_army_train_categories = {
 		icon = CHL_carabineros
 
         available = {
-			OR = {
-				has_air_experience > 249.9
-				AND = {
-					is_ai = yes
-					has_air_experience > 49
-				}
-			}
 			NOT = {
 				has_country_flag = USA_army_train_categories_air_3
 			}
@@ -1743,13 +1785,17 @@ USA_army_train_categories = {
         fire_only_once = no
 
 		cost = 50
+		custom_cost_trigger = {
+			has_air_experience > 199.9
+		}
+		custom_cost_text = the_mod_decision_cost_AirXP_200
 		days_remove = 300
 		modifier = {
 			experience_gain_air_factor  =  -0.1
 		}
 
 		complete_effect = {
-			air_experience = -250
+			air_experience = -200
 			if = {
 				limit = {
 					has_country_flag = USA_army_train_categories_air_1
@@ -1867,13 +1913,6 @@ USA_army_train_categories = {
 		icon = CHL_carabineros
 
         available = {
-			OR = {
-				has_navy_experience > 349.9
-				AND = {
-					is_ai = yes
-					has_navy_experience > 100
-				}
-			}
 			NOT = {
 				has_country_flag = USA_army_train_categories_navy_3
 			}
@@ -1883,13 +1922,17 @@ USA_army_train_categories = {
         fire_only_once = no
 
 		cost = 50
+		custom_cost_trigger = {
+			has_navy_experience > 299.9
+		}
+		custom_cost_text = the_mod_decision_cost_NavXP_300
 		days_remove = 365
 		modifier = {
 			experience_gain_navy_factor = -0.1
 		}
 
 		complete_effect = {
-			navy_experience = -350
+			navy_experience = -300
 			if = {
 				limit = {
 					has_country_flag = USA_army_train_categories_navy_1
@@ -2007,13 +2050,6 @@ USA_army_train_categories = {
 		icon = CHL_carabineros
 
         available = {
-			OR = {
-				has_navy_experience > 349.9
-				AND = {
-					is_ai = yes
-					has_navy_experience > 100
-				}
-			}
 			NOT = {
 				has_country_flag = USA_army_train_categories_navy_3
 			}
@@ -2023,13 +2059,17 @@ USA_army_train_categories = {
         fire_only_once = no
 
 		cost = 50
+		custom_cost_trigger = {
+			has_navy_experience > 299.9
+		}
+		custom_cost_text = the_mod_decision_cost_NavXP_300
 		days_remove = 365
 		modifier = {
 			experience_gain_navy_factor = -0.1
 		}
 
 		complete_effect = {
-			navy_experience = -350
+			navy_experience = -300
 			if = {
 				limit = {
 					has_country_flag = USA_army_train_categories_navy_1
@@ -2133,4 +2173,1588 @@ USA_army_train_categories = {
 
 
 
+
+#============== 军队训练：第四、五阶段（三皇同盟专属） ==============
+	USA_army_train_categories_army_4 = {
+		allowed = {
+			original_tag = USA
+		}
+
+		visible = {
+			original_tag = USA
+			FRA = {
+				has_country_flag = cjg_open_the_third_empire
+			}
+			has_country_flag = USA_army_train_categories_army_3
+			NOT = {
+				has_country_flag = USA_army_train_categories_army_4
+			}
+		}
+
+		icon = CHL_carabineros
+
+		available = {
+			FRA = {
+				has_country_flag = cjg_open_the_third_empire
+			}
+			has_country_flag = USA_army_train_categories_army_3
+			NOT = {
+				has_country_flag = USA_army_train_categories_army_4
+			}
+		}
+
+		fire_only_once = no
+
+		cost = 50
+		custom_cost_trigger = {
+			has_army_experience > 99.9
+		}
+		custom_cost_text = the_mod_decision_cost_ArmXP_100
+		days_remove = 90
+		modifier = {
+			experience_gain_army_factor = -0.1
+		}
+
+		complete_effect = {
+			army_experience = -100
+			set_country_flag = USA_army_train_categories_army_4
+			clr_country_flag = USA_army_train_categories_army_3
+		}
+
+		remove_effect = {
+			add_to_variable = {
+				mod_with_the_usa_army_army_attack_factor = 0.03
+			}
+			add_to_variable = {
+				mod_with_the_usa_army_army_defence_factor = 0.03
+			}
+
+			add_to_variable = {
+				mod_with_the_usa_army_army_core_attack_factor = 0.04
+			}
+
+			add_to_variable = {
+				mod_with_the_usa_army_army_core_defence_factor = 0.04
+			}
+
+			add_to_variable = {
+				mod_with_the_usa_army_army_infantry_attack_factor = 0.025
+			}
+
+			add_to_variable = {
+				mod_with_the_usa_army_army_infantry_defence_factor = 0.025
+			}
+
+			add_to_variable = {
+				mod_with_the_usa_army_army_armor_attack_factor = 0.025
+			}
+
+			add_to_variable = {
+				mod_with_the_usa_army_army_armor_defence_factor = 0.025
+			}
+
+			add_to_variable = {
+				mod_with_the_usa_army_mechanized_attack_factor = 0.025
+			}
+
+			add_to_variable = {
+				mod_with_the_usa_army_mechanized_defence_factor = 0.025
+			}
+
+			add_to_variable = {
+				mod_with_the_usa_army_SPECIAL_FORCES_ATTACK_FACTOR = 0.025
+			}
+
+			add_to_variable = {
+				mod_with_the_usa_army_SPECIAL_FORCES_DEFENCE_FACTOR = 0.025
+			}
+
+			add_to_variable = {
+				mod_with_the_usa_army_army_artillery_attack_factor = 0.05
+			}
+
+			add_to_variable = {
+				mod_with_the_usa_army_army_artillery_defence_factor = 0.05
+			}
+
+			add_to_variable = {
+				mod_with_the_usa_army_army_org_factor = 0.05
+			}
+
+			add_to_variable = {
+				mod_with_the_usa_army_max_command_power = 10
+			}
+
+			add_to_variable = {
+				mod_with_the_usa_army_army_strength_factor = 0.025
+			}
+
+			add_to_variable = {
+				mod_with_the_usa_army_max_dig_in_factor = 0.025
+			}
+
+			add_to_variable = {
+				mod_with_the_usa_army_dig_in_speed_factor = 0.05
+			}
+
+			add_to_variable = {
+				mod_with_the_usa_army_land_reinforce_rate = 0.01
+			}
+
+			add_to_variable = {
+				mod_with_the_usa_army_max_planning_factor = 0.05
+			}
+
+			add_to_variable = {
+				mod_with_the_usa_army_conscription_factor = 0.05
+			}
+
+			add_to_variable = {
+				mod_with_the_usa_army_recon_factor = 0.025
+			}
+
+			add_to_variable = {
+				mod_with_the_usa_army_terrain_penalty_reduction = 0.025
+			}
+
+			effect_tooltip = {
+				swap_ideas = {
+					add_idea = USA_army_modifier_tooltip_1
+					remove_idea = USA_army_modifier_tooltip
+				}
+			}
+		}
+
+		ai_will_do = {
+			factor = 100
+		}
+
+	}
+	USA_army_train_categories_army_5 = {
+		allowed = {
+			original_tag = USA
+		}
+
+		visible = {
+			original_tag = USA
+			FRA = {
+				has_country_flag = cjg_open_the_third_empire
+			}
+			has_country_flag = USA_army_train_categories_army_4
+			NOT = {
+				has_country_flag = USA_army_train_categories_army_5
+			}
+		}
+
+		icon = CHL_carabineros
+
+		available = {
+			FRA = {
+				has_country_flag = cjg_open_the_third_empire
+			}
+			has_country_flag = USA_army_train_categories_army_4
+			NOT = {
+				has_country_flag = USA_army_train_categories_army_5
+			}
+		}
+
+		fire_only_once = no
+
+		cost = 50
+		custom_cost_trigger = {
+			has_army_experience > 99.9
+		}
+		custom_cost_text = the_mod_decision_cost_ArmXP_100
+		days_remove = 90
+		modifier = {
+			experience_gain_army_factor = -0.1
+		}
+
+		complete_effect = {
+			army_experience = -100
+			set_country_flag = USA_army_train_categories_army_5
+			clr_country_flag = USA_army_train_categories_army_4
+		}
+
+		remove_effect = {
+			add_to_variable = {
+				mod_with_the_usa_army_army_attack_factor = 0.03
+			}
+			add_to_variable = {
+				mod_with_the_usa_army_army_defence_factor = 0.03
+			}
+
+			add_to_variable = {
+				mod_with_the_usa_army_army_core_attack_factor = 0.04
+			}
+
+			add_to_variable = {
+				mod_with_the_usa_army_army_core_defence_factor = 0.04
+			}
+
+			add_to_variable = {
+				mod_with_the_usa_army_army_infantry_attack_factor = 0.025
+			}
+
+			add_to_variable = {
+				mod_with_the_usa_army_army_infantry_defence_factor = 0.025
+			}
+
+			add_to_variable = {
+				mod_with_the_usa_army_army_armor_attack_factor = 0.025
+			}
+
+			add_to_variable = {
+				mod_with_the_usa_army_army_armor_defence_factor = 0.025
+			}
+
+			add_to_variable = {
+				mod_with_the_usa_army_mechanized_attack_factor = 0.025
+			}
+
+			add_to_variable = {
+				mod_with_the_usa_army_mechanized_defence_factor = 0.025
+			}
+
+			add_to_variable = {
+				mod_with_the_usa_army_SPECIAL_FORCES_ATTACK_FACTOR = 0.025
+			}
+
+			add_to_variable = {
+				mod_with_the_usa_army_SPECIAL_FORCES_DEFENCE_FACTOR = 0.025
+			}
+
+			add_to_variable = {
+				mod_with_the_usa_army_army_artillery_attack_factor = 0.05
+			}
+
+			add_to_variable = {
+				mod_with_the_usa_army_army_artillery_defence_factor = 0.05
+			}
+
+			add_to_variable = {
+				mod_with_the_usa_army_army_org_factor = 0.05
+			}
+
+			add_to_variable = {
+				mod_with_the_usa_army_max_command_power = 10
+			}
+
+			add_to_variable = {
+				mod_with_the_usa_army_army_strength_factor = 0.025
+			}
+
+			add_to_variable = {
+				mod_with_the_usa_army_max_dig_in_factor = 0.025
+			}
+
+			add_to_variable = {
+				mod_with_the_usa_army_dig_in_speed_factor = 0.05
+			}
+
+			add_to_variable = {
+				mod_with_the_usa_army_land_reinforce_rate = 0.01
+			}
+
+			add_to_variable = {
+				mod_with_the_usa_army_max_planning_factor = 0.05
+			}
+
+			add_to_variable = {
+				mod_with_the_usa_army_conscription_factor = 0.05
+			}
+
+			add_to_variable = {
+				mod_with_the_usa_army_recon_factor = 0.025
+			}
+
+			add_to_variable = {
+				mod_with_the_usa_army_terrain_penalty_reduction = 0.025
+			}
+
+			effect_tooltip = {
+				swap_ideas = {
+					add_idea = USA_army_modifier_tooltip_1
+					remove_idea = USA_army_modifier_tooltip
+				}
+			}
+		}
+
+		ai_will_do = {
+			factor = 100
+		}
+
+	}
+	ENG_army_train_categories_army_4 = {
+		allowed = {
+			original_tag = ENG
+		}
+
+		visible = {
+			original_tag = ENG
+			FRA = {
+				has_country_flag = cjg_open_the_third_empire
+			}
+			has_country_flag = USA_army_train_categories_army_3
+			NOT = {
+				has_country_flag = USA_army_train_categories_army_4
+			}
+		}
+
+		icon = CHL_carabineros
+
+		available = {
+			FRA = {
+				has_country_flag = cjg_open_the_third_empire
+			}
+			has_country_flag = USA_army_train_categories_army_3
+			NOT = {
+				has_country_flag = USA_army_train_categories_army_4
+			}
+		}
+
+		fire_only_once = no
+
+		cost = 50
+		custom_cost_trigger = {
+			has_army_experience > 99.9
+		}
+		custom_cost_text = the_mod_decision_cost_ArmXP_100
+		days_remove = 90
+		modifier = {
+			experience_gain_army_factor = -0.1
+		}
+
+		complete_effect = {
+			army_experience = -100
+			set_country_flag = USA_army_train_categories_army_4
+			clr_country_flag = USA_army_train_categories_army_3
+		}
+
+		remove_effect = {
+			add_to_variable = {
+				mod_with_the_eng_army_army_attack_factor = 0.03
+			}
+
+			add_to_variable = {
+				mod_with_the_eng_army_army_defence_factor = 0.03
+			}
+
+			add_to_variable = {
+				mod_with_the_eng_army_army_core_attack_factor = 0.04
+			}
+
+			add_to_variable = {
+				mod_with_the_eng_army_army_core_defence_factor = 0.04
+			}
+
+			add_to_variable = {
+				mod_with_the_eng_army_army_infantry_attack_factor = 0.025
+			}
+
+			add_to_variable = {
+				mod_with_the_eng_army_army_infantry_defence_factor = 0.025
+			}
+
+			add_to_variable = {
+				mod_with_the_eng_army_army_armor_attack_factor = 0.025
+			}
+
+			add_to_variable = {
+				mod_with_the_eng_army_army_armor_defence_factor = 0.025
+			}
+
+			add_to_variable = {
+				mod_with_the_eng_army_mechanized_attack_factor = 0.025
+			}
+
+			add_to_variable = {
+				mod_with_the_eng_army_mechanized_defence_factor = 0.025
+			}
+
+			add_to_variable = {
+				mod_with_the_eng_army_SPECIAL_FORCES_ATTACK_FACTOR = 0.025
+			}
+
+			add_to_variable = {
+				mod_with_the_eng_army_SPECIAL_FORCES_DEFENCE_FACTOR = 0.025
+			}
+
+			add_to_variable = {
+				mod_with_the_eng_army_army_artillery_attack_factor = 0.05
+			}
+
+			add_to_variable = {
+				mod_with_the_eng_army_army_artillery_defence_factor = 0.05
+			}
+
+			add_to_variable = {
+				mod_with_the_eng_army_army_org_factor = 0.05
+			}
+
+			add_to_variable = {
+				mod_with_the_eng_army_max_command_power = 10
+			}
+
+			add_to_variable = {
+				mod_with_the_eng_army_army_strength_factor = 0.025
+			}
+
+			add_to_variable = {
+				mod_with_the_eng_army_max_dig_in_factor = 0.025
+			}
+
+			add_to_variable = {
+				mod_with_the_eng_army_dig_in_speed_factor = 0.05
+			}
+
+			add_to_variable = {
+				mod_with_the_eng_army_land_reinforce_rate = 0.01
+			}
+
+			add_to_variable = {
+				mod_with_the_eng_army_max_planning_factor = 0.05
+			}
+
+			add_to_variable = {
+				mod_with_the_eng_army_conscription_factor = 0.05
+			}
+
+			add_to_variable = {
+				mod_with_the_eng_army_recon_factor = 0.025
+			}
+
+			add_to_variable = {
+				mod_with_the_eng_army_terrain_penalty_reduction = 0.025
+			}
+
+			effect_tooltip = {
+				swap_ideas = {
+					add_idea = ENG_army_modifier_tooltip_1
+					remove_idea = ENG_army_modifier_tooltip
+				}
+			}
+		}
+
+		ai_will_do = {
+			factor = 100
+		}
+
+	}
+	ENG_army_train_categories_army_5 = {
+		allowed = {
+			original_tag = ENG
+		}
+
+		visible = {
+			original_tag = ENG
+			FRA = {
+				has_country_flag = cjg_open_the_third_empire
+			}
+			has_country_flag = USA_army_train_categories_army_4
+			NOT = {
+				has_country_flag = USA_army_train_categories_army_5
+			}
+		}
+
+		icon = CHL_carabineros
+
+		available = {
+			FRA = {
+				has_country_flag = cjg_open_the_third_empire
+			}
+			has_country_flag = USA_army_train_categories_army_4
+			NOT = {
+				has_country_flag = USA_army_train_categories_army_5
+			}
+		}
+
+		fire_only_once = no
+
+		cost = 50
+		custom_cost_trigger = {
+			has_army_experience > 99.9
+		}
+		custom_cost_text = the_mod_decision_cost_ArmXP_100
+		days_remove = 90
+		modifier = {
+			experience_gain_army_factor = -0.1
+		}
+
+		complete_effect = {
+			army_experience = -100
+			set_country_flag = USA_army_train_categories_army_5
+			clr_country_flag = USA_army_train_categories_army_4
+		}
+
+		remove_effect = {
+			add_to_variable = {
+				mod_with_the_eng_army_army_attack_factor = 0.03
+			}
+
+			add_to_variable = {
+				mod_with_the_eng_army_army_defence_factor = 0.03
+			}
+
+			add_to_variable = {
+				mod_with_the_eng_army_army_core_attack_factor = 0.04
+			}
+
+			add_to_variable = {
+				mod_with_the_eng_army_army_core_defence_factor = 0.04
+			}
+
+			add_to_variable = {
+				mod_with_the_eng_army_army_infantry_attack_factor = 0.025
+			}
+
+			add_to_variable = {
+				mod_with_the_eng_army_army_infantry_defence_factor = 0.025
+			}
+
+			add_to_variable = {
+				mod_with_the_eng_army_army_armor_attack_factor = 0.025
+			}
+
+			add_to_variable = {
+				mod_with_the_eng_army_army_armor_defence_factor = 0.025
+			}
+
+			add_to_variable = {
+				mod_with_the_eng_army_mechanized_attack_factor = 0.025
+			}
+
+			add_to_variable = {
+				mod_with_the_eng_army_mechanized_defence_factor = 0.025
+			}
+
+			add_to_variable = {
+				mod_with_the_eng_army_SPECIAL_FORCES_ATTACK_FACTOR = 0.025
+			}
+
+			add_to_variable = {
+				mod_with_the_eng_army_SPECIAL_FORCES_DEFENCE_FACTOR = 0.025
+			}
+
+			add_to_variable = {
+				mod_with_the_eng_army_army_artillery_attack_factor = 0.05
+			}
+
+			add_to_variable = {
+				mod_with_the_eng_army_army_artillery_defence_factor = 0.05
+			}
+
+			add_to_variable = {
+				mod_with_the_eng_army_army_org_factor = 0.05
+			}
+
+			add_to_variable = {
+				mod_with_the_eng_army_max_command_power = 10
+			}
+
+			add_to_variable = {
+				mod_with_the_eng_army_army_strength_factor = 0.025
+			}
+
+			add_to_variable = {
+				mod_with_the_eng_army_max_dig_in_factor = 0.025
+			}
+
+			add_to_variable = {
+				mod_with_the_eng_army_dig_in_speed_factor = 0.05
+			}
+
+			add_to_variable = {
+				mod_with_the_eng_army_land_reinforce_rate = 0.01
+			}
+
+			add_to_variable = {
+				mod_with_the_eng_army_max_planning_factor = 0.05
+			}
+
+			add_to_variable = {
+				mod_with_the_eng_army_conscription_factor = 0.05
+			}
+
+			add_to_variable = {
+				mod_with_the_eng_army_recon_factor = 0.025
+			}
+
+			add_to_variable = {
+				mod_with_the_eng_army_terrain_penalty_reduction = 0.025
+			}
+
+			effect_tooltip = {
+				swap_ideas = {
+					add_idea = ENG_army_modifier_tooltip_1
+					remove_idea = ENG_army_modifier_tooltip
+				}
+			}
+		}
+
+		ai_will_do = {
+			factor = 100
+		}
+
+	}
+	USA_army_train_categories_air_4 = {
+		allowed = {
+			original_tag = USA
+		}
+
+		visible = {
+			original_tag = USA
+			FRA = {
+				has_country_flag = cjg_open_the_third_empire
+			}
+			has_country_flag = USA_army_train_categories_air_3
+			NOT = {
+				has_country_flag = USA_army_train_categories_air_4
+			}
+		}
+
+		icon = CHL_carabineros
+
+		available = {
+			FRA = {
+				has_country_flag = cjg_open_the_third_empire
+			}
+			has_country_flag = USA_army_train_categories_air_3
+			NOT = {
+				has_country_flag = USA_army_train_categories_air_4
+			}
+		}
+
+		fire_only_once = no
+
+		cost = 50
+		custom_cost_trigger = {
+			has_air_experience > 99.9
+		}
+		custom_cost_text = the_mod_decision_cost_AirXP_100
+		days_remove = 90
+		modifier = {
+			experience_gain_air_factor = -0.1
+		}
+
+		complete_effect = {
+			air_experience = -100
+			set_country_flag = USA_army_train_categories_air_4
+			clr_country_flag = USA_army_train_categories_air_3
+		}
+
+		remove_effect = {
+			add_to_variable = {
+				mod_with_usa_air_experience_gain_air_factor = 0.075
+			}
+
+			add_to_variable = {
+				mod_with_usa_air_AIR_ATTACK_FACTOR = 0.05
+			}
+
+			add_to_variable = {
+				mod_with_usa_air_AIR_DEFENCE_FACTOR = 0.05
+			}
+
+			add_to_variable = {
+				mod_with_usa_air_AIR_AGILITY_FACTOR = 0.05
+			}
+
+			add_to_variable = {
+				mod_with_usa_air_AIR_ACCIDENTS_FACTOR = -0.075
+			}
+
+			add_to_variable = {
+				mod_with_usa_air_AIR_ACE_GENERATION_CHANCE_FACTOR = 0.05
+			}
+
+			add_to_variable = {
+				mod_with_usa_air_AIR_TRAINING_XP_FACTOR = 0.075
+			}
+
+			add_to_variable = {
+				mod_with_usa_air_AIR_MISSION_XP_FACTOR = 0.05
+			}
+
+			add_to_variable = {
+				mod_with_usa_air_AIR_WING_XP_LOSS_WHEN_KILLED_FACTOR = -0.05
+			}
+
+			add_to_variable = {
+				mod_with_usa_air_ARMY_BONUS_AIR_SUPERIORITY_FACTOR = 0.05
+			}
+
+			add_to_variable = {
+				mod_with_usa_air_air_home_defence_factor = 0.05
+			}
+
+			add_to_variable = {
+				mod_with_usa_air_air_power_projection_factor = 0.05
+			}
+
+			add_to_variable = {
+				mod_with_usa_air_air_superiority_efficiency = 0.05
+			}
+
+			add_to_variable = {
+				mod_with_usa_air_air_cas_efficiency = 0.05
+			}
+
+			add_to_variable = {
+				mod_with_usa_air_ground_attack_factor = 0.05
+			}
+
+			effect_tooltip = {
+				swap_ideas = {
+					add_idea = USA_air_modifier_tooltip_1
+					remove_idea = USA_air_modifier_tooltip
+				}
+			}
+		}
+
+		ai_will_do = {
+			factor = 100
+		}
+
+	}
+	USA_army_train_categories_air_5 = {
+		allowed = {
+			original_tag = USA
+		}
+
+		visible = {
+			original_tag = USA
+			FRA = {
+				has_country_flag = cjg_open_the_third_empire
+			}
+			has_country_flag = USA_army_train_categories_air_4
+			NOT = {
+				has_country_flag = USA_army_train_categories_air_5
+			}
+		}
+
+		icon = CHL_carabineros
+
+		available = {
+			FRA = {
+				has_country_flag = cjg_open_the_third_empire
+			}
+			has_country_flag = USA_army_train_categories_air_4
+			NOT = {
+				has_country_flag = USA_army_train_categories_air_5
+			}
+		}
+
+		fire_only_once = no
+
+		cost = 50
+		custom_cost_trigger = {
+			has_air_experience > 99.9
+		}
+		custom_cost_text = the_mod_decision_cost_AirXP_100
+		days_remove = 90
+		modifier = {
+			experience_gain_air_factor = -0.1
+		}
+
+		complete_effect = {
+			air_experience = -100
+			set_country_flag = USA_army_train_categories_air_5
+			clr_country_flag = USA_army_train_categories_air_4
+		}
+
+		remove_effect = {
+			add_to_variable = {
+				mod_with_usa_air_experience_gain_air_factor = 0.075
+			}
+
+			add_to_variable = {
+				mod_with_usa_air_AIR_ATTACK_FACTOR = 0.05
+			}
+
+			add_to_variable = {
+				mod_with_usa_air_AIR_DEFENCE_FACTOR = 0.05
+			}
+
+			add_to_variable = {
+				mod_with_usa_air_AIR_AGILITY_FACTOR = 0.05
+			}
+
+			add_to_variable = {
+				mod_with_usa_air_AIR_ACCIDENTS_FACTOR = -0.075
+			}
+
+			add_to_variable = {
+				mod_with_usa_air_AIR_ACE_GENERATION_CHANCE_FACTOR = 0.05
+			}
+
+			add_to_variable = {
+				mod_with_usa_air_AIR_TRAINING_XP_FACTOR = 0.075
+			}
+
+			add_to_variable = {
+				mod_with_usa_air_AIR_MISSION_XP_FACTOR = 0.05
+			}
+
+			add_to_variable = {
+				mod_with_usa_air_AIR_WING_XP_LOSS_WHEN_KILLED_FACTOR = -0.05
+			}
+
+			add_to_variable = {
+				mod_with_usa_air_ARMY_BONUS_AIR_SUPERIORITY_FACTOR = 0.05
+			}
+
+			add_to_variable = {
+				mod_with_usa_air_air_home_defence_factor = 0.05
+			}
+
+			add_to_variable = {
+				mod_with_usa_air_air_power_projection_factor = 0.05
+			}
+
+			add_to_variable = {
+				mod_with_usa_air_air_superiority_efficiency = 0.05
+			}
+
+			add_to_variable = {
+				mod_with_usa_air_air_cas_efficiency = 0.05
+			}
+
+			add_to_variable = {
+				mod_with_usa_air_ground_attack_factor = 0.05
+			}
+
+			effect_tooltip = {
+				swap_ideas = {
+					add_idea = USA_air_modifier_tooltip_1
+					remove_idea = USA_air_modifier_tooltip
+				}
+			}
+		}
+
+		ai_will_do = {
+			factor = 100
+		}
+
+	}
+	ENG_army_train_categories_air_4 = {
+		allowed = {
+			original_tag = ENG
+		}
+
+		visible = {
+			original_tag = ENG
+			FRA = {
+				has_country_flag = cjg_open_the_third_empire
+			}
+			has_country_flag = USA_army_train_categories_air_3
+			NOT = {
+				has_country_flag = USA_army_train_categories_air_4
+			}
+		}
+
+		icon = CHL_carabineros
+
+		available = {
+			FRA = {
+				has_country_flag = cjg_open_the_third_empire
+			}
+			has_country_flag = USA_army_train_categories_air_3
+			NOT = {
+				has_country_flag = USA_army_train_categories_air_4
+			}
+		}
+
+		fire_only_once = no
+
+		cost = 50
+		custom_cost_trigger = {
+			has_air_experience > 99.9
+		}
+		custom_cost_text = the_mod_decision_cost_AirXP_100
+		days_remove = 90
+		modifier = {
+			experience_gain_air_factor = -0.1
+		}
+
+		complete_effect = {
+			air_experience = -100
+			set_country_flag = USA_army_train_categories_air_4
+			clr_country_flag = USA_army_train_categories_air_3
+		}
+
+		remove_effect = {
+			add_to_variable = {
+				mod_with_eng_air_experience_gain_air_factor = 0.075
+			}
+
+			add_to_variable = {
+				mod_with_eng_air_AIR_ATTACK_FACTOR = 0.05
+			}
+
+			add_to_variable = {
+				mod_with_eng_air_AIR_DEFENCE_FACTOR = 0.05
+			}
+
+			add_to_variable = {
+				mod_with_eng_air_AIR_AGILITY_FACTOR = 0.05
+			}
+
+			add_to_variable = {
+				mod_with_eng_air_AIR_ACCIDENTS_FACTOR = -0.075
+			}
+
+			add_to_variable = {
+				mod_with_eng_air_AIR_ACE_GENERATION_CHANCE_FACTOR = 0.05
+			}
+
+			add_to_variable = {
+				mod_with_eng_air_AIR_TRAINING_XP_FACTOR = 0.075
+			}
+
+			add_to_variable = {
+				mod_with_eng_air_AIR_MISSION_XP_FACTOR = 0.05
+			}
+
+			add_to_variable = {
+				mod_with_eng_air_AIR_WING_XP_LOSS_WHEN_KILLED_FACTOR = -0.05
+			}
+
+			add_to_variable = {
+				mod_with_eng_air_ARMY_BONUS_AIR_SUPERIORITY_FACTOR = 0.05
+			}
+
+			add_to_variable = {
+				mod_with_eng_air_air_home_defence_factor = 0.05
+			}
+
+			add_to_variable = {
+				mod_with_eng_air_air_power_projection_factor = 0.05
+			}
+
+			add_to_variable = {
+				mod_with_eng_air_air_superiority_efficiency = 0.05
+			}
+
+			add_to_variable = {
+				mod_with_eng_air_air_cas_efficiency = 0.05
+			}
+
+			add_to_variable = {
+				mod_with_eng_air_ground_attack_factor = 0.05
+			}
+
+			effect_tooltip = {
+				swap_ideas = {
+					add_idea = ENG_air_modifier_tooltip_1
+					remove_idea = ENG_air_modifier_tooltip
+				}
+			}
+		}
+
+		ai_will_do = {
+			factor = 100
+		}
+
+	}
+	ENG_army_train_categories_air_5 = {
+		allowed = {
+			original_tag = ENG
+		}
+
+		visible = {
+			original_tag = ENG
+			FRA = {
+				has_country_flag = cjg_open_the_third_empire
+			}
+			has_country_flag = USA_army_train_categories_air_4
+			NOT = {
+				has_country_flag = USA_army_train_categories_air_5
+			}
+		}
+
+		icon = CHL_carabineros
+
+		available = {
+			FRA = {
+				has_country_flag = cjg_open_the_third_empire
+			}
+			has_country_flag = USA_army_train_categories_air_4
+			NOT = {
+				has_country_flag = USA_army_train_categories_air_5
+			}
+		}
+
+		fire_only_once = no
+
+		cost = 50
+		custom_cost_trigger = {
+			has_air_experience > 99.9
+		}
+		custom_cost_text = the_mod_decision_cost_AirXP_100
+		days_remove = 90
+		modifier = {
+			experience_gain_air_factor = -0.1
+		}
+
+		complete_effect = {
+			air_experience = -100
+			set_country_flag = USA_army_train_categories_air_5
+			clr_country_flag = USA_army_train_categories_air_4
+		}
+
+		remove_effect = {
+			add_to_variable = {
+				mod_with_eng_air_experience_gain_air_factor = 0.075
+			}
+
+			add_to_variable = {
+				mod_with_eng_air_AIR_ATTACK_FACTOR = 0.05
+			}
+
+			add_to_variable = {
+				mod_with_eng_air_AIR_DEFENCE_FACTOR = 0.05
+			}
+
+			add_to_variable = {
+				mod_with_eng_air_AIR_AGILITY_FACTOR = 0.05
+			}
+
+			add_to_variable = {
+				mod_with_eng_air_AIR_ACCIDENTS_FACTOR = -0.075
+			}
+
+			add_to_variable = {
+				mod_with_eng_air_AIR_ACE_GENERATION_CHANCE_FACTOR = 0.05
+			}
+
+			add_to_variable = {
+				mod_with_eng_air_AIR_TRAINING_XP_FACTOR = 0.075
+			}
+
+			add_to_variable = {
+				mod_with_eng_air_AIR_MISSION_XP_FACTOR = 0.05
+			}
+
+			add_to_variable = {
+				mod_with_eng_air_AIR_WING_XP_LOSS_WHEN_KILLED_FACTOR = -0.05
+			}
+
+			add_to_variable = {
+				mod_with_eng_air_ARMY_BONUS_AIR_SUPERIORITY_FACTOR = 0.05
+			}
+
+			add_to_variable = {
+				mod_with_eng_air_air_home_defence_factor = 0.05
+			}
+
+			add_to_variable = {
+				mod_with_eng_air_air_power_projection_factor = 0.05
+			}
+
+			add_to_variable = {
+				mod_with_eng_air_air_superiority_efficiency = 0.05
+			}
+
+			add_to_variable = {
+				mod_with_eng_air_air_cas_efficiency = 0.05
+			}
+
+			add_to_variable = {
+				mod_with_eng_air_ground_attack_factor = 0.05
+			}
+
+			effect_tooltip = {
+				swap_ideas = {
+					add_idea = ENG_air_modifier_tooltip_1
+					remove_idea = ENG_air_modifier_tooltip
+				}
+			}
+		}
+
+		ai_will_do = {
+			factor = 100
+		}
+
+	}
+	USA_army_train_categories_navy_4 = {
+		allowed = {
+			original_tag = USA
+		}
+
+		visible = {
+			original_tag = USA
+			FRA = {
+				has_country_flag = cjg_open_the_third_empire
+			}
+			has_country_flag = USA_army_train_categories_navy_3
+			NOT = {
+				has_country_flag = USA_army_train_categories_navy_4
+			}
+		}
+
+		icon = CHL_carabineros
+
+		available = {
+			FRA = {
+				has_country_flag = cjg_open_the_third_empire
+			}
+			has_country_flag = USA_army_train_categories_navy_3
+			NOT = {
+				has_country_flag = USA_army_train_categories_navy_4
+			}
+		}
+
+		fire_only_once = no
+
+		cost = 50
+		custom_cost_trigger = {
+			has_navy_experience > 99.9
+		}
+		custom_cost_text = the_mod_decision_cost_NavXP_100
+		days_remove = 90
+		modifier = {
+			experience_gain_navy_factor = -0.1
+		}
+
+		complete_effect = {
+			navy_experience = -100
+			set_country_flag = USA_army_train_categories_navy_4
+			clr_country_flag = USA_army_train_categories_navy_3
+		}
+
+		remove_effect = {
+			add_to_variable = {
+				mod_with_usa_navy_TRAINING_TIME_NAVY_FACTOR = -0.05
+			}
+
+			add_to_variable = {
+				mod_with_usa_navy_NAVY_ORG_FACTOR = 0.05
+			}
+
+			add_to_variable = {
+				mod_with_usa_navy_NAVAL_MORALE_FACTOR = 0.05
+			}
+
+			add_to_variable = {
+				mod_with_usa_navy_NAVY_ANTI_AIR_ATTACK_FACTOR = 0.05
+			}
+
+			add_to_variable = {
+				mod_with_usa_navy_NAVAL_DAMAGE_FACTOR = 0.05
+			}
+
+			add_to_variable = {
+				mod_with_usa_navy_NAVAL_DEFENSE_FACTOR = 0.05
+			}
+
+			add_to_variable = {
+				mod_with_usa_navy_NAVAL_TORPEDO_COOLDOWN_FACTOR = -0.025
+			}
+
+			add_to_variable = {
+				mod_with_usa_navy_NAVY_CAPITAL_SHIP_ATTACK_FACTOR = 0.05
+			}
+
+			add_to_variable = {
+				mod_with_usa_navy_NAVY_CAPITAL_SHIP_DEFENCE_FACTOR = 0.05
+			}
+
+			add_to_variable = {
+				mod_with_usa_navy_NAVY_SCREEN_ATTACK_FACTOR = 0.05
+			}
+
+			add_to_variable = {
+				mod_with_usa_navy_NAVY_SCREEN_DEFENCE_FACTOR = 0.05
+			}
+
+			add_to_variable = {
+				mod_with_usa_navy_NAVAL_STRIKE_ATTACK_FACTOR = 0.05
+			}
+
+			add_to_variable = {
+				mod_with_usa_navy_naval_invasion_capacity = 4
+			}
+
+			add_to_variable = {
+				mod_with_usa_navy_naval_invasion_penalty = -0.05
+			}
+
+			add_to_variable = {
+				mod_with_usa_navy_amphibious_invasion_defence = 0.025
+			}
+
+			effect_tooltip = {
+				swap_ideas = {
+					add_idea = USA_navy_modifier_tooltip_1
+					remove_idea = USA_navy_modifier_tooltip
+				}
+			}
+		}
+
+		ai_will_do = {
+			factor = 100
+		}
+
+	}
+	USA_army_train_categories_navy_5 = {
+		allowed = {
+			original_tag = USA
+		}
+
+		visible = {
+			original_tag = USA
+			FRA = {
+				has_country_flag = cjg_open_the_third_empire
+			}
+			has_country_flag = USA_army_train_categories_navy_4
+			NOT = {
+				has_country_flag = USA_army_train_categories_navy_5
+			}
+		}
+
+		icon = CHL_carabineros
+
+		available = {
+			FRA = {
+				has_country_flag = cjg_open_the_third_empire
+			}
+			has_country_flag = USA_army_train_categories_navy_4
+			NOT = {
+				has_country_flag = USA_army_train_categories_navy_5
+			}
+		}
+
+		fire_only_once = no
+
+		cost = 50
+		custom_cost_trigger = {
+			has_navy_experience > 99.9
+		}
+		custom_cost_text = the_mod_decision_cost_NavXP_100
+		days_remove = 90
+		modifier = {
+			experience_gain_navy_factor = -0.1
+		}
+
+		complete_effect = {
+			navy_experience = -100
+			set_country_flag = USA_army_train_categories_navy_5
+			clr_country_flag = USA_army_train_categories_navy_4
+		}
+
+		remove_effect = {
+			add_to_variable = {
+				mod_with_usa_navy_TRAINING_TIME_NAVY_FACTOR = -0.05
+			}
+
+			add_to_variable = {
+				mod_with_usa_navy_NAVY_ORG_FACTOR = 0.05
+			}
+
+			add_to_variable = {
+				mod_with_usa_navy_NAVAL_MORALE_FACTOR = 0.05
+			}
+
+			add_to_variable = {
+				mod_with_usa_navy_NAVY_ANTI_AIR_ATTACK_FACTOR = 0.05
+			}
+
+			add_to_variable = {
+				mod_with_usa_navy_NAVAL_DAMAGE_FACTOR = 0.05
+			}
+
+			add_to_variable = {
+				mod_with_usa_navy_NAVAL_DEFENSE_FACTOR = 0.05
+			}
+
+			add_to_variable = {
+				mod_with_usa_navy_NAVAL_TORPEDO_COOLDOWN_FACTOR = -0.025
+			}
+
+			add_to_variable = {
+				mod_with_usa_navy_NAVY_CAPITAL_SHIP_ATTACK_FACTOR = 0.05
+			}
+
+			add_to_variable = {
+				mod_with_usa_navy_NAVY_CAPITAL_SHIP_DEFENCE_FACTOR = 0.05
+			}
+
+			add_to_variable = {
+				mod_with_usa_navy_NAVY_SCREEN_ATTACK_FACTOR = 0.05
+			}
+
+			add_to_variable = {
+				mod_with_usa_navy_NAVY_SCREEN_DEFENCE_FACTOR = 0.05
+			}
+
+			add_to_variable = {
+				mod_with_usa_navy_NAVAL_STRIKE_ATTACK_FACTOR = 0.05
+			}
+
+			add_to_variable = {
+				mod_with_usa_navy_naval_invasion_capacity = 4
+			}
+
+			add_to_variable = {
+				mod_with_usa_navy_naval_invasion_penalty = -0.05
+			}
+
+			add_to_variable = {
+				mod_with_usa_navy_amphibious_invasion_defence = 0.025
+			}
+
+			effect_tooltip = {
+				swap_ideas = {
+					add_idea = USA_navy_modifier_tooltip_1
+					remove_idea = USA_navy_modifier_tooltip
+				}
+			}
+		}
+
+		ai_will_do = {
+			factor = 100
+		}
+
+	}
+	ENG_army_train_categories_navy_4 = {
+		allowed = {
+			original_tag = ENG
+		}
+
+		visible = {
+			original_tag = ENG
+			FRA = {
+				has_country_flag = cjg_open_the_third_empire
+			}
+			has_country_flag = USA_army_train_categories_navy_3
+			NOT = {
+				has_country_flag = USA_army_train_categories_navy_4
+			}
+		}
+
+		icon = CHL_carabineros
+
+		available = {
+			FRA = {
+				has_country_flag = cjg_open_the_third_empire
+			}
+			has_country_flag = USA_army_train_categories_navy_3
+			NOT = {
+				has_country_flag = USA_army_train_categories_navy_4
+			}
+		}
+
+		fire_only_once = no
+
+		cost = 50
+		custom_cost_trigger = {
+			has_navy_experience > 99.9
+		}
+		custom_cost_text = the_mod_decision_cost_NavXP_100
+		days_remove = 90
+		modifier = {
+			experience_gain_navy_factor = -0.1
+		}
+
+		complete_effect = {
+			navy_experience = -100
+			set_country_flag = USA_army_train_categories_navy_4
+			clr_country_flag = USA_army_train_categories_navy_3
+		}
+
+		remove_effect = {
+			add_to_variable = {
+				mod_with_eng_navy_TRAINING_TIME_NAVY_FACTOR = -0.05
+			}
+
+			add_to_variable = {
+				mod_with_eng_navy_NAVY_ORG_FACTOR = 0.05
+			}
+
+			add_to_variable = {
+				mod_with_eng_navy_NAVAL_MORALE_FACTOR = 0.05
+			}
+
+			add_to_variable = {
+				mod_with_eng_navy_NAVY_ANTI_AIR_ATTACK_FACTOR = 0.05
+			}
+
+			add_to_variable = {
+				mod_with_eng_navy_NAVAL_DAMAGE_FACTOR = 0.05
+			}
+
+			add_to_variable = {
+				mod_with_eng_navy_NAVAL_DEFENSE_FACTOR = 0.05
+			}
+
+			add_to_variable = {
+				mod_with_eng_navy_NAVAL_TORPEDO_COOLDOWN_FACTOR = -0.025
+			}
+
+			add_to_variable = {
+				mod_with_eng_navy_NAVY_CAPITAL_SHIP_ATTACK_FACTOR = 0.05
+			}
+
+			add_to_variable = {
+				mod_with_eng_navy_NAVY_CAPITAL_SHIP_DEFENCE_FACTOR = 0.05
+			}
+
+			add_to_variable = {
+				mod_with_eng_navy_NAVY_SCREEN_ATTACK_FACTOR = 0.05
+			}
+
+			add_to_variable = {
+				mod_with_eng_navy_NAVY_SCREEN_DEFENCE_FACTOR = 0.05
+			}
+
+			add_to_variable = {
+				mod_with_eng_navy_NAVAL_STRIKE_ATTACK_FACTOR = 0.05
+			}
+
+			add_to_variable = {
+				mod_with_eng_navy_naval_invasion_capacity = 4
+			}
+
+			add_to_variable = {
+				mod_with_eng_navy_naval_invasion_penalty = -0.05
+			}
+
+			add_to_variable = {
+				mod_with_eng_navy_amphibious_invasion_defence = 0.025
+			}
+
+			effect_tooltip = {
+				swap_ideas = {
+					add_idea = ENG_navy_modifier_tooltip_1
+					remove_idea = ENG_navy_modifier_tooltip
+				}
+			}
+		}
+
+		ai_will_do = {
+			factor = 100
+		}
+
+	}
+	ENG_army_train_categories_navy_5 = {
+		allowed = {
+			original_tag = ENG
+		}
+
+		visible = {
+			original_tag = ENG
+			FRA = {
+				has_country_flag = cjg_open_the_third_empire
+			}
+			has_country_flag = USA_army_train_categories_navy_4
+			NOT = {
+				has_country_flag = USA_army_train_categories_navy_5
+			}
+		}
+
+		icon = CHL_carabineros
+
+		available = {
+			FRA = {
+				has_country_flag = cjg_open_the_third_empire
+			}
+			has_country_flag = USA_army_train_categories_navy_4
+			NOT = {
+				has_country_flag = USA_army_train_categories_navy_5
+			}
+		}
+
+		fire_only_once = no
+
+		cost = 50
+		custom_cost_trigger = {
+			has_navy_experience > 99.9
+		}
+		custom_cost_text = the_mod_decision_cost_NavXP_100
+		days_remove = 90
+		modifier = {
+			experience_gain_navy_factor = -0.1
+		}
+
+		complete_effect = {
+			navy_experience = -100
+			set_country_flag = USA_army_train_categories_navy_5
+			clr_country_flag = USA_army_train_categories_navy_4
+		}
+
+		remove_effect = {
+			add_to_variable = {
+				mod_with_eng_navy_TRAINING_TIME_NAVY_FACTOR = -0.05
+			}
+
+			add_to_variable = {
+				mod_with_eng_navy_NAVY_ORG_FACTOR = 0.05
+			}
+
+			add_to_variable = {
+				mod_with_eng_navy_NAVAL_MORALE_FACTOR = 0.05
+			}
+
+			add_to_variable = {
+				mod_with_eng_navy_NAVY_ANTI_AIR_ATTACK_FACTOR = 0.05
+			}
+
+			add_to_variable = {
+				mod_with_eng_navy_NAVAL_DAMAGE_FACTOR = 0.05
+			}
+
+			add_to_variable = {
+				mod_with_eng_navy_NAVAL_DEFENSE_FACTOR = 0.05
+			}
+
+			add_to_variable = {
+				mod_with_eng_navy_NAVAL_TORPEDO_COOLDOWN_FACTOR = -0.025
+			}
+
+			add_to_variable = {
+				mod_with_eng_navy_NAVY_CAPITAL_SHIP_ATTACK_FACTOR = 0.05
+			}
+
+			add_to_variable = {
+				mod_with_eng_navy_NAVY_CAPITAL_SHIP_DEFENCE_FACTOR = 0.05
+			}
+
+			add_to_variable = {
+				mod_with_eng_navy_NAVY_SCREEN_ATTACK_FACTOR = 0.05
+			}
+
+			add_to_variable = {
+				mod_with_eng_navy_NAVY_SCREEN_DEFENCE_FACTOR = 0.05
+			}
+
+			add_to_variable = {
+				mod_with_eng_navy_NAVAL_STRIKE_ATTACK_FACTOR = 0.05
+			}
+
+			add_to_variable = {
+				mod_with_eng_navy_naval_invasion_capacity = 4
+			}
+
+			add_to_variable = {
+				mod_with_eng_navy_naval_invasion_penalty = -0.05
+			}
+
+			add_to_variable = {
+				mod_with_eng_navy_amphibious_invasion_defence = 0.025
+			}
+
+			effect_tooltip = {
+				swap_ideas = {
+					add_idea = ENG_navy_modifier_tooltip_1
+					remove_idea = ENG_navy_modifier_tooltip
+				}
+			}
+		}
+
+		ai_will_do = {
+			factor = 100
+		}
+
+	}
 }

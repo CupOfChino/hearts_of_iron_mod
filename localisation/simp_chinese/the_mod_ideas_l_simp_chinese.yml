@@ -468,3 +468,7 @@
  CHI_mission_to_germany:0 "友好外交"
  FRA_far_east_compensation: "远东权益补偿"
  FRA_far_east_compensation_desc: "虽然法兰西帝国将印度支那的治权移交给了中国，但远东的资源开采权与商业利益依然源源不断地流入国库。帝国将从这笔交易中长久获益。"
+ SOV_red_army_navy_modifier_tooltip: "红海军"
+ SOV_red_army_navy_modifier_tooltip_1: "红海军"
+ SOV_red_army_navy_modifier_tooltip_2: "红海军"
+ SOV_the_red_navy_dynamic_modifier: "红海军"

@@ -1,0 +1,50 @@
+guiTypes = {
+	containerWindowType = {
+		name = "TSE_three_emperors_event"
+		size = { width = 982 height = 594 }
+		position = { x=0 y=0 }
+		Orientation = center
+		Origo = center
+		clipping = no
+		moveable = yes
+
+		background = {
+			name = "GFX_TSE_three_emperors"
+			spriteType = "GFX_TSE_three_emperors"
+			position = { x = 0 y = 0 }
+		}
+
+		instantTextBoxType = {
+			name = "TSE_Title_textbox"
+			position = { x = 0 y = 26 }
+			font = "VCR02_20"
+			borderSize = {x = 0 y = 0}
+			text = "[get_tse_title]"
+			maxWidth = 982
+			maxHeight = 32
+			fixedsize = yes
+			format = center
+		}
+
+		instantTextBoxType = {
+			name = "TSE_Quote_textbox"
+			position = { x = 0 y = 478 }
+			font = "VCR02_16"
+			borderSize = {x = 0 y = 0}
+			text = "[get_tse_quote]"
+			maxWidth = 982
+			maxHeight = 70
+			fixedsize = yes
+			format = center
+		}
+
+		buttonType = {
+			name = "TSE_close"
+			position = { x = 366 y = 560 }
+			buttonText = "[get_tse_button]"
+			buttonFont = "VCR02_16"
+			quadTextureSprite = "GFX_button_148x34"
+			clicksound = click_ok
+		}
+	}
+}

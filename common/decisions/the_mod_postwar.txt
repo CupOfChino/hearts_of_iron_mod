@@ -1,0 +1,39 @@
+postwar_order_categories = {
+	postwar_declare_war_on_former_allies = { #清算旧盟
+		allowed = {
+			OR = {
+				original_tag = GER
+				original_tag = FRA
+				original_tag = HUN
+				original_tag = CHI
+				original_tag = ENG
+				original_tag = USA
+				original_tag = SOV
+				original_tag = JAP
+			}
+		}
+
+		visible = {
+			num_divisions > 200
+		}
+
+		available = {
+			num_divisions > 200
+		}
+
+		icon = generic_war
+
+		fire_only_once = yes
+
+		cost = 0
+
+		complete_effect = {
+			# 触发宣战事件，由事件选项正式宣战
+			country_event = { id = postwar.3 }
+		}
+
+		ai_will_do = {
+			factor = 1000
+		}
+	}
+}

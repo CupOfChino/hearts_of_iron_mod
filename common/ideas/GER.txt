@@ -1,7 +1,7 @@
 ideas = {
 
 	country = {
-		ai_has_more_army {
+		ai_has_more_army = {
 			allowed = {
 				always = yes
 			}
@@ -921,6 +921,9 @@ ideas = {
 				original_tag = GER
 				always = yes
 			}
+			cancel = {
+				
+			}
 			picture = generic_reserve_divisions
 			
 			modifier = {
@@ -936,6 +939,9 @@ ideas = {
 			
 			allowed = {
 				always = yes
+			}
+			cancel = {
+				has_global_flag = third_empire_era_over_flag
 			}
 			picture = generic_reserve_divisions
 			
@@ -1018,6 +1024,9 @@ ideas = {
 			allowed = {
 				always = yes
 			}
+			cancel = {
+				has_global_flag = third_empire_era_over_flag
+			}
 			picture = chi_chinese_support
 			
 			modifier = {
@@ -1085,6 +1094,9 @@ ideas = {
 			allowed = {
 				original_tag = GER
 				always = yes
+			}
+			cancel = {
+				has_global_flag = third_empire_era_over_flag
 			}
 			picture = chi_whampoa_military_academy
 			
@@ -1627,6 +1639,9 @@ ideas = {
 			
 			allowed = {
 				always = yes
+			}
+			cancel = {
+				has_global_flag = third_empire_era_over_flag
 			}
 			picture = jap_duplicate_research
 			

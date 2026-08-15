@@ -9377,57 +9377,10 @@ form_hre_category = {
 		}
 
 		visible = {
-			if = {
-				limit = {
-					original_tag = GER
-				}
-				has_government = neutrality
-			}
-			IF = {
-				limit = {
-					has_dlc = "Peace For Our Time"
-					original_tag = CZE
-				}
-				has_completed_focus = CZE_usurp_the_mantle
-			}
-			ELSE_IF = {
-				limit = {
-					has_dlc = "Gotterdammerung"
-				}
-				OR = {
-					AND = {
-						original_tag = GER
-						has_completed_focus = GER_restore_the_holy_roman_empire
-					}
-					AND = {
-						original_tag = AUS
-						has_government = neutrality
-						has_completed_focus = AUS_legacy_of_the_empire
-						OR = {
-							has_country_leader = {
-								ruling_only = yes # default = yes
-								character = AUS_ernst_rudiger_starhemberg
-							}
-							has_country_leader = {
-								ruling_only = yes # default = yes
-								character = AUS_alois_of_liechtenstein
-							}
-						}
-					}
-				}
-			}
-			ELSE_IF = {
-				limit = {
-					NOT = {
-						has_dlc = "Gotterdammerung"
-					}
-				}
-				AND = {
-					original_tag = GER
-					has_government = neutrality
-				}
-			}
-			
+			original_tag = GER
+			has_government = neutrality
+			has_completed_focus = GER_revive_the_kaiserreich_ww
+			has_completed_focus = GER_return_of_the_kaiser_ww
 			NOT = { has_global_flag = form_hre_flag }
 		}
 

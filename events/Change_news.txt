@@ -839,7 +839,7 @@ news_event = { #大东亚共荣建成
     id = change_news.24
     title = change_news.24.t
 	desc = change_news.24.d
-    picture = GFX_news_event_japanese_army_parade
+    picture = GFX_news_event_japanese_parade
     major = yes
 	
 	is_triggered_only = yes
@@ -1495,7 +1495,7 @@ news_event = { #意大利被瓜分
     id = change_news.46
     title = change_news.46.t
 	desc = change_news.46.d
-    picture = GFX_news_event_german_inspect_troops
+    picture = GFX_report_event_generic_sign_treaty2
 
 	major = yes
 	
@@ -2071,7 +2071,7 @@ news_event = { #日本宣布加入协约国
     id = change_news.60
     title = change_news.60.t
 	desc = change_news.60.d
-    picture = GFX_news_event_japanese_army_parade
+    picture = GFX_news_event_japanese_parade
 
 	major = yes
 	
@@ -2291,7 +2291,7 @@ news_event = { #蒙古被瓜分
     id = change_news.65
     title = change_news.65.t
 	desc = change_news.65.d
-    picture = GFX_news_event_japanese_army_parade
+    picture = GFX_report_event_generic_sign_treaty2
 
 	major = yes
 	
@@ -2332,7 +2332,7 @@ news_event = { #苏联将抵抗到底
     id = change_news.66
     title = change_news.66.t
 	desc = change_news.66.d
-    picture = GFX_news_event_japanese_army_parade
+    picture = GFX_news_event_soviet_tanks
 
 	major = yes
 	
@@ -2760,6 +2760,393 @@ news_event = { #中国接管法属印度支那
 }
 
 
+news_event = { #三皇同盟凯旋
+	id = change_news.77
+	title = change_news.77.t
+	desc = change_news.77.d
+	picture = GFX_news_event_german_inspect_troops
+
+	major = yes
+
+	is_triggered_only = yes
+
+	option = {
+		name = change_news.77.a
+		trigger = {
+			TAG = GER
+		}
+	}
+
+	option = {
+		name = change_news.77.b
+		trigger = {
+			is_in_faction_with = GER
+		}
+	}
+
+	option = {
+		name = change_news.77.c
+		trigger = {
+			NOT = {
+				TAG = GER
+				is_in_faction_with = GER
+			}
+		}
+	}
+}
+
+news_event = { #三国协约凯旋
+	id = change_news.78
+	title = change_news.78.t
+	desc = change_news.78.d
+	picture = GFX_news_event_generic_rally_3
+
+	major = yes
+
+	is_triggered_only = yes
+
+	option = {
+		name = change_news.78.a
+		trigger = {
+			TAG = ENG
+		}
+	}
+
+	option = {
+		name = change_news.78.b
+		trigger = {
+			is_in_faction_with = ENG
+		}
+	}
+
+	option = {
+		name = change_news.78.c
+		trigger = {
+			NOT = {
+				TAG = ENG
+				is_in_faction_with = ENG
+			}
+		}
+	}
+}
+
+
+news_event = { #第三次世界大战爆发
+	id = change_news.79
+	title = change_news.79.t
+	desc = change_news.79.d
+	picture = GFX_news_event_generic_panzer_attack
+
+	major = yes
+
+	is_triggered_only = yes
+
+	option = {
+		name = change_news.79.a
+		trigger = {
+			is_major = yes
+		}
+	}
+
+	option = {
+		name = change_news.79.b
+		trigger = {
+			NOT = {
+				is_major = yes
+			}
+		}
+	}
+}
+
+news_event = { #凯撒集团成立
+	id = change_news.80
+	title = change_news.80.t
+	desc = change_news.80.d
+	picture = GFX_news_event_german_inspect_troops
+
+	major = yes
+
+	is_triggered_only = yes
+
+	fire_only_once = yes
+
+	option = {
+		name = change_news.80.a
+		trigger = {
+			TAG = GER
+		}
+	}
+
+	option = {
+		name = change_news.80.b
+		trigger = {
+			is_in_faction_with = GER
+		}
+	}
+
+	option = {
+		name = change_news.80.c
+		trigger = {
+			NOT = {
+				TAG = GER
+				is_in_faction_with = GER
+			}
+		}
+	}
+}
+
+news_event = { #大陆体系成立
+	id = change_news.81
+	title = change_news.81.t
+	desc = change_news.81.d
+	picture = GFX_news_event_french_parade
+
+	major = yes
+
+	is_triggered_only = yes
+
+	fire_only_once = yes
+
+	option = {
+		name = change_news.81.a
+		trigger = {
+			TAG = FRA
+		}
+	}
+
+	option = {
+		name = change_news.81.b
+		trigger = {
+			is_in_faction_with = FRA
+		}
+	}
+
+	option = {
+		name = change_news.81.c
+		trigger = {
+			NOT = {
+				TAG = FRA
+				is_in_faction_with = FRA
+			}
+		}
+	}
+}
+
+news_event = { #哈布斯堡同盟成立
+	id = change_news.82
+	title = change_news.82.t
+	desc = change_news.82.d
+	picture = GFX_news_event_hungarian_soldiers
+
+	major = yes
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {
+		name = change_news.82.a
+		trigger = {
+			TAG = HUN
+		}
+	}
+
+	option = {
+		name = change_news.82.b
+		trigger = {
+			is_in_faction_with = HUN
+		}
+	}
+
+	option = {
+		name = change_news.82.c
+		trigger = {
+			NOT = {
+				TAG = HUN
+				is_in_faction_with = HUN
+			}
+		}
+	}
+}
+
+news_event = { #天朝上国成立
+	id = change_news.83
+	title = change_news.83.t
+	desc = change_news.83.d
+	picture = GFX_news_event_chinese_soldiers_city_ruin
+
+	major = yes
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {
+		name = change_news.83.a
+		trigger = {
+			TAG = CHI
+		}
+	}
+
+	option = {
+		name = change_news.83.b
+		trigger = {
+			is_in_faction_with = CHI
+		}
+	}
+
+	option = {
+		name = change_news.83.c
+		trigger = {
+			NOT = {
+				TAG = CHI
+				is_in_faction_with = CHI
+			}
+		}
+	}
+}
+
+news_event = { #日不落帝国成立
+	id = change_news.84
+	title = change_news.84.t
+	desc = change_news.84.d
+	picture = GFX_news_event_generic_rally_3
+
+	major = yes
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {
+		name = change_news.84.a
+		trigger = {
+			TAG = ENG
+		}
+	}
+
+	option = {
+		name = change_news.84.b
+		trigger = {
+			is_in_faction_with = ENG
+		}
+	}
+
+	option = {
+		name = change_news.84.c
+		trigger = {
+			NOT = {
+				TAG = ENG
+				is_in_faction_with = ENG
+			}
+		}
+	}
+}
+
+news_event = { #自由国家联盟成立
+	id = change_news.85
+	title = change_news.85.t
+	desc = change_news.85.d
+	picture = GFX_news_event_generic_handshake
+
+	major = yes
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {
+		name = change_news.85.a
+		trigger = {
+			TAG = USA
+		}
+	}
+
+	option = {
+		name = change_news.85.b
+		trigger = {
+			is_in_faction_with = USA
+		}
+	}
+
+	option = {
+		name = change_news.85.c
+		trigger = {
+			NOT = {
+				TAG = USA
+				is_in_faction_with = USA
+			}
+		}
+	}
+}
+
+news_event = { #共产国际成立
+	id = change_news.86
+	title = change_news.86.t
+	desc = change_news.86.d
+	picture = GFX_news_event_soviet_tanks
+
+	major = yes
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {
+		name = change_news.86.a
+		trigger = {
+			TAG = SOV
+		}
+	}
+
+	option = {
+		name = change_news.86.b
+		trigger = {
+			is_in_faction_with = SOV
+		}
+	}
+
+	option = {
+		name = change_news.86.c
+		trigger = {
+			NOT = {
+				TAG = SOV
+				is_in_faction_with = SOV
+			}
+		}
+	}
+}
+
+news_event = { #大东亚共荣圈成立
+	id = change_news.87
+	title = change_news.87.t
+	desc = change_news.87.d
+	picture = GFX_news_event_japanese_parade
+
+	major = yes
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {
+		name = change_news.87.a
+		trigger = {
+			TAG = JAP
+		}
+	}
+
+	option = {
+		name = change_news.87.b
+		trigger = {
+			is_in_faction_with = JAP
+		}
+	}
+
+	option = {
+		name = change_news.87.c
+		trigger = {
+			NOT = {
+				TAG = JAP
+				is_in_faction_with = JAP
+			}
+		}
+	}
+}
 
 
 

@@ -1,0 +1,158 @@
+ideas = {
+	country = {
+		USA_military_industrial_complex = {
+			picture = generic_war_preparation
+
+			modifier = {
+				production_speed_arms_factory_factor = 0.25
+				production_speed_dockyard_factor = 0.25
+				production_speed_industrial_complex_factor = 0.2
+				production_speed_buildings_factor = 0.2
+				industrial_capacity_factory = 0.15
+				industrial_capacity_dockyard = 0.15
+				production_factory_efficiency_gain_factor = 0.15
+				production_factory_max_efficiency_factor = 0.1
+				line_change_production_efficiency_factor = 0.25
+				consumer_goods_factor = -0.05
+				local_resources_factor = 0.1
+			}
+		}
+		USA_bulid_navy = { #美国海军建设
+			picture = CHL_armada_de_chile
+			allowed = {
+				always = yes
+			}
+
+            cancel = {
+                
+            }
+			
+			modifier = {
+				industrial_capacity_dockyard = 0.25
+			}
+
+            equipment_bonus = {
+				ship_hull_submarine = {
+					build_cost_ic = -0.15
+					reliability = 0.15
+					maximum_speed = 0.1
+					lg_attack = 0.15
+					lg_armor_piercing = 0.15
+					sub_visibility = -0.1
+					max_strength = 0.15
+					torpedo_attack = 0.15
+					anti_air_attack = 0.15
+					instant = yes
+				}
+				ship_hull_light = {
+					build_cost_ic = -0.15
+					reliability = 0.15
+					maximum_speed = 0.1
+					lg_attack = 0.15
+					lg_armor_piercing = 0.15
+					hg_attack = 0.15
+					max_strength = 0.15
+					torpedo_attack = 0.1
+					anti_air_attack = 0.15
+					instant = yes
+				}
+				ship_hull_cruiser = {
+					build_cost_ic = -0.15
+					reliability = 0.15
+					maximum_speed = 0.1
+					lg_attack = 0.15
+					lg_armor_piercing = 0.15
+					hg_attack = 0.15
+					max_strength = 0.15
+					anti_air_attack = 0.15
+					instant = yes
+				}
+				ship_hull_heavy = {
+					build_cost_ic = -0.15
+					reliability = 0.15
+					maximum_speed = 0.1
+					lg_attack = 0.15
+					lg_armor_piercing = 0.15
+					hg_attack = 0.15
+					max_strength = 0.15
+					anti_air_attack = 0.15
+					instant = yes
+				}
+				ship_hull_carrier = {
+					build_cost_ic = -0.15
+					reliability = 0.15
+					maximum_speed = 0.1
+					lg_attack = 0.15
+					lg_armor_piercing = 0.15
+					hg_attack = 0.15
+					max_strength = 0.15
+					anti_air_attack = 0.15
+					carrier_size = 4
+					instant = yes
+				}
+			}
+		}
+
+		USA_the_attack_ger_buff = { #保卫美利坚！
+			picture = BEL_rexist_legion
+			allowed = {
+				always = yes
+			}
+
+            cancel = {
+
+            }
+			
+			modifier = {
+				army_attack_factor = 0.05
+				army_defence_factor = 0.05
+				army_core_attack_factor = 0.25
+				army_core_defence_factor = 0.25
+				industrial_capacity_factory = 0.6
+				industrial_capacity_dockyard = 0.6
+				production_factory_efficiency_gain_factor = 0.4
+				production_factory_max_efficiency_factor = 0.2
+				production_speed_buildings_factor = 0.2
+				production_speed_industrial_complex_factor = 0.2
+				production_speed_arms_factory_factor = 0.2
+				production_speed_dockyard_factor = 0.2
+				production_speed_fuel_silo_factor = 0.2
+				production_speed_air_base_factor = 0.2
+				production_speed_infrastructure_factor = 0.2
+				production_speed_synthetic_refinery_factor = 0.2
+				INDUSTRY_REPAIR_FACTOR = 0.2
+				local_resources_factor = 0.75
+				PRODUCTION_LACK_OF_RESOURCE_PENALTY_FACTOR = -0.6
+				research_speed_factor = 0.3
+			}
+		}
+
+		usa_has_awakening_buff = { #巨人觉醒
+			picture = generic_purge
+			allowed = {
+				always = yes
+			}
+
+            cancel = {
+
+            }
+			
+			modifier = {
+				consumer_goods_factor = -0.25
+				army_attack_factor = 0.05
+				army_defence_factor = 0.05
+				war_support_weekly = 0.005
+				production_factory_max_efficiency_factor = 0.15
+				production_factory_efficiency_gain_factor = 0.2
+				PRODUCTION_FACTORY_START_EFFICIENCY_FACTOR = 0.2
+				local_resources_factor = 0.25
+				LINE_CHANGE_PRODUCTION_EFFICIENCY_FACTOR = 0.2
+				industrial_capacity_factory = 0.25
+				industrial_capacity_dockyard = 0.25
+				production_speed_buildings_factor = 0.2
+			}
+		}
+	}
+
+
+}

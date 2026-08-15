@@ -24,6 +24,7 @@ GER_the_test_categories = {
             GER = {
                 set_country_flag = third_empire_has_become_flag
             }
+            set_global_flag = tse_three_emperors_global_flag
             country_event = { id = change_germany.4 }
         }
 
@@ -112,6 +113,8 @@ GER_the_test_categories = {
                 country_event = { id = change_france.25 }
             }
 			hidden_effect = {
+				set_global_flag = ww2_broke_out_flag
+				play_song = mod_ww2_boss
 				news_event = { id = change_news.33 hours = 1}
 			}
         }
@@ -257,4 +260,108 @@ GER_the_test_categories = {
 	
 
 
+    GER_the_test_categories_7 = { #二战结束（按玩家阵营判定凯旋方）
+        icon = ger_military_buildup
+
+        allowed = {
+			
+		}
+
+        visible = {
+           is_debug = yes
+           is_ai = no
+        }
+
+        available = {
+            OR = {
+                is_in_three_empires_side_trigger = yes
+                is_in_triple_entente_side_trigger = yes
+            }
+            NOT = {
+                OR = {
+                    has_global_flag = three_empires_ww2_victory_flag
+                    has_global_flag = triple_entente_ww2_victory_flag
+                }
+            }
+        }
+
+        fire_only_once = yes
+
+		cost = 0
+		days_remove = 0
+
+        complete_effect = {
+            if = {
+                limit = {
+                    is_in_triple_entente_side_trigger = yes
+                    NOT = { has_global_flag = triple_entente_defeated_in_ww2_flag }
+                }
+                set_global_flag = three_empires_defeated_in_ww2_flag
+                set_global_flag = triple_entente_ww2_victory_flag
+                news_event = { id = change_news.78 days = 1 }
+                ENG = { country_event = { id = postwar.2 days = 7 } }
+                USA = { country_event = { id = postwar.2 days = 7 } }
+                SOV = { country_event = { id = postwar.2 days = 7 } }
+                JAP = { country_event = { id = postwar.2 days = 7 } }
+            }
+            if = {
+                limit = {
+                    is_in_three_empires_side_trigger = yes
+                    NOT = { has_global_flag = three_empires_defeated_in_ww2_flag }
+                }
+                set_global_flag = triple_entente_defeated_in_ww2_flag
+                set_global_flag = three_empires_ww2_victory_flag
+                news_event = { id = change_news.77 days = 1 }
+                GER = { country_event = { id = postwar.1 days = 7 } }
+                FRA = { country_event = { id = postwar.1 days = 7 } }
+                HUN = { country_event = { id = postwar.1 days = 7 } }
+                CHI = { country_event = { id = postwar.1 days = 7 } }
+            }
+        }
+
+		remove_effect = {
+			
+		}
+		
+		ai_will_do = {
+			factor = 0
+		}
+
+    }
+
+    GER_the_test_categories_8 = { #直接宣战（调试）
+        icon = ger_military_buildup
+
+        allowed = {
+			
+		}
+
+        visible = {
+           is_debug = yes
+           is_ai = no
+        }
+
+        available = {
+            
+        }
+
+        fire_only_once = no
+
+		cost = 0
+		days_remove = 0
+
+        complete_effect = {
+            # 触发宣战事件，由事件选项正式宣战
+            country_event = { id = postwar.3 }
+        }
+
+		remove_effect = {
+			
+		}
+		
+		ai_will_do = {
+			factor = 0
+		}
+
+    }
 }

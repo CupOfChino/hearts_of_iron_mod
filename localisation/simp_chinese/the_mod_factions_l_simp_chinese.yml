@@ -27,4 +27,13 @@
  #####collections#####
  COLLECTION_FACTION_OWNED_STATES: "阵营控制的土地"
 
+ #####战后阵营#####
+ GER_kaiserbund_faction: "凯撒集团"
+ FRA_continental_system_faction: "大陆体系"
+ HUN_habsburg_alliance_faction: "哈布斯堡同盟"
+ CHI_celestial_empire_faction: "天朝上国"
+ ENG_sun_never_sets_faction: "日不落帝国"
+ USA_free_nations_faction: "自由国家联盟"
+ SOV_world_revolution_faction: "共产国际"
+ JAP_co_prosperity_sphere_faction: "大东亚共荣圈"
 

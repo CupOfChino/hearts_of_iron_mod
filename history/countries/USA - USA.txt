@@ -311,6 +311,21 @@ if = {
 	remove_ideas = {
 		great_depression
 	}
+	#美国工业：1939年原版大萧条降至最轻级，同步阶段3
+	set_variable = { var = USA_american_industry_stage value = 3 }
+	set_variable = { var = USA_american_industry_production_speed_industrial_complex_factor value = 0.03 }
+	set_variable = { var = USA_american_industry_production_speed_arms_factory_factor value = 0.03 }
+	set_variable = { var = USA_american_industry_production_speed_infrastructure_factor value = 0.03 }
+	set_variable = { var = USA_american_industry_production_speed_rail_way_factor value = 0 }
+	set_variable = { var = USA_american_industry_industrial_capacity_factory value = 0.02 }
+	set_variable = { var = USA_american_industry_industrial_capacity_dockyard value = 0 }
+	set_variable = { var = USA_american_industry_production_factory_efficiency_gain_factor value = 0.03 }
+	set_variable = { var = USA_american_industry_production_factory_max_efficiency_factor value = 0 }
+	set_variable = { var = USA_american_industry_production_factory_start_efficiency_factor value = 0 }
+	set_variable = { var = USA_american_industry_line_change_production_efficiency_factor value = 0.03 }
+	set_variable = { var = USA_american_industry_local_resources_factor value = 0 }
+	set_variable = { var = USA_american_industry_production_lack_of_resource_penalty_factor value = -0.02 }
+
 
 	#focuses
 	unlock_national_focus = USA_continue_the_new_deal
@@ -510,6 +525,24 @@ add_ideas = {
 	home_of_the_free
 }
 
+
+#美国工业：动态修正初始化（开局大萧条最严重 = 阶段1，随大萧条事件逐级变化）
+add_dynamic_modifier = {
+	modifier = USA_american_industry_dynamic_modifier
+}
+set_variable = { var = USA_american_industry_stage value = 1 }
+set_variable = { var = USA_american_industry_production_speed_industrial_complex_factor value = -0.10 }
+set_variable = { var = USA_american_industry_production_speed_arms_factory_factor value = -0.10 }
+set_variable = { var = USA_american_industry_production_speed_infrastructure_factor value = -0.10 }
+set_variable = { var = USA_american_industry_production_speed_rail_way_factor value = 0 }
+set_variable = { var = USA_american_industry_industrial_capacity_factory value = -0.05 }
+set_variable = { var = USA_american_industry_industrial_capacity_dockyard value = 0 }
+set_variable = { var = USA_american_industry_production_factory_efficiency_gain_factor value = -0.10 }
+set_variable = { var = USA_american_industry_production_factory_max_efficiency_factor value = -0.05 }
+set_variable = { var = USA_american_industry_production_factory_start_efficiency_factor value = 0 }
+set_variable = { var = USA_american_industry_line_change_production_efficiency_factor value = -0.10 }
+set_variable = { var = USA_american_industry_local_resources_factor value = 0 }
+set_variable = { var = USA_american_industry_production_lack_of_resource_penalty_factor value = 0 }
 
 # DIPLOMACY
 set_autonomy = {

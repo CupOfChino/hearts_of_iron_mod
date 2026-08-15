@@ -1,0 +1,18 @@
+USA_great_depression_categories = {
+
+    allowed = {
+        original_tag = USA
+    }
+
+    visible = {
+        OR = {
+            has_idea = great_depression
+            has_idea = great_depression_2
+            has_idea = great_depression_3
+        }
+    }
+
+    picture = GFX_decision_cat_picture_1936_election
+    icon = GFX_decision_category_army_reform
+    priority = 270
+}

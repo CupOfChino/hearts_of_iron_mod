@@ -27,3 +27,12 @@
  #####collections#####
  COLLECTION_FACTION_OWNED_STATES: "Faction-controlled land"
 
+ #####Postwar Factions#####
+ GER_kaiserbund_faction: "The Kaiserbund"
+ FRA_continental_system_faction: "The Continental System"
+ HUN_habsburg_alliance_faction: "The Habsburg Alliance"
+ CHI_celestial_empire_faction: "The Celestial Empire"
+ ENG_sun_never_sets_faction: "The Empire on Which the Sun Never Sets"
+ USA_free_nations_faction: "The League of Free Nations"
+ SOV_world_revolution_faction: "The Comintern"
+ JAP_co_prosperity_sphere_faction: "The Greater East Asia Co-Prosperity Sphere"

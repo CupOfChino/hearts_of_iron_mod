@@ -1,0 +1,11 @@
+﻿l_simp_chinese:
+ three_empires_ww2_victory_flag: "§Y三皇同盟赢得二战§!"
+ triple_entente_ww2_victory_flag: "§Y三国协约赢得二战§!"
+ three_empires_defeated_in_ww2_flag: "§R三皇同盟在二战中战败§!"
+ triple_entente_defeated_in_ww2_flag: "§R三国协约在二战中战败§!"
+ is_in_three_empires_side_trigger: "属于三皇同盟一方"
+ is_in_triple_entente_side_trigger: "属于三国协约一方"
+ three_empires_ww2_victory_trigger: "三皇同盟赢得二战"
+ triple_entente_ww2_victory_trigger: "三国协约赢得二战"
+ three_empires_defeated_in_ww2_trigger: "三皇同盟在二战中战败"
+ triple_entente_defeated_in_ww2_trigger: "三国协约在二战中战败"
