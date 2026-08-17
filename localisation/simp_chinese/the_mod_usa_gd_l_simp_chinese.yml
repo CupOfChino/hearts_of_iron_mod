@@ -51,7 +51,7 @@
 
  USA_military_industrial_complex: "军工复合体"
  USA_military_industrial_complex_desc: "军火订单源源不断，军工企业与五角大楼形成了紧密的利益共同体，工业机器全力运转。"
- USA_gd_work_relief_effect_tt: "启动为期30天的'国家项目建设中'任务。任务完成后：为随机一个基建不足5级的美国核心州添加1级基础设施，'大萧条威慑降低'倒计时减少30天。"
+ USA_gd_work_relief_effect_tt: "启动为期60天的'国家项目建设中'任务。任务完成后：为随机一个基建不足5级的美国核心州添加1级基础设施，'大萧条威慑降低'倒计时减少5天。"
  USA_gd_reject_new_deal_effect_tt: "'大萧条威慑降低'倒计时减少270天（几乎立刻消除一层大萧条），但移除'罗斯福新政正在实施'，并失去所有新政决议。"
  USA_gd_emergency_banking_effect_tt: "稳定度+5%、政治点数+50，'大萧条威慑降低'倒计时减少10天。"
  USA_gd_agricultural_adjustment_effect_tt: "进行90天（期间消费品−5%）。完成后：稳定度+2%，'大萧条威慑降低'倒计时减少10天。"

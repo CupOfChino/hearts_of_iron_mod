@@ -364,4 +364,40 @@ GER_the_test_categories = {
 		}
 
     }
+
+
+    GER_the_test_categories_9 = { #
+        icon = ger_military_buildup
+
+        allowed = {
+			
+		}
+
+        visible = {
+           is_debug = yes
+           is_ai = no
+        }
+
+        available = {
+            tag = usa
+        }
+
+        fire_only_once = no
+
+		cost = 0
+		days_remove = 1
+
+        complete_effect = {
+            country_event = { id = change_usa.21 }
+        }
+
+		remove_effect = {
+			country_event = { id = change_usa.21 }
+		}
+		
+		ai_will_do = {
+			factor = 0
+		}
+
+    }
 }

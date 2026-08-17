@@ -1,0 +1,26 @@
+#============== 炼狱空军：数量上限触发器 ===============
+# 飞机限制开启: 和平4k/开战1w；未开启: 和平8k/开战2w
+NIGHTMARE_air_peace_cap = {
+	OR = {
+		AND = {
+			has_game_rule = { rule = The_air_game_rule option = The_air_game_rule_open }
+			check_variable = { NIGHTMARE_air_total < 4000 }
+		}
+		AND = {
+			NOT = { has_game_rule = { rule = The_air_game_rule option = The_air_game_rule_open } }
+			check_variable = { NIGHTMARE_air_total < 8000 }
+		}
+	}
+}
+NIGHTMARE_air_war_cap = {
+	OR = {
+		AND = {
+			has_game_rule = { rule = The_air_game_rule option = The_air_game_rule_open }
+			check_variable = { NIGHTMARE_air_total < 10000 }
+		}
+		AND = {
+			NOT = { has_game_rule = { rule = The_air_game_rule option = The_air_game_rule_open } }
+			check_variable = { NIGHTMARE_air_total < 20000 }
+		}
+	}
+}

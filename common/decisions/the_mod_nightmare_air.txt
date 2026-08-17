@@ -1,0 +1,4020 @@
+NIGHTMARE_air_categories = {
+
+	#========== GER：1940年科技（1939年发放） ==========
+	NIGHTMARE_air_GER_tech = {
+		allowed = {
+			original_tag = GER
+		}
+		visible = {
+			is_ai = yes
+			OR = {
+				has_game_rule = { rule = The_Purgatory_game_rule option = The_Purgatory_game_rule_air_open }
+				has_game_rule = { rule = The_Purgatory_game_rule option = The_Purgatory_game_rule_all_open }
+			}
+		}
+		available = {
+			OR = { 				has_game_rule = { rule = The_Purgatory_game_rule option = The_Purgatory_game_rule_air_open } 				has_game_rule = { rule = The_Purgatory_game_rule option = The_Purgatory_game_rule_all_open } 			}
+			date > 1939.1.1
+			is_ai = yes
+			is_subject = no
+		}
+		fire_only_once = yes
+		cost = 0
+		days_remove = 0
+		ai_will_do = {
+			factor = 1000
+		}
+		complete_effect = {
+			#炼狱空军：为AI补充机场容量（AI不会自己建机场）
+			random_owned_state = {
+				limit = {
+					is_core_of = ROOT
+					is_fully_controlled_by = ROOT
+				}
+				add_building_construction = {
+					type = air_base
+					level = 3
+					instant_build = yes
+				}
+			}
+			#炼狱空军：为AI补充机场容量（AI不会自己建机场）
+			random_owned_state = {
+				limit = {
+					is_core_of = ROOT
+					is_fully_controlled_by = ROOT
+				}
+				add_building_construction = {
+					type = air_base
+					level = 3
+					instant_build = yes
+				}
+			}
+			set_technology = {
+				fighter2 = 1
+				CAS2 = 1
+				naval_bomber2 = 1
+				strategic_bomber2 = 1
+			}
+			air_experience = 300
+			if = {
+				limit = { NOT = { has_idea = NIGHTMARE_air_buff } }
+				add_ideas = NIGHTMARE_air_buff
+			}
+			if = {
+				limit = {
+					has_global_flag = NIGHTMARE_air_mode_quality
+					NOT = { has_idea = NIGHTMARE_air_quality_buff }
+				}
+				add_ideas = NIGHTMARE_air_quality_buff
+			}
+		}
+	}
+
+	#========== GER：1944年科技（1942年发放） ==========
+	NIGHTMARE_air_GER_tech44 = {
+		allowed = {
+			original_tag = GER
+		}
+		visible = {
+			is_ai = yes
+			OR = {
+				has_game_rule = { rule = The_Purgatory_game_rule option = The_Purgatory_game_rule_air_open }
+				has_game_rule = { rule = The_Purgatory_game_rule option = The_Purgatory_game_rule_all_open }
+			}
+		}
+		available = {
+			OR = { 				has_game_rule = { rule = The_Purgatory_game_rule option = The_Purgatory_game_rule_air_open } 				has_game_rule = { rule = The_Purgatory_game_rule option = The_Purgatory_game_rule_all_open } 			}
+			date > 1942.1.1
+			is_ai = yes
+			is_subject = no
+		}
+		fire_only_once = yes
+		cost = 0
+		days_remove = 0
+		ai_will_do = {
+			factor = 1000
+		}
+		complete_effect = {
+			#炼狱空军：为AI补充机场容量（AI不会自己建机场）
+			random_owned_state = {
+				limit = {
+					is_core_of = ROOT
+					is_fully_controlled_by = ROOT
+				}
+				add_building_construction = {
+					type = air_base
+					level = 4
+					instant_build = yes
+				}
+			}
+			#炼狱空军：为AI补充机场容量（AI不会自己建机场）
+			random_owned_state = {
+				limit = {
+					is_core_of = ROOT
+					is_fully_controlled_by = ROOT
+				}
+				add_building_construction = {
+					type = air_base
+					level = 4
+					instant_build = yes
+				}
+			}
+			set_technology = {
+				fighter3 = 1
+				CAS3 = 1
+				naval_bomber3 = 1
+				strategic_bomber3 = 1
+			}
+			air_experience = 300
+		}
+	}
+
+	#========== GER：循环刷机（默认60天，兵海翻倍，高质量模式不启用） ==========
+	NIGHTMARE_air_GER_spawn = {
+		allowed = {
+			original_tag = GER
+		}
+		visible = {
+			is_ai = yes
+			OR = {
+				has_game_rule = { rule = The_Purgatory_game_rule option = The_Purgatory_game_rule_air_open }
+				has_game_rule = { rule = The_Purgatory_game_rule option = The_Purgatory_game_rule_all_open }
+			}
+		}
+		available = {
+			OR = { 				has_game_rule = { rule = The_Purgatory_game_rule option = The_Purgatory_game_rule_air_open } 				has_game_rule = { rule = The_Purgatory_game_rule option = The_Purgatory_game_rule_all_open } 			}
+			date > 1940.1.1
+			is_ai = yes
+			is_subject = no
+			NOT = { has_global_flag = NIGHTMARE_air_mode_quality }
+			OR = {
+				AND = {
+					NOT = { any_enemy_country = { is_ai = no } }
+					NIGHTMARE_air_peace_cap = yes
+				}
+				AND = {
+					any_enemy_country = { is_ai = no }
+					NIGHTMARE_air_war_cap = yes
+				}
+			}
+		}
+		fire_only_once = no
+		days_re_enable = 60
+		cost = 0
+		days_remove = 0
+		ai_will_do = {
+			factor = 1000
+		}
+		complete_effect = {
+			#炼狱空军：为AI补充机场容量（AI不会自己建机场）
+			random_owned_state = {
+				limit = {
+					is_core_of = ROOT
+					is_fully_controlled_by = ROOT
+				}
+				add_building_construction = {
+					type = air_base
+					level = 2
+					instant_build = yes
+				}
+			}
+			if = {
+				limit = { date < 1942.1.1 }
+				if = {
+					limit = { NOT = { has_country_flag = NIGHTMARE_GER_f2_design } }
+					create_equipment_variant = {
+						name = "Bf 109 K"
+						type = fighter_equipment_2
+						upgrades = {
+							plane_gun_upgrade = 2
+							plane_engine_upgrade = 1
+							plane_range_upgrade = 1
+							plane_reliability_upgrade = 2
+						}
+					}
+					set_country_flag = NIGHTMARE_GER_f2_design
+				}
+				if = {
+					limit = { has_global_flag = NIGHTMARE_air_mode_swarm }
+					add_equipment_to_stockpile = {
+						type = fighter_equipment_2
+						amount = 1600
+						variant_name = "Bf 109 K"
+					}
+					add_equipment_to_stockpile = {
+						type = CAS_equipment_2
+						amount = 800
+					}
+					add_equipment_to_stockpile = {
+						type = naval_bomber_equipment_2
+						amount = 400
+					}
+				}
+				else = {
+					add_equipment_to_stockpile = {
+						type = fighter_equipment_2
+						amount = 800
+						variant_name = "Bf 109 K"
+					}
+					add_equipment_to_stockpile = {
+						type = CAS_equipment_2
+						amount = 400
+					}
+					add_equipment_to_stockpile = {
+						type = naval_bomber_equipment_2
+						amount = 200
+					}
+				}
+			}
+			else = {
+				if = {
+					limit = { NOT = { has_country_flag = NIGHTMARE_GER_f3_design } }
+					create_equipment_variant = {
+						name = "Fw 190 D"
+						type = fighter_equipment_3
+						upgrades = {
+							plane_gun_upgrade = 2
+							plane_engine_upgrade = 1
+							plane_range_upgrade = 1
+							plane_reliability_upgrade = 2
+						}
+					}
+					set_country_flag = NIGHTMARE_GER_f3_design
+				}
+				if = {
+					limit = { has_global_flag = NIGHTMARE_air_mode_swarm }
+					add_equipment_to_stockpile = {
+						type = fighter_equipment_3
+						amount = 1600
+						variant_name = "Fw 190 D"
+					}
+					add_equipment_to_stockpile = {
+						type = CAS_equipment_3
+						amount = 800
+					}
+					add_equipment_to_stockpile = {
+						type = naval_bomber_equipment_3
+						amount = 400
+					}
+				}
+				else = {
+					add_equipment_to_stockpile = {
+						type = fighter_equipment_3
+						amount = 800
+						variant_name = "Fw 190 D"
+					}
+					add_equipment_to_stockpile = {
+						type = CAS_equipment_3
+						amount = 400
+					}
+					add_equipment_to_stockpile = {
+						type = naval_bomber_equipment_3
+						amount = 200
+					}
+				}
+			}
+		}
+	}
+
+	#========== GER：高质量刷机（120天，数量减半） ==========
+	NIGHTMARE_air_GER_spawn_q = {
+		allowed = {
+			original_tag = GER
+		}
+		visible = {
+			is_ai = yes
+			OR = {
+				has_game_rule = { rule = The_Purgatory_game_rule option = The_Purgatory_game_rule_air_open }
+				has_game_rule = { rule = The_Purgatory_game_rule option = The_Purgatory_game_rule_all_open }
+			}
+		}
+		available = {
+			OR = { 				has_game_rule = { rule = The_Purgatory_game_rule option = The_Purgatory_game_rule_air_open } 				has_game_rule = { rule = The_Purgatory_game_rule option = The_Purgatory_game_rule_all_open } 			}
+			date > 1940.1.1
+			is_ai = yes
+			is_subject = no
+			has_global_flag = NIGHTMARE_air_mode_quality
+			OR = {
+				AND = {
+					NOT = { any_enemy_country = { is_ai = no } }
+					NIGHTMARE_air_peace_cap = yes
+				}
+				AND = {
+					any_enemy_country = { is_ai = no }
+					NIGHTMARE_air_war_cap = yes
+				}
+			}
+		}
+		fire_only_once = no
+		days_re_enable = 120
+		cost = 0
+		days_remove = 0
+		ai_will_do = {
+			factor = 1000
+		}
+		complete_effect = {
+			#炼狱空军：为AI补充机场容量（AI不会自己建机场）
+			random_owned_state = {
+				limit = {
+					is_core_of = ROOT
+					is_fully_controlled_by = ROOT
+				}
+				add_building_construction = {
+					type = air_base
+					level = 1
+					instant_build = yes
+				}
+			}
+			if = {
+				limit = { date < 1942.1.1 }
+				if = {
+					limit = { NOT = { has_country_flag = NIGHTMARE_GER_f2_design } }
+					create_equipment_variant = {
+						name = "Bf 109 K"
+						type = fighter_equipment_2
+						upgrades = {
+							plane_gun_upgrade = 2
+							plane_engine_upgrade = 1
+							plane_range_upgrade = 1
+							plane_reliability_upgrade = 2
+						}
+					}
+					set_country_flag = NIGHTMARE_GER_f2_design
+				}
+				add_equipment_to_stockpile = {
+					type = fighter_equipment_2
+					amount = 400
+					variant_name = "Bf 109 K"
+				}
+				add_equipment_to_stockpile = {
+					type = CAS_equipment_2
+					amount = 200
+				}
+				add_equipment_to_stockpile = {
+					type = naval_bomber_equipment_2
+					amount = 100
+				}
+			}
+			else = {
+				if = {
+					limit = { NOT = { has_country_flag = NIGHTMARE_GER_f3_design } }
+					create_equipment_variant = {
+						name = "Fw 190 D"
+						type = fighter_equipment_3
+						upgrades = {
+							plane_gun_upgrade = 2
+							plane_engine_upgrade = 1
+							plane_range_upgrade = 1
+							plane_reliability_upgrade = 2
+						}
+					}
+					set_country_flag = NIGHTMARE_GER_f3_design
+				}
+				add_equipment_to_stockpile = {
+					type = fighter_equipment_3
+					amount = 400
+					variant_name = "Fw 190 D"
+				}
+				add_equipment_to_stockpile = {
+					type = CAS_equipment_3
+					amount = 200
+				}
+				add_equipment_to_stockpile = {
+					type = naval_bomber_equipment_3
+					amount = 100
+				}
+			}
+		}
+	}
+
+	#========== FRA：1940年科技（1939年发放） ==========
+	NIGHTMARE_air_FRA_tech = {
+		allowed = {
+			original_tag = FRA
+		}
+		visible = {
+			is_ai = yes
+			OR = {
+				has_game_rule = { rule = The_Purgatory_game_rule option = The_Purgatory_game_rule_air_open }
+				has_game_rule = { rule = The_Purgatory_game_rule option = The_Purgatory_game_rule_all_open }
+			}
+		}
+		available = {
+			OR = { 				has_game_rule = { rule = The_Purgatory_game_rule option = The_Purgatory_game_rule_air_open } 				has_game_rule = { rule = The_Purgatory_game_rule option = The_Purgatory_game_rule_all_open } 			}
+			date > 1939.1.1
+			is_ai = yes
+			is_subject = no
+		}
+		fire_only_once = yes
+		cost = 0
+		days_remove = 0
+		ai_will_do = {
+			factor = 1000
+		}
+		complete_effect = {
+			#炼狱空军：为AI补充机场容量（AI不会自己建机场）
+			random_owned_state = {
+				limit = {
+					is_core_of = ROOT
+					is_fully_controlled_by = ROOT
+				}
+				add_building_construction = {
+					type = air_base
+					level = 3
+					instant_build = yes
+				}
+			}
+			#炼狱空军：为AI补充机场容量（AI不会自己建机场）
+			random_owned_state = {
+				limit = {
+					is_core_of = ROOT
+					is_fully_controlled_by = ROOT
+				}
+				add_building_construction = {
+					type = air_base
+					level = 3
+					instant_build = yes
+				}
+			}
+			set_technology = {
+				fighter2 = 1
+				CAS2 = 1
+				naval_bomber2 = 1
+				strategic_bomber2 = 1
+			}
+			air_experience = 300
+			if = {
+				limit = { NOT = { has_idea = NIGHTMARE_air_buff } }
+				add_ideas = NIGHTMARE_air_buff
+			}
+			if = {
+				limit = {
+					has_global_flag = NIGHTMARE_air_mode_quality
+					NOT = { has_idea = NIGHTMARE_air_quality_buff }
+				}
+				add_ideas = NIGHTMARE_air_quality_buff
+			}
+		}
+	}
+
+	#========== FRA：1944年科技（1942年发放） ==========
+	NIGHTMARE_air_FRA_tech44 = {
+		allowed = {
+			original_tag = FRA
+		}
+		visible = {
+			is_ai = yes
+			OR = {
+				has_game_rule = { rule = The_Purgatory_game_rule option = The_Purgatory_game_rule_air_open }
+				has_game_rule = { rule = The_Purgatory_game_rule option = The_Purgatory_game_rule_all_open }
+			}
+		}
+		available = {
+			OR = { 				has_game_rule = { rule = The_Purgatory_game_rule option = The_Purgatory_game_rule_air_open } 				has_game_rule = { rule = The_Purgatory_game_rule option = The_Purgatory_game_rule_all_open } 			}
+			date > 1942.1.1
+			is_ai = yes
+			is_subject = no
+		}
+		fire_only_once = yes
+		cost = 0
+		days_remove = 0
+		ai_will_do = {
+			factor = 1000
+		}
+		complete_effect = {
+			#炼狱空军：为AI补充机场容量（AI不会自己建机场）
+			random_owned_state = {
+				limit = {
+					is_core_of = ROOT
+					is_fully_controlled_by = ROOT
+				}
+				add_building_construction = {
+					type = air_base
+					level = 4
+					instant_build = yes
+				}
+			}
+			#炼狱空军：为AI补充机场容量（AI不会自己建机场）
+			random_owned_state = {
+				limit = {
+					is_core_of = ROOT
+					is_fully_controlled_by = ROOT
+				}
+				add_building_construction = {
+					type = air_base
+					level = 4
+					instant_build = yes
+				}
+			}
+			set_technology = {
+				fighter3 = 1
+				CAS3 = 1
+				naval_bomber3 = 1
+				strategic_bomber3 = 1
+			}
+			air_experience = 300
+		}
+	}
+
+	#========== FRA：循环刷机（默认60天，兵海翻倍，高质量模式不启用） ==========
+	NIGHTMARE_air_FRA_spawn = {
+		allowed = {
+			original_tag = FRA
+		}
+		visible = {
+			is_ai = yes
+			OR = {
+				has_game_rule = { rule = The_Purgatory_game_rule option = The_Purgatory_game_rule_air_open }
+				has_game_rule = { rule = The_Purgatory_game_rule option = The_Purgatory_game_rule_all_open }
+			}
+		}
+		available = {
+			OR = { 				has_game_rule = { rule = The_Purgatory_game_rule option = The_Purgatory_game_rule_air_open } 				has_game_rule = { rule = The_Purgatory_game_rule option = The_Purgatory_game_rule_all_open } 			}
+			date > 1940.1.1
+			is_ai = yes
+			is_subject = no
+			NOT = { has_global_flag = NIGHTMARE_air_mode_quality }
+			OR = {
+				AND = {
+					NOT = { any_enemy_country = { is_ai = no } }
+					NIGHTMARE_air_peace_cap = yes
+				}
+				AND = {
+					any_enemy_country = { is_ai = no }
+					NIGHTMARE_air_war_cap = yes
+				}
+			}
+		}
+		fire_only_once = no
+		days_re_enable = 60
+		cost = 0
+		days_remove = 0
+		ai_will_do = {
+			factor = 1000
+		}
+		complete_effect = {
+			#炼狱空军：为AI补充机场容量（AI不会自己建机场）
+			random_owned_state = {
+				limit = {
+					is_core_of = ROOT
+					is_fully_controlled_by = ROOT
+				}
+				add_building_construction = {
+					type = air_base
+					level = 2
+					instant_build = yes
+				}
+			}
+			if = {
+				limit = { date < 1942.1.1 }
+				if = {
+					limit = { NOT = { has_country_flag = NIGHTMARE_FRA_f2_design } }
+					create_equipment_variant = {
+						name = "D.520"
+						type = fighter_equipment_2
+						upgrades = {
+							plane_gun_upgrade = 2
+							plane_engine_upgrade = 1
+							plane_range_upgrade = 1
+							plane_reliability_upgrade = 2
+						}
+					}
+					set_country_flag = NIGHTMARE_FRA_f2_design
+				}
+				if = {
+					limit = { has_global_flag = NIGHTMARE_air_mode_swarm }
+					add_equipment_to_stockpile = {
+						type = fighter_equipment_2
+						amount = 1600
+						variant_name = "D.520"
+					}
+					add_equipment_to_stockpile = {
+						type = CAS_equipment_2
+						amount = 800
+					}
+					add_equipment_to_stockpile = {
+						type = naval_bomber_equipment_2
+						amount = 400
+					}
+				}
+				else = {
+					add_equipment_to_stockpile = {
+						type = fighter_equipment_2
+						amount = 800
+						variant_name = "D.520"
+					}
+					add_equipment_to_stockpile = {
+						type = CAS_equipment_2
+						amount = 400
+					}
+					add_equipment_to_stockpile = {
+						type = naval_bomber_equipment_2
+						amount = 200
+					}
+				}
+			}
+			else = {
+				if = {
+					limit = { NOT = { has_country_flag = NIGHTMARE_FRA_f3_design } }
+					create_equipment_variant = {
+						name = "MB.157"
+						type = fighter_equipment_3
+						upgrades = {
+							plane_gun_upgrade = 2
+							plane_engine_upgrade = 1
+							plane_range_upgrade = 1
+							plane_reliability_upgrade = 2
+						}
+					}
+					set_country_flag = NIGHTMARE_FRA_f3_design
+				}
+				if = {
+					limit = { has_global_flag = NIGHTMARE_air_mode_swarm }
+					add_equipment_to_stockpile = {
+						type = fighter_equipment_3
+						amount = 1600
+						variant_name = "MB.157"
+					}
+					add_equipment_to_stockpile = {
+						type = CAS_equipment_3
+						amount = 800
+					}
+					add_equipment_to_stockpile = {
+						type = naval_bomber_equipment_3
+						amount = 400
+					}
+				}
+				else = {
+					add_equipment_to_stockpile = {
+						type = fighter_equipment_3
+						amount = 800
+						variant_name = "MB.157"
+					}
+					add_equipment_to_stockpile = {
+						type = CAS_equipment_3
+						amount = 400
+					}
+					add_equipment_to_stockpile = {
+						type = naval_bomber_equipment_3
+						amount = 200
+					}
+				}
+			}
+		}
+	}
+
+	#========== FRA：高质量刷机（120天，数量减半） ==========
+	NIGHTMARE_air_FRA_spawn_q = {
+		allowed = {
+			original_tag = FRA
+		}
+		visible = {
+			is_ai = yes
+			OR = {
+				has_game_rule = { rule = The_Purgatory_game_rule option = The_Purgatory_game_rule_air_open }
+				has_game_rule = { rule = The_Purgatory_game_rule option = The_Purgatory_game_rule_all_open }
+			}
+		}
+		available = {
+			OR = { 				has_game_rule = { rule = The_Purgatory_game_rule option = The_Purgatory_game_rule_air_open } 				has_game_rule = { rule = The_Purgatory_game_rule option = The_Purgatory_game_rule_all_open } 			}
+			date > 1940.1.1
+			is_ai = yes
+			is_subject = no
+			has_global_flag = NIGHTMARE_air_mode_quality
+			OR = {
+				AND = {
+					NOT = { any_enemy_country = { is_ai = no } }
+					NIGHTMARE_air_peace_cap = yes
+				}
+				AND = {
+					any_enemy_country = { is_ai = no }
+					NIGHTMARE_air_war_cap = yes
+				}
+			}
+		}
+		fire_only_once = no
+		days_re_enable = 120
+		cost = 0
+		days_remove = 0
+		ai_will_do = {
+			factor = 1000
+		}
+		complete_effect = {
+			#炼狱空军：为AI补充机场容量（AI不会自己建机场）
+			random_owned_state = {
+				limit = {
+					is_core_of = ROOT
+					is_fully_controlled_by = ROOT
+				}
+				add_building_construction = {
+					type = air_base
+					level = 1
+					instant_build = yes
+				}
+			}
+			if = {
+				limit = { date < 1942.1.1 }
+				if = {
+					limit = { NOT = { has_country_flag = NIGHTMARE_FRA_f2_design } }
+					create_equipment_variant = {
+						name = "D.520"
+						type = fighter_equipment_2
+						upgrades = {
+							plane_gun_upgrade = 2
+							plane_engine_upgrade = 1
+							plane_range_upgrade = 1
+							plane_reliability_upgrade = 2
+						}
+					}
+					set_country_flag = NIGHTMARE_FRA_f2_design
+				}
+				add_equipment_to_stockpile = {
+					type = fighter_equipment_2
+					amount = 400
+					variant_name = "D.520"
+				}
+				add_equipment_to_stockpile = {
+					type = CAS_equipment_2
+					amount = 200
+				}
+				add_equipment_to_stockpile = {
+					type = naval_bomber_equipment_2
+					amount = 100
+				}
+			}
+			else = {
+				if = {
+					limit = { NOT = { has_country_flag = NIGHTMARE_FRA_f3_design } }
+					create_equipment_variant = {
+						name = "MB.157"
+						type = fighter_equipment_3
+						upgrades = {
+							plane_gun_upgrade = 2
+							plane_engine_upgrade = 1
+							plane_range_upgrade = 1
+							plane_reliability_upgrade = 2
+						}
+					}
+					set_country_flag = NIGHTMARE_FRA_f3_design
+				}
+				add_equipment_to_stockpile = {
+					type = fighter_equipment_3
+					amount = 400
+					variant_name = "MB.157"
+				}
+				add_equipment_to_stockpile = {
+					type = CAS_equipment_3
+					amount = 200
+				}
+				add_equipment_to_stockpile = {
+					type = naval_bomber_equipment_3
+					amount = 100
+				}
+			}
+		}
+	}
+
+	#========== ENG：1940年科技（1939年发放） ==========
+	NIGHTMARE_air_ENG_tech = {
+		allowed = {
+			original_tag = ENG
+		}
+		visible = {
+			is_ai = yes
+			OR = {
+				has_game_rule = { rule = The_Purgatory_game_rule option = The_Purgatory_game_rule_air_open }
+				has_game_rule = { rule = The_Purgatory_game_rule option = The_Purgatory_game_rule_all_open }
+			}
+		}
+		available = {
+			OR = { 				has_game_rule = { rule = The_Purgatory_game_rule option = The_Purgatory_game_rule_air_open } 				has_game_rule = { rule = The_Purgatory_game_rule option = The_Purgatory_game_rule_all_open } 			}
+			date > 1939.1.1
+			is_ai = yes
+			is_subject = no
+		}
+		fire_only_once = yes
+		cost = 0
+		days_remove = 0
+		ai_will_do = {
+			factor = 1000
+		}
+		complete_effect = {
+			#炼狱空军：为AI补充机场容量（AI不会自己建机场）
+			random_owned_state = {
+				limit = {
+					is_core_of = ROOT
+					is_fully_controlled_by = ROOT
+				}
+				add_building_construction = {
+					type = air_base
+					level = 3
+					instant_build = yes
+				}
+			}
+			#炼狱空军：为AI补充机场容量（AI不会自己建机场）
+			random_owned_state = {
+				limit = {
+					is_core_of = ROOT
+					is_fully_controlled_by = ROOT
+				}
+				add_building_construction = {
+					type = air_base
+					level = 3
+					instant_build = yes
+				}
+			}
+			set_technology = {
+				fighter2 = 1
+				CAS2 = 1
+				naval_bomber2 = 1
+				strategic_bomber2 = 1
+			}
+			air_experience = 300
+			if = {
+				limit = { NOT = { has_idea = NIGHTMARE_air_buff } }
+				add_ideas = NIGHTMARE_air_buff
+			}
+			if = {
+				limit = {
+					has_global_flag = NIGHTMARE_air_mode_quality
+					NOT = { has_idea = NIGHTMARE_air_quality_buff }
+				}
+				add_ideas = NIGHTMARE_air_quality_buff
+			}
+		}
+	}
+
+	#========== ENG：1944年科技（1942年发放） ==========
+	NIGHTMARE_air_ENG_tech44 = {
+		allowed = {
+			original_tag = ENG
+		}
+		visible = {
+			is_ai = yes
+			OR = {
+				has_game_rule = { rule = The_Purgatory_game_rule option = The_Purgatory_game_rule_air_open }
+				has_game_rule = { rule = The_Purgatory_game_rule option = The_Purgatory_game_rule_all_open }
+			}
+		}
+		available = {
+			OR = { 				has_game_rule = { rule = The_Purgatory_game_rule option = The_Purgatory_game_rule_air_open } 				has_game_rule = { rule = The_Purgatory_game_rule option = The_Purgatory_game_rule_all_open } 			}
+			date > 1942.1.1
+			is_ai = yes
+			is_subject = no
+		}
+		fire_only_once = yes
+		cost = 0
+		days_remove = 0
+		ai_will_do = {
+			factor = 1000
+		}
+		complete_effect = {
+			#炼狱空军：为AI补充机场容量（AI不会自己建机场）
+			random_owned_state = {
+				limit = {
+					is_core_of = ROOT
+					is_fully_controlled_by = ROOT
+				}
+				add_building_construction = {
+					type = air_base
+					level = 4
+					instant_build = yes
+				}
+			}
+			#炼狱空军：为AI补充机场容量（AI不会自己建机场）
+			random_owned_state = {
+				limit = {
+					is_core_of = ROOT
+					is_fully_controlled_by = ROOT
+				}
+				add_building_construction = {
+					type = air_base
+					level = 4
+					instant_build = yes
+				}
+			}
+			set_technology = {
+				fighter3 = 1
+				CAS3 = 1
+				naval_bomber3 = 1
+				strategic_bomber3 = 1
+			}
+			air_experience = 300
+		}
+	}
+
+	#========== ENG：循环刷机（默认60天，兵海翻倍，高质量模式不启用） ==========
+	NIGHTMARE_air_ENG_spawn = {
+		allowed = {
+			original_tag = ENG
+		}
+		visible = {
+			is_ai = yes
+			OR = {
+				has_game_rule = { rule = The_Purgatory_game_rule option = The_Purgatory_game_rule_air_open }
+				has_game_rule = { rule = The_Purgatory_game_rule option = The_Purgatory_game_rule_all_open }
+			}
+		}
+		available = {
+			OR = { 				has_game_rule = { rule = The_Purgatory_game_rule option = The_Purgatory_game_rule_air_open } 				has_game_rule = { rule = The_Purgatory_game_rule option = The_Purgatory_game_rule_all_open } 			}
+			date > 1940.1.1
+			is_ai = yes
+			is_subject = no
+			NOT = { has_global_flag = NIGHTMARE_air_mode_quality }
+			OR = {
+				AND = {
+					NOT = { any_enemy_country = { is_ai = no } }
+					NIGHTMARE_air_peace_cap = yes
+				}
+				AND = {
+					any_enemy_country = { is_ai = no }
+					NIGHTMARE_air_war_cap = yes
+				}
+			}
+		}
+		fire_only_once = no
+		days_re_enable = 60
+		cost = 0
+		days_remove = 0
+		ai_will_do = {
+			factor = 1000
+		}
+		complete_effect = {
+			#炼狱空军：为AI补充机场容量（AI不会自己建机场）
+			random_owned_state = {
+				limit = {
+					is_core_of = ROOT
+					is_fully_controlled_by = ROOT
+				}
+				add_building_construction = {
+					type = air_base
+					level = 2
+					instant_build = yes
+				}
+			}
+			if = {
+				limit = { date < 1942.1.1 }
+				if = {
+					limit = { NOT = { has_country_flag = NIGHTMARE_ENG_f2_design } }
+					create_equipment_variant = {
+						name = "Spitfire IX"
+						type = fighter_equipment_2
+						upgrades = {
+							plane_gun_upgrade = 2
+							plane_engine_upgrade = 1
+							plane_range_upgrade = 1
+							plane_reliability_upgrade = 2
+						}
+					}
+					set_country_flag = NIGHTMARE_ENG_f2_design
+				}
+				if = {
+					limit = { has_global_flag = NIGHTMARE_air_mode_swarm }
+					add_equipment_to_stockpile = {
+						type = fighter_equipment_2
+						amount = 1600
+						variant_name = "Spitfire IX"
+					}
+					add_equipment_to_stockpile = {
+						type = CAS_equipment_2
+						amount = 800
+					}
+					add_equipment_to_stockpile = {
+						type = naval_bomber_equipment_2
+						amount = 400
+					}
+				}
+				else = {
+					add_equipment_to_stockpile = {
+						type = fighter_equipment_2
+						amount = 800
+						variant_name = "Spitfire IX"
+					}
+					add_equipment_to_stockpile = {
+						type = CAS_equipment_2
+						amount = 400
+					}
+					add_equipment_to_stockpile = {
+						type = naval_bomber_equipment_2
+						amount = 200
+					}
+				}
+			}
+			else = {
+				if = {
+					limit = { NOT = { has_country_flag = NIGHTMARE_ENG_f3_design } }
+					create_equipment_variant = {
+						name = "Tempest V"
+						type = fighter_equipment_3
+						upgrades = {
+							plane_gun_upgrade = 2
+							plane_engine_upgrade = 1
+							plane_range_upgrade = 1
+							plane_reliability_upgrade = 2
+						}
+					}
+					set_country_flag = NIGHTMARE_ENG_f3_design
+				}
+				if = {
+					limit = { has_global_flag = NIGHTMARE_air_mode_swarm }
+					add_equipment_to_stockpile = {
+						type = fighter_equipment_3
+						amount = 1600
+						variant_name = "Tempest V"
+					}
+					add_equipment_to_stockpile = {
+						type = CAS_equipment_3
+						amount = 800
+					}
+					add_equipment_to_stockpile = {
+						type = naval_bomber_equipment_3
+						amount = 400
+					}
+				}
+				else = {
+					add_equipment_to_stockpile = {
+						type = fighter_equipment_3
+						amount = 800
+						variant_name = "Tempest V"
+					}
+					add_equipment_to_stockpile = {
+						type = CAS_equipment_3
+						amount = 400
+					}
+					add_equipment_to_stockpile = {
+						type = naval_bomber_equipment_3
+						amount = 200
+					}
+				}
+			}
+		}
+	}
+
+	#========== ENG：高质量刷机（120天，数量减半） ==========
+	NIGHTMARE_air_ENG_spawn_q = {
+		allowed = {
+			original_tag = ENG
+		}
+		visible = {
+			is_ai = yes
+			OR = {
+				has_game_rule = { rule = The_Purgatory_game_rule option = The_Purgatory_game_rule_air_open }
+				has_game_rule = { rule = The_Purgatory_game_rule option = The_Purgatory_game_rule_all_open }
+			}
+		}
+		available = {
+			OR = { 				has_game_rule = { rule = The_Purgatory_game_rule option = The_Purgatory_game_rule_air_open } 				has_game_rule = { rule = The_Purgatory_game_rule option = The_Purgatory_game_rule_all_open } 			}
+			date > 1940.1.1
+			is_ai = yes
+			is_subject = no
+			has_global_flag = NIGHTMARE_air_mode_quality
+			OR = {
+				AND = {
+					NOT = { any_enemy_country = { is_ai = no } }
+					NIGHTMARE_air_peace_cap = yes
+				}
+				AND = {
+					any_enemy_country = { is_ai = no }
+					NIGHTMARE_air_war_cap = yes
+				}
+			}
+		}
+		fire_only_once = no
+		days_re_enable = 120
+		cost = 0
+		days_remove = 0
+		ai_will_do = {
+			factor = 1000
+		}
+		complete_effect = {
+			#炼狱空军：为AI补充机场容量（AI不会自己建机场）
+			random_owned_state = {
+				limit = {
+					is_core_of = ROOT
+					is_fully_controlled_by = ROOT
+				}
+				add_building_construction = {
+					type = air_base
+					level = 1
+					instant_build = yes
+				}
+			}
+			if = {
+				limit = { date < 1942.1.1 }
+				if = {
+					limit = { NOT = { has_country_flag = NIGHTMARE_ENG_f2_design } }
+					create_equipment_variant = {
+						name = "Spitfire IX"
+						type = fighter_equipment_2
+						upgrades = {
+							plane_gun_upgrade = 2
+							plane_engine_upgrade = 1
+							plane_range_upgrade = 1
+							plane_reliability_upgrade = 2
+						}
+					}
+					set_country_flag = NIGHTMARE_ENG_f2_design
+				}
+				add_equipment_to_stockpile = {
+					type = fighter_equipment_2
+					amount = 400
+					variant_name = "Spitfire IX"
+				}
+				add_equipment_to_stockpile = {
+					type = CAS_equipment_2
+					amount = 200
+				}
+				add_equipment_to_stockpile = {
+					type = naval_bomber_equipment_2
+					amount = 100
+				}
+			}
+			else = {
+				if = {
+					limit = { NOT = { has_country_flag = NIGHTMARE_ENG_f3_design } }
+					create_equipment_variant = {
+						name = "Tempest V"
+						type = fighter_equipment_3
+						upgrades = {
+							plane_gun_upgrade = 2
+							plane_engine_upgrade = 1
+							plane_range_upgrade = 1
+							plane_reliability_upgrade = 2
+						}
+					}
+					set_country_flag = NIGHTMARE_ENG_f3_design
+				}
+				add_equipment_to_stockpile = {
+					type = fighter_equipment_3
+					amount = 400
+					variant_name = "Tempest V"
+				}
+				add_equipment_to_stockpile = {
+					type = CAS_equipment_3
+					amount = 200
+				}
+				add_equipment_to_stockpile = {
+					type = naval_bomber_equipment_3
+					amount = 100
+				}
+			}
+		}
+	}
+
+	#========== USA：1940年科技（1939年发放） ==========
+	NIGHTMARE_air_USA_tech = {
+		allowed = {
+			original_tag = USA
+		}
+		visible = {
+			is_ai = yes
+			OR = {
+				has_game_rule = { rule = The_Purgatory_game_rule option = The_Purgatory_game_rule_air_open }
+				has_game_rule = { rule = The_Purgatory_game_rule option = The_Purgatory_game_rule_all_open }
+			}
+		}
+		available = {
+			OR = { 				has_game_rule = { rule = The_Purgatory_game_rule option = The_Purgatory_game_rule_air_open } 				has_game_rule = { rule = The_Purgatory_game_rule option = The_Purgatory_game_rule_all_open } 			}
+			date > 1939.1.1
+			is_ai = yes
+			is_subject = no
+		}
+		fire_only_once = yes
+		cost = 0
+		days_remove = 0
+		ai_will_do = {
+			factor = 1000
+		}
+		complete_effect = {
+			#炼狱空军：为AI补充机场容量（AI不会自己建机场）
+			random_owned_state = {
+				limit = {
+					is_core_of = ROOT
+					is_fully_controlled_by = ROOT
+				}
+				add_building_construction = {
+					type = air_base
+					level = 3
+					instant_build = yes
+				}
+			}
+			#炼狱空军：为AI补充机场容量（AI不会自己建机场）
+			random_owned_state = {
+				limit = {
+					is_core_of = ROOT
+					is_fully_controlled_by = ROOT
+				}
+				add_building_construction = {
+					type = air_base
+					level = 3
+					instant_build = yes
+				}
+			}
+			set_technology = {
+				fighter2 = 1
+				CAS2 = 1
+				naval_bomber2 = 1
+				strategic_bomber2 = 1
+			}
+			air_experience = 300
+			if = {
+				limit = { NOT = { has_idea = NIGHTMARE_air_buff } }
+				add_ideas = NIGHTMARE_air_buff
+			}
+			if = {
+				limit = {
+					has_global_flag = NIGHTMARE_air_mode_quality
+					NOT = { has_idea = NIGHTMARE_air_quality_buff }
+				}
+				add_ideas = NIGHTMARE_air_quality_buff
+			}
+		}
+	}
+
+	#========== USA：1944年科技（1942年发放） ==========
+	NIGHTMARE_air_USA_tech44 = {
+		allowed = {
+			original_tag = USA
+		}
+		visible = {
+			is_ai = yes
+			OR = {
+				has_game_rule = { rule = The_Purgatory_game_rule option = The_Purgatory_game_rule_air_open }
+				has_game_rule = { rule = The_Purgatory_game_rule option = The_Purgatory_game_rule_all_open }
+			}
+		}
+		available = {
+			OR = { 				has_game_rule = { rule = The_Purgatory_game_rule option = The_Purgatory_game_rule_air_open } 				has_game_rule = { rule = The_Purgatory_game_rule option = The_Purgatory_game_rule_all_open } 			}
+			date > 1942.1.1
+			is_ai = yes
+			is_subject = no
+		}
+		fire_only_once = yes
+		cost = 0
+		days_remove = 0
+		ai_will_do = {
+			factor = 1000
+		}
+		complete_effect = {
+			#炼狱空军：为AI补充机场容量（AI不会自己建机场）
+			random_owned_state = {
+				limit = {
+					is_core_of = ROOT
+					is_fully_controlled_by = ROOT
+				}
+				add_building_construction = {
+					type = air_base
+					level = 4
+					instant_build = yes
+				}
+			}
+			#炼狱空军：为AI补充机场容量（AI不会自己建机场）
+			random_owned_state = {
+				limit = {
+					is_core_of = ROOT
+					is_fully_controlled_by = ROOT
+				}
+				add_building_construction = {
+					type = air_base
+					level = 4
+					instant_build = yes
+				}
+			}
+			set_technology = {
+				fighter3 = 1
+				CAS3 = 1
+				naval_bomber3 = 1
+				strategic_bomber3 = 1
+			}
+			air_experience = 300
+		}
+	}
+
+	#========== USA：循环刷机（默认60天，兵海翻倍，高质量模式不启用） ==========
+	NIGHTMARE_air_USA_spawn = {
+		allowed = {
+			original_tag = USA
+		}
+		visible = {
+			is_ai = yes
+			OR = {
+				has_game_rule = { rule = The_Purgatory_game_rule option = The_Purgatory_game_rule_air_open }
+				has_game_rule = { rule = The_Purgatory_game_rule option = The_Purgatory_game_rule_all_open }
+			}
+		}
+		available = {
+			OR = { 				has_game_rule = { rule = The_Purgatory_game_rule option = The_Purgatory_game_rule_air_open } 				has_game_rule = { rule = The_Purgatory_game_rule option = The_Purgatory_game_rule_all_open } 			}
+			date > 1940.1.1
+			is_ai = yes
+			is_subject = no
+			NOT = { has_global_flag = NIGHTMARE_air_mode_quality }
+			OR = {
+				AND = {
+					NOT = { any_enemy_country = { is_ai = no } }
+					NIGHTMARE_air_peace_cap = yes
+				}
+				AND = {
+					any_enemy_country = { is_ai = no }
+					NIGHTMARE_air_war_cap = yes
+				}
+			}
+		}
+		fire_only_once = no
+		days_re_enable = 60
+		cost = 0
+		days_remove = 0
+		ai_will_do = {
+			factor = 1000
+		}
+		complete_effect = {
+			#炼狱空军：为AI补充机场容量（AI不会自己建机场）
+			random_owned_state = {
+				limit = {
+					is_core_of = ROOT
+					is_fully_controlled_by = ROOT
+				}
+				add_building_construction = {
+					type = air_base
+					level = 2
+					instant_build = yes
+				}
+			}
+			if = {
+				limit = { date < 1942.1.1 }
+				if = {
+					limit = { NOT = { has_country_flag = NIGHTMARE_USA_f2_design } }
+					create_equipment_variant = {
+						name = "P-40N"
+						type = fighter_equipment_2
+						upgrades = {
+							plane_gun_upgrade = 2
+							plane_engine_upgrade = 1
+							plane_range_upgrade = 1
+							plane_reliability_upgrade = 2
+						}
+					}
+					set_country_flag = NIGHTMARE_USA_f2_design
+				}
+				if = {
+					limit = { has_global_flag = NIGHTMARE_air_mode_swarm }
+					add_equipment_to_stockpile = {
+						type = fighter_equipment_2
+						amount = 1600
+						variant_name = "P-40N"
+					}
+					add_equipment_to_stockpile = {
+						type = CAS_equipment_2
+						amount = 800
+					}
+					add_equipment_to_stockpile = {
+						type = naval_bomber_equipment_2
+						amount = 400
+					}
+				}
+				else = {
+					add_equipment_to_stockpile = {
+						type = fighter_equipment_2
+						amount = 800
+						variant_name = "P-40N"
+					}
+					add_equipment_to_stockpile = {
+						type = CAS_equipment_2
+						amount = 400
+					}
+					add_equipment_to_stockpile = {
+						type = naval_bomber_equipment_2
+						amount = 200
+					}
+				}
+			}
+			else = {
+				if = {
+					limit = { NOT = { has_country_flag = NIGHTMARE_USA_f3_design } }
+					create_equipment_variant = {
+						name = "P-51D"
+						type = fighter_equipment_3
+						upgrades = {
+							plane_gun_upgrade = 2
+							plane_engine_upgrade = 1
+							plane_range_upgrade = 1
+							plane_reliability_upgrade = 2
+						}
+					}
+					set_country_flag = NIGHTMARE_USA_f3_design
+				}
+				if = {
+					limit = { has_global_flag = NIGHTMARE_air_mode_swarm }
+					add_equipment_to_stockpile = {
+						type = fighter_equipment_3
+						amount = 1600
+						variant_name = "P-51D"
+					}
+					add_equipment_to_stockpile = {
+						type = CAS_equipment_3
+						amount = 800
+					}
+					add_equipment_to_stockpile = {
+						type = naval_bomber_equipment_3
+						amount = 400
+					}
+				}
+				else = {
+					add_equipment_to_stockpile = {
+						type = fighter_equipment_3
+						amount = 800
+						variant_name = "P-51D"
+					}
+					add_equipment_to_stockpile = {
+						type = CAS_equipment_3
+						amount = 400
+					}
+					add_equipment_to_stockpile = {
+						type = naval_bomber_equipment_3
+						amount = 200
+					}
+				}
+			}
+		}
+	}
+
+	#========== USA：高质量刷机（120天，数量减半） ==========
+	NIGHTMARE_air_USA_spawn_q = {
+		allowed = {
+			original_tag = USA
+		}
+		visible = {
+			is_ai = yes
+			OR = {
+				has_game_rule = { rule = The_Purgatory_game_rule option = The_Purgatory_game_rule_air_open }
+				has_game_rule = { rule = The_Purgatory_game_rule option = The_Purgatory_game_rule_all_open }
+			}
+		}
+		available = {
+			OR = { 				has_game_rule = { rule = The_Purgatory_game_rule option = The_Purgatory_game_rule_air_open } 				has_game_rule = { rule = The_Purgatory_game_rule option = The_Purgatory_game_rule_all_open } 			}
+			date > 1940.1.1
+			is_ai = yes
+			is_subject = no
+			has_global_flag = NIGHTMARE_air_mode_quality
+			OR = {
+				AND = {
+					NOT = { any_enemy_country = { is_ai = no } }
+					NIGHTMARE_air_peace_cap = yes
+				}
+				AND = {
+					any_enemy_country = { is_ai = no }
+					NIGHTMARE_air_war_cap = yes
+				}
+			}
+		}
+		fire_only_once = no
+		days_re_enable = 120
+		cost = 0
+		days_remove = 0
+		ai_will_do = {
+			factor = 1000
+		}
+		complete_effect = {
+			#炼狱空军：为AI补充机场容量（AI不会自己建机场）
+			random_owned_state = {
+				limit = {
+					is_core_of = ROOT
+					is_fully_controlled_by = ROOT
+				}
+				add_building_construction = {
+					type = air_base
+					level = 1
+					instant_build = yes
+				}
+			}
+			if = {
+				limit = { date < 1942.1.1 }
+				if = {
+					limit = { NOT = { has_country_flag = NIGHTMARE_USA_f2_design } }
+					create_equipment_variant = {
+						name = "P-40N"
+						type = fighter_equipment_2
+						upgrades = {
+							plane_gun_upgrade = 2
+							plane_engine_upgrade = 1
+							plane_range_upgrade = 1
+							plane_reliability_upgrade = 2
+						}
+					}
+					set_country_flag = NIGHTMARE_USA_f2_design
+				}
+				add_equipment_to_stockpile = {
+					type = fighter_equipment_2
+					amount = 400
+					variant_name = "P-40N"
+				}
+				add_equipment_to_stockpile = {
+					type = CAS_equipment_2
+					amount = 200
+				}
+				add_equipment_to_stockpile = {
+					type = naval_bomber_equipment_2
+					amount = 100
+				}
+			}
+			else = {
+				if = {
+					limit = { NOT = { has_country_flag = NIGHTMARE_USA_f3_design } }
+					create_equipment_variant = {
+						name = "P-51D"
+						type = fighter_equipment_3
+						upgrades = {
+							plane_gun_upgrade = 2
+							plane_engine_upgrade = 1
+							plane_range_upgrade = 1
+							plane_reliability_upgrade = 2
+						}
+					}
+					set_country_flag = NIGHTMARE_USA_f3_design
+				}
+				add_equipment_to_stockpile = {
+					type = fighter_equipment_3
+					amount = 400
+					variant_name = "P-51D"
+				}
+				add_equipment_to_stockpile = {
+					type = CAS_equipment_3
+					amount = 200
+				}
+				add_equipment_to_stockpile = {
+					type = naval_bomber_equipment_3
+					amount = 100
+				}
+			}
+		}
+	}
+
+	#========== SOV：1940年科技（1939年发放） ==========
+	NIGHTMARE_air_SOV_tech = {
+		allowed = {
+			original_tag = SOV
+		}
+		visible = {
+			is_ai = yes
+			OR = {
+				has_game_rule = { rule = The_Purgatory_game_rule option = The_Purgatory_game_rule_air_open }
+				has_game_rule = { rule = The_Purgatory_game_rule option = The_Purgatory_game_rule_all_open }
+			}
+		}
+		available = {
+			OR = { 				has_game_rule = { rule = The_Purgatory_game_rule option = The_Purgatory_game_rule_air_open } 				has_game_rule = { rule = The_Purgatory_game_rule option = The_Purgatory_game_rule_all_open } 			}
+			date > 1939.1.1
+			is_ai = yes
+			is_subject = no
+		}
+		fire_only_once = yes
+		cost = 0
+		days_remove = 0
+		ai_will_do = {
+			factor = 1000
+		}
+		complete_effect = {
+			#炼狱空军：为AI补充机场容量（AI不会自己建机场）
+			random_owned_state = {
+				limit = {
+					is_core_of = ROOT
+					is_fully_controlled_by = ROOT
+				}
+				add_building_construction = {
+					type = air_base
+					level = 3
+					instant_build = yes
+				}
+			}
+			#炼狱空军：为AI补充机场容量（AI不会自己建机场）
+			random_owned_state = {
+				limit = {
+					is_core_of = ROOT
+					is_fully_controlled_by = ROOT
+				}
+				add_building_construction = {
+					type = air_base
+					level = 3
+					instant_build = yes
+				}
+			}
+			set_technology = {
+				fighter2 = 1
+				CAS2 = 1
+				naval_bomber2 = 1
+				strategic_bomber2 = 1
+			}
+			air_experience = 300
+			if = {
+				limit = { NOT = { has_idea = NIGHTMARE_air_buff } }
+				add_ideas = NIGHTMARE_air_buff
+			}
+			if = {
+				limit = {
+					has_global_flag = NIGHTMARE_air_mode_quality
+					NOT = { has_idea = NIGHTMARE_air_quality_buff }
+				}
+				add_ideas = NIGHTMARE_air_quality_buff
+			}
+		}
+	}
+
+	#========== SOV：1944年科技（1942年发放） ==========
+	NIGHTMARE_air_SOV_tech44 = {
+		allowed = {
+			original_tag = SOV
+		}
+		visible = {
+			is_ai = yes
+			OR = {
+				has_game_rule = { rule = The_Purgatory_game_rule option = The_Purgatory_game_rule_air_open }
+				has_game_rule = { rule = The_Purgatory_game_rule option = The_Purgatory_game_rule_all_open }
+			}
+		}
+		available = {
+			OR = { 				has_game_rule = { rule = The_Purgatory_game_rule option = The_Purgatory_game_rule_air_open } 				has_game_rule = { rule = The_Purgatory_game_rule option = The_Purgatory_game_rule_all_open } 			}
+			date > 1942.1.1
+			is_ai = yes
+			is_subject = no
+		}
+		fire_only_once = yes
+		cost = 0
+		days_remove = 0
+		ai_will_do = {
+			factor = 1000
+		}
+		complete_effect = {
+			#炼狱空军：为AI补充机场容量（AI不会自己建机场）
+			random_owned_state = {
+				limit = {
+					is_core_of = ROOT
+					is_fully_controlled_by = ROOT
+				}
+				add_building_construction = {
+					type = air_base
+					level = 4
+					instant_build = yes
+				}
+			}
+			#炼狱空军：为AI补充机场容量（AI不会自己建机场）
+			random_owned_state = {
+				limit = {
+					is_core_of = ROOT
+					is_fully_controlled_by = ROOT
+				}
+				add_building_construction = {
+					type = air_base
+					level = 4
+					instant_build = yes
+				}
+			}
+			set_technology = {
+				fighter3 = 1
+				CAS3 = 1
+				naval_bomber3 = 1
+				strategic_bomber3 = 1
+			}
+			air_experience = 300
+		}
+	}
+
+	#========== SOV：循环刷机（默认60天，兵海翻倍，高质量模式不启用） ==========
+	NIGHTMARE_air_SOV_spawn = {
+		allowed = {
+			original_tag = SOV
+		}
+		visible = {
+			is_ai = yes
+			OR = {
+				has_game_rule = { rule = The_Purgatory_game_rule option = The_Purgatory_game_rule_air_open }
+				has_game_rule = { rule = The_Purgatory_game_rule option = The_Purgatory_game_rule_all_open }
+			}
+		}
+		available = {
+			OR = { 				has_game_rule = { rule = The_Purgatory_game_rule option = The_Purgatory_game_rule_air_open } 				has_game_rule = { rule = The_Purgatory_game_rule option = The_Purgatory_game_rule_all_open } 			}
+			date > 1940.1.1
+			is_ai = yes
+			is_subject = no
+			NOT = { has_global_flag = NIGHTMARE_air_mode_quality }
+			OR = {
+				AND = {
+					NOT = { any_enemy_country = { is_ai = no } }
+					NIGHTMARE_air_peace_cap = yes
+				}
+				AND = {
+					any_enemy_country = { is_ai = no }
+					NIGHTMARE_air_war_cap = yes
+				}
+			}
+		}
+		fire_only_once = no
+		days_re_enable = 60
+		cost = 0
+		days_remove = 0
+		ai_will_do = {
+			factor = 1000
+		}
+		complete_effect = {
+			#炼狱空军：为AI补充机场容量（AI不会自己建机场）
+			random_owned_state = {
+				limit = {
+					is_core_of = ROOT
+					is_fully_controlled_by = ROOT
+				}
+				add_building_construction = {
+					type = air_base
+					level = 2
+					instant_build = yes
+				}
+			}
+			if = {
+				limit = { date < 1942.1.1 }
+				if = {
+					limit = { NOT = { has_country_flag = NIGHTMARE_SOV_f2_design } }
+					create_equipment_variant = {
+						name = "Yak-9"
+						type = fighter_equipment_2
+						upgrades = {
+							plane_gun_upgrade = 2
+							plane_engine_upgrade = 1
+							plane_range_upgrade = 1
+							plane_reliability_upgrade = 2
+						}
+					}
+					set_country_flag = NIGHTMARE_SOV_f2_design
+				}
+				if = {
+					limit = { has_global_flag = NIGHTMARE_air_mode_swarm }
+					add_equipment_to_stockpile = {
+						type = fighter_equipment_2
+						amount = 1600
+						variant_name = "Yak-9"
+					}
+					add_equipment_to_stockpile = {
+						type = CAS_equipment_2
+						amount = 800
+					}
+					add_equipment_to_stockpile = {
+						type = naval_bomber_equipment_2
+						amount = 400
+					}
+				}
+				else = {
+					add_equipment_to_stockpile = {
+						type = fighter_equipment_2
+						amount = 800
+						variant_name = "Yak-9"
+					}
+					add_equipment_to_stockpile = {
+						type = CAS_equipment_2
+						amount = 400
+					}
+					add_equipment_to_stockpile = {
+						type = naval_bomber_equipment_2
+						amount = 200
+					}
+				}
+			}
+			else = {
+				if = {
+					limit = { NOT = { has_country_flag = NIGHTMARE_SOV_f3_design } }
+					create_equipment_variant = {
+						name = "La-7"
+						type = fighter_equipment_3
+						upgrades = {
+							plane_gun_upgrade = 2
+							plane_engine_upgrade = 1
+							plane_range_upgrade = 1
+							plane_reliability_upgrade = 2
+						}
+					}
+					set_country_flag = NIGHTMARE_SOV_f3_design
+				}
+				if = {
+					limit = { has_global_flag = NIGHTMARE_air_mode_swarm }
+					add_equipment_to_stockpile = {
+						type = fighter_equipment_3
+						amount = 1600
+						variant_name = "La-7"
+					}
+					add_equipment_to_stockpile = {
+						type = CAS_equipment_3
+						amount = 800
+					}
+					add_equipment_to_stockpile = {
+						type = naval_bomber_equipment_3
+						amount = 400
+					}
+				}
+				else = {
+					add_equipment_to_stockpile = {
+						type = fighter_equipment_3
+						amount = 800
+						variant_name = "La-7"
+					}
+					add_equipment_to_stockpile = {
+						type = CAS_equipment_3
+						amount = 400
+					}
+					add_equipment_to_stockpile = {
+						type = naval_bomber_equipment_3
+						amount = 200
+					}
+				}
+			}
+		}
+	}
+
+	#========== SOV：高质量刷机（120天，数量减半） ==========
+	NIGHTMARE_air_SOV_spawn_q = {
+		allowed = {
+			original_tag = SOV
+		}
+		visible = {
+			is_ai = yes
+			OR = {
+				has_game_rule = { rule = The_Purgatory_game_rule option = The_Purgatory_game_rule_air_open }
+				has_game_rule = { rule = The_Purgatory_game_rule option = The_Purgatory_game_rule_all_open }
+			}
+		}
+		available = {
+			OR = { 				has_game_rule = { rule = The_Purgatory_game_rule option = The_Purgatory_game_rule_air_open } 				has_game_rule = { rule = The_Purgatory_game_rule option = The_Purgatory_game_rule_all_open } 			}
+			date > 1940.1.1
+			is_ai = yes
+			is_subject = no
+			has_global_flag = NIGHTMARE_air_mode_quality
+			OR = {
+				AND = {
+					NOT = { any_enemy_country = { is_ai = no } }
+					NIGHTMARE_air_peace_cap = yes
+				}
+				AND = {
+					any_enemy_country = { is_ai = no }
+					NIGHTMARE_air_war_cap = yes
+				}
+			}
+		}
+		fire_only_once = no
+		days_re_enable = 120
+		cost = 0
+		days_remove = 0
+		ai_will_do = {
+			factor = 1000
+		}
+		complete_effect = {
+			#炼狱空军：为AI补充机场容量（AI不会自己建机场）
+			random_owned_state = {
+				limit = {
+					is_core_of = ROOT
+					is_fully_controlled_by = ROOT
+				}
+				add_building_construction = {
+					type = air_base
+					level = 1
+					instant_build = yes
+				}
+			}
+			if = {
+				limit = { date < 1942.1.1 }
+				if = {
+					limit = { NOT = { has_country_flag = NIGHTMARE_SOV_f2_design } }
+					create_equipment_variant = {
+						name = "Yak-9"
+						type = fighter_equipment_2
+						upgrades = {
+							plane_gun_upgrade = 2
+							plane_engine_upgrade = 1
+							plane_range_upgrade = 1
+							plane_reliability_upgrade = 2
+						}
+					}
+					set_country_flag = NIGHTMARE_SOV_f2_design
+				}
+				add_equipment_to_stockpile = {
+					type = fighter_equipment_2
+					amount = 400
+					variant_name = "Yak-9"
+				}
+				add_equipment_to_stockpile = {
+					type = CAS_equipment_2
+					amount = 200
+				}
+				add_equipment_to_stockpile = {
+					type = naval_bomber_equipment_2
+					amount = 100
+				}
+			}
+			else = {
+				if = {
+					limit = { NOT = { has_country_flag = NIGHTMARE_SOV_f3_design } }
+					create_equipment_variant = {
+						name = "La-7"
+						type = fighter_equipment_3
+						upgrades = {
+							plane_gun_upgrade = 2
+							plane_engine_upgrade = 1
+							plane_range_upgrade = 1
+							plane_reliability_upgrade = 2
+						}
+					}
+					set_country_flag = NIGHTMARE_SOV_f3_design
+				}
+				add_equipment_to_stockpile = {
+					type = fighter_equipment_3
+					amount = 400
+					variant_name = "La-7"
+				}
+				add_equipment_to_stockpile = {
+					type = CAS_equipment_3
+					amount = 200
+				}
+				add_equipment_to_stockpile = {
+					type = naval_bomber_equipment_3
+					amount = 100
+				}
+			}
+		}
+	}
+
+	#========== JAP：1940年科技（1939年发放） ==========
+	NIGHTMARE_air_JAP_tech = {
+		allowed = {
+			original_tag = JAP
+		}
+		visible = {
+			is_ai = yes
+			OR = {
+				has_game_rule = { rule = The_Purgatory_game_rule option = The_Purgatory_game_rule_air_open }
+				has_game_rule = { rule = The_Purgatory_game_rule option = The_Purgatory_game_rule_all_open }
+			}
+		}
+		available = {
+			OR = { 				has_game_rule = { rule = The_Purgatory_game_rule option = The_Purgatory_game_rule_air_open } 				has_game_rule = { rule = The_Purgatory_game_rule option = The_Purgatory_game_rule_all_open } 			}
+			date > 1939.1.1
+			is_ai = yes
+			is_subject = no
+		}
+		fire_only_once = yes
+		cost = 0
+		days_remove = 0
+		ai_will_do = {
+			factor = 1000
+		}
+		complete_effect = {
+			#炼狱空军：为AI补充机场容量（AI不会自己建机场）
+			random_owned_state = {
+				limit = {
+					is_core_of = ROOT
+					is_fully_controlled_by = ROOT
+				}
+				add_building_construction = {
+					type = air_base
+					level = 3
+					instant_build = yes
+				}
+			}
+			#炼狱空军：为AI补充机场容量（AI不会自己建机场）
+			random_owned_state = {
+				limit = {
+					is_core_of = ROOT
+					is_fully_controlled_by = ROOT
+				}
+				add_building_construction = {
+					type = air_base
+					level = 3
+					instant_build = yes
+				}
+			}
+			set_technology = {
+				fighter2 = 1
+				CAS2 = 1
+				naval_bomber2 = 1
+				strategic_bomber2 = 1
+			}
+			air_experience = 300
+			if = {
+				limit = { NOT = { has_idea = NIGHTMARE_air_buff } }
+				add_ideas = NIGHTMARE_air_buff
+			}
+			if = {
+				limit = {
+					has_global_flag = NIGHTMARE_air_mode_quality
+					NOT = { has_idea = NIGHTMARE_air_quality_buff }
+				}
+				add_ideas = NIGHTMARE_air_quality_buff
+			}
+		}
+	}
+
+	#========== JAP：1944年科技（1942年发放） ==========
+	NIGHTMARE_air_JAP_tech44 = {
+		allowed = {
+			original_tag = JAP
+		}
+		visible = {
+			is_ai = yes
+			OR = {
+				has_game_rule = { rule = The_Purgatory_game_rule option = The_Purgatory_game_rule_air_open }
+				has_game_rule = { rule = The_Purgatory_game_rule option = The_Purgatory_game_rule_all_open }
+			}
+		}
+		available = {
+			OR = { 				has_game_rule = { rule = The_Purgatory_game_rule option = The_Purgatory_game_rule_air_open } 				has_game_rule = { rule = The_Purgatory_game_rule option = The_Purgatory_game_rule_all_open } 			}
+			date > 1942.1.1
+			is_ai = yes
+			is_subject = no
+		}
+		fire_only_once = yes
+		cost = 0
+		days_remove = 0
+		ai_will_do = {
+			factor = 1000
+		}
+		complete_effect = {
+			#炼狱空军：为AI补充机场容量（AI不会自己建机场）
+			random_owned_state = {
+				limit = {
+					is_core_of = ROOT
+					is_fully_controlled_by = ROOT
+				}
+				add_building_construction = {
+					type = air_base
+					level = 4
+					instant_build = yes
+				}
+			}
+			#炼狱空军：为AI补充机场容量（AI不会自己建机场）
+			random_owned_state = {
+				limit = {
+					is_core_of = ROOT
+					is_fully_controlled_by = ROOT
+				}
+				add_building_construction = {
+					type = air_base
+					level = 4
+					instant_build = yes
+				}
+			}
+			set_technology = {
+				fighter3 = 1
+				CAS3 = 1
+				naval_bomber3 = 1
+				strategic_bomber3 = 1
+			}
+			air_experience = 300
+		}
+	}
+
+	#========== JAP：循环刷机（默认60天，兵海翻倍，高质量模式不启用） ==========
+	NIGHTMARE_air_JAP_spawn = {
+		allowed = {
+			original_tag = JAP
+		}
+		visible = {
+			is_ai = yes
+			OR = {
+				has_game_rule = { rule = The_Purgatory_game_rule option = The_Purgatory_game_rule_air_open }
+				has_game_rule = { rule = The_Purgatory_game_rule option = The_Purgatory_game_rule_all_open }
+			}
+		}
+		available = {
+			OR = { 				has_game_rule = { rule = The_Purgatory_game_rule option = The_Purgatory_game_rule_air_open } 				has_game_rule = { rule = The_Purgatory_game_rule option = The_Purgatory_game_rule_all_open } 			}
+			date > 1940.1.1
+			is_ai = yes
+			is_subject = no
+			NOT = { has_global_flag = NIGHTMARE_air_mode_quality }
+			OR = {
+				AND = {
+					NOT = { any_enemy_country = { is_ai = no } }
+					NIGHTMARE_air_peace_cap = yes
+				}
+				AND = {
+					any_enemy_country = { is_ai = no }
+					NIGHTMARE_air_war_cap = yes
+				}
+			}
+		}
+		fire_only_once = no
+		days_re_enable = 60
+		cost = 0
+		days_remove = 0
+		ai_will_do = {
+			factor = 1000
+		}
+		complete_effect = {
+			#炼狱空军：为AI补充机场容量（AI不会自己建机场）
+			random_owned_state = {
+				limit = {
+					is_core_of = ROOT
+					is_fully_controlled_by = ROOT
+				}
+				add_building_construction = {
+					type = air_base
+					level = 2
+					instant_build = yes
+				}
+			}
+			if = {
+				limit = { date < 1942.1.1 }
+				if = {
+					limit = { NOT = { has_country_flag = NIGHTMARE_JAP_f2_design } }
+					create_equipment_variant = {
+						name = "A6M5"
+						type = fighter_equipment_2
+						upgrades = {
+							plane_gun_upgrade = 2
+							plane_engine_upgrade = 1
+							plane_range_upgrade = 1
+							plane_reliability_upgrade = 2
+						}
+					}
+					set_country_flag = NIGHTMARE_JAP_f2_design
+				}
+				if = {
+					limit = { has_global_flag = NIGHTMARE_air_mode_swarm }
+					add_equipment_to_stockpile = {
+						type = fighter_equipment_2
+						amount = 1600
+						variant_name = "A6M5"
+					}
+					add_equipment_to_stockpile = {
+						type = CAS_equipment_2
+						amount = 800
+					}
+					add_equipment_to_stockpile = {
+						type = naval_bomber_equipment_2
+						amount = 400
+					}
+				}
+				else = {
+					add_equipment_to_stockpile = {
+						type = fighter_equipment_2
+						amount = 800
+						variant_name = "A6M5"
+					}
+					add_equipment_to_stockpile = {
+						type = CAS_equipment_2
+						amount = 400
+					}
+					add_equipment_to_stockpile = {
+						type = naval_bomber_equipment_2
+						amount = 200
+					}
+				}
+			}
+			else = {
+				if = {
+					limit = { NOT = { has_country_flag = NIGHTMARE_JAP_f3_design } }
+					create_equipment_variant = {
+						name = "Ki-84 Hayate"
+						type = fighter_equipment_3
+						upgrades = {
+							plane_gun_upgrade = 2
+							plane_engine_upgrade = 1
+							plane_range_upgrade = 1
+							plane_reliability_upgrade = 2
+						}
+					}
+					set_country_flag = NIGHTMARE_JAP_f3_design
+				}
+				if = {
+					limit = { has_global_flag = NIGHTMARE_air_mode_swarm }
+					add_equipment_to_stockpile = {
+						type = fighter_equipment_3
+						amount = 1600
+						variant_name = "Ki-84 Hayate"
+					}
+					add_equipment_to_stockpile = {
+						type = CAS_equipment_3
+						amount = 800
+					}
+					add_equipment_to_stockpile = {
+						type = naval_bomber_equipment_3
+						amount = 400
+					}
+				}
+				else = {
+					add_equipment_to_stockpile = {
+						type = fighter_equipment_3
+						amount = 800
+						variant_name = "Ki-84 Hayate"
+					}
+					add_equipment_to_stockpile = {
+						type = CAS_equipment_3
+						amount = 400
+					}
+					add_equipment_to_stockpile = {
+						type = naval_bomber_equipment_3
+						amount = 200
+					}
+				}
+			}
+		}
+	}
+
+	#========== JAP：高质量刷机（120天，数量减半） ==========
+	NIGHTMARE_air_JAP_spawn_q = {
+		allowed = {
+			original_tag = JAP
+		}
+		visible = {
+			is_ai = yes
+			OR = {
+				has_game_rule = { rule = The_Purgatory_game_rule option = The_Purgatory_game_rule_air_open }
+				has_game_rule = { rule = The_Purgatory_game_rule option = The_Purgatory_game_rule_all_open }
+			}
+		}
+		available = {
+			OR = { 				has_game_rule = { rule = The_Purgatory_game_rule option = The_Purgatory_game_rule_air_open } 				has_game_rule = { rule = The_Purgatory_game_rule option = The_Purgatory_game_rule_all_open } 			}
+			date > 1940.1.1
+			is_ai = yes
+			is_subject = no
+			has_global_flag = NIGHTMARE_air_mode_quality
+			OR = {
+				AND = {
+					NOT = { any_enemy_country = { is_ai = no } }
+					NIGHTMARE_air_peace_cap = yes
+				}
+				AND = {
+					any_enemy_country = { is_ai = no }
+					NIGHTMARE_air_war_cap = yes
+				}
+			}
+		}
+		fire_only_once = no
+		days_re_enable = 120
+		cost = 0
+		days_remove = 0
+		ai_will_do = {
+			factor = 1000
+		}
+		complete_effect = {
+			#炼狱空军：为AI补充机场容量（AI不会自己建机场）
+			random_owned_state = {
+				limit = {
+					is_core_of = ROOT
+					is_fully_controlled_by = ROOT
+				}
+				add_building_construction = {
+					type = air_base
+					level = 1
+					instant_build = yes
+				}
+			}
+			if = {
+				limit = { date < 1942.1.1 }
+				if = {
+					limit = { NOT = { has_country_flag = NIGHTMARE_JAP_f2_design } }
+					create_equipment_variant = {
+						name = "A6M5"
+						type = fighter_equipment_2
+						upgrades = {
+							plane_gun_upgrade = 2
+							plane_engine_upgrade = 1
+							plane_range_upgrade = 1
+							plane_reliability_upgrade = 2
+						}
+					}
+					set_country_flag = NIGHTMARE_JAP_f2_design
+				}
+				add_equipment_to_stockpile = {
+					type = fighter_equipment_2
+					amount = 400
+					variant_name = "A6M5"
+				}
+				add_equipment_to_stockpile = {
+					type = CAS_equipment_2
+					amount = 200
+				}
+				add_equipment_to_stockpile = {
+					type = naval_bomber_equipment_2
+					amount = 100
+				}
+			}
+			else = {
+				if = {
+					limit = { NOT = { has_country_flag = NIGHTMARE_JAP_f3_design } }
+					create_equipment_variant = {
+						name = "Ki-84 Hayate"
+						type = fighter_equipment_3
+						upgrades = {
+							plane_gun_upgrade = 2
+							plane_engine_upgrade = 1
+							plane_range_upgrade = 1
+							plane_reliability_upgrade = 2
+						}
+					}
+					set_country_flag = NIGHTMARE_JAP_f3_design
+				}
+				add_equipment_to_stockpile = {
+					type = fighter_equipment_3
+					amount = 400
+					variant_name = "Ki-84 Hayate"
+				}
+				add_equipment_to_stockpile = {
+					type = CAS_equipment_3
+					amount = 200
+				}
+				add_equipment_to_stockpile = {
+					type = naval_bomber_equipment_3
+					amount = 100
+				}
+			}
+		}
+	}
+
+	#========== HUN：1940年科技（1939年发放） ==========
+	NIGHTMARE_air_HUN_tech = {
+		allowed = {
+			original_tag = HUN
+		}
+		visible = {
+			is_ai = yes
+			OR = {
+				has_game_rule = { rule = The_Purgatory_game_rule option = The_Purgatory_game_rule_air_open }
+				has_game_rule = { rule = The_Purgatory_game_rule option = The_Purgatory_game_rule_all_open }
+			}
+		}
+		available = {
+			OR = { 				has_game_rule = { rule = The_Purgatory_game_rule option = The_Purgatory_game_rule_air_open } 				has_game_rule = { rule = The_Purgatory_game_rule option = The_Purgatory_game_rule_all_open } 			}
+			date > 1939.1.1
+			is_ai = yes
+			is_subject = no
+		}
+		fire_only_once = yes
+		cost = 0
+		days_remove = 0
+		ai_will_do = {
+			factor = 1000
+		}
+		complete_effect = {
+			#炼狱空军：为AI补充机场容量（AI不会自己建机场）
+			random_owned_state = {
+				limit = {
+					is_core_of = ROOT
+					is_fully_controlled_by = ROOT
+				}
+				add_building_construction = {
+					type = air_base
+					level = 3
+					instant_build = yes
+				}
+			}
+			#炼狱空军：为AI补充机场容量（AI不会自己建机场）
+			random_owned_state = {
+				limit = {
+					is_core_of = ROOT
+					is_fully_controlled_by = ROOT
+				}
+				add_building_construction = {
+					type = air_base
+					level = 3
+					instant_build = yes
+				}
+			}
+			set_technology = {
+				fighter2 = 1
+				CAS2 = 1
+				naval_bomber2 = 1
+				strategic_bomber2 = 1
+			}
+			air_experience = 300
+			if = {
+				limit = { NOT = { has_idea = NIGHTMARE_air_buff } }
+				add_ideas = NIGHTMARE_air_buff
+			}
+			if = {
+				limit = {
+					has_global_flag = NIGHTMARE_air_mode_quality
+					NOT = { has_idea = NIGHTMARE_air_quality_buff }
+				}
+				add_ideas = NIGHTMARE_air_quality_buff
+			}
+		}
+	}
+
+	#========== HUN：1944年科技（1942年发放） ==========
+	NIGHTMARE_air_HUN_tech44 = {
+		allowed = {
+			original_tag = HUN
+		}
+		visible = {
+			is_ai = yes
+			OR = {
+				has_game_rule = { rule = The_Purgatory_game_rule option = The_Purgatory_game_rule_air_open }
+				has_game_rule = { rule = The_Purgatory_game_rule option = The_Purgatory_game_rule_all_open }
+			}
+		}
+		available = {
+			OR = { 				has_game_rule = { rule = The_Purgatory_game_rule option = The_Purgatory_game_rule_air_open } 				has_game_rule = { rule = The_Purgatory_game_rule option = The_Purgatory_game_rule_all_open } 			}
+			date > 1942.1.1
+			is_ai = yes
+			is_subject = no
+		}
+		fire_only_once = yes
+		cost = 0
+		days_remove = 0
+		ai_will_do = {
+			factor = 1000
+		}
+		complete_effect = {
+			#炼狱空军：为AI补充机场容量（AI不会自己建机场）
+			random_owned_state = {
+				limit = {
+					is_core_of = ROOT
+					is_fully_controlled_by = ROOT
+				}
+				add_building_construction = {
+					type = air_base
+					level = 4
+					instant_build = yes
+				}
+			}
+			#炼狱空军：为AI补充机场容量（AI不会自己建机场）
+			random_owned_state = {
+				limit = {
+					is_core_of = ROOT
+					is_fully_controlled_by = ROOT
+				}
+				add_building_construction = {
+					type = air_base
+					level = 4
+					instant_build = yes
+				}
+			}
+			set_technology = {
+				fighter3 = 1
+				CAS3 = 1
+				naval_bomber3 = 1
+				strategic_bomber3 = 1
+			}
+			air_experience = 300
+		}
+	}
+
+	#========== HUN：循环刷机（默认60天，兵海翻倍，高质量模式不启用） ==========
+	NIGHTMARE_air_HUN_spawn = {
+		allowed = {
+			original_tag = HUN
+		}
+		visible = {
+			is_ai = yes
+			OR = {
+				has_game_rule = { rule = The_Purgatory_game_rule option = The_Purgatory_game_rule_air_open }
+				has_game_rule = { rule = The_Purgatory_game_rule option = The_Purgatory_game_rule_all_open }
+			}
+		}
+		available = {
+			OR = { 				has_game_rule = { rule = The_Purgatory_game_rule option = The_Purgatory_game_rule_air_open } 				has_game_rule = { rule = The_Purgatory_game_rule option = The_Purgatory_game_rule_all_open } 			}
+			date > 1940.1.1
+			is_ai = yes
+			is_subject = no
+			NOT = { has_global_flag = NIGHTMARE_air_mode_quality }
+			OR = {
+				AND = {
+					NOT = { any_enemy_country = { is_ai = no } }
+					NIGHTMARE_air_peace_cap = yes
+				}
+				AND = {
+					any_enemy_country = { is_ai = no }
+					NIGHTMARE_air_war_cap = yes
+				}
+			}
+		}
+		fire_only_once = no
+		days_re_enable = 60
+		cost = 0
+		days_remove = 0
+		ai_will_do = {
+			factor = 1000
+		}
+		complete_effect = {
+			#炼狱空军：为AI补充机场容量（AI不会自己建机场）
+			random_owned_state = {
+				limit = {
+					is_core_of = ROOT
+					is_fully_controlled_by = ROOT
+				}
+				add_building_construction = {
+					type = air_base
+					level = 2
+					instant_build = yes
+				}
+			}
+			if = {
+				limit = { date < 1942.1.1 }
+				if = {
+					limit = { NOT = { has_country_flag = NIGHTMARE_HUN_f2_design } }
+					create_equipment_variant = {
+						name = "He 112B"
+						type = fighter_equipment_2
+						upgrades = {
+							plane_gun_upgrade = 2
+							plane_engine_upgrade = 1
+							plane_range_upgrade = 1
+							plane_reliability_upgrade = 2
+						}
+					}
+					set_country_flag = NIGHTMARE_HUN_f2_design
+				}
+				if = {
+					limit = { has_global_flag = NIGHTMARE_air_mode_swarm }
+					add_equipment_to_stockpile = {
+						type = fighter_equipment_2
+						amount = 1600
+						variant_name = "He 112B"
+					}
+					add_equipment_to_stockpile = {
+						type = CAS_equipment_2
+						amount = 800
+					}
+					add_equipment_to_stockpile = {
+						type = naval_bomber_equipment_2
+						amount = 400
+					}
+				}
+				else = {
+					add_equipment_to_stockpile = {
+						type = fighter_equipment_2
+						amount = 800
+						variant_name = "He 112B"
+					}
+					add_equipment_to_stockpile = {
+						type = CAS_equipment_2
+						amount = 400
+					}
+					add_equipment_to_stockpile = {
+						type = naval_bomber_equipment_2
+						amount = 200
+					}
+				}
+			}
+			else = {
+				if = {
+					limit = { NOT = { has_country_flag = NIGHTMARE_HUN_f3_design } }
+					create_equipment_variant = {
+						name = "Re.2005"
+						type = fighter_equipment_3
+						upgrades = {
+							plane_gun_upgrade = 2
+							plane_engine_upgrade = 1
+							plane_range_upgrade = 1
+							plane_reliability_upgrade = 2
+						}
+					}
+					set_country_flag = NIGHTMARE_HUN_f3_design
+				}
+				if = {
+					limit = { has_global_flag = NIGHTMARE_air_mode_swarm }
+					add_equipment_to_stockpile = {
+						type = fighter_equipment_3
+						amount = 1600
+						variant_name = "Re.2005"
+					}
+					add_equipment_to_stockpile = {
+						type = CAS_equipment_3
+						amount = 800
+					}
+					add_equipment_to_stockpile = {
+						type = naval_bomber_equipment_3
+						amount = 400
+					}
+				}
+				else = {
+					add_equipment_to_stockpile = {
+						type = fighter_equipment_3
+						amount = 800
+						variant_name = "Re.2005"
+					}
+					add_equipment_to_stockpile = {
+						type = CAS_equipment_3
+						amount = 400
+					}
+					add_equipment_to_stockpile = {
+						type = naval_bomber_equipment_3
+						amount = 200
+					}
+				}
+			}
+		}
+	}
+
+	#========== HUN：高质量刷机（120天，数量减半） ==========
+	NIGHTMARE_air_HUN_spawn_q = {
+		allowed = {
+			original_tag = HUN
+		}
+		visible = {
+			is_ai = yes
+			OR = {
+				has_game_rule = { rule = The_Purgatory_game_rule option = The_Purgatory_game_rule_air_open }
+				has_game_rule = { rule = The_Purgatory_game_rule option = The_Purgatory_game_rule_all_open }
+			}
+		}
+		available = {
+			OR = { 				has_game_rule = { rule = The_Purgatory_game_rule option = The_Purgatory_game_rule_air_open } 				has_game_rule = { rule = The_Purgatory_game_rule option = The_Purgatory_game_rule_all_open } 			}
+			date > 1940.1.1
+			is_ai = yes
+			is_subject = no
+			has_global_flag = NIGHTMARE_air_mode_quality
+			OR = {
+				AND = {
+					NOT = { any_enemy_country = { is_ai = no } }
+					NIGHTMARE_air_peace_cap = yes
+				}
+				AND = {
+					any_enemy_country = { is_ai = no }
+					NIGHTMARE_air_war_cap = yes
+				}
+			}
+		}
+		fire_only_once = no
+		days_re_enable = 120
+		cost = 0
+		days_remove = 0
+		ai_will_do = {
+			factor = 1000
+		}
+		complete_effect = {
+			#炼狱空军：为AI补充机场容量（AI不会自己建机场）
+			random_owned_state = {
+				limit = {
+					is_core_of = ROOT
+					is_fully_controlled_by = ROOT
+				}
+				add_building_construction = {
+					type = air_base
+					level = 1
+					instant_build = yes
+				}
+			}
+			if = {
+				limit = { date < 1942.1.1 }
+				if = {
+					limit = { NOT = { has_country_flag = NIGHTMARE_HUN_f2_design } }
+					create_equipment_variant = {
+						name = "He 112B"
+						type = fighter_equipment_2
+						upgrades = {
+							plane_gun_upgrade = 2
+							plane_engine_upgrade = 1
+							plane_range_upgrade = 1
+							plane_reliability_upgrade = 2
+						}
+					}
+					set_country_flag = NIGHTMARE_HUN_f2_design
+				}
+				add_equipment_to_stockpile = {
+					type = fighter_equipment_2
+					amount = 400
+					variant_name = "He 112B"
+				}
+				add_equipment_to_stockpile = {
+					type = CAS_equipment_2
+					amount = 200
+				}
+				add_equipment_to_stockpile = {
+					type = naval_bomber_equipment_2
+					amount = 100
+				}
+			}
+			else = {
+				if = {
+					limit = { NOT = { has_country_flag = NIGHTMARE_HUN_f3_design } }
+					create_equipment_variant = {
+						name = "Re.2005"
+						type = fighter_equipment_3
+						upgrades = {
+							plane_gun_upgrade = 2
+							plane_engine_upgrade = 1
+							plane_range_upgrade = 1
+							plane_reliability_upgrade = 2
+						}
+					}
+					set_country_flag = NIGHTMARE_HUN_f3_design
+				}
+				add_equipment_to_stockpile = {
+					type = fighter_equipment_3
+					amount = 400
+					variant_name = "Re.2005"
+				}
+				add_equipment_to_stockpile = {
+					type = CAS_equipment_3
+					amount = 200
+				}
+				add_equipment_to_stockpile = {
+					type = naval_bomber_equipment_3
+					amount = 100
+				}
+			}
+		}
+	}
+
+	#========== CHI：1940年科技（1939年发放） ==========
+	NIGHTMARE_air_CHI_tech = {
+		allowed = {
+			original_tag = CHI
+		}
+		visible = {
+			is_ai = yes
+			OR = {
+				has_game_rule = { rule = The_Purgatory_game_rule option = The_Purgatory_game_rule_air_open }
+				has_game_rule = { rule = The_Purgatory_game_rule option = The_Purgatory_game_rule_all_open }
+			}
+		}
+		available = {
+			OR = { 				has_game_rule = { rule = The_Purgatory_game_rule option = The_Purgatory_game_rule_air_open } 				has_game_rule = { rule = The_Purgatory_game_rule option = The_Purgatory_game_rule_all_open } 			}
+			date > 1939.1.1
+			is_ai = yes
+			is_subject = no
+		}
+		fire_only_once = yes
+		cost = 0
+		days_remove = 0
+		ai_will_do = {
+			factor = 1000
+		}
+		complete_effect = {
+			#炼狱空军：为AI补充机场容量（AI不会自己建机场）
+			random_owned_state = {
+				limit = {
+					is_core_of = ROOT
+					is_fully_controlled_by = ROOT
+				}
+				add_building_construction = {
+					type = air_base
+					level = 3
+					instant_build = yes
+				}
+			}
+			#炼狱空军：为AI补充机场容量（AI不会自己建机场）
+			random_owned_state = {
+				limit = {
+					is_core_of = ROOT
+					is_fully_controlled_by = ROOT
+				}
+				add_building_construction = {
+					type = air_base
+					level = 3
+					instant_build = yes
+				}
+			}
+			set_technology = {
+				fighter2 = 1
+				CAS2 = 1
+				naval_bomber2 = 1
+				strategic_bomber2 = 1
+			}
+			air_experience = 300
+			if = {
+				limit = { NOT = { has_idea = NIGHTMARE_air_buff } }
+				add_ideas = NIGHTMARE_air_buff
+			}
+			if = {
+				limit = {
+					has_global_flag = NIGHTMARE_air_mode_quality
+					NOT = { has_idea = NIGHTMARE_air_quality_buff }
+				}
+				add_ideas = NIGHTMARE_air_quality_buff
+			}
+		}
+	}
+
+	#========== CHI：1944年科技（1942年发放） ==========
+	NIGHTMARE_air_CHI_tech44 = {
+		allowed = {
+			original_tag = CHI
+		}
+		visible = {
+			is_ai = yes
+			OR = {
+				has_game_rule = { rule = The_Purgatory_game_rule option = The_Purgatory_game_rule_air_open }
+				has_game_rule = { rule = The_Purgatory_game_rule option = The_Purgatory_game_rule_all_open }
+			}
+		}
+		available = {
+			OR = { 				has_game_rule = { rule = The_Purgatory_game_rule option = The_Purgatory_game_rule_air_open } 				has_game_rule = { rule = The_Purgatory_game_rule option = The_Purgatory_game_rule_all_open } 			}
+			date > 1942.1.1
+			is_ai = yes
+			is_subject = no
+		}
+		fire_only_once = yes
+		cost = 0
+		days_remove = 0
+		ai_will_do = {
+			factor = 1000
+		}
+		complete_effect = {
+			#炼狱空军：为AI补充机场容量（AI不会自己建机场）
+			random_owned_state = {
+				limit = {
+					is_core_of = ROOT
+					is_fully_controlled_by = ROOT
+				}
+				add_building_construction = {
+					type = air_base
+					level = 4
+					instant_build = yes
+				}
+			}
+			#炼狱空军：为AI补充机场容量（AI不会自己建机场）
+			random_owned_state = {
+				limit = {
+					is_core_of = ROOT
+					is_fully_controlled_by = ROOT
+				}
+				add_building_construction = {
+					type = air_base
+					level = 4
+					instant_build = yes
+				}
+			}
+			set_technology = {
+				fighter3 = 1
+				CAS3 = 1
+				naval_bomber3 = 1
+				strategic_bomber3 = 1
+			}
+			air_experience = 300
+		}
+	}
+
+	#========== CHI：循环刷机（默认60天，兵海翻倍，高质量模式不启用） ==========
+	NIGHTMARE_air_CHI_spawn = {
+		allowed = {
+			original_tag = CHI
+		}
+		visible = {
+			is_ai = yes
+			OR = {
+				has_game_rule = { rule = The_Purgatory_game_rule option = The_Purgatory_game_rule_air_open }
+				has_game_rule = { rule = The_Purgatory_game_rule option = The_Purgatory_game_rule_all_open }
+			}
+		}
+		available = {
+			OR = { 				has_game_rule = { rule = The_Purgatory_game_rule option = The_Purgatory_game_rule_air_open } 				has_game_rule = { rule = The_Purgatory_game_rule option = The_Purgatory_game_rule_all_open } 			}
+			date > 1940.1.1
+			is_ai = yes
+			is_subject = no
+			NOT = { has_global_flag = NIGHTMARE_air_mode_quality }
+			OR = {
+				AND = {
+					NOT = { any_enemy_country = { is_ai = no } }
+					NIGHTMARE_air_peace_cap = yes
+				}
+				AND = {
+					any_enemy_country = { is_ai = no }
+					NIGHTMARE_air_war_cap = yes
+				}
+			}
+		}
+		fire_only_once = no
+		days_re_enable = 60
+		cost = 0
+		days_remove = 0
+		ai_will_do = {
+			factor = 1000
+		}
+		complete_effect = {
+			#炼狱空军：为AI补充机场容量（AI不会自己建机场）
+			random_owned_state = {
+				limit = {
+					is_core_of = ROOT
+					is_fully_controlled_by = ROOT
+				}
+				add_building_construction = {
+					type = air_base
+					level = 2
+					instant_build = yes
+				}
+			}
+			if = {
+				limit = { date < 1942.1.1 }
+				if = {
+					limit = { NOT = { has_country_flag = NIGHTMARE_CHI_f2_design } }
+					create_equipment_variant = {
+						name = "P-40E"
+						type = fighter_equipment_2
+						upgrades = {
+							plane_gun_upgrade = 2
+							plane_engine_upgrade = 1
+							plane_range_upgrade = 1
+							plane_reliability_upgrade = 2
+						}
+					}
+					set_country_flag = NIGHTMARE_CHI_f2_design
+				}
+				if = {
+					limit = { has_global_flag = NIGHTMARE_air_mode_swarm }
+					add_equipment_to_stockpile = {
+						type = fighter_equipment_2
+						amount = 1600
+						variant_name = "P-40E"
+					}
+					add_equipment_to_stockpile = {
+						type = CAS_equipment_2
+						amount = 800
+					}
+					add_equipment_to_stockpile = {
+						type = naval_bomber_equipment_2
+						amount = 400
+					}
+				}
+				else = {
+					add_equipment_to_stockpile = {
+						type = fighter_equipment_2
+						amount = 800
+						variant_name = "P-40E"
+					}
+					add_equipment_to_stockpile = {
+						type = CAS_equipment_2
+						amount = 400
+					}
+					add_equipment_to_stockpile = {
+						type = naval_bomber_equipment_2
+						amount = 200
+					}
+				}
+			}
+			else = {
+				if = {
+					limit = { NOT = { has_country_flag = NIGHTMARE_CHI_f3_design } }
+					create_equipment_variant = {
+						name = "P-51B"
+						type = fighter_equipment_3
+						upgrades = {
+							plane_gun_upgrade = 2
+							plane_engine_upgrade = 1
+							plane_range_upgrade = 1
+							plane_reliability_upgrade = 2
+						}
+					}
+					set_country_flag = NIGHTMARE_CHI_f3_design
+				}
+				if = {
+					limit = { has_global_flag = NIGHTMARE_air_mode_swarm }
+					add_equipment_to_stockpile = {
+						type = fighter_equipment_3
+						amount = 1600
+						variant_name = "P-51B"
+					}
+					add_equipment_to_stockpile = {
+						type = CAS_equipment_3
+						amount = 800
+					}
+					add_equipment_to_stockpile = {
+						type = naval_bomber_equipment_3
+						amount = 400
+					}
+				}
+				else = {
+					add_equipment_to_stockpile = {
+						type = fighter_equipment_3
+						amount = 800
+						variant_name = "P-51B"
+					}
+					add_equipment_to_stockpile = {
+						type = CAS_equipment_3
+						amount = 400
+					}
+					add_equipment_to_stockpile = {
+						type = naval_bomber_equipment_3
+						amount = 200
+					}
+				}
+			}
+		}
+	}
+
+	#========== CHI：高质量刷机（120天，数量减半） ==========
+	NIGHTMARE_air_CHI_spawn_q = {
+		allowed = {
+			original_tag = CHI
+		}
+		visible = {
+			is_ai = yes
+			OR = {
+				has_game_rule = { rule = The_Purgatory_game_rule option = The_Purgatory_game_rule_air_open }
+				has_game_rule = { rule = The_Purgatory_game_rule option = The_Purgatory_game_rule_all_open }
+			}
+		}
+		available = {
+			OR = { 				has_game_rule = { rule = The_Purgatory_game_rule option = The_Purgatory_game_rule_air_open } 				has_game_rule = { rule = The_Purgatory_game_rule option = The_Purgatory_game_rule_all_open } 			}
+			date > 1940.1.1
+			is_ai = yes
+			is_subject = no
+			has_global_flag = NIGHTMARE_air_mode_quality
+			OR = {
+				AND = {
+					NOT = { any_enemy_country = { is_ai = no } }
+					NIGHTMARE_air_peace_cap = yes
+				}
+				AND = {
+					any_enemy_country = { is_ai = no }
+					NIGHTMARE_air_war_cap = yes
+				}
+			}
+		}
+		fire_only_once = no
+		days_re_enable = 120
+		cost = 0
+		days_remove = 0
+		ai_will_do = {
+			factor = 1000
+		}
+		complete_effect = {
+			#炼狱空军：为AI补充机场容量（AI不会自己建机场）
+			random_owned_state = {
+				limit = {
+					is_core_of = ROOT
+					is_fully_controlled_by = ROOT
+				}
+				add_building_construction = {
+					type = air_base
+					level = 1
+					instant_build = yes
+				}
+			}
+			if = {
+				limit = { date < 1942.1.1 }
+				if = {
+					limit = { NOT = { has_country_flag = NIGHTMARE_CHI_f2_design } }
+					create_equipment_variant = {
+						name = "P-40E"
+						type = fighter_equipment_2
+						upgrades = {
+							plane_gun_upgrade = 2
+							plane_engine_upgrade = 1
+							plane_range_upgrade = 1
+							plane_reliability_upgrade = 2
+						}
+					}
+					set_country_flag = NIGHTMARE_CHI_f2_design
+				}
+				add_equipment_to_stockpile = {
+					type = fighter_equipment_2
+					amount = 400
+					variant_name = "P-40E"
+				}
+				add_equipment_to_stockpile = {
+					type = CAS_equipment_2
+					amount = 200
+				}
+				add_equipment_to_stockpile = {
+					type = naval_bomber_equipment_2
+					amount = 100
+				}
+			}
+			else = {
+				if = {
+					limit = { NOT = { has_country_flag = NIGHTMARE_CHI_f3_design } }
+					create_equipment_variant = {
+						name = "P-51B"
+						type = fighter_equipment_3
+						upgrades = {
+							plane_gun_upgrade = 2
+							plane_engine_upgrade = 1
+							plane_range_upgrade = 1
+							plane_reliability_upgrade = 2
+						}
+					}
+					set_country_flag = NIGHTMARE_CHI_f3_design
+				}
+				add_equipment_to_stockpile = {
+					type = fighter_equipment_3
+					amount = 400
+					variant_name = "P-51B"
+				}
+				add_equipment_to_stockpile = {
+					type = CAS_equipment_3
+					amount = 200
+				}
+				add_equipment_to_stockpile = {
+					type = naval_bomber_equipment_3
+					amount = 100
+				}
+			}
+		}
+	}
+
+
+	#========== GER：绝地反扑（1940后开战且飞机<1000时触发，每年一次） ==========
+	NIGHTMARE_air_GER_counter = {
+		allowed = {
+			original_tag = GER
+		}
+		visible = {
+			is_ai = yes
+			OR = {
+				has_game_rule = { rule = The_Purgatory_game_rule option = The_Purgatory_game_rule_air_open }
+				has_game_rule = { rule = The_Purgatory_game_rule option = The_Purgatory_game_rule_all_open }
+			}
+		}
+		available = {
+			OR = { 				has_game_rule = { rule = The_Purgatory_game_rule option = The_Purgatory_game_rule_air_open } 				has_game_rule = { rule = The_Purgatory_game_rule option = The_Purgatory_game_rule_all_open } 			}
+			date > 1940.1.1
+			is_ai = yes
+			is_subject = no
+			any_enemy_country = { is_ai = no }
+			check_variable = { NIGHTMARE_air_total < 1000 }
+		}
+		fire_only_once = no
+		days_re_enable = 365
+		cost = 0
+		days_remove = 0
+		ai_will_do = {
+			factor = 1000
+		}
+		complete_effect = {
+			#炼狱空军：反扑机群需要机场
+			random_owned_state = {
+				limit = {
+					is_core_of = ROOT
+					is_fully_controlled_by = ROOT
+				}
+				add_building_construction = {
+					type = air_base
+					level = 3
+					instant_build = yes
+				}
+			}
+			#炼狱空军：反扑机群需要机场
+			random_owned_state = {
+				limit = {
+					is_core_of = ROOT
+					is_fully_controlled_by = ROOT
+				}
+				add_building_construction = {
+					type = air_base
+					level = 3
+					instant_build = yes
+				}
+			}
+			if = {
+				limit = { date < 1942.1.1 }
+				if = {
+					limit = { NOT = { has_country_flag = NIGHTMARE_GER_f2_design } }
+					create_equipment_variant = {
+						name = "Bf 109 K"
+						type = fighter_equipment_2
+						upgrades = {
+							plane_gun_upgrade = 2
+							plane_engine_upgrade = 1
+							plane_range_upgrade = 1
+							plane_reliability_upgrade = 2
+						}
+					}
+					set_country_flag = NIGHTMARE_GER_f2_design
+				}
+				add_equipment_to_stockpile = {
+					type = fighter_equipment_2
+					amount = 3500
+					variant_name = "Bf 109 K"
+				}
+				add_equipment_to_stockpile = {
+					type = CAS_equipment_2
+					amount = 1000
+				}
+				add_equipment_to_stockpile = {
+					type = naval_bomber_equipment_2
+					amount = 500
+				}
+			}
+			else = {
+				if = {
+					limit = { NOT = { has_country_flag = NIGHTMARE_GER_f3_design } }
+					create_equipment_variant = {
+						name = "Fw 190 D"
+						type = fighter_equipment_3
+						upgrades = {
+							plane_gun_upgrade = 2
+							plane_engine_upgrade = 1
+							plane_range_upgrade = 1
+							plane_reliability_upgrade = 2
+						}
+					}
+					set_country_flag = NIGHTMARE_GER_f3_design
+				}
+				add_equipment_to_stockpile = {
+					type = fighter_equipment_3
+					amount = 3500
+					variant_name = "Fw 190 D"
+				}
+				add_equipment_to_stockpile = {
+					type = CAS_equipment_3
+					amount = 1000
+				}
+				add_equipment_to_stockpile = {
+					type = naval_bomber_equipment_3
+					amount = 500
+				}
+			}
+			country_event = { id = change_nightmare.2 days = 30 }
+		}
+	}
+
+	#========== FRA：绝地反扑（1940后开战且飞机<1000时触发，每年一次） ==========
+	NIGHTMARE_air_FRA_counter = {
+		allowed = {
+			original_tag = FRA
+		}
+		visible = {
+			is_ai = yes
+			OR = {
+				has_game_rule = { rule = The_Purgatory_game_rule option = The_Purgatory_game_rule_air_open }
+				has_game_rule = { rule = The_Purgatory_game_rule option = The_Purgatory_game_rule_all_open }
+			}
+		}
+		available = {
+			OR = { 				has_game_rule = { rule = The_Purgatory_game_rule option = The_Purgatory_game_rule_air_open } 				has_game_rule = { rule = The_Purgatory_game_rule option = The_Purgatory_game_rule_all_open } 			}
+			date > 1940.1.1
+			is_ai = yes
+			is_subject = no
+			any_enemy_country = { is_ai = no }
+			check_variable = { NIGHTMARE_air_total < 1000 }
+		}
+		fire_only_once = no
+		days_re_enable = 365
+		cost = 0
+		days_remove = 0
+		ai_will_do = {
+			factor = 1000
+		}
+		complete_effect = {
+			#炼狱空军：反扑机群需要机场
+			random_owned_state = {
+				limit = {
+					is_core_of = ROOT
+					is_fully_controlled_by = ROOT
+				}
+				add_building_construction = {
+					type = air_base
+					level = 3
+					instant_build = yes
+				}
+			}
+			#炼狱空军：反扑机群需要机场
+			random_owned_state = {
+				limit = {
+					is_core_of = ROOT
+					is_fully_controlled_by = ROOT
+				}
+				add_building_construction = {
+					type = air_base
+					level = 3
+					instant_build = yes
+				}
+			}
+			if = {
+				limit = { date < 1942.1.1 }
+				if = {
+					limit = { NOT = { has_country_flag = NIGHTMARE_FRA_f2_design } }
+					create_equipment_variant = {
+						name = "D.520"
+						type = fighter_equipment_2
+						upgrades = {
+							plane_gun_upgrade = 2
+							plane_engine_upgrade = 1
+							plane_range_upgrade = 1
+							plane_reliability_upgrade = 2
+						}
+					}
+					set_country_flag = NIGHTMARE_FRA_f2_design
+				}
+				add_equipment_to_stockpile = {
+					type = fighter_equipment_2
+					amount = 3500
+					variant_name = "D.520"
+				}
+				add_equipment_to_stockpile = {
+					type = CAS_equipment_2
+					amount = 1000
+				}
+				add_equipment_to_stockpile = {
+					type = naval_bomber_equipment_2
+					amount = 500
+				}
+			}
+			else = {
+				if = {
+					limit = { NOT = { has_country_flag = NIGHTMARE_FRA_f3_design } }
+					create_equipment_variant = {
+						name = "MB.157"
+						type = fighter_equipment_3
+						upgrades = {
+							plane_gun_upgrade = 2
+							plane_engine_upgrade = 1
+							plane_range_upgrade = 1
+							plane_reliability_upgrade = 2
+						}
+					}
+					set_country_flag = NIGHTMARE_FRA_f3_design
+				}
+				add_equipment_to_stockpile = {
+					type = fighter_equipment_3
+					amount = 3500
+					variant_name = "MB.157"
+				}
+				add_equipment_to_stockpile = {
+					type = CAS_equipment_3
+					amount = 1000
+				}
+				add_equipment_to_stockpile = {
+					type = naval_bomber_equipment_3
+					amount = 500
+				}
+			}
+			country_event = { id = change_nightmare.2 days = 30 }
+		}
+	}
+
+	#========== ENG：绝地反扑（1940后开战且飞机<1000时触发，每年一次） ==========
+	NIGHTMARE_air_ENG_counter = {
+		allowed = {
+			original_tag = ENG
+		}
+		visible = {
+			is_ai = yes
+			OR = {
+				has_game_rule = { rule = The_Purgatory_game_rule option = The_Purgatory_game_rule_air_open }
+				has_game_rule = { rule = The_Purgatory_game_rule option = The_Purgatory_game_rule_all_open }
+			}
+		}
+		available = {
+			OR = { 				has_game_rule = { rule = The_Purgatory_game_rule option = The_Purgatory_game_rule_air_open } 				has_game_rule = { rule = The_Purgatory_game_rule option = The_Purgatory_game_rule_all_open } 			}
+			date > 1940.1.1
+			is_ai = yes
+			is_subject = no
+			any_enemy_country = { is_ai = no }
+			check_variable = { NIGHTMARE_air_total < 1000 }
+		}
+		fire_only_once = no
+		days_re_enable = 365
+		cost = 0
+		days_remove = 0
+		ai_will_do = {
+			factor = 1000
+		}
+		complete_effect = {
+			#炼狱空军：反扑机群需要机场
+			random_owned_state = {
+				limit = {
+					is_core_of = ROOT
+					is_fully_controlled_by = ROOT
+				}
+				add_building_construction = {
+					type = air_base
+					level = 3
+					instant_build = yes
+				}
+			}
+			#炼狱空军：反扑机群需要机场
+			random_owned_state = {
+				limit = {
+					is_core_of = ROOT
+					is_fully_controlled_by = ROOT
+				}
+				add_building_construction = {
+					type = air_base
+					level = 3
+					instant_build = yes
+				}
+			}
+			if = {
+				limit = { date < 1942.1.1 }
+				if = {
+					limit = { NOT = { has_country_flag = NIGHTMARE_ENG_f2_design } }
+					create_equipment_variant = {
+						name = "Spitfire IX"
+						type = fighter_equipment_2
+						upgrades = {
+							plane_gun_upgrade = 2
+							plane_engine_upgrade = 1
+							plane_range_upgrade = 1
+							plane_reliability_upgrade = 2
+						}
+					}
+					set_country_flag = NIGHTMARE_ENG_f2_design
+				}
+				add_equipment_to_stockpile = {
+					type = fighter_equipment_2
+					amount = 3500
+					variant_name = "Spitfire IX"
+				}
+				add_equipment_to_stockpile = {
+					type = CAS_equipment_2
+					amount = 1000
+				}
+				add_equipment_to_stockpile = {
+					type = naval_bomber_equipment_2
+					amount = 500
+				}
+			}
+			else = {
+				if = {
+					limit = { NOT = { has_country_flag = NIGHTMARE_ENG_f3_design } }
+					create_equipment_variant = {
+						name = "Tempest V"
+						type = fighter_equipment_3
+						upgrades = {
+							plane_gun_upgrade = 2
+							plane_engine_upgrade = 1
+							plane_range_upgrade = 1
+							plane_reliability_upgrade = 2
+						}
+					}
+					set_country_flag = NIGHTMARE_ENG_f3_design
+				}
+				add_equipment_to_stockpile = {
+					type = fighter_equipment_3
+					amount = 3500
+					variant_name = "Tempest V"
+				}
+				add_equipment_to_stockpile = {
+					type = CAS_equipment_3
+					amount = 1000
+				}
+				add_equipment_to_stockpile = {
+					type = naval_bomber_equipment_3
+					amount = 500
+				}
+			}
+			country_event = { id = change_nightmare.2 days = 30 }
+		}
+	}
+
+	#========== USA：绝地反扑（1940后开战且飞机<1000时触发，每年一次） ==========
+	NIGHTMARE_air_USA_counter = {
+		allowed = {
+			original_tag = USA
+		}
+		visible = {
+			is_ai = yes
+			OR = {
+				has_game_rule = { rule = The_Purgatory_game_rule option = The_Purgatory_game_rule_air_open }
+				has_game_rule = { rule = The_Purgatory_game_rule option = The_Purgatory_game_rule_all_open }
+			}
+		}
+		available = {
+			OR = { 				has_game_rule = { rule = The_Purgatory_game_rule option = The_Purgatory_game_rule_air_open } 				has_game_rule = { rule = The_Purgatory_game_rule option = The_Purgatory_game_rule_all_open } 			}
+			date > 1940.1.1
+			is_ai = yes
+			is_subject = no
+			any_enemy_country = { is_ai = no }
+			check_variable = { NIGHTMARE_air_total < 1000 }
+		}
+		fire_only_once = no
+		days_re_enable = 365
+		cost = 0
+		days_remove = 0
+		ai_will_do = {
+			factor = 1000
+		}
+		complete_effect = {
+			#炼狱空军：反扑机群需要机场
+			random_owned_state = {
+				limit = {
+					is_core_of = ROOT
+					is_fully_controlled_by = ROOT
+				}
+				add_building_construction = {
+					type = air_base
+					level = 3
+					instant_build = yes
+				}
+			}
+			#炼狱空军：反扑机群需要机场
+			random_owned_state = {
+				limit = {
+					is_core_of = ROOT
+					is_fully_controlled_by = ROOT
+				}
+				add_building_construction = {
+					type = air_base
+					level = 3
+					instant_build = yes
+				}
+			}
+			if = {
+				limit = { date < 1942.1.1 }
+				if = {
+					limit = { NOT = { has_country_flag = NIGHTMARE_USA_f2_design } }
+					create_equipment_variant = {
+						name = "P-40N"
+						type = fighter_equipment_2
+						upgrades = {
+							plane_gun_upgrade = 2
+							plane_engine_upgrade = 1
+							plane_range_upgrade = 1
+							plane_reliability_upgrade = 2
+						}
+					}
+					set_country_flag = NIGHTMARE_USA_f2_design
+				}
+				add_equipment_to_stockpile = {
+					type = fighter_equipment_2
+					amount = 3500
+					variant_name = "P-40N"
+				}
+				add_equipment_to_stockpile = {
+					type = CAS_equipment_2
+					amount = 1000
+				}
+				add_equipment_to_stockpile = {
+					type = naval_bomber_equipment_2
+					amount = 500
+				}
+			}
+			else = {
+				if = {
+					limit = { NOT = { has_country_flag = NIGHTMARE_USA_f3_design } }
+					create_equipment_variant = {
+						name = "P-51D"
+						type = fighter_equipment_3
+						upgrades = {
+							plane_gun_upgrade = 2
+							plane_engine_upgrade = 1
+							plane_range_upgrade = 1
+							plane_reliability_upgrade = 2
+						}
+					}
+					set_country_flag = NIGHTMARE_USA_f3_design
+				}
+				add_equipment_to_stockpile = {
+					type = fighter_equipment_3
+					amount = 3500
+					variant_name = "P-51D"
+				}
+				add_equipment_to_stockpile = {
+					type = CAS_equipment_3
+					amount = 1000
+				}
+				add_equipment_to_stockpile = {
+					type = naval_bomber_equipment_3
+					amount = 500
+				}
+			}
+			country_event = { id = change_nightmare.2 days = 30 }
+		}
+	}
+
+	#========== SOV：绝地反扑（1940后开战且飞机<1000时触发，每年一次） ==========
+	NIGHTMARE_air_SOV_counter = {
+		allowed = {
+			original_tag = SOV
+		}
+		visible = {
+			is_ai = yes
+			OR = {
+				has_game_rule = { rule = The_Purgatory_game_rule option = The_Purgatory_game_rule_air_open }
+				has_game_rule = { rule = The_Purgatory_game_rule option = The_Purgatory_game_rule_all_open }
+			}
+		}
+		available = {
+			OR = { 				has_game_rule = { rule = The_Purgatory_game_rule option = The_Purgatory_game_rule_air_open } 				has_game_rule = { rule = The_Purgatory_game_rule option = The_Purgatory_game_rule_all_open } 			}
+			date > 1940.1.1
+			is_ai = yes
+			is_subject = no
+			any_enemy_country = { is_ai = no }
+			check_variable = { NIGHTMARE_air_total < 1000 }
+		}
+		fire_only_once = no
+		days_re_enable = 365
+		cost = 0
+		days_remove = 0
+		ai_will_do = {
+			factor = 1000
+		}
+		complete_effect = {
+			#炼狱空军：反扑机群需要机场
+			random_owned_state = {
+				limit = {
+					is_core_of = ROOT
+					is_fully_controlled_by = ROOT
+				}
+				add_building_construction = {
+					type = air_base
+					level = 3
+					instant_build = yes
+				}
+			}
+			#炼狱空军：反扑机群需要机场
+			random_owned_state = {
+				limit = {
+					is_core_of = ROOT
+					is_fully_controlled_by = ROOT
+				}
+				add_building_construction = {
+					type = air_base
+					level = 3
+					instant_build = yes
+				}
+			}
+			if = {
+				limit = { date < 1942.1.1 }
+				if = {
+					limit = { NOT = { has_country_flag = NIGHTMARE_SOV_f2_design } }
+					create_equipment_variant = {
+						name = "Yak-9"
+						type = fighter_equipment_2
+						upgrades = {
+							plane_gun_upgrade = 2
+							plane_engine_upgrade = 1
+							plane_range_upgrade = 1
+							plane_reliability_upgrade = 2
+						}
+					}
+					set_country_flag = NIGHTMARE_SOV_f2_design
+				}
+				add_equipment_to_stockpile = {
+					type = fighter_equipment_2
+					amount = 3500
+					variant_name = "Yak-9"
+				}
+				add_equipment_to_stockpile = {
+					type = CAS_equipment_2
+					amount = 1000
+				}
+				add_equipment_to_stockpile = {
+					type = naval_bomber_equipment_2
+					amount = 500
+				}
+			}
+			else = {
+				if = {
+					limit = { NOT = { has_country_flag = NIGHTMARE_SOV_f3_design } }
+					create_equipment_variant = {
+						name = "La-7"
+						type = fighter_equipment_3
+						upgrades = {
+							plane_gun_upgrade = 2
+							plane_engine_upgrade = 1
+							plane_range_upgrade = 1
+							plane_reliability_upgrade = 2
+						}
+					}
+					set_country_flag = NIGHTMARE_SOV_f3_design
+				}
+				add_equipment_to_stockpile = {
+					type = fighter_equipment_3
+					amount = 3500
+					variant_name = "La-7"
+				}
+				add_equipment_to_stockpile = {
+					type = CAS_equipment_3
+					amount = 1000
+				}
+				add_equipment_to_stockpile = {
+					type = naval_bomber_equipment_3
+					amount = 500
+				}
+			}
+			country_event = { id = change_nightmare.2 days = 30 }
+		}
+	}
+
+	#========== JAP：绝地反扑（1940后开战且飞机<1000时触发，每年一次） ==========
+	NIGHTMARE_air_JAP_counter = {
+		allowed = {
+			original_tag = JAP
+		}
+		visible = {
+			is_ai = yes
+			OR = {
+				has_game_rule = { rule = The_Purgatory_game_rule option = The_Purgatory_game_rule_air_open }
+				has_game_rule = { rule = The_Purgatory_game_rule option = The_Purgatory_game_rule_all_open }
+			}
+		}
+		available = {
+			OR = { 				has_game_rule = { rule = The_Purgatory_game_rule option = The_Purgatory_game_rule_air_open } 				has_game_rule = { rule = The_Purgatory_game_rule option = The_Purgatory_game_rule_all_open } 			}
+			date > 1940.1.1
+			is_ai = yes
+			is_subject = no
+			any_enemy_country = { is_ai = no }
+			check_variable = { NIGHTMARE_air_total < 1000 }
+		}
+		fire_only_once = no
+		days_re_enable = 365
+		cost = 0
+		days_remove = 0
+		ai_will_do = {
+			factor = 1000
+		}
+		complete_effect = {
+			#炼狱空军：反扑机群需要机场
+			random_owned_state = {
+				limit = {
+					is_core_of = ROOT
+					is_fully_controlled_by = ROOT
+				}
+				add_building_construction = {
+					type = air_base
+					level = 3
+					instant_build = yes
+				}
+			}
+			#炼狱空军：反扑机群需要机场
+			random_owned_state = {
+				limit = {
+					is_core_of = ROOT
+					is_fully_controlled_by = ROOT
+				}
+				add_building_construction = {
+					type = air_base
+					level = 3
+					instant_build = yes
+				}
+			}
+			if = {
+				limit = { date < 1942.1.1 }
+				if = {
+					limit = { NOT = { has_country_flag = NIGHTMARE_JAP_f2_design } }
+					create_equipment_variant = {
+						name = "A6M5"
+						type = fighter_equipment_2
+						upgrades = {
+							plane_gun_upgrade = 2
+							plane_engine_upgrade = 1
+							plane_range_upgrade = 1
+							plane_reliability_upgrade = 2
+						}
+					}
+					set_country_flag = NIGHTMARE_JAP_f2_design
+				}
+				add_equipment_to_stockpile = {
+					type = fighter_equipment_2
+					amount = 3500
+					variant_name = "A6M5"
+				}
+				add_equipment_to_stockpile = {
+					type = CAS_equipment_2
+					amount = 1000
+				}
+				add_equipment_to_stockpile = {
+					type = naval_bomber_equipment_2
+					amount = 500
+				}
+			}
+			else = {
+				if = {
+					limit = { NOT = { has_country_flag = NIGHTMARE_JAP_f3_design } }
+					create_equipment_variant = {
+						name = "Ki-84 Hayate"
+						type = fighter_equipment_3
+						upgrades = {
+							plane_gun_upgrade = 2
+							plane_engine_upgrade = 1
+							plane_range_upgrade = 1
+							plane_reliability_upgrade = 2
+						}
+					}
+					set_country_flag = NIGHTMARE_JAP_f3_design
+				}
+				add_equipment_to_stockpile = {
+					type = fighter_equipment_3
+					amount = 3500
+					variant_name = "Ki-84 Hayate"
+				}
+				add_equipment_to_stockpile = {
+					type = CAS_equipment_3
+					amount = 1000
+				}
+				add_equipment_to_stockpile = {
+					type = naval_bomber_equipment_3
+					amount = 500
+				}
+			}
+			country_event = { id = change_nightmare.2 days = 30 }
+		}
+	}
+
+	#========== HUN：绝地反扑（1940后开战且飞机<1000时触发，每年一次） ==========
+	NIGHTMARE_air_HUN_counter = {
+		allowed = {
+			original_tag = HUN
+		}
+		visible = {
+			is_ai = yes
+			OR = {
+				has_game_rule = { rule = The_Purgatory_game_rule option = The_Purgatory_game_rule_air_open }
+				has_game_rule = { rule = The_Purgatory_game_rule option = The_Purgatory_game_rule_all_open }
+			}
+		}
+		available = {
+			OR = { 				has_game_rule = { rule = The_Purgatory_game_rule option = The_Purgatory_game_rule_air_open } 				has_game_rule = { rule = The_Purgatory_game_rule option = The_Purgatory_game_rule_all_open } 			}
+			date > 1940.1.1
+			is_ai = yes
+			is_subject = no
+			any_enemy_country = { is_ai = no }
+			check_variable = { NIGHTMARE_air_total < 1000 }
+		}
+		fire_only_once = no
+		days_re_enable = 365
+		cost = 0
+		days_remove = 0
+		ai_will_do = {
+			factor = 1000
+		}
+		complete_effect = {
+			#炼狱空军：反扑机群需要机场
+			random_owned_state = {
+				limit = {
+					is_core_of = ROOT
+					is_fully_controlled_by = ROOT
+				}
+				add_building_construction = {
+					type = air_base
+					level = 3
+					instant_build = yes
+				}
+			}
+			#炼狱空军：反扑机群需要机场
+			random_owned_state = {
+				limit = {
+					is_core_of = ROOT
+					is_fully_controlled_by = ROOT
+				}
+				add_building_construction = {
+					type = air_base
+					level = 3
+					instant_build = yes
+				}
+			}
+			if = {
+				limit = { date < 1942.1.1 }
+				if = {
+					limit = { NOT = { has_country_flag = NIGHTMARE_HUN_f2_design } }
+					create_equipment_variant = {
+						name = "He 112B"
+						type = fighter_equipment_2
+						upgrades = {
+							plane_gun_upgrade = 2
+							plane_engine_upgrade = 1
+							plane_range_upgrade = 1
+							plane_reliability_upgrade = 2
+						}
+					}
+					set_country_flag = NIGHTMARE_HUN_f2_design
+				}
+				add_equipment_to_stockpile = {
+					type = fighter_equipment_2
+					amount = 3500
+					variant_name = "He 112B"
+				}
+				add_equipment_to_stockpile = {
+					type = CAS_equipment_2
+					amount = 1000
+				}
+				add_equipment_to_stockpile = {
+					type = naval_bomber_equipment_2
+					amount = 500
+				}
+			}
+			else = {
+				if = {
+					limit = { NOT = { has_country_flag = NIGHTMARE_HUN_f3_design } }
+					create_equipment_variant = {
+						name = "Re.2005"
+						type = fighter_equipment_3
+						upgrades = {
+							plane_gun_upgrade = 2
+							plane_engine_upgrade = 1
+							plane_range_upgrade = 1
+							plane_reliability_upgrade = 2
+						}
+					}
+					set_country_flag = NIGHTMARE_HUN_f3_design
+				}
+				add_equipment_to_stockpile = {
+					type = fighter_equipment_3
+					amount = 3500
+					variant_name = "Re.2005"
+				}
+				add_equipment_to_stockpile = {
+					type = CAS_equipment_3
+					amount = 1000
+				}
+				add_equipment_to_stockpile = {
+					type = naval_bomber_equipment_3
+					amount = 500
+				}
+			}
+			country_event = { id = change_nightmare.2 days = 30 }
+		}
+	}
+
+	#========== CHI：绝地反扑（1940后开战且飞机<1000时触发，每年一次） ==========
+	NIGHTMARE_air_CHI_counter = {
+		allowed = {
+			original_tag = CHI
+		}
+		visible = {
+			is_ai = yes
+			OR = {
+				has_game_rule = { rule = The_Purgatory_game_rule option = The_Purgatory_game_rule_air_open }
+				has_game_rule = { rule = The_Purgatory_game_rule option = The_Purgatory_game_rule_all_open }
+			}
+		}
+		available = {
+			OR = { 				has_game_rule = { rule = The_Purgatory_game_rule option = The_Purgatory_game_rule_air_open } 				has_game_rule = { rule = The_Purgatory_game_rule option = The_Purgatory_game_rule_all_open } 			}
+			date > 1940.1.1
+			is_ai = yes
+			is_subject = no
+			any_enemy_country = { is_ai = no }
+			check_variable = { NIGHTMARE_air_total < 1000 }
+		}
+		fire_only_once = no
+		days_re_enable = 365
+		cost = 0
+		days_remove = 0
+		ai_will_do = {
+			factor = 1000
+		}
+		complete_effect = {
+			#炼狱空军：反扑机群需要机场
+			random_owned_state = {
+				limit = {
+					is_core_of = ROOT
+					is_fully_controlled_by = ROOT
+				}
+				add_building_construction = {
+					type = air_base
+					level = 3
+					instant_build = yes
+				}
+			}
+			#炼狱空军：反扑机群需要机场
+			random_owned_state = {
+				limit = {
+					is_core_of = ROOT
+					is_fully_controlled_by = ROOT
+				}
+				add_building_construction = {
+					type = air_base
+					level = 3
+					instant_build = yes
+				}
+			}
+			if = {
+				limit = { date < 1942.1.1 }
+				if = {
+					limit = { NOT = { has_country_flag = NIGHTMARE_CHI_f2_design } }
+					create_equipment_variant = {
+						name = "P-40E"
+						type = fighter_equipment_2
+						upgrades = {
+							plane_gun_upgrade = 2
+							plane_engine_upgrade = 1
+							plane_range_upgrade = 1
+							plane_reliability_upgrade = 2
+						}
+					}
+					set_country_flag = NIGHTMARE_CHI_f2_design
+				}
+				add_equipment_to_stockpile = {
+					type = fighter_equipment_2
+					amount = 3500
+					variant_name = "P-40E"
+				}
+				add_equipment_to_stockpile = {
+					type = CAS_equipment_2
+					amount = 1000
+				}
+				add_equipment_to_stockpile = {
+					type = naval_bomber_equipment_2
+					amount = 500
+				}
+			}
+			else = {
+				if = {
+					limit = { NOT = { has_country_flag = NIGHTMARE_CHI_f3_design } }
+					create_equipment_variant = {
+						name = "P-51B"
+						type = fighter_equipment_3
+						upgrades = {
+							plane_gun_upgrade = 2
+							plane_engine_upgrade = 1
+							plane_range_upgrade = 1
+							plane_reliability_upgrade = 2
+						}
+					}
+					set_country_flag = NIGHTMARE_CHI_f3_design
+				}
+				add_equipment_to_stockpile = {
+					type = fighter_equipment_3
+					amount = 3500
+					variant_name = "P-51B"
+				}
+				add_equipment_to_stockpile = {
+					type = CAS_equipment_3
+					amount = 1000
+				}
+				add_equipment_to_stockpile = {
+					type = naval_bomber_equipment_3
+					amount = 500
+				}
+			}
+			country_event = { id = change_nightmare.2 days = 30 }
+		}
+	}
+
+}

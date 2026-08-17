@@ -1,0 +1,85 @@
+add_namespace = change_nightmare
+
+country_event = { #炼狱空军：玩家选择模式
+	id = change_nightmare.1
+	title = change_nightmare.1.t
+	desc = change_nightmare.1.d
+
+	picture = GFX_report_event_generic_read_write
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = { #兵海
+		name = change_nightmare.1.a
+		ai_chance = {
+			factor = 100
+		}
+		set_global_flag = NIGHTMARE_air_mode_swarm
+	}
+	option = { #高质量
+		name = change_nightmare.1.b
+		set_global_flag = NIGHTMARE_air_mode_quality
+	}
+	option = { #不变
+		name = change_nightmare.1.c
+	}
+}
+
+country_event = { #炼狱空军：反扑后续增援（30天后）
+	id = change_nightmare.2
+	title = change_nightmare.2.t
+	desc = change_nightmare.2.d
+
+	picture = GFX_report_event_generic_read_write
+
+	is_triggered_only = yes
+
+	option = {
+		name = change_nightmare.2.a
+		ai_chance = {
+			factor = 100
+		}
+		#炼狱空军：增援机群需要机场
+		random_owned_state = {
+			limit = {
+				is_core_of = ROOT
+				is_fully_controlled_by = ROOT
+			}
+			add_building_construction = {
+				type = air_base
+				level = 2
+				instant_build = yes
+			}
+		}
+		if = {
+			limit = { date < 1942.1.1 }
+			add_equipment_to_stockpile = {
+				type = fighter_equipment_2
+				amount = 3500
+			}
+			add_equipment_to_stockpile = {
+				type = CAS_equipment_2
+				amount = 1000
+			}
+			add_equipment_to_stockpile = {
+				type = naval_bomber_equipment_2
+				amount = 500
+			}
+		}
+		else = {
+			add_equipment_to_stockpile = {
+				type = fighter_equipment_3
+				amount = 3500
+			}
+			add_equipment_to_stockpile = {
+				type = CAS_equipment_3
+				amount = 1000
+			}
+			add_equipment_to_stockpile = {
+				type = naval_bomber_equipment_3
+				amount = 500
+			}
+		}
+	}
+}

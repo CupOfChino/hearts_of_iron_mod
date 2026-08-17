@@ -1,0 +1,106 @@
+NIGHTMARE_air_buff = { #炼狱空军（内容照搬飞机限制 mod_make_air_low）
+	picture = NORDIC_airforce_democratic
+	allowed = {
+		always = yes
+	}
+	cancel = {
+	}
+	equipment_bonus = {
+		small_plane_airframe = {
+			instant = yes
+			air_attack = 0.5
+			air_ground_attack = 0.5
+			maximum_speed = 0.5
+			AIR_DEFENCE = 0.5
+			AIR_AGILITY = 0.5
+			naval_strike_attack = 0.5
+			build_cost_ic = 0.5
+		}
+		medium_plane_airframe = {
+			instant = yes
+			air_attack = 0.5
+			air_ground_attack = 0.5
+			maximum_speed = 0.5
+			AIR_DEFENCE = 0.5
+			AIR_AGILITY = 0.5
+			naval_strike_attack = 0.5
+			build_cost_ic = 0.5
+		}
+		large_plane_airframe = {
+			instant = yes
+			air_attack = 0.5
+			air_ground_attack = 0.5
+			maximum_speed = 0.5
+			AIR_DEFENCE = 0.5
+			AIR_AGILITY = 0.5
+			naval_strike_attack = 0.5
+			build_cost_ic = 0.5
+		}
+	}
+}
+
+NIGHTMARE_air_quality_buff = { #高质量模式：造价+50%，全属性+50%（数值为近似强化）
+	picture = NORDIC_airforce_authoritarian
+	allowed = {
+		always = yes
+	}
+	cancel = {
+	}
+	equipment_bonus = {
+		small_plane_airframe = {
+			instant = yes
+			air_attack = 4
+			air_ground_attack = 4
+			maximum_speed = 4
+			AIR_DEFENCE = 4
+			AIR_AGILITY = 4
+			naval_strike_attack = 4
+			build_cost_ic = 10
+		}
+		medium_plane_airframe = {
+			instant = yes
+			air_attack = 4
+			air_ground_attack = 4
+			maximum_speed = 4
+			AIR_DEFENCE = 4
+			AIR_AGILITY = 4
+			build_cost_ic = 10
+		}
+	}
+}
+
+
+NIGHTMARE_air_general = { #炼狱空军·通用强化（AI专属，空军相关修正+15%，机动/攻击/防御除外）
+	picture = NORDIC_airforce_democratic
+	allowed = {
+		always = yes
+	}
+	cancel = {
+		is_ai = no
+	}
+	modifier = {
+		air_range_factor = 0.15
+		AIR_MAX_SPEED_FACTOR = 0.15
+		air_power_projection_factor = 0.15
+		air_home_defence_factor = 0.15
+		ARMY_BONUS_AIR_SUPERIORITY_FACTOR = 0.15
+		air_ace_generation_chance_factor = 0.15
+		air_mission_xp_gain_factor = 0.15
+		air_training_xp_gain_factor = 0.15
+		air_mission_efficiency = 0.15
+		air_superiority_efficiency = 0.15
+		air_intercept_efficiency = 0.15
+		air_escort_efficiency = 0.15
+		strategic_bomber_bombing_factor = 0.15
+		experience_gain_air_factor = 0.15
+		air_accidents_factor = -0.15
+		air_wing_xp_loss_when_killed_factor = -0.15
+		air_fuel_consumption_factor = -0.15
+		air_doctrine_cost_factor = -0.15
+		aircraft_manufacturer_cost_factor = -0.15
+		air_chief_cost_factor = -0.15
+		air_weather_penalty = -0.15
+		air_night_penalty = -0.15
+		air_invasion_preparation = -0.15
+	}
+}

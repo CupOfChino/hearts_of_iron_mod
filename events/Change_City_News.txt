@@ -1,0 +1,3730 @@
+add_namespace = change_citynews
+
+news_event = { #Berlin 兵临城下
+	id = change_citynews.1
+	title = change_citynews.1.t
+	desc = change_citynews.1.d
+	picture = GFX_news_event_german_reichstag_graffiti_ruins
+
+	major = yes
+
+	trigger = {
+			has_global_flag = the_world_war_tow_flag #二战爆发后才可触发
+		64 = {
+			OR = {
+				tag = GER
+			}
+			any_neighbor_state = {
+				controller = {
+					OR = {
+						tag = ENG
+						tag = USA
+						tag = SOV
+						tag = JAP
+					}
+				}
+			}
+		}
+		NOT = { has_global_flag = citynews_berlin_siege }
+	}
+
+	immediate = {
+		set_global_flag = citynews_berlin_siege
+	}
+
+	mean_time_to_happen = {
+		days = 3
+	}
+
+	fire_only_once = yes
+
+	option = {
+		name = change_citynews.1.a
+	}
+}
+
+news_event = { #Berlin 攻克（自动触发）
+	id = change_citynews.2
+	title = change_citynews.2.t
+	desc = change_citynews.2.d
+	picture = GFX_news_event_german_reichstag_graffiti_ruins
+
+	major = yes
+
+	trigger = {
+			has_global_flag = the_world_war_tow_flag
+		64 = {
+			OR = {
+				tag = ENG
+				tag = USA
+				tag = SOV
+				tag = JAP
+			}
+		}
+		NOT = { has_global_flag = citynews_berlin_capture }
+	}
+
+	immediate = {
+		if = { limit = { 64 = { is_controlled_by = ENG } } set_global_flag = citynews_berlin_captured_eng }
+		if = { limit = { 64 = { is_controlled_by = USA } } set_global_flag = citynews_berlin_captured_usa }
+		if = { limit = { 64 = { is_controlled_by = SOV } } set_global_flag = citynews_berlin_captured_sov }
+		if = { limit = { 64 = { is_controlled_by = JAP } } set_global_flag = citynews_berlin_captured_jap }
+		set_global_flag = citynews_berlin_capture
+	}
+
+	mean_time_to_happen = {
+		days = 3
+	}
+
+	fire_only_once = yes
+
+	option = {
+		name = change_citynews.2.a
+	}
+}
+
+news_event = { #Paris 兵临城下
+	id = change_citynews.3
+	title = change_citynews.3.t
+	desc = change_citynews.3.d
+	picture = GFX_news_event_021
+
+	major = yes
+
+	trigger = {
+			has_global_flag = the_world_war_tow_flag #二战爆发后才可触发
+		16 = {
+			OR = {
+				tag = FRA
+			}
+			any_neighbor_state = {
+				controller = {
+					OR = {
+						tag = ENG
+						tag = USA
+						tag = SOV
+						tag = JAP
+					}
+				}
+			}
+		}
+		NOT = { has_global_flag = citynews_paris_siege }
+	}
+
+	immediate = {
+		set_global_flag = citynews_paris_siege
+	}
+
+	mean_time_to_happen = {
+		days = 3
+	}
+
+	fire_only_once = yes
+
+	option = {
+		name = change_citynews.3.a
+	}
+}
+
+news_event = { #Paris 攻克（自动触发）
+	id = change_citynews.4
+	title = change_citynews.4.t
+	desc = change_citynews.4.d
+	picture = GFX_news_event_021
+
+	major = yes
+
+	trigger = {
+			has_global_flag = the_world_war_tow_flag
+		16 = {
+			OR = {
+				tag = ENG
+				tag = USA
+				tag = SOV
+				tag = JAP
+			}
+		}
+		NOT = { has_global_flag = citynews_paris_capture }
+	}
+
+	immediate = {
+		if = { limit = { 16 = { is_controlled_by = ENG } } set_global_flag = citynews_paris_captured_eng }
+		if = { limit = { 16 = { is_controlled_by = USA } } set_global_flag = citynews_paris_captured_usa }
+		if = { limit = { 16 = { is_controlled_by = SOV } } set_global_flag = citynews_paris_captured_sov }
+		if = { limit = { 16 = { is_controlled_by = JAP } } set_global_flag = citynews_paris_captured_jap }
+		set_global_flag = citynews_paris_capture
+	}
+
+	mean_time_to_happen = {
+		days = 3
+	}
+
+	fire_only_once = yes
+
+	option = {
+		name = change_citynews.4.a
+	}
+}
+
+news_event = { #Vienna 兵临城下
+	id = change_citynews.5
+	title = change_citynews.5.t
+	desc = change_citynews.5.d
+	picture = GFX_news_event_056
+
+	major = yes
+
+	trigger = {
+			has_global_flag = the_world_war_tow_flag #二战爆发后才可触发
+		4 = {
+			OR = {
+				tag = HUN
+				tag = GER
+			}
+			any_neighbor_state = {
+				controller = {
+					OR = {
+						tag = ENG
+						tag = USA
+						tag = SOV
+						tag = JAP
+					}
+				}
+			}
+		}
+		NOT = { has_global_flag = citynews_vienna_siege }
+	}
+
+	immediate = {
+		set_global_flag = citynews_vienna_siege
+	}
+
+	mean_time_to_happen = {
+		days = 3
+	}
+
+	fire_only_once = yes
+
+	option = {
+		name = change_citynews.5.a
+	}
+}
+
+news_event = { #Vienna 攻克（自动触发）
+	id = change_citynews.6
+	title = change_citynews.6.t
+	desc = change_citynews.6.d
+	picture = GFX_news_event_056
+
+	major = yes
+
+	trigger = {
+			has_global_flag = the_world_war_tow_flag
+		4 = {
+			OR = {
+				tag = ENG
+				tag = USA
+				tag = SOV
+				tag = JAP
+			}
+		}
+		NOT = { has_global_flag = citynews_vienna_capture }
+	}
+
+	immediate = {
+		if = { limit = { 4 = { is_controlled_by = ENG } } set_global_flag = citynews_vienna_captured_eng }
+		if = { limit = { 4 = { is_controlled_by = USA } } set_global_flag = citynews_vienna_captured_usa }
+		if = { limit = { 4 = { is_controlled_by = SOV } } set_global_flag = citynews_vienna_captured_sov }
+		if = { limit = { 4 = { is_controlled_by = JAP } } set_global_flag = citynews_vienna_captured_jap }
+		set_global_flag = citynews_vienna_capture
+	}
+
+	mean_time_to_happen = {
+		days = 3
+	}
+
+	fire_only_once = yes
+
+	option = {
+		name = change_citynews.6.a
+	}
+}
+
+news_event = { #London 兵临城下
+	id = change_citynews.7
+	title = change_citynews.7.t
+	desc = change_citynews.7.d
+	picture = GFX_news_event_032
+
+	major = yes
+
+	trigger = {
+			has_global_flag = the_world_war_tow_flag #二战爆发后才可触发
+		126 = {
+			OR = {
+				tag = ENG
+			}
+			any_neighbor_state = {
+				controller = {
+					OR = {
+						tag = GER
+						tag = FRA
+						tag = HUN
+						tag = CHI
+					}
+				}
+			}
+		}
+		NOT = { has_global_flag = citynews_london_siege }
+	}
+
+	immediate = {
+		set_global_flag = citynews_london_siege
+	}
+
+	mean_time_to_happen = {
+		days = 3
+	}
+
+	fire_only_once = yes
+
+	option = {
+		name = change_citynews.7.a
+	}
+}
+
+news_event = { #London 攻克（自动触发）
+	id = change_citynews.8
+	title = change_citynews.8.t
+	desc = change_citynews.8.d
+	picture = GFX_news_event_032
+
+	major = yes
+
+	trigger = {
+			has_global_flag = the_world_war_tow_flag
+		126 = {
+			OR = {
+				tag = GER
+				tag = FRA
+				tag = HUN
+				tag = CHI
+			}
+		}
+		NOT = { has_global_flag = citynews_london_capture }
+	}
+
+	immediate = {
+		if = { limit = { 126 = { is_controlled_by = GER } } set_global_flag = citynews_london_captured_ger }
+		if = { limit = { 126 = { is_controlled_by = FRA } } set_global_flag = citynews_london_captured_fra }
+		if = { limit = { 126 = { is_controlled_by = HUN } } set_global_flag = citynews_london_captured_hun }
+		if = { limit = { 126 = { is_controlled_by = CHI } } set_global_flag = citynews_london_captured_chi }
+		set_global_flag = citynews_london_capture
+	}
+
+	mean_time_to_happen = {
+		days = 3
+	}
+
+	fire_only_once = yes
+
+	option = {
+		name = change_citynews.8.a
+	}
+}
+
+news_event = { #Washington 兵临城下
+	id = change_citynews.9
+	title = change_citynews.9.t
+	desc = change_citynews.9.d
+	picture = GFX_news_event_064
+
+	major = yes
+
+	trigger = {
+			has_global_flag = the_world_war_tow_flag #二战爆发后才可触发
+		386 = {
+			OR = {
+				tag = USA
+			}
+			any_neighbor_state = {
+				controller = {
+					OR = {
+						tag = GER
+						tag = FRA
+						tag = HUN
+						tag = CHI
+					}
+				}
+			}
+		}
+		NOT = { has_global_flag = citynews_washington_siege }
+	}
+
+	immediate = {
+		set_global_flag = citynews_washington_siege
+	}
+
+	mean_time_to_happen = {
+		days = 3
+	}
+
+	fire_only_once = yes
+
+	option = {
+		name = change_citynews.9.a
+	}
+}
+
+news_event = { #Washington 攻克（自动触发）
+	id = change_citynews.10
+	title = change_citynews.10.t
+	desc = change_citynews.10.d
+	picture = GFX_news_event_064
+
+	major = yes
+
+	trigger = {
+			has_global_flag = the_world_war_tow_flag
+		386 = {
+			OR = {
+				tag = GER
+				tag = FRA
+				tag = HUN
+				tag = CHI
+			}
+		}
+		NOT = { has_global_flag = citynews_washington_capture }
+	}
+
+	immediate = {
+		if = { limit = { 386 = { is_controlled_by = GER } } set_global_flag = citynews_washington_captured_ger }
+		if = { limit = { 386 = { is_controlled_by = FRA } } set_global_flag = citynews_washington_captured_fra }
+		if = { limit = { 386 = { is_controlled_by = HUN } } set_global_flag = citynews_washington_captured_hun }
+		if = { limit = { 386 = { is_controlled_by = CHI } } set_global_flag = citynews_washington_captured_chi }
+		set_global_flag = citynews_washington_capture
+	}
+
+	mean_time_to_happen = {
+		days = 3
+	}
+
+	fire_only_once = yes
+
+	option = {
+		name = change_citynews.10.a
+	}
+}
+
+news_event = { #Moscow 兵临城下
+	id = change_citynews.11
+	title = change_citynews.11.t
+	desc = change_citynews.11.d
+	picture = GFX_news_event_046
+
+	major = yes
+
+	trigger = {
+			has_global_flag = the_world_war_tow_flag #二战爆发后才可触发
+		219 = {
+			OR = {
+				tag = SOV
+			}
+			any_neighbor_state = {
+				controller = {
+					OR = {
+						tag = GER
+						tag = FRA
+						tag = HUN
+						tag = CHI
+					}
+				}
+			}
+		}
+		NOT = { has_global_flag = citynews_moscow_siege }
+	}
+
+	immediate = {
+		set_global_flag = citynews_moscow_siege
+	}
+
+	mean_time_to_happen = {
+		days = 3
+	}
+
+	fire_only_once = yes
+
+	option = {
+		name = change_citynews.11.a
+	}
+}
+
+news_event = { #Moscow 攻克（自动触发）
+	id = change_citynews.12
+	title = change_citynews.12.t
+	desc = change_citynews.12.d
+	picture = GFX_news_event_046
+
+	major = yes
+
+	trigger = {
+			has_global_flag = the_world_war_tow_flag
+		219 = {
+			OR = {
+				tag = GER
+				tag = FRA
+				tag = HUN
+				tag = CHI
+			}
+		}
+		NOT = { has_global_flag = citynews_moscow_capture }
+	}
+
+	immediate = {
+		if = { limit = { 219 = { is_controlled_by = GER } } set_global_flag = citynews_moscow_captured_ger }
+		if = { limit = { 219 = { is_controlled_by = FRA } } set_global_flag = citynews_moscow_captured_fra }
+		if = { limit = { 219 = { is_controlled_by = HUN } } set_global_flag = citynews_moscow_captured_hun }
+		if = { limit = { 219 = { is_controlled_by = CHI } } set_global_flag = citynews_moscow_captured_chi }
+		set_global_flag = citynews_moscow_capture
+	}
+
+	mean_time_to_happen = {
+		days = 3
+	}
+
+	fire_only_once = yes
+
+	option = {
+		name = change_citynews.12.a
+	}
+}
+
+news_event = { #Tokyo 兵临城下
+	id = change_citynews.13
+	title = change_citynews.13.t
+	desc = change_citynews.13.d
+	picture = GFX_news_event_073
+
+	major = yes
+
+	trigger = {
+			has_global_flag = the_world_war_tow_flag #二战爆发后才可触发
+		282 = {
+			OR = {
+				tag = JAP
+			}
+			any_neighbor_state = {
+				controller = {
+					OR = {
+						tag = GER
+						tag = FRA
+						tag = HUN
+						tag = CHI
+					}
+				}
+			}
+		}
+		NOT = { has_global_flag = citynews_tokyo_siege }
+	}
+
+	immediate = {
+		set_global_flag = citynews_tokyo_siege
+	}
+
+	mean_time_to_happen = {
+		days = 3
+	}
+
+	fire_only_once = yes
+
+	option = {
+		name = change_citynews.13.a
+	}
+}
+
+news_event = { #Tokyo 攻克（自动触发）
+	id = change_citynews.14
+	title = change_citynews.14.t
+	desc = change_citynews.14.d
+	picture = GFX_news_event_073
+
+	major = yes
+
+	trigger = {
+			has_global_flag = the_world_war_tow_flag
+		282 = {
+			OR = {
+				tag = GER
+				tag = FRA
+				tag = HUN
+				tag = CHI
+			}
+		}
+		NOT = { has_global_flag = citynews_tokyo_capture }
+	}
+
+	immediate = {
+		if = { limit = { 282 = { is_controlled_by = GER } } set_global_flag = citynews_tokyo_captured_ger }
+		if = { limit = { 282 = { is_controlled_by = FRA } } set_global_flag = citynews_tokyo_captured_fra }
+		if = { limit = { 282 = { is_controlled_by = HUN } } set_global_flag = citynews_tokyo_captured_hun }
+		if = { limit = { 282 = { is_controlled_by = CHI } } set_global_flag = citynews_tokyo_captured_chi }
+		set_global_flag = citynews_tokyo_capture
+	}
+
+	mean_time_to_happen = {
+		days = 3
+	}
+
+	fire_only_once = yes
+
+	option = {
+		name = change_citynews.14.a
+	}
+}
+
+news_event = { #Nanjing 兵临城下
+	id = change_citynews.15
+	title = change_citynews.15.t
+	desc = change_citynews.15.d
+	picture = GFX_news_event_chinese_soldiers_city_ruin
+
+	major = yes
+
+	trigger = {
+			has_global_flag = the_world_war_tow_flag #二战爆发后才可触发
+		1035 = {
+			OR = {
+				tag = CHI
+			}
+			any_neighbor_state = {
+				controller = {
+					OR = {
+						tag = ENG
+						tag = USA
+						tag = SOV
+						tag = JAP
+					}
+				}
+			}
+		}
+		NOT = { has_global_flag = citynews_nanjing_siege }
+	}
+
+	immediate = {
+		set_global_flag = citynews_nanjing_siege
+	}
+
+	mean_time_to_happen = {
+		days = 3
+	}
+
+	fire_only_once = yes
+
+	option = {
+		name = change_citynews.15.a
+	}
+}
+
+news_event = { #Nanjing 攻克（自动触发）
+	id = change_citynews.16
+	title = change_citynews.16.t
+	desc = change_citynews.16.d
+	picture = GFX_news_event_chinese_soldiers_city_ruin
+
+	major = yes
+
+	trigger = {
+			has_global_flag = the_world_war_tow_flag
+		1035 = {
+			OR = {
+				tag = ENG
+				tag = USA
+				tag = SOV
+				tag = JAP
+			}
+		}
+		NOT = { has_global_flag = citynews_nanjing_capture }
+	}
+
+	immediate = {
+		if = { limit = { 1035 = { is_controlled_by = ENG } } set_global_flag = citynews_nanjing_captured_eng }
+		if = { limit = { 1035 = { is_controlled_by = USA } } set_global_flag = citynews_nanjing_captured_usa }
+		if = { limit = { 1035 = { is_controlled_by = SOV } } set_global_flag = citynews_nanjing_captured_sov }
+		if = { limit = { 1035 = { is_controlled_by = JAP } } set_global_flag = citynews_nanjing_captured_jap }
+		set_global_flag = citynews_nanjing_capture
+	}
+
+	mean_time_to_happen = {
+		days = 3
+	}
+
+	fire_only_once = yes
+
+	option = {
+		name = change_citynews.16.a
+	}
+}
+
+news_event = { #EastPrussia 兵临城下
+	id = change_citynews.17
+	title = change_citynews.17.t
+	desc = change_citynews.17.d
+	picture = GFX_news_event_german_soldiers
+
+	major = yes
+
+	trigger = {
+			has_global_flag = the_world_war_tow_flag #二战爆发后才可触发
+		763 = {
+			OR = {
+				tag = GER
+			}
+			any_neighbor_state = {
+				controller = {
+					OR = {
+						tag = ENG
+						tag = USA
+						tag = SOV
+						tag = JAP
+					}
+				}
+			}
+		}
+		NOT = { has_global_flag = citynews_eastprussia_siege }
+	}
+
+	immediate = {
+		set_global_flag = citynews_eastprussia_siege
+	}
+
+	mean_time_to_happen = {
+		days = 3
+	}
+
+	fire_only_once = yes
+
+	option = {
+		name = change_citynews.17.a
+	}
+}
+
+news_event = { #EastPrussia 攻克（自动触发）
+	id = change_citynews.18
+	title = change_citynews.18.t
+	desc = change_citynews.18.d
+	picture = GFX_news_event_german_soldiers
+
+	major = yes
+
+	trigger = {
+			has_global_flag = the_world_war_tow_flag
+		763 = {
+			OR = {
+				tag = ENG
+				tag = USA
+				tag = SOV
+				tag = JAP
+			}
+		}
+		NOT = { has_global_flag = citynews_eastprussia_capture }
+	}
+
+	immediate = {
+		if = { limit = { 763 = { is_controlled_by = ENG } } set_global_flag = citynews_eastprussia_captured_eng }
+		if = { limit = { 763 = { is_controlled_by = USA } } set_global_flag = citynews_eastprussia_captured_usa }
+		if = { limit = { 763 = { is_controlled_by = SOV } } set_global_flag = citynews_eastprussia_captured_sov }
+		if = { limit = { 763 = { is_controlled_by = JAP } } set_global_flag = citynews_eastprussia_captured_jap }
+		set_global_flag = citynews_eastprussia_capture
+	}
+
+	mean_time_to_happen = {
+		days = 3
+	}
+
+	fire_only_once = yes
+
+	option = {
+		name = change_citynews.18.a
+	}
+}
+
+news_event = { #Normandy 兵临城下
+	id = change_citynews.19
+	title = change_citynews.19.t
+	desc = change_citynews.19.d
+	picture = GFX_news_event_french_parade
+
+	major = yes
+
+	trigger = {
+			has_global_flag = the_world_war_tow_flag #二战爆发后才可触发
+		15 = {
+			OR = {
+				tag = FRA
+			}
+			any_neighbor_state = {
+				controller = {
+					OR = {
+						tag = ENG
+						tag = USA
+						tag = SOV
+						tag = JAP
+					}
+				}
+			}
+		}
+		NOT = { has_global_flag = citynews_normandy_siege }
+	}
+
+	immediate = {
+		set_global_flag = citynews_normandy_siege
+	}
+
+	mean_time_to_happen = {
+		days = 3
+	}
+
+	fire_only_once = yes
+
+	option = {
+		name = change_citynews.19.a
+	}
+}
+
+news_event = { #Normandy 攻克（自动触发）
+	id = change_citynews.20
+	title = change_citynews.20.t
+	desc = change_citynews.20.d
+	picture = GFX_news_event_french_parade
+
+	major = yes
+
+	trigger = {
+			has_global_flag = the_world_war_tow_flag
+		15 = {
+			OR = {
+				tag = ENG
+				tag = USA
+				tag = SOV
+				tag = JAP
+			}
+		}
+		NOT = { has_global_flag = citynews_normandy_capture }
+	}
+
+	immediate = {
+		if = { limit = { 15 = { is_controlled_by = ENG } } set_global_flag = citynews_normandy_captured_eng }
+		if = { limit = { 15 = { is_controlled_by = USA } } set_global_flag = citynews_normandy_captured_usa }
+		if = { limit = { 15 = { is_controlled_by = SOV } } set_global_flag = citynews_normandy_captured_sov }
+		if = { limit = { 15 = { is_controlled_by = JAP } } set_global_flag = citynews_normandy_captured_jap }
+		set_global_flag = citynews_normandy_capture
+	}
+
+	mean_time_to_happen = {
+		days = 3
+	}
+
+	fire_only_once = yes
+
+	option = {
+		name = change_citynews.20.a
+	}
+}
+
+news_event = { #Rome 兵临城下
+	id = change_citynews.21
+	title = change_citynews.21.t
+	desc = change_citynews.21.d
+	picture = GFX_news_event_ITA_civil_war
+
+	major = yes
+
+	trigger = {
+			has_global_flag = the_world_war_tow_flag #二战爆发后才可触发
+		2 = {
+			OR = {
+				tag = GER
+				tag = FRA
+				tag = HUN
+				tag = ITA
+			}
+			any_neighbor_state = {
+				controller = {
+					OR = {
+						tag = ENG
+						tag = USA
+						tag = SOV
+						tag = JAP
+					}
+				}
+			}
+		}
+		NOT = { has_global_flag = citynews_rome_siege }
+	}
+
+	immediate = {
+		set_global_flag = citynews_rome_siege
+	}
+
+	mean_time_to_happen = {
+		days = 3
+	}
+
+	fire_only_once = yes
+
+	option = {
+		name = change_citynews.21.a
+	}
+}
+
+news_event = { #Rome 攻克（自动触发）
+	id = change_citynews.22
+	title = change_citynews.22.t
+	desc = change_citynews.22.d
+	picture = GFX_news_event_ITA_civil_war
+
+	major = yes
+
+	trigger = {
+			has_global_flag = the_world_war_tow_flag
+		2 = {
+			OR = {
+				tag = ENG
+				tag = USA
+				tag = SOV
+				tag = JAP
+			}
+		}
+		NOT = { has_global_flag = citynews_rome_capture }
+	}
+
+	immediate = {
+		if = { limit = { 2 = { is_controlled_by = ENG } } set_global_flag = citynews_rome_captured_eng }
+		if = { limit = { 2 = { is_controlled_by = USA } } set_global_flag = citynews_rome_captured_usa }
+		if = { limit = { 2 = { is_controlled_by = SOV } } set_global_flag = citynews_rome_captured_sov }
+		if = { limit = { 2 = { is_controlled_by = JAP } } set_global_flag = citynews_rome_captured_jap }
+		set_global_flag = citynews_rome_capture
+	}
+
+	mean_time_to_happen = {
+		days = 3
+	}
+
+	fire_only_once = yes
+
+	option = {
+		name = change_citynews.22.a
+	}
+}
+
+news_event = { #Istanbul 兵临城下
+	id = change_citynews.23
+	title = change_citynews.23.t
+	desc = change_citynews.23.d
+	picture = GFX_news_event_battle_for_the_bosporus
+
+	major = yes
+
+	trigger = {
+			has_global_flag = the_world_war_tow_flag #二战爆发后才可触发
+		797 = {
+			OR = {
+				tag = TUR
+			}
+			any_neighbor_state = {
+				controller = {
+					OR = {
+						tag = GER
+						tag = FRA
+						tag = HUN
+						tag = CHI
+					}
+				}
+			}
+		}
+		NOT = { has_global_flag = citynews_istanbul_siege }
+	}
+
+	immediate = {
+		set_global_flag = citynews_istanbul_siege
+	}
+
+	mean_time_to_happen = {
+		days = 3
+	}
+
+	fire_only_once = yes
+
+	option = {
+		name = change_citynews.23.a
+	}
+}
+
+news_event = { #Istanbul 攻克（自动触发）
+	id = change_citynews.24
+	title = change_citynews.24.t
+	desc = change_citynews.24.d
+	picture = GFX_news_event_battle_for_the_bosporus
+
+	major = yes
+
+	trigger = {
+			has_global_flag = the_world_war_tow_flag
+		797 = {
+			OR = {
+				tag = GER
+				tag = FRA
+				tag = HUN
+				tag = CHI
+			}
+		}
+		NOT = { has_global_flag = citynews_istanbul_capture }
+	}
+
+	immediate = {
+		if = { limit = { 797 = { is_controlled_by = GER } } set_global_flag = citynews_istanbul_captured_ger }
+		if = { limit = { 797 = { is_controlled_by = FRA } } set_global_flag = citynews_istanbul_captured_fra }
+		if = { limit = { 797 = { is_controlled_by = HUN } } set_global_flag = citynews_istanbul_captured_hun }
+		if = { limit = { 797 = { is_controlled_by = CHI } } set_global_flag = citynews_istanbul_captured_chi }
+		set_global_flag = citynews_istanbul_capture
+	}
+
+	mean_time_to_happen = {
+		days = 3
+	}
+
+	fire_only_once = yes
+
+	option = {
+		name = change_citynews.24.a
+	}
+}
+
+news_event = { #Athens 兵临城下
+	id = change_citynews.25
+	title = change_citynews.25.t
+	desc = change_citynews.25.d
+	picture = GFX_news_event_greek_civil_war
+
+	major = yes
+
+	trigger = {
+			has_global_flag = the_world_war_tow_flag #二战爆发后才可触发
+		47 = {
+			OR = {
+				tag = GRE
+			}
+			any_neighbor_state = {
+				controller = {
+					OR = {
+						tag = GER
+						tag = FRA
+						tag = HUN
+						tag = CHI
+					}
+				}
+			}
+		}
+		NOT = { has_global_flag = citynews_athens_siege }
+	}
+
+	immediate = {
+		set_global_flag = citynews_athens_siege
+	}
+
+	mean_time_to_happen = {
+		days = 3
+	}
+
+	fire_only_once = yes
+
+	option = {
+		name = change_citynews.25.a
+	}
+}
+
+news_event = { #Athens 攻克（自动触发）
+	id = change_citynews.26
+	title = change_citynews.26.t
+	desc = change_citynews.26.d
+	picture = GFX_news_event_greek_civil_war
+
+	major = yes
+
+	trigger = {
+			has_global_flag = the_world_war_tow_flag
+		47 = {
+			OR = {
+				tag = GER
+				tag = FRA
+				tag = HUN
+				tag = CHI
+			}
+		}
+		NOT = { has_global_flag = citynews_athens_capture }
+	}
+
+	immediate = {
+		if = { limit = { 47 = { is_controlled_by = GER } } set_global_flag = citynews_athens_captured_ger }
+		if = { limit = { 47 = { is_controlled_by = FRA } } set_global_flag = citynews_athens_captured_fra }
+		if = { limit = { 47 = { is_controlled_by = HUN } } set_global_flag = citynews_athens_captured_hun }
+		if = { limit = { 47 = { is_controlled_by = CHI } } set_global_flag = citynews_athens_captured_chi }
+		set_global_flag = citynews_athens_capture
+	}
+
+	mean_time_to_happen = {
+		days = 3
+	}
+
+	fire_only_once = yes
+
+	option = {
+		name = change_citynews.26.a
+	}
+}
+
+news_event = { #Sofia 兵临城下
+	id = change_citynews.27
+	title = change_citynews.27.t
+	desc = change_citynews.27.d
+	picture = GFX_news_event_bulgarian_soldiers
+
+	major = yes
+
+	trigger = {
+			has_global_flag = the_world_war_tow_flag #二战爆发后才可触发
+		48 = {
+			OR = {
+				tag = BUL
+			}
+			any_neighbor_state = {
+				controller = {
+					OR = {
+						tag = ENG
+						tag = USA
+						tag = SOV
+						tag = JAP
+					}
+				}
+			}
+		}
+		NOT = { has_global_flag = citynews_sofia_siege }
+	}
+
+	immediate = {
+		set_global_flag = citynews_sofia_siege
+	}
+
+	mean_time_to_happen = {
+		days = 3
+	}
+
+	fire_only_once = yes
+
+	option = {
+		name = change_citynews.27.a
+	}
+}
+
+news_event = { #Sofia 攻克（自动触发）
+	id = change_citynews.28
+	title = change_citynews.28.t
+	desc = change_citynews.28.d
+	picture = GFX_news_event_bulgarian_soldiers
+
+	major = yes
+
+	trigger = {
+			has_global_flag = the_world_war_tow_flag
+		48 = {
+			OR = {
+				tag = ENG
+				tag = USA
+				tag = SOV
+				tag = JAP
+			}
+		}
+		NOT = { has_global_flag = citynews_sofia_capture }
+	}
+
+	immediate = {
+		if = { limit = { 48 = { is_controlled_by = ENG } } set_global_flag = citynews_sofia_captured_eng }
+		if = { limit = { 48 = { is_controlled_by = USA } } set_global_flag = citynews_sofia_captured_usa }
+		if = { limit = { 48 = { is_controlled_by = SOV } } set_global_flag = citynews_sofia_captured_sov }
+		if = { limit = { 48 = { is_controlled_by = JAP } } set_global_flag = citynews_sofia_captured_jap }
+		set_global_flag = citynews_sofia_capture
+	}
+
+	mean_time_to_happen = {
+		days = 3
+	}
+
+	fire_only_once = yes
+
+	option = {
+		name = change_citynews.28.a
+	}
+}
+
+news_event = { #Warsaw 兵临城下
+	id = change_citynews.29
+	title = change_citynews.29.t
+	desc = change_citynews.29.d
+	picture = GFX_news_event_polish_resistance_warsaw
+
+	major = yes
+
+	trigger = {
+			has_global_flag = the_world_war_tow_flag #二战爆发后才可触发
+		10 = {
+			OR = {
+				tag = GER
+				tag = POL
+			}
+			any_neighbor_state = {
+				controller = {
+					OR = {
+						tag = ENG
+						tag = USA
+						tag = SOV
+						tag = JAP
+					}
+				}
+			}
+		}
+		NOT = { has_global_flag = citynews_warsaw_siege }
+	}
+
+	immediate = {
+		set_global_flag = citynews_warsaw_siege
+	}
+
+	mean_time_to_happen = {
+		days = 3
+	}
+
+	fire_only_once = yes
+
+	option = {
+		name = change_citynews.29.a
+	}
+}
+
+news_event = { #Warsaw 攻克（自动触发）
+	id = change_citynews.30
+	title = change_citynews.30.t
+	desc = change_citynews.30.d
+	picture = GFX_news_event_polish_resistance_warsaw
+
+	major = yes
+
+	trigger = {
+			has_global_flag = the_world_war_tow_flag
+		10 = {
+			OR = {
+				tag = ENG
+				tag = USA
+				tag = SOV
+				tag = JAP
+			}
+		}
+		NOT = { has_global_flag = citynews_warsaw_capture }
+	}
+
+	immediate = {
+		if = { limit = { 10 = { is_controlled_by = ENG } } set_global_flag = citynews_warsaw_captured_eng }
+		if = { limit = { 10 = { is_controlled_by = USA } } set_global_flag = citynews_warsaw_captured_usa }
+		if = { limit = { 10 = { is_controlled_by = SOV } } set_global_flag = citynews_warsaw_captured_sov }
+		if = { limit = { 10 = { is_controlled_by = JAP } } set_global_flag = citynews_warsaw_captured_jap }
+		set_global_flag = citynews_warsaw_capture
+	}
+
+	mean_time_to_happen = {
+		days = 3
+	}
+
+	fire_only_once = yes
+
+	option = {
+		name = change_citynews.30.a
+	}
+}
+
+news_event = { #Oslo 兵临城下
+	id = change_citynews.31
+	title = change_citynews.31.t
+	desc = change_citynews.31.d
+	picture = GFX_news_event_soldiers_marching
+
+	major = yes
+
+	trigger = {
+			has_global_flag = the_world_war_tow_flag #二战爆发后才可触发
+		110 = {
+			is_controlled_by = NOR
+			any_neighbor_state = {
+				controller = { has_war_with = NOR }
+			}
+		}
+		NOT = { has_global_flag = citynews_oslo_siege }
+	}
+
+	immediate = {
+		set_global_flag = citynews_oslo_siege
+	}
+
+	mean_time_to_happen = {
+		days = 3
+	}
+
+	fire_only_once = yes
+
+	option = {
+		name = change_citynews.31.a
+	}
+}
+
+news_event = { #Oslo 攻克（自动触发）
+	id = change_citynews.32
+	title = change_citynews.32.t
+	desc = change_citynews.32.d
+	picture = GFX_news_event_soldiers_marching
+
+	major = yes
+
+	trigger = {
+			has_global_flag = the_world_war_tow_flag
+		110 = { NOT = { is_controlled_by = NOR } }
+		NOT = { has_global_flag = citynews_oslo_capture }
+	}
+
+	immediate = {
+		if = { limit = { 110 = { is_controlled_by = GER } } set_global_flag = citynews_oslo_captured_ger }
+		if = { limit = { 110 = { is_controlled_by = FRA } } set_global_flag = citynews_oslo_captured_fra }
+		if = { limit = { 110 = { is_controlled_by = HUN } } set_global_flag = citynews_oslo_captured_hun }
+		if = { limit = { 110 = { is_controlled_by = CHI } } set_global_flag = citynews_oslo_captured_chi }
+		if = { limit = { 110 = { is_controlled_by = ENG } } set_global_flag = citynews_oslo_captured_eng }
+		if = { limit = { 110 = { is_controlled_by = USA } } set_global_flag = citynews_oslo_captured_usa }
+		if = { limit = { 110 = { is_controlled_by = SOV } } set_global_flag = citynews_oslo_captured_sov }
+		if = { limit = { 110 = { is_controlled_by = JAP } } set_global_flag = citynews_oslo_captured_jap }
+		set_global_flag = citynews_oslo_capture
+	}
+
+	mean_time_to_happen = {
+		days = 3
+	}
+
+	fire_only_once = yes
+
+	option = {
+		name = change_citynews.32.a
+	}
+}
+
+news_event = { #Stockholm 兵临城下
+	id = change_citynews.33
+	title = change_citynews.33.t
+	desc = change_citynews.33.d
+	picture = GFX_news_event_generic_army
+
+	major = yes
+
+	trigger = {
+			has_global_flag = the_world_war_tow_flag #二战爆发后才可触发
+		141 = {
+			is_controlled_by = SWE
+			any_neighbor_state = {
+				controller = { has_war_with = SWE }
+			}
+		}
+		NOT = { has_global_flag = citynews_stockholm_siege }
+	}
+
+	immediate = {
+		set_global_flag = citynews_stockholm_siege
+	}
+
+	mean_time_to_happen = {
+		days = 3
+	}
+
+	fire_only_once = yes
+
+	option = {
+		name = change_citynews.33.a
+	}
+}
+
+news_event = { #Stockholm 攻克（自动触发）
+	id = change_citynews.34
+	title = change_citynews.34.t
+	desc = change_citynews.34.d
+	picture = GFX_news_event_generic_army
+
+	major = yes
+
+	trigger = {
+			has_global_flag = the_world_war_tow_flag
+		141 = { NOT = { is_controlled_by = SWE } }
+		NOT = { has_global_flag = citynews_stockholm_capture }
+	}
+
+	immediate = {
+		if = { limit = { 141 = { is_controlled_by = GER } } set_global_flag = citynews_stockholm_captured_ger }
+		if = { limit = { 141 = { is_controlled_by = FRA } } set_global_flag = citynews_stockholm_captured_fra }
+		if = { limit = { 141 = { is_controlled_by = HUN } } set_global_flag = citynews_stockholm_captured_hun }
+		if = { limit = { 141 = { is_controlled_by = CHI } } set_global_flag = citynews_stockholm_captured_chi }
+		if = { limit = { 141 = { is_controlled_by = ENG } } set_global_flag = citynews_stockholm_captured_eng }
+		if = { limit = { 141 = { is_controlled_by = USA } } set_global_flag = citynews_stockholm_captured_usa }
+		if = { limit = { 141 = { is_controlled_by = SOV } } set_global_flag = citynews_stockholm_captured_sov }
+		if = { limit = { 141 = { is_controlled_by = JAP } } set_global_flag = citynews_stockholm_captured_jap }
+		set_global_flag = citynews_stockholm_capture
+	}
+
+	mean_time_to_happen = {
+		days = 3
+	}
+
+	fire_only_once = yes
+
+	option = {
+		name = change_citynews.34.a
+	}
+}
+
+news_event = { #NorthGermany 兵临城下
+	id = change_citynews.35
+	title = change_citynews.35.t
+	desc = change_citynews.35.d
+	picture = GFX_news_event_german_reichstag_ruins_02
+
+	major = yes
+
+	trigger = {
+			has_global_flag = the_world_war_tow_flag #二战爆发后才可触发
+		58 = {
+			OR = {
+				tag = GER
+			}
+			any_neighbor_state = {
+				controller = {
+					OR = {
+						tag = ENG
+						tag = USA
+						tag = SOV
+						tag = JAP
+					}
+				}
+			}
+		}
+		NOT = { has_global_flag = citynews_northgermany_siege }
+	}
+
+	immediate = {
+		set_global_flag = citynews_northgermany_siege
+	}
+
+	mean_time_to_happen = {
+		days = 3
+	}
+
+	fire_only_once = yes
+
+	option = {
+		name = change_citynews.35.a
+	}
+}
+
+news_event = { #NorthGermany 攻克（自动触发）
+	id = change_citynews.36
+	title = change_citynews.36.t
+	desc = change_citynews.36.d
+	picture = GFX_news_event_german_reichstag_ruins_02
+
+	major = yes
+
+	trigger = {
+			has_global_flag = the_world_war_tow_flag
+		58 = {
+			OR = {
+				tag = ENG
+				tag = USA
+				tag = SOV
+				tag = JAP
+			}
+		}
+		NOT = { has_global_flag = citynews_northgermany_capture }
+	}
+
+	immediate = {
+		if = { limit = { 58 = { is_controlled_by = ENG } } set_global_flag = citynews_northgermany_captured_eng }
+		if = { limit = { 58 = { is_controlled_by = USA } } set_global_flag = citynews_northgermany_captured_usa }
+		if = { limit = { 58 = { is_controlled_by = SOV } } set_global_flag = citynews_northgermany_captured_sov }
+		if = { limit = { 58 = { is_controlled_by = JAP } } set_global_flag = citynews_northgermany_captured_jap }
+		set_global_flag = citynews_northgermany_capture
+	}
+
+	mean_time_to_happen = {
+		days = 3
+	}
+
+	fire_only_once = yes
+
+	option = {
+		name = change_citynews.36.a
+	}
+}
+
+news_event = { #Ulaanbaatar 兵临城下
+	id = change_citynews.37
+	title = change_citynews.37.t
+	desc = change_citynews.37.d
+	picture = GFX_news_event_chinese_soldiers_march
+
+	major = yes
+
+	trigger = {
+			has_global_flag = the_world_war_tow_flag #二战爆发后才可触发
+		330 = {
+			OR = {
+				tag = SOV
+				tag = MON
+			}
+			any_neighbor_state = {
+				controller = {
+					OR = {
+						tag = GER
+						tag = FRA
+						tag = HUN
+						tag = CHI
+					}
+				}
+			}
+		}
+		NOT = { has_global_flag = citynews_ulaanbaatar_siege }
+	}
+
+	immediate = {
+		set_global_flag = citynews_ulaanbaatar_siege
+	}
+
+	mean_time_to_happen = {
+		days = 3
+	}
+
+	fire_only_once = yes
+
+	option = {
+		name = change_citynews.37.a
+	}
+}
+
+news_event = { #Ulaanbaatar 攻克（自动触发）
+	id = change_citynews.38
+	title = change_citynews.38.t
+	desc = change_citynews.38.d
+	picture = GFX_news_event_chinese_soldiers_march
+
+	major = yes
+
+	trigger = {
+			has_global_flag = the_world_war_tow_flag
+		330 = {
+			OR = {
+				tag = GER
+				tag = FRA
+				tag = HUN
+				tag = CHI
+			}
+		}
+		NOT = { has_global_flag = citynews_ulaanbaatar_capture }
+	}
+
+	immediate = {
+		if = { limit = { 330 = { is_controlled_by = GER } } set_global_flag = citynews_ulaanbaatar_captured_ger }
+		if = { limit = { 330 = { is_controlled_by = FRA } } set_global_flag = citynews_ulaanbaatar_captured_fra }
+		if = { limit = { 330 = { is_controlled_by = HUN } } set_global_flag = citynews_ulaanbaatar_captured_hun }
+		if = { limit = { 330 = { is_controlled_by = CHI } } set_global_flag = citynews_ulaanbaatar_captured_chi }
+		set_global_flag = citynews_ulaanbaatar_capture
+	}
+
+	mean_time_to_happen = {
+		days = 3
+	}
+
+	fire_only_once = yes
+
+	option = {
+		name = change_citynews.38.a
+	}
+}
+
+news_event = { #Baku 兵临城下
+	id = change_citynews.39
+	title = change_citynews.39.t
+	desc = change_citynews.39.d
+	picture = GFX_news_event_kiev_ruins
+
+	major = yes
+
+	trigger = {
+			has_global_flag = the_world_war_tow_flag #二战爆发后才可触发
+		229 = {
+			OR = {
+				tag = SOV
+			}
+			any_neighbor_state = {
+				controller = {
+					OR = {
+						tag = GER
+						tag = FRA
+						tag = HUN
+						tag = CHI
+					}
+				}
+			}
+		}
+		NOT = { has_global_flag = citynews_baku_siege }
+	}
+
+	immediate = {
+		set_global_flag = citynews_baku_siege
+	}
+
+	mean_time_to_happen = {
+		days = 3
+	}
+
+	fire_only_once = yes
+
+	option = {
+		name = change_citynews.39.a
+	}
+}
+
+news_event = { #Baku 攻克（自动触发）
+	id = change_citynews.40
+	title = change_citynews.40.t
+	desc = change_citynews.40.d
+	picture = GFX_news_event_kiev_ruins
+
+	major = yes
+
+	trigger = {
+			has_global_flag = the_world_war_tow_flag
+		229 = {
+			OR = {
+				tag = GER
+				tag = FRA
+				tag = HUN
+				tag = CHI
+			}
+		}
+		NOT = { has_global_flag = citynews_baku_capture }
+	}
+
+	immediate = {
+		if = { limit = { 229 = { is_controlled_by = GER } } set_global_flag = citynews_baku_captured_ger }
+		if = { limit = { 229 = { is_controlled_by = FRA } } set_global_flag = citynews_baku_captured_fra }
+		if = { limit = { 229 = { is_controlled_by = HUN } } set_global_flag = citynews_baku_captured_hun }
+		if = { limit = { 229 = { is_controlled_by = CHI } } set_global_flag = citynews_baku_captured_chi }
+		set_global_flag = citynews_baku_capture
+	}
+
+	mean_time_to_happen = {
+		days = 3
+	}
+
+	fire_only_once = yes
+
+	option = {
+		name = change_citynews.40.a
+	}
+}
+
+news_event = { #Delhi 兵临城下
+	id = change_citynews.41
+	title = change_citynews.41.t
+	desc = change_citynews.41.d
+	picture = GFX_news_event_india_protests
+
+	major = yes
+
+	trigger = {
+			has_global_flag = the_world_war_tow_flag #二战爆发后才可触发
+		439 = {
+			OR = {
+				tag = ENG
+				tag = RAJ
+			}
+			any_neighbor_state = {
+				controller = {
+					OR = {
+						tag = GER
+						tag = FRA
+						tag = HUN
+						tag = CHI
+					}
+				}
+			}
+		}
+		NOT = { has_global_flag = citynews_delhi_siege }
+	}
+
+	immediate = {
+		set_global_flag = citynews_delhi_siege
+	}
+
+	mean_time_to_happen = {
+		days = 3
+	}
+
+	fire_only_once = yes
+
+	option = {
+		name = change_citynews.41.a
+	}
+}
+
+news_event = { #Delhi 攻克（自动触发）
+	id = change_citynews.42
+	title = change_citynews.42.t
+	desc = change_citynews.42.d
+	picture = GFX_news_event_india_protests
+
+	major = yes
+
+	trigger = {
+			has_global_flag = the_world_war_tow_flag
+		439 = {
+			OR = {
+				tag = GER
+				tag = FRA
+				tag = HUN
+				tag = CHI
+			}
+		}
+		NOT = { has_global_flag = citynews_delhi_capture }
+	}
+
+	immediate = {
+		if = { limit = { 439 = { is_controlled_by = GER } } set_global_flag = citynews_delhi_captured_ger }
+		if = { limit = { 439 = { is_controlled_by = FRA } } set_global_flag = citynews_delhi_captured_fra }
+		if = { limit = { 439 = { is_controlled_by = HUN } } set_global_flag = citynews_delhi_captured_hun }
+		if = { limit = { 439 = { is_controlled_by = CHI } } set_global_flag = citynews_delhi_captured_chi }
+		set_global_flag = citynews_delhi_capture
+	}
+
+	mean_time_to_happen = {
+		days = 3
+	}
+
+	fire_only_once = yes
+
+	option = {
+		name = change_citynews.42.a
+	}
+}
+
+news_event = { #Bangkok 兵临城下
+	id = change_citynews.43
+	title = change_citynews.43.t
+	desc = change_citynews.43.d
+	picture = GFX_news_event_dutch_soldiers_indonesia
+
+	major = yes
+
+	trigger = {
+			has_global_flag = the_world_war_tow_flag #二战爆发后才可触发
+		1076 = {
+			OR = {
+				tag = ENG
+				tag = SIA
+			}
+			any_neighbor_state = {
+				controller = {
+					OR = {
+						tag = GER
+						tag = FRA
+						tag = HUN
+						tag = CHI
+					}
+				}
+			}
+		}
+		NOT = { has_global_flag = citynews_bangkok_siege }
+	}
+
+	immediate = {
+		set_global_flag = citynews_bangkok_siege
+	}
+
+	mean_time_to_happen = {
+		days = 3
+	}
+
+	fire_only_once = yes
+
+	option = {
+		name = change_citynews.43.a
+	}
+}
+
+news_event = { #Bangkok 攻克（自动触发）
+	id = change_citynews.44
+	title = change_citynews.44.t
+	desc = change_citynews.44.d
+	picture = GFX_news_event_dutch_soldiers_indonesia
+
+	major = yes
+
+	trigger = {
+			has_global_flag = the_world_war_tow_flag
+		1076 = {
+			OR = {
+				tag = GER
+				tag = FRA
+				tag = HUN
+				tag = CHI
+			}
+		}
+		NOT = { has_global_flag = citynews_bangkok_capture }
+	}
+
+	immediate = {
+		if = { limit = { 1076 = { is_controlled_by = GER } } set_global_flag = citynews_bangkok_captured_ger }
+		if = { limit = { 1076 = { is_controlled_by = FRA } } set_global_flag = citynews_bangkok_captured_fra }
+		if = { limit = { 1076 = { is_controlled_by = HUN } } set_global_flag = citynews_bangkok_captured_hun }
+		if = { limit = { 1076 = { is_controlled_by = CHI } } set_global_flag = citynews_bangkok_captured_chi }
+		set_global_flag = citynews_bangkok_capture
+	}
+
+	mean_time_to_happen = {
+		days = 3
+	}
+
+	fire_only_once = yes
+
+	option = {
+		name = change_citynews.44.a
+	}
+}
+
+news_event = { #Rangoon 兵临城下
+	id = change_citynews.45
+	title = change_citynews.45.t
+	desc = change_citynews.45.d
+	picture = GFX_news_event_JAP_rangoon_occupation
+
+	major = yes
+
+	trigger = {
+			has_global_flag = the_world_war_tow_flag #二战爆发后才可触发
+		995 = {
+			OR = {
+				tag = ENG
+				tag = BRM
+			}
+			any_neighbor_state = {
+				controller = {
+					OR = {
+						tag = GER
+						tag = FRA
+						tag = HUN
+						tag = CHI
+					}
+				}
+			}
+		}
+		NOT = { has_global_flag = citynews_rangoon_siege }
+	}
+
+	immediate = {
+		set_global_flag = citynews_rangoon_siege
+	}
+
+	mean_time_to_happen = {
+		days = 3
+	}
+
+	fire_only_once = yes
+
+	option = {
+		name = change_citynews.45.a
+	}
+}
+
+news_event = { #Rangoon 攻克（自动触发）
+	id = change_citynews.46
+	title = change_citynews.46.t
+	desc = change_citynews.46.d
+	picture = GFX_news_event_JAP_rangoon_occupation
+
+	major = yes
+
+	trigger = {
+			has_global_flag = the_world_war_tow_flag
+		995 = {
+			OR = {
+				tag = GER
+				tag = FRA
+				tag = HUN
+				tag = CHI
+			}
+		}
+		NOT = { has_global_flag = citynews_rangoon_capture }
+	}
+
+	immediate = {
+		if = { limit = { 995 = { is_controlled_by = GER } } set_global_flag = citynews_rangoon_captured_ger }
+		if = { limit = { 995 = { is_controlled_by = FRA } } set_global_flag = citynews_rangoon_captured_fra }
+		if = { limit = { 995 = { is_controlled_by = HUN } } set_global_flag = citynews_rangoon_captured_hun }
+		if = { limit = { 995 = { is_controlled_by = CHI } } set_global_flag = citynews_rangoon_captured_chi }
+		set_global_flag = citynews_rangoon_capture
+	}
+
+	mean_time_to_happen = {
+		days = 3
+	}
+
+	fire_only_once = yes
+
+	option = {
+		name = change_citynews.46.a
+	}
+}
+
+news_event = { #Canberra 兵临城下
+	id = change_citynews.47
+	title = change_citynews.47.t
+	desc = change_citynews.47.d
+	picture = GFX_news_event_ast_parliament_house
+
+	major = yes
+
+	trigger = {
+			has_global_flag = the_world_war_tow_flag #二战爆发后才可触发
+		285 = {
+			OR = {
+				tag = ENG
+				tag = AST
+			}
+			any_neighbor_state = {
+				controller = {
+					OR = {
+						tag = GER
+						tag = FRA
+						tag = HUN
+						tag = CHI
+					}
+				}
+			}
+		}
+		NOT = { has_global_flag = citynews_canberra_siege }
+	}
+
+	immediate = {
+		set_global_flag = citynews_canberra_siege
+	}
+
+	mean_time_to_happen = {
+		days = 3
+	}
+
+	fire_only_once = yes
+
+	option = {
+		name = change_citynews.47.a
+	}
+}
+
+news_event = { #Canberra 攻克（自动触发）
+	id = change_citynews.48
+	title = change_citynews.48.t
+	desc = change_citynews.48.d
+	picture = GFX_news_event_ast_parliament_house
+
+	major = yes
+
+	trigger = {
+			has_global_flag = the_world_war_tow_flag
+		285 = {
+			OR = {
+				tag = GER
+				tag = FRA
+				tag = HUN
+				tag = CHI
+			}
+		}
+		NOT = { has_global_flag = citynews_canberra_capture }
+	}
+
+	immediate = {
+		if = { limit = { 285 = { is_controlled_by = GER } } set_global_flag = citynews_canberra_captured_ger }
+		if = { limit = { 285 = { is_controlled_by = FRA } } set_global_flag = citynews_canberra_captured_fra }
+		if = { limit = { 285 = { is_controlled_by = HUN } } set_global_flag = citynews_canberra_captured_hun }
+		if = { limit = { 285 = { is_controlled_by = CHI } } set_global_flag = citynews_canberra_captured_chi }
+		set_global_flag = citynews_canberra_capture
+	}
+
+	mean_time_to_happen = {
+		days = 3
+	}
+
+	fire_only_once = yes
+
+	option = {
+		name = change_citynews.48.a
+	}
+}
+
+news_event = { #Ural 兵临城下
+	id = change_citynews.49
+	title = change_citynews.49.t
+	desc = change_citynews.49.d
+	picture = GFX_news_event_generic_ruins
+
+	major = yes
+
+	trigger = {
+			has_global_flag = the_world_war_tow_flag #二战爆发后才可触发
+		581 = {
+			OR = {
+				tag = SOV
+			}
+			any_neighbor_state = {
+				controller = {
+					OR = {
+						tag = GER
+						tag = FRA
+						tag = HUN
+						tag = CHI
+					}
+				}
+			}
+		}
+		NOT = { has_global_flag = citynews_ural_siege }
+	}
+
+	immediate = {
+		set_global_flag = citynews_ural_siege
+	}
+
+	mean_time_to_happen = {
+		days = 3
+	}
+
+	fire_only_once = yes
+
+	option = {
+		name = change_citynews.49.a
+	}
+}
+
+news_event = { #Ural 攻克（自动触发）
+	id = change_citynews.50
+	title = change_citynews.50.t
+	desc = change_citynews.50.d
+	picture = GFX_news_event_generic_ruins
+
+	major = yes
+
+	trigger = {
+			has_global_flag = the_world_war_tow_flag
+		581 = {
+			OR = {
+				tag = GER
+				tag = FRA
+				tag = HUN
+				tag = CHI
+			}
+		}
+		NOT = { has_global_flag = citynews_ural_capture }
+	}
+
+	immediate = {
+		if = { limit = { 581 = { is_controlled_by = GER } } set_global_flag = citynews_ural_captured_ger }
+		if = { limit = { 581 = { is_controlled_by = FRA } } set_global_flag = citynews_ural_captured_fra }
+		if = { limit = { 581 = { is_controlled_by = HUN } } set_global_flag = citynews_ural_captured_hun }
+		if = { limit = { 581 = { is_controlled_by = CHI } } set_global_flag = citynews_ural_captured_chi }
+		set_global_flag = citynews_ural_capture
+	}
+
+	mean_time_to_happen = {
+		days = 3
+	}
+
+	fire_only_once = yes
+
+	option = {
+		name = change_citynews.50.a
+	}
+}
+
+news_event = { #Tashkent 兵临城下
+	id = change_citynews.51
+	title = change_citynews.51.t
+	desc = change_citynews.51.d
+	picture = GFX_news_event_generic_army
+
+	major = yes
+
+	trigger = {
+			has_global_flag = the_world_war_tow_flag #二战爆发后才可触发
+		405 = {
+			OR = {
+				tag = SOV
+			}
+			any_neighbor_state = {
+				controller = {
+					OR = {
+						tag = GER
+						tag = FRA
+						tag = HUN
+						tag = CHI
+					}
+				}
+			}
+		}
+		NOT = { has_global_flag = citynews_tashkent_siege }
+	}
+
+	immediate = {
+		set_global_flag = citynews_tashkent_siege
+	}
+
+	mean_time_to_happen = {
+		days = 3
+	}
+
+	fire_only_once = yes
+
+	option = {
+		name = change_citynews.51.a
+	}
+}
+
+news_event = { #Tashkent 攻克（自动触发）
+	id = change_citynews.52
+	title = change_citynews.52.t
+	desc = change_citynews.52.d
+	picture = GFX_news_event_generic_army
+
+	major = yes
+
+	trigger = {
+			has_global_flag = the_world_war_tow_flag
+		405 = {
+			OR = {
+				tag = GER
+				tag = FRA
+				tag = HUN
+				tag = CHI
+			}
+		}
+		NOT = { has_global_flag = citynews_tashkent_capture }
+	}
+
+	immediate = {
+		if = { limit = { 405 = { is_controlled_by = GER } } set_global_flag = citynews_tashkent_captured_ger }
+		if = { limit = { 405 = { is_controlled_by = FRA } } set_global_flag = citynews_tashkent_captured_fra }
+		if = { limit = { 405 = { is_controlled_by = HUN } } set_global_flag = citynews_tashkent_captured_hun }
+		if = { limit = { 405 = { is_controlled_by = CHI } } set_global_flag = citynews_tashkent_captured_chi }
+		set_global_flag = citynews_tashkent_capture
+	}
+
+	mean_time_to_happen = {
+		days = 3
+	}
+
+	fire_only_once = yes
+
+	option = {
+		name = change_citynews.52.a
+	}
+}
+
+news_event = { #Kabul 兵临城下
+	id = change_citynews.53
+	title = change_citynews.53.t
+	desc = change_citynews.53.d
+	picture = GFX_news_event_ETH_ethiopian_warriors
+
+	major = yes
+
+	trigger = {
+			has_global_flag = the_world_war_tow_flag #二战爆发后才可触发
+		267 = {
+			OR = {
+				tag = SOV
+				tag = AFG
+			}
+			any_neighbor_state = {
+				controller = {
+					OR = {
+						tag = GER
+						tag = FRA
+						tag = HUN
+						tag = CHI
+					}
+				}
+			}
+		}
+		NOT = { has_global_flag = citynews_kabul_siege }
+	}
+
+	immediate = {
+		set_global_flag = citynews_kabul_siege
+	}
+
+	mean_time_to_happen = {
+		days = 3
+	}
+
+	fire_only_once = yes
+
+	option = {
+		name = change_citynews.53.a
+	}
+}
+
+news_event = { #Kabul 攻克（自动触发）
+	id = change_citynews.54
+	title = change_citynews.54.t
+	desc = change_citynews.54.d
+	picture = GFX_news_event_ETH_ethiopian_warriors
+
+	major = yes
+
+	trigger = {
+			has_global_flag = the_world_war_tow_flag
+		267 = {
+			OR = {
+				tag = GER
+				tag = FRA
+				tag = HUN
+				tag = CHI
+			}
+		}
+		NOT = { has_global_flag = citynews_kabul_capture }
+	}
+
+	immediate = {
+		if = { limit = { 267 = { is_controlled_by = GER } } set_global_flag = citynews_kabul_captured_ger }
+		if = { limit = { 267 = { is_controlled_by = FRA } } set_global_flag = citynews_kabul_captured_fra }
+		if = { limit = { 267 = { is_controlled_by = HUN } } set_global_flag = citynews_kabul_captured_hun }
+		if = { limit = { 267 = { is_controlled_by = CHI } } set_global_flag = citynews_kabul_captured_chi }
+		set_global_flag = citynews_kabul_capture
+	}
+
+	mean_time_to_happen = {
+		days = 3
+	}
+
+	fire_only_once = yes
+
+	option = {
+		name = change_citynews.54.a
+	}
+}
+
+news_event = { #Tehran 兵临城下
+	id = change_citynews.55
+	title = change_citynews.55.t
+	desc = change_citynews.55.d
+	picture = GFX_news_event_generic_anglo_iraqi_war_1
+
+	major = yes
+
+	trigger = {
+			has_global_flag = the_world_war_tow_flag #二战爆发后才可触发
+		266 = {
+			OR = {
+				tag = FRA
+				tag = PER
+			}
+			any_neighbor_state = {
+				controller = {
+					OR = {
+						tag = ENG
+						tag = USA
+						tag = SOV
+						tag = JAP
+					}
+				}
+			}
+		}
+		NOT = { has_global_flag = citynews_tehran_siege }
+	}
+
+	immediate = {
+		set_global_flag = citynews_tehran_siege
+	}
+
+	mean_time_to_happen = {
+		days = 3
+	}
+
+	fire_only_once = yes
+
+	option = {
+		name = change_citynews.55.a
+	}
+}
+
+news_event = { #Tehran 攻克（自动触发）
+	id = change_citynews.56
+	title = change_citynews.56.t
+	desc = change_citynews.56.d
+	picture = GFX_news_event_generic_anglo_iraqi_war_1
+
+	major = yes
+
+	trigger = {
+			has_global_flag = the_world_war_tow_flag
+		266 = {
+			OR = {
+				tag = ENG
+				tag = USA
+				tag = SOV
+				tag = JAP
+			}
+		}
+		NOT = { has_global_flag = citynews_tehran_capture }
+	}
+
+	immediate = {
+		if = { limit = { 266 = { is_controlled_by = ENG } } set_global_flag = citynews_tehran_captured_eng }
+		if = { limit = { 266 = { is_controlled_by = USA } } set_global_flag = citynews_tehran_captured_usa }
+		if = { limit = { 266 = { is_controlled_by = SOV } } set_global_flag = citynews_tehran_captured_sov }
+		if = { limit = { 266 = { is_controlled_by = JAP } } set_global_flag = citynews_tehran_captured_jap }
+		set_global_flag = citynews_tehran_capture
+	}
+
+	mean_time_to_happen = {
+		days = 3
+	}
+
+	fire_only_once = yes
+
+	option = {
+		name = change_citynews.56.a
+	}
+}
+
+news_event = { #Baghdad 兵临城下
+	id = change_citynews.57
+	title = change_citynews.57.t
+	desc = change_citynews.57.d
+	picture = GFX_news_event_generic_anglo_iraqi_war_2
+
+	major = yes
+
+	trigger = {
+			has_global_flag = the_world_war_tow_flag #二战爆发后才可触发
+		291 = {
+			OR = {
+				tag = FRA
+				tag = IRQ
+			}
+			any_neighbor_state = {
+				controller = {
+					OR = {
+						tag = ENG
+						tag = USA
+						tag = SOV
+						tag = JAP
+					}
+				}
+			}
+		}
+		NOT = { has_global_flag = citynews_baghdad_siege }
+	}
+
+	immediate = {
+		set_global_flag = citynews_baghdad_siege
+	}
+
+	mean_time_to_happen = {
+		days = 3
+	}
+
+	fire_only_once = yes
+
+	option = {
+		name = change_citynews.57.a
+	}
+}
+
+news_event = { #Baghdad 攻克（自动触发）
+	id = change_citynews.58
+	title = change_citynews.58.t
+	desc = change_citynews.58.d
+	picture = GFX_news_event_generic_anglo_iraqi_war_2
+
+	major = yes
+
+	trigger = {
+			has_global_flag = the_world_war_tow_flag
+		291 = {
+			OR = {
+				tag = ENG
+				tag = USA
+				tag = SOV
+				tag = JAP
+			}
+		}
+		NOT = { has_global_flag = citynews_baghdad_capture }
+	}
+
+	immediate = {
+		if = { limit = { 291 = { is_controlled_by = ENG } } set_global_flag = citynews_baghdad_captured_eng }
+		if = { limit = { 291 = { is_controlled_by = USA } } set_global_flag = citynews_baghdad_captured_usa }
+		if = { limit = { 291 = { is_controlled_by = SOV } } set_global_flag = citynews_baghdad_captured_sov }
+		if = { limit = { 291 = { is_controlled_by = JAP } } set_global_flag = citynews_baghdad_captured_jap }
+		set_global_flag = citynews_baghdad_capture
+	}
+
+	mean_time_to_happen = {
+		days = 3
+	}
+
+	fire_only_once = yes
+
+	option = {
+		name = change_citynews.58.a
+	}
+}
+
+news_event = { #Cairo 兵临城下
+	id = change_citynews.59
+	title = change_citynews.59.t
+	desc = change_citynews.59.d
+	picture = GFX_news_event_italian_tank_desert
+
+	major = yes
+
+	trigger = {
+			has_global_flag = the_world_war_tow_flag #二战爆发后才可触发
+		446 = {
+			OR = {
+				tag = ENG
+				tag = EGY
+			}
+			any_neighbor_state = {
+				controller = {
+					OR = {
+						tag = GER
+						tag = FRA
+						tag = HUN
+						tag = CHI
+					}
+				}
+			}
+		}
+		NOT = { has_global_flag = citynews_cairo_siege }
+	}
+
+	immediate = {
+		set_global_flag = citynews_cairo_siege
+	}
+
+	mean_time_to_happen = {
+		days = 3
+	}
+
+	fire_only_once = yes
+
+	option = {
+		name = change_citynews.59.a
+	}
+}
+
+news_event = { #Cairo 攻克（自动触发）
+	id = change_citynews.60
+	title = change_citynews.60.t
+	desc = change_citynews.60.d
+	picture = GFX_news_event_italian_tank_desert
+
+	major = yes
+
+	trigger = {
+			has_global_flag = the_world_war_tow_flag
+		446 = {
+			OR = {
+				tag = GER
+				tag = FRA
+				tag = HUN
+				tag = CHI
+			}
+		}
+		NOT = { has_global_flag = citynews_cairo_capture }
+	}
+
+	immediate = {
+		if = { limit = { 446 = { is_controlled_by = GER } } set_global_flag = citynews_cairo_captured_ger }
+		if = { limit = { 446 = { is_controlled_by = FRA } } set_global_flag = citynews_cairo_captured_fra }
+		if = { limit = { 446 = { is_controlled_by = HUN } } set_global_flag = citynews_cairo_captured_hun }
+		if = { limit = { 446 = { is_controlled_by = CHI } } set_global_flag = citynews_cairo_captured_chi }
+		set_global_flag = citynews_cairo_capture
+	}
+
+	mean_time_to_happen = {
+		days = 3
+	}
+
+	fire_only_once = yes
+
+	option = {
+		name = change_citynews.60.a
+	}
+}
+
+news_event = { #LosAngeles 兵临城下
+	id = change_citynews.61
+	title = change_citynews.61.t
+	desc = change_citynews.61.d
+	picture = GFX_news_event_generic_usa_treaty
+
+	major = yes
+
+	trigger = {
+			has_global_flag = the_world_war_tow_flag #二战爆发后才可触发
+		378 = {
+			OR = {
+				tag = USA
+			}
+			any_neighbor_state = {
+				controller = {
+					OR = {
+						tag = GER
+						tag = FRA
+						tag = HUN
+						tag = CHI
+					}
+				}
+			}
+		}
+		NOT = { has_global_flag = citynews_losangeles_siege }
+	}
+
+	immediate = {
+		set_global_flag = citynews_losangeles_siege
+	}
+
+	mean_time_to_happen = {
+		days = 3
+	}
+
+	fire_only_once = yes
+
+	option = {
+		name = change_citynews.61.a
+	}
+}
+
+news_event = { #LosAngeles 攻克（自动触发）
+	id = change_citynews.62
+	title = change_citynews.62.t
+	desc = change_citynews.62.d
+	picture = GFX_news_event_generic_usa_treaty
+
+	major = yes
+
+	trigger = {
+			has_global_flag = the_world_war_tow_flag
+		378 = {
+			OR = {
+				tag = GER
+				tag = FRA
+				tag = HUN
+				tag = CHI
+			}
+		}
+		NOT = { has_global_flag = citynews_losangeles_capture }
+	}
+
+	immediate = {
+		if = { limit = { 378 = { is_controlled_by = GER } } set_global_flag = citynews_losangeles_captured_ger }
+		if = { limit = { 378 = { is_controlled_by = FRA } } set_global_flag = citynews_losangeles_captured_fra }
+		if = { limit = { 378 = { is_controlled_by = HUN } } set_global_flag = citynews_losangeles_captured_hun }
+		if = { limit = { 378 = { is_controlled_by = CHI } } set_global_flag = citynews_losangeles_captured_chi }
+		set_global_flag = citynews_losangeles_capture
+	}
+
+	mean_time_to_happen = {
+		days = 3
+	}
+
+	fire_only_once = yes
+
+	option = {
+		name = change_citynews.62.a
+	}
+}
+
+news_event = { #MexicoCity 兵临城下
+	id = change_citynews.63
+	title = change_citynews.63.t
+	desc = change_citynews.63.d
+	picture = GFX_news_event_mex_civil_war
+
+	major = yes
+
+	trigger = {
+			has_global_flag = the_world_war_tow_flag #二战爆发后才可触发
+		277 = {
+			OR = {
+				tag = USA
+				tag = MEX
+			}
+			any_neighbor_state = {
+				controller = {
+					OR = {
+						tag = GER
+						tag = FRA
+						tag = HUN
+						tag = CHI
+					}
+				}
+			}
+		}
+		NOT = { has_global_flag = citynews_mexicocity_siege }
+	}
+
+	immediate = {
+		set_global_flag = citynews_mexicocity_siege
+	}
+
+	mean_time_to_happen = {
+		days = 3
+	}
+
+	fire_only_once = yes
+
+	option = {
+		name = change_citynews.63.a
+	}
+}
+
+news_event = { #MexicoCity 攻克（自动触发）
+	id = change_citynews.64
+	title = change_citynews.64.t
+	desc = change_citynews.64.d
+	picture = GFX_news_event_mex_civil_war
+
+	major = yes
+
+	trigger = {
+			has_global_flag = the_world_war_tow_flag
+		277 = {
+			OR = {
+				tag = GER
+				tag = FRA
+				tag = HUN
+				tag = CHI
+			}
+		}
+		NOT = { has_global_flag = citynews_mexicocity_capture }
+	}
+
+	immediate = {
+		if = { limit = { 277 = { is_controlled_by = GER } } set_global_flag = citynews_mexicocity_captured_ger }
+		if = { limit = { 277 = { is_controlled_by = FRA } } set_global_flag = citynews_mexicocity_captured_fra }
+		if = { limit = { 277 = { is_controlled_by = HUN } } set_global_flag = citynews_mexicocity_captured_hun }
+		if = { limit = { 277 = { is_controlled_by = CHI } } set_global_flag = citynews_mexicocity_captured_chi }
+		set_global_flag = citynews_mexicocity_capture
+	}
+
+	mean_time_to_happen = {
+		days = 3
+	}
+
+	fire_only_once = yes
+
+	option = {
+		name = change_citynews.64.a
+	}
+}
+
+news_event = { #Rio 兵临城下
+	id = change_citynews.65
+	title = change_citynews.65.t
+	desc = change_citynews.65.d
+	picture = GFX_news_event_generic_south_american_dreadnought_race
+
+	major = yes
+
+	trigger = {
+			has_global_flag = the_world_war_tow_flag #二战爆发后才可触发
+		500 = {
+			OR = {
+				tag = USA
+				tag = BRA
+			}
+			any_neighbor_state = {
+				controller = {
+					OR = {
+						tag = GER
+						tag = FRA
+						tag = HUN
+						tag = CHI
+					}
+				}
+			}
+		}
+		NOT = { has_global_flag = citynews_rio_siege }
+	}
+
+	immediate = {
+		set_global_flag = citynews_rio_siege
+	}
+
+	mean_time_to_happen = {
+		days = 3
+	}
+
+	fire_only_once = yes
+
+	option = {
+		name = change_citynews.65.a
+	}
+}
+
+news_event = { #Rio 攻克（自动触发）
+	id = change_citynews.66
+	title = change_citynews.66.t
+	desc = change_citynews.66.d
+	picture = GFX_news_event_generic_south_american_dreadnought_race
+
+	major = yes
+
+	trigger = {
+			has_global_flag = the_world_war_tow_flag
+		500 = {
+			OR = {
+				tag = GER
+				tag = FRA
+				tag = HUN
+				tag = CHI
+			}
+		}
+		NOT = { has_global_flag = citynews_rio_capture }
+	}
+
+	immediate = {
+		if = { limit = { 500 = { is_controlled_by = GER } } set_global_flag = citynews_rio_captured_ger }
+		if = { limit = { 500 = { is_controlled_by = FRA } } set_global_flag = citynews_rio_captured_fra }
+		if = { limit = { 500 = { is_controlled_by = HUN } } set_global_flag = citynews_rio_captured_hun }
+		if = { limit = { 500 = { is_controlled_by = CHI } } set_global_flag = citynews_rio_captured_chi }
+		set_global_flag = citynews_rio_capture
+	}
+
+	mean_time_to_happen = {
+		days = 3
+	}
+
+	fire_only_once = yes
+
+	option = {
+		name = change_citynews.66.a
+	}
+}
+
+news_event = { #Caracas 兵临城下
+	id = change_citynews.67
+	title = change_citynews.67.t
+	desc = change_citynews.67.d
+	picture = GFX_news_event_ARG_dominate_the_americas
+
+	major = yes
+
+	trigger = {
+			has_global_flag = the_world_war_tow_flag #二战爆发后才可触发
+		307 = {
+			OR = {
+				tag = USA
+				tag = VEN
+			}
+			any_neighbor_state = {
+				controller = {
+					OR = {
+						tag = GER
+						tag = FRA
+						tag = HUN
+						tag = CHI
+					}
+				}
+			}
+		}
+		NOT = { has_global_flag = citynews_caracas_siege }
+	}
+
+	immediate = {
+		set_global_flag = citynews_caracas_siege
+	}
+
+	mean_time_to_happen = {
+		days = 3
+	}
+
+	fire_only_once = yes
+
+	option = {
+		name = change_citynews.67.a
+	}
+}
+
+news_event = { #Caracas 攻克（自动触发）
+	id = change_citynews.68
+	title = change_citynews.68.t
+	desc = change_citynews.68.d
+	picture = GFX_news_event_ARG_dominate_the_americas
+
+	major = yes
+
+	trigger = {
+			has_global_flag = the_world_war_tow_flag
+		307 = {
+			OR = {
+				tag = GER
+				tag = FRA
+				tag = HUN
+				tag = CHI
+			}
+		}
+		NOT = { has_global_flag = citynews_caracas_capture }
+	}
+
+	immediate = {
+		if = { limit = { 307 = { is_controlled_by = GER } } set_global_flag = citynews_caracas_captured_ger }
+		if = { limit = { 307 = { is_controlled_by = FRA } } set_global_flag = citynews_caracas_captured_fra }
+		if = { limit = { 307 = { is_controlled_by = HUN } } set_global_flag = citynews_caracas_captured_hun }
+		if = { limit = { 307 = { is_controlled_by = CHI } } set_global_flag = citynews_caracas_captured_chi }
+		set_global_flag = citynews_caracas_capture
+	}
+
+	mean_time_to_happen = {
+		days = 3
+	}
+
+	fire_only_once = yes
+
+	option = {
+		name = change_citynews.68.a
+	}
+}
+
+news_event = { #BuenosAires 兵临城下
+	id = change_citynews.69
+	title = change_citynews.69.t
+	desc = change_citynews.69.d
+	picture = GFX_news_event_ARG_battle_of_the_river_plate
+
+	major = yes
+
+	trigger = {
+			has_global_flag = the_world_war_tow_flag #二战爆发后才可触发
+		278 = {
+			OR = {
+				tag = ARG
+			}
+			any_neighbor_state = {
+				controller = {
+					OR = {
+						tag = ENG
+						tag = USA
+						tag = SOV
+						tag = JAP
+					}
+				}
+			}
+		}
+		NOT = { has_global_flag = citynews_buenosaires_siege }
+	}
+
+	immediate = {
+		set_global_flag = citynews_buenosaires_siege
+	}
+
+	mean_time_to_happen = {
+		days = 3
+	}
+
+	fire_only_once = yes
+
+	option = {
+		name = change_citynews.69.a
+	}
+}
+
+news_event = { #BuenosAires 攻克（自动触发）
+	id = change_citynews.70
+	title = change_citynews.70.t
+	desc = change_citynews.70.d
+	picture = GFX_news_event_ARG_battle_of_the_river_plate
+
+	major = yes
+
+	trigger = {
+			has_global_flag = the_world_war_tow_flag
+		278 = {
+			OR = {
+				tag = ENG
+				tag = USA
+				tag = SOV
+				tag = JAP
+			}
+		}
+		NOT = { has_global_flag = citynews_buenosaires_capture }
+	}
+
+	immediate = {
+		if = { limit = { 278 = { is_controlled_by = ENG } } set_global_flag = citynews_buenosaires_captured_eng }
+		if = { limit = { 278 = { is_controlled_by = USA } } set_global_flag = citynews_buenosaires_captured_usa }
+		if = { limit = { 278 = { is_controlled_by = SOV } } set_global_flag = citynews_buenosaires_captured_sov }
+		if = { limit = { 278 = { is_controlled_by = JAP } } set_global_flag = citynews_buenosaires_captured_jap }
+		set_global_flag = citynews_buenosaires_capture
+	}
+
+	mean_time_to_happen = {
+		days = 3
+	}
+
+	fire_only_once = yes
+
+	option = {
+		name = change_citynews.70.a
+	}
+}
+
+news_event = { #Beijing 兵临城下
+	id = change_citynews.71
+	title = change_citynews.71.t
+	desc = change_citynews.71.d
+	picture = GFX_news_event_china_flying_tigers
+
+	major = yes
+
+	trigger = {
+			has_global_flag = the_world_war_tow_flag #二战爆发后才可触发
+		608 = {
+			OR = {
+				tag = CHI
+			}
+			any_neighbor_state = {
+				controller = {
+					OR = {
+						tag = ENG
+						tag = USA
+						tag = SOV
+						tag = JAP
+					}
+				}
+			}
+		}
+		NOT = { has_global_flag = citynews_beijing_siege }
+	}
+
+	immediate = {
+		set_global_flag = citynews_beijing_siege
+	}
+
+	mean_time_to_happen = {
+		days = 3
+	}
+
+	fire_only_once = yes
+
+	option = {
+		name = change_citynews.71.a
+	}
+}
+
+news_event = { #Beijing 攻克（自动触发）
+	id = change_citynews.72
+	title = change_citynews.72.t
+	desc = change_citynews.72.d
+	picture = GFX_news_event_china_flying_tigers
+
+	major = yes
+
+	trigger = {
+			has_global_flag = the_world_war_tow_flag
+		608 = {
+			OR = {
+				tag = ENG
+				tag = USA
+				tag = SOV
+				tag = JAP
+			}
+		}
+		NOT = { has_global_flag = citynews_beijing_capture }
+	}
+
+	immediate = {
+		if = { limit = { 608 = { is_controlled_by = ENG } } set_global_flag = citynews_beijing_captured_eng }
+		if = { limit = { 608 = { is_controlled_by = USA } } set_global_flag = citynews_beijing_captured_usa }
+		if = { limit = { 608 = { is_controlled_by = SOV } } set_global_flag = citynews_beijing_captured_sov }
+		if = { limit = { 608 = { is_controlled_by = JAP } } set_global_flag = citynews_beijing_captured_jap }
+		set_global_flag = citynews_beijing_capture
+	}
+
+	mean_time_to_happen = {
+		days = 3
+	}
+
+	fire_only_once = yes
+
+	option = {
+		name = change_citynews.72.a
+	}
+}
+
+news_event = { #Shanghai 兵临城下
+	id = change_citynews.73
+	title = change_citynews.73.t
+	desc = change_citynews.73.d
+	picture = GFX_news_event_generic_hong_kong_air_raid
+
+	major = yes
+
+	trigger = {
+			has_global_flag = the_world_war_tow_flag #二战爆发后才可触发
+		613 = {
+			OR = {
+				tag = CHI
+			}
+			any_neighbor_state = {
+				controller = {
+					OR = {
+						tag = ENG
+						tag = USA
+						tag = SOV
+						tag = JAP
+					}
+				}
+			}
+		}
+		NOT = { has_global_flag = citynews_shanghai_siege }
+	}
+
+	immediate = {
+		set_global_flag = citynews_shanghai_siege
+	}
+
+	mean_time_to_happen = {
+		days = 3
+	}
+
+	fire_only_once = yes
+
+	option = {
+		name = change_citynews.73.a
+	}
+}
+
+news_event = { #Shanghai 攻克（自动触发）
+	id = change_citynews.74
+	title = change_citynews.74.t
+	desc = change_citynews.74.d
+	picture = GFX_news_event_generic_hong_kong_air_raid
+
+	major = yes
+
+	trigger = {
+			has_global_flag = the_world_war_tow_flag
+		613 = {
+			OR = {
+				tag = ENG
+				tag = USA
+				tag = SOV
+				tag = JAP
+			}
+		}
+		NOT = { has_global_flag = citynews_shanghai_capture }
+	}
+
+	immediate = {
+		if = { limit = { 613 = { is_controlled_by = ENG } } set_global_flag = citynews_shanghai_captured_eng }
+		if = { limit = { 613 = { is_controlled_by = USA } } set_global_flag = citynews_shanghai_captured_usa }
+		if = { limit = { 613 = { is_controlled_by = SOV } } set_global_flag = citynews_shanghai_captured_sov }
+		if = { limit = { 613 = { is_controlled_by = JAP } } set_global_flag = citynews_shanghai_captured_jap }
+		set_global_flag = citynews_shanghai_capture
+	}
+
+	mean_time_to_happen = {
+		days = 3
+	}
+
+	fire_only_once = yes
+
+	option = {
+		name = change_citynews.74.a
+	}
+}
+
+news_event = { #Taiwan 兵临城下
+	id = change_citynews.75
+	title = change_citynews.75.t
+	desc = change_citynews.75.d
+	picture = GFX_news_event_japanese_parade
+
+	major = yes
+
+	trigger = {
+			has_global_flag = the_world_war_tow_flag #二战爆发后才可触发
+		524 = {
+			OR = {
+				tag = CHI
+			}
+			any_neighbor_state = {
+				controller = {
+					OR = {
+						tag = ENG
+						tag = USA
+						tag = SOV
+						tag = JAP
+					}
+				}
+			}
+		}
+		NOT = { has_global_flag = citynews_taiwan_siege }
+	}
+
+	immediate = {
+		set_global_flag = citynews_taiwan_siege
+	}
+
+	mean_time_to_happen = {
+		days = 3
+	}
+
+	fire_only_once = yes
+
+	option = {
+		name = change_citynews.75.a
+	}
+}
+
+news_event = { #Taiwan 攻克（自动触发）
+	id = change_citynews.76
+	title = change_citynews.76.t
+	desc = change_citynews.76.d
+	picture = GFX_news_event_japanese_parade
+
+	major = yes
+
+	trigger = {
+			has_global_flag = the_world_war_tow_flag
+		524 = {
+			OR = {
+				tag = ENG
+				tag = USA
+				tag = SOV
+				tag = JAP
+			}
+		}
+		NOT = { has_global_flag = citynews_taiwan_capture }
+	}
+
+	immediate = {
+		if = { limit = { 524 = { is_controlled_by = ENG } } set_global_flag = citynews_taiwan_captured_eng }
+		if = { limit = { 524 = { is_controlled_by = USA } } set_global_flag = citynews_taiwan_captured_usa }
+		if = { limit = { 524 = { is_controlled_by = SOV } } set_global_flag = citynews_taiwan_captured_sov }
+		if = { limit = { 524 = { is_controlled_by = JAP } } set_global_flag = citynews_taiwan_captured_jap }
+		set_global_flag = citynews_taiwan_capture
+	}
+
+	mean_time_to_happen = {
+		days = 3
+	}
+
+	fire_only_once = yes
+
+	option = {
+		name = change_citynews.76.a
+	}
+}
+
+news_event = { #Shanxi 兵临城下
+	id = change_citynews.77
+	title = change_citynews.77.t
+	desc = change_citynews.77.d
+	picture = GFX_news_event_chinese_soldiers_mountain
+
+	major = yes
+
+	trigger = {
+			has_global_flag = the_world_war_tow_flag #二战爆发后才可触发
+		615 = {
+			OR = {
+				tag = CHI
+			}
+			any_neighbor_state = {
+				controller = {
+					OR = {
+						tag = ENG
+						tag = USA
+						tag = SOV
+						tag = JAP
+					}
+				}
+			}
+		}
+		NOT = { has_global_flag = citynews_shanxi_siege }
+	}
+
+	immediate = {
+		set_global_flag = citynews_shanxi_siege
+	}
+
+	mean_time_to_happen = {
+		days = 3
+	}
+
+	fire_only_once = yes
+
+	option = {
+		name = change_citynews.77.a
+	}
+}
+
+news_event = { #Shanxi 攻克（自动触发）
+	id = change_citynews.78
+	title = change_citynews.78.t
+	desc = change_citynews.78.d
+	picture = GFX_news_event_chinese_soldiers_mountain
+
+	major = yes
+
+	trigger = {
+			has_global_flag = the_world_war_tow_flag
+		615 = {
+			OR = {
+				tag = ENG
+				tag = USA
+				tag = SOV
+				tag = JAP
+			}
+		}
+		NOT = { has_global_flag = citynews_shanxi_capture }
+	}
+
+	immediate = {
+		if = { limit = { 615 = { is_controlled_by = ENG } } set_global_flag = citynews_shanxi_captured_eng }
+		if = { limit = { 615 = { is_controlled_by = USA } } set_global_flag = citynews_shanxi_captured_usa }
+		if = { limit = { 615 = { is_controlled_by = SOV } } set_global_flag = citynews_shanxi_captured_sov }
+		if = { limit = { 615 = { is_controlled_by = JAP } } set_global_flag = citynews_shanxi_captured_jap }
+		set_global_flag = citynews_shanxi_capture
+	}
+
+	mean_time_to_happen = {
+		days = 3
+	}
+
+	fire_only_once = yes
+
+	option = {
+		name = change_citynews.78.a
+	}
+}
+
+news_event = { #Sichuan 兵临城下
+	id = change_citynews.79
+	title = change_citynews.79.t
+	desc = change_citynews.79.d
+	picture = GFX_news_event_chinese_soldiers_march
+
+	major = yes
+
+	trigger = {
+			has_global_flag = the_world_war_tow_flag #二战爆发后才可触发
+		1041 = {
+			OR = {
+				tag = CHI
+			}
+			any_neighbor_state = {
+				controller = {
+					OR = {
+						tag = ENG
+						tag = USA
+						tag = SOV
+						tag = JAP
+					}
+				}
+			}
+		}
+		NOT = { has_global_flag = citynews_sichuan_siege }
+	}
+
+	immediate = {
+		set_global_flag = citynews_sichuan_siege
+	}
+
+	mean_time_to_happen = {
+		days = 3
+	}
+
+	fire_only_once = yes
+
+	option = {
+		name = change_citynews.79.a
+	}
+}
+
+news_event = { #Sichuan 攻克（自动触发）
+	id = change_citynews.80
+	title = change_citynews.80.t
+	desc = change_citynews.80.d
+	picture = GFX_news_event_chinese_soldiers_march
+
+	major = yes
+
+	trigger = {
+			has_global_flag = the_world_war_tow_flag
+		1041 = {
+			OR = {
+				tag = ENG
+				tag = USA
+				tag = SOV
+				tag = JAP
+			}
+		}
+		NOT = { has_global_flag = citynews_sichuan_capture }
+	}
+
+	immediate = {
+		if = { limit = { 1041 = { is_controlled_by = ENG } } set_global_flag = citynews_sichuan_captured_eng }
+		if = { limit = { 1041 = { is_controlled_by = USA } } set_global_flag = citynews_sichuan_captured_usa }
+		if = { limit = { 1041 = { is_controlled_by = SOV } } set_global_flag = citynews_sichuan_captured_sov }
+		if = { limit = { 1041 = { is_controlled_by = JAP } } set_global_flag = citynews_sichuan_captured_jap }
+		set_global_flag = citynews_sichuan_capture
+	}
+
+	mean_time_to_happen = {
+		days = 3
+	}
+
+	fire_only_once = yes
+
+	option = {
+		name = change_citynews.80.a
+	}
+}
+
+news_event = { #Tibet 兵临城下
+	id = change_citynews.81
+	title = change_citynews.81.t
+	desc = change_citynews.81.d
+	picture = GFX_news_event_chinese_soldiers_city_ruin
+
+	major = yes
+
+	trigger = {
+			has_global_flag = the_world_war_tow_flag #二战爆发后才可触发
+		322 = {
+			OR = {
+				tag = CHI
+			}
+			any_neighbor_state = {
+				controller = {
+					OR = {
+						tag = ENG
+						tag = USA
+						tag = SOV
+						tag = JAP
+					}
+				}
+			}
+		}
+		NOT = { has_global_flag = citynews_tibet_siege }
+	}
+
+	immediate = {
+		set_global_flag = citynews_tibet_siege
+	}
+
+	mean_time_to_happen = {
+		days = 3
+	}
+
+	fire_only_once = yes
+
+	option = {
+		name = change_citynews.81.a
+	}
+}
+
+news_event = { #Tibet 攻克（自动触发）
+	id = change_citynews.82
+	title = change_citynews.82.t
+	desc = change_citynews.82.d
+	picture = GFX_news_event_chinese_soldiers_city_ruin
+
+	major = yes
+
+	trigger = {
+			has_global_flag = the_world_war_tow_flag
+		322 = {
+			OR = {
+				tag = ENG
+				tag = USA
+				tag = SOV
+				tag = JAP
+			}
+		}
+		NOT = { has_global_flag = citynews_tibet_capture }
+	}
+
+	immediate = {
+		if = { limit = { 322 = { is_controlled_by = ENG } } set_global_flag = citynews_tibet_captured_eng }
+		if = { limit = { 322 = { is_controlled_by = USA } } set_global_flag = citynews_tibet_captured_usa }
+		if = { limit = { 322 = { is_controlled_by = SOV } } set_global_flag = citynews_tibet_captured_sov }
+		if = { limit = { 322 = { is_controlled_by = JAP } } set_global_flag = citynews_tibet_captured_jap }
+		set_global_flag = citynews_tibet_capture
+	}
+
+	mean_time_to_happen = {
+		days = 3
+	}
+
+	fire_only_once = yes
+
+	option = {
+		name = change_citynews.82.a
+	}
+}
+
+news_event = { #Xinjiang 兵临城下
+	id = change_citynews.83
+	title = change_citynews.83.t
+	desc = change_citynews.83.d
+	picture = GFX_news_event_chinese_soldiers_march
+
+	major = yes
+
+	trigger = {
+			has_global_flag = the_world_war_tow_flag #二战爆发后才可触发
+		617 = {
+			OR = {
+				tag = CHI
+			}
+			any_neighbor_state = {
+				controller = {
+					OR = {
+						tag = ENG
+						tag = USA
+						tag = SOV
+						tag = JAP
+					}
+				}
+			}
+		}
+		NOT = { has_global_flag = citynews_xinjiang_siege }
+	}
+
+	immediate = {
+		set_global_flag = citynews_xinjiang_siege
+	}
+
+	mean_time_to_happen = {
+		days = 3
+	}
+
+	fire_only_once = yes
+
+	option = {
+		name = change_citynews.83.a
+	}
+}
+
+news_event = { #Xinjiang 攻克（自动触发）
+	id = change_citynews.84
+	title = change_citynews.84.t
+	desc = change_citynews.84.d
+	picture = GFX_news_event_chinese_soldiers_march
+
+	major = yes
+
+	trigger = {
+			has_global_flag = the_world_war_tow_flag
+		617 = {
+			OR = {
+				tag = ENG
+				tag = USA
+				tag = SOV
+				tag = JAP
+			}
+		}
+		NOT = { has_global_flag = citynews_xinjiang_capture }
+	}
+
+	immediate = {
+		if = { limit = { 617 = { is_controlled_by = ENG } } set_global_flag = citynews_xinjiang_captured_eng }
+		if = { limit = { 617 = { is_controlled_by = USA } } set_global_flag = citynews_xinjiang_captured_usa }
+		if = { limit = { 617 = { is_controlled_by = SOV } } set_global_flag = citynews_xinjiang_captured_sov }
+		if = { limit = { 617 = { is_controlled_by = JAP } } set_global_flag = citynews_xinjiang_captured_jap }
+		set_global_flag = citynews_xinjiang_capture
+	}
+
+	mean_time_to_happen = {
+		days = 3
+	}
+
+	fire_only_once = yes
+
+	option = {
+		name = change_citynews.84.a
+	}
+}
+
+news_event = { #Nagasaki 兵临城下
+	id = change_citynews.85
+	title = change_citynews.85.t
+	desc = change_citynews.85.d
+	picture = GFX_news_event_japanese_army_parade
+
+	major = yes
+
+	trigger = {
+			has_global_flag = the_world_war_tow_flag #二战爆发后才可触发
+		528 = {
+			OR = {
+				tag = JAP
+			}
+			any_neighbor_state = {
+				controller = {
+					OR = {
+						tag = GER
+						tag = FRA
+						tag = HUN
+						tag = CHI
+					}
+				}
+			}
+		}
+		NOT = { has_global_flag = citynews_nagasaki_siege }
+	}
+
+	immediate = {
+		set_global_flag = citynews_nagasaki_siege
+	}
+
+	mean_time_to_happen = {
+		days = 3
+	}
+
+	fire_only_once = yes
+
+	option = {
+		name = change_citynews.85.a
+	}
+}
+
+news_event = { #Nagasaki 攻克（自动触发）
+	id = change_citynews.86
+	title = change_citynews.86.t
+	desc = change_citynews.86.d
+	picture = GFX_news_event_japanese_army_parade
+
+	major = yes
+
+	trigger = {
+			has_global_flag = the_world_war_tow_flag
+		528 = {
+			OR = {
+				tag = GER
+				tag = FRA
+				tag = HUN
+				tag = CHI
+			}
+		}
+		NOT = { has_global_flag = citynews_nagasaki_capture }
+	}
+
+	immediate = {
+		if = { limit = { 528 = { is_controlled_by = GER } } set_global_flag = citynews_nagasaki_captured_ger }
+		if = { limit = { 528 = { is_controlled_by = FRA } } set_global_flag = citynews_nagasaki_captured_fra }
+		if = { limit = { 528 = { is_controlled_by = HUN } } set_global_flag = citynews_nagasaki_captured_hun }
+		if = { limit = { 528 = { is_controlled_by = CHI } } set_global_flag = citynews_nagasaki_captured_chi }
+		set_global_flag = citynews_nagasaki_capture
+	}
+
+	mean_time_to_happen = {
+		days = 3
+	}
+
+	fire_only_once = yes
+
+	option = {
+		name = change_citynews.86.a
+	}
+}
+
+news_event = { #Okinawa 兵临城下
+	id = change_citynews.87
+	title = change_citynews.87.t
+	desc = change_citynews.87.d
+	picture = GFX_news_event_JAP_greater_east_asia_conference
+
+	major = yes
+
+	trigger = {
+			has_global_flag = the_world_war_tow_flag #二战爆发后才可触发
+		526 = {
+			OR = {
+				tag = JAP
+			}
+			any_neighbor_state = {
+				controller = {
+					OR = {
+						tag = GER
+						tag = FRA
+						tag = HUN
+						tag = CHI
+					}
+				}
+			}
+		}
+		NOT = { has_global_flag = citynews_okinawa_siege }
+	}
+
+	immediate = {
+		set_global_flag = citynews_okinawa_siege
+	}
+
+	mean_time_to_happen = {
+		days = 3
+	}
+
+	fire_only_once = yes
+
+	option = {
+		name = change_citynews.87.a
+	}
+}
+
+news_event = { #Okinawa 攻克（自动触发）
+	id = change_citynews.88
+	title = change_citynews.88.t
+	desc = change_citynews.88.d
+	picture = GFX_news_event_JAP_greater_east_asia_conference
+
+	major = yes
+
+	trigger = {
+			has_global_flag = the_world_war_tow_flag
+		526 = {
+			OR = {
+				tag = GER
+				tag = FRA
+				tag = HUN
+				tag = CHI
+			}
+		}
+		NOT = { has_global_flag = citynews_okinawa_capture }
+	}
+
+	immediate = {
+		if = { limit = { 526 = { is_controlled_by = GER } } set_global_flag = citynews_okinawa_captured_ger }
+		if = { limit = { 526 = { is_controlled_by = FRA } } set_global_flag = citynews_okinawa_captured_fra }
+		if = { limit = { 526 = { is_controlled_by = HUN } } set_global_flag = citynews_okinawa_captured_hun }
+		if = { limit = { 526 = { is_controlled_by = CHI } } set_global_flag = citynews_okinawa_captured_chi }
+		set_global_flag = citynews_okinawa_capture
+	}
+
+	mean_time_to_happen = {
+		days = 3
+	}
+
+	fire_only_once = yes
+
+	option = {
+		name = change_citynews.88.a
+	}
+}
+
+news_event = { #TannuTuva 兵临城下
+	id = change_citynews.89
+	title = change_citynews.89.t
+	desc = change_citynews.89.d
+	picture = GFX_news_event_chinese_soldiers_march
+
+	major = yes
+
+	trigger = {
+			has_global_flag = the_world_war_tow_flag #二战爆发后才可触发
+		329 = {
+			OR = {
+				tag = SOV
+				tag = TAN
+			}
+			any_neighbor_state = {
+				controller = {
+					OR = {
+						tag = GER
+						tag = FRA
+						tag = HUN
+						tag = CHI
+					}
+				}
+			}
+		}
+		NOT = { has_global_flag = citynews_tannutuva_siege }
+	}
+
+	immediate = {
+		set_global_flag = citynews_tannutuva_siege
+	}
+
+	mean_time_to_happen = {
+		days = 3
+	}
+
+	fire_only_once = yes
+
+	option = {
+		name = change_citynews.89.a
+	}
+}
+
+news_event = { #TannuTuva 攻克（自动触发）
+	id = change_citynews.90
+	title = change_citynews.90.t
+	desc = change_citynews.90.d
+	picture = GFX_news_event_chinese_soldiers_march
+
+	major = yes
+
+	trigger = {
+			has_global_flag = the_world_war_tow_flag
+		329 = {
+			OR = {
+				tag = GER
+				tag = FRA
+				tag = HUN
+				tag = CHI
+			}
+		}
+		NOT = { has_global_flag = citynews_tannutuva_capture }
+	}
+
+	immediate = {
+		if = { limit = { 329 = { is_controlled_by = GER } } set_global_flag = citynews_tannutuva_captured_ger }
+		if = { limit = { 329 = { is_controlled_by = FRA } } set_global_flag = citynews_tannutuva_captured_fra }
+		if = { limit = { 329 = { is_controlled_by = HUN } } set_global_flag = citynews_tannutuva_captured_hun }
+		if = { limit = { 329 = { is_controlled_by = CHI } } set_global_flag = citynews_tannutuva_captured_chi }
+		set_global_flag = citynews_tannutuva_capture
+	}
+
+	mean_time_to_happen = {
+		days = 3
+	}
+
+	fire_only_once = yes
+
+	option = {
+		name = change_citynews.90.a
+	}
+}

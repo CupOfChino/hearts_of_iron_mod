@@ -749,3 +749,26 @@ ideas = {
 	}
 
 }
+
+FIN_third_empire_neutrality = { #芬兰中立承诺（三皇开局，防止芬兰入阵营引发苏联早战）
+	picture = generic_neutrality_drift_bonus
+	allowed = {
+		always = yes
+	}
+	cancel = {
+		is_ai = no
+	}
+	on_add = {
+		set_rule = {
+			desc = FIN_third_empire_neutrality
+			can_create_factions = no
+			can_join_factions = no
+		}
+	}
+	on_remove = {
+		set_rule = {
+			can_create_factions = yes
+			can_join_factions = yes
+		}
+	}
+}

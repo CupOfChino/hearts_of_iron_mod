@@ -1,0 +1,13 @@
+#============== 炼狱空军：AI飞机总数统计 ===============
+# 每周为目标国求和各类飞机到 NIGHTMARE_air_total，供波次决策判定 4k/8k/1w/2w 上限
+NIGHTMARE_air_count_update = {
+	set_variable = { var = NIGHTMARE_air_total value = 0 }
+	add_to_variable = { var = NIGHTMARE_air_total value = num_equipment@fighter_equipment_2 }
+	add_to_variable = { var = NIGHTMARE_air_total value = num_equipment@fighter_equipment_3 }
+	add_to_variable = { var = NIGHTMARE_air_total value = num_equipment@CAS_equipment_2 }
+	add_to_variable = { var = NIGHTMARE_air_total value = num_equipment@CAS_equipment_3 }
+	add_to_variable = { var = NIGHTMARE_air_total value = num_equipment@naval_bomber_equipment_2 }
+	add_to_variable = { var = NIGHTMARE_air_total value = num_equipment@naval_bomber_equipment_3 }
+	add_to_variable = { var = NIGHTMARE_air_total value = num_equipment@strategic_bomber_equipment_2 }
+	add_to_variable = { var = NIGHTMARE_air_total value = num_equipment@strategic_bomber_equipment_3 }
+}

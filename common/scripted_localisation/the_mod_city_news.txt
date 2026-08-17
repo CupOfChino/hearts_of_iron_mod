@@ -1,0 +1,691 @@
+defined_text = { #Berlin 攻克国名
+	name = GetBerlinCapturer
+	text = {
+		trigger = { has_global_flag = citynews_berlin_captured_eng }
+		localization_key = ENG
+		trigger = { has_global_flag = citynews_berlin_captured_usa }
+		localization_key = USA
+		trigger = { has_global_flag = citynews_berlin_captured_sov }
+		localization_key = SOV
+		trigger = { has_global_flag = citynews_berlin_captured_jap }
+		localization_key = JAP
+		localization_key = CITY_CAPTURER_UNKNOWN
+	}
+}
+
+defined_text = { #Paris 攻克国名
+	name = GetParisCapturer
+	text = {
+		trigger = { has_global_flag = citynews_paris_captured_eng }
+		localization_key = ENG
+		trigger = { has_global_flag = citynews_paris_captured_usa }
+		localization_key = USA
+		trigger = { has_global_flag = citynews_paris_captured_sov }
+		localization_key = SOV
+		trigger = { has_global_flag = citynews_paris_captured_jap }
+		localization_key = JAP
+		localization_key = CITY_CAPTURER_UNKNOWN
+	}
+}
+
+defined_text = { #Vienna 攻克国名
+	name = GetViennaCapturer
+	text = {
+		trigger = { has_global_flag = citynews_vienna_captured_eng }
+		localization_key = ENG
+		trigger = { has_global_flag = citynews_vienna_captured_usa }
+		localization_key = USA
+		trigger = { has_global_flag = citynews_vienna_captured_sov }
+		localization_key = SOV
+		trigger = { has_global_flag = citynews_vienna_captured_jap }
+		localization_key = JAP
+		localization_key = CITY_CAPTURER_UNKNOWN
+	}
+}
+
+defined_text = { #London 攻克国名
+	name = GetLondonCapturer
+	text = {
+		trigger = { has_global_flag = citynews_london_captured_ger }
+		localization_key = GER
+		trigger = { has_global_flag = citynews_london_captured_fra }
+		localization_key = FRA
+		trigger = { has_global_flag = citynews_london_captured_hun }
+		localization_key = HUN
+		trigger = { has_global_flag = citynews_london_captured_chi }
+		localization_key = CHI
+		localization_key = CITY_CAPTURER_UNKNOWN
+	}
+}
+
+defined_text = { #Washington 攻克国名
+	name = GetWashingtonCapturer
+	text = {
+		trigger = { has_global_flag = citynews_washington_captured_ger }
+		localization_key = GER
+		trigger = { has_global_flag = citynews_washington_captured_fra }
+		localization_key = FRA
+		trigger = { has_global_flag = citynews_washington_captured_hun }
+		localization_key = HUN
+		trigger = { has_global_flag = citynews_washington_captured_chi }
+		localization_key = CHI
+		localization_key = CITY_CAPTURER_UNKNOWN
+	}
+}
+
+defined_text = { #Moscow 攻克国名
+	name = GetMoscowCapturer
+	text = {
+		trigger = { has_global_flag = citynews_moscow_captured_ger }
+		localization_key = GER
+		trigger = { has_global_flag = citynews_moscow_captured_fra }
+		localization_key = FRA
+		trigger = { has_global_flag = citynews_moscow_captured_hun }
+		localization_key = HUN
+		trigger = { has_global_flag = citynews_moscow_captured_chi }
+		localization_key = CHI
+		localization_key = CITY_CAPTURER_UNKNOWN
+	}
+}
+
+defined_text = { #Tokyo 攻克国名
+	name = GetTokyoCapturer
+	text = {
+		trigger = { has_global_flag = citynews_tokyo_captured_ger }
+		localization_key = GER
+		trigger = { has_global_flag = citynews_tokyo_captured_fra }
+		localization_key = FRA
+		trigger = { has_global_flag = citynews_tokyo_captured_hun }
+		localization_key = HUN
+		trigger = { has_global_flag = citynews_tokyo_captured_chi }
+		localization_key = CHI
+		localization_key = CITY_CAPTURER_UNKNOWN
+	}
+}
+
+defined_text = { #Nanjing 攻克国名
+	name = GetNanjingCapturer
+	text = {
+		trigger = { has_global_flag = citynews_nanjing_captured_eng }
+		localization_key = ENG
+		trigger = { has_global_flag = citynews_nanjing_captured_usa }
+		localization_key = USA
+		trigger = { has_global_flag = citynews_nanjing_captured_sov }
+		localization_key = SOV
+		trigger = { has_global_flag = citynews_nanjing_captured_jap }
+		localization_key = JAP
+		localization_key = CITY_CAPTURER_UNKNOWN
+	}
+}
+
+defined_text = { #EastPrussia 攻克国名
+	name = GetEastPrussiaCapturer
+	text = {
+		trigger = { has_global_flag = citynews_eastprussia_captured_eng }
+		localization_key = ENG
+		trigger = { has_global_flag = citynews_eastprussia_captured_usa }
+		localization_key = USA
+		trigger = { has_global_flag = citynews_eastprussia_captured_sov }
+		localization_key = SOV
+		trigger = { has_global_flag = citynews_eastprussia_captured_jap }
+		localization_key = JAP
+		localization_key = CITY_CAPTURER_UNKNOWN
+	}
+}
+
+defined_text = { #Normandy 攻克国名
+	name = GetNormandyCapturer
+	text = {
+		trigger = { has_global_flag = citynews_normandy_captured_eng }
+		localization_key = ENG
+		trigger = { has_global_flag = citynews_normandy_captured_usa }
+		localization_key = USA
+		trigger = { has_global_flag = citynews_normandy_captured_sov }
+		localization_key = SOV
+		trigger = { has_global_flag = citynews_normandy_captured_jap }
+		localization_key = JAP
+		localization_key = CITY_CAPTURER_UNKNOWN
+	}
+}
+
+defined_text = { #Rome 攻克国名
+	name = GetRomeCapturer
+	text = {
+		trigger = { has_global_flag = citynews_rome_captured_eng }
+		localization_key = ENG
+		trigger = { has_global_flag = citynews_rome_captured_usa }
+		localization_key = USA
+		trigger = { has_global_flag = citynews_rome_captured_sov }
+		localization_key = SOV
+		trigger = { has_global_flag = citynews_rome_captured_jap }
+		localization_key = JAP
+		localization_key = CITY_CAPTURER_UNKNOWN
+	}
+}
+
+defined_text = { #Istanbul 攻克国名
+	name = GetIstanbulCapturer
+	text = {
+		trigger = { has_global_flag = citynews_istanbul_captured_ger }
+		localization_key = GER
+		trigger = { has_global_flag = citynews_istanbul_captured_fra }
+		localization_key = FRA
+		trigger = { has_global_flag = citynews_istanbul_captured_hun }
+		localization_key = HUN
+		trigger = { has_global_flag = citynews_istanbul_captured_chi }
+		localization_key = CHI
+		localization_key = CITY_CAPTURER_UNKNOWN
+	}
+}
+
+defined_text = { #Athens 攻克国名
+	name = GetAthensCapturer
+	text = {
+		trigger = { has_global_flag = citynews_athens_captured_ger }
+		localization_key = GER
+		trigger = { has_global_flag = citynews_athens_captured_fra }
+		localization_key = FRA
+		trigger = { has_global_flag = citynews_athens_captured_hun }
+		localization_key = HUN
+		trigger = { has_global_flag = citynews_athens_captured_chi }
+		localization_key = CHI
+		localization_key = CITY_CAPTURER_UNKNOWN
+	}
+}
+
+defined_text = { #Sofia 攻克国名
+	name = GetSofiaCapturer
+	text = {
+		trigger = { has_global_flag = citynews_sofia_captured_eng }
+		localization_key = ENG
+		trigger = { has_global_flag = citynews_sofia_captured_usa }
+		localization_key = USA
+		trigger = { has_global_flag = citynews_sofia_captured_sov }
+		localization_key = SOV
+		trigger = { has_global_flag = citynews_sofia_captured_jap }
+		localization_key = JAP
+		localization_key = CITY_CAPTURER_UNKNOWN
+	}
+}
+
+defined_text = { #Warsaw 攻克国名
+	name = GetWarsawCapturer
+	text = {
+		trigger = { has_global_flag = citynews_warsaw_captured_eng }
+		localization_key = ENG
+		trigger = { has_global_flag = citynews_warsaw_captured_usa }
+		localization_key = USA
+		trigger = { has_global_flag = citynews_warsaw_captured_sov }
+		localization_key = SOV
+		trigger = { has_global_flag = citynews_warsaw_captured_jap }
+		localization_key = JAP
+		localization_key = CITY_CAPTURER_UNKNOWN
+	}
+}
+
+defined_text = { #Oslo 攻克国名
+	name = GetOsloCapturer
+	text = {
+		trigger = { has_global_flag = citynews_oslo_captured_ger }
+		localization_key = GER
+		trigger = { has_global_flag = citynews_oslo_captured_fra }
+		localization_key = FRA
+		trigger = { has_global_flag = citynews_oslo_captured_hun }
+		localization_key = HUN
+		trigger = { has_global_flag = citynews_oslo_captured_chi }
+		localization_key = CHI
+		trigger = { has_global_flag = citynews_oslo_captured_eng }
+		localization_key = ENG
+		trigger = { has_global_flag = citynews_oslo_captured_usa }
+		localization_key = USA
+		trigger = { has_global_flag = citynews_oslo_captured_sov }
+		localization_key = SOV
+		trigger = { has_global_flag = citynews_oslo_captured_jap }
+		localization_key = JAP
+		localization_key = CITY_CAPTURER_UNKNOWN
+	}
+}
+
+defined_text = { #Stockholm 攻克国名
+	name = GetStockholmCapturer
+	text = {
+		trigger = { has_global_flag = citynews_stockholm_captured_ger }
+		localization_key = GER
+		trigger = { has_global_flag = citynews_stockholm_captured_fra }
+		localization_key = FRA
+		trigger = { has_global_flag = citynews_stockholm_captured_hun }
+		localization_key = HUN
+		trigger = { has_global_flag = citynews_stockholm_captured_chi }
+		localization_key = CHI
+		trigger = { has_global_flag = citynews_stockholm_captured_eng }
+		localization_key = ENG
+		trigger = { has_global_flag = citynews_stockholm_captured_usa }
+		localization_key = USA
+		trigger = { has_global_flag = citynews_stockholm_captured_sov }
+		localization_key = SOV
+		trigger = { has_global_flag = citynews_stockholm_captured_jap }
+		localization_key = JAP
+		localization_key = CITY_CAPTURER_UNKNOWN
+	}
+}
+
+defined_text = { #NorthGermany 攻克国名
+	name = GetNorthGermanyCapturer
+	text = {
+		trigger = { has_global_flag = citynews_northgermany_captured_eng }
+		localization_key = ENG
+		trigger = { has_global_flag = citynews_northgermany_captured_usa }
+		localization_key = USA
+		trigger = { has_global_flag = citynews_northgermany_captured_sov }
+		localization_key = SOV
+		trigger = { has_global_flag = citynews_northgermany_captured_jap }
+		localization_key = JAP
+		localization_key = CITY_CAPTURER_UNKNOWN
+	}
+}
+
+defined_text = { #Ulaanbaatar 攻克国名
+	name = GetUlaanbaatarCapturer
+	text = {
+		trigger = { has_global_flag = citynews_ulaanbaatar_captured_ger }
+		localization_key = GER
+		trigger = { has_global_flag = citynews_ulaanbaatar_captured_fra }
+		localization_key = FRA
+		trigger = { has_global_flag = citynews_ulaanbaatar_captured_hun }
+		localization_key = HUN
+		trigger = { has_global_flag = citynews_ulaanbaatar_captured_chi }
+		localization_key = CHI
+		localization_key = CITY_CAPTURER_UNKNOWN
+	}
+}
+
+defined_text = { #Baku 攻克国名
+	name = GetBakuCapturer
+	text = {
+		trigger = { has_global_flag = citynews_baku_captured_ger }
+		localization_key = GER
+		trigger = { has_global_flag = citynews_baku_captured_fra }
+		localization_key = FRA
+		trigger = { has_global_flag = citynews_baku_captured_hun }
+		localization_key = HUN
+		trigger = { has_global_flag = citynews_baku_captured_chi }
+		localization_key = CHI
+		localization_key = CITY_CAPTURER_UNKNOWN
+	}
+}
+
+defined_text = { #Delhi 攻克国名
+	name = GetDelhiCapturer
+	text = {
+		trigger = { has_global_flag = citynews_delhi_captured_ger }
+		localization_key = GER
+		trigger = { has_global_flag = citynews_delhi_captured_fra }
+		localization_key = FRA
+		trigger = { has_global_flag = citynews_delhi_captured_hun }
+		localization_key = HUN
+		trigger = { has_global_flag = citynews_delhi_captured_chi }
+		localization_key = CHI
+		localization_key = CITY_CAPTURER_UNKNOWN
+	}
+}
+
+defined_text = { #Bangkok 攻克国名
+	name = GetBangkokCapturer
+	text = {
+		trigger = { has_global_flag = citynews_bangkok_captured_ger }
+		localization_key = GER
+		trigger = { has_global_flag = citynews_bangkok_captured_fra }
+		localization_key = FRA
+		trigger = { has_global_flag = citynews_bangkok_captured_hun }
+		localization_key = HUN
+		trigger = { has_global_flag = citynews_bangkok_captured_chi }
+		localization_key = CHI
+		localization_key = CITY_CAPTURER_UNKNOWN
+	}
+}
+
+defined_text = { #Rangoon 攻克国名
+	name = GetRangoonCapturer
+	text = {
+		trigger = { has_global_flag = citynews_rangoon_captured_ger }
+		localization_key = GER
+		trigger = { has_global_flag = citynews_rangoon_captured_fra }
+		localization_key = FRA
+		trigger = { has_global_flag = citynews_rangoon_captured_hun }
+		localization_key = HUN
+		trigger = { has_global_flag = citynews_rangoon_captured_chi }
+		localization_key = CHI
+		localization_key = CITY_CAPTURER_UNKNOWN
+	}
+}
+
+defined_text = { #Canberra 攻克国名
+	name = GetCanberraCapturer
+	text = {
+		trigger = { has_global_flag = citynews_canberra_captured_ger }
+		localization_key = GER
+		trigger = { has_global_flag = citynews_canberra_captured_fra }
+		localization_key = FRA
+		trigger = { has_global_flag = citynews_canberra_captured_hun }
+		localization_key = HUN
+		trigger = { has_global_flag = citynews_canberra_captured_chi }
+		localization_key = CHI
+		localization_key = CITY_CAPTURER_UNKNOWN
+	}
+}
+
+defined_text = { #Ural 攻克国名
+	name = GetUralCapturer
+	text = {
+		trigger = { has_global_flag = citynews_ural_captured_ger }
+		localization_key = GER
+		trigger = { has_global_flag = citynews_ural_captured_fra }
+		localization_key = FRA
+		trigger = { has_global_flag = citynews_ural_captured_hun }
+		localization_key = HUN
+		trigger = { has_global_flag = citynews_ural_captured_chi }
+		localization_key = CHI
+		localization_key = CITY_CAPTURER_UNKNOWN
+	}
+}
+
+defined_text = { #Tashkent 攻克国名
+	name = GetTashkentCapturer
+	text = {
+		trigger = { has_global_flag = citynews_tashkent_captured_ger }
+		localization_key = GER
+		trigger = { has_global_flag = citynews_tashkent_captured_fra }
+		localization_key = FRA
+		trigger = { has_global_flag = citynews_tashkent_captured_hun }
+		localization_key = HUN
+		trigger = { has_global_flag = citynews_tashkent_captured_chi }
+		localization_key = CHI
+		localization_key = CITY_CAPTURER_UNKNOWN
+	}
+}
+
+defined_text = { #Kabul 攻克国名
+	name = GetKabulCapturer
+	text = {
+		trigger = { has_global_flag = citynews_kabul_captured_ger }
+		localization_key = GER
+		trigger = { has_global_flag = citynews_kabul_captured_fra }
+		localization_key = FRA
+		trigger = { has_global_flag = citynews_kabul_captured_hun }
+		localization_key = HUN
+		trigger = { has_global_flag = citynews_kabul_captured_chi }
+		localization_key = CHI
+		localization_key = CITY_CAPTURER_UNKNOWN
+	}
+}
+
+defined_text = { #Tehran 攻克国名
+	name = GetTehranCapturer
+	text = {
+		trigger = { has_global_flag = citynews_tehran_captured_eng }
+		localization_key = ENG
+		trigger = { has_global_flag = citynews_tehran_captured_usa }
+		localization_key = USA
+		trigger = { has_global_flag = citynews_tehran_captured_sov }
+		localization_key = SOV
+		trigger = { has_global_flag = citynews_tehran_captured_jap }
+		localization_key = JAP
+		localization_key = CITY_CAPTURER_UNKNOWN
+	}
+}
+
+defined_text = { #Baghdad 攻克国名
+	name = GetBaghdadCapturer
+	text = {
+		trigger = { has_global_flag = citynews_baghdad_captured_eng }
+		localization_key = ENG
+		trigger = { has_global_flag = citynews_baghdad_captured_usa }
+		localization_key = USA
+		trigger = { has_global_flag = citynews_baghdad_captured_sov }
+		localization_key = SOV
+		trigger = { has_global_flag = citynews_baghdad_captured_jap }
+		localization_key = JAP
+		localization_key = CITY_CAPTURER_UNKNOWN
+	}
+}
+
+defined_text = { #Cairo 攻克国名
+	name = GetCairoCapturer
+	text = {
+		trigger = { has_global_flag = citynews_cairo_captured_ger }
+		localization_key = GER
+		trigger = { has_global_flag = citynews_cairo_captured_fra }
+		localization_key = FRA
+		trigger = { has_global_flag = citynews_cairo_captured_hun }
+		localization_key = HUN
+		trigger = { has_global_flag = citynews_cairo_captured_chi }
+		localization_key = CHI
+		localization_key = CITY_CAPTURER_UNKNOWN
+	}
+}
+
+defined_text = { #LosAngeles 攻克国名
+	name = GetLosAngelesCapturer
+	text = {
+		trigger = { has_global_flag = citynews_losangeles_captured_ger }
+		localization_key = GER
+		trigger = { has_global_flag = citynews_losangeles_captured_fra }
+		localization_key = FRA
+		trigger = { has_global_flag = citynews_losangeles_captured_hun }
+		localization_key = HUN
+		trigger = { has_global_flag = citynews_losangeles_captured_chi }
+		localization_key = CHI
+		localization_key = CITY_CAPTURER_UNKNOWN
+	}
+}
+
+defined_text = { #MexicoCity 攻克国名
+	name = GetMexicoCityCapturer
+	text = {
+		trigger = { has_global_flag = citynews_mexicocity_captured_ger }
+		localization_key = GER
+		trigger = { has_global_flag = citynews_mexicocity_captured_fra }
+		localization_key = FRA
+		trigger = { has_global_flag = citynews_mexicocity_captured_hun }
+		localization_key = HUN
+		trigger = { has_global_flag = citynews_mexicocity_captured_chi }
+		localization_key = CHI
+		localization_key = CITY_CAPTURER_UNKNOWN
+	}
+}
+
+defined_text = { #Rio 攻克国名
+	name = GetRioCapturer
+	text = {
+		trigger = { has_global_flag = citynews_rio_captured_ger }
+		localization_key = GER
+		trigger = { has_global_flag = citynews_rio_captured_fra }
+		localization_key = FRA
+		trigger = { has_global_flag = citynews_rio_captured_hun }
+		localization_key = HUN
+		trigger = { has_global_flag = citynews_rio_captured_chi }
+		localization_key = CHI
+		localization_key = CITY_CAPTURER_UNKNOWN
+	}
+}
+
+defined_text = { #Caracas 攻克国名
+	name = GetCaracasCapturer
+	text = {
+		trigger = { has_global_flag = citynews_caracas_captured_ger }
+		localization_key = GER
+		trigger = { has_global_flag = citynews_caracas_captured_fra }
+		localization_key = FRA
+		trigger = { has_global_flag = citynews_caracas_captured_hun }
+		localization_key = HUN
+		trigger = { has_global_flag = citynews_caracas_captured_chi }
+		localization_key = CHI
+		localization_key = CITY_CAPTURER_UNKNOWN
+	}
+}
+
+defined_text = { #BuenosAires 攻克国名
+	name = GetBuenosAiresCapturer
+	text = {
+		trigger = { has_global_flag = citynews_buenosaires_captured_eng }
+		localization_key = ENG
+		trigger = { has_global_flag = citynews_buenosaires_captured_usa }
+		localization_key = USA
+		trigger = { has_global_flag = citynews_buenosaires_captured_sov }
+		localization_key = SOV
+		trigger = { has_global_flag = citynews_buenosaires_captured_jap }
+		localization_key = JAP
+		localization_key = CITY_CAPTURER_UNKNOWN
+	}
+}
+
+defined_text = { #Beijing 攻克国名
+	name = GetBeijingCapturer
+	text = {
+		trigger = { has_global_flag = citynews_beijing_captured_eng }
+		localization_key = ENG
+		trigger = { has_global_flag = citynews_beijing_captured_usa }
+		localization_key = USA
+		trigger = { has_global_flag = citynews_beijing_captured_sov }
+		localization_key = SOV
+		trigger = { has_global_flag = citynews_beijing_captured_jap }
+		localization_key = JAP
+		localization_key = CITY_CAPTURER_UNKNOWN
+	}
+}
+
+defined_text = { #Shanghai 攻克国名
+	name = GetShanghaiCapturer
+	text = {
+		trigger = { has_global_flag = citynews_shanghai_captured_eng }
+		localization_key = ENG
+		trigger = { has_global_flag = citynews_shanghai_captured_usa }
+		localization_key = USA
+		trigger = { has_global_flag = citynews_shanghai_captured_sov }
+		localization_key = SOV
+		trigger = { has_global_flag = citynews_shanghai_captured_jap }
+		localization_key = JAP
+		localization_key = CITY_CAPTURER_UNKNOWN
+	}
+}
+
+defined_text = { #Taiwan 攻克国名
+	name = GetTaiwanCapturer
+	text = {
+		trigger = { has_global_flag = citynews_taiwan_captured_eng }
+		localization_key = ENG
+		trigger = { has_global_flag = citynews_taiwan_captured_usa }
+		localization_key = USA
+		trigger = { has_global_flag = citynews_taiwan_captured_sov }
+		localization_key = SOV
+		trigger = { has_global_flag = citynews_taiwan_captured_jap }
+		localization_key = JAP
+		localization_key = CITY_CAPTURER_UNKNOWN
+	}
+}
+
+defined_text = { #Shanxi 攻克国名
+	name = GetShanxiCapturer
+	text = {
+		trigger = { has_global_flag = citynews_shanxi_captured_eng }
+		localization_key = ENG
+		trigger = { has_global_flag = citynews_shanxi_captured_usa }
+		localization_key = USA
+		trigger = { has_global_flag = citynews_shanxi_captured_sov }
+		localization_key = SOV
+		trigger = { has_global_flag = citynews_shanxi_captured_jap }
+		localization_key = JAP
+		localization_key = CITY_CAPTURER_UNKNOWN
+	}
+}
+
+defined_text = { #Sichuan 攻克国名
+	name = GetSichuanCapturer
+	text = {
+		trigger = { has_global_flag = citynews_sichuan_captured_eng }
+		localization_key = ENG
+		trigger = { has_global_flag = citynews_sichuan_captured_usa }
+		localization_key = USA
+		trigger = { has_global_flag = citynews_sichuan_captured_sov }
+		localization_key = SOV
+		trigger = { has_global_flag = citynews_sichuan_captured_jap }
+		localization_key = JAP
+		localization_key = CITY_CAPTURER_UNKNOWN
+	}
+}
+
+defined_text = { #Tibet 攻克国名
+	name = GetTibetCapturer
+	text = {
+		trigger = { has_global_flag = citynews_tibet_captured_eng }
+		localization_key = ENG
+		trigger = { has_global_flag = citynews_tibet_captured_usa }
+		localization_key = USA
+		trigger = { has_global_flag = citynews_tibet_captured_sov }
+		localization_key = SOV
+		trigger = { has_global_flag = citynews_tibet_captured_jap }
+		localization_key = JAP
+		localization_key = CITY_CAPTURER_UNKNOWN
+	}
+}
+
+defined_text = { #Xinjiang 攻克国名
+	name = GetXinjiangCapturer
+	text = {
+		trigger = { has_global_flag = citynews_xinjiang_captured_eng }
+		localization_key = ENG
+		trigger = { has_global_flag = citynews_xinjiang_captured_usa }
+		localization_key = USA
+		trigger = { has_global_flag = citynews_xinjiang_captured_sov }
+		localization_key = SOV
+		trigger = { has_global_flag = citynews_xinjiang_captured_jap }
+		localization_key = JAP
+		localization_key = CITY_CAPTURER_UNKNOWN
+	}
+}
+
+defined_text = { #Nagasaki 攻克国名
+	name = GetNagasakiCapturer
+	text = {
+		trigger = { has_global_flag = citynews_nagasaki_captured_ger }
+		localization_key = GER
+		trigger = { has_global_flag = citynews_nagasaki_captured_fra }
+		localization_key = FRA
+		trigger = { has_global_flag = citynews_nagasaki_captured_hun }
+		localization_key = HUN
+		trigger = { has_global_flag = citynews_nagasaki_captured_chi }
+		localization_key = CHI
+		localization_key = CITY_CAPTURER_UNKNOWN
+	}
+}
+
+defined_text = { #Okinawa 攻克国名
+	name = GetOkinawaCapturer
+	text = {
+		trigger = { has_global_flag = citynews_okinawa_captured_ger }
+		localization_key = GER
+		trigger = { has_global_flag = citynews_okinawa_captured_fra }
+		localization_key = FRA
+		trigger = { has_global_flag = citynews_okinawa_captured_hun }
+		localization_key = HUN
+		trigger = { has_global_flag = citynews_okinawa_captured_chi }
+		localization_key = CHI
+		localization_key = CITY_CAPTURER_UNKNOWN
+	}
+}
+
+defined_text = { #TannuTuva 攻克国名
+	name = GetTannuTuvaCapturer
+	text = {
+		trigger = { has_global_flag = citynews_tannutuva_captured_ger }
+		localization_key = GER
+		trigger = { has_global_flag = citynews_tannutuva_captured_fra }
+		localization_key = FRA
+		trigger = { has_global_flag = citynews_tannutuva_captured_hun }
+		localization_key = HUN
+		trigger = { has_global_flag = citynews_tannutuva_captured_chi }
+		localization_key = CHI
+		localization_key = CITY_CAPTURER_UNKNOWN
+	}
+}
+

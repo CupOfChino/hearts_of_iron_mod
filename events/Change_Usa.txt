@@ -783,18 +783,18 @@ country_event = { #大萧条影响下降
 			remove_ideas = great_depression_3
 
 			#美国工业（德国式数值展示：清零后按目标阶段写入，tooltip 直接显示修正数值）
-			add_to_variable = { production_speed_industrial_complex_factor = 0.10 tooltip = production_speed_industrial_complex_factor_tt }
-			add_to_variable = { production_speed_arms_factory_factor = 0.10 tooltip = production_speed_arms_factory_factor_tt }
-			add_to_variable = { production_speed_infrastructure_factor = 0.10 tooltip = production_speed_infrastructure_factor_tt }
-			add_to_variable = { production_speed_rail_way_factor = 0.10 tooltip = production_speed_rail_way_factor_tt }
-			add_to_variable = { industrial_capacity_factory = 0.08 tooltip = industrial_capacity_factory_tt }
-			add_to_variable = { industrial_capacity_dockyard = 0.05 tooltip = industrial_capacity_dockyard_tt }
-			add_to_variable = { production_factory_efficiency_gain_factor = 0.10 tooltip = production_factory_efficiency_gain_factor_tt }
-			add_to_variable = { production_factory_max_efficiency_factor = 0.05 tooltip = production_factory_max_efficiency_factor_tt }
-			add_to_variable = { production_factory_start_efficiency_factor = 0.05 tooltip = production_factory_start_efficiency_factor_tt }
-			add_to_variable = { line_change_production_efficiency_factor = 0.05 tooltip = line_change_production_efficiency_factor_tt }
-			add_to_variable = { local_resources_factor = 0.05 tooltip = local_resources_factor_tt }
-			add_to_variable = { production_lack_of_resource_penalty_factor = -0.05 tooltip = production_lack_of_resource_penalty_factor_tt }
+			add_to_variable = { USA_american_industry_production_speed_industrial_complex_factor = 0.10 tooltip = production_speed_industrial_complex_factor_tt }
+			add_to_variable = { USA_american_industry_production_speed_arms_factory_factor = 0.10 tooltip = production_speed_arms_factory_factor_tt }
+			add_to_variable = { USA_american_industry_production_speed_infrastructure_factor = 0.10 tooltip = production_speed_infrastructure_factor_tt }
+			add_to_variable = { USA_american_industry_production_speed_rail_way_factor = 0.10 tooltip = production_speed_rail_way_factor_tt }
+			add_to_variable = { USA_american_industry_industrial_capacity_factory = 0.05 tooltip = industrial_capacity_factory_tt }
+			add_to_variable = { USA_american_industry_industrial_capacity_dockyard = 0.05 tooltip = industrial_capacity_dockyard_tt }
+			add_to_variable = { USA_american_industry_production_factory_efficiency_gain_factor = 0.10 tooltip = production_factory_efficiency_gain_factor_tt }
+			add_to_variable = { USA_american_industry_production_factory_max_efficiency_factor = 0.05 tooltip = production_factory_max_efficiency_factor_tt }
+			add_to_variable = { USA_american_industry_production_factory_start_efficiency_factor = 0.05 tooltip = production_factory_start_efficiency_factor_tt }
+			add_to_variable = { USA_american_industry_line_change_production_efficiency_factor = 0.05 tooltip = line_change_production_efficiency_factor_tt }
+			add_to_variable = { USA_american_industry_local_resources_factor = 0.05 tooltip = local_resources_factor_tt }
+			add_to_variable = { USA_american_industry_production_lack_of_resource_penalty_factor = -0.05 tooltip = production_lack_of_resource_penalty_factor_tt }
 		}
 		else_if = {
 			limit = { has_idea = great_depression_2 }
@@ -804,18 +804,18 @@ country_event = { #大萧条影响下降
 			}
 
 			#美国工业（德国式数值展示：清零后按目标阶段写入，tooltip 直接显示修正数值）
-			add_to_variable = { production_speed_industrial_complex_factor = 0.05 tooltip = production_speed_industrial_complex_factor_tt }
-			add_to_variable = { production_speed_arms_factory_factor = 0.05 tooltip = production_speed_arms_factory_factor_tt }
-			add_to_variable = { production_speed_infrastructure_factor = 0.05 tooltip = production_speed_infrastructure_factor_tt }
-			add_to_variable = { production_speed_rail_way_factor = 0.05 tooltip = production_speed_rail_way_factor_tt }
-			add_to_variable = { industrial_capacity_factory = 0.05 tooltip = industrial_capacity_factory_tt }
-			add_to_variable = { industrial_capacity_dockyard = 0.05 tooltip = industrial_capacity_dockyard_tt }
-			add_to_variable = { production_factory_efficiency_gain_factor = 0.05 tooltip = production_factory_efficiency_gain_factor_tt }
-			add_to_variable = { production_factory_max_efficiency_factor = 0.05 tooltip = production_factory_max_efficiency_factor_tt }
-			add_to_variable = { production_factory_start_efficiency_factor = 0.05 tooltip = production_factory_start_efficiency_factor_tt }
-			add_to_variable = { line_change_production_efficiency_factor = 0.05 tooltip = line_change_production_efficiency_factor_tt }
-			add_to_variable = { local_resources_factor = 0.05 tooltip = local_resources_factor_tt }
-			add_to_variable = { production_lack_of_resource_penalty_factor = -0.05 tooltip = production_lack_of_resource_penalty_factor_tt }
+			add_to_variable = { USA_american_industry_production_speed_industrial_complex_factor = 0.05 tooltip = production_speed_industrial_complex_factor_tt }
+			add_to_variable = { USA_american_industry_production_speed_arms_factory_factor = 0.05 tooltip = production_speed_arms_factory_factor_tt }
+			add_to_variable = { USA_american_industry_production_speed_infrastructure_factor = 0.05 tooltip = production_speed_infrastructure_factor_tt }
+			add_to_variable = { USA_american_industry_production_speed_rail_way_factor = 0.05 tooltip = production_speed_rail_way_factor_tt }
+			add_to_variable = { USA_american_industry_industrial_capacity_factory = 0.05 tooltip = industrial_capacity_factory_tt }
+			add_to_variable = { USA_american_industry_industrial_capacity_dockyard = 0.05 tooltip = industrial_capacity_dockyard_tt }
+			add_to_variable = { USA_american_industry_production_factory_efficiency_gain_factor = 0.05 tooltip = production_factory_efficiency_gain_factor_tt }
+			add_to_variable = { USA_american_industry_production_factory_max_efficiency_factor = 0.05 tooltip = production_factory_max_efficiency_factor_tt }
+			add_to_variable = { USA_american_industry_production_factory_start_efficiency_factor = 0.05 tooltip = production_factory_start_efficiency_factor_tt }
+			add_to_variable = { USA_american_industry_line_change_production_efficiency_factor = 0.05 tooltip = line_change_production_efficiency_factor_tt }
+			add_to_variable = { USA_american_industry_local_resources_factor = 0.05 tooltip = local_resources_factor_tt }
+			add_to_variable = { USA_american_industry_production_lack_of_resource_penalty_factor = -0.05 tooltip = production_lack_of_resource_penalty_factor_tt }
 		}
 		else_if = {
 			limit = { has_idea = great_depression }
@@ -825,18 +825,18 @@ country_event = { #大萧条影响下降
 			}
 
 			#美国工业（德国式数值展示：清零后按目标阶段写入，tooltip 直接显示修正数值）
-			add_to_variable = { production_speed_industrial_complex_factor = 0.075 tooltip = production_speed_industrial_complex_factor_tt }
-			add_to_variable = { production_speed_arms_factory_factor = 0.075 tooltip = production_speed_arms_factory_factor_tt }
-			add_to_variable = { production_speed_infrastructure_factor = 0.075 tooltip = production_speed_infrastructure_factor_tt }
-			add_to_variable = { production_speed_rail_way_factor = 0.075 tooltip = production_speed_rail_way_factor_tt }
-			add_to_variable = { industrial_capacity_factory = 0.075 tooltip = industrial_capacity_factory_tt }
-			add_to_variable = { industrial_capacity_dockyard = 0.075 tooltip = industrial_capacity_dockyard_tt }
-			add_to_variable = { production_factory_efficiency_gain_factor = 0.075 tooltip = production_factory_efficiency_gain_factor_tt }
-			add_to_variable = { production_factory_max_efficiency_factor = 0.075 tooltip = production_factory_max_efficiency_factor_tt }
-			add_to_variable = { production_factory_start_efficiency_factor = 0.075 tooltip = production_factory_start_efficiency_factor_tt }
-			add_to_variable = { line_change_production_efficiency_factor = 0.075 tooltip = line_change_production_efficiency_factor_tt }
-			add_to_variable = { local_resources_factor = 0.075 tooltip = local_resources_factor_tt }
-			add_to_variable = { production_lack_of_resource_penalty_factor = -0.075 tooltip = production_lack_of_resource_penalty_factor_tt }
+			add_to_variable = { USA_american_industry_production_speed_industrial_complex_factor = 0.075 tooltip = production_speed_industrial_complex_factor_tt }
+			add_to_variable = { USA_american_industry_production_speed_arms_factory_factor = 0.075 tooltip = production_speed_arms_factory_factor_tt }
+			add_to_variable = { USA_american_industry_production_speed_infrastructure_factor = 0.075 tooltip = production_speed_infrastructure_factor_tt }
+			add_to_variable = { USA_american_industry_production_speed_rail_way_factor = 0.075 tooltip = production_speed_rail_way_factor_tt }
+			add_to_variable = { USA_american_industry_industrial_capacity_factory = 0.075 tooltip = industrial_capacity_factory_tt }
+			add_to_variable = { USA_american_industry_industrial_capacity_dockyard = 0.075 tooltip = industrial_capacity_dockyard_tt }
+			add_to_variable = { USA_american_industry_production_factory_efficiency_gain_factor = 0.075 tooltip = production_factory_efficiency_gain_factor_tt }
+			add_to_variable = { USA_american_industry_production_factory_max_efficiency_factor = 0.075 tooltip = production_factory_max_efficiency_factor_tt }
+			add_to_variable = { USA_american_industry_production_factory_start_efficiency_factor = 0.075 tooltip = production_factory_start_efficiency_factor_tt }
+			add_to_variable = { USA_american_industry_line_change_production_efficiency_factor = 0.075 tooltip = line_change_production_efficiency_factor_tt }
+			add_to_variable = { USA_american_industry_local_resources_factor = 0.075 tooltip = local_resources_factor_tt }
+			add_to_variable = { USA_american_industry_production_lack_of_resource_penalty_factor = -0.075 tooltip = production_lack_of_resource_penalty_factor_tt }
 		}
 	}
 }
@@ -850,6 +850,15 @@ country_event = { #大萧条危机结束
 
 	is_triggered_only = yes
 
+	fire_only_once = yes
+
+	immediate = {
+		USA = {
+			set_country_flag = the_end_daxiaotiao_flag
+		}
+		
+	}
+
 	option = { #终于熬过去了
 		name = change_usa.21.a
 		ai_chance = {
@@ -859,19 +868,8 @@ country_event = { #大萧条危机结束
 		add_political_power = 100
 		add_war_support = 0.05
 
-		#美国工业（德国式数值展示：清零后按目标阶段写入，tooltip 直接显示修正数值）
-		set_variable = { var = USA_american_industry_production_speed_industrial_complex_factor value = 0 }
-		set_variable = { var = USA_american_industry_production_speed_arms_factory_factor value = 0 }
-		set_variable = { var = USA_american_industry_production_speed_infrastructure_factor value = 0 }
-		set_variable = { var = USA_american_industry_production_speed_rail_way_factor value = 0 }
-		set_variable = { var = USA_american_industry_industrial_capacity_factory value = 0 }
-		set_variable = { var = USA_american_industry_industrial_capacity_dockyard value = 0 }
-		set_variable = { var = USA_american_industry_production_factory_efficiency_gain_factor value = 0 }
-		set_variable = { var = USA_american_industry_production_factory_max_efficiency_factor value = 0 }
-		set_variable = { var = USA_american_industry_production_factory_start_efficiency_factor value = 0 }
-		set_variable = { var = USA_american_industry_line_change_production_efficiency_factor value = 0 }
-		set_variable = { var = USA_american_industry_local_resources_factor value = 0 }
-		set_variable = { var = USA_american_industry_production_lack_of_resource_penalty_factor value = 0 }
+		#美国工业（tooltip 直接显示修正数值）
+		
 		add_to_variable = { production_speed_industrial_complex_factor = 0.10 tooltip = production_speed_industrial_complex_factor_tt }
 		add_to_variable = { production_speed_arms_factory_factor = 0.10 tooltip = production_speed_arms_factory_factor_tt }
 		add_to_variable = { production_speed_infrastructure_factor = 0.10 tooltip = production_speed_infrastructure_factor_tt }
@@ -934,7 +932,7 @@ country_event = { #公共项目建设完毕
 				instant_build = yes
 			}
 		}
-		add_days_mission_timeout = { mission = USA_gd_deterrent_mission days = -30 }
+		add_days_mission_timeout = { mission = USA_gd_deterrent_mission days = -5 }
 	}
 }
 

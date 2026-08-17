@@ -99,7 +99,7 @@ USA_great_depression_categories = {
 
 		fire_only_once = no
 
-		cost = 15
+		cost = 30
 
 		complete_effect = {
 			custom_effect_tooltip = USA_gd_work_relief_effect_tt
@@ -134,7 +134,7 @@ USA_great_depression_categories = {
 
 		icon = generic_construction
 
-		days_mission_timeout = 30
+		days_mission_timeout = 60
 
 		is_good = yes
 
@@ -347,6 +347,7 @@ USA_great_depression_categories = {
 
 		available = {
 			has_country_flag = USA_new_deal_underway_flag
+			num_of_civilian_factories_available_for_projects > 14
 		}
 
 		icon = generic_construction
@@ -354,7 +355,7 @@ USA_great_depression_categories = {
 		fire_only_once = yes
 
 		cost = 50
-		days_remove = 180
+		days_remove = 365
 
 		modifier = {
 			civilian_factory_use = 15
@@ -385,6 +386,7 @@ USA_great_depression_categories = {
 
 		available = {
 			has_country_flag = USA_new_deal_underway_flag
+			num_of_civilian_factories_available_for_projects > 14
 		}
 
 		icon = generic_construction
@@ -392,7 +394,7 @@ USA_great_depression_categories = {
 		fire_only_once = yes
 
 		cost = 50
-		days_remove = 180
+		days_remove = 365
 
 		modifier = {
 			civilian_factory_use = 15

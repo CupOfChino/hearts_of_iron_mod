@@ -1,6 +1,19 @@
 on_actions = {
     on_startup = {
         effect = {
+            #炼狱空军：开局弹事件让玩家选择模式（兵海/高质量/不变）
+            every_country = {
+                limit = {
+                    is_ai = no
+                    OR = {
+                        has_game_rule = { rule = The_Purgatory_game_rule option = The_Purgatory_game_rule_air_open }
+                        has_game_rule = { rule = The_Purgatory_game_rule option = The_Purgatory_game_rule_all_open }
+                    }
+                    NOT = { has_global_flag = NIGHTMARE_air_mode_swarm }
+                    NOT = { has_global_flag = NIGHTMARE_air_mode_quality }
+                }
+                country_event = { id = change_nightmare.1 days = 1 }
+            }
             every_state = {
                 limit = {
 					is_core_of = TIB
@@ -245,6 +258,20 @@ on_actions = {
                         is_ai = no
                     }
                     country_event = { id = change_germany.0 }
+                }
+            }
+            FIN = {
+                #三皇开局：给AI芬兰挂"中立承诺"，防止紧张度升高后芬兰入阵营导致苏联入侵、二战提前；玩家芬兰不挂（已挂也会自动取消）
+                if = {
+                    limit = {
+                        has_game_rule = {
+                            rule = The_third_empire_family
+                            option = the_third_empire_flag
+                        }
+                        is_ai = yes
+                        NOT = { has_idea = FIN_third_empire_neutrality }
+                    }
+                    add_ideas = FIN_third_empire_neutrality
                 }
             }
 
@@ -1129,6 +1156,89 @@ on_actions = {
                     country_event = { id = change_usa.20 }
                 }
             }
+            GER = {
+                #炼狱空军：每周统计飞机总数（供波次数量上限判定）
+                NIGHTMARE_air_count_update = yes
+            }
+            FRA = {
+                #炼狱空军：每周统计飞机总数（供波次数量上限判定）
+                NIGHTMARE_air_count_update = yes
+            }
+            ENG = {
+                #炼狱空军：每周统计飞机总数（供波次数量上限判定）
+                NIGHTMARE_air_count_update = yes
+            }
+            USA = {
+                #炼狱空军：每周统计飞机总数（供波次数量上限判定）
+                NIGHTMARE_air_count_update = yes
+            }
+            SOV = {
+                #炼狱空军：每周统计飞机总数（供波次数量上限判定）
+                NIGHTMARE_air_count_update = yes
+            }
+            JAP = {
+                #炼狱空军：每周统计飞机总数（供波次数量上限判定）
+                NIGHTMARE_air_count_update = yes
+            }
+            HUN = {
+                #炼狱空军：每周统计飞机总数（供波次数量上限判定）
+                NIGHTMARE_air_count_update = yes
+            }
+            CHI = {
+                #炼狱空军：每周统计飞机总数（供波次数量上限判定）
+                NIGHTMARE_air_count_update = yes
+            }
+            #炼狱空军：每周给目标AI挂载空军强化（照搬飞机限制写法）
+            every_country = {
+                limit = {
+                    is_ai = yes
+                    is_subject = no
+                    OR = {
+                        has_game_rule = { rule = The_Purgatory_game_rule option = The_Purgatory_game_rule_air_open }
+                        has_game_rule = { rule = The_Purgatory_game_rule option = The_Purgatory_game_rule_all_open }
+                    }
+                    OR = {
+                        tag = GER
+                        tag = FRA
+                        tag = ENG
+                        tag = USA
+                        tag = SOV
+                        tag = JAP
+                        tag = HUN
+                        tag = CHI
+                    }
+                    NOT = { has_idea = NIGHTMARE_air_buff }
+                }
+                add_ideas = NIGHTMARE_air_buff
+                if = {
+                    limit = { NOT = { has_idea = NIGHTMARE_air_general } }
+                    add_ideas = NIGHTMARE_air_general
+                }
+            }
+            #炼狱空军：高质量模式额外挂载质量强化
+            every_country = {
+                limit = {
+                    has_global_flag = NIGHTMARE_air_mode_quality
+                    is_ai = yes
+                    is_subject = no
+                    OR = {
+                        has_game_rule = { rule = The_Purgatory_game_rule option = The_Purgatory_game_rule_air_open }
+                        has_game_rule = { rule = The_Purgatory_game_rule option = The_Purgatory_game_rule_all_open }
+                    }
+                    OR = {
+                        tag = GER
+                        tag = FRA
+                        tag = ENG
+                        tag = USA
+                        tag = SOV
+                        tag = JAP
+                        tag = HUN
+                        tag = CHI
+                    }
+                    NOT = { has_idea = NIGHTMARE_air_quality_buff }
+                }
+                add_ideas = NIGHTMARE_air_quality_buff
+            }
         }
     }
 
@@ -1257,6 +1367,9 @@ on_actions = {
                         has_country_leader = {
                             ruling_only = yes
                             character = USA_franklin_delano_roosevelt
+                        }
+                        NOT = {
+			                has_country_flag = the_end_daxiaotiao_flag
                         }
                     }
                     country_event = { id = change_usa.22 days = 3 }
